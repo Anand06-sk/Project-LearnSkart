@@ -104,7 +104,7 @@ nav a {
     width: 45%;
     min-width: 300px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
 }
 
@@ -123,7 +123,7 @@ nav a {
     transform: scale(1.05);
 }
 
-/* Department List */
+/* Department List
 .dashboard .card ul {
     list-style: none;
     padding: 0;
@@ -141,7 +141,7 @@ nav a {
 .dashboard .card ul li:hover {
     background: rgba(255,255,255,0.25);
     cursor: pointer;
-}
+} */
 
 /* -------------------- SECTIONS -------------------- */
 .section {
