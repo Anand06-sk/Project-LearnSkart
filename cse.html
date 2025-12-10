@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSE Department - LearnSkart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+    :root {
+        --primary: #3b82f6;
+        --secondary: #ec4899;
+        --accent: #10b981;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+        color: white;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 60px;
+        background: rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+
+    .back-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .back-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+
+    .page-header {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 48px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .page-header p {
+        font-size: 18px;
+        opacity: 0.9;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 40px;
+        padding: 40px 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .filter-box {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 24px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        height: fit-content;
+        position: sticky;
+        top: 80px;
+    }
+
+    .filter-box h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .filter-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 600;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        opacity: 0.9;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    select:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    select option {
+        background: #333;
+        color: white;
+    }
+
+    .search-btn {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 24px;
+    }
+
+    .search-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-btn:active {
+        transform: translateY(0);
+    }
+
+    .content-area {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .section {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 28px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cards-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .note-card {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 16px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 80px;
+    }
+
+    .note-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+        background: rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 1024px) {
+        .main-content {
+            grid-template-columns: 1fr;
+            padding: 30px 40px;
+        }
+
+        .filter-box {
+            position: static;
+        }
+
+        header {
+            padding: 16px 40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 28px;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        header {
+            padding: 12px 20px;
+        }
+
+        .cards-row {
+            grid-template-columns: 1fr;
+        }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-book"></i> LearnSkart
+    </div>
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </header>
+
+  <div class="page-header">
+    <h1><i class="fas fa-laptop-code"></i> Computer Science & Engineering</h1>
+    <p>Find all your CSE notes, syllabus, and study materials here</p>
+  </div>
+
+  <div class="main-content">
+    <!-- Filters Sidebar -->
+    <div class="filter-box">
+      <h3><i class="fas fa-sliders-h"></i> Filters</h3>
+      
+      <div class="filter-group">
+        <label for="reg">Regulation</label>
+        <select id="reg">
+          <option value="">Select Regulation</option>
+          <option value="2021">2021 Regulation</option>
+          <option value="2025">2025 Regulation</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="sem">Semester</label>
+        <select id="sem">
+          <option value="">Select Semester</option>
+          <option value="1">Semester 1</option>
+          <option value="2">Semester 2</option>
+          <option value="3">Semester 3</option>
+          <option value="4">Semester 4</option>
+          <option value="5">Semester 5</option>
+          <option value="6">Semester 6</option>
+          <option value="7">Semester 7</option>
+          <option value="8">Semester 8</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="sub">Subject</label>
+        <select id="sub">
+          <option value="">Select Subject</option>
+          <option value="DS">Data Structures</option>
+          <option value="OS">Operating Systems</option>
+          <option value="DBMS">DBMS</option>
+          <option value="CN">Computer Networks</option>
+          <option value="SE">Software Engineering</option>
+          <option value="AI">Artificial Intelligence</option>
+          <option value="ML">Machine Learning</option>
+          <option value="WEB">Web Development</option>
+        </select>
+      </div>
+
+      <button class="search-btn" onclick="searchNotes()">
+        <i class="fas fa-search"></i> Search Notes
+      </button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- Semester 1 Section -->
+      <div class="section">
+        <h2><i class="fas fa-layer-group"></i> Semester 1</h2>
+        <div class="cards-row">
+          <div class="note-card">📚 Mathematics I</div>
+          <div class="note-card">🔬 Physics I</div>
+          <div class="note-card">💻 Programming Basics</div>
+          <div class="note-card">📖 English</div>
+        </div>
+      </div>
+
+      <!-- Semester 2 Section -->
+      <div class="section">
+        <h2><i class="fas fa-layer-group"></i> Semester 2</h2>
+        <div class="cards-row">
+          <div class="note-card">📋 Mathematics II</div>
+          <div class="note-card">🔬 Physics II</div>
+          <div class="note-card">📡 Data Structures</div>
+          <div class="note-card">⚙️ Web Fundamentals</div>
+        </div>
+      </div>
+
+      <!-- Semester 3 Section -->
+      <div class="section">
+        <h2><i class="fas fa-layer-group"></i> Semester 3</h2>
+        <div class="cards-row">
+          <div class="note-card">🗂️ Database Systems</div>
+          <div class="note-card">🖥️ Computer Architecture</div>
+          <div class="note-card">⚡ Digital Logic</div>
+          <div class="note-card">📊 Discrete Mathematics</div>
+        </div>
+      </div>
+
+      <!-- Semester 4 Section -->
+      <div class="section">
+        <h2><i class="fas fa-layer-group"></i> Semester 4</h2>
+        <div class="cards-row">
+          <div class="note-card">⚙️ Operating Systems</div>
+          <div class="note-card">📡 Computer Networks</div>
+          <div class="note-card">💾 File Systems</div>
+          <div class="note-card">🧬 Process Management</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 OpenNotes - CSE Department. Helping you ace your exams! 🎓</p>
+  </footer>
+
+  <script>
+    function searchNotes() {
+      const reg = document.getElementById('reg').value;
+      const sem = document.getElementById('sem').value;
+      const sub = document.getElementById('sub').value;
+
+      if (!reg || !sem || !sub) {
+        alert("Please select all fields before searching.");
+        return;
+      }
+
+      alert(`Searching notes for Regulation ${reg}, Semester ${sem}, Subject ${sub}`);
+    }
+  </script>
+
+</body>
+</html>
