@@ -97,6 +97,23 @@
         opacity: 0.9;
     }
 
+    .page-header .reg-info {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      opacity: 0.98;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(59,130,246,0.14), rgba(16,185,129,0.08));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+    }
+
     .main-content {
         display: grid;
         grid-template-columns: 350px 1fr;
@@ -311,6 +328,7 @@
   <div class="page-header">
     <h1><i class="fas fa-laptop-code"></i> Computer Science & Engineering</h1>
     <p>Find all your CSE notes, syllabus, and study materials here</p>
+    <div id="reg-info" class="reg-info"><i class="fas fa-award"></i> Current Regulation: 2021</div>
   </div>
 
   <div class="main-content">
@@ -321,8 +339,7 @@
       <div class="filter-group">
         <label for="reg">Regulation</label>
         <select id="reg">
-          <option value="">Select Regulation</option>
-          <option value="2021">2021 Regulation</option>
+          <option value="2021" selected>2021 Regulation</option>
           <option value="2025">2025 Regulation</option>
         </select>
       </div>
@@ -347,8 +364,8 @@
       </button>
     </div>
 
-    <!-- Content Area -->
-    <div class="content-area">
+    <!-- Content Area - 2021 Regulation -->
+    <div class="content-area" id="content-2021">
       <!-- Semester 1 Section -->
       <div class="section" id="semester-1">
         <h2><i class="fas fa-layer-group"></i> Semester 1</h2>
@@ -426,6 +443,100 @@
         </div>
       </div>
     </div>
+
+    <!-- Content Area - 2025 Regulation (empty for manual editing) -->
+    <div class="content-area" id="content-2025" style="display: none;">
+      <!-- Semester 1 Section -->
+      <div class="section" id="semester-1">
+        <h2><i class="fas fa-layer-group"></i> Semester 1</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+
+      <!-- Semester 2 Section -->
+      <div class="section" id="semester-2">
+        <h2><i class="fas fa-layer-group"></i> Semester 2</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+
+      <!-- Semester 3 Section -->
+      <div class="section" id="semester-3">
+        <h2><i class="fas fa-layer-group"></i> Semester 3</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+
+      <!-- Semester 4 Section -->
+      <div class="section" id="semester-4">
+        <h2><i class="fas fa-layer-group"></i> Semester 4</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+
+      <!-- Semester 5 Section -->
+      <div class="section" id="semester-5">
+        <h2><i class="fas fa-layer-group"></i> Semester 5</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+
+      <!-- Semester 6 Section -->
+      <div class="section" id="semester-6">
+        <h2><i class="fas fa-layer-group"></i> Semester 6</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+
+      <!-- Semester 7 Section -->
+      <div class="section" id="semester-7">
+        <h2><i class="fas fa-layer-group"></i> Semester 7</h2>
+        <div class="cards-row">
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+          <div class="note-card"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -433,51 +544,94 @@
   </footer>
 
   <script>
-    // Handle semester selection
-    document.getElementById('sem').addEventListener('change', function() {
-      const selectedSemester = this.value;
-      
-      if (selectedSemester) {
-        // Remove active class from all sections
-        document.querySelectorAll('.section').forEach(section => {
-          section.classList.remove('active');
-        });
-        
-        // Add active class to selected semester
-        const targetSection = document.getElementById(`semester-${selectedSemester}`);
-        if (targetSection) {
-          targetSection.classList.add('active');
+    // Regulation default + info display
+    (function() {
+      const regSelect = document.getElementById('reg');
+      const regInfo = document.getElementById('reg-info');
+      if (regSelect) {
+        // Default to 2021 if nothing selected
+        if (!regSelect.value) regSelect.value = '2021';
+        if (regInfo) regInfo.textContent = `Current Regulation: ${regSelect.value}`;
+
+        // Update on change
+        regSelect.addEventListener('change', function() {
+          const val = this.value;
+          if (regInfo) regInfo.textContent = val ? `Current Regulation: ${val}` : 'No regulation selected';
+
+          // Swap visibility between 2021 and 2025 content areas
+          const content2021 = document.getElementById('content-2021');
+          const content2025 = document.getElementById('content-2025');
           
-          // Scroll to section smoothly with proper positioning
-          setTimeout(() => {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 300);
-          
-          // Change logo to "LearnSkart"
-          const logo = document.querySelector('.logo');
-          logo.innerHTML = '<i class="fas fa-book"></i> LearnSkart';
-        }
-      } else {
-        // Reset if no semester selected
-        document.querySelectorAll('.section').forEach(section => {
-          section.classList.remove('active');
+          if (val === '2025') {
+            if (content2021) content2021.style.display = 'none';
+            if (content2025) content2025.style.display = 'flex';
+          } else {
+            if (content2021) content2021.style.display = 'flex';
+            if (content2025) content2025.style.display = 'none';
+          }
         });
-        const logo = document.querySelector('.logo');
-        logo.innerHTML = '<i class="fas fa-book"></i> OpenNotes';
       }
-    });
-    
+    })();
+
+    // Handle semester selection
+    (function() {
+      const semSelect = document.getElementById('sem');
+      if (!semSelect) return;
+
+      function scrollToSection(el) {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const rect = el.getBoundingClientRect();
+        const absoluteTop = window.scrollY + rect.top;
+        // Position the section just below the sticky header with a small gap
+        const top = Math.max(absoluteTop - headerHeight - 20, 0);
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+
+      semSelect.addEventListener('change', function() {
+        const selectedSemester = this.value;
+
+        // Remove active class from all sections first
+        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+
+        const logo = document.querySelector('.logo');
+
+        if (selectedSemester) {
+          const targetSection = document.getElementById(`semester-${selectedSemester}`);
+          if (targetSection) {
+            // Mark active (for visuals)
+            targetSection.classList.add('active');
+
+            // Slight delay to allow any layout changes, then scroll to a computed top
+            setTimeout(() => scrollToSection(targetSection), 40);
+
+            // Update branding
+            if (logo) logo.innerHTML = '<i class="fas fa-book"></i> LearnSkart';
+          }
+        } else {
+          // No semester selected: reset branding and optionally scroll to top of content
+          if (logo) logo.innerHTML = '<i class="fas fa-book"></i> OpenNotes';
+          const firstSection = document.querySelector('.content-area');
+          if (firstSection) setTimeout(() => {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            window.scrollTo({ top: Math.max(firstSection.offsetTop - headerHeight - 20, 0), behavior: 'smooth' });
+          }, 40);
+        }
+      });
+    })();
+
     function searchNotes() {
       const reg = document.getElementById('reg').value;
       const sem = document.getElementById('sem').value;
-      const sub = document.getElementById('sub').value;
+      const sub = document.getElementById('sub') ? document.getElementById('sub').value : '';
 
       if (!reg || !sem || !sub) {
         alert("Please select all fields before searching.");
         return;
       }
 
-    alert(`Searching notes for Regulation ${reg}, Semester ${sem}, Subject ${sub}`);
+      alert(`Searching notes for Regulation ${reg}, Semester ${sem}, Subject ${sub}`);
     }
   </script>
 
