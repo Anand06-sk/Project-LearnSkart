@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LearnSkart — PDF Resources</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style> 
+    :root{
+      --bg-dark: #071029;
+      --glass: rgba(255,255,255,0.04);
+      --accent-1: #667eea;
+      --accent-2: #10b981;
+      --muted: rgba(230,238,255,0.8);
+      --card-radius: 14px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
+    body{
+      background:
+        radial-gradient(900px 420px at 10% 10%, rgba(102,126,234,0.08), transparent 6%),
+        linear-gradient(180deg,#071029 0%, #0b1624 50%);
+      color:#eaf2ff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      padding-bottom:48px;
+    }
+
+    header{
+      max-width:1200px;margin:20px auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .brand{display:flex;align-items:center;gap:14px;font-family:Poppins, sans-serif;font-weight:700;color:var(--muted)}
+    .logo-badge{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),#a78bfa);display:flex;align-items:center;justify-content:center;font-size:18px;color:white;box-shadow:0 6px 20px rgba(103,80,255,0.08)}
+    .header-actions{display:flex;gap:12px;align-items:center}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600;text-decoration:none;color:white;background:linear-gradient(90deg,var(--accent-1),#7c3aed);box-shadow:0 8px 24px rgba(124,58,237,0.12)}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);box-shadow:none;padding:8px 12px}
+    .btn.small{padding:8px 10px;font-size:14px}
+
+    .container{max-width:1200px;margin:0 auto;padding:12px 22px 40px}
+
+    .top {display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:10px;flex-wrap:wrap}
+    .page-title{display:flex;flex-direction:column;gap:6px}
+    .page-title h1{font-family:Poppins, sans-serif;margin:0;font-size:22px}
+    .breadcrumb{margin-top:8px;color:rgba(230,238,255,0.75);font-size:13px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+    .controls{display:flex;gap:12px;align-items:center}
+    .search{display:flex;align-items:center;gap:10px;background:var(--glass);padding:8px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-width:260px}
+    .search input{background:transparent;border:0;outline:none;color:#eef2ff;font-size:14px;width:220px}
+    .count-badge{background:linear-gradient(90deg,var(--accent-2),#34d399);padding:6px 10px;border-radius:999px;color:#04232b;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(16,185,129,0.08)}
+
+    .pdf-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+
+    .pdf-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--card-radius);padding:18px;display:flex;flex-direction:column;gap:12px;border:1px solid rgba(255,255,255,0.04);transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .pdf-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .pdf-top{display:flex;gap:12px;align-items:center}
+    .pdf-icon{width:60px;height:60px;border-radius:10px;background:linear-gradient(135deg,#ff6b6b,#ef4444);display:flex;align-items:center;justify-content:center;color:white;font-size:22px;flex:0 0 60px}
+    .pdf-info{display:flex;flex-direction:column;gap:6px}
+    .pdf-info .name{font-weight:700;font-size:15px;color:#f8fbff}
+    .pdf-info .meta{font-size:12px;color:rgba(230,238,255,0.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+
+    .pdf-actions{display:flex;gap:8px;margin-top:auto;align-items:center;justify-content:space-between}
+    .left-actions{display:flex;gap:8px}
+    .action-btn{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:10px;border:0;cursor:pointer;font-weight:600;background:rgba(255,255,255,0.04);color:var(--muted)}
+    .view-btn{background:linear-gradient(90deg,var(--accent-1),#7c3aed);color:white}
+    .download-btn{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:white}
+
+    .empty{margin-top:36px;text-align:center;color:rgba(230,238,255,0.8);padding:26px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+    footer{max-width:1200px;margin:28px auto 60px;padding:0 22px;color:rgba(255,255,255,0.6);font-size:13px;text-align:center}
+
+    @media(max-width:680px){
+      .search input{width:110px}
+      .pdf-icon{width:52px;height:52px}
+      .page-title h1{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo-badge"><i class="fas fa-book"></i></div>
+      <div>
+        <div style="font-size:16px">LearnSkart</div>
+        <small style="display:block;font-size:12px;opacity:0.9;margin-top:2px;font-weight:600;color:#e6eef8">OpenNotes • CSE</small>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a href="cse.html" class="btn secondary small"><i class="fas fa-arrow-left"></i> Back to CSE</a>
+      <a href="index.html" class="btn small"><i class="fas fa-home"></i> Home</a>
+    </div>
+  </header>
+
+  <main class="container" id="app">
+    <div class="top">
+      <div class="page-title">
+        <h1 id="page-title"><i class="fas fa-file-pdf"></i> PDFs</h1>
+        <div class="breadcrumb" aria-label="breadcrumb">
+          <span><i class="fas fa-award"></i> <strong id="breadcrumb-reg">-</strong></span>
+          <span>/</span>
+          <span><i class="fas fa-layer-group"></i> Semester <strong id="breadcrumb-sem">-</strong></span>
+          <span>/</span>
+          <span><i class="fas fa-book-open"></i> <strong id="breadcrumb-sub">-</strong></span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="search" title="Search PDFs">
+          <i class="fas fa-search" style="opacity:0.9"></i>
+          <input id="searchInput" type="search" placeholder="Search PDF name..." aria-label="Search PDFs">
+        </div>
+        <div class="count-badge" id="countBadge">0</div>
+      </div>
+    </div>
+
+    <div id="pdf-grid" class="pdf-grid" role="list"></div>
+
+    <div id="empty" class="empty" style="display:none;">
+      <i class="fas fa-inbox" style="font-size:40px;opacity:0.6"></i>
+      <h3 style="margin:8px 0 4px">No PDFs found</h3>
+      <p style="margin:0;color:rgba(230,238,255,0.7)">There are no files for this subject yet. Go back and choose another subject, or add files to the <code>Pdfs/</code> folder.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 LearnSkart — OpenNotes. Made with <span style="color:#ff6b6b">♥</span> for learners.
+  </footer>
+
+  <script>
+    function getParam(name) {
+      const p = new URLSearchParams(window.location.search);
+      return p.get(name) || '';
+    }
+
+    function safeDecode(raw) {
+      try { return decodeURIComponent(raw); } catch(e) { return raw; }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function createCardHTML(pdf) {
+      const href = 'Pdfs/' + pdf.path;
+      return `
+        <div class="pdf-card" role="listitem" data-name="${(pdf.name||'').toLowerCase()}">
+          <div class="pdf-top">
+            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="pdf-info">
+              <div class="name">${escapeHtml(pdf.name)}</div>
+              <div class="meta">${escapeHtml(pdf.path)}</div>
+            </div>
+          </div>
+          <div class="pdf-actions">
+            <div class="left-actions">
+              <a class="action-btn view-btn" href="${href}" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View</a>
+              <a class="action-btn download-btn" href="${href}" download><i class="fas fa-download"></i> Download</a>
+            </div>
+            <div style="font-size:13px;color:rgba(225,230,255,0.7)">${pdf.size || ''}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    async function loadPDFs() {
+      const regulation = getParam('regulation');
+      const semester = getParam('semester');
+      const subjectRaw = getParam('subject');
+      const subject = subjectRaw ? safeDecode(subjectRaw) : '';
+
+      document.getElementById('breadcrumb-reg').textContent = regulation || '-';
+      document.getElementById('breadcrumb-sem').textContent = semester || '-';
+      document.getElementById('breadcrumb-sub').textContent = subject || '-';
+      if (subject) document.getElementById('page-title').textContent = subject + ' — PDFs';
+
+      let data;
+      try {
+        const resp = await fetch('data.json', {cache:'no-store'});
+        if (!resp.ok) throw new Error('Could not load data.json');
+        data = await resp.json();
+      } catch (err) {
+        console.error('Failed to load data.json', err);
+        showEmpty();
+        return;
+      }
+
+      const pdfs = (data.regulations?.[regulation]?.[semester]?.[subject]?.pdfs) || [];
+
+      const grid = document.getElementById('pdf-grid');
+      const empty = document.getElementById('empty');
+      const countBadge = document.getElementById('countBadge');
+
+      if (!pdfs.length) {
+        showEmpty();
+        return;
+      }
+
+      empty.style.display = 'none';
+      grid.style.display = 'grid';
+
+      pdfs.sort((a,b) => (a.name||'').localeCompare(b.name||''));
+      grid.innerHTML = pdfs.map(p => createCardHTML(p)).join('');
+      countBadge.textContent = pdfs.length;
+
+      const search = document.getElementById('searchInput');
+      search.addEventListener('input', () => filterGrid(search.value));
+      search.focus();
+    }
+
+    function showEmpty() {
+      document.getElementById('pdf-grid').style.display = 'none';
+      document.getElementById('empty').style.display = 'block';
+      document.getElementById('countBadge').textContent = 0;
+    }
+
+    function filterGrid(q) {
+      q = (q||'').trim().toLowerCase();
+      const cards = document.querySelectorAll('#pdf-grid .pdf-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        if (!q || name.includes(q)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('countBadge').textContent = visible;
+      if (visible === 0) {
+        document.getElementById('pdf-grid').style.display = 'none';
+        document.getElementById('empty').style.display = 'block';
+      } else {
+        document.getElementById('pdf-grid').style.display = 'grid';
+        document.getElementById('empty').style.display = 'none';
+      }
+    }
+
+    window.addEventListener('load', loadPDFs);
+  </script>
+</body>
+</html>
