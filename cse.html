@@ -223,6 +223,41 @@
       100% { transform: translateY(0); opacity: 1; box-shadow: none; }
     }
 
+    /* Toast notifications */
+    .toast-container {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1200;
+      pointer-events: none;
+    }
+
+    .toast {
+      pointer-events: auto;
+      min-width: 220px;
+      max-width: 360px;
+      background: rgba(0,0,0,0.72);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+      transform: translateY(8px);
+      opacity: 0;
+      transition: transform .22s ease, opacity .22s ease;
+      font-weight: 600;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.success { background: linear-gradient(90deg, rgba(34,197,94,0.92), rgba(16,185,129,0.9)); }
+    .toast.error { background: linear-gradient(90deg, rgba(239,68,68,0.92), rgba(220,38,38,0.9)); }
+
     .search-btn {
         width: 100%;
         padding: 12px;
@@ -362,7 +397,7 @@
 <body>
   <header>
     <div class="logo">
-      <i class="fas fa-book"></i> OpenNotes
+      <i class="fas fa-book"></i> LearnSkart
     </div>
     <a href="index.html" class="back-btn">
       <i class="fas fa-arrow-left"></i> Back to Home
@@ -585,7 +620,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 OpenNotes - CSE Department. Helping you ace your exams! 🎓</p>
+    <p>&copy; 2025 LearnSkart - CSE Department. Helping you ace your exams! 🎓</p>
   </footer>
 
   <script>
@@ -648,7 +683,7 @@
       const semSelect = document.getElementById('sem');
 
       if (!regSelect || !semSelect || !regSelect.value || !semSelect.value) {
-        alert('Please select Regulation and Semester before searching.');
+        showToast('Please select Regulation and Semester before searching.', 'error');
         return;
       }
 
@@ -688,15 +723,47 @@
         const absoluteTop = window.scrollY + rect.top;
         const top = Math.max(absoluteTop - headerHeight - 20, 0);
         window.scrollTo({ top, behavior: 'smooth' });
+
+        // Show unobtrusive confirmation
+        showToast(`Showing ${regVal} — Semester ${semVal}`, 'success');
       }
     }
   </script>
   <script>
-    // Remove placeholder option on first focus and persist selection on Search
+    // Toast helper, placeholder removal, persistence and UI flash
     (function() {
       const reg = document.getElementById('reg');
       const sem = document.getElementById('sem');
       const searchBtn = document.querySelector('.search-btn');
+
+      // Toast utilities
+      function getToastContainer() {
+        let c = document.getElementById('toast-container');
+        if (!c) {
+          c = document.createElement('div');
+          c.id = 'toast-container';
+          c.className = 'toast-container';
+          document.body.appendChild(c);
+        }
+        return c;
+      }
+
+      window.showToast = function(message, type = 'success', timeout = 3000) {
+        try {
+          const container = getToastContainer();
+          const t = document.createElement('div');
+          t.className = 'toast ' + (type || '');
+          t.textContent = message;
+          container.appendChild(t);
+          // show
+          requestAnimationFrame(() => t.classList.add('show'));
+          // remove after timeout
+          setTimeout(() => {
+            t.classList.remove('show');
+            setTimeout(() => t.remove(), 250);
+          }, timeout);
+        } catch (e) { console.warn('toast failed', e); }
+      };
 
       function removePlaceholderOnce(selectEl) {
         if (!selectEl) return;
@@ -705,7 +772,7 @@
           if (firstOpt) firstOpt.remove();
           selectEl.removeEventListener('focus', onFirstFocus);
         };
-        selectEl.addEventListener('focus', onFirstFocus);
+        selectEl.addEventListener('focus', onFirstFocus, { once: true });
       }
 
       removePlaceholderOnce(reg);
@@ -714,15 +781,14 @@
       if (searchBtn) {
         searchBtn.addEventListener('click', function() {
           // persist selections
-          try { localStorage.setItem('opennotes_reg', reg.value); } catch(e) {}
-          try { localStorage.setItem('opennotes_sem', sem.value); } catch(e) {}
+          try { if (reg) localStorage.setItem('opennotes_reg', reg.value); } catch(e) {}
+          try { if (sem) localStorage.setItem('opennotes_sem', sem.value); } catch(e) {}
 
           // flash reg-info when applied
           const regInfo = document.getElementById('reg-info');
           if (regInfo) {
             regInfo.classList.remove('flash');
-            // force reflow to restart animation
-            void regInfo.offsetWidth;
+            void regInfo.offsetWidth; // force reflow
             regInfo.classList.add('flash');
           }
         });
