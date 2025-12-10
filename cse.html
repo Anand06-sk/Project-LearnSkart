@@ -124,14 +124,15 @@
     }
 
     .filter-box {
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(102, 126, 234, 0.15);
+        border: 2px solid rgba(102, 126, 234, 0.4);
         padding: 24px;
         border-radius: 16px;
         backdrop-filter: blur(10px);
         height: fit-content;
         position: sticky;
         top: 80px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 
     .filter-box h3 {
@@ -141,6 +142,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        color: #ffffff;
     }
 
     .filter-group {
@@ -153,30 +155,58 @@
         display: block;
         margin-bottom: 8px;
         text-transform: uppercase;
-        opacity: 0.9;
+        opacity: 0.95;
+        color: #ffffff;
     }
 
     select {
         width: 100%;
-        padding: 10px 12px;
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.95);
+        color: #3b3b7d;
         font-size: 14px;
+        font-weight: 500;
         transition: all 0.3s ease;
         font-family: 'Inter', sans-serif;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    select:hover {
+        border-color: rgba(255, 255, 255, 0.6);
+        background: #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
     select:focus {
         outline: none;
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.4);
+        border-color: rgba(255, 255, 255, 0.8);
+        background: #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
     select option {
-        background: #333;
-        color: white;
+        background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+        color: #3b3b7d;
+        padding: 12px 8px;
+        font-weight: 500;
+        margin: 4px 0;
+        border-radius: 6px;
+    }
+
+    select option:hover {
+        background: linear-gradient(135deg, #e0e8ff 0%, #d8e0ff 100%);
+        color: #667eea;
+    }
+
+    select option:checked {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        font-weight: 700;
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     .search-btn {
@@ -216,7 +246,7 @@
     .section {
         background: rgba(255, 255, 255, 0.05);
         padding: 32px;
-        border-radius: 16px;
+        border-radius: 24px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.5s ease;
     }
@@ -347,7 +377,6 @@
       <div class="filter-group">
         <label for="sem">Semester</label>
         <select id="sem">
-          <option value="">Select Semester</option>
           <option value="1">Semester 1</option>
           <option value="2">Semester 2</option>
           <option value="3">Semester 3</option>
@@ -553,22 +582,18 @@
         if (!regSelect.value) regSelect.value = '2021';
         if (regInfo) regInfo.textContent = `Current Regulation: ${regSelect.value}`;
 
-        // Update on change
+        // Update on change (visual only). Actual application occurs when Search is clicked.
         regSelect.addEventListener('change', function() {
-          const val = this.value;
-          if (regInfo) regInfo.textContent = val ? `Current Regulation: ${val}` : 'No regulation selected';
+          // Visual highlight only
+          regSelect.style.boxShadow = '0 0 0 4px rgba(102, 126, 234, 0.4), 0 0 25px rgba(102, 126, 234, 0.6)';
+          regSelect.style.borderColor = 'rgba(102, 126, 234, 0.9)';
+          regSelect.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240, 244, 255, 0.95))';
 
-          // Swap visibility between 2021 and 2025 content areas
-          const content2021 = document.getElementById('content-2021');
-          const content2025 = document.getElementById('content-2025');
-          
-          if (val === '2025') {
-            if (content2021) content2021.style.display = 'none';
-            if (content2025) content2025.style.display = 'flex';
-          } else {
-            if (content2021) content2021.style.display = 'flex';
-            if (content2025) content2025.style.display = 'none';
-          }
+          setTimeout(() => {
+            regSelect.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            regSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            regSelect.style.background = '#ffffff';
+          }, 700);
         });
       }
     })();
@@ -589,49 +614,65 @@
       }
 
       semSelect.addEventListener('change', function() {
-        const selectedSemester = this.value;
+        // Visual highlight only; actual scroll/highlight happens on Search
+        semSelect.style.boxShadow = '0 0 0 4px rgba(102, 126, 234, 0.4), 0 0 25px rgba(102, 126, 234, 0.6)';
+        semSelect.style.borderColor = 'rgba(102, 126, 234, 0.9)';
+        semSelect.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240, 244, 255, 0.95))';
 
-        // Remove active class from all sections first
-        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-
-        const logo = document.querySelector('.logo');
-
-        if (selectedSemester) {
-          const targetSection = document.getElementById(`semester-${selectedSemester}`);
-          if (targetSection) {
-            // Mark active (for visuals)
-            targetSection.classList.add('active');
-
-            // Slight delay to allow any layout changes, then scroll to a computed top
-            setTimeout(() => scrollToSection(targetSection), 40);
-
-            // Update branding
-            if (logo) logo.innerHTML = '<i class="fas fa-book"></i> LearnSkart';
-          }
-        } else {
-          // No semester selected: reset branding and optionally scroll to top of content
-          if (logo) logo.innerHTML = '<i class="fas fa-book"></i> OpenNotes';
-          const firstSection = document.querySelector('.content-area');
-          if (firstSection) setTimeout(() => {
-            const header = document.querySelector('header');
-            const headerHeight = header ? header.offsetHeight : 0;
-            window.scrollTo({ top: Math.max(firstSection.offsetTop - headerHeight - 20, 0), behavior: 'smooth' });
-          }, 40);
-        }
+        setTimeout(() => {
+          semSelect.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+          semSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+          semSelect.style.background = '#ffffff';
+        }, 700);
       });
     })();
 
     function searchNotes() {
-      const reg = document.getElementById('reg').value;
-      const sem = document.getElementById('sem').value;
-      const sub = document.getElementById('sub') ? document.getElementById('sub').value : '';
+      const regSelect = document.getElementById('reg');
+      const semSelect = document.getElementById('sem');
 
-      if (!reg || !sem || !sub) {
-        alert("Please select all fields before searching.");
+      if (!regSelect || !semSelect || !regSelect.value || !semSelect.value) {
+        alert('Please select Regulation and Semester before searching.');
         return;
       }
 
-      alert(`Searching notes for Regulation ${reg}, Semester ${sem}, Subject ${sub}`);
+      const regVal = regSelect.value;
+      const semVal = semSelect.value;
+
+      // Update top regulation badge and swap content areas
+      const regInfo = document.getElementById('reg-info');
+      if (regInfo) regInfo.textContent = `Current Regulation: ${regVal}`;
+
+      const content2021 = document.getElementById('content-2021');
+      const content2025 = document.getElementById('content-2025');
+      if (regVal === '2025') {
+        if (content2021) content2021.style.display = 'none';
+        if (content2025) content2025.style.display = 'flex';
+      } else {
+        if (content2021) content2021.style.display = 'flex';
+        if (content2025) content2025.style.display = 'none';
+      }
+
+      // Find the target section inside the visible content area
+      const containerId = regVal === '2025' ? 'content-2025' : 'content-2021';
+      const targetSection = document.querySelector(`#${containerId} #semester-${semVal}`);
+      if (targetSection) {
+        // Remove active class from all sections and add to target
+        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+        targetSection.classList.add('active');
+
+        // Optional branding update
+        const logo = document.querySelector('.logo');
+        if (logo) logo.innerHTML = '<i class="fas fa-book"></i> LearnSkart';
+
+        // Scroll to the section accounting for sticky header
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const rect = targetSection.getBoundingClientRect();
+        const absoluteTop = window.scrollY + rect.top;
+        const top = Math.max(absoluteTop - headerHeight - 20, 0);
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     }
   </script>
 
