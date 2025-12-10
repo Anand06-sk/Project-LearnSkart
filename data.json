@@ -1,0 +1,104 @@
+{
+  "regulations": {
+    "2021": {
+      "1": {
+        "Professional English-I": {
+          "pdfs": [
+            { "id": 1, "name": "Professional English - Notes", "path": "CSE/sem1/HS3152-Professional English.pdf" },
+            { "id": 2, "name": "Professional English - Handwritten", "path": "CSE/sem1/HS3152-handwritten notes.pdf" }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            { "id": 1, "name": "Matrices - Handwritten 1", "path": "CSE/sem1/MA3151-handwritten notes 1.pdf" },
+            { "id": 2, "name": "Matrices - Handwritten 2", "path": "CSE/sem1/MA3151-handwritten notes 2.pdf" },
+            { "id": 3, "name": "Matrices - Handwritten 3", "path": "CSE/sem1/Ma3151-handwritten notes 3.pdf" }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            { "id": 1, "name": "Physics - Unit 1", "path": "CSE/sem1/PH3151-Unit1.pdf" },
+            { "id": 2, "name": "Physics - Unit 2", "path": "CSE/sem1/PH3151-Unit2.pdf" },
+            { "id": 3, "name": "Physics - Unit 3", "path": "CSE/sem1/PH3151-Unit3.pdf" },
+            { "id": 4, "name": "Physics - Unit 4", "path": "CSE/sem1/PH3151-Unit4.pdf" },
+            { "id": 5, "name": "Physics - Unit 5", "path": "CSE/sem1/PH3151-Unit5.pdf" },
+            { "id": 6, "name": "Physics - Handwritten", "path": "CSE/sem1/PH3151-Handwritten notes.pdf" }
+          ]
+        },
+        "Engineering Chemistry": {
+          "pdfs": [
+            { "id": 1, "name": "Chemistry - Handwritten 1", "path": "CSE/sem1/CY3151-handwritten notes.pdf" },
+            { "id": 2, "name": "Chemistry - Handwritten 2", "path": "CSE/sem1/CY3151-handwritten notes2.pdf" },
+            { "id": 3, "name": "Chemistry - Handwritten 3", "path": "CSE/sem1/CY3151-handwritten notes3.pdf" }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            { "id": 1, "name": "Problem Solving & Python - Lecture Notes", "path": "CSE/sem1/GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf" }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            { "id": 1, "name": "Heritage of Tamils - Handnotes (English)", "path": "CSE/sem1/GE3152-Heritage-of-Tamils-Handnotes-English.pdf" },
+            { "id": 2, "name": "Heritage of Tamils - Unit 1", "path": "CSE/sem1/GE3152-Heritage-of-Tamils-Unit1.pdf" }
+          ]
+        }
+      },
+      "2": {
+        "Professional English-II": {
+          "pdfs": [
+            { "id": 1, "name": "Professional English-II Notes", "path": "CSE/sem2/prof_english_2.pdf" }
+          ]
+        },
+        "Programming in C": {
+          "pdfs": [
+            { "id": 1, "name": "C Programming Basics", "path": "CSE/sem2/c_basics.pdf" },
+            { "id": 2, "name": "Pointers & Memory Management", "path": "CSE/sem2/c_pointers.pdf" }
+          ]
+        }
+      },
+      "3": {
+        "Data Structures": {
+          "pdfs": [
+            { "id": 1, "name": "Arrays and Linked Lists", "path": "CSE/sem3/ds_arrays_linkedlist.pdf" },
+            { "id": 2, "name": "Trees and Graphs", "path": "CSE/sem3/ds_trees_graphs.pdf" }
+          ]
+        },
+        "Discrete Mathematics": { "pdfs": [] },
+        "Digital Principles and Computer Organization": { "pdfs": [] },
+        "Foundations of Data Science": { "pdfs": [] },
+        "Object Oriented Programming": { "pdfs": [] }
+      },
+      "4": {
+        "Theory of Computation": { "pdfs": [] },
+        "Artificial Intelligence and Machine Learning": { "pdfs": [] },
+        "Database Management Systems": { "pdfs": [] },
+        "Algorithms": { "pdfs": [] },
+        "Introduction to Operating Systems": { "pdfs": [] },
+        "Environmental Sciences and Sustainability": { "pdfs": [] }
+      },
+      "5": {
+        "Computer Networks": { "pdfs": [] },
+        "Complier Design": { "pdfs": [] },
+        "Cryptography and Cyber Security": { "pdfs": [] },
+        "Distributed Computing": { "pdfs": [] }
+      },
+      "6": {
+        "Object Oriented Software Engineering": { "pdfs": [] },
+        "Embedded Systems and IoT": { "pdfs": [] }
+      },
+      "7": {
+        "Human Values and Ethics": { "pdfs": [] }
+      }
+    },
+    "2025": {
+      "1": {
+        "New Programming Paradigms": {
+          "pdfs": [
+            { "id": 1, "name": "2025 New Subject", "path": "CSE/sem1/2025_new_subject.pdf" }
+          ]
+        }
+      }
+    }
+  }
+}
