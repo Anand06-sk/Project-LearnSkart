@@ -666,6 +666,7 @@
         // Position the section just below the sticky header with a small gap
         const top = Math.max(absoluteTop - headerHeight - 20, 0);
         window.scrollTo({ top, behavior: 'smooth' });
+        
       }
 
       semSelect.addEventListener('change', function() {
@@ -727,6 +728,7 @@
         const absoluteTop = window.scrollY + rect.top;
         const top = Math.max(absoluteTop - headerHeight - 20, 0);
         window.scrollTo({ top, behavior: 'smooth' });
+        showToast(`Showing ${regVal} — Semester ${semVal}`, 'success');
       }
     }
   </script>
