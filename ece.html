@@ -209,6 +209,20 @@
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
+    .reg-info {
+      transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .reg-info.flash {
+      animation: regFlash 700ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    @keyframes regFlash {
+      0% { transform: translateY(-8px); opacity: 0.6; box-shadow: 0 6px 20px rgba(102,126,234,0.12); }
+      50% { transform: translateY(0); opacity: 1; box-shadow: 0 10px 45px rgba(102,126,234,0.18); }
+      100% { transform: translateY(0); opacity: 1; box-shadow: none; }
+    }
+
     .search-btn {
         width: 100%;
         padding: 12px;
@@ -369,6 +383,7 @@
       <div class="filter-group">
         <label for="reg">Regulation</label>
         <select id="reg">
+          <option value="">Select Regulation</option>
           <option value="2021" selected>2021 Regulation</option>
           <option value="2025">2025 Regulation</option>
         </select>
@@ -377,6 +392,7 @@
       <div class="filter-group">
         <label for="sem">Semester</label>
         <select id="sem">
+          <option value="">Select Semester</option>
           <option value="1">Semester 1</option>
           <option value="2">Semester 2</option>
           <option value="3">Semester 3</option>
@@ -678,6 +694,52 @@
         window.scrollTo({ top, behavior: 'smooth' });
       }
     }
+  </script>
+  <script>
+    // Remove placeholder option on first focus and persist selection on Search
+    (function() {
+      const reg = document.getElementById('reg');
+      const sem = document.getElementById('sem');
+      const searchBtn = document.querySelector('.search-btn');
+
+      function removePlaceholderOnce(selectEl) {
+        if (!selectEl) return;
+        const onFirstFocus = function() {
+          const firstOpt = selectEl.querySelector('option[value=""]');
+          if (firstOpt) firstOpt.remove();
+          selectEl.removeEventListener('focus', onFirstFocus);
+        };
+        selectEl.addEventListener('focus', onFirstFocus);
+      }
+
+      removePlaceholderOnce(reg);
+      removePlaceholderOnce(sem);
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+          // persist selections
+          try { localStorage.setItem('opennotes_reg', reg.value); } catch(e) {}
+          try { localStorage.setItem('opennotes_sem', sem.value); } catch(e) {}
+
+          // flash reg-info when applied
+          const regInfo = document.getElementById('reg-info');
+          if (regInfo) {
+            regInfo.classList.remove('flash');
+            // force reflow to restart animation
+            void regInfo.offsetWidth;
+            regInfo.classList.add('flash');
+          }
+        });
+      }
+
+      // Restore saved values on load (but do not auto-apply them)
+      try {
+        const savedReg = localStorage.getItem('opennotes_reg');
+        const savedSem = localStorage.getItem('opennotes_sem');
+        if (reg && savedReg) reg.value = savedReg;
+        if (sem && savedSem) sem.value = savedSem;
+      } catch (e) {}
+    })();
   </script>
 
 </body>
