@@ -186,6 +186,8 @@ header {
     padding: 40px 20px;
     position: relative;
 }
+/* smooth transition for header pop */
+.card-header { transition: transform 0.22s cubic-bezier(.2,.9,.3,1), box-shadow 0.22s ease; }
 
 .card-header .icon-wrap {
     width: 70px;
@@ -197,7 +199,13 @@ header {
     justify-content: center;
     margin: 0 auto 15px;
     font-size: 28px;
-    animation: pulse 2s infinite;
+    animation: pulse 3s ease-in-out infinite;
+}
+/* Pause animation and pop icon on card hover */
+.card-header:hover .icon-wrap {
+    animation-play-state: paused;
+    transform: scale(1.18) rotate(90deg);
+    transition: transform 0.18s ease-out;
 }
 
 @keyframes pulse {
@@ -208,6 +216,13 @@ header {
 .card-header h3 {
     font-size: 1.3rem;
     font-weight: 700;
+}
+
+/* Pop the header above other cards on hover */
+.syllabus-card:hover .card-header {
+    transform: translateY(-12px) scale(1.025);
+    z-index: 120;
+    box-shadow: 0 30px 60px rgba(16,24,40,0.28);
 }
 
 .dept-code {
