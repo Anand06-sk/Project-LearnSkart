@@ -165,6 +165,9 @@ header {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
+    display: block; /* anchor styling */
+    text-decoration: none;
+    color: inherit;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--text-light);
     opacity: 0;
@@ -273,7 +276,7 @@ header {
 }
 
 /* subtle pop animation on change */
-.stat-item .pop { transform: scale(1.06); transition: transform 0.2s ease; }
+.stat-item .pop { transform: scale(1.06); transition: transform 0.5s ease; }
 
 .stat-item p {
     font-weight: 600;
@@ -351,6 +354,9 @@ footer {
     background: var(--bg-dark);
     color: var(--text-light);
 }
+.dark-mode .section-title h2 {
+    color: var(--text-light);
+}
 
 .dark-mode .syllabus-card {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -404,12 +410,24 @@ footer {
     </div>
 
     <div class="dept-syllabus-grid">
-        <div class="syllabus-card cse-card"><div class="card-header"><div class="icon-wrap"><i class="fas fa-laptop-code"></i></div><h3>Computer Science</h3><span class="dept-code">CSE</span></div></div>
-        <div class="syllabus-card ece-card"><div class="card-header"><div class="icon-wrap"><i class="fas fa-microchip"></i></div><h3>Electronics & Communication</h3><span class="dept-code">ECE</span></div></div>
-        <div class="syllabus-card eee-card"><div class="card-header"><div class="icon-wrap"><i class="fas fa-bolt"></i></div><h3>Electrical & Electronics</h3><span class="dept-code">EEE</span></div></div>
-        <div class="syllabus-card mech-card"><div class="card-header"><div class="icon-wrap"><i class="fas fa-cogs"></i></div><h3>Mechanical Engineering</h3><span class="dept-code">MECH</span></div></div>
-        <div class="syllabus-card civil-card"><div class="card-header"><div class="icon-wrap"><i class="fas fa-building"></i></div><h3>Civil Engineering</h3><span class="dept-code">CIVIL</span></div></div>
-        <div class="syllabus-card it-card"><div class="card-header"><div class="icon-wrap"><i class="fas fa-server"></i></div><h3>Information Technology</h3><span class="dept-code">IT</span></div></div>
+        <a href="sypdf.html?dept=CSE" class="syllabus-card cse-card" aria-label="Computer Science — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-laptop-code"></i></div><h3>Computer Science</h3><span class="dept-code">CSE</span></div>
+        </a>
+        <a href="sypdf.html?dept=ECE" class="syllabus-card ece-card" aria-label="Electronics & Communication — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-microchip"></i></div><h3>Electronics & Communication</h3><span class="dept-code">ECE</span></div>
+        </a>
+        <a href="sypdf.html?dept=EEE" class="syllabus-card eee-card" aria-label="Electrical & Electronics — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-bolt"></i></div><h3>Electrical & Electronics</h3><span class="dept-code">EEE</span></div>
+        </a>
+        <a href="sypdf.html?dept=MECH" class="syllabus-card mech-card" aria-label="Mechanical Engineering — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-cogs"></i></div><h3>Mechanical Engineering</h3><span class="dept-code">MECH</span></div>
+        </a>
+        <a href="sypdf.html?dept=CIVIL" class="syllabus-card civil-card" aria-label="Civil Engineering — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-building"></i></div><h3>Civil Engineering</h3><span class="dept-code">CIVIL</span></div>
+        </a>
+        <a href="sypdf.html?dept=IT" class="syllabus-card it-card" aria-label="Information Technology — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-server"></i></div><h3>Information Technology</h3><span class="dept-code">IT</span></div>
+        </a>
     </div>
 
     <div class="stats">
@@ -423,7 +441,7 @@ footer {
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h4><i class="fas fa-book"></i> OpenNotes</h4>
+            <h4><i class="fas fa-book"></i> LearnSkart</h4>
             <p>Your one-stop destination for academic excellence.</p>
         </div>
         <div class="footer-section">
