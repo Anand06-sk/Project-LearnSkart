@@ -33,8 +33,10 @@ body{
   -webkit-font-smoothing:antialiased; 
   -moz-osx-font-smoothing:grayscale;
   min-height:100vh; 
-  padding-bottom:80px;
-  overflow-y:scroll;
+  display:flex;
+  flex-direction:column;
+  padding-bottom:0; /* removed bottom padding so footer can sit flush */
+  overflow-y:auto;
   background-attachment: fixed;
   padding-top: 80px; /* Account for fixed header */
 }
@@ -149,6 +151,8 @@ header {
   color: var(--primary); /* primary-colored text inside container */
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(15,23,42,0.04);
+  flex: 1 0 auto;
+  min-height: 0;
 }
 
 .page-header{ 
@@ -478,6 +482,73 @@ header {
 }
 
 /* Centered regulation block handled above; duplicate rules removed to avoid conflicts */
+
+/* Footer styles copied from syllabus.html for consistent site footer */
+footer {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-light);
+  padding: 50px 20px 20px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeIn 1.5s ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.footer-section ul li a:hover {
+  opacity: 1;
+}
+
+.social-links a {
+  color: var(--text-light);
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 </style>
 </head>
 <body>
@@ -538,11 +609,36 @@ header {
       <h2 style="margin-top:12px; font-family:'Poppins';">No PDFs Found</h2>
       <p style="opacity:0.9;">Nothing matches your filters. Try a different regulation or reset the filters.</p>
       </div>
-  </div>
+</div>
 
-  <footer style="text-align:center; padding:28px 12px; opacity:0.9;">
-    <p>&copy; 2025 LearnSkart — UI Preview. This page is a static UI demo without dynamic data.</p>
-  </footer>
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4><i class="fas fa-book"></i> LearnSkart</h4>
+      <p>Your one-stop destination for academic excellence.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 OpenNotes. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+  </div>
+</footer>
 
   <script>
     (function(){
