@@ -807,5 +807,54 @@
     })();
   </script>
 
+  <!-- Added behavior: make subject cards clickable and navigate to pdfs.html -->
+  <script>
+    (function () {
+      function addClickHandlers() {
+        document.querySelectorAll('.note-card').forEach(card => {
+          if (card.dataset.clickBound === '1') return;
+          card.dataset.clickBound = '1';
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', function () {
+            const subject = this.textContent.trim();
+            // derive semester from closest section id (like "semester-1")
+            let semester = '';
+            const section = this.closest('.section');
+            if (section && section.id && section.id.startsWith('semester-')) {
+              semester = section.id.split('-')[1];
+            } else {
+              semester = document.getElementById('sem') ? document.getElementById('sem').value : '';
+            }
+
+            const regulation = document.getElementById('reg') ? document.getElementById('reg').value : '2021';
+
+            if (!semester) {
+              alert('Please select a semester first (use the Semester dropdown) or click the subject inside its semester section.');
+              return;
+            }
+
+            const params = new URLSearchParams({
+              regulation: regulation,
+              semester: semester,
+              subject: subject,
+              department: 'ece'
+            });
+
+            // Navigate to pdfs page
+            window.location.href = 'pdfs.html?' + params.toString();
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addClickHandlers);
+      } else {
+        addClickHandlers();
+      }
+
+      window.addEventListener('load', addClickHandlers);
+    })();
+  </script>
+
 </body>
 </html>
