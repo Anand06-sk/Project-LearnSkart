@@ -145,20 +145,38 @@ header {
   max-width:1200px; 
   margin:0 auto; 
   padding: 20px; 
+  background: var(--text-light); /* white container background */
+  color: var(--primary); /* primary-colored text inside container */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.04);
 }
 
 .page-header{ 
   position:relative; 
-  border-radius:14px; 
-  padding:28px 18px; 
+  border-radius:16px; 
+  padding:36px 28px; 
   text-align:center; 
-  margin-bottom:22px; 
-  background: linear-gradient(135deg, var(--primary), var(--secondary)); 
-  border:1px solid rgba(0,0,0,0.04); 
+  margin-bottom:28px; 
+  background: var(--text-light); /* white */
+  border: none; /* remove border for a cleaner look */
   backdrop-filter: blur(6px); 
   -webkit-backdrop-filter: blur(6px); 
-  box-shadow: 0 10px 20px rgba(15,23,42,0.04); 
-  overflow:hidden; 
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06); 
+  overflow:visible; 
+}
+.page-header::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:-6px;
+  transform:translateX(-50%);
+  width:120px;
+  height:4px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  opacity:0.08;
+  box-shadow: 0 6px 18px rgba(102,126,234,0.04);
+  pointer-events:none;
 }
 .page-header::before{ 
   content:''; 
@@ -178,23 +196,77 @@ header {
 
 .page-header h1{ 
   font-family:'Poppins',sans-serif; 
-  font-size:28px; 
-  margin-bottom:8px; 
-  letter-spacing:0.3px; 
-  color:var(--text-light); 
+  font-size:40px; 
+  margin-bottom:6px; 
+  letter-spacing:-0.2px; 
+  color:var(--primary); /* use primary color for heading */
+  font-weight:800;
+  line-height:1.04;
   position:relative; 
   display:inline-block; 
+  text-rendering:optimizeLegibility;
 }
-.page-header h1::after{ display:none; }
+.page-header h1::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-12px;
+  transform:translateX(-50%);
+  width:56px;
+  height:4px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  opacity:0.12;
+}
 .breadcrumb{ 
   display:flex; 
   gap:8px; 
   justify-content:center; 
   align-items:center; 
   opacity:0.9; 
-  margin-bottom:8px; 
+  margin-bottom:10px; 
   font-size:14px; 
-  color:var(--text-light); 
+  color:var(--muted); /* subtle subtitle color */
+  font-weight:600;
+}
+
+.page-header .pdf-count{
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98));
+  color: var(--primary);
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 8px 22px rgba(15,23,42,0.04);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+/* thin divider inside header for a refined separation */
+.header-divider{
+  height:1px;
+  width:48%;
+  margin:12px auto 10px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(102,126,234,0.06), rgba(118,75,162,0.03));
+  opacity:0.7;
+}
+
+.reg-text{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  color:var(--primary);
+  font-weight:700;
+}
+.reg-center .filter-select{
+  padding:6px 12px;
+  border-radius:999px;
+  box-shadow: 0 8px 24px rgba(102,126,234,0.06);
+  border: 1px solid rgba(15,23,42,0.06);
+}
+
+@media (max-width:768px){
+  .page-header h1{ font-size:20px; }
+  .breadcrumb{ font-size:13px; }
 }
 
 .pdf-count{ 
@@ -202,22 +274,20 @@ header {
   align-items:center; 
   gap:8px; 
   margin-top:10px; 
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,247,255,0.95)); 
-  padding:8px 12px; 
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98)); 
+  padding:8px 14px; 
   border-radius:999px; 
   font-weight:700; 
   color:var(--text-dark); 
-  border:1px solid rgba(15,23,42,0.04); 
-}
-
-/* Filters */
-.filters{ 
-  display:flex; 
+  border:1px solid rgba(15,23,42,0.06); 
+  box-shadow: 0 8px 22px rgba(15,23,42,0.04);
   gap:12px; 
   justify-content:center;
   align-items:center; 
-  margin:18px 0 24px; 
+  margin:18px auto 24px; /* center the block */
   flex-wrap:wrap; 
+  width:fit-content; /* shrink-wrap so auto margins center it */
+  max-width:100%;
 }
 .filter-select, .filter-input{ 
   background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,247,255,0.95)); 
@@ -387,6 +457,29 @@ header {
   .pdf-grid{ grid-template-columns: 1fr; } 
 }
 
+/* Centered regulation block styling (transparent block, blue text) */
+.reg-center{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  background: transparent;
+  padding:0;
+  border-radius:0;
+  width:auto;
+}
+.reg-center .reg-text{
+  color: var(--primary);
+  font-weight:700;
+  opacity:0.95;
+}
+.reg-center .filter-select{
+  color: var(--primary);
+  font-weight:700;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.06);
+}
 </style>
 </head>
 <body>
@@ -403,16 +496,21 @@ header {
   <div class="container">
     <div class="page-header">
     <h1 id="page-title"><i class="fas fa-file-pdf"></i> PDF Resources — UI Preview</h1>
-    <div class="breadcrumb"><span><i class="fas fa-graduation-cap"></i> Regulation: <strong id="breadcrumb-reg">2021</strong></span><span>/</span><span><i class="fas fa-layer-group"></i> Department: <strong id="breadcrumb-dept">CSE</strong></span></div>
+    <div class="breadcrumb"><span><i class="fas fa-layer-group"></i> Department: <strong id="breadcrumb-dept">CSE</strong></span></div>
+    <div class="header-divider" aria-hidden="true"></div>
+    <div class="reg-center">
+      <div class="reg-text"><i class="fas fa-graduation-cap"></i> Regulation: <strong id="breadcrumb-reg">2021</strong></div>
+      <label style="display:block">
+        <select id="filter-reg" class="filter-select" aria-label="Regulation">
+          <option value="2021">2021</option>
+          <option value="2025">2025</option>
+        </select>
+      </label>
+    </div>
     <div class="pdf-count"><i class="fas fa-file"></i><span id="countBadge">0</span> PDFs Available</div>
 
       <div class="filters" aria-label="filters">
-        <label class="filter-label"><span style="font-weight:600; opacity:0.9">Regulation</span>
-          <select id="filter-reg" class="filter-select" aria-label="Regulation">
-            <option value="2021">2021</option>
-            <option value="2025">2025</option>
-          </select>
-        </label>
+        <!-- Regulation select moved above into the header center block -->
 
         <label style="display:none"><span style="font-weight:600; opacity:0.9">Department</span>
           <select id="filter-dept" class="filter-select" aria-label="Department" disabled>

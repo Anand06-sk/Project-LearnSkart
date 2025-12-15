@@ -1,428 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LearnSkart — PDF UI (Preview)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LearnSkart — PDF UI (Preview)</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary: #667eea;
-      --secondary: #764ba2;
-      --bg-1: #fbfdff;
-      --bg-2: #f3f6ff;
-      --glass: rgba(255,255,255,0.84);
-      --glass-2: rgba(255,255,255,0.9);
-      --neon-1: var(--primary); /* header color */
-      --neon-2: var(--secondary);
-      --accent: #C79D3D; /* warm gold */
-      --text-dark: #0f172a;
-      --muted: rgba(17,24,39,0.55);
-      --text-light: #ffffff;
-    }
+ <style>
+:root{
+  --primary:#667eea;
+  --secondary:#764ba2;
+  --bg-1:#fbfdff;
+  --bg-2:#f3f6ff;
+  --glass:rgba(255,255,255,0.84);
+  --glass-2: rgba(255,255,255,0.9);
+  --neon-1: var(--primary);
+  --neon-2: var(--secondary);
+  --accent: #C79D3D;
+  --text-dark: #0f172a;
+  --muted: rgba(17,24,39,0.55);
+  --text-light: #ffffff;
+}
 
-    * { box-sizing: border-box; margin:0; padding:0; }
-    html,body{ height:100%; }
-    body{
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
-      color: var(--text-dark);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh; padding-bottom:80px;
-      overflow-y:scroll;
-      background-attachment: fixed;
-    }
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body{ height:100%; }
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  color: var(--text-dark);
+  -webkit-font-smoothing:antialiased; 
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh; 
+  padding-bottom:80px;
+  overflow-y:scroll;
+  background-attachment: fixed;
+  padding-top: 80px; /* Account for fixed header */
+}
 
-    /* Animated ambient glow behind page */
-    body::before{ content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0.06; background: conic-gradient(from 90deg at 50% 50%, rgba(118,75,162,0.05), rgba(102,126,234,0.04)); animation: ambient 40s linear infinite; }
-    @keyframes ambient { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+/* Animated ambient glow behind page */
+body::before{ 
+  content:''; 
+  position:fixed; 
+  inset:0; 
+  z-index:-1; 
+  pointer-events:none; 
+  opacity:0.06; 
+  background: conic-gradient(from 90deg at 50% 50%, rgba(118,75,162,0.05), rgba(102,126,234,0.04)); 
+  animation: ambient 40s linear infinite; 
+}
+@keyframes ambient { 
+  from { transform: rotate(0deg); } 
+  to { transform: rotate(360deg); } 
+}
 
-    header{ position:sticky; top:16px; z-index:999; margin:12px auto; max-width:1200px; display:flex; align-items:center; justify-content:space-between; padding:18px 28px; border-radius:14px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--text-light); border:1px solid rgba(0,0,0,0.06); box-shadow: 0 6px 24px rgba(15,23,42,0.08); }
-    header::after{ content:''; position:absolute; inset:-2px; border-radius:14px; pointer-events:none; box-shadow: 0 0 20px rgba(118,75,162,0.05), 0 0 32px rgba(118,75,162,0.02) inset; mix-blend-mode: screen; }
-    .logo{ font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; display:flex; align-items:center; gap:14px; color:var(--bg-1); letter-spacing:0.4px; }
-    .logo .orb{ width:10px; height:10px; display:inline-block; border-radius:50%; margin-left:6px; background: radial-gradient(circle at 30% 30%, var(--neon-1), var(--neon-2)); box-shadow: 0 6px 22px rgba(118,75,162,0.08), 0 0 16px rgba(118,75,162,0.04); animation: orbPulse 2.8s ease-in-out infinite; }
-    @keyframes orbPulse{ 0%{ transform: translateY(0) } 50%{ transform: translateY(-3px) scale(1.02) } 100%{ transform: translateY(0) } }
-    .logo i{ background: linear-gradient(90deg,var(--neon-1),var(--neon-2)); -webkit-background-clip:text; background-clip:text; color:transparent; font-size:18px; }
+/* Full-Width Header Background - TOP COVERAGE + REDUCED HEIGHT */
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px); 
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+  color: var(--text-light); 
+  border: none;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.15);
+  border-radius: 0;
+  max-width: 100%;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
 
-    .header-actions{ display:flex; gap:12px; align-items:center; }
-    .back-btn{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; font-weight:700; font-size:14px; color:var(--text-light); text-decoration:none; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); transition: transform .12s ease, box-shadow .12s ease; box-shadow: 0 6px 18px rgba(15,23,42,0.06); }
-    .back-btn i{ color: var(--text-light); }
-    .back-btn:hover{ transform:translateY(-2px); box-shadow: 0 10px 28px rgba(102,126,234,0.12); }
+header { 
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative; 
+}
 
-    .container{ max-width:1200px; margin:68px auto; padding: 20px; }
+/* Logo pinned to TOP LEFT CORNER */
+.logo {
+  position: absolute; 
+  left: 20px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 800; 
+  font-size: 20px;
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+  color: var(--bg-1); 
+  letter-spacing: 0.3px;
+  z-index: 1000; 
+}
 
-    .page-header{ position:relative; border-radius:14px; padding:28px 18px; text-align:center; margin-bottom:22px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border:1px solid rgba(0,0,0,0.04); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 10px 20px rgba(15,23,42,0.04); overflow:hidden; }
-    .page-header::before{ content:''; position:absolute; inset:-60% -40% auto auto; width:520px; height:520px; background: radial-gradient(circle, rgba(102,126,234,0.04), rgba(118,75,162,0.02)); transform:translateY(-20%); filter:blur(50px); animation: floatY 10s ease-in-out infinite alternate; pointer-events:none; }
-    @keyframes floatY{ to { transform: translateY(10%); } }
+.logo i {
+  color: var(--bg-1);
+  font-size: 16px;
+}
 
-    .page-header h1{ font-family:'Poppins',sans-serif; font-size:28px; margin-bottom:8px; letter-spacing:0.3px; color:var(--text-light); position:relative; display:inline-block; }
-    /* Decorative underline removed to prevent overlap with breadcrumb */
-    .page-header h1::after{ display:none; }
-    .breadcrumb{ display:flex; gap:8px; justify-content:center; align-items:center; opacity:0.9; margin-bottom:8px; font-size:14px; color:var(--text-light); }
+/* Actions stay on RIGHT side */
+.header-actions { 
+  display: flex; 
+  gap: 8px;
+  align-items: center;
+  margin-left: auto; 
+}
 
-    .pdf-count{ display:inline-flex; align-items:center; gap:8px; margin-top:10px; background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,247,255,0.95)); padding:8px 12px; border-radius:999px; font-weight:700; color:var(--text-dark); border:1px solid rgba(15,23,42,0.04); }
+.back-btn{ 
+  display:inline-flex; 
+  align-items:center; 
+  gap:8px; 
+  padding:8px 12px; 
+  border-radius:10px; 
+  font-weight:700; 
+  font-size:13px; 
+  color:var(--text-light); 
+  text-decoration:none; 
+  background: rgba(255,255,255,0.08); 
+  border:1px solid rgba(255,255,255,0.14); 
+  transition: transform .12s ease, box-shadow .12s ease; 
+  box-shadow: 0 4px 12px rgba(15,23,42,0.08); 
+  white-space: nowrap;
+}
+.back-btn i{ color: var(--text-light); }
+.back-btn:hover{ 
+  transform:translateY(-1px); 
+  box-shadow: 0 6px 20px rgba(102,126,234,0.15); 
+}
 
-    /* filters */
-    .filters{ display:flex; gap:12px; justify-content:center; align-items:center; margin:18px 0 24px; flex-wrap:wrap; }
-    .filter-select, .filter-input{ background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,247,255,0.95)); color:var(--text-dark); border:1px solid rgba(15,23,42,0.06); padding:8px 12px; border-radius:12px; font-weight:600; outline:none; box-shadow: 0 6px 18px rgba(15,23,42,0.04); transition: transform .12s ease, box-shadow .12s ease; }
-    .filter-select:focus, .filter-input:focus{ transform:translateY(-4px); box-shadow: 0 18px 60px rgba(102,126,234,0.08), 0 2px 10px rgba(0,0,0,0.08); }
-    .filter-input{ width:320px; max-width:40vw; }
-    .filter-actions{ display:flex; gap:8px; }
-    .btn-apply{ padding:10px 16px; border-radius:12px; background-image: linear-gradient(90deg, var(--primary), var(--secondary)); border:none; color:#fff; font-weight:700; cursor:pointer; box-shadow: 0 10px 24px rgba(102,126,234,0.08); transition: transform .14s ease, box-shadow .14s ease; background-size:200% 100%; background-position:0% 0%; }
-    .btn-apply:hover{ transform: translateY(-6px); box-shadow: 0 24px 80px rgba(31,78,121,0.14); background-position:100% 0; }
-    .btn-reset{ padding:8px 12px; border-radius:12px; background: transparent; border:1px dashed rgba(15,23,42,0.06); color:var(--muted); font-weight:700; cursor:pointer; }
-    .btn-apply:active{ transform: translateY(-2px) scale(0.995); }
+.container{ 
+  max-width:1200px; 
+  margin:0 auto; 
+  padding: 20px; 
+  background: var(--text-light); /* white container background */
+  color: var(--primary); /* primary-colored text inside container */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.04);
+}
 
-    /* grid */
-    .pdf-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:20px; margin-top:12px; }
-    .pdf-card{ position:relative; overflow:hidden; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246, 249, 255,0.98)); border-radius:14px; padding:20px; border:1px solid rgba(15,23,42,0.04); display:flex; flex-direction:column; gap:12px; box-shadow: 0 6px 18px rgba(15,23,42,0.06); transform: translateZ(0); transition: transform .24s cubic-bezier(.2,.9,.2,1), box-shadow .2s ease; min-height:120px; color:var(--text-dark); }
-    .pdf-card:hover{ transform:translateY(-6px); box-shadow: 0 18px 48px rgba(15,23,42,0.08), 0 6px 20px rgba(31,78,121,0.02); }
-    .pdf-card::before{ content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(120deg, rgba(255,255,255,0.0), rgba(255,255,255,0.03)); mix-blend-mode: overlay; opacity:0; transition: opacity .36s ease; }
-    .pdf-card:hover::before{ opacity:1; }
-    .pdf-header{ display:flex; gap:12px; align-items:flex-start; }
-    .pdf-icon{ width:62px; height:62px; border-radius:12px; background: linear-gradient(135deg,var(--neon-1),var(--neon-2)); background-size:150% 150%; display:flex; align-items:center; justify-content:center; font-size:22px; color:#fff; box-shadow: inset 0 -6px 18px rgba(255,255,255,0.06), 0 6px 20px rgba(102,126,234,0.06); transform-origin:center; transition: transform .4s cubic-bezier(.17,.67,.21,1); animation: gradientShift 6s linear infinite; }
-    .pdf-card:hover .pdf-icon{ transform: rotate(6deg) scale(1.06); }
-    @keyframes gradientShift{ 0%{ background-position: 0% 50% } 50%{ background-position: 100% 50% } 100%{ background-position: 0% 50% } }
-    .pdf-name{ font-weight:800; font-size:15px; color:var(--text-dark); }
-    .pdf-meta{ font-size:13px; opacity:0.9; color:var(--muted); }
-    .pdf-footer{ display:flex; gap:8px; margin-top:auto; }
-    .btn-view{ flex:1; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98)); color:var(--text-dark); padding:10px; border-radius:12px; text-decoration:none; text-align:center; border:1px solid rgba(15,23,42,0.04); font-weight:700; transition: transform .12s ease, box-shadow .12s ease; }
-    .btn-view:hover{ transform: translateY(-4px); box-shadow: 0 8px 30px rgba(15,23,42,0.06); }
-    .btn-download{ flex:1; background-image: linear-gradient(90deg,var(--primary),var(--accent)); color:#fff; padding:10px; border-radius:12px; border:none; text-decoration:none; text-align:center; font-weight:800; box-shadow: 0 14px 48px rgba(14,165,164,0.06); transition: transform .12s ease, box-shadow .12s ease; }
-    .btn-download:hover{ transform:translateY(-6px) scale(1.02); box-shadow: 0 26px 86px rgba(102,126,234,0.08); }
+.page-header{ 
+  position:relative; 
+  border-radius:16px; 
+  padding:36px 28px; 
+  text-align:center; 
+  margin-bottom:28px; 
+  background: var(--text-light); /* white */
+  border: none; /* remove border for a cleaner look */
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px); 
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06); 
+  overflow:visible; 
+}
+.page-header::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:-6px;
+  transform:translateX(-50%);
+  width:120px;
+  height:4px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  opacity:0.08;
+  box-shadow: 0 6px 18px rgba(102,126,234,0.04);
+  pointer-events:none;
+}
+.page-header::before{ 
+  content:''; 
+  position:absolute; 
+  inset:-60% -40% auto auto; 
+  width:520px; 
+  height:520px; 
+  background: radial-gradient(circle, rgba(102,126,234,0.04), rgba(118,75,162,0.02)); 
+  transform:translateY(-20%); 
+  filter:blur(50px); 
+  animation: floatY 10s ease-in-out infinite alternate; 
+  pointer-events:none; 
+}
+@keyframes floatY{ 
+  to { transform: translateY(10%); } 
+}
 
-    /* Type badge and disabled action styles */
-    .type-badge{ display:inline-block; margin-left:12px; font-size:12px; padding:4px 10px; border-radius:999px; background: rgba(255,255,255,0.98) !important; color:var(--text-dark) !important; font-weight:700; border: 1px solid rgba(15,23,42,0.04); }
-    .btn-view.disabled, .btn-download.disabled{ opacity:0.45; pointer-events:none; cursor:default; }
+.page-header h1{ 
+  font-family:'Poppins',sans-serif; 
+  font-size:40px; 
+  margin-bottom:6px; 
+  letter-spacing:-0.2px; 
+  color:var(--primary); /* use primary color for heading */
+  font-weight:800;
+  line-height:1.04;
+  position:relative; 
+  display:inline-block; 
+  text-rendering:optimizeLegibility;
+}
+.page-header h1::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-12px;
+  transform:translateX(-50%);
+  width:56px;
+  height:4px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  opacity:0.12;
+}
+.breadcrumb{ 
+  display:flex; 
+  gap:8px; 
+  justify-content:center; 
+  align-items:center; 
+  opacity:0.9; 
+  margin-bottom:10px; 
+  font-size:14px; 
+  color:var(--muted); /* subtle subtitle color */
+  font-weight:600;
+}
 
-    /* Empty state */
-    .empty-state i{ color: rgba(15,23,42,0.12); filter: drop-shadow(0 8px 20px rgba(31,78,121,0.05)); }
+.page-header .pdf-count{
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98));
+  color: var(--primary);
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 8px 22px rgba(15,23,42,0.04);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:800;
+}
 
-    @media (max-width:1024px){ .container{ padding:18px } .page-header{ padding:24px; } }
-    @media (max-width:768px){ header{ padding:10px 16px } .container{ padding:12px } .page-header h1{ font-size:20px } .pdf-grid{ grid-template-columns: 1fr; } .filter-input{ width:100%; max-width:100%; } }
-  </style>
+/* thin divider inside header for a refined separation */
+.header-divider{
+  height:1px;
+  width:48%;
+  margin:12px auto 10px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(102,126,234,0.06), rgba(118,75,162,0.03));
+  opacity:0.7;
+}
+
+.reg-text{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  color:var(--primary);
+  font-weight:700;
+}
+.reg-center .filter-select{
+  padding:6px 12px;
+  border-radius:999px;
+  box-shadow: 0 8px 24px rgba(102,126,234,0.06);
+  border: 1px solid rgba(15,23,42,0.06);
+}
+
+@media (max-width:768px){
+  .page-header h1{ font-size:20px; }
+  .breadcrumb{ font-size:13px; }
+}
+
+.pdf-count{ 
+  display:inline-flex; 
+  align-items:center; 
+  gap:8px; 
+  margin-top:10px; 
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98)); 
+  padding:8px 14px; 
+  border-radius:999px; 
+  font-weight:700; 
+  color:var(--text-dark); 
+  border:1px solid rgba(15,23,42,0.06); 
+  box-shadow: 0 8px 22px rgba(15,23,42,0.04);
+  gap:12px; 
+  justify-content:center;
+  align-items:center; 
+  margin:18px auto 24px; /* center the block */
+  flex-wrap:wrap; 
+  width:fit-content; /* shrink-wrap so auto margins center it */
+  max-width:100%;
+}
+.filter-select, .filter-input{ 
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,247,255,0.95)); 
+  color:var(--text-dark); 
+  border:1px solid rgba(15,23,42,0.06); 
+  padding:8px 12px; 
+  border-radius:12px; 
+  font-weight:600; 
+  outline:none; 
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04); 
+  transition: transform .12s ease, box-shadow .12s ease; 
+}
+.filter-select:focus, .filter-input:focus{ 
+  transform:translateY(-4px); 
+  box-shadow: 0 18px 60px rgba(102,126,234,0.08), 0 2px 10px rgba(0,0,0,0.08); 
+}
+.filter-input{ width:320px; max-width:40vw; }
+.filter-actions{ display:flex; gap:8px; }
+.filter-label span {
+  color: var(--text-dark);
+  font-weight:600; 
+  opacity:0.9;
+}
+
+/* Grid */
+.pdf-grid{ 
+  display:grid; 
+  grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); 
+  gap:20px; 
+  margin-top:12px; 
+}
+.pdf-card{ 
+  position:relative; 
+  overflow:hidden; 
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246, 249, 255,0.98)); 
+  border-radius:14px; 
+  padding:20px; 
+  border:1px solid rgba(15,23,42,0.04); 
+  display:flex; 
+  flex-direction:column; 
+  gap:12px; 
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06); 
+  transform: translateZ(0); 
+  transition: transform .24s cubic-bezier(.2,.9,.2,1), box-shadow .2s ease; 
+  min-height:120px; 
+  color:var(--text-dark); 
+}
+.pdf-card:hover{ 
+  transform:translateY(-6px); 
+  box-shadow: 0 18px 48px rgba(15,23,42,0.08), 0 6px 20px rgba(31,78,121,0.02); 
+}
+.pdf-card::before{ 
+  content:''; 
+  position:absolute; 
+  inset:0; 
+  pointer-events:none; 
+  background: linear-gradient(120deg, rgba(255,255,255,0.0), rgba(255,255,255,0.03)); 
+  mix-blend-mode: overlay; 
+  opacity:0; 
+  transition: opacity .36s ease; 
+}
+.pdf-card:hover::before{ opacity:1; }
+.pdf-header{ display:flex; gap:12px; align-items:flex-start; }
+.pdf-icon{ 
+  width:62px; 
+  height:62px; 
+  border-radius:12px; 
+  background: linear-gradient(135deg,var(--neon-1),var(--neon-2)); 
+  background-size:150% 150%; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  font-size:22px; 
+  color:#fff; 
+  box-shadow: inset 0 -6px 18px rgba(255,255,255,0.06), 0 6px 20px rgba(102,126,234,0.06); 
+  transform-origin:center; 
+  transition: transform .4s cubic-bezier(.17,.67,.21,1); 
+  animation: gradientShift 6s linear infinite; 
+}
+.pdf-card:hover .pdf-icon{ transform: rotate(6deg) scale(1.06); }
+@keyframes gradientShift{ 
+  0%{ background-position: 0% 50% } 
+  50%{ background-position: 100% 50% } 
+  100%{ background-position: 0% 50% } 
+}
+.pdf-name{ font-weight:800; font-size:15px; color:var(--text-dark); }
+.pdf-meta{ font-size:13px; opacity:0.9; color:var(--muted); }
+.pdf-footer{ display:flex; gap:8px; margin-top:auto; }
+.btn-view{ 
+  flex:1; 
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98)); 
+  color:var(--text-dark); 
+  padding:10px; 
+  border-radius:12px; 
+  text-decoration:none; 
+  text-align:center; 
+  border:1px solid rgba(15,23,42,0.04); 
+  font-weight:700; 
+  transition: transform .12s ease, box-shadow .12s ease; 
+}
+.btn-view:hover{ 
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 30px rgba(15,23,42,0.06); 
+}
+.btn-download{ 
+  flex:1; 
+  background-image: linear-gradient(90deg,var(--primary),var(--accent)); 
+  color:#fff; 
+  padding:10px; 
+  border-radius:12px; 
+  border:none; 
+  text-decoration:none; 
+  text-align:center; 
+  font-weight:800; 
+  box-shadow: 0 14px 48px rgba(14,165,164,0.06); 
+  transition: transform .12s ease, box-shadow .12s ease; 
+}
+.btn-download:hover{ 
+  transform:translateY(-6px) scale(1.02); 
+  box-shadow: 0 26px 86px rgba(102,126,234,0.08); 
+}
+
+/* Type badge and disabled action styles */
+.type-badge{ 
+  display:inline-block; 
+  margin-left:12px; 
+  font-size:12px; 
+  padding:4px 10px; 
+  border-radius:999px; 
+  background: rgba(255,255,255,0.98) !important; 
+  color:var(--text-dark) !important; 
+  font-weight:700; 
+  border: 1px solid rgba(15,23,42,0.04); 
+}
+.btn-view.disabled, .btn-download.disabled{ 
+  opacity:0.45; 
+  pointer-events:none; 
+  cursor:default; 
+}
+
+/* Empty state */
+.empty-state i{ 
+  color: rgba(15,23,42,0.12); 
+  filter: drop-shadow(0 8px 20px rgba(31,78,121,0.05)); 
+}
+
+@media (max-width:1024px){ 
+  .container{ padding:18px } 
+  .page-header{ padding:24px; } 
+}
+@media (max-width:768px){ 
+  header{ 
+    padding: 0 12px;
+  } 
+  .logo {
+    font-size:18px;
+  }
+  .logo i {
+    font-size:14px;
+  }
+  .back-btn {
+    padding:6px 10px;
+    font-size:12px;
+  }
+  .container{ padding:12px } 
+  .page-header h1{ font-size:20px } 
+  .pdf-grid{ grid-template-columns: 1fr; } 
+}
+
+/* Centered regulation block styling (transparent block, blue text) */
+.reg-center{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  background: transparent;
+  padding:0;
+  border-radius:0;
+  width:auto;
+}
+.reg-center .reg-text{
+  color: var(--primary);
+  font-weight:700;
+  opacity:0.95;
+}
+.reg-center .filter-select{
+  color: var(--primary);
+  font-weight:700;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.06);
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo"><i class="fas fa-book"></i> LearnSkart <span class="orb" aria-hidden="true"></span></div>
-    <div class="header-actions">
-      <a href="index.html" class="back-btn"><i class="fas fa-home"></i> Home</a>
-      <a href="syllabus.html" class="back-btn"><i class="fas fa-file-pdf"></i> Syllabus</a>
+    <div class="header-wrapper">
+    <header>
+    <div class="logo"><i class="fas fa-book"></i> LearnSkart </div>
+    <div class="header-actions">
+      <a href="index.html" class="back-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="syllabus.html" class="back-btn"><i class="fas fa-file-pdf"></i> Syllabus</a>
+    </div>
+    </header>
+    </div>
+
+  <div class="container">
+    <div class="page-header">
+    <h1 id="page-title"><i class="fas fa-file-pdf"></i> PDF Resources — UI Preview</h1>
+    <div class="breadcrumb"><span><i class="fas fa-layer-group"></i> Department: <strong id="breadcrumb-dept">CSE</strong></span></div>
+    <div class="header-divider" aria-hidden="true"></div>
+    <div class="reg-center">
+      <div class="reg-text"><i class="fas fa-graduation-cap"></i> Regulation: <strong id="breadcrumb-reg">2021</strong></div>
+      <label style="display:block">
+        <select id="filter-reg" class="filter-select" aria-label="Regulation">
+          <option value="2021">2021</option>
+          <option value="2025">2025</option>
+        </select>
+      </label>
     </div>
-  </header>
+    <div class="pdf-count"><i class="fas fa-file"></i><span id="countBadge">0</span> PDFs Available</div>
 
-  <div class="container">
-    <div class="page-header">
-    <h1 id="page-title"><i class="fas fa-file-pdf"></i> PDF Resources — UI Preview</h1>
-    <div class="breadcrumb"><span><i class="fas fa-graduation-cap"></i> Regulation: <strong id="breadcrumb-reg">2021</strong></span><span>/</span><span><i class="fas fa-layer-group"></i> Department: <strong id="breadcrumb-dept">CSE</strong></span></div>
-    <div class="pdf-count"><i class="fas fa-file"></i><span id="countBadge">0</span> PDFs Available</div>
+      <div class="filters" aria-label="filters">
+        <!-- Regulation select moved above into the header center block -->
 
-      <div class="filters" aria-label="filters">
-        <label><span style="font-weight:600; opacity:0.9">Regulation</span>
-          <select id="filter-reg" class="filter-select" aria-label="Regulation">
-            <option value="2021">2021</option>
-            <option value="2025">2025</option>
-          </select>
-        </label>
+        <label style="display:none"><span style="font-weight:600; opacity:0.9">Department</span>
+          <select id="filter-dept" class="filter-select" aria-label="Department" disabled>
+            <option value="">All</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">Civil</option>
+            <option value="IT">IT</option>
+          </select>
+        </label>
 
-        <label style="display:none"><span style="font-weight:600; opacity:0.9">Department</span>
-          <select id="filter-dept" class="filter-select" aria-label="Department" disabled>
-            <option value="">All</option>
-            <option value="CSE">CSE</option>
-            <option value="ECE">ECE</option>
-            <option value="EEE">EEE</option>
-            <option value="MECH">MECH</option>
-            <option value="CIVIL">Civil</option>
-            <option value="IT">IT</option>
-          </select>
-        </label>
+        <div class="filter-actions">
+                  </div>
+      </div>
+    </div>
 
-        <!-- Semester filter removed: semesters displayed as headings, not filters -->
+    <div id="whole-grid" class="pdf-grid" aria-live="polite" style="margin-bottom:18px;">
+          </div>
 
-        <input id="filter-search" class="filter-input" placeholder="Search by name or path"/>
+    <div id="sem-grid" style="margin-top:8px;">
+          </div>
 
-        <div class="filter-actions">
-          <button class="btn-apply" id="apply-filter">Apply</button>
-          <button class="btn-reset" id="reset-filter">Reset</button>
-        </div>
-      </div>
-    </div>
+    <div id="empty" class="empty-state" style="display:none; text-align:center; padding:36px;">
+      <i class="fas fa-inbox" style="font-size:46px; opacity:0.6;"></i>
+      <h2 style="margin-top:12px; font-family:'Poppins';">No PDFs Found</h2>
+      <p style="opacity:0.9;">Nothing matches your filters. Try a different regulation or reset the filters.</p>
+      </div>
+  </div>
 
-    <div id="whole-grid" class="pdf-grid" aria-live="polite" style="margin-bottom:18px;">
-      <!-- Whole syllabus goes here -->
-    </div>
+  <footer style="text-align:center; padding:28px 12px; opacity:0.9;">
+    <p>&copy; 2025 LearnSkart — UI Preview. This page is a static UI demo without dynamic data.</p>
+  </footer>
 
-    <div id="sem-grid" style="margin-top:8px;">
-      <!-- Semester-wise grouped cards -->
-    </div>
-      <!-- Cards will be rendered dynamically from sydata.json -->
-    </div>
+  <script>
+    (function(){
+      // Utility to read URL params - returns '' if not found
+      function getParam(name) { const p = new URLSearchParams(window.location.search); return p.get(name) || ''; }
 
-    <div id="empty" class="empty-state" style="display:none; text-align:center; padding:36px;">
-      <i class="fas fa-inbox" style="font-size:46px; opacity:0.6;"></i>
-      <h2 style="margin-top:12px; font-family:'Poppins';">No PDFs Found</h2>
-      <p style="opacity:0.9;">Nothing matches your filters. Try a different regulation or reset the filters.</p>
-    </div>
-  </div>
+      // DOM refs
+      const wholeGrid = document.getElementById('whole-grid');
+      const semGrid = document.getElementById('sem-grid');
+      const empty = document.getElementById('empty');
+      const countBadge = document.getElementById('countBadge');
+      const heading = document.getElementById('page-title');
+      const breadcrumbReg = document.getElementById('breadcrumb-reg');
+      const breadcrumbDept = document.getElementById('breadcrumb-dept');
+      const regSelect = document.getElementById('filter-reg');
+      
+      const defaultReg = '2021';
+      const dept = (getParam('dept') || 'CSE').toUpperCase();
+      // Mapping of department codes to full human-friendly names
+      const deptNames = {
+        'CSE': 'Computer Science and Engineering',
+        'ECE': 'Electronics & Communication Engineering',
+        'EEE': 'Electrical & Electronics Engineering',
+        'MECH': 'Mechanical Engineering',
+        'CIVIL': 'Civil Engineering',
+        'IT': 'Information Technology'
+      };
+      const deptFull = deptNames[dept] || dept;
+      let selectedReg = (getParam('regulation') || defaultReg);
 
-  <footer style="text-align:center; padding:28px 12px; opacity:0.9;">
-    <p>&copy; 2025 LearnSkart — UI Preview. This page is a static UI demo without dynamic data.</p>
-  </footer>
+      // Initialize UI
+      regSelect.value = selectedReg;
+      breadcrumbDept.textContent = dept;
+      breadcrumbReg.textContent = selectedReg;
+      // Use en-dash for display: CSE – Regulation 2021
+      heading.textContent = `${deptFull} – Regulation ${selectedReg}`;
+      // Set document title dynamically for better UX
+      document.title = `${deptFull} | Regulation ${selectedReg} — LearnSkart`;
 
-  <script>
-    (function(){
-      // Utility to read URL params - returns '' if not found
-      function getParam(name) { const p = new URLSearchParams(window.location.search); return p.get(name) || ''; }
+      // CSS classes for disabled action buttons
+      const style = document.createElement('style');
+      style.textContent = `
+        .btn-view.disabled, .btn-download.disabled{ opacity: .5; pointer-events: none; cursor: default; }
+        .type-badge{ display:inline-block; margin-left:8px; font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,0.08); color:#fff; font-weight:700; }
+      `;
+      document.head.appendChild(style);
 
-      // DOM refs
-      const wholeGrid = document.getElementById('whole-grid');
-      const semGrid = document.getElementById('sem-grid');
-      const empty = document.getElementById('empty');
-      const countBadge = document.getElementById('countBadge');
-      const heading = document.getElementById('page-title');
-      const breadcrumbReg = document.getElementById('breadcrumb-reg');
-      const breadcrumbDept = document.getElementById('breadcrumb-dept');
-      const regSelect = document.getElementById('filter-reg');
-      const searchInput = document.getElementById('filter-search');
+      // Fetch sydata.json and render according to structured schema
+      async function fetchAndRender() {
+        wholeGrid.innerHTML = '';
+        semGrid.innerHTML = '';
+        empty.style.display = 'none';
+        countBadge.textContent = 0;
 
-      const defaultReg = '2021';
-      const dept = (getParam('dept') || 'CSE').toUpperCase();
-      // Mapping of department codes to full human-friendly names
-      const deptNames = {
-        'CSE': 'Computer Science and Engineering',
-        'ECE': 'Electronics & Communication Engineering',
-        'EEE': 'Electrical & Electronics Engineering',
-        'MECH': 'Mechanical Engineering',
-        'CIVIL': 'Civil Engineering',
-        'IT': 'Information Technology'
-      };
-      const deptFull = deptNames[dept] || dept;
-      let selectedReg = (getParam('regulation') || defaultReg);
+        let data;
+        try {
+          const resp = await fetch('sydata.json', { cache: 'no-store' });
+          if (!resp.ok) throw new Error('Failed to load sydata.json');
+          data = await resp.json();
+        } catch (err) {
+          console.error(err);
+          empty.style.display = '';
+          return;
+        }
 
-      // Initialize UI
-      regSelect.value = selectedReg;
-      breadcrumbDept.textContent = dept;
-      breadcrumbReg.textContent = selectedReg;
-      // Use en-dash for display: CSE – Regulation 2021
-      heading.textContent = `${deptFull} – Regulation ${selectedReg}`;
-      // Set document title dynamically for better UX
-      document.title = `${deptFull} | Regulation ${selectedReg} — LearnSkart`;
+        // data is expected to be an object keyed by department: { CSE: { '2021': { whole, semesters } }, ... }
+        if (!data || typeof data !== 'object') {
+          empty.style.display = '';
+          return;
+        }
 
-      // CSS classes for disabled action buttons
-      const style = document.createElement('style');
-      style.textContent = `
-        .btn-view.disabled, .btn-download.disabled{ opacity: .5; pointer-events: none; cursor: default; }
-        .type-badge{ display:inline-block; margin-left:8px; font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,0.08); color:#fff; font-weight:700; }
-      `;
-      document.head.appendChild(style);
+        const deptData = data[dept];
+        if (!deptData) {
+          // department not found
+          empty.style.display = '';
+          return;
+        }
 
-      // Fetch sydata.json and render according to structured schema
-      async function fetchAndRender() {
-        wholeGrid.innerHTML = '';
-        semGrid.innerHTML = '';
-        empty.style.display = 'none';
-        countBadge.textContent = 0;
+        const regData = deptData[selectedReg] || {};
 
-        let data;
-        try {
-          const resp = await fetch('sydata.json', { cache: 'no-store' });
-          if (!resp.ok) throw new Error('Failed to load sydata.json');
-          data = await resp.json();
-        } catch (err) {
-          console.error(err);
-          empty.style.display = '';
-          return;
-        }
+        // Section A: whole syllabus
+        if (regData.whole && (regData.whole.pdf !== undefined || regData.whole.title)) {
+          const sectionTitle = document.createElement('h2');
+          sectionTitle.style.margin = '8px 0 12px';
+          sectionTitle.textContent = 'Whole Syllabus';
+          wholeGrid.appendChild(sectionTitle);
 
-        // data is expected to be an object keyed by department: { CSE: { '2021': { whole, semesters } }, ... }
-        if (!data || typeof data !== 'object') {
-          empty.style.display = '';
-          return;
-        }
+          const grid = document.createElement('div');
+          grid.className = 'pdf-grid';
+          const card = createWholeCard(regData.whole);
+          grid.appendChild(card);
+          wholeGrid.appendChild(grid);
+        }
 
-        const deptData = data[dept];
-        if (!deptData) {
-          // department not found
-          empty.style.display = '';
-          return;
-        }
+        // Section B: semester grouped
+        const semesters = {};
+        // Preferred structure: regData.semesters = { '1': [..], '2': [..] }
+        if (regData.semesters && typeof regData.semesters === 'object') {
+          Object.keys(regData.semesters).forEach(k => { semesters[k] = regData.semesters[k]; });
+        }
+        // Support alternate structure: keys like 'Semester 1' or '1'
+        Object.keys(regData).forEach(k => {
+          if (k === 'whole' || k === 'semesters') return;
+          if (Array.isArray(regData[k])) {
+            // Normalize key to number if possible: 'Semester 1' or '1'
+            const semNumber = String(k).replace(/[^0-9]/g,'') || k;
+            semesters[semNumber] = regData[k];
+          }
+        });
 
-        const regData = deptData[selectedReg] || {};
+        const semKeys = Object.keys(semesters).sort((a,b) => parseInt(a,10) - parseInt(b,10));
+        if (semKeys.length) {
+          semKeys.forEach(sem => {
+            const semHeading = document.createElement('h3');
+            semHeading.style.margin = '18px 0 8px';
+            semHeading.textContent = 'Semester ' + sem;
+            semGrid.appendChild(semHeading);
 
-        // Section A: whole syllabus
-        if (regData.whole && (regData.whole.pdf !== undefined || regData.whole.title)) {
-          const sectionTitle = document.createElement('h2');
-          sectionTitle.style.margin = '8px 0 12px';
-          sectionTitle.textContent = 'Whole Syllabus';
-          wholeGrid.appendChild(sectionTitle);
+            const row = document.createElement('div');
+            row.className = 'pdf-grid';
+            const arr = Array.isArray(semesters[sem]) ? semesters[sem] : [];
+            arr.forEach(sub => row.appendChild(createSubjectCard(sub, sem)));
+            semGrid.appendChild(row);
+          });
+        }
 
-          const grid = document.createElement('div');
-          grid.className = 'pdf-grid';
-          const card = createWholeCard(regData.whole);
-          grid.appendChild(card);
-          wholeGrid.appendChild(grid);
-        }
+        // Update counts
+        let total = 0;
+        total += regData.whole ? 1 : 0;
+        semKeys.forEach(sem => { total += Array.isArray(semesters[sem]) ? semesters[sem].length : 0; });
+        countBadge.textContent = total;
+        empty.style.display = total ? 'none' : '';
+      }
 
-        // Section B: semester grouped
-        const semesters = {};
-        // Preferred structure: regData.semesters = { '1': [..], '2': [..] }
-        if (regData.semesters && typeof regData.semesters === 'object') {
-          Object.keys(regData.semesters).forEach(k => { semesters[k] = regData.semesters[k]; });
-        }
-        // Support alternate structure: keys like 'Semester 1' or '1'
-        Object.keys(regData).forEach(k => {
-          if (k === 'whole' || k === 'semesters') return;
-          if (Array.isArray(regData[k])) {
-            // Normalize key to number if possible: 'Semester 1' or '1'
-            const semNumber = String(k).replace(/[^0-9]/g,'') || k;
-            semesters[semNumber] = regData[k];
-          }
-        });
+      // create whole syllabus card
+      function createWholeCard(w) {
+        const title = (w && (w.title || 'Complete Syllabus'));
+        const pdf = w && w.pdf ? w.pdf : '';
+        const card = document.createElement('div');
+        card.className = 'pdf-card';
+        const header = document.createElement('div'); header.className = 'pdf-header';
+        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-book"></i></div>`;
+        const info = document.createElement('div'); info.className = 'pdf-info';
+        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = title;
+        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / Regulation ${selectedReg}`;
+        info.appendChild(name); info.appendChild(meta);
+        header.appendChild(info); card.appendChild(header);
+        const footer = document.createElement('div'); footer.className = 'pdf-footer';
+        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
+        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
+        if (!pdf) {
+          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
+          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
+        } else {
+          view.href = pdf; view.target = '_blank'; view.rel = 'noopener';
+          dl.href = pdf; dl.download = pdf.split('/').pop() || '';
+        }
+        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
+        return card;
+      }
 
-        const semKeys = Object.keys(semesters).sort((a,b) => parseInt(a,10) - parseInt(b,10));
-        if (semKeys.length) {
-          semKeys.forEach(sem => {
-            const semHeading = document.createElement('h3');
-            semHeading.style.margin = '18px 0 8px';
-            semHeading.textContent = 'Semester ' + sem;
-            semGrid.appendChild(semHeading);
+      // create subject card with type badge
+      function createSubjectCard(item, semester) {
+        const subject = item.subject || item.title || 'Untitled';
+        const pdf = item.pdf || '';
+        const type = item.type || (item.lab ? 'Lab' : 'Theory');
+        const card = document.createElement('div'); card.className = 'pdf-card';
+        const header = document.createElement('div'); header.className = 'pdf-header';
+        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>`;
+        const info = document.createElement('div'); info.className = 'pdf-info';
+        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = subject;
+        const typeBadge = document.createElement('span'); typeBadge.className = 'type-badge'; typeBadge.textContent = type;
+        name.appendChild(typeBadge);
+        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / sem ${semester} / Regulation ${selectedReg}`;
+        info.appendChild(name); info.appendChild(meta);
+        header.appendChild(info); card.appendChild(header);
+        const footer = document.createElement('div'); footer.className = 'pdf-footer';
+        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
+        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
+        if (!pdf) {
+          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
+          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
+        } else {
+          view.href = pdf; view.target = '_blank'; view.rel = 'noopener';
+          dl.href = pdf; dl.download = pdf.split('/').pop() || '';
+        }
+        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
+        return card;
+      }
 
-            const row = document.createElement('div');
-            row.className = 'pdf-grid';
-            const arr = Array.isArray(semesters[sem]) ? semesters[sem] : [];
-            arr.forEach(sub => row.appendChild(createSubjectCard(sub, sem)));
-            semGrid.appendChild(row);
-          });
-        }
+      // Function to handle regulation change (now automatically triggers fetch)
+      function handleRegulationChange() {
+        selectedReg = regSelect.value || defaultReg;
+        breadcrumbReg.textContent = selectedReg;
+        heading.textContent = `${deptFull} – Regulation ${selectedReg}`;
+        document.title = `${deptFull} | Regulation ${selectedReg} — LearnSkart`;
+        // update URL param (non-breaking) without reloading the page
+        const params = new URLSearchParams(window.location.search);
+        params.set('regulation', selectedReg);
+        const newUrl = window.location.pathname + '?' + params.toString();
+        window.history.replaceState({}, '', newUrl);
+        fetchAndRender();
+      }
 
-        // Update counts
-        let total = 0;
-        total += regData.whole ? 1 : 0;
-        semKeys.forEach(sem => { total += Array.isArray(semesters[sem]) ? semesters[sem].length : 0; });
-        countBadge.textContent = total;
-        empty.style.display = total ? 'none' : '';
+      // Attach event listener directly to the select element
+      regSelect.addEventListener('change', handleRegulationChange);
 
-        // Reapply client-side search
-        if (searchInput && searchInput.value) searchInput.dispatchEvent(new Event('input'));
-      }
-
-      // create whole syllabus card
-      function createWholeCard(w) {
-        const title = (w && (w.title || 'Complete Syllabus'));
-        const pdf = w && w.pdf ? w.pdf : '';
-        const card = document.createElement('div');
-        card.className = 'pdf-card';
-        const header = document.createElement('div'); header.className = 'pdf-header';
-        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-book"></i></div>`;
-        const info = document.createElement('div'); info.className = 'pdf-info';
-        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = title;
-        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / Regulation ${selectedReg}`;
-        info.appendChild(name); info.appendChild(meta);
-        header.appendChild(info); card.appendChild(header);
-        const footer = document.createElement('div'); footer.className = 'pdf-footer';
-        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
-        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
-        if (!pdf) {
-          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
-          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
-        } else {
-          view.href = pdf; view.target = '_blank'; view.rel = 'noopener';
-          dl.href = pdf; dl.download = pdf.split('/').pop() || '';
-        }
-        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
-        return card;
-      }
-
-      // create subject card with type badge
-      function createSubjectCard(item, semester) {
-        const subject = item.subject || item.title || 'Untitled';
-        const pdf = item.pdf || '';
-        const type = item.type || (item.lab ? 'Lab' : 'Theory');
-        const card = document.createElement('div'); card.className = 'pdf-card';
-        const header = document.createElement('div'); header.className = 'pdf-header';
-        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>`;
-        const info = document.createElement('div'); info.className = 'pdf-info';
-        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = subject;
-        const typeBadge = document.createElement('span'); typeBadge.className = 'type-badge'; typeBadge.textContent = type;
-        name.appendChild(typeBadge);
-        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / sem ${semester} / Regulation ${selectedReg}`;
-        info.appendChild(name); info.appendChild(meta);
-        header.appendChild(info); card.appendChild(header);
-        const footer = document.createElement('div'); footer.className = 'pdf-footer';
-        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
-        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
-        if (!pdf) {
-          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
-          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
-        } else {
-          view.href = pdf; view.target = '_blank'; view.rel = 'noopener';
-          dl.href = pdf; dl.download = pdf.split('/').pop() || '';
-        }
-        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
-        return card;
-      }
-
-      // Regulation change: update heading & fetch
-      regSelect.addEventListener('change', () => {
-        selectedReg = regSelect.value || defaultReg;
-        breadcrumbReg.textContent = selectedReg;
-        heading.textContent = `${deptFull} – Regulation ${selectedReg}`;
-        document.title = `${deptFull} | Regulation ${selectedReg} — LearnSkart`;
-        // update URL param (non-breaking) without reloading the page
-        const params = new URLSearchParams(window.location.search);
-        params.set('regulation', selectedReg);
-        const newUrl = window.location.pathname + '?' + params.toString();
-        window.history.replaceState({}, '', newUrl);
-        fetchAndRender();
-      });
-
-      // Apply and Reset buttons (also support keyboard enter on search)
-      const applyBtn = document.getElementById('apply-filter');
-      const resetBtn = document.getElementById('reset-filter');
-      if (applyBtn) applyBtn.addEventListener('click', () => {
-        selectedReg = regSelect.value || defaultReg;
-        breadcrumbReg.textContent = selectedReg;
-        heading.textContent = `${deptFull} – Regulation ${selectedReg}`;
-        document.title = `${deptFull} | Regulation ${selectedReg} — LearnSkart`;
-        const params = new URLSearchParams(window.location.search);
-        params.set('regulation', selectedReg);
-        window.history.replaceState({}, '', window.location.pathname + '?' + params.toString());
-        fetchAndRender();
-      });
-      if (resetBtn) resetBtn.addEventListener('click', () => {
-        regSelect.value = defaultReg;
-        searchInput.value = '';
-        selectedReg = defaultReg;
-        breadcrumbReg.textContent = selectedReg;
-        heading.textContent = `${deptFull} – Regulation ${selectedReg}`;
-        document.title = `${deptFull} | Regulation ${selectedReg} — LearnSkart`;
-        const params = new URLSearchParams(window.location.search);
-        params.set('regulation', selectedReg);
-        window.history.replaceState({}, '', window.location.pathname + '?' + params.toString());
-        fetchAndRender();
-      });
-
-      // Client-side search across rendered cards
-      searchInput.addEventListener('input', () => {
-        const q = searchInput.value.trim().toLowerCase();
-        const cards = [...document.querySelectorAll('#whole-grid .pdf-card, #sem-grid .pdf-card')];
-        let shown = 0;
-        cards.forEach(card => {
-          const txt = (card.textContent || '').toLowerCase();
-          const match = !q || txt.includes(q);
-          card.style.display = match ? '' : 'none';
-          if (match) shown++;
-        });
-        countBadge.textContent = shown;
-        document.getElementById('empty').style.display = shown ? 'none' : '';
-      });
-
-      // initialize
-      fetchAndRender();
-    })();
-  </script>
+      // Apply and Reset buttons logic (now redundant and removed from HTML)
+      // Kept the default initialization logic
+      
+      // initialize
+      fetchAndRender();
+    })();
+  </script>
 </body>
 </html>
