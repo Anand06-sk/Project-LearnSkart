@@ -374,8 +374,8 @@
       <i class="fas fa-book"></i> LearnSkart
     </div>
     <div class="header-actions">
-      <a href="cse.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> Back to CSE
+      <a id="back-dept-btn" href="cse.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Department
       </a>
       <a href="index.html" class="back-btn">
         <i class="fas fa-home"></i> Home
@@ -459,7 +459,23 @@
       const regulation = getParam('regulation');
       const semester = getParam('semester');
       const subjectRaw = getParam('subject');
+      const department = getParam('department') || 'cse';
       const subject = subjectRaw ? safeDecode(subjectRaw) : '';
+
+      // Set back button URL based on department
+      const deptMap = {
+        'cse': 'cse.html',
+        'ece': 'ece.html',
+        'it': 'it.html',
+        'eee': 'eee.html',
+        'mech': 'mech.html',
+        'civil': 'civil.html'
+      };
+      const backBtn = document.getElementById('back-dept-btn');
+      if (backBtn) {
+        backBtn.href = deptMap[department] || 'cse.html';
+        backBtn.innerHTML = `<i class="fas fa-arrow-left"></i> Back to ${department.toUpperCase()}`;
+      }
 
       document.getElementById('breadcrumb-reg').textContent = regulation || '-';
       document.getElementById('breadcrumb-sem').textContent = semester || '-';
@@ -477,7 +493,7 @@
         return;
       }
 
-      const pdfs = (data.regulations?.[regulation]?.[semester]?.[subject]?.pdfs) || [];
+      const pdfs = (data[department]?.[regulation]?.[semester]?.[subject]?.pdfs) || [];
 
       const grid = document.getElementById('pdf-grid');
       const empty = document.getElementById('empty');
