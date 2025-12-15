@@ -267,25 +267,50 @@ header {
   opacity:0.7;
 }
 
-.reg-text{
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:0.6px;
-  color:var(--primary);
-  font-weight:700;
-  padding:6px 10px;
-  border-radius:999px;
-  background: rgba(255,255,255,0.98);
-  border: 1px solid rgba(102,126,234,0.08);
+.reg-center{
+  display:inline-flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  margin-top:12px;
 }
-.reg-text i{ margin-right:6px; color:var(--primary); }
+.reg-text{
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--text-light);
+  padding:10px 14px;
+  border-radius:14px;
+  background: linear-gradient(90deg, rgba(102,126,234,1), rgba(118,75,162,1));
+  box-shadow: 0 8px 24px rgba(102,126,234,0.12);
+  letter-spacing:0.2px;
+  text-transform:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.reg-text i{ color: rgba(255,255,255,0.95); font-size:14px; }
+.reg-text strong{ font-weight:800; color: rgba(255,255,255,0.98); margin-left:4px; }
 .reg-center .filter-select{
-  padding:8px 14px;
-  border-radius:10px;
-  box-shadow: none;
+  padding:9px 14px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
   border: 1px solid rgba(15,23,42,0.06);
   color: var(--text-dark);
-  font-weight:700;
+  font-weight:600;
+  font-size:14px;
+  background: #ffffff;
+  transition: transform .12s ease, box-shadow .15s ease, border-color .12s ease;
+}
+.reg-center .filter-select:focus{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 60px rgba(102,126,234,0.08);
+  border-color: rgba(102,126,234,0.35);
+  outline: none;
+}
+@media (max-width:480px){
+  .reg-text{ font-size:14px; padding:8px 12px; }
+  .reg-center .filter-select{ font-size:13px; padding:8px 12px; }
 }
 
 @media (max-width:768px){
@@ -556,7 +581,7 @@ footer {
     <header>
     <div class="logo"><i class="fas fa-book"></i> LearnSkart </div>
     <div class="header-actions">
-      <a href="index.html" class="back-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="../Home/index.html" class="back-btn"><i class="fas fa-home"></i> Home</a>
       <a href="syllabus.html" class="back-btn"><i class="fas fa-file-pdf"></i> Syllabus</a>
     </div>
     </header>
@@ -620,7 +645,7 @@ footer {
     <div class="footer-section">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../Home/index.html">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact</a></li>
       </ul>

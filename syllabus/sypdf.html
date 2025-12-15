@@ -33,8 +33,10 @@ body{
   -webkit-font-smoothing:antialiased; 
   -moz-osx-font-smoothing:grayscale;
   min-height:100vh; 
-  padding-bottom:80px;
-  overflow-y:scroll;
+  display:flex;
+  flex-direction:column;
+  padding-bottom:0; /* removed bottom padding so footer can sit flush */
+  overflow-y:auto;
   background-attachment: fixed;
   padding-top: 80px; /* Account for fixed header */
 }
@@ -149,6 +151,8 @@ header {
   color: var(--primary); /* primary-colored text inside container */
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(15,23,42,0.04);
+  flex: 1 0 auto;
+  min-height: 0;
 }
 
 .page-header{ 
@@ -252,8 +256,6 @@ header {
   border-radius:999px;
   font-weight:800;
 }
-.page-header .pdf-count i{ color: rgba(255,255,255,0.95); font-size:16px; }
-.page-header .pdf-count #countBadge{ font-weight:900; margin:0 8px; }
 
 /* thin divider inside header for a refined separation */
 .header-divider{
@@ -265,33 +267,55 @@ header {
   opacity:0.7;
 }
 
-.reg-text{
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:0.6px;
-  color:var(--primary);
-  font-weight:700;
-  padding:6px 10px;
-  border-radius:999px;
-  background: rgba(255,255,255,0.98);
-  border: 1px solid rgba(102,126,234,0.08);
+.reg-center{
+  display:inline-flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  margin-top:12px;
 }
-.reg-text i{ margin-right:6px; color:var(--primary); }
+.reg-text{
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--text-light);
+  padding:10px 14px;
+  border-radius:14px;
+  background: linear-gradient(90deg, rgba(102,126,234,1), rgba(118,75,162,1));
+  box-shadow: 0 8px 24px rgba(102,126,234,0.12);
+  letter-spacing:0.2px;
+  text-transform:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.reg-text i{ color: rgba(255,255,255,0.95); font-size:14px; }
+.reg-text strong{ font-weight:800; color: rgba(255,255,255,0.98); margin-left:4px; }
 .reg-center .filter-select{
-  padding:8px 14px;
-  border-radius:10px;
-  box-shadow: none;
+  padding:9px 14px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
   border: 1px solid rgba(15,23,42,0.06);
   color: var(--text-dark);
-  font-weight:700;
+  font-weight:600;
+  font-size:14px;
+  background: #ffffff;
+  transition: transform .12s ease, box-shadow .15s ease, border-color .12s ease;
+}
+.reg-center .filter-select:focus{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 60px rgba(102,126,234,0.08);
+  border-color: rgba(102,126,234,0.35);
+  outline: none;
+}
+@media (max-width:480px){
+  .reg-text{ font-size:14px; padding:8px 12px; }
+  .reg-center .filter-select{ font-size:13px; padding:8px 12px; }
 }
 
 @media (max-width:768px){
   .page-header h1{ font-size:20px; }
   .breadcrumb{ font-size:13px; }
-  .breadcrumb .dept-badge{ display:inline-flex; padding:6px 8px; font-size:12px; }
-  .page-header .pdf-count{ padding:6px 10px; font-size:14px; }
-  .header-divider{ width:66%; }
 }
 
 .pdf-count{ 
@@ -339,10 +363,12 @@ header {
 
 /* Grid */
 .pdf-grid{ 
-  display:grid; 
-  grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); 
-  gap:20px; 
-  margin-top:12px; 
+  display:grid;
+  /* smaller min width so cards flow into rows inside each semester */
+  grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+  gap:20px;
+  margin-top:12px;
+  align-items: stretch;
 }
 .pdf-card{ 
   position:relative; 
@@ -359,6 +385,7 @@ header {
   transition: transform .24s cubic-bezier(.2,.9,.2,1), box-shadow .2s ease; 
   min-height:120px; 
   color:var(--text-dark); 
+  height:100%;
 }
 .pdf-card:hover{ 
   transform:translateY(-6px); 
@@ -482,7 +509,143 @@ header {
   .pdf-grid{ grid-template-columns: 1fr; } 
 }
 
+/* Semester section wrapper to improve alignment and spacing */
+.semester-section{
+  padding:14px;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(250,250,255,0.98), rgba(248,249,255,0.98));
+  border:1px solid rgba(15,23,42,0.04);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.02);
+  margin-bottom:18px;
+}
+.semester-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin: 6px 0 12px;
+  margin: 6px 0 12px;
+  font-size:16px;
+  color:var(--primary);
+  font-weight:800;
+}
+/* Arrange semester blocks in rows and columns */
+#sem-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap:18px;
+  align-items: start;
+}
+.semester-section .pdf-grid{
+  /* inside each semester, cards arrange in rows */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* Use Poppins for syllabus titles (whole & semester) for a friendly, professional look */
+.pdf-name, .semester-heading {
+  font-family: 'Poppins', sans-serif;
+}
+.semester-heading{ font-size:18px; }
+
+/* Single 'Semester-wise' heading above the semester grid */
+.section-title{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family: 'Poppins', sans-serif;
+  font-size:18px;
+  color:#fff;
+  font-weight:800;
+  padding:8px 14px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--primary),var(--secondary));
+  box-shadow: 0 10px 30px rgba(120, 121, 123, 0.1);
+  margin: 12px 0 12px;
+}
+.semester-section-title{ text-align:left; }
+.whole-section-title{ text-align:left; }
+
+/* Ensure the semester-wise heading spans full width of the semester grid
+   so the semester blocks (PDFs) appear below the heading instead of beside it */
+#sem-grid > .section-title{ grid-column: 1 / -1; }
+
+/* Grid container for semester list so heading and blocks use the same
+  visual wrapper as the whole-syllabus section */
+.sem-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap:18px;
+  align-items: start;
+}
+
 /* Centered regulation block handled above; duplicate rules removed to avoid conflicts */
+
+/* Footer styles copied from syllabus.html for consistent site footer */
+footer {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-light);
+  padding: 50px 20px 20px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeIn 1.5s ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.footer-section ul li a:hover {
+  opacity: 1;
+}
+
+.social-links a {
+  color: var(--text-light);
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 </style>
 </head>
 <body>
@@ -490,7 +653,7 @@ header {
     <header>
     <div class="logo"><i class="fas fa-book"></i> LearnSkart </div>
     <div class="header-actions">
-      <a href="index.html" class="back-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="../Home/index.html" class="back-btn"><i class="fas fa-home"></i> Home</a>
       <a href="syllabus.html" class="back-btn"><i class="fas fa-file-pdf"></i> Syllabus</a>
     </div>
     </header>
@@ -532,8 +695,8 @@ header {
       </div>
     </div>
 
-    <div id="whole-grid" class="pdf-grid" aria-live="polite" style="margin-bottom:18px;">
-          </div>
+    <div id="whole-grid" aria-live="polite" style="margin-bottom:18px;">
+      </div>
 
     <div id="sem-grid" style="margin-top:8px;">
           </div>
@@ -543,11 +706,36 @@ header {
       <h2 style="margin-top:12px; font-family:'Poppins';">No PDFs Found</h2>
       <p style="opacity:0.9;">Nothing matches your filters. Try a different regulation or reset the filters.</p>
       </div>
-  </div>
+</div>
 
-  <footer style="text-align:center; padding:28px 12px; opacity:0.9;">
-    <p>&copy; 2025 LearnSkart — UI Preview. This page is a static UI demo without dynamic data.</p>
-  </footer>
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4><i class="fas fa-book"></i> LearnSkart</h4>
+      <p>Your one-stop destination for academic excellence.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../Home/index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 OpenNotes. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+  </div>
+</footer>
 
   <script>
     (function(){
@@ -629,18 +817,24 @@ header {
         const regData = deptData[selectedReg] || {};
 
         // Section A: whole syllabus
-        if (regData.whole && (regData.whole.pdf !== undefined || regData.whole.title)) {
-          const sectionTitle = document.createElement('h2');
-          sectionTitle.style.margin = '8px 0 12px';
-          sectionTitle.textContent = 'Whole Syllabus';
-          wholeGrid.appendChild(sectionTitle);
+        if (regData.whole && (regData.whole.pdf !== undefined || regData.whole.title)) {
+          const sectionTitle = document.createElement('h2');
+          sectionTitle.className = 'whole-section-title section-title';
+          sectionTitle.innerHTML = '<i class="fas fa-book-open"></i> Whole Syllabus';
 
-          const grid = document.createElement('div');
-          grid.className = 'pdf-grid';
-          const card = createWholeCard(regData.whole);
-          grid.appendChild(card);
-          wholeGrid.appendChild(grid);
-        }
+          // Wrap heading and grid in a section wrapper so it visually matches semester sections
+          const wrap = document.createElement('div');
+          wrap.className = 'semester-section';
+
+          const grid = document.createElement('div');
+          grid.className = 'pdf-grid';
+          const card = createWholeCard(regData.whole);
+          grid.appendChild(card);
+
+          wrap.appendChild(sectionTitle);
+          wrap.appendChild(grid);
+          wholeGrid.appendChild(wrap);
+        }
 
         // Section B: semester grouped
         const semesters = {};
@@ -658,21 +852,42 @@ header {
           }
         });
 
-        const semKeys = Object.keys(semesters).sort((a,b) => parseInt(a,10) - parseInt(b,10));
-        if (semKeys.length) {
-          semKeys.forEach(sem => {
-            const semHeading = document.createElement('h3');
-            semHeading.style.margin = '18px 0 8px';
-            semHeading.textContent = 'Semester ' + sem;
-            semGrid.appendChild(semHeading);
+        const semKeys = Object.keys(semesters).sort((a,b) => parseInt(a,10) - parseInt(b,10));
+        if (semKeys.length) {
+          // Create a section wrapper to match the 'Whole Syllabus' layout
+          const semTitle = document.createElement('h2');
+          semTitle.className = 'semester-section-title section-title';
+          semTitle.innerHTML = '<i class="fas fa-layer-group"></i> Semester-wise';
 
-            const row = document.createElement('div');
-            row.className = 'pdf-grid';
-            const arr = Array.isArray(semesters[sem]) ? semesters[sem] : [];
-            arr.forEach(sub => row.appendChild(createSubjectCard(sub, sem)));
-            semGrid.appendChild(row);
-          });
-        }
+          const semRoot = document.createElement('div');
+          semRoot.className = 'semester-section';
+
+          const semList = document.createElement('div');
+          semList.className = 'sem-list';
+
+          semKeys.forEach(sem => {
+            // Create a visually grouped block per semester for better alignment
+            const semWrap = document.createElement('div');
+            semWrap.className = 'semester-section';
+
+            const semHeading = document.createElement('h3');
+            semHeading.className = 'semester-heading';
+            semHeading.textContent = 'Semester ' + sem;
+
+            const row = document.createElement('div');
+            row.className = 'pdf-grid';
+            const arr = Array.isArray(semesters[sem]) ? semesters[sem] : [];
+            arr.forEach(sub => row.appendChild(createSubjectCard(sub, sem)));
+
+            semWrap.appendChild(semHeading);
+            semWrap.appendChild(row);
+            semList.appendChild(semWrap);
+          });
+
+          semRoot.appendChild(semTitle);
+          semRoot.appendChild(semList);
+          semGrid.appendChild(semRoot);
+        }
 
         // Update counts
         let total = 0;
@@ -698,13 +913,15 @@ header {
         const footer = document.createElement('div'); footer.className = 'pdf-footer';
         const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
         const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
-        if (!pdf) {
-          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
-          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
-        } else {
-          view.href = pdf; view.target = '_blank'; view.rel = 'noopener';
-          dl.href = pdf; dl.download = pdf.split('/').pop() || '';
-        }
+    if (!pdf) {
+          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
+          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
+        } else {
+          // Normalize paths: sypdf.html lives inside `syllabus/` so remove leading `syllabus/` if present
+          const href = pdf.startsWith('syllabus/') ? pdf.replace(/^syllabus\//, '') : pdf;
+          view.href = href; view.target = '_blank'; view.rel = 'noopener';
+          dl.href = href; dl.download = href.split('/').pop() || '';
+        }
         footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
         return card;
       }
@@ -727,13 +944,15 @@ header {
         const footer = document.createElement('div'); footer.className = 'pdf-footer';
         const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
         const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
-        if (!pdf) {
-          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
-          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
-        } else {
-          view.href = pdf; view.target = '_blank'; view.rel = 'noopener';
-          dl.href = pdf; dl.download = pdf.split('/').pop() || '';
-        }
+    if (!pdf) {
+          view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
+          dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
+        } else {
+          // For pages inside `syllabus/`, strip leading folder prefix so links resolve correctly
+          const href = pdf.startsWith('syllabus/') ? pdf.replace(/^syllabus\//, '') : pdf;
+          view.href = href; view.target = '_blank'; view.rel = 'noopener';
+          dl.href = href; dl.download = href.split('/').pop() || '';
+        }
         footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
         return card;
       }
