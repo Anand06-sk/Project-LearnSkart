@@ -1,0 +1,307 @@
+{
+  "CSE": {
+    "2021": {
+      "1": {
+        "Professional English-I": [ { "title": "", "year": "", "pdf": "" } ],
+        "Matrices and Calculus": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Physics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Chemistry": [ { "title": "", "year": "", "pdf": "" } ],
+        "Problem Solving and Python Programming": [ { "title": "", "year": "", "pdf": "" } ],
+        "Heritage of Tamils": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "2": {
+        "Professional English-II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Statistics and Numerical Methods": [ { "title": "", "year": "", "pdf": "" } ],
+        "Physics for Information Science": [ { "title": "", "year": "", "pdf": "" } ],
+        "Basic Electrical and Electronics Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Graphics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Programming in C": [ { "title": "", "year": "", "pdf": "" } ],
+        "Tamils and Technology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "3": {
+        "Discrete Mathematics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Digital Principles and Computer Organization": [ { "title": "", "year": "", "pdf": "" } ],
+        "Foundations of Data Science": [ { "title": "", "year": "", "pdf": "" } ],
+        "Data Structures": [
+          { "title": "", "year": "", "pdf": "" },
+          { "title": "", "year": "", "pdf": "" }
+        ],
+        "Object Oriented Programming": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "4": {
+        "Theory of Computation": [ { "title": "", "year": "", "pdf": "" } ],
+        "Artificial Intelligence and Machine Learning": [ { "title": "", "year": "", "pdf": "" } ],
+        "Database Management Systems": [ { "title": "", "year": "", "pdf": "" } ],
+        "Algorithms": [ { "title": "May 2023 - Question Paper", "year": "2023", "pdf": "CSE/Algorithms-2023.pdf" } ],
+        "Introduction to Operating Systems": [ { "title": "", "year": "", "pdf": "" } ],
+        "Environmental Sciences and Sustainability": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "5": {
+        "Computer Networks": [ { "title": "", "year": "", "pdf": "" } ],
+        "Complier Design": [ { "title": "", "year": "", "pdf": "" } ],
+        "Cryptography and Cyber Security": [ { "title": "", "year": "", "pdf": "" } ],
+        "Distributed Computing": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "6": {
+        "Object Oriented Software Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Embedded Systems and IoT": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "7": {
+        "Human Values and Ethics": [ { "title": "", "year": "", "pdf": "" } ]
+      }
+    },
+    "2025": {}
+  },
+  "ECE": {
+    "2021": {
+      "1": {
+        "Professional English - I": [ { "title": "", "year": "", "pdf": "" } ],
+        "Matrices and Calculus": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Physics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Chemistry": [ { "title": "", "year": "", "pdf": "" } ],
+        "Problem Solving and Python Programming": [ { "title": "", "year": "", "pdf": "" } ],
+        "Heritage of Tamils": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "2": {
+        "Professional English - II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Statistics and Numerical Methods": [ { "title": "", "year": "", "pdf": "" } ],
+        "Physics for Electronics Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Graphics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Circuit Analysis": [ { "title": "", "year": "", "pdf": "" } ],
+        "Tamils and Technology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "3": {
+        "Random Processes and Linear Algebra": [ { "title": "", "year": "", "pdf": "" } ],
+        "C Programming and Data Structures": [ { "title": "", "year": "", "pdf": "" } ],
+        "Signals and Systems": [ { "title": "Nov 2021 - Question Paper", "year": "2021", "pdf": "ECE/Signals-2021.pdf" } ],
+        "Electronic Devices and Circuits": [ { "title": "", "year": "", "pdf": "" } ],
+        "Control Systems": [ { "title": "", "year": "", "pdf": "" } ],
+        "Digital Systems Design": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "4": {
+        "Electromagnetic Fields": [ { "title": "", "year": "", "pdf": "" } ],
+        "Networks and Security": [ { "title": "", "year": "", "pdf": "" } ],
+        "Linear Integrated Circuits": [ { "title": "", "year": "", "pdf": "" } ],
+        "Digital Signal Processing": [ { "title": "", "year": "", "pdf": "" } ],
+        "Communication Systems": [ { "title": "", "year": "", "pdf": "" } ],
+        "Environmental Sciences and Sustainability": [ { "title": "", "year": "", "pdf": "" } ],
+        "Microprocessor and Microcontroller": [ { "title": "May 2022 - Question Paper", "year": "2022", "pdf": "ECE/Microprocessors-2022.pdf" } ]
+      },
+      "5": {
+        "Wireless Communication": [ { "title": "", "year": "", "pdf": "" } ],
+        "VLSI and Chip Design": [ { "title": "", "year": "", "pdf": "" } ],
+        "Transmission Lines and RF Systems": [ { "title": "", "year": "", "pdf": "" } ],
+        "VLSI Laboratory": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "6": {
+        "Embedded Systems and IoT Design": [ { "title": "", "year": "", "pdf": "" } ],
+        "Artificial Intelligence and Machine Learning": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "7": {
+        "Human Values and Ethics": [ { "title": "", "year": "", "pdf": "" } ]
+      }
+    },
+    "2025": {}
+  },
+  "EEE": {
+    "2021": {
+      "1": {
+        "Professional English-I": [ { "title": "", "year": "", "pdf": "" } ],
+        "Matrices and Calculus": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Physics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Chemistry": [ { "title": "", "year": "", "pdf": "" } ],
+        "Problem Solving and Python Programming": [ { "title": "", "year": "", "pdf": "" } ],
+        "Heritage of Tamils": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "2": {
+        "Professional English II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Statistics and Numerical Methods": [ { "title": "", "year": "", "pdf": "" } ],
+        "Physics for Electrical Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Basic Civil and Mechanical Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Graphics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Electric Circuit Analysis": [ { "title": "", "year": "", "pdf": "" } ],
+        "Tamils and Technology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "3": {
+        "Probability and Complex Functions": [ { "title": "", "year": "", "pdf": "" } ],
+        "Electromagnetic Fields": [ { "title": "", "year": "", "pdf": "" } ],
+        "Digital Logic Circuits": [ { "title": "", "year": "", "pdf": "" } ],
+        "Electron Devices and Circuits": [ { "title": "", "year": "", "pdf": "" } ],
+        "Electrical Machines I": [ { "title": "", "year": "", "pdf": "" } ],
+        "C Programming and Data Structures": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "4": {
+        "Transmission and Distribution": [ { "title": "", "year": "", "pdf": "" } ],
+        "Linear Integrated Circuits": [ { "title": "", "year": "", "pdf": "" } ],
+        "Measurements and Instrumentation": [ { "title": "", "year": "", "pdf": "" } ],
+        "Microprocessor and Microcontroller": [ { "title": "", "year": "", "pdf": "" } ],
+        "Electrical Machines II": [ { "title": "May 2023 - Question Paper", "year": "2023", "pdf": "EEE/ElectricalMachines-2023.pdf" } ]
+      },
+      "5": {
+        "Power System Analysis": [ { "title": "", "year": "", "pdf": "" } ],
+        "Power Electronics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Control Systems": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "6": {
+        "Protection and Switchgear": [ { "title": "", "year": "", "pdf": "" } ],
+        "Power System Operation and Control": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "7": {
+        "High Voltage Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Human Values and Ethics": [ { "title": "", "year": "", "pdf": "" } ]
+      }
+    },
+    "2025": {}
+  },
+  "MECH": {
+    "2021": {
+      "1": {
+        "Professional English - I": [ { "title": "", "year": "", "pdf": "" } ],
+        "Matrices and Calculus": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Physics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Chemistry": [ { "title": "", "year": "", "pdf": "" } ],
+        "Problem Solving and Python Programming": [ { "title": "", "year": "", "pdf": "" } ],
+        "Heritage of Tamils": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "2": {
+        "Professional English - II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Statistics and Numerical Methods": [ { "title": "", "year": "", "pdf": "" } ],
+        "Materials Science": [ { "title": "", "year": "", "pdf": "" } ],
+        "Basic Electrical and Electronics Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Graphics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Tamils and Technology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "3": {
+        "Transforms and Partial Differential Equations": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Mechanics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Thermodynamics": [ { "title": "May 2023 - Question Paper", "year": "2023", "pdf": "MECH/Thermodynamics-2023.pdf" } ],
+        "Fluid Mechanics and Machinery": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Materials and Metallurgy": [ { "title": "", "year": "", "pdf": "" } ],
+        "Manufacturing Processes": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "4": {
+        "Theory of Machines": [ { "title": "", "year": "", "pdf": "" } ],
+        "Thermal Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Hydraulics and Pneumatics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Manufacturing Technology": [ { "title": "", "year": "", "pdf": "" } ],
+        "Strength of Materials": [ { "title": "", "year": "", "pdf": "" } ],
+        "Environmental Sciences and Sustainability": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "5": {
+        "Design of Machine Elements": [ { "title": "", "year": "", "pdf": "" } ],
+        "Metrology and Measurements": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "6": {
+        "Heat and Mass Transfer": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "7": {
+        "Mechatronics and IoT": [ { "title": "", "year": "", "pdf": "" } ],
+        "Computer Integrated Manufacturing": [ { "title": "", "year": "", "pdf": "" } ],
+        "Human Values and Ethics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Industrial Management": [ { "title": "", "year": "", "pdf": "" } ]
+      }
+    },
+    "2025": {}
+  },
+  "CIVIL": {
+    "2021": {
+      "1": {
+        "Professional English – I": [ { "title": "", "year": "", "pdf": "" } ],
+        "Matrices and Calculus": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Physics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Chemistry": [ { "title": "", "year": "", "pdf": "" } ],
+        "Problem Solving and Python Programming": [ { "title": "", "year": "", "pdf": "" } ],
+        "Heritage of Tamils": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "2": {
+        "Professional English – II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Statistics and Numerical Methods": [ { "title": "", "year": "", "pdf": "" } ],
+        "Physics for Civil Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Basic Electrical, Electronics and Instrumentation Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Graphics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Tamils and Technology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "3": {
+        "Transforms and Partial Differential Equations": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Mechanics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Fluid Mechanics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Construction Materials and Technology": [ { "title": "", "year": "", "pdf": "" } ],
+        "Water Supply and Wastewater Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Surveying and Levelling": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "4": {
+        "Applied Hydraulics Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Strength of Materials": [ { "title": "", "year": "", "pdf": "" } ],
+        "Concrete Technology": [ { "title": "", "year": "", "pdf": "" } ],
+        "Soil Mechanics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Highway and Railway Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Environmental Sciences and Sustainability": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "5": {
+        "Design of Reinforced Concrete Structural Elements": [ { "title": "", "year": "", "pdf": "" } ],
+        "Structural Analysis I": [ { "title": "Nov 2022 - Question Paper", "year": "2022", "pdf": "CIVIL/Structural-2022.pdf" } ],
+        "Foundation Engineering": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "6": {
+        "Design of Steel Structural Elements": [ { "title": "", "year": "", "pdf": "" } ],
+        "Structural Analysis II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Geology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "7": {
+        "Estimation,Coasting and Valuation Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Hydrology and Water Resources Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Human Values and Ethics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Total Quality Management": [ { "title": "", "year": "", "pdf": "" } ]
+      }
+    },
+    "2025": {}
+  },
+  "IT": {
+    "2021": {
+      "1": {
+        "Professional English - I": [ { "title": "", "year": "", "pdf": "" } ],
+        "Matrices and Calculus": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Physics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Chemistry": [ { "title": "", "year": "", "pdf": "" } ],
+        "Problem Solving and Python Programming": [ { "title": "", "year": "", "pdf": "" } ],
+        "Heritage of Tamils": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "2": {
+        "Professional English - II": [ { "title": "", "year": "", "pdf": "" } ],
+        "Statistics and Numerical Methods": [ { "title": "", "year": "", "pdf": "" } ],
+        "Physics for Information Science": [ { "title": "", "year": "", "pdf": "" } ],
+        "Basic Electrical and Electronics Engineering": [ { "title": "", "year": "", "pdf": "" } ],
+        "Engineering Graphics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Programming in C": [ { "title": "", "year": "", "pdf": "" } ],
+        "Tamils and Technology": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "3": {
+        "Discrete Mathematics": [ { "title": "", "year": "", "pdf": "" } ],
+        "Digital Principles and Computer Organization": [ { "title": "", "year": "", "pdf": "" } ],
+        "Foundations of Data Science": [ { "title": "", "year": "", "pdf": "" } ],
+        "Data Structures and Algorithms": [ { "title": "", "year": "", "pdf": "" } ],
+        "Object Oriented Programming": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "4": {
+        "Theory of Computation": [ { "title": "", "year": "", "pdf": "" } ],
+        "Artificial Intelligence and Machine Learning": [ { "title": "", "year": "", "pdf": "" } ],
+        "Database Management Systems": [ { "title": "", "year": "", "pdf": "" } ],
+        "Web Essentials": [ { "title": "", "year": "", "pdf": "" } ],
+        "Introduction to Operating Systems": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "5": {
+        "Computer Networks": [ { "title": "", "year": "", "pdf": "" } ],
+        "Full Stack Web Development": [ { "title": "", "year": "", "pdf": "" } ],
+        "Distributed Computing": [ { "title": "", "year": "", "pdf": "" } ],
+        "Embedded Systems and IoT": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "6": {
+        "Object Oriented Software Engineering": [ { "title": "", "year": "", "pdf": "" } ]
+      },
+      "7": {
+        "Human Values and Ethics": [ { "title": "", "year": "", "pdf": "" } ]
+      }
+    },
+    "2025": {}
+  }
+}
