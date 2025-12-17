@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Syllabus | OpenNotes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --text-dark: #222;
+    --text-light: #f3f5fb;
+    --bg-light: #fff;
+    --bg-dark: #1a1a2e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    transition: background 0.4s, color 0.4s;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Navigation removed; styles left intentionally blank */
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-light);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: background 0.3s,transform 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items:self-end;
+}
+
+.back-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Hero Section */
+.syllabus-hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.syllabus-hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.syllabus-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Department Cards */
+.syllabus-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease;
+}
+
+.section-title h2 {
+    font-size: 2.4rem;
+    color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.dept-syllabus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.syllabus-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    display: block; /* anchor styling */
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInCard 1s forwards;
+}
+
+@keyframes fadeInCard {
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.syllabus-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(102,126,234,0.3);
+}
+
+.card-header {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+/* smooth transition for header pop */
+.card-header { transition: transform 0.22s cubic-bezier(.2,.9,.3,1), box-shadow 0.22s ease; }
+
+.card-header .icon-wrap {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 28px;
+    animation: pulse 3s ease-in-out infinite;
+}
+/* Pause animation and pop icon on card hover */
+.card-header:hover .icon-wrap {
+    animation-play-state: paused;
+    transform: scale(1.18) rotate(90deg);
+    transition: transform 0.18s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Pop the header above other cards on hover */
+.syllabus-card:hover .card-header {
+    transform: translateY(-12px) scale(1.025);
+    z-index: 120;
+    box-shadow: 0 30px 60px rgba(16,24,40,0.28);
+}
+
+.dept-code {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Department border-top colors (match style.css) */
+.syllabus-card.cse-card { border-top: 3px solid #3b82f6; }
+.syllabus-card.ece-card { border-top: 3px solid #f59e0b; }
+.syllabus-card.eee-card { border-top: 3px solid #ef4444; }
+.syllabus-card.mech-card { border-top: 3px solid #8b5cf6; }
+.syllabus-card.civil-card { border-top: 3px solid #06b6d4; }
+.syllabus-card.it-card { border-top: 3px solid #10b981; }
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(118,75,162,0.05));
+    border-radius: 15px;
+    padding: 40px 20px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.stat-item {
+    text-align: center;
+    margin: 15px;
+    transition: transform 0.3s;
+}
+
+.stat-item:hover {
+    transform: scale(1.1);
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: 900;
+}
+
+/* subtle pop animation on change */
+.stat-item .pop { transform: scale(1.06); transition: transform 0.5s ease; }
+
+.stat-item p {
+    font-weight: 600;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    padding: 50px 20px 20px;
+    margin-top: 80px;
+    animation: fadeIn 1.5s ease;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-section ul li a:hover {
+    opacity: 1;
+}
+
+.social-links a {
+    color: var(--text-light);
+    margin-right: 12px;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+.dark-mode .section-title h2 {
+    color: var(--text-light);
+}
+
+.dark-mode .syllabus-card {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.dark-mode .syllabus-hero {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* .nav-menu rules removed */
+
+    .syllabus-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo"><i class="fas fa-book"></i>LearnSkart</div>
+    <!-- Navigation removed: site simplified per request -->
+    <div class="header-actions">
+        <a href="../Home/index.html" class="back-btn" aria-label="Back to Home">Back to Home</a>
+        <button class="theme-btn" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    </div>
+</header>
+
+<section class="syllabus-hero">
+    <h1><i class="fas fa-graduation-cap"></i> Academic Syllabus</h1>
+    <p>Comprehensive curriculum for all engineering departments</p>
+</section>
+
+<div class="syllabus-container">
+    <div class="section-title">
+        <h2>Select Your Department</h2>
+    </div>
+
+    <div class="dept-syllabus-grid">
+        <a href="sypdf.html?dept=CSE" class="syllabus-card cse-card" aria-label="Computer Science — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-laptop-code"></i></div><h3>Computer Science</h3><span class="dept-code">CSE</span></div>
+        </a>
+        <a href="sypdf.html?dept=ECE" class="syllabus-card ece-card" aria-label="Electronics & Communication — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-microchip"></i></div><h3>Electronics & Communication</h3><span class="dept-code">ECE</span></div>
+        </a>
+        <a href="sypdf.html?dept=EEE" class="syllabus-card eee-card" aria-label="Electrical & Electronics — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-bolt"></i></div><h3>Electrical & Electronics</h3><span class="dept-code">EEE</span></div>
+        </a>
+        <a href="sypdf.html?dept=MECH" class="syllabus-card mech-card" aria-label="Mechanical Engineering — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-cogs"></i></div><h3>Mechanical Engineering</h3><span class="dept-code">MECH</span></div>
+        </a>
+        <a href="sypdf.html?dept=CIVIL" class="syllabus-card civil-card" aria-label="Civil Engineering — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-building"></i></div><h3>Civil Engineering</h3><span class="dept-code">CIVIL</span></div>
+        </a>
+        <a href="sypdf.html?dept=IT" class="syllabus-card it-card" aria-label="Information Technology — Open Syllabus">
+            <div class="card-header"><div class="icon-wrap"><i class="fas fa-server"></i></div><h3>Information Technology</h3><span class="dept-code">IT</span></div>
+        </a>
+    </div>
+
+    <div class="stats">
+        <div class="stat-item"><h4 data-target="6">0</h4><p>Departments</p></div>
+        <div class="stat-item"><h4 data-target="48">0</h4><p>Semesters</p></div>
+        <div class="stat-item"><h4 data-target="200" data-suffix="+">0</h4><p>Courses</p></div>
+        <div class="stat-item"><h4 data-target="100" data-suffix="%">0</h4><p>Curriculum Aligned</p></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4><i class="fas fa-book"></i> LearnSkart</h4>
+            <p>Your one-stop destination for academic excellence.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="../Home/index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 OpenNotes. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+    </div>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const icon = document.querySelector('.theme-btn i');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+}
+</script>
+
+<script>
+// Animated counters for stats
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.stat-item h4[data-target]');
+    const duration = 1200; // ms total duration per counter
+
+    counters.forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const start = 0;
+        let startTime = null;
+
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percent = Math.min(progress / duration, 1);
+            const eased = easeOutQuad(percent);
+            const value = Math.floor(start + (target - start) * eased);
+            el.textContent = value + (percent === 1 ? suffix : '');
+            // add pop animation
+            el.classList.add('pop');
+            setTimeout(() => el.classList.remove('pop'), 120);
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
+            } else {
+                // ensure exact final value
+                el.textContent = target + suffix;
+            }
+        }
+
+        window.requestAnimationFrame(step);
+    });
+
+    function easeOutQuad(t) { return t * (2 - t); }
+});
+</script>
+</body>
+</html>
