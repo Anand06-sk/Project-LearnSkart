@@ -302,6 +302,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 }
             }
             
+            // Add department pages with multiple entry points
+            const deptMapping = {
+                'CSE': { name: 'Computer Science & Engineering', url: '../Dept/cse.html' },
+                'ECE': { name: 'Electronics & Communication', url: '../Dept/ece.html' },
+                'EEE': { name: 'Electrical & Electronics Engineering', url: '../Dept/eee.Html' },
+                'MECH': { name: 'Mechanical Engineering', url: '../Dept/mech.html' },
+                'CIVIL': { name: 'Civil Engineering', url: '../Dept/civil.html' },
+                'IT': { name: 'Information Technology', url: '../Dept/it.html' }
+            };
+            
+            Object.entries(deptMapping).forEach(([code, info]) => {
+                // Add multiple variations for better discoverability
+                const variations = [
+                    { label: `${code} Notes`, keywords: ['notes'] },
+                    { label: `${code} Subjects`, keywords: ['subjects'] },
+                    { label: `${code} - ${info.name}`, keywords: ['department', 'all'] }
+                ];
+                
+                variations.forEach(variant => {
+                    all.push({
+                        label: variant.label,
+                        url: info.url,
+                        type: 'Department',
+                        subject: info.name,
+                        dept: code,
+                        keywords: [code, info.name, ...variant.keywords],
+                        searchText: normalize(`${code} ${info.name} ${variant.keywords.join(' ')}`)
+                    });
+                });
+            });
+            
             // Add all department subjects for Notes
             Object.entries(DEPT_SUBJECTS).forEach(([dept, regulations]) => {
                 Object.entries(regulations).forEach(([regYear, semesters]) => {

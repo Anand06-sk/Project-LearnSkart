@@ -807,5 +807,31 @@
     })();
   </script>
 
+  <script>
+    // Make note cards clickable and redirect to pdfs.html with context
+    (function() {
+      document.querySelectorAll('.note-card').forEach(card => {
+        const subjectName = (card.textContent || '').trim();
+        if (!subjectName) return;
+
+        card.addEventListener('click', () => {
+          const section = card.closest('.section');
+          if (!section) return;
+
+          const match = section.id && section.id.match(/semester-(\d+)/);
+          if (!match) return;
+          const semester = match[1];
+
+          const regSelect = document.getElementById('reg');
+          const regulation = regSelect && regSelect.value ? regSelect.value : '2021';
+
+          const subjectEncoded = encodeURIComponent(subjectName);
+          const url = `../pdfs/pdfs.html?regulation=${regulation}&semester=${semester}&subject=${subjectEncoded}&dept=ECE`;
+          window.location.href = url;
+        });
+      });
+    })();
+  </script>
+
 </body>
 </html>

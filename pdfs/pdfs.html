@@ -374,8 +374,8 @@
       <i class="fas fa-book"></i> LearnSkart
     </div>
     <div class="header-actions">
-      <a href="../Dept/cse.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> Back to CSE
+      <a id="back-dept" href="../Dept/cse.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> <span id="back-dept-label">Back to CSE</span>
       </a>
       <a href="../Home/index.html" class="back-btn">
         <i class="fas fa-home"></i> Home
@@ -387,6 +387,8 @@
     <div class="page-header">
       <h1 id="page-title"><i class="fas fa-file-pdf"></i> PDF Resources</h1>
       <div class="breadcrumb">
+        <span><i class="fas fa-university"></i> <strong id="breadcrumb-dept">-</strong></span>
+        <span>/</span>
         <span><i class="fas fa-graduation-cap"></i> <strong id="breadcrumb-reg">-</strong></span>
         <span>/</span>
         <span><i class="fas fa-layer-group"></i> Semester <strong id="breadcrumb-sem">-</strong></span>
@@ -416,6 +418,31 @@
     function getParam(name) {
       const p = new URLSearchParams(window.location.search);
       return p.get(name) || '';
+    }
+
+    function normalizeDept(code) {
+      if (!code) return 'CSE';
+      const c = code.toUpperCase();
+      if (c === 'EEE') return 'EEE';
+      if (c === 'ECE') return 'ECE';
+      if (c === 'MECH') return 'MECH';
+      if (c === 'CIVIL') return 'CIVIL';
+      if (c === 'IT') return 'IT';
+      if (c === 'CSE') return 'CSE';
+      return c;
+    }
+
+    function deptPath(code) {
+      const c = normalizeDept(code);
+      const map = {
+        'CSE': '../Dept/cse.html',
+        'ECE': '../Dept/ece.html',
+        'EEE': '../Dept/eee.Html',
+        'MECH': '../Dept/mech.html',
+        'CIVIL': '../Dept/civil.html',
+        'IT': '../Dept/it.html'
+      };
+      return map[c] || '../Dept/cse.html';
     }
 
     function safeDecode(raw) {
@@ -456,11 +483,19 @@
     }
 
     async function loadPDFs() {
+      const deptRaw = getParam('dept');
+      const dept = normalizeDept(deptRaw) || 'CSE';
       const regulation = getParam('regulation');
       const semester = getParam('semester');
       const subjectRaw = getParam('subject');
       const subject = subjectRaw ? safeDecode(subjectRaw) : '';
 
+      const backLink = document.getElementById('back-dept');
+      const backLabel = document.getElementById('back-dept-label');
+      if (backLink) backLink.href = deptPath(dept);
+      if (backLabel) backLabel.textContent = `Back to ${dept}`;
+
+      document.getElementById('breadcrumb-dept').textContent = dept || '-';
       document.getElementById('breadcrumb-reg').textContent = regulation || '-';
       document.getElementById('breadcrumb-sem').textContent = semester || '-';
       document.getElementById('breadcrumb-sub').textContent = subject || '-';
