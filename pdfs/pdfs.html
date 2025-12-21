@@ -29,6 +29,11 @@
       min-height: 100vh;
     }
 
+    body.dark-mode {
+      background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #1f2937 100%);
+      color: #e2e8f0;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -177,6 +182,11 @@
       backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
+    }
+
+    body.dark-mode .pdf-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
     }
 
     .pdf-card::before {
@@ -536,6 +546,14 @@
       document.getElementById('empty').style.display = 'block';
       document.getElementById('countBadge').textContent = 0;
     }
+
+    // Apply saved dark mode preference
+    (function applySavedTheme() {
+      try {
+        const isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) document.body.classList.add('dark-mode');
+      } catch (e) {}
+    })();
 
     window.addEventListener('load', loadPDFs);
   </script>
