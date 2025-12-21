@@ -29,6 +29,11 @@
       min-height: 100vh;
     }
 
+    body.dark-mode {
+      background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #1f2937 100%);
+      color: #e2e8f0;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -177,6 +182,11 @@
       backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
+    }
+
+    body.dark-mode .pdf-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
     }
 
     .pdf-card::before {
@@ -374,8 +384,8 @@
       <i class="fas fa-book"></i> LearnSkart
     </div>
     <div class="header-actions">
-      <a href="../Dept/cse.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> Back to CSE
+      <a id="back-dept" href="../Dept/cse.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> <span id="back-dept-label">Back to CSE</span>
       </a>
       <a href="../Home/index.html" class="back-btn">
         <i class="fas fa-home"></i> Home
@@ -387,6 +397,8 @@
     <div class="page-header">
       <h1 id="page-title"><i class="fas fa-file-pdf"></i> PDF Resources</h1>
       <div class="breadcrumb">
+        <span><i class="fas fa-university"></i> <strong id="breadcrumb-dept">-</strong></span>
+        <span>/</span>
         <span><i class="fas fa-graduation-cap"></i> <strong id="breadcrumb-reg">-</strong></span>
         <span>/</span>
         <span><i class="fas fa-layer-group"></i> Semester <strong id="breadcrumb-sem">-</strong></span>
@@ -416,6 +428,31 @@
     function getParam(name) {
       const p = new URLSearchParams(window.location.search);
       return p.get(name) || '';
+    }
+
+    function normalizeDept(code) {
+      if (!code) return 'CSE';
+      const c = code.toUpperCase();
+      if (c === 'EEE') return 'EEE';
+      if (c === 'ECE') return 'ECE';
+      if (c === 'MECH') return 'MECH';
+      if (c === 'CIVIL') return 'CIVIL';
+      if (c === 'IT') return 'IT';
+      if (c === 'CSE') return 'CSE';
+      return c;
+    }
+
+    function deptPath(code) {
+      const c = normalizeDept(code);
+      const map = {
+        'CSE': '../Dept/cse.html',
+        'ECE': '../Dept/ece.html',
+        'EEE': '../Dept/eee.Html',
+        'MECH': '../Dept/mech.html',
+        'CIVIL': '../Dept/civil.html',
+        'IT': '../Dept/it.html'
+      };
+      return map[c] || '../Dept/cse.html';
     }
 
     function safeDecode(raw) {
@@ -456,27 +493,20 @@
     }
 
     async function loadPDFs() {
+      const deptRaw = getParam('dept');
+      const dept = normalizeDept(deptRaw) || 'CSE';
       const regulation = getParam('regulation');
       const semester = getParam('semester');
       const subjectRaw = getParam('subject');
       const department = getParam('department') || 'cse';
       const subject = subjectRaw ? safeDecode(subjectRaw) : '';
 
-      // Set back button URL based on department
-      const deptMap = {
-        'cse': 'cse.html',
-        'ece': 'ece.html',
-        'it': 'it.html',
-        'eee': 'eee.html',
-        'mech': 'mech.html',
-        'civil': 'civil.html'
-      };
-      const backBtn = document.getElementById('back-dept-btn');
-      if (backBtn) {
-        backBtn.href = deptMap[department] || 'cse.html';
-        backBtn.innerHTML = `<i class="fas fa-arrow-left"></i> Back to ${department.toUpperCase()}`;
-      }
+      const backLink = document.getElementById('back-dept');
+      const backLabel = document.getElementById('back-dept-label');
+      if (backLink) backLink.href = deptPath(dept);
+      if (backLabel) backLabel.textContent = `Back to ${dept}`;
 
+      document.getElementById('breadcrumb-dept').textContent = dept || '-';
       document.getElementById('breadcrumb-reg').textContent = regulation || '-';
       document.getElementById('breadcrumb-sem').textContent = semester || '-';
       document.getElementById('breadcrumb-sub').textContent = subject || '-';
@@ -517,6 +547,14 @@
       document.getElementById('empty').style.display = 'block';
       document.getElementById('countBadge').textContent = 0;
     }
+
+    // Apply saved dark mode preference
+    (function applySavedTheme() {
+      try {
+        const isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) document.body.classList.add('dark-mode');
+      } catch (e) {}
+    })();
 
     window.addEventListener('load', loadPDFs);
   </script>

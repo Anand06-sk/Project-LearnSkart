@@ -158,9 +158,51 @@
         @keyframes spin { to { transform: rotate(360deg); } }
         
         .empty-state { text-align: center; padding: 5rem 0; border: 2px dashed var(--border); border-radius: 1rem; }
+
+        /* Dark mode overrides */
+        body.dark-mode {
+            --bg-body: #0b1220;
+            --foreground: #e5e7eb;
+            --muted: #9ca3af;
+            --border: #1f2937;
+            --secondary: #0f172a;
+        }
+        body.dark-mode .nav { background: rgba(17, 24, 39, 0.7); border-bottom-color: var(--border); }
+        body.dark-mode .logo-text p { color: #94a3b8; }
+        body.dark-mode .hero-bg { background: linear-gradient(to bottom, #0b1220, #0b1220); }
+        body.dark-mode .badge { background: #0f172a; border-color: var(--border); color: #93c5fd; }
+        body.dark-mode .hero-title { color: #e5e7eb; }
+        body.dark-mode .hero-desc { color: var(--muted); }
+        body.dark-mode .search-inner { background: #0f172a; border-color: var(--border); box-shadow: none; }
+        body.dark-mode .tab-btn { background: #0f172a; border-color: var(--border); color: #94a3b8; }
+        body.dark-mode .tab-btn.active { background: var(--primary); color:#fff; border-color: var(--primary); }
+        body.dark-mode .card { background: #0f172a; border-color: var(--border); }
+        body.dark-mode .papers-list { background: #0b1220; border-top-color: var(--border); }
+        body.dark-mode .paper-item { background: #0f172a; border-color: var(--border); }
+        body.dark-mode .btn-icon { color: #9ca3af; }
+        body.dark-mode .btn-icon:hover { background: #111827; }
+        body.dark-mode .footer { background: #0b1220; border-top-color: var(--border); }
+        body.dark-mode .count-badge { background: #111827; color: #9ca3af; }
+        body.dark-mode .modal { background: rgba(0,0,0,0.6); }
+        body.dark-mode .modal-content { background: #0b1220; color: #e5e7eb; }
+        body.dark-mode .modal-header { background: #0f172a; border-bottom-color: var(--border); }
+        body.dark-mode .pdf-frame { background: #0b1220; }
+        body.dark-mode .modal-footer { border-top-color: var(--border); }
     </style>
 </head>
 <body>
+    <script>
+        // Apply saved dark mode on load
+        (function(){
+            try {
+                if (localStorage.getItem('darkMode') === 'true') {
+                    document.addEventListener('DOMContentLoaded', function(){
+                        document.body.classList.add('dark-mode');
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
 
     <nav class="nav">
         <div class="container nav-inner">

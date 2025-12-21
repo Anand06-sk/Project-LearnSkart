@@ -468,12 +468,30 @@ footer {
 </footer>
 
 <script>
+// Persisted dark mode toggle + apply on load
 function toggleDarkMode() {
+    const isDark = !document.body.classList.contains('dark-mode');
     document.body.classList.toggle('dark-mode');
+    try { localStorage.setItem('darkMode', String(isDark)); } catch (e) {}
     const icon = document.querySelector('.theme-btn i');
-    icon.classList.toggle('fa-moon');
-    icon.classList.toggle('fa-sun');
+    if (icon) {
+        if (isDark) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+        else { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
+    }
 }
+
+// Apply saved preference on load
+(function(){
+    try {
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.addEventListener('DOMContentLoaded', function(){
+                document.body.classList.add('dark-mode');
+                const icon = document.querySelector('.theme-btn i');
+                if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+            });
+        }
+    } catch(e) {}
+})();
 </script>
 
 <script>
