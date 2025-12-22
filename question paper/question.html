@@ -237,6 +237,7 @@
             </div>
 
             <div id="deptTabs" class="tabs"></div>
+            <div id="semTabs" class="tabs" style="margin-top: 1rem;"></div>
         </div>
     </section>
 
@@ -293,6 +294,7 @@
         let universityData = {};
         let selectedDept = 'CSE';
         let selectedReg = '2021';
+        let selectedSem = 'All';
         let searchQuery = '';
         let expandedId = null;
 
@@ -314,6 +316,7 @@
                 
                 document.getElementById('year').textContent = new Date().getFullYear();
                 renderTabs();
+                renderSemesterTabs();
                 renderGrid();
                 document.getElementById('loader').classList.add('hidden');
             } catch (e) {
@@ -331,17 +334,29 @@
             `).join('');
         }
 
+        function renderSemesterTabs() {
+            const tabs = document.getElementById('semTabs');
+            const semesters = ['All', '1', '2', '3', '4', '5', '6', '7'];
+            tabs.innerHTML = semesters.map(sem => `
+                <button class="tab-btn ${selectedSem === sem ? 'active' : ''}" onclick="setSem('${sem}')">
+                    ${sem === 'All' ? 'All Semesters' : 'Sem ' + sem}
+                </button>
+            `).join('');
+        }
+
         function renderGrid() {
             const grid = document.getElementById('grid');
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
 
             Object.entries(data).forEach(([sem, items]) => {
-                Object.entries(items).forEach(([name, papers]) => {
-                    if (!searchQuery || name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                        subjects.push({ id: `${selectedDept}-${sem}-${name}`, sem, name, papers });
-                    }
-                });
+                if (selectedSem === 'All' || sem === selectedSem) {
+                    Object.entries(items).forEach(([name, papers]) => {
+                        if (!searchQuery || name.toLowerCase().includes(searchQuery.toLowerCase())) {
+                            subjects.push({ id: `${selectedDept}-${sem}-${name}`, sem, name, papers });
+                        }
+                    });
+                }
             });
 
             subjects.sort((a, b) => a.sem - b.sem);
@@ -396,6 +411,12 @@
         window.setDept = (dept) => {
             selectedDept = dept;
             renderTabs();
+            renderGrid();
+        };
+
+        window.setSem = (sem) => {
+            selectedSem = sem;
+            renderSemesterTabs();
             renderGrid();
         };
 
