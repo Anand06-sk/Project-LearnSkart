@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | LearnSkart</title>
+    <meta name="description" content="Privacy Policy for LearnSkart — what we collect, how we use data, and how we protect your privacy.">
+    <meta property="og:title" content="Privacy Policy | LearnSkart">
+    <meta property="og:description" content="Privacy Policy for LearnSkart — what we collect, how we use data, and how we protect your privacy.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://replit.com/public/images/opengraph.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@replit">
+    <meta name="twitter:title" content="Privacy Policy | LearnSkart">
+    <meta name="twitter:description" content="Privacy Policy for LearnSkart — what we collect, how we use data, and how we protect your privacy.">
+    <meta name="twitter:image" content="https://replit.com/public/images/opengraph.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: #f8fbfd;
+            --foreground: #1a1f36;
+            --card: #ffffff;
+            --card-foreground: #1a1f36;
+            --primary: #3b5bdb;
+            --primary-foreground: #f8fbfd;
+            --secondary: #f0f4f8;
+            --muted-foreground: #64748b;
+            --border: #e2e8f0;
+            --primary-light: #e8ecf9;
+            --radius: 12px;
+        }
+
+        html.dark {
+            --background: #0f1419;
+            --foreground: #f0f4f8;
+            --card: #1a202c;
+            --card-foreground: #f0f4f8;
+            --primary: #4f7dff;
+            --primary-foreground: #0f1419;
+            --secondary: #2d3748;
+            --muted-foreground: #cbd5e0;
+            --border: #2d3748;
+            --primary-light: #1a2847;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(248, 251, 253, 0.8);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        html.dark nav {
+            background-color: rgba(15, 20, 25, 0.8);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--foreground);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+
+        .nav-logo svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--foreground);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border-radius: 50%;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--secondary);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: transparent;
+        }
+
+        html.dark .hero-bg {
+            background: transparent;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, var(--background));
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            margin-bottom: 24px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            border: 1px solid rgba(59, 91, 219, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: var(--foreground);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--muted-foreground);
+            max-width: 700px;
+            margin: 0 auto 16px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-date {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(59, 91, 219, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: -80px auto 0;
+            position: relative;
+            z-index: 20;
+            padding: 0 24px;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 250px 1fr;
+            }
+        }
+
+        /* Sidebar */
+        aside {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            aside {
+                display: block;
+            }
+
+            .toc {
+                position: sticky;
+                top: 100px;
+                border-left: 2px solid var(--border);
+                padding-left: 24px;
+                space-y: 8px;
+            }
+
+            .toc h3 {
+                font-family: 'Playfair Display', serif;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 24px;
+                color: var(--foreground);
+            }
+
+            .toc a {
+                display: block;
+                font-size: 14px;
+                color: var(--muted-foreground);
+                text-decoration: none;
+                padding: 8px 0;
+                transition: color 0.3s;
+                border-left: 2px solid transparent;
+                padding-left: 8px;
+                margin-left: -8px;
+            }
+
+            .toc a:hover {
+                color: var(--primary);
+            }
+        }
+
+        /* Content Card */
+        .content-card {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px;
+            }
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: var(--muted-foreground);
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .intro-text strong {
+            color: var(--foreground);
+            font-weight: 600;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 48px;
+            animation: fadeInUp 0.6s ease-out backwards;
+            scroll-margin-top: 100px;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+        section:nth-child(6) { animation-delay: 0.5s; }
+        section:nth-child(7) { animation-delay: 0.6s; }
+        section:nth-child(8) { animation-delay: 0.7s; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .section-icon {
+            padding: 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .section-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        section:hover .section-icon {
+            transform: scale(1.1);
+        }
+
+        /* Icon colors */
+        .icon-blue { background-color: #eff6ff; color: #0284c7; }
+        html.dark .icon-blue { background-color: rgba(2, 132, 199, 0.2); }
+
+        .icon-indigo { background-color: #f0f4ff; color: #4f46e5; }
+        html.dark .icon-indigo { background-color: rgba(79, 70, 229, 0.2); }
+
+        .icon-amber { background-color: #fffbeb; color: #d97706; }
+        html.dark .icon-amber { background-color: rgba(217, 119, 6, 0.2); }
+
+        .icon-emerald { background-color: #f0fdf4; color: #059669; }
+        html.dark .icon-emerald { background-color: rgba(5, 150, 105, 0.2); }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--foreground);
+        }
+
+        section p {
+            color: var(--muted-foreground);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        section strong {
+            color: var(--foreground);
+            font-weight: 600;
+        }
+
+        /* Lists */
+        section ul {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .feature-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--foreground);
+            background-color: var(--secondary);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: rgba(59, 91, 219, 0.2);
+        }
+
+        .feature-item::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .log-box {
+            background-color: var(--secondary);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            margin-top: 16px;
+        }
+
+        .log-box h4 {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted-foreground);
+            margin-bottom: 16px;
+        }
+
+        .log-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            font-size: 14px;
+        }
+
+        .log-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .log-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(59, 91, 219, 0.6);
+            flex-shrink: 0;
+        }
+
+        .alert-box {
+            padding: 16px;
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 8px 8px 0;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #92400e;
+        }
+
+        html.dark .alert-box {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #fcd34d;
+        }
+
+        /* Grid sections */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .grid-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--foreground);
+        }
+
+        .grid-item h3 svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        .grid-item p {
+            font-size: 14px;
+            color: var(--muted-foreground);
+            line-height: 1.6;
+        }
+
+        .divider {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            margin-top: 32px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-light);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            border: 1px solid rgba(59, 91, 219, 0.1);
+        }
+
+        .cta-section h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            max-width: 500px;
+            margin: 0 auto 24px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 0 32px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(59, 91, 219, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: rgba(59, 91, 219, 0.9);
+            box-shadow: 0 4px 12px rgba(59, 91, 219, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+            padding-top: 64px;
+            padding-bottom: 32px;
+            transition: background-color 0.3s;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            color: var(--foreground);
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: var(--muted-foreground);
+            line-height: 1.6;
+            max-width: 200px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            font-size: 14px;
+            color: var(--muted-foreground);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 0;
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .footer-bottom p,
+        .footer-bottom a {
+            font-size: 14px;
+            color: var(--muted-foreground);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--foreground);
+            margin-bottom: 16px;
+        }
+
+        .logo-brand svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        html::selection {
+            background-color: rgba(59, 91, 219, 0.2);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="nav-logo">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z"></path>
+                </svg>
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">PDFs</a>
+                    <a href="#">Contact</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <svg id="moonIcon" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sunIcon" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p>We value your trust. Here is a clear, transparent overview of how LearnSkart protects your data.</p>
+            <p class="hero-date">Last updated: December 22, 2025</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content-wrapper">
+            <!-- Table of Contents -->
+            <aside>
+                <div class="toc">
+                    <h3>Contents</h3>
+                    <a href="#collection">1. Information Collection</a>
+                    <a href="#logfiles">2. Log Files</a>
+                    <a href="#cookies">3. Cookies</a>
+                    <a href="#thirdparty">4. Third-Party Content</a>
+                    <a href="#security">Data Security</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </aside>
+
+            <!-- Content Card -->
+            <div class="content-card">
+                <div class="intro-text">
+                    Welcome to <strong>LearnSkart</strong>. Your privacy is critically important to us. This Privacy Policy explains how we handle information when you use our website. By accessing or using LearnSkart, you agree to the terms described below.
+                </div>
+
+                <!-- Section 1: Information Collection -->
+                <section id="collection">
+                    <div class="section-header">
+                        <div class="section-icon icon-blue">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <h2>1. Information We Collect</h2>
+                    </div>
+                    <p>LearnSkart does <strong>not collect any personal information</strong> from users. We believe in privacy by default.</p>
+                    <ul class="feature-list">
+                        <li class="feature-item">No account registration required</li>
+                        <li class="feature-item">No names or emails collected</li>
+                        <li class="feature-item">No phone numbers stored</li>
+                        <li class="feature-item">No passwords needed</li>
+                    </ul>
+                </section>
+
+                <!-- Section 2: Log Files -->
+                <section id="logfiles">
+                    <div class="section-header">
+                        <div class="section-icon icon-indigo">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h2>2. Log Files</h2>
+                    </div>
+                    <p>Like most websites, LearnSkart may use basic server log files for maintenance and analytics. This information is <strong>non-personal</strong> and is used only to improve website performance.</p>
+                    <div class="log-box">
+                        <h4>What logs may include:</h4>
+                        <div class="log-grid">
+                            <div class="log-item"><span class="log-dot"></span> IP Address</div>
+                            <div class="log-item"><span class="log-dot"></span> Browser Type</div>
+                            <div class="log-item"><span class="log-dot"></span> Date & Time</div>
+                            <div class="log-item"><span class="log-dot"></span> Pages Visited</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Cookies -->
+                <section id="cookies">
+                    <div class="section-header">
+                        <div class="section-icon icon-amber">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h2>3. Cookies</h2>
+                    </div>
+                    <p>LearnSkart does not use cookies to store or track personal user information. If cookies are introduced in the future for functionality improvements, this policy will be updated accordingly.</p>
+                </section>
+
+                <!-- Section 4: Third-Party Content -->
+                <section id="thirdparty">
+                    <div class="section-header">
+                        <div class="section-icon icon-emerald">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20H19a2 2 0 002-2v-2a2 2 0 00-2-2h-2.355a2 2 0 01-1.789-.894l-1.414-2.83a2 2 0 00-1.789-.894h-.5a2 2 0 00-2 2v2a2 2 0 00-2 2v2a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h2>4. Third-Party Content</h2>
+                    </div>
+                    <p>LearnSkart provides access to educational PDF files and learning resources, some of which may be sourced from third-party websites.</p>
+                    <div class="alert-box">
+                        <strong>Note:</strong> We do not claim ownership of third-party materials. External websites have their own privacy policies, and LearnSkart is not responsible for their practices.
+                    </div>
+                </section>
+
+                <!-- Grid Sections -->
+                <div class="grid-2">
+                    <div class="grid-item">
+                        <h3>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Educational Purpose
+                        </h3>
+                        <p>All materials on LearnSkart are provided strictly for educational purposes. We do not guarantee accuracy, completeness, or official endorsement.</p>
+                    </div>
+
+                    <div class="grid-item">
+                        <h3>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Children's Information
+                        </h3>
+                        <p>LearnSkart does not knowingly collect personal information from children under the age of 13.</p>
+                    </div>
+                </div>
+
+                <!-- Data Security -->
+                <section id="security" class="divider">
+                    <h2>Data Security</h2>
+                    <p>Since LearnSkart does not collect personal data, the risk of data misuse is minimal. However, we still take reasonable steps to keep the website secure and safe for all visitors.</p>
+                </section>
+
+                <!-- CTA Section -->
+                <section id="contact" class="cta-section">
+                    <h2>Still have questions?</h2>
+                    <p>If you have any questions regarding this Privacy Policy, please feel free to reach out to us.</p>
+                    <a href="#" class="cta-button">Contact Support</a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <div class="logo-brand">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z"></path>
+                    </svg>
+                    <span>LearnSkart</span>
+                </div>
+                <p>Your one-stop destination for academic excellence. We provide high-quality educational resources for everyone.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">PDFs</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" title="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" title="Twitter">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 002.856-3.915 9.957 9.957 0 01-2.828.856 4.957 4.957 0 00-8.594-4.515c-1.477.12-2.896.603-4.142 1.339-1.246.735-2.304 1.76-3.06 2.984-.756 1.224-1.197 2.615-1.285 4.032C4.12 5.45 2.966 5.594 1.843 5.44c-1.123-.154-2.196-.514-3.158-1.057.267 1.424.856 2.764 1.698 3.9a10.04 10.04 0 002.46 2.81c-.31 1.01-.49 2.063-.49 3.136V12c0 2.11.711 4.15 2.016 5.852a9.968 9.968 0 004.707 3.77c1.644.55 3.429.62 5.13.21 1.701-.41 3.27-1.35 4.54-2.695.648-.743 1.192-1.573 1.618-2.462.426-.889.741-1.838.931-2.816.19-.978.265-1.985.22-2.99-.004-.132-.006-.263-.006-.395-.001-2.11.711-4.15 2.016-5.852-1.172.25-2.42.375-3.716.375z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" title="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.894 3.81a1.688 1.688 0 11-3.376 0 1.688 1.688 0 013.376 0zM8.5 5c1.933 0 3.5 1.567 3.5 3.5S10.433 12 8.5 12 5 10.433 5 8.5 6.567 5 8.5 5zm4.5 9.5H12V21h1v-6.5h1V12h-1v1.5c0 .828.672 1.5 1.5 1.5H15V12h-2zm-4 0H8V21h1v-6.5h1V12h-1v1.5c0 .828.672 1.5 1.5 1.5H9V12h-2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 LearnSkart / OpenNotes. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        } else {
+            html.classList.remove('dark');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            if (isDark) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        });
+
+        // Table of contents - smooth scroll behavior
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
