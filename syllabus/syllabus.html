@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Syllabus | OpenNotes</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap">
 <style>
 :root {
-    --primary: #667eea;
-    --secondary: #764ba2;
-    --text-dark: #222;
-    --text-light: #f3f5fb;
-    --bg-light: #fff;
-    --bg-dark: #1a1a2e;
+    --primary: #3b82f6;
+    --secondary: #8b5cf6;
+    --text-dark: #1e293b;
+    --text-light: #e5e7eb;
+    --bg-light: #f8fafc;
+    --bg-dark: #0b1220;
 }
 
 * {
@@ -27,6 +28,7 @@ body {
     color: var(--text-dark);
     transition: background 0.4s, color 0.4s;
     overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Header */
@@ -35,13 +37,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 18px 40px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
+    background: white;
+    color: var(--text-dark);
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     animation: slideDown 1s ease;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 @keyframes slideDown {
@@ -51,19 +54,21 @@ header {
 
 .logo {
     font-size: 1.6rem;
-    font-weight: 800;
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 10px;
     animation: fadeIn 1.5s ease;
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
 }
 
 /* Navigation removed; styles left intentionally blank */
 
 .back-btn {
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--text-light);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    border: 1px solid #bfdbfe;
     padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;
@@ -75,12 +80,12 @@ header {
     align-items:self-end;
 }
 
-.back-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+.back-btn:hover { background: rgba(59, 130, 246, 0.2); transform: translateY(-2px); }
 
 .theme-btn {
     background: transparent;
     border: none;
-    color: var(--text-light);
+    color: var(--primary);
     font-size: 1.2rem;
     cursor: pointer;
     transition: transform 0.3s;
@@ -98,11 +103,12 @@ header {
 
 /* Hero Section */
 .syllabus-hero {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
+    background: white;
+    color: var(--text-dark);
     text-align: center;
     padding: 80px 20px;
     animation: fadeInUp 1.5s ease;
+    border-bottom: 2px solid #e2e8f0;
 }
 
 @keyframes fadeInUp {
@@ -114,6 +120,7 @@ header {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 15px;
+    color: var(--primary);
 }
 
 .syllabus-hero p {
@@ -167,9 +174,9 @@ header {
     cursor: pointer;
     display: block; /* anchor styling */
     text-decoration: none;
-    color: inherit;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
+    color: var(--text-dark);
+    background: white;
+    border: 2px solid #e2e8f0;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInCard 1s forwards;
@@ -188,6 +195,8 @@ header {
     text-align: center;
     padding: 40px 20px;
     position: relative;
+    background: linear-gradient(135deg, #f0f9ff, #f8fafc);
+    border-bottom: 2px solid var(--primary);
 }
 /* smooth transition for header pop */
 .card-header { transition: transform 0.22s cubic-bezier(.2,.9,.3,1), box-shadow 0.22s ease; }
@@ -196,12 +205,13 @@ header {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 15px;
     font-size: 28px;
+    color: white;
     animation: pulse 3s ease-in-out infinite;
 }
 /* Pause animation and pop icon on card hover */
@@ -219,6 +229,7 @@ header {
 .card-header h3 {
     font-size: 1.3rem;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 /* Pop the header above other cards on hover */
@@ -253,9 +264,10 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 60px;
-    background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(118,75,162,0.05));
+    background: linear-gradient(135deg, #f0f9ff, #f8fafc);
     border-radius: 15px;
     padding: 40px 20px;
+    border: 2px solid #e2e8f0;
     animation: fadeInUp 1.5s ease;
 }
 
@@ -285,11 +297,12 @@ header {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
+    background: white;
+    color: var(--text-dark);
     padding: 50px 20px 20px;
     margin-top: 80px;
     animation: fadeIn 1.5s ease;
+    border-top: 1px solid #e2e8f0;
 }
 
 .footer-content {
@@ -304,6 +317,8 @@ footer {
 .footer-section h4 {
     margin-bottom: 15px;
     font-size: 1.2rem;
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
 }
 
 .footer-section ul {
@@ -315,7 +330,7 @@ footer {
 }
 
 .footer-section ul li a {
-    color: var(--text-light);
+    color: var(--text-dark);
     text-decoration: none;
     opacity: 0.9;
     transition: opacity 0.3s;
@@ -323,6 +338,7 @@ footer {
 
 .footer-section ul li a:hover {
     opacity: 1;
+    color: var(--primary);
 }
 
 .social-links a {
@@ -341,6 +357,7 @@ footer {
     margin-top: 40px;
     font-size: 0.9rem;
     opacity: 0.9;
+    color: var(--text-dark);
 }
 
 /* Animations */
@@ -359,12 +376,33 @@ footer {
 }
 
 .dark-mode .syllabus-card {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: #0f172a;
+    border-color: #1f2937;
+    color: var(--text-light);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .dark-mode .syllabus-hero {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    border-bottom-color: var(--primary);
+}
+
+.dark-mode .syllabus-hero h1 {
+    color: var(--text-light);
+}
+
+.dark-mode .stat-item p {
+    color: var(--text-light);
+}
+
+.dark-mode .stats {
+    background: #0f172a;
+    border-color: #1f2937;
+}
+
+html.dark {
+    --bg-dark: #0b1220;
 }
 
 /* Responsive */
