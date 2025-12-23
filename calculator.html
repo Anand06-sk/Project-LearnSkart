@@ -3,252 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPA & CGPA Calculator - LearnSkart | Anna University</title>
-    <meta name="description" content="Calculate your GPA, CGPA and Percentage for Anna University with LearnSkart's free calculator tool.">
-    <meta name="keywords" content="GPA calculator, CGPA calculator, Anna University, LearnSkart, percentage calculator">
-    <link rel="canonical" href="https://learnskart.com/gpa-calculator">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="GPA & CGPA Calculator - LearnSkart">
-    <meta property="og:description" content="Calculate your GPA, CGPA and Percentage for Anna University">
-    <meta property="og:type" content="website">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>GPA & CGPA Calculator - LearnSkart</title>
     <style>
-        :root {
-            --primary: 217 91% 60%;
-            --primary-foreground: 0 0% 100%;
-            --secondary: 45 93% 47%;
-            --secondary-foreground: 0 0% 10%;
-            --background: 222 47% 11%;
-            --foreground: 210 40% 98%;
-            --card: 217 33% 17%;
-            --card-foreground: 210 40% 98%;
-            --muted: 217 33% 25%;
-            --muted-foreground: 215 20% 65%;
-            --border: 217 33% 25%;
-            --accent: 45 93% 47%;
-            --destructive: 0 84% 60%;
-            --radius: 0.75rem;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #6366F1;
+            --secondary: #F59E0B;
+            --background: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+            --border: #E2E8F0;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: hsl(var(--background));
-            color: hsl(var(--foreground));
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+            color: var(--text-primary);
             min-height: 100vh;
             line-height: 1.6;
         }
 
-        /* Background decoration */
-        .bg-decoration {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.15;
-        }
-
-        .bg-circle-1 {
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            background: hsl(var(--primary));
-        }
-
-        .bg-circle-2 {
-            bottom: -200px;
-            left: -200px;
-            width: 500px;
-            height: 500px;
-            background: hsl(var(--secondary));
-        }
-
-        /* Container */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem 1rem;
-            position: relative;
-            z-index: 1;
+            padding: 0 1rem;
         }
 
         /* Header */
         header {
+            position: relative;
             text-align: center;
-            margin-bottom: 3rem;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: hsl(var(--secondary));
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
             margin-bottom: 1rem;
-            display: inline-block;
         }
 
         h1 {
             font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--secondary)));
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1E293B 0%, #4F46E5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.5rem;
         }
 
         .subtitle {
-            color: hsl(var(--muted-foreground));
-            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
         }
 
         /* Tabs */
         .tabs {
             display: flex;
             gap: 0.5rem;
-            background: hsl(var(--card));
-            padding: 0.5rem;
-            border-radius: var(--radius);
             margin-bottom: 2rem;
+            background: var(--surface);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
             flex-wrap: wrap;
         }
 
         .tab-btn {
             flex: 1;
-            min-width: 120px;
+            min-width: 140px;
             padding: 0.875rem 1.5rem;
-            border: none;
+            border: 2px solid transparent;
             background: transparent;
-            color: hsl(var(--muted-foreground));
-            font-family: inherit;
+            color: var(--text-secondary);
             font-size: 0.95rem;
             font-weight: 600;
-            border-radius: calc(var(--radius) - 4px);
+            border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .tab-btn:hover {
-            color: hsl(var(--foreground));
-            background: hsl(var(--muted) / 0.5);
+            color: var(--primary);
+            background: rgba(79, 70, 229, 0.05);
         }
 
         .tab-btn.active {
-            background: linear-gradient(135deg, hsl(var(--primary)), hsl(217 91% 50%));
-            color: hsl(var(--primary-foreground));
-            box-shadow: 0 4px 15px hsl(var(--primary) / 0.4);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
         }
 
         .tab-btn svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
         }
 
         /* Card */
         .card {
-            background: hsl(var(--card));
-            border: 1px solid hsl(var(--border));
-            border-radius: var(--radius);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
             padding: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
         }
 
         .card-header {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .card-title {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
         .card-description {
-            color: hsl(var(--muted-foreground));
-            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         /* Form elements */
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         label {
             display: block;
             font-size: 0.875rem;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 0.5rem;
-            color: hsl(var(--foreground));
+            color: var(--text-primary);
         }
 
         input, select {
             width: 100%;
             padding: 0.75rem 1rem;
-            background: hsl(var(--background));
-            border: 1px solid hsl(var(--border));
-            border-radius: calc(var(--radius) - 4px);
-            color: hsl(var(--foreground));
+            background: var(--background);
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
             font-family: inherit;
             font-size: 0.95rem;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: var(--text-secondary);
         }
 
         input:focus, select:focus {
             outline: none;
-            border-color: hsl(var(--primary));
-            box-shadow: 0 0 0 3px hsl(var(--primary) / 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            background: white;
         }
 
         select {
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
-            background-size: 16px;
+            background-size: 20px;
             padding-right: 2.5rem;
         }
 
-        select option {
-            background: hsl(var(--card));
-            color: hsl(var(--foreground));
-        }
-
-        /* Subject row */
+        /* q row */
         .subject-row {
             display: grid;
-            grid-template-columns: 1fr 120px 100px 40px;
-            gap: 0.75rem;
+            grid-template-columns: 1.5fr 100px 120px 40px;
+            gap: 1rem;
             align-items: end;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             padding: 1rem;
-            background: hsl(var(--background));
-            border-radius: calc(var(--radius) - 4px);
+            background: var(--background);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
             animation: slideIn 0.3s ease;
         }
 
@@ -263,171 +220,183 @@
             }
         }
 
-        .subject-row label {
+        .subject-row > div:first-child label {
             font-size: 0.75rem;
-            color: hsl(var(--muted-foreground));
-        }
-
-        /* Semester row for CGPA */
-        .semester-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 40px;
-            gap: 0.75rem;
-            align-items: end;
-            margin-bottom: 0.75rem;
-            padding: 1rem;
-            background: hsl(var(--background));
-            border-radius: calc(var(--radius) - 4px);
-            animation: slideIn 0.3s ease;
+            color: var(--text-secondary);
         }
 
         /* Buttons */
         .btn {
             padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: calc(var(--radius) - 4px);
+            border-radius: 0.5rem;
             font-family: inherit;
             font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            text-decoration: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, hsl(var(--primary)), hsl(217 91% 50%));
-            color: hsl(var(--primary-foreground));
-            box-shadow: 0 4px 15px hsl(var(--primary) / 0.4);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px hsl(var(--primary) / 0.5);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
 
-        .btn-secondary {
-            background: hsl(var(--secondary));
-            color: hsl(var(--secondary-foreground));
-        }
-
-        .btn-secondary:hover {
-            filter: brightness(1.1);
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
         .btn-outline {
             background: transparent;
-            color: hsl(var(--muted-foreground));
-            border: 1px solid hsl(var(--border));
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
         .btn-outline:hover {
-            background: hsl(var(--muted) / 0.5);
-            color: hsl(var(--foreground));
+            background: rgba(79, 70, 229, 0.05);
         }
 
         .btn-ghost {
             background: transparent;
-            color: hsl(var(--muted-foreground));
-            padding: 0.5rem;
+            color: var(--text-secondary);
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-ghost:hover {
-            background: hsl(var(--destructive) / 0.2);
-            color: hsl(var(--destructive));
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
         }
 
-        .btn-icon {
-            width: 36px;
-            height: 36px;
-            padding: 0;
+        .back-link {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
         }
 
         /* Button group */
         .btn-group {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         /* Result */
         .result {
-            margin-top: 2rem;
             padding: 2rem;
-            background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
-            border: 1px solid hsl(var(--primary) / 0.3);
-            border-radius: var(--radius);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border: 2px solid rgba(79, 70, 229, 0.2);
+            border-radius: 1rem;
             text-align: center;
+            margin-bottom: 2rem;
             animation: fadeIn 0.5s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .result.hidden {
+            display: none;
         }
 
         .result-label {
-            font-size: 0.9rem;
-            color: hsl(var(--muted-foreground));
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
 
         .result-value {
             font-size: 3.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
         .result-grade {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            color: hsl(var(--secondary));
+            font-size: 1.25rem;
+            color: var(--primary);
             font-weight: 600;
         }
 
         /* Grade table */
         .grade-info {
             margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid hsl(var(--border));
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
 
         .grade-info h3 {
             font-size: 1rem;
             margin-bottom: 1rem;
-            color: hsl(var(--muted-foreground));
+            color: var(--text-primary);
+            font-weight: 700;
         }
 
         .grade-table {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .grade-item {
-            padding: 0.5rem;
-            background: hsl(var(--background));
-            border-radius: calc(var(--radius) - 4px);
+            padding: 1rem;
+            background: linear-gradient(135deg, #F0F9FF 0%, #FFFBEB 100%);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
             text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .grade-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
         .grade-item .grade {
             font-weight: 700;
-            color: hsl(var(--secondary));
+            font-size: 1.25rem;
+            color: var(--primary);
+            display: block;
         }
 
         .grade-item .points {
             font-size: 0.8rem;
-            color: hsl(var(--muted-foreground));
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
         }
 
-        /* Tab panels */
+        /* Tab panel */
         .tab-panel {
             display: none;
         }
@@ -441,13 +410,16 @@
         footer {
             text-align: center;
             padding: 2rem;
-            color: hsl(var(--muted-foreground));
+            color: var(--text-secondary);
             font-size: 0.9rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
         }
 
         footer a {
-            color: hsl(var(--secondary));
+            color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
         }
 
         footer a:hover {
@@ -464,83 +436,75 @@
                 grid-template-columns: 1fr;
             }
 
-            .semester-row {
-                grid-template-columns: 1fr;
-            }
-
-            .subject-row > div:last-child,
-            .semester-row > div:last-child {
-                justify-self: start;
-            }
-
             .tab-btn {
+                min-width: 100px;
                 padding: 0.75rem 1rem;
                 font-size: 0.85rem;
             }
 
             .card {
-                padding: 1.25rem;
+                padding: 1.5rem;
             }
 
             .result-value {
                 font-size: 2.5rem;
             }
-        }
 
-        /* Hidden class */
-        .hidden {
-            display: none !important;
+            .tabs {
+                gap: 0.25rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-decoration">
-        <div class="bg-circle bg-circle-1"></div>
-        <div class="bg-circle bg-circle-2"></div>
-    </div>
-
-    <main class="container">
-        <header>
+    <header>
+        <div class="container">
+            <div class="back-link">
+                <a class="btn btn-outline" href="Home/index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    Back to Home
+                </a>
+            </div>
             <div class="logo">LearnSkart</div>
             <h1>GPA & CGPA Calculator</h1>
             <p class="subtitle">Anna University Regulation 2021 Grading System</p>
-        </header>
+        </div>
+    </header>
 
+    <main class="container" style="padding: 2rem 1rem;">
         <!-- Tabs -->
-        <nav class="tabs" role="tablist">
-            <button class="tab-btn active" data-tab="gpa" role="tab" aria-selected="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="gpa">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                 GPA Calculator
             </button>
-            <button class="tab-btn" data-tab="cgpa" role="tab" aria-selected="false">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+            <button class="tab-btn" data-tab="cgpa">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
                 CGPA Calculator
             </button>
-            <button class="tab-btn" data-tab="percentage" role="tab" aria-selected="false">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            <button class="tab-btn" data-tab="percentage">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
                 Percentage
             </button>
-        </nav>
+        </div>
 
         <!-- GPA Calculator Panel -->
-        <section id="gpa-panel" class="tab-panel active" role="tabpanel">
+        <section id="gpa-panel" class="tab-panel active">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Calculate Your Semester GPA</h2>
                     <p class="card-description">Add your subjects with credits and grades</p>
                 </div>
 
-                <div id="gpa-subjects">
-                    <!-- Subject rows will be added here -->
-                </div>
+                <div id="gpa-subjects"></div>
 
                 <div class="btn-group">
                     <button class="btn btn-outline" onclick="addGPASubject()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                         Add Subject
                     </button>
                     <button class="btn btn-primary" onclick="calculateGPA()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><circle cx="12" cy="12" r="1"/><path d="M19 13v2H5v-2"/><path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"/></svg>
                         Calculate GPA
                     </button>
                     <button class="btn btn-outline" onclick="resetGPA()">Reset</button>
@@ -568,24 +532,22 @@
         </section>
 
         <!-- CGPA Calculator Panel -->
-        <section id="cgpa-panel" class="tab-panel" role="tabpanel">
+        <section id="cgpa-panel" class="tab-panel">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Calculate Your Overall CGPA</h2>
                     <p class="card-description">Enter GPA and credits for each semester</p>
                 </div>
 
-                <div id="cgpa-semesters">
-                    <!-- Semester rows will be added here -->
-                </div>
+                <div id="cgpa-semesters"></div>
 
                 <div class="btn-group">
                     <button class="btn btn-outline" onclick="addCGPASemester()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                         Add Semester
                     </button>
                     <button class="btn btn-primary" onclick="calculateCGPA()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><circle cx="12" cy="12" r="1"/><path d="M19 13v2H5v-2"/><path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"/></svg>
                         Calculate CGPA
                     </button>
                     <button class="btn btn-outline" onclick="resetCGPA()">Reset</button>
@@ -600,7 +562,7 @@
         </section>
 
         <!-- Percentage Calculator Panel -->
-        <section id="percentage-panel" class="tab-panel" role="tabpanel">
+        <section id="percentage-panel" class="tab-panel">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Convert CGPA to Percentage</h2>
@@ -636,210 +598,190 @@
                 </div>
             </div>
         </section>
-
-        <footer>
-            <p>© 2024 <a href="#">LearnSkart</a>. Anna University GPA Calculator.</p>
-        </footer>
     </main>
 
+    <footer>
+        <p>&copy; <span id="year"></span> LearnSkart. Professional Grade Calculator for Anna University Students.</p>
+    </footer>
+
     <script>
-        // Grade points mapping
-        const gradePoints = {
-            'O': 10,
-            'A+': 9,
-            'A': 8,
-            'B+': 7,
-            'B': 6,
-            'C': 5,
-            'U': 0
-        };
+        const GRADE_POINTS = { 'O': 10, 'A+': 9, 'A': 8, 'B+': 7, 'B': 6, 'C': 5, 'U': 0 };
+        let gpaSubjectCount = 0;
+        let cgpaSemesterCount = 0;
+
+        // Set footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
         // Tab switching
         document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tabId = btn.dataset.tab;
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
                 
-                // Update buttons
-                document.querySelectorAll('.tab-btn').forEach(b => {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-selected', 'false');
-                });
-                btn.classList.add('active');
-                btn.setAttribute('aria-selected', 'true');
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
                 
-                // Update panels
-                document.querySelectorAll('.tab-panel').forEach(panel => {
-                    panel.classList.remove('active');
-                });
-                document.getElementById(`${tabId}-panel`).classList.add('active');
+                this.classList.add('active');
+                document.getElementById(tabName + '-panel').classList.add('active');
             });
         });
 
-        // GPA Calculator
-        let gpaSubjectCount = 0;
-
+        // GPA Functions
         function addGPASubject() {
             gpaSubjectCount++;
             const container = document.getElementById('gpa-subjects');
             const row = document.createElement('div');
             row.className = 'subject-row';
-            row.id = `gpa-subject-${gpaSubjectCount}`;
+            row.id = 'gpa-subject-' + gpaSubjectCount;
             row.innerHTML = `
                 <div>
                     <label>Subject Name</label>
-                    <input type="text" placeholder="e.g., Mathematics" class="subject-name">
+                    <input type="text" class="subject-name" placeholder="Subject ${gpaSubjectCount}" value="Subject ${gpaSubjectCount}">
                 </div>
                 <div>
                     <label>Credits</label>
-                    <select class="subject-credits">
-                        <option value="">Select</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                    <input type="number" class="subject-credits" min="1" max="5" value="3">
                 </div>
                 <div>
                     <label>Grade</label>
                     <select class="subject-grade">
-                        <option value="">Select</option>
-                        <option value="O">O (10)</option>
-                        <option value="A+">A+ (9)</option>
-                        <option value="A">A (8)</option>
-                        <option value="B+">B+ (7)</option>
-                        <option value="B">B (6)</option>
-                        <option value="C">C (5)</option>
-                        <option value="U">U (0)</option>
+                        <option value="O">O</option>
+                        <option value="A+" selected>A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="U">U</option>
                     </select>
                 </div>
-                <div>
-                    <label>&nbsp;</label>
-                    <button class="btn btn-ghost btn-icon" onclick="removeGPASubject(${gpaSubjectCount})" title="Remove">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                    </button>
-                </div>
+                <button class="btn btn-ghost" onclick="removeGPASubject(${gpaSubjectCount})" title="Remove">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </button>
             `;
             container.appendChild(row);
         }
 
         function removeGPASubject(id) {
-            const row = document.getElementById(`gpa-subject-${id}`);
-            if (row) row.remove();
+            const element = document.getElementById('gpa-subject-' + id);
+            if (element) element.remove();
         }
 
         function calculateGPA() {
             const rows = document.querySelectorAll('#gpa-subjects .subject-row');
-            let totalCredits = 0;
             let totalPoints = 0;
+            let totalCredits = 0;
 
             rows.forEach(row => {
-                const credits = parseFloat(row.querySelector('.subject-credits').value);
+                const credits = parseFloat(row.querySelector('.subject-credits').value) || 0;
                 const grade = row.querySelector('.subject-grade').value;
-                
-                if (credits && grade) {
-                    totalCredits += credits;
-                    totalPoints += credits * gradePoints[grade];
-                }
+                const points = GRADE_POINTS[grade] || 0;
+                totalPoints += credits * points;
+                totalCredits += credits;
             });
 
-            if (totalCredits === 0) {
-                alert('Please add at least one subject with credits and grade.');
-                return;
-            }
+            if (totalCredits === 0) return;
 
-            const gpa = totalPoints / totalCredits;
-            document.getElementById('gpa-value').textContent = gpa.toFixed(2);
-            document.getElementById('gpa-grade').textContent = getGPAClassification(gpa);
+            const gpa = (totalPoints / totalCredits).toFixed(2);
+            const gpaNum = parseFloat(gpa);
+            let gradeClass = '';
+
+            if (gpaNum >= 9) gradeClass = 'Outstanding';
+            else if (gpaNum >= 8) gradeClass = 'Excellent';
+            else if (gpaNum >= 7) gradeClass = 'Very Good';
+            else if (gpaNum >= 6) gradeClass = 'Good';
+            else if (gpaNum >= 5) gradeClass = 'Average';
+            else gradeClass = 'Reappear';
+
+            document.getElementById('gpa-value').textContent = gpa;
+            document.getElementById('gpa-grade').textContent = gradeClass;
             document.getElementById('gpa-result').classList.remove('hidden');
         }
 
         function resetGPA() {
             document.getElementById('gpa-subjects').innerHTML = '';
-            document.getElementById('gpa-result').classList.add('hidden');
             gpaSubjectCount = 0;
             addGPASubject();
+            document.getElementById('gpa-result').classList.add('hidden');
         }
 
-        // CGPA Calculator
-        let cgpaSemesterCount = 0;
-
+        // CGPA Functions
         function addCGPASemester() {
             cgpaSemesterCount++;
             const container = document.getElementById('cgpa-semesters');
             const row = document.createElement('div');
-            row.className = 'semester-row';
-            row.id = `cgpa-semester-${cgpaSemesterCount}`;
+            row.className = 'subject-row';
+            row.id = 'cgpa-semester-' + cgpaSemesterCount;
             row.innerHTML = `
                 <div>
                     <label>Semester ${cgpaSemesterCount} GPA</label>
-                    <input type="number" placeholder="e.g., 8.5" min="0" max="10" step="0.01" class="semester-gpa">
+                    <input type="number" class="semester-gpa" min="0" max="10" step="0.01" placeholder="0.00">
                 </div>
                 <div>
-                    <label>Total Credits</label>
-                    <input type="number" placeholder="e.g., 24" min="1" class="semester-credits">
+                    <label>Credits</label>
+                    <input type="number" class="semester-credits" min="1" placeholder="0">
                 </div>
-                <div>
-                    <label>&nbsp;</label>
-                    <button class="btn btn-ghost btn-icon" onclick="removeCGPASemester(${cgpaSemesterCount})" title="Remove">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                    </button>
-                </div>
+                <button class="btn btn-ghost" onclick="removeCGPASemester(${cgpaSemesterCount})" title="Remove">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </button>
             `;
             container.appendChild(row);
         }
 
         function removeCGPASemester(id) {
-            const row = document.getElementById(`cgpa-semester-${id}`);
-            if (row) row.remove();
+            const element = document.getElementById('cgpa-semester-' + id);
+            if (element) element.remove();
         }
 
         function calculateCGPA() {
-            const rows = document.querySelectorAll('#cgpa-semesters .semester-row');
-            let totalCredits = 0;
+            const rows = document.querySelectorAll('#cgpa-semesters .subject-row');
             let totalPoints = 0;
+            let totalCredits = 0;
 
             rows.forEach(row => {
-                const gpa = parseFloat(row.querySelector('.semester-gpa').value);
-                const credits = parseFloat(row.querySelector('.semester-credits').value);
-                
-                if (gpa && credits) {
-                    totalCredits += credits;
-                    totalPoints += credits * gpa;
-                }
+                const gpa = parseFloat(row.querySelector('.semester-gpa').value) || 0;
+                const credits = parseFloat(row.querySelector('.semester-credits').value) || 0;
+                totalPoints += gpa * credits;
+                totalCredits += credits;
             });
 
-            if (totalCredits === 0) {
-                alert('Please add at least one semester with GPA and credits.');
-                return;
-            }
+            if (totalCredits === 0) return;
 
-            const cgpa = totalPoints / totalCredits;
-            document.getElementById('cgpa-value').textContent = cgpa.toFixed(2);
-            document.getElementById('cgpa-grade').textContent = getGPAClassification(cgpa);
+            const cgpa = (totalPoints / totalCredits).toFixed(2);
+            const cgpaNum = parseFloat(cgpa);
+            let gradeClass = '';
+
+            if (cgpaNum >= 7.5) gradeClass = 'First Class with Distinction';
+            else if (cgpaNum >= 6.0) gradeClass = 'First Class';
+            else if (cgpaNum >= 5.0) gradeClass = 'Second Class';
+            else gradeClass = 'Third Class';
+
+            document.getElementById('cgpa-value').textContent = cgpa;
+            document.getElementById('cgpa-grade').textContent = gradeClass;
             document.getElementById('cgpa-result').classList.remove('hidden');
         }
 
         function resetCGPA() {
             document.getElementById('cgpa-semesters').innerHTML = '';
-            document.getElementById('cgpa-result').classList.add('hidden');
             cgpaSemesterCount = 0;
             addCGPASemester();
+            document.getElementById('cgpa-result').classList.add('hidden');
         }
 
-        // Percentage Calculator
+        // Percentage Functions
         function calculatePercentage() {
-            const cgpaInput = document.getElementById('cgpa-input');
-            const cgpa = parseFloat(cgpaInput.value);
+            const cgpa = parseFloat(document.getElementById('cgpa-input').value);
+            if (isNaN(cgpa)) return;
 
-            if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
-                alert('Please enter a valid CGPA between 0 and 10.');
-                return;
-            }
+            const percentage = ((cgpa - 0.75) * 10).toFixed(2);
+            const numPerc = parseFloat(percentage);
+            let gradeClass = '';
 
-            const percentage = (cgpa - 0.75) * 10;
-            document.getElementById('percentage-value').textContent = percentage.toFixed(2) + '%';
-            document.getElementById('percentage-class').textContent = getPercentageClassification(percentage);
+            if (numPerc >= 75) gradeClass = 'First Class with Distinction';
+            else if (numPerc >= 60) gradeClass = 'First Class';
+            else if (numPerc >= 50) gradeClass = 'Second Class';
+            else gradeClass = 'Third Class';
+
+            document.getElementById('percentage-value').textContent = percentage + '%';
+            document.getElementById('percentage-class').textContent = gradeClass;
             document.getElementById('percentage-result').classList.remove('hidden');
         }
 
@@ -848,26 +790,10 @@
             document.getElementById('percentage-result').classList.add('hidden');
         }
 
-        // Classification helpers
-        function getGPAClassification(gpa) {
-            if (gpa >= 9) return 'Outstanding Performance! 🌟';
-            if (gpa >= 8) return 'Excellent Performance!';
-            if (gpa >= 7) return 'Very Good Performance';
-            if (gpa >= 6) return 'Good Performance';
-            if (gpa >= 5) return 'Average Performance';
-            return 'Needs Improvement';
-        }
-
-        function getPercentageClassification(percentage) {
-            if (percentage >= 75) return 'First Class with Distinction 🌟';
-            if (percentage >= 60) return 'First Class';
-            if (percentage >= 50) return 'Second Class';
-            return 'Third Class';
-        }
-
-        // Initialize with one row each
-        addGPASubject();
-        addCGPASemester();
+        // Initialize with default subject
+        window.addEventListener('load', function() {
+            addGPASubject();
+        });
     </script>
 </body>
 </html>
