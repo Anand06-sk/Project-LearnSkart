@@ -897,22 +897,34 @@ footer {
         empty.style.display = total ? 'none' : '';
       }
 
-      // create whole syllabus card
-      function createWholeCard(w) {
-        const title = (w && (w.title || 'Complete Syllabus'));
-        const pdf = w && w.pdf ? w.pdf : '';
-        const card = document.createElement('div');
-        card.className = 'pdf-card';
-        const header = document.createElement('div'); header.className = 'pdf-header';
-        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-book"></i></div>`;
-        const info = document.createElement('div'); info.className = 'pdf-info';
-        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = title;
-        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / Regulation ${selectedReg}`;
-        info.appendChild(name); info.appendChild(meta);
-        header.appendChild(info); card.appendChild(header);
-        const footer = document.createElement('div'); footer.className = 'pdf-footer';
-        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
-        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
+      // helper: format filename -> human-friendly display
+      function formatDisplayName(filename) {
+        if (!filename) return '';
+        // strip query/hash and extension
+        const core = filename.split(/[?#]/)[0].replace(/\.[^/.]+$/, '');
+        // replace separators with space and collapse multiple spaces
+        const spaced = core.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+        // title-case words
+        return spaced.split(' ').map(w => w ? (w.charAt(0).toUpperCase() + w.slice(1)) : '').join(' ');
+      }
+
+      // create whole syllabus card
+      function createWholeCard(w) {
+        const pdf = w && w.pdf ? w.pdf : '';
+        const pdfFileName = pdf ? pdf.split('/').pop() : '';
+        const title = pdfFileName ? formatDisplayName(pdfFileName) : (w && (w.title || 'Complete Syllabus'));
+        const card = document.createElement('div');
+        card.className = 'pdf-card';
+        const header = document.createElement('div'); header.className = 'pdf-header';
+        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-book"></i></div>`;
+        const info = document.createElement('div'); info.className = 'pdf-info';
+        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = title;
+        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / Regulation ${selectedReg}`;
+        info.appendChild(name); info.appendChild(meta);
+        header.appendChild(info); card.appendChild(header);
+        const footer = document.createElement('div'); footer.className = 'pdf-footer';
+        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
+        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
     if (!pdf) {
           view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
           dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
@@ -922,28 +934,29 @@ footer {
           view.href = href; view.target = '_blank'; view.rel = 'noopener';
           dl.href = href; dl.download = href.split('/').pop() || '';
         }
-        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
-        return card;
-      }
+        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
+        return card;
+      }
 
-      // create subject card with type badge
-      function createSubjectCard(item, semester) {
-        const subject = item.subject || item.title || 'Untitled';
-        const pdf = item.pdf || '';
-        const type = item.type || (item.lab ? 'Lab' : 'Theory');
-        const card = document.createElement('div'); card.className = 'pdf-card';
-        const header = document.createElement('div'); header.className = 'pdf-header';
-        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>`;
-        const info = document.createElement('div'); info.className = 'pdf-info';
-        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = subject;
-        const typeBadge = document.createElement('span'); typeBadge.className = 'type-badge'; typeBadge.textContent = type;
-        name.appendChild(typeBadge);
-        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / sem ${semester} / Regulation ${selectedReg}`;
-        info.appendChild(name); info.appendChild(meta);
-        header.appendChild(info); card.appendChild(header);
-        const footer = document.createElement('div'); footer.className = 'pdf-footer';
-        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
-        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
+      // create subject card with type badge
+      function createSubjectCard(item, semester) {
+        const pdf = item.pdf || '';
+        const pdfFileName = pdf ? pdf.split('/').pop() : '';
+        const subject = pdfFileName ? formatDisplayName(pdfFileName) : (item.subject || item.title || 'Untitled');
+        const type = item.type || (item.lab ? 'Lab' : 'Theory');
+        const card = document.createElement('div'); card.className = 'pdf-card';
+        const header = document.createElement('div'); header.className = 'pdf-header';
+        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>`;
+        const info = document.createElement('div'); info.className = 'pdf-info';
+        const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = subject;
+        const typeBadge = document.createElement('span'); typeBadge.className = 'type-badge'; typeBadge.textContent = type;
+        name.appendChild(typeBadge);
+        const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / sem ${semester} / Regulation ${selectedReg}`;
+        info.appendChild(name); info.appendChild(meta);
+        header.appendChild(info); card.appendChild(header);
+        const footer = document.createElement('div'); footer.className = 'pdf-footer';
+        const view = document.createElement('a'); view.className = 'btn-view'; view.textContent = 'View';
+        const dl = document.createElement('a'); dl.className = 'btn-download'; dl.textContent = 'Download';
     if (!pdf) {
           view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
           dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
@@ -953,9 +966,9 @@ footer {
           view.href = href; view.target = '_blank'; view.rel = 'noopener';
           dl.href = href; dl.download = href.split('/').pop() || '';
         }
-        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
-        return card;
-      }
+        footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
+        return card;
+      }
 
       // Function to handle regulation change (now automatically triggers fetch)
       function handleRegulationChange() {
