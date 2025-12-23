@@ -3,16 +3,16 @@
     "2021": {
       "whole": {
         "title": "CSE — Complete Syllabus (2021)",
-        "pdf": "syllabus/whole Syllabus/B.E.CSE.pdf"
+        "pdf": "syllabus/reg-2021/whole Syllabus/B.E.CSE.pdf"
       },
       "semesters": {
-        "1": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem1.pdf" } ],
-        "2": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem2.pdf" } ],
-        "3": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem3.pdf" } ],
-        "4": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem4.pdf" } ],
-        "5": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem5.pdf" } ],
-        "6": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem6.pdf" } ],
-        "7": [ { "type": "Complete", "pdf": "syllabus/cse/Cse-sem7.pdf" } ]
+        "1": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem1.pdf" } ],
+        "2": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem2.pdf" } ],
+        "3": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem3.pdf" } ],
+        "4": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem4.pdf" } ],
+        "5": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem5.pdf" } ],
+        "6": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem6.pdf" } ],
+        "7": [ { "type": "Complete", "pdf": "syllabus/reg-2021/cse/Cse-sem7.pdf" } ]
       }
     },
     "2025": {
@@ -28,16 +28,16 @@
     "2021": {
       "whole": {
         "title": "ECE — Complete Syllabus (2021)",
-        "pdf": "syllabus/whole Syllabus/B.E.ECE.pdf"
+        "pdf": "syllabus/reg-2021/whole Syllabus/B.E.ECE.pdf"
       },
       "semesters": {
-        "1": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem1.pdf" } ],
-        "2": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem2.pdf" } ],
-        "3": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem3.pdf" } ],
-        "4": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem4.pdf" } ],
-        "5": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem5.pdf" } ],
-        "6": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem6.pdf" } ],
-        "7": [ { "type": "Complete", "pdf": "syllabus/ece/Ece-sem7.pdf" } ]
+        "1": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem1.pdf" } ],
+        "2": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem2.pdf" } ],
+        "3": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem3.pdf" } ],
+        "4": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem4.pdf" } ],
+        "5": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem5.pdf" } ],
+        "6": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem6.pdf" } ],
+        "7": [ { "type": "Complete", "pdf": "syllabus/reg-2021/ece/Ece-sem7.pdf" } ]
       }
     },
     "2025": { "whole": { "title": "ECE — Complete Syllabus (2025)", "pdf": "" }, "semesters": {} }
@@ -45,15 +45,15 @@
 
   "EEE": {
     "2021": {
-      "whole": { "title": "EEE — Complete Syllabus (2021)", "pdf": "syllabus/whole Syllabus/B.E. EEE.pdf" },
+      "whole": { "title": "EEE — Complete Syllabus (2021)", "pdf": "syllabus/reg-2021/whole Syllabus/B.E. EEE.pdf" },
       "semesters": {
-        "1": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-1.pdf" } ],
-        "2": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-2.pdf" } ],
-        "3": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-3.pdf" } ],
-        "4": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-4.pdf" } ],
-        "5": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-5.pdf" } ],
-        "6": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-6.pdf" } ],
-        "7": [ { "type": "Complete", "pdf": "syllabus/eee/eee sem-7.pdf" } ]
+        "1": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-1.pdf" } ],
+        "2": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-2.pdf" } ],
+        "3": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-3.pdf" } ],
+        "4": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-4.pdf" } ],
+        "5": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-5.pdf" } ],
+        "6": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-6.pdf" } ],
+        "7": [ { "type": "Complete", "pdf": "syllabus/reg-2021/eee/eee sem-7.pdf" } ]
       }
     },
     "2025": { "whole": { "title": "EEE — Complete Syllabus (2025)", "pdf": "" }, "semesters": {} }
@@ -61,15 +61,15 @@
 
   "MECH": {
     "2021": {
-      "whole": { "title": "MECH — Complete Syllabus (2021)", "pdf": "syllabus/whole Syllabus/B.E.Mech.pdf" },
+      "whole": { "title": "MECH — Complete Syllabus (2021)", "pdf": "syllabus/reg-2021/whole Syllabus/B.E.Mech.pdf" },
       "semesters": {
-        "1": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-1.pdf" } ],
-        "2": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-2.pdf" } ],
-        "3": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-3.pdf" } ],
-        "4": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-4.pdf" } ],
-        "5": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-5.pdf" } ],
-        "6": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-6.pdf" } ],
-        "7": [ { "type": "Complete", "pdf": "syllabus/mech/mech sem-7.pdf" } ]
+        "1": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-1.pdf" } ],
+        "2": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-2.pdf" } ],
+        "3": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-3.pdf" } ],
+        "4": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-4.pdf" } ],
+        "5": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-5.pdf" } ],
+        "6": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-6.pdf" } ],
+        "7": [ { "type": "Complete", "pdf": "syllabus/reg-2021/mech/mech sem-7.pdf" } ]
       }
     },
     "2025": { "whole": { "title": "MECH — Complete Syllabus (2025)", "pdf": "" }, "semesters": {} }
@@ -77,15 +77,15 @@
 
   "CIVIL": {
     "2021": {
-      "whole": { "title": "CIVIL — Complete Syllabus (2021)", "pdf": "syllabus/whole Syllabus/BE.Civil.pdf" },
+      "whole": { "title": "CIVIL — Complete Syllabus (2021)", "pdf": "syllabus/reg-2021/whole Syllabus/BE.Civil.pdf" },
       "semesters": {
-        "1": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-1.pdf" } ],
-        "2": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-2.pdf" } ],
-        "3": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-3.pdf" } ],
-        "4": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-4.pdf" } ],
-        "5": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-5.pdf" } ],
-        "6": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-6.pdf" } ],
-        "7": [ { "type": "Complete", "pdf": "syllabus/civil/civil sem-7.pdf" } ]
+        "1": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-1.pdf" } ],
+        "2": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-2.pdf" } ],
+        "3": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-3.pdf" } ],
+        "4": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-4.pdf" } ],
+        "5": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-5.pdf" } ],
+        "6": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-6.pdf" } ],
+        "7": [ { "type": "Complete", "pdf": "syllabus/reg-2021/civil/civil sem-7.pdf" } ]
       }
     },
     "2025": { "whole": { "title": "CIVIL — Complete Syllabus (2025)", "pdf": "" }, "semesters": {} }
@@ -93,15 +93,15 @@
 
   "IT": {
     "2021": {
-      "whole": { "title": "IT — Complete Syllabus (2021)", "pdf": "syllabus/whole Syllabus/B.Tech.IT.pdf" },
+      "whole": { "title": "IT — Complete Syllabus (2021)", "pdf": "syllabus/reg-2021/whole Syllabus/B.Tech.IT.pdf" },
       "semesters": {
-        "1": [ { "type": "Complete", "pdf": "syllabus/It/it sem-1.pdf" } ],
-        "2": [ { "type": "Complete", "pdf": "syllabus/It/it sem-2.pdf" } ],
-        "3": [ { "type": "Complete", "pdf": "syllabus/It/it sem-3.pdf" } ],
-        "4": [ { "type": "Complete", "pdf": "syllabus/It/it sem-4.pdf" } ],
-        "5": [ { "type": "Complete", "pdf": "syllabus/It/it sem-5.pdf" } ],
-        "6": [ { "type": "Complete", "pdf": "syllabus/It/it sem-6.pdf" } ],
-        "7": [ { "type": "Complete", "pdf": "syllabus/It/it sem-7.pdf" } ]
+        "1": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-1.pdf" } ],
+        "2": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-2.pdf" } ],
+        "3": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-3.pdf" } ],
+        "4": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-4.pdf" } ],
+        "5": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-5.pdf" } ],
+        "6": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-6.pdf" } ],
+        "7": [ { "type": "Complete", "pdf": "syllabus/reg-2021/It/it sem-7.pdf" } ]
       }
     },
     "2025": { "whole": { "title": "IT — Complete Syllabus (2025)", "pdf": "" }, "semesters": {} }
