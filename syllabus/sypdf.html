@@ -654,6 +654,369 @@ footer {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+/* ============ DARK MODE STYLES FOR SYPDF ============ */
+html.dark {
+    --primary: #60a5fa;
+    --secondary: #a78bfa;
+    --text-dark: #f1f5f9;
+    --text-light: #cbd5e1;
+    --bg-light: #0a0e27;
+    --bg-dark: #111729;
+}
+
+html.dark body {
+    background: linear-gradient(135deg, #0a0e27 0%, #111729 50%, #0f1a2e 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+html.dark header {
+    background: linear-gradient(180deg, #1a1f3a 0%, #111729 100%) !important;
+    border-bottom-color: rgba(148, 163, 184, 0.15) !important;
+}
+
+html.dark .logo {
+    color: #60a5fa !important;
+}
+
+html.dark .back-btn {
+    background: rgba(96, 165, 250, 0.2) !important;
+    color: #60a5fa !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .back-btn:hover {
+    background: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .theme-btn {
+    color: #60a5fa !important;
+}
+
+html.dark .theme-btn:hover {
+    color: #93c5fd !important;
+}
+
+html.dark .pdf-hero {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-bottom-color: rgba(96, 165, 250, 0.2) !important;
+}
+
+html.dark .pdf-hero h1,
+html.dark .pdf-hero h2 {
+    color: #60a5fa !important;
+}
+
+html.dark .pdf-hero p {
+    color: #cbd5e1 !important;
+}
+
+html.dark .pdf-container,
+html.dark .pdf-viewer,
+html.dark .document-viewer,
+html.dark [class*="pdf"],
+html.dark [class*="viewer"],
+html.dark [class*="container"] {
+    background: transparent !important;
+    color: #f1f5f9 !important;
+}
+
+html.dark .pdf-card,
+html.dark .pdf-item,
+html.dark [class*="card"],
+html.dark [class*="item"] {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-color: rgba(96, 165, 250, 0.15) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark .pdf-card:hover,
+html.dark .pdf-item:hover,
+html.dark [class*="card"]:hover {
+    border-color: rgba(96, 165, 250, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15) !important;
+}
+
+html.dark button,
+html.dark .btn,
+html.dark [role="button"] {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark button:hover,
+html.dark .btn:hover,
+html.dark [role="button"]:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%) !important;
+    box-shadow: 0 12px 16px rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background: #0f1a2e !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+    border-color: rgba(96, 165, 250, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
+}
+
+html.dark footer {
+    background: linear-gradient(180deg, #111729 0%, #0a0e27 100%) !important;
+    border-top-color: rgba(96, 165, 250, 0.15) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark footer a {
+    color: #60a5fa !important;
+}
+
+html.dark footer a:hover {
+    color: #93c5fd !important;
+}
+
+/* Comprehensive text color fixes */
+html.dark {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark p, html.dark span, html.dark a, html.dark h1, html.dark h2, html.dark h3, 
+html.dark h4, html.dark h5, html.dark h6, html.dark label, html.dark li, html.dark td, html.dark th {
+    color: #f1f5f9 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+html.dark [style*="background:white"],
+html.dark [style*="background:#fff"],
+html.dark [style*="background:#ffffff"] {
+    background: var(--bg-dark) !important;
+}
+
+html.dark [style*="color:black"],
+html.dark [style*="color:#000"],
+html.dark [style*="color:#0000"],
+html.dark [style*="color:white"],
+html.dark [style*="color:#fff"],
+html.dark [style*="color:#ffffff"] {
+    color: #f1f5f9 !important;
+}
+
+/* ============ AGGRESSIVE WHITE BACKGROUND FIXES FOR SYPDF ============ */
+html.dark .container {
+    background: transparent !important;
+}
+
+html.dark .page-header {
+    background: transparent !important;
+    color: #f1f5f9 !important;
+}
+
+html.dark .page-header h1 {
+    color: #60a5fa !important;
+}
+
+html.dark .page-header p {
+    color: #cbd5e1 !important;
+}
+
+html.dark .header-wrapper {
+    background: transparent !important;
+}
+
+html.dark .pdf-grid {
+    background: transparent !important;
+}
+
+html.dark .pdf-card {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-color: rgba(96, 165, 250, 0.15) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark .pdf-card:hover {
+    border-color: rgba(96, 165, 250, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15) !important;
+}
+
+html.dark .pdf-name {
+    color: #f1f5f9 !important;
+}
+
+html.dark .pdf-meta {
+    color: #94a3b8 !important;
+}
+
+html.dark .btn-view,
+html.dark .btn-download {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .btn-view:hover,
+html.dark .btn-download:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%) !important;
+    box-shadow: 0 6px 12px rgba(96, 165, 250, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+html.dark .filter-select,
+html.dark .filter-input {
+    background: #0f1a2e !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+html.dark .filter-select:focus,
+html.dark .filter-input:focus {
+    border-color: rgba(96, 165, 250, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
+}
+
+html.dark .semester-heading {
+    color: #f1f5f9 !important;
+}
+
+html.dark .section-title {
+    color: #f1f5f9 !important;
+}
+
+html.dark .section-title p {
+    color: #cbd5e1 !important;
+}
+
+html.dark .empty-state {
+    color: #cbd5e1 !important;
+}
+
+html.dark .empty-state h2 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .empty-state i {
+    color: rgba(96, 165, 250, 0.4) !important;
+}
+
+html.dark .footer-section h4 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .footer-section p {
+    color: #cbd5e1 !important;
+}
+
+html.dark .footer-section ul li a {
+    color: #60a5fa !important;
+}
+
+html.dark .footer-section ul li a:hover {
+    color: #93c5fd !important;
+}
+
+html.dark .social-links a {
+    color: #60a5fa !important;
+}
+
+html.dark .social-links a:hover {
+    color: #93c5fd !important;
+}
+
+html.dark .footer-bottom {
+    color: #cbd5e1 !important;
+}
+
+html.dark .footer-bottom a {
+    color: #60a5fa !important;
+}
+
+/* ============ CRITICAL SYPDF BACKGROUND FIXES ============ */
+html.dark body::before {
+    background: transparent !important;
+    opacity: 0 !important;
+}
+
+html.dark .header-wrapper {
+    background: linear-gradient(180deg, #1a1f3a 0%, #111729 100%) !important;
+    border-bottom-color: rgba(148, 163, 184, 0.15) !important;
+}
+
+html.dark .container {
+    background: transparent !important;
+}
+
+html.dark .page-header {
+    background: transparent !important;
+}
+
+html.dark .page-header::before,
+html.dark .page-header::after {
+    opacity: 0 !important;
+    background: transparent !important;
+}
+
+html.dark .semester-section {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-color: rgba(96, 165, 250, 0.15) !important;
+}
+
+html.dark .pdf-card {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-color: rgba(96, 165, 250, 0.15) !important;
+}
+
+html.dark .pdf-count {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .reg-text {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa) !important;
+    color: #ffffff !important;
+}
+
+html.dark .filter-select,
+html.dark .filter-input {
+    background: #0f1a2e !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+html.dark .btn-view {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .btn-download {
+    background: linear-gradient(90deg, #60a5fa, #34d399) !important;
+    color: #ffffff !important;
+}
+
+html.dark .pdf-icon {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa) !important;
+}
+
+html.dark .breadcrumb .dept-badge {
+    background: rgba(96, 165, 250, 0.25) !important;
+    color: #93c5fd !important;
+}
+
+html.dark .type-badge {
+    background: rgba(96, 165, 250, 0.25) !important;
+    color: #93c5fd !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
 </style>
 </head>
 <body>

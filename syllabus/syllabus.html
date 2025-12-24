@@ -214,11 +214,12 @@ header {
     color: white;
     animation: pulse 3s ease-in-out infinite;
 }
-/* Pause animation and pop icon on card hover */
+/* Pause animation and pop icon on card hover - SUBTLE scale only, no rotation */
 .card-header:hover .icon-wrap {
     animation-play-state: paused;
-    transform: scale(1.18) rotate(90deg);
-    transition: transform 0.18s ease-out;
+    transform: scale(1.08) !important;
+    rotate: 0deg !important;
+    transition: transform 0.2s ease-out;
 }
 
 @keyframes pulse {
@@ -423,6 +424,143 @@ html.dark {
         align-items: center;
     }
 }
+
+/* ============ DARK MODE STYLES FOR SYLLABUS ============ */
+html.dark {
+    --primary: #60a5fa;
+    --secondary: #a78bfa;
+    --text-dark: #f1f5f9;
+    --text-light: #cbd5e1;
+    --bg-light: #0a0e27;
+    --bg-dark: #111729;
+}
+
+html.dark body {
+    background: linear-gradient(135deg, #0a0e27 0%, #111729 50%, #0f1a2e 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+html.dark header {
+    background: linear-gradient(180deg, #1a1f3a 0%, #111729 100%) !important;
+    border-bottom-color: rgba(148, 163, 184, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .logo {
+    color: #60a5fa !important;
+}
+
+html.dark .back-btn {
+    background: rgba(96, 165, 250, 0.2) !important;
+    color: #60a5fa !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .back-btn:hover {
+    background: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark .theme-btn {
+    color: #60a5fa !important;
+}
+
+html.dark .theme-btn:hover {
+    color: #93c5fd !important;
+}
+
+html.dark .syllabus-hero {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-bottom-color: rgba(96, 165, 250, 0.2) !important;
+    color: #f1f5f9 !important;
+}
+
+html.dark .syllabus-hero h1 {
+    color: #60a5fa !important;
+}
+
+html.dark .syllabus-hero p {
+    color: #cbd5e1 !important;
+}
+
+html.dark .section-title h2 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .syllabus-card {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    border-color: rgba(96, 165, 250, 0.15) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark .syllabus-card:hover {
+    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15) !important;
+}
+
+html.dark .card-header {
+    background: linear-gradient(135deg, #1e40af15 0%, #3b82f615 100%) !important;
+    border-bottom-color: #60a5fa !important;
+}
+
+html.dark .card-header h3 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .card-header .icon-wrap {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%) !important;
+    color: #ffffff !important;
+}
+
+/* FIX: Reduce icon hover animation - remove heavy rotation and scaling */
+html.dark .card-header:hover .icon-wrap {
+    transform: scale(1.08) !important;
+    transition: transform 0.2s ease-out !important;
+    animation-play-state: paused !important;
+}
+
+html.dark .dept-code {
+    background: rgba(96, 165, 250, 0.25) !important;
+    color: #93c5fd !important;
+}
+
+html.dark .stats {
+    background: linear-gradient(135deg, #1e40af15 0%, #3b82f615 100%) !important;
+    border-color: rgba(96, 165, 250, 0.2) !important;
+}
+
+html.dark .stat-item h4 {
+    color: #60a5fa !important;
+}
+
+html.dark .stat-item p {
+    color: #cbd5e1 !important;
+}
+
+html.dark footer {
+    background: linear-gradient(180deg, #111729 0%, #0a0e27 100%) !important;
+    border-top-color: rgba(96, 165, 250, 0.15) !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark footer a {
+    color: #60a5fa !important;
+}
+
+html.dark footer a:hover {
+    color: #93c5fd !important;
+}
+
+/* Global text fixes in dark mode */
+html.dark {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark p, html.dark span, html.dark a, html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    color: var(--text-dark) !important;
+    text-shadow: none !important;
+}
+
 </style>
 </head>
 <body>

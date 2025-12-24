@@ -1005,3 +1005,86 @@ body.dark-mode .type-badge {
 
 body.dark-mode mark { background: rgba(234, 179, 8, 0.35); }
 
+/* ============ DARK MODE SEARCH FIXES WITH html.dark ============ */
+html.dark .search-suggestions {
+    background: #111729 !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(96, 165, 250, 0.2) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .search-suggestion-item {
+    color: #cbd5e1 !important;
+}
+
+html.dark .search-suggestion-item:hover,
+html.dark .search-suggestion-item.active {
+    background: rgba(96, 165, 250, 0.15) !important;
+    color: #f1f5f9 !important;
+    border-left: 3px solid #60a5fa !important;
+}
+
+html.dark .search-suggestion-item .label {
+    color: #f1f5f9 !important;
+}
+
+html.dark .type-badge {
+    background: rgba(96, 165, 250, 0.25) !important;
+    color: #93c5fd !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+html.dark mark {
+    background: rgba(234, 179, 8, 0.5) !important;
+    color: #fef3c7 !important;
+    padding: 0 2px !important;
+}
+
+/* ============ FILTER TAG BUTTONS DARK MODE ============ */
+html.dark .filter-tag {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(96, 165, 250, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark .filter-tag:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+    color: #f1f5f9 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(96, 165, 250, 0.2) !important;
+}
+
+html.dark .filter-tag i {
+    color: #60a5fa !important;
+}
+
+html.dark .filter-tag:hover i {
+    color: #f1f5f9 !important;
+}
+
+/* ============ FILTER TAG BUTTONS DARK MODE ============ */
+html.dark .filter-tag {
+    background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(96, 165, 250, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark .filter-tag:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+    color: #f1f5f9 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(96, 165, 250, 0.2) !important;
+}
+
+html.dark .filter-tag i {
+    color: #60a5fa !important;
+}
+
+html.dark .filter-tag:hover i {
+    color: #f1f5f9 !important;
+}
+

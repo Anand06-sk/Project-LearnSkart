@@ -74,6 +74,43 @@
     try{
       var mode = getStored();
       updateThemeIcon(mode);
+      // Force dark mode reapplication for all elements
+      if(mode === 'dark'){
+        document.documentElement.classList.add('dark');
+        // Apply dark mode to all dynamically added content
+        var observer = new MutationObserver(function(mutations){
+          mutations.forEach(function(mutation){
+            if(mutation.addedNodes.length){
+              mutation.addedNodes.forEach(function(node){
+                if(node.nodeType === 1){
+                  if(getStored() === 'dark' && !document.documentElement.classList.contains('dark')){
+                    document.documentElement.classList.add('dark');
+                  }
+                }
+              });
+            }
+          });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
     }catch(e){}
   }, 50);
+
+  // Re-apply theme when page fully loads to ensure all elements are styled
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      try{
+        var mode = getStored();
+        applyTheme(mode);
+      }catch(e){}
+    });
+  }
+
+  // Also apply on window load for late-loaded content
+  window.addEventListener('load', function(){
+    try{
+      var mode = getStored();
+      applyTheme(mode);
+    }catch(e){}
+  }, false);
 })();

@@ -1,25 +1,700 @@
 :root{
+  /* Light Mode Colors */
   --bg:#ffffff;
   --surface:#ffffff;
   --text:#0f172a;
+  --text-secondary:#475569;
   --muted:#6b7280;
   --primary:#3b82f6;
-  --border: #e6e9ef;
+  --primary-light:#60a5fa;
+  --accent:#10b981;
+  --border:#e6e9ef;
+  --success:#10b981;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
 html.dark{
-  --bg:#0b1220;
-  --surface:#071025;
-  --text:#e6eef8;
-  --muted:#94a3b8;
-  --primary:#60a5fa;
-  --border: #122033;
+  /* Professional Dark Mode Colors */
+  --bg: #0a0e27;
+  --surface: #111729;
+  --surface-light: #1a1f3a;
+  --text: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --muted: #64748b;
+  --primary: #60a5fa;
+  --primary-light: #93c5fd;
+  --primary-dark: #1e40af;
+  --accent: #34d399;
+  --border: #2d3748;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
-/* Basic overrides that play nicely with existing pages */
-html,body{background:var(--bg);color:var(--text)}
-header,nav,footer,.card,.content-card,.page-header{background:var(--surface)}
-a, .logo, .logo i{color:var(--primary)}
-.btn, button{background:transparent;color:var(--text);border:1px solid var(--border)}
-/* utility classes */
-.theme-hidden{display:none!important}
-/* small transition to reduce flicker */
-*{transition:background-color .18s ease,color .18s ease,border-color .18s ease}
+
+/* ============ GLOBAL DARK MODE ENFORCEMENT ============ */
+/* This ensures ALL elements respect dark mode automatically */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Force all common light backgrounds to dark */
+html.dark body,
+html.dark main,
+html.dark article,
+html.dark section,
+html.dark aside,
+html.dark div,
+html.dark span,
+html.dark p {
+  background-color: transparent !important;
+  color: var(--text) !important;
+}
+
+/* Override ANY inline style that contains white or light colors */
+html.dark *[style*="background:"],
+html.dark *[style*="background-color:"],
+html.dark *[style*="color:"] {
+  /* Force reapply variables */
+}
+
+/* Specific handlers for common light color values */
+html.dark [style*="background:#ffffff"] { background: var(--surface) !important; }
+html.dark [style*="background:white"] { background: var(--surface) !important; }
+html.dark [style*="background:#fff"] { background: var(--surface) !important; }
+html.dark [style*="background:#f8f9fa"] { background: var(--surface) !important; }
+html.dark [style*="background:#fafafa"] { background: var(--surface) !important; }
+html.dark [style*="background:#f5f5f5"] { background: var(--surface) !important; }
+html.dark [style*="background:#efefef"] { background: var(--surface) !important; }
+
+html.dark [style*="color:#ffffff"] { color: var(--text) !important; }
+html.dark [style*="color:white"] { color: var(--text) !important; }
+html.dark [style*="color:#000"] { color: var(--text) !important; }
+html.dark [style*="color:black"] { color: var(--text) !important; }
+
+/* ============ CORE STYLES ============ */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.dark body {
+  background: linear-gradient(135deg, #0a0e27 0%, #111729 50%, #0f1a2e 100%);
+}
+
+/* ============ TYPOGRAPHY ============ */
+html.dark {
+  --font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #f1f5f9 !important;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+html.dark p, html.dark span, html.dark label {
+  color: #cbd5e1 !important;
+  line-height: 1.6;
+}
+
+html.dark strong {
+  color: #f1f5f9 !important;
+  font-weight: 600;
+}
+
+/* ============ HEADERS & NAVIGATION ============ */
+header, nav, .header-actions, .nav-menu {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+html.dark header, 
+html.dark nav,
+html.dark .navbar,
+html.dark header.dark-mode {
+  background: linear-gradient(180deg, #1a1f3a 0%, #111729 100%) !important;
+  border-bottom-color: rgba(148, 163, 184, 0.1) !important;
+}
+
+/* ============ CARDS & SURFACES ============ */
+.card, .content-card, .note-card, .dept-card, .feature-card, .contact-card, .contact-info-grid, .info-item {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.dark .card, 
+html.dark .content-card, 
+html.dark .note-card, 
+html.dark .dept-card, 
+html.dark .feature-card,
+html.dark .contact-card,
+html.dark .contact-info-grid,
+html.dark .info-item {
+  background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .card:hover, 
+html.dark .content-card:hover, 
+html.dark .note-card:hover, 
+html.dark .dept-card:hover, 
+html.dark .feature-card:hover {
+  border-color: rgba(96, 165, 250, 0.4) !important;
+  box-shadow: 0 20px 25px rgba(96, 165, 250, 0.1), 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ============ BUTTONS ============ */
+.btn, button, input[type="button"], input[type="submit"] {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+}
+
+html.dark .btn, 
+html.dark button, 
+html.dark input[type="button"], 
+html.dark input[type="submit"] {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(96, 165, 250, 0.3) !important;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+html.dark .btn:hover, 
+html.dark button:hover {
+  background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%) !important;
+  box-shadow: 0 12px 16px rgba(96, 165, 250, 0.3);
+  transform: translateY(-1px);
+}
+
+html.dark .btn:active, 
+html.dark button:active {
+  transform: translateY(0);
+}
+
+/* ============ INPUTS & FORMS ============ */
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="password"],
+html.dark input[type="number"],
+html.dark select,
+html.dark textarea {
+  background: #0f1a2e !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+html.dark input::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  background: #1a1f3a !important;
+  border-color: rgba(96, 165, 250, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
+  outline: none !important;
+}
+
+/* ============ LINKS ============ */
+a, .logo, .logo i {
+  color: var(--primary) !important;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+html.dark a {
+  color: #60a5fa !important;
+}
+
+html.dark a:hover {
+  color: #93c5fd !important;
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
+}
+
+/* ============ BACKGROUNDS - FIX WHITE BACKGROUNDS ============ */
+/* Override all white/light backgrounds in dark mode */
+html.dark,
+html.dark * {
+  /* Override hardcoded white colors */
+}
+
+html.dark [style*="background:#FFFFFF"],
+html.dark [style*="background: #FFFFFF"],
+html.dark [style*="background:white"],
+html.dark [style*="background: white"],
+html.dark [style*="background:#FFF"],
+html.dark [style*="background: #FFF"],
+html.dark [style*="background:#F8FAFC"],
+html.dark [style*="background: #F8FAFC"],
+html.dark [style*="background:#EFF6FF"],
+html.dark [style*="background: #EFF6FF"],
+html.dark [style*="background:#F0F9FF"],
+html.dark [style*="background: #F0F9FF"] {
+  background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+  color: #f1f5f9 !important;
+}
+
+html.dark header,
+html.dark .page-header,
+html.dark section.hero,
+html.dark .hero,
+html.dark .contact-section {
+  background: linear-gradient(135deg, #1a1f3a 0%, #111729 100%) !important;
+}
+
+html.dark .contact-card {
+  background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+}
+
+html.dark .contact-email {
+  color: #f2f2f2 !important;
+}
+
+/* ============ FIX TEXT CLARITY & BLUR ============ */
+html.dark {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+}
+
+html.dark body,
+html.dark p,
+html.dark span,
+html.dark div,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark label,
+html.dark li,
+html.dark a {
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  letter-spacing: 0.5px;
+}
+
+/* Fix contact section text */
+html.dark .contact-card h3,
+html.dark .contact-card p,
+html.dark .contact-card strong {
+  color: #f1f5f9 !important;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+html.dark .contact-content,
+html.dark .contact-card {
+  color: #cbd5e1 !important;
+}
+
+html.dark .contact-card .contact-icon {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+  color: #f1f5f9 !important;
+}
+
+/* ============ SECTION & CONTAINER FIXES ============ */
+html.dark .section,
+html.dark .features-section,
+html.dark .contact-section {
+  background: transparent !important;
+}
+
+html.dark .section-header h2 {
+  color: #f1f5f9 !important;
+}
+
+html.dark .section-header p {
+  color: #cbd5e1 !important;
+}
+
+/* ============ TEXT COLORS ============ */
+html.dark {
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+}
+
+/* ============ UTILITY CLASSES ============ */
+.theme-hidden {
+  display: none !important;
+}
+
+/* Scrollbar styling for dark mode */
+html.dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0f1a2e;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6 0%, #60a5fa 100%);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa 0%, #93c5fd 100%);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Apply animations to common elements */
+html.dark .card, 
+html.dark .feature-card, 
+html.dark .note-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+html.dark .btn:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+/* ============ SECTION STYLING ============ */
+html.dark section {
+  color: #cbd5e1;
+}
+
+html.dark section h2 {
+  color: #f1f5f9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+html.dark section p {
+  color: #cbd5e1;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+html.dark footer {
+  background: linear-gradient(180deg, #111729 0%, #0a0e27 100%) !important;
+  border-top-color: rgba(148, 163, 184, 0.1) !important;
+}
+
+html.dark footer a {
+  color: #60a5fa !important;
+}
+
+html.dark footer p {
+  color: #cbd5e1 !important;
+}
+
+html.dark footer h4 {
+  color: #f1f5f9 !important;
+}
+/* ============ ICON ANIMATION FIX ============ */
+/* Reduce heavy icon hover animations across the site */
+html.dark .icon-wrap,
+html.dark [class*="icon"],
+html.dark i[class*="fas"],
+html.dark i[class*="fa-"] {
+  transition: transform 0.2s ease-out, scale 0.2s ease-out;
+}
+
+html.dark .icon-wrap:hover {
+  transform: scale(1.08) !important;
+  animation-play-state: paused !important;
+}
+
+/* Prevent heavy rotation on hover */
+html.dark .card-header:hover .icon-wrap,
+html.dark .dept-card:hover i,
+html.dark [class*="card"]:hover [class*="icon"] {
+  transform: scale(1.08) !important;
+  rotate: 0deg !important;
+  transition: transform 0.2s ease-out !important;
+}
+
+/* ============ SEARCH SUGGESTIONS FIX ============ */
+html.dark .search-suggestions,
+html.dark .search-suggestion-item,
+html.dark [id*="search-suggestions"],
+html.dark [class*="search-suggestion"] {
+  background: #111729 !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(148, 163, 184, 0.15) !important;
+}
+
+html.dark .search-suggestions {
+  background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .search-suggestion-item {
+  color: #cbd5e1 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+html.dark .search-suggestion-item:hover,
+html.dark .search-suggestion-item.active {
+  background: rgba(96, 165, 250, 0.15) !important;
+  color: #f1f5f9 !important;
+  border-left: 3px solid #60a5fa !important;
+  padding-left: 11px !important;
+}
+
+html.dark .search-suggestion-item .label {
+  color: #f1f5f9 !important;
+}
+
+html.dark .type-badge {
+  background: rgba(96, 165, 250, 0.2) !important;
+  color: #93c5fd !important;
+  border-color: rgba(96, 165, 250, 0.3) !important;
+}
+
+html.dark mark {
+  background: rgba(234, 179, 8, 0.4) !important;
+  color: #fef3c7 !important;
+}
+
+/* ============ EXTENSIVE DARK MODE OVERRIDES ============ */
+/* Fix all CSS class-based white backgrounds */
+html.dark .bg-white,
+html.dark .bg-light,
+html.dark .content,
+html.dark .container-content,
+html.dark .modal-content,
+html.dark .modal,
+html.dark .dropdown-menu,
+html.dark [class*="white"],
+html.dark [class*="light-bg"],
+html.dark [class*="light-mode"] {
+  background-color: var(--surface) !important;
+  color: #f1f5f9 !important;
+}
+
+/* PDF & Document viewers */
+html.dark .pdf-viewer,
+html.dark .document-viewer,
+html.dark .text-viewer,
+html.dark [style*="background:#f8f9fa"],
+html.dark [style*="background: #f8f9fa"],
+html.dark [style*="background:rgb(248,249,250)"],
+html.dark [style*="background:rgb(245, 245, 245)"],
+html.dark [style*="background:#fafafa"] {
+  background: var(--surface) !important;
+  color: #f1f5f9 !important;
+}
+
+/* All rgba white backgrounds */
+html.dark [style*="background:rgba(255,255,255"],
+html.dark [style*="background: rgba(255, 255, 255"],
+html.dark [style*="background:rgba(248,249,250"],
+html.dark [style*="background: rgba(248, 249, 250"] {
+  background: var(--surface) !important !important;
+  color: #f1f5f9 !important;
+}
+
+/* Specific element fixes */
+html.dark .question-paper-container,
+html.dark .note-container,
+html.dark .syllabus-container,
+html.dark .pdf-container,
+html.dark .content-wrapper,
+html.dark .main-content {
+  background: var(--surface) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Badge and badge-like elements */
+html.dark .badge,
+html.dark .label,
+html.dark .tag,
+html.dark [class*="badge"],
+html.dark [class*="label"] {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+  color: #f1f5f9 !important;
+}
+
+/* All form elements with white backgrounds */
+html.dark .form-group,
+html.dark .form-control,
+html.dark input,
+html.dark textarea,
+html.dark select,
+html.dark checkbox,
+html.dark radio {
+  background: #0f1a2e !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Table styling */
+html.dark table,
+html.dark tbody,
+html.dark thead,
+html.dark tr,
+html.dark td,
+html.dark th {
+  background: transparent !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(148, 163, 184, 0.15) !important;
+}
+
+html.dark thead {
+  background: linear-gradient(135deg, #1a1f3a 0%, #111729 100%) !important;
+  color: #f1f5f9 !important;
+}
+
+/* List elements */
+html.dark li {
+  color: #cbd5e1 !important;
+}
+
+/* All text-based elements ensure color */
+html.dark .text,
+html.dark .text-muted,
+html.dark .text-light,
+html.dark .text-secondary {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-white,
+html.dark .text-light,
+html.dark [class*="text-light"] {
+  color: #f1f5f9 !important;
+}
+
+/* Navigation items */
+html.dark .nav-item,
+html.dark .nav-link,
+html.dark .breadcrumb,
+html.dark .breadcrumb-item {
+  color: #cbd5e1 !important;
+}
+
+html.dark .nav-link:hover,
+html.dark .breadcrumb-item:hover {
+  color: #60a5fa !important;
+}
+
+/* ============ INLINE STYLE COMPREHENSIVE FIXES ============ */
+/* Target specific color values that are commonly hardcoded */
+html.dark [style*="color:white"],
+html.dark [style*="color: white"],
+html.dark [style*="color:#FFFFFF"],
+html.dark [style*="color: #FFFFFF"],
+html.dark [style*="color:#fff"],
+html.dark [style*="color: #fff"] {
+  color: #f1f5f9 !important;
+}
+
+html.dark [style*="background-color:white"],
+html.dark [style*="background-color: white"],
+html.dark [style*="background-color:#FFFFFF"],
+html.dark [style*="background-color: #FFFFFF"],
+html.dark [style*="background-color:#fff"],
+html.dark [style*="background-color: #fff"] {
+  background-color: var(--surface) !important;
+}
+
+/* Special fix for gradient with white in backgrounds */
+html.dark [style*="linear-gradient(to bottom, #fff"],
+html.dark [style*="linear-gradient(to bottom, white"],
+html.dark [style*="background: linear-gradient"] .hero-bg {
+  background: linear-gradient(135deg, #111729 0%, #1a1f3a 100%) !important;
+}
+/* ============ SMOOTH TRANSITIONS ============ */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions on page load */
+html.notransition * {
+  transition: none !important;
+}
