@@ -141,7 +141,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     }
 
-    function toStringSafe(v) { return v == null ? '' : String(v); }
+    // Comprehensive mapping of all department subjects
 
     function guess(obj, keys) {
         for (const k of keys) {
@@ -151,6 +151,114 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     function toArray(v) { return Array.isArray(v) ? v : (v ? [v] : []); }
+
+    // Subject-code catalog (used when PDF metadata lacks codes)
+    const SUBJECT_CODE_ENTRIES = [
+        // Common Semester 1
+        { code: 'HS3152', subject: 'Professional English-I', reg: '2021', sem: '1', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+        { code: 'MA3151', subject: 'Matrices and Calculus', reg: '2021', sem: '1', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+        { code: 'PH3151', subject: 'Engineering Physics', reg: '2021', sem: '1', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+        { code: 'CY3151', subject: 'Engineering Chemistry', reg: '2021', sem: '1', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+        { code: 'GE3151', subject: 'Problem Solving and Python Programming', reg: '2021', sem: '1', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+        { code: 'GE3152', subject: 'Heritage of Tamils', reg: '2021', sem: '1', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+
+        // CSE Sem 2
+        { code: 'HS3252', subject: 'Professional English-II', reg: '2021', sem: '2', depts: ['CSE'] },
+        { code: 'MA3251', subject: 'Statistics and Numerical Methods', reg: '2021', sem: '2', depts: ['CSE'] },
+        { code: 'PH3256', subject: 'Physics for Information Science', reg: '2021', sem: '2', depts: ['CSE'] },
+        { code: 'BE3251', subject: 'Basic Electrical and Electronics Engineering', reg: '2021', sem: '2', depts: ['CSE'] },
+        { code: 'GE3251', subject: 'Engineering Graphics', reg: '2021', sem: '2', depts: ['CSE'] },
+        { code: 'CS3251', subject: 'Programming in C', reg: '2021', sem: '2', depts: ['CSE'] },
+        { code: 'GE3252', subject: 'Tamils and Technology', reg: '2021', sem: '2', depts: ['CSE'] },
+
+        // CSE Sem 3
+        { code: 'MA3354', subject: 'Discrete Mathematics', reg: '2021', sem: '3', depts: ['CSE'] },
+        { code: 'CS3351', subject: 'Digital Principles and Computer Organization', reg: '2021', sem: '3', depts: ['CSE'] },
+        { code: 'CS3352', subject: 'Foundations of Data Science', reg: '2021', sem: '3', depts: ['CSE'] },
+        { code: 'CS3301', subject: 'Data Structures', reg: '2021', sem: '3', depts: ['CSE'] },
+        { code: 'CS3391', subject: 'Object Oriented Programming', reg: '2021', sem: '3', depts: ['CSE'] },
+
+        // CSE Sem 4
+        { code: 'CS3452', subject: 'Theory of Computation', reg: '2021', sem: '4', depts: ['CSE'] },
+        { code: 'CS3491', subject: 'Artificial Intelligence and Machine Learning', reg: '2021', sem: '4', depts: ['CSE'] },
+        { code: 'CS3492', subject: 'Database Management Systems', reg: '2021', sem: '4', depts: ['CSE'] },
+        { code: 'CS3401', subject: 'Algorithms', reg: '2021', sem: '4', depts: ['CSE'] },
+        { code: 'CS3451', subject: 'Introduction to Operating Systems', reg: '2021', sem: '4', depts: ['CSE'] },
+        { code: 'GE3451', subject: 'Environmental Sciences and Sustainability', reg: '2021', sem: '4', depts: ['CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT'] },
+
+        // CSE Sem 5
+        { code: 'CS3591', subject: 'Computer Networks', reg: '2021', sem: '5', depts: ['CSE'] },
+        { code: 'CS3501', subject: 'Complier Design', reg: '2021', sem: '5', depts: ['CSE'] },
+        { code: 'CB3491', subject: 'Cryptography and Cyber Security', reg: '2021', sem: '5', depts: ['CSE'] },
+        { code: 'CS3551', subject: 'Distributed Computing', reg: '2021', sem: '5', depts: ['CSE'] },
+
+        // CSE Sem 6
+        { code: 'CCS356', subject: 'Object Oriented Software Engineering', reg: '2021', sem: '6', depts: ['CSE'] },
+        { code: 'CS3691', subject: 'Embedded Systems and IoT', reg: '2021', sem: '6', depts: ['CSE'] },
+
+        // CSE Sem 7
+        { code: 'GE3791', subject: 'Human Values and Ethics', reg: '2021', sem: '7', depts: ['CSE', 'CIVIL', 'ECE', 'EEE', 'MECH', 'IT'] },
+
+        // Civil Sem 2
+        { code: 'BE3252', subject: 'Basic Electrical, Electronics and Instrumentation Engineering', reg: '2021', sem: '2', depts: ['CIVIL'] },
+        { code: 'PH3201', subject: 'Physics for Civil Engineering', reg: '2021', sem: '2', depts: ['CIVIL'] },
+
+        // Civil Sem 3
+        { code: 'MA3351', subject: 'Transforms and Partial Differential Equations', reg: '2021', sem: '3', depts: ['CIVIL'] },
+        { code: 'ME3351', subject: 'Engineering Mechanics', reg: '2021', sem: '3', depts: ['CIVIL'] },
+        { code: 'CE3301', subject: 'Fluid Mechanics', reg: '2021', sem: '3', depts: ['CIVIL'] },
+        { code: 'CE3351', subject: 'Surveying and Levelling', reg: '2021', sem: '3', depts: ['CIVIL'] },
+        { code: 'CE3302', subject: 'Construction Materials and Technology', reg: '2021', sem: '3', depts: ['CIVIL'] },
+        { code: 'CE3303', subject: 'Water Supply and WasteWater Engineering', reg: '2021', sem: '3', depts: ['CIVIL'] },
+
+        // Civil Sem 4
+        { code: 'CE3401', subject: 'Applied Hydraulics Engineering', reg: '2021', sem: '4', depts: ['CIVIL'] },
+        { code: 'CE3402', subject: 'Strength of Materials', reg: '2021', sem: '4', depts: ['CIVIL'] },
+        { code: 'CE3403', subject: 'Concrete Technology', reg: '2021', sem: '4', depts: ['CIVIL'] },
+        { code: 'CE3404', subject: 'Soil Mechanics', reg: '2021', sem: '4', depts: ['CIVIL'] },
+        { code: 'CE3405', subject: 'Highway and Railway Engineering', reg: '2021', sem: '4', depts: ['CIVIL'] },
+
+        // Civil Sem 5
+        { code: 'CE3501', subject: 'Design of Reinforced Concrete Structural Elements', reg: '2021', sem: '5', depts: ['CIVIL'] },
+        { code: 'CE3502', subject: 'Structural Analysis I', reg: '2021', sem: '5', depts: ['CIVIL'] },
+        { code: 'CE3503', subject: 'Foundation Engineering', reg: '2021', sem: '5', depts: ['CIVIL'] },
+
+        // Civil Sem 6
+        { code: 'CE3601', subject: 'Design of Steel Structural Elements', reg: '2021', sem: '6', depts: ['CIVIL'] },
+        { code: 'AG3601', subject: 'Engineering Geology', reg: '2021', sem: '6', depts: ['CIVIL'] },
+        { code: 'CE3602', subject: 'Structural Analysis II', reg: '2021', sem: '6', depts: ['CIVIL'] },
+
+        // Civil Sem 7
+        { code: 'AI3404', subject: 'Hydrology and Water Resources Engineering', reg: '2021', sem: '7', depts: ['CIVIL'] },
+        { code: 'AI3404', subject: 'Estimation coasting and Valuation Engineering', reg: '2021', sem: '7', depts: ['CIVIL'] },
+        { code: 'GE3752', subject: 'Total Quality Management', reg: '2021', sem: '7', depts: ['CIVIL'] }
+    ];
+
+    const CODE_REGEX = /[A-Z]{2,4}\d{3,4}/g;
+
+    function extractCodesFromText(text, bucket) {
+        if (!text) return;
+        const matches = (text.toString().toUpperCase().match(CODE_REGEX)) || [];
+        matches.forEach(c => bucket.add(c));
+    }
+
+    function collectSubjectCodes(subjectName, pdfs) {
+        const codes = new Set();
+        extractCodesFromText(subjectName, codes);
+        (pdfs || []).forEach(pdf => {
+            extractCodesFromText(pdf.name, codes);
+            extractCodesFromText(pdf.path, codes);
+        });
+
+        const normalizedSubject = normalize(subjectName);
+        SUBJECT_CODE_ENTRIES.forEach(entry => {
+            if (normalize(entry.subject) === normalizedSubject) {
+                codes.add(entry.code);
+            }
+        });
+
+        return Array.from(codes);
+    }
 
     function extractItems(json, type) {
         const items = [];
@@ -176,6 +284,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         if (!subjectData.pdfs || subjectData.pdfs.length === 0) {
                             return;
                         }
+
+                        const subjectCodes = collectSubjectCodes(subjectName, subjectData.pdfs);
                         
                         // Build proper URL with query parameters
                         const subjectEncoded = encodeURIComponent(subjectName);
@@ -191,23 +301,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                             // Add separate entry for each department
                             allDepts.forEach(dept => {
                                 items.push({
-                                    label: `${subjectName} (${dept})`,
+                                    label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (${dept})`,
                                     url: baseUrl,
                                     type,
                                     subject: subjectName,
-                                    keywords: [subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear],
-                                    searchText: normalize(`${subjectName} ${dept} sem${semNum} semester ${semNum} ${regYear}`)
+                                    keywords: [subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear, ...subjectCodes],
+                                    searchText: normalize(`${subjectName} ${dept} sem${semNum} semester ${semNum} ${regYear} ${subjectCodes.join(' ')}`)
                                 });
                             });
                         } else {
                             // Regular subject - single entry
                             items.push({
-                                label: `${subjectName} (Sem ${semNum})`,
+                                label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (Sem ${semNum})`,
                                 url: baseUrl,
                                 type,
                                 subject: subjectName,
-                                keywords: [subjectName, `sem${semNum}`, `semester${semNum}`, regYear],
-                                searchText: normalize(`${subjectName} sem${semNum} semester ${semNum} ${regYear}`)
+                                keywords: [subjectName, `sem${semNum}`, `semester${semNum}`, regYear, ...subjectCodes],
+                                searchText: normalize(`${subjectName} sem${semNum} semester ${semNum} ${regYear} ${subjectCodes.join(' ')}`)
                             });
                         }
                     });
@@ -261,13 +371,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                                 if (subjects && typeof subjects === 'object') {
                                     Object.entries(subjects).forEach(([subjectName, papers]) => {
                                         if (Array.isArray(papers) && papers.some(p => p.pdf)) {
+                                            const subjectCodes = collectSubjectCodes(subjectName, papers);
                                             items.push({
-                                                label: `${subjectName} (${dept})`,
+                                                label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (${dept})`,
                                                 url: '../question%20paper/question.html',
                                                 type,
                                                 subject: subjectName,
-                                                keywords: [dept, subjectName, `sem${semNum}`, regYear, 'question', 'paper'],
-                                                searchText: normalize(`${subjectName} ${dept} sem${semNum} ${regYear} question paper`)
+                                                keywords: [dept, subjectName, `sem${semNum}`, regYear, 'question', 'paper', 'pyq', ...subjectCodes],
+                                                searchText: normalize(`${subjectName} ${dept} sem${semNum} ${regYear} question paper pyq ${subjectCodes.join(' ')}`)
                                             });
                                         }
                                     });
@@ -333,6 +444,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 });
             });
             
+            // Add CGPA/GPA Calculator entries
+            all.push({
+                label: 'CGPA Calculator',
+                url: '../calculator.html#cgpa-panel',
+                type: 'Tool',
+                subject: 'CGPA Calculator',
+                keywords: ['cgpa', 'calculator', 'cumulative', 'grade', 'point', 'average', 'calculate'],
+                searchText: normalize('cgpa calculator cumulative grade point average calculate')
+            });
+            
+            all.push({
+                label: 'GPA Calculator',
+                url: '../calculator.html#gpa-panel',
+                type: 'Tool',
+                subject: 'GPA Calculator',
+                keywords: ['gpa', 'calculator', 'grade', 'point', 'average', 'calculate', 'semester'],
+                searchText: normalize('gpa calculator grade point average calculate semester')
+            });
+            
             // Add all department subjects for Notes
             Object.entries(DEPT_SUBJECTS).forEach(([dept, regulations]) => {
                 Object.entries(regulations).forEach(([regYear, semesters]) => {
@@ -353,6 +483,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     });
                 });
             });
+
+            // Add direct code-based entries for quick lookups (e.g., "HS3152 notes")
+            SUBJECT_CODE_ENTRIES.forEach(entry => {
+                const subjectEncoded = encodeURIComponent(entry.subject);
+                const departments = entry.depts && entry.depts.length ? entry.depts : [entry.dept || 'ALL'];
+
+                departments.forEach(dept => {
+                    // Add Notes entry
+                    all.push({
+                        label: `${entry.code} — ${entry.subject}${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
+                        url: `../pdfs/pdfs.html?regulation=${entry.reg}&semester=${entry.sem}&subject=${subjectEncoded}`,
+                        type: 'Notes',
+                        subject: entry.subject,
+                        dept: dept === 'ALL' ? undefined : dept,
+                        keywords: [entry.code, entry.subject, dept, `sem${entry.sem}`, `semester${entry.sem}`, entry.reg, 'notes'],
+                        searchText: normalize(`${entry.code} ${entry.subject} ${dept || ''} sem${entry.sem} semester ${entry.sem} ${entry.reg} notes`)
+                    });
+                    
+                    // Add Question Paper entry
+                    all.push({
+                        label: `${entry.code} — ${entry.subject} PYQ${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
+                        url: `../question%20paper/question.html`,
+                        type: 'Question Paper',
+                        subject: entry.subject,
+                        dept: dept === 'ALL' ? undefined : dept,
+                        keywords: [entry.code, entry.subject, dept, `sem${entry.sem}`, `semester${entry.sem}`, entry.reg, 'question', 'paper', 'pyq', 'previous', 'year'],
+                        searchText: normalize(`${entry.code} ${entry.subject} ${dept || ''} sem${entry.sem} semester ${entry.sem} ${entry.reg} question paper pyq previous year`)
+                    });
+                });
+            });
             
             const seen = new Set();
             index = all.filter(it => {
@@ -369,13 +529,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     function scoreItem(item, tokens) {
         let score = 0;
         const label = normalize(item.label);
-        const kws = item.keywords.map(normalize);
+        const kws = item.keywords ? item.keywords.map(normalize) : [];
+        
         for (const t of tokens) {
-            if (label.startsWith(t)) score += 4;
+            // Exact keyword match gets highest priority
+            if (kws.some(k => k === t)) {
+                score += 100; // Much higher score for exact match
+            }
+            
+            // Label exact match
+            if (label === t) score += 50;
+            else if (label.startsWith(t)) score += 4;
             else if (label.includes(t)) score += 2;
-            if (kws.some(k => k.startsWith(t))) score += 3;
-            else if (kws.some(k => k.includes(t))) score += 1;
-            if (item.searchText.includes(t)) score += 1;
+            
+            // Keyword partial matches (only if not exact)
+            if (kws.some(k => k.startsWith(t) && k !== t)) score += 3;
+            else if (kws.some(k => k.includes(t) && k !== t)) score += 1;
+            
+            if (item.searchText && item.searchText.includes(t)) score += 1;
         }
         return score;
     }
