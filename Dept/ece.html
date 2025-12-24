@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="./Deptstyle.css">
 </head>
 <body>
+<script>
+(function(){
+  var paths = ['../theme.js','./theme.js','../../theme.js'];
+  paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
+})();
+</script>
   <header>
     <div class="logo">
       <i class="fas fa-book"></i> LearnSkart

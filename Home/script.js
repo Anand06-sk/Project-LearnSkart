@@ -1,36 +1,18 @@
 function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-    const btn = document.querySelector('.theme-btn');
-    
-    // Save preference to localStorage
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
-    
-    // Update icon
-    const icon = btn.querySelector('i');
-    if (isDarkMode) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+    // Use shared theme system
+    if(window.theme && window.theme.toggle){
+        window.theme.toggle();
     }
 }
 
 // Apply saved theme preference on page load
 window.addEventListener('load', function() {
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        const btn = document.querySelector('.theme-btn');
-        if (btn) {
-            const icon = btn.querySelector('i');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
+    // Initialize theme from shared system
+    if(window.theme && window.theme.init){
+        window.theme.init();
     }
 });
+
 
 // Add smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
