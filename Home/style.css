@@ -429,10 +429,15 @@ header {
 }
 
 .filter-tag:hover {
-    background: var(--primary-light);
+    background: var(--primary);
     border-color: var(--primary);
-    color: var(--primary);
+    color: white !important;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.filter-tag:hover i {
+    color: white !important;
 }
 
 /* Right Section - Departments */
@@ -463,6 +468,8 @@ header {
     border-radius: 16px;
     background: white;
     border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -481,19 +488,31 @@ header {
     font-size: 16px;
 }
 
+/* Persistent top accent bar for dept cards */
+.dept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.cse-card::before { background: #3b82f6; }
+.ece-card::before { background: #f59e0b; }
+.eee-card::before { background: #ef4444; }
+.mech-card::before { background: #8b5cf6; }
+.civil-card::before { background: #06b6d4; }
+.it-card::before { background: #10b981; }
+
 .dept-card:hover {
     background: var(--primary-light);
     transform: translateY(-4px);
     box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
-    border-color: var(--primary);
 }
 
-.cse-card { border-top: 3px solid #3b82f6; }
-.ece-card { border-top: 3px solid #f59e0b; }
-.eee-card { border-top: 3px solid #ef4444; }
-.mech-card { border-top: 3px solid #8b5cf6; }
-.civil-card { border-top: 3px solid #06b6d4; }
-.it-card { border-top: 3px solid #10b981; }
 
 /* -------------------- SECTIONS -------------------- */
 .section {
@@ -538,17 +557,20 @@ header {
 .contact-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
+    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.35);
 }
 
 .contact-icon i {
     font-size: 36px;
     color: white;
+    opacity: 1;
+    
 }
 
 .contact-card h3 {
