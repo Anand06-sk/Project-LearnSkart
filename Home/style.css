@@ -569,7 +569,7 @@ header {
     align-items: center;
     gap: 10px;
     background: var(--primary);
-    color: white;
+    color: white !important;
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 12px;
@@ -582,7 +582,7 @@ header {
 
 .contact-email:hover {
     background: white;
-    color: var(--primary);
+    color: var(--primary) !important;
     border-color: var(--primary);
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
