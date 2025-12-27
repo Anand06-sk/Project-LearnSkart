@@ -230,14 +230,19 @@ body.dark-mode .footer-section ul li a:hover {
 }
 
 body.dark-mode .social-links a {
-    background: rgba(96, 165, 250, 0.2);
-    color: #60a5fa;
-    border-color: rgba(96, 165, 250, 0.3);
+    background: transparent !important;
+    color: #60a5fa !important;
+    border-color: #60a5fa !important;
 }
 
 body.dark-mode .social-links a:hover {
-    background: #60a5fa;
-    color: white;
+    background: transparent !important;
+    color: #60a5fa ;
+    border-color: #60a5fa !important;
+    transform: translateY(-3px) scale(1.1);
+}
+body.dark-mode .social-links a i:hover{
+   color:white !important;
 }
 
 body.dark-mode .footer-bottom {
@@ -276,12 +281,12 @@ header {
     align-items: center;
     padding: 16px 60px;
     background: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid var(--border);
+    border-bottom: none;
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
 }
 
 .logo {
@@ -859,19 +864,22 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: var(--primary-light);
+    width: 40px;
+    height: 40px;
+    background: transparent;
     border-radius: 50%;
     color: var(--primary);
+    font-size: 18px;
     transition: all 0.3s ease;
-    border: 1px solid var(--border);
+    border: 2px solid var(--primary);
 }
 
 .social-links a:hover {
     background: var(--primary);
-    color: white;
-    transform: translateY(-2px);
+    color: white !important;
+    border-color: var(--primary);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
 }
 
 .footer-bottom {

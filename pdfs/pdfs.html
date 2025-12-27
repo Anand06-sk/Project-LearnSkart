@@ -92,19 +92,42 @@
 
     .back-btn:hover {
       background: #f8fafc;
-      border-color: #3b82f6;
+      border-color: #3b82f6 ;
       transform: scale(1.05);
     }
 
     body.dark-mode .back-btn {
-      background: rgba(96, 165, 250, 0.15);
-      color: #60a5fa;
-      border-color: rgba(96, 165, 250, 0.3);
+      background: rgba(30, 41, 59, 0.8) !important;
+      color: #60a5fa !important;
+      border-color: rgba(96, 165, 250, 0.3) !important;
+    }
+
+    /* Ensure the "Back to {DEPT}" span reflects dark-mode color */
+    body.dark-mode #back-dept-label {
+      color: #60a5fa !important;
+    }
+
+    /* Preserve color on hover in dark mode */
+    body.dark-mode .back-btn:hover #back-dept-label {
+      color: #60a5fa !important;
+    }
+
+    /* Ensure the entire back button and its icon keep the dark-mode color */
+    body.dark-mode a.back-btn,
+    body.dark-mode a.back-btn:link,
+    body.dark-mode a.back-btn:visited,
+    body.dark-mode a.back-btn:hover,
+    body.dark-mode a.back-btn:active {
+      color: #60a5fa !important;
+    }
+    body.dark-mode a.back-btn i.fas.fa-arrow-left {
+      color: #60a5fa !important;
     }
 
     body.dark-mode .back-btn:hover {
-      background: rgba(96, 165, 250, 0.25);
-      border-color: #60a5fa;
+      background: rgba(96, 165, 250, 0.2) !important;
+      border-color: #60a5fa !important;
+      box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3) !important;
     }
 
     .container {
