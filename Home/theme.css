@@ -56,13 +56,6 @@ html.dark p {
   color: var(--text) !important;
 }
 
-/* Override ANY inline style that contains white or light colors */
-html.dark *[style*="background:"],
-html.dark *[style*="background-color:"],
-html.dark *[style*="color:"] {
-  /* Force reapply variables */
-}
-
 /* Specific handlers for common light color values */
 html.dark [style*="background:#ffffff"] { background: var(--surface) !important; }
 html.dark [style*="background:white"] { background: var(--surface) !important; }

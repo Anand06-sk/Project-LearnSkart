@@ -60,12 +60,21 @@
             line-height: 1.6;
             overflow-x: hidden;
             transition: background-color 0.3s, color 0.3s;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .container {
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 24px;
+            box-sizing: border-box;
         }
 
         /* Navbar */
@@ -86,12 +95,14 @@
 
         .nav-content {
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 24px;
             height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-sizing: border-box;
         }
 
         .nav-logo {
@@ -123,15 +134,16 @@
         }
 
         .nav-links {
-            display: none;
-            gap: 24px;
-            font-size: 14px;
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
             font-weight: 500;
         }
 
         @media (min-width: 768px) {
             .nav-links {
-                display: flex;
+                gap: 24px;
+                font-size: 14px;
             }
         }
 
@@ -170,12 +182,13 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 60vh;
-            min-height: 500px;
+            height: 40vh;
+            min-height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding: 2rem 1rem;
         }
 
         .hero-bg {
@@ -223,9 +236,9 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
             color: var(--foreground);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -233,17 +246,27 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
         }
 
+        /* Tablet (768px-1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            nav { padding: 12px 24px; }
+            .nav-content { gap: 16px; }
+            .hero { padding: 40px 24px; min-height: 320px; }
+            .hero h1 { font-size: 2.2rem; }
+            main { padding: 0 24px; margin-top: -40px; }
+            .content-wrapper { grid-template-columns: 1fr; }
+        }
+
         .hero p {
-            font-size: 20px;
+            font-size: 16px;
             color: var(--muted-foreground);
-            max-width: 700px;
-            margin: 0 auto 16px;
-            font-weight: 300;
-            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 12px;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
         .hero-date {
@@ -257,16 +280,20 @@
         /* Main Content */
         main {
             max-width: 1200px;
-            margin: -80px auto 0;
+            width: 100%;
+            margin: -50px auto 0;
             position: relative;
             z-index: 20;
             padding: 0 24px;
+            box-sizing: border-box;
         }
 
         .content-wrapper {
             display: grid;
             grid-template-columns: 1fr;
             gap: 48px;
+            width: 100%;
+            max-width: 100%;
         }
 
         @media (min-width: 1024px) {
@@ -325,12 +352,59 @@
             padding: 32px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         @media (max-width: 768px) {
             .content-card {
                 padding: 24px;
             }
+        }
+
+        /* Mobile (up to 767px) */
+        @media (max-width: 767px) {
+            nav { padding: 10px 16px; }
+            .nav-right { gap: 10px; }
+            .nav-links { gap: 12px; font-size: 12px; }
+            .nav-links a { padding: 4px 0; }
+            .theme-toggle { padding: 8px; }
+
+            .hero { padding: 30px 16px; text-align: center; min-height: 300px; }
+            .hero h1 { font-size: 26px; margin-bottom: 12px; }
+            .hero p { font-size: 14px; margin-bottom: 10px; }
+
+            main { margin-top: -40px; padding: 0 16px; }
+            .content-wrapper { gap: 24px; }
+            section { margin-bottom: 32px; }
+            .section-header { gap: 12px; }
+            .section-icon { width: 36px; height: 36px; }
+            .section h2 { font-size: 20px; }
+            .section p { font-size: 14px; }
+            .intro-text { font-size: 16px; }
+        }
+
+        /* Very small mobile (320px-480px) */
+        @media (max-width: 480px) {
+            .nav-logo { font-size: 18px; }
+            .nav-links { gap: 10px; font-size: 11px; }
+            .hero { padding: 25px 12px; min-height: 280px; }
+            .hero h1 { font-size: 22px; margin-bottom: 10px; }
+            .hero p { font-size: 13px; margin-bottom: 8px; }
+            main { padding: 0 12px; }
+            section h2 { font-size: 18px; }
+            .content-card { padding: 16px; }
+            .section-icon { width: 32px; height: 32px; }
+        }
+
+        /* Landscape mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero { padding: 20px 16px; min-height: 250px; height: auto; }
+            .hero h1 { font-size: 24px; margin-bottom: 8px; }
+            .hero p { font-size: 13px; margin-bottom: 6px; }
         }
 
         .intro-text {
@@ -521,6 +595,8 @@
             grid-template-columns: 1fr;
             gap: 32px;
             margin-bottom: 48px;
+            width: 100%;
+            max-width: 100%;
         }
 
         @media (min-width: 768px) {
@@ -560,11 +636,16 @@
 
         /* CTA Section */
         .cta-section {
-            background-color: var(--primary-light);
+            background: linear-gradient(135deg, rgba(59, 91, 219, 0.05) 0%, rgba(79, 70, 229, 0.05) 100%);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
-            border: 1px solid rgba(59, 91, 219, 0.1);
+            border: 1px solid rgba(59, 91, 219, 0.15);
+        }
+        
+        html.dark .cta-section {
+            background: linear-gradient(135deg, rgba(59, 91, 219, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+            border-color: rgba(59, 91, 219, 0.2);
         }
 
         .cta-section h2 {
@@ -584,7 +665,7 @@
             justify-content: center;
             border-radius: 8px;
             background-color: var(--primary);
-            color: var(--primary-foreground);
+            color: var(--primary-foreground) !important;
             padding: 0 32px;
             font-size: 14px;
             font-weight: 500;
@@ -602,6 +683,10 @@
 
         /* Footer */
         footer {
+            width: 100%;
+            max-width: 100vw;
+            box-sizing: border-box;
+            overflow-x: hidden;
             background-color: var(--secondary);
             border-top: 1px solid var(--border);
             margin-top: 80px;
@@ -612,12 +697,14 @@
 
         .footer-grid {
             max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 24px;
             display: grid;
             grid-template-columns: 1fr;
             gap: 48px;
             margin-bottom: 48px;
+            box-sizing: border-box;
         }
 
         @media (min-width: 768px) {
@@ -773,12 +860,7 @@
     </style>
 </head>
 <body>
-<script>
-(function(){
-    var paths = ['./theme.js','../theme.js','../../theme.js'];
-    paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
-})();
-</script>
+<script src="./Home/theme.js" defer></script>
     <!-- Navbar -->
     <nav>
         <div class="nav-content">
@@ -817,9 +899,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
             </div>
-            <h1>Privacy Policy</h1>
-            <p>We value your trust. Here is a clear, transparent overview of how LearnSkart protects your data.</p>
-            <p class="hero-date">Last updated: December 22, 2025</p>
+            <h1>Your Privacy Matters 🔒</h1>
+            <p>We're committed to keeping your information safe. Here's how we protect your privacy at LearnSkart.</p>
+            <p class="hero-date">Last updated: December 2025</p>
         </div>
     </section>
 
@@ -949,7 +1031,7 @@
                 <section id="contact" class="cta-section">
                     <h2>Still have questions?</h2>
                     <p>If you have any questions regarding this Privacy Policy, please feel free to reach out to us.</p>
-                    <a href="#" class="cta-button">Contact Support</a>
+                    <a href="../Home/#contact"" class="cta-button">Contact Support</a>
                 </section>
             </div>
         </div>

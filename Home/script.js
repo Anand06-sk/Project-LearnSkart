@@ -11,6 +11,7 @@ window.addEventListener('load', function() {
     if(window.theme && window.theme.init){
         window.theme.init();
     }
+    initNavToggle();
 });
 
 
@@ -644,3 +645,72 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // Build initial index
     buildIndex();
 })();
+
+// -------------------- NAV HAMBURGER TOGGLE --------------------
+function initNavToggle(){
+    const navMenu = document.getElementById('primary-nav') || document.querySelector('.nav-menu');
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const themeItem = navMenu ? navMenu.querySelector('.nav-theme-item') : null;
+    if(!navMenu || !toggleBtn) return;
+
+    function isMobileOrTablet(){
+        return window.matchMedia('(max-width: 1024px)').matches;
+    }
+
+    function openMenu(){
+        navMenu.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded','true');
+    }
+    function closeMenu(){
+        navMenu.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded','false');
+    }
+    function toggleMenu(){
+        if(!isMobileOrTablet()) return; // ignore on desktop
+        if(navMenu.classList.contains('open')) closeMenu(); else openMenu();
+    }
+
+    toggleBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e)=>{
+        if(!isMobileOrTablet()) return;
+        if(!navMenu.classList.contains('open')) return;
+        if(!navMenu.contains(e.target) && e.target !== toggleBtn) {
+            closeMenu();
+        }
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' || e.key === 'Esc'){
+            closeMenu();
+        }
+    });
+
+    // Dark mode inside menu - let theme.js handle the toggle, we just close menu
+    if(themeItem){
+        // Don't preventDefault - let the theme.js listener work
+        themeItem.addEventListener('click', (e)=>{
+            // Close menu after a tiny delay to let theme.js toggle first
+            setTimeout(()=> closeMenu(), 50);
+        }, true); // use capture phase to run before theme.js listener
+    }
+
+    // Close when a nav link is clicked (but not the theme item)
+    navMenu.querySelectorAll('.nav-link:not(.nav-theme-item)').forEach(link => {
+        link.addEventListener('click', ()=>{
+            closeMenu();
+        });
+    });
+
+    // Reset state on resize back to desktop
+    window.addEventListener('resize', ()=>{
+        if(!isMobileOrTablet()){
+            closeMenu();
+        }
+    });
+}

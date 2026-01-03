@@ -9,26 +9,29 @@
 </head>
 
 <body>
-<script>
-(function(){
-    var paths = ['../theme.js','./theme.js','../../theme.js'];
-    paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
-})();
-</script>
+<script src="./theme.js" defer></script>
 
 <!-- -------------------- HEADER -------------------- -->
 <header>
     <div class="logo">
         <i class="fas fa-book"></i> LearnSkart
     </div>
-    <nav class="nav-menu">
+    <nav class="nav-menu" id="primary-nav">
         
         <a href="../syllabus/syllabus.html" class="nav-link">Syllabus</a>
         <a href="../disclaimer.html" class="nav-link">Disclaimer</a>
         <a href="../privacy.html" class="nav-link">Privacy Policy</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
+            <!-- Mobile/Tablet only: dark mode inside menu -->
+            <button type="button" class="nav-link theme-toggle nav-theme-item" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+                Dark Mode
+            </button>
     </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+    </button>
     <button class="theme-btn theme-toggle" title="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
     </button>

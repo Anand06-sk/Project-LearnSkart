@@ -1,19 +1,40 @@
 (function(){
   function updateThemeIcon(mode){
     try{
-      var btn = document.querySelector('.theme-btn, .theme-toggle, .theme-button');
-      if(btn){
+      var toggles = document.querySelectorAll('.theme-btn, .theme-toggle, .theme-button');
+      toggles.forEach(function(btn){
         var icon = btn.querySelector('i');
-        if(icon){
-          icon.className = mode === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        if(icon){ icon.className = mode === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+        
+        // Update text content for buttons that have text (mobile menu button)
+        var textNodes = [];
+        for(var i = 0; i < btn.childNodes.length; i++){
+          if(btn.childNodes[i].nodeType === 3){ // Text node
+            textNodes.push(btn.childNodes[i]);
+          }
         }
-      }
+        textNodes.forEach(function(textNode){
+          var text = textNode.textContent.trim();
+          if(text === 'Dark Mode' || text === 'Light Mode'){
+            textNode.textContent = mode === 'dark' ? '\n                Light Mode\n            ' : '\n                Dark Mode\n            ';
+          }
+        });
+      });
     }catch(e){/* ignore */}
   }
   function applyTheme(mode){
     try{
+      // Toggle html.dark (theme.css uses this)
       if(mode === 'dark') document.documentElement.classList.add('dark');
       else document.documentElement.classList.remove('dark');
+
+      // Also toggle body.dark-mode (Home/style.css uses this)
+      var body = document.body;
+      if(body){
+        if(mode === 'dark') body.classList.add('dark-mode');
+        else body.classList.remove('dark-mode');
+      }
+
       updateThemeIcon(mode);
     }catch(e){/* ignore */}
   }
@@ -27,13 +48,22 @@
   // auto-init immediately
   try{applyTheme(localStorage.getItem('site-theme')||'light')}catch(e){}
 
+  // Inject theme.css from the same directory as this script
+  try{
+    // Get the script's source path to determine where theme.css is
+    var scripts = document.querySelectorAll('script[src*="theme.js"]');
+    var scriptPath = scripts.length > 0 ? scripts[scripts.length - 1].src : '';
+    if(scriptPath){
+      var themeCssPath = scriptPath.replace('theme.js', 'theme.css');
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = themeCssPath;
+      document.head.appendChild(link);
+    }
+  }catch(e){}
+
   // Hide any existing theme toggle on non-index pages, show only on index
   try{
-    // Try to inject theme.css using several relative paths so pages across folders pick it up
-    ['.','..','..\\..'].forEach(function(p){
-      var l = document.createElement('link'); l.rel='stylesheet'; l.href = p + '/theme.css'; l.onerror = function(){}; document.head.appendChild(l);
-    });
-
     var p = (location.pathname||'').toLowerCase();
     var isIndex = p.endsWith('/index.html') || p === '/' || p.endsWith('\\index.html') || p === '';
     document.querySelectorAll('.theme-toggle, .theme-button, .theme-btn').forEach(function(el){
@@ -77,14 +107,20 @@
       // Force dark mode reapplication for all elements
       if(mode === 'dark'){
         document.documentElement.classList.add('dark');
+        if(document.body){ document.body.classList.add('dark-mode'); }
         // Apply dark mode to all dynamically added content
         var observer = new MutationObserver(function(mutations){
           mutations.forEach(function(mutation){
             if(mutation.addedNodes.length){
               mutation.addedNodes.forEach(function(node){
                 if(node.nodeType === 1){
-                  if(getStored() === 'dark' && !document.documentElement.classList.contains('dark')){
-                    document.documentElement.classList.add('dark');
+                  if(getStored() === 'dark'){
+                    if(!document.documentElement.classList.contains('dark')){
+                      document.documentElement.classList.add('dark');
+                    }
+                    if(document.body && !document.body.classList.contains('dark-mode')){
+                      document.body.classList.add('dark-mode');
+                    }
                   }
                 }
               });

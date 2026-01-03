@@ -196,7 +196,7 @@ header {
     padding: 40px 20px;
     position: relative;
     background: linear-gradient(135deg, #f0f9ff, #f8fafc);
-    border-bottom: 2px solid var(--primary);
+    border-bottom: none;
 }
 /* smooth transition for header pop */
 .card-header { transition: transform 0.22s cubic-bezier(.2,.9,.3,1), box-shadow 0.22s ease; }
@@ -251,13 +251,7 @@ header {
     font-size: 0.85rem;
 }
 
-/* Department border-top colors (match style.css) */
-.syllabus-card.cse-card { border-top: 3px solid #3b82f6; }
-.syllabus-card.ece-card { border-top: 3px solid #f59e0b; }
-.syllabus-card.eee-card { border-top: 3px solid #ef4444; }
-.syllabus-card.mech-card { border-top: 3px solid #8b5cf6; }
-.syllabus-card.civil-card { border-top: 3px solid #06b6d4; }
-.syllabus-card.it-card { border-top: 3px solid #10b981; }
+/* Removed colored top borders to keep card frames uniform */
 
 /* Stats Section */
 .stats {
@@ -283,7 +277,7 @@ header {
 }
 
 .stat-item h4 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--primary);
     font-weight: 900;
 }
@@ -294,6 +288,8 @@ header {
 .stat-item p {
     font-weight: 600;
     color: #555;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 /* Footer */
@@ -407,22 +403,103 @@ html.dark {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
+/* ==================== RESPONSIVE DESIGN ==================== */
 
-    /* .nav-menu rules removed */
+/* Very small mobile (≤480px) */
+@media (max-width: 480px) {
+    header { padding: 10px 12px; gap: 8px; }
+    .logo { font-size: 16px; gap: 6px; }
+    .logo i { font-size: 16px; }
+    .back-btn { font-size: 10px; padding: 6px 10px; }
+    .theme-btn { font-size: 16px; }
+    .syllabus-hero { padding: 40px 12px; }
+    .syllabus-hero h1 { font-size: 24px; margin-bottom: 10px; }
+    .syllabus-hero p { font-size: 13px; }
+    .syllabus-container { margin: 30px auto; padding: 0 12px; }
+    .section-title { margin-bottom: 30px; }
+    .section-title h2 { font-size: 20px; }
+    .section-title h2::after { width: 50px; height: 3px; }
+    .dept-syllabus-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+    .syllabus-card { border-radius: 12px; }
+    .card-header { padding: 24px 12px; }
+    .card-header .icon-wrap { width: 50px; height: 50px; font-size: 22px; margin-bottom: 10px; }
+    .card-header h3 { font-size: 16px; }
+    .dept-code { font-size: 10px; padding: 4px 8px; top: 8px; right: 8px; }
+    .stats { margin-top: 30px; padding: 16px 4px; border-radius: 12px; flex-direction: row; justify-content: space-between; gap: 2px; flex-wrap: nowrap; overflow-x: auto; }
+    .stat-item { margin: 0; flex: 1 1 90px; }
+    .stat-item h4 { font-size: 20px; }
+    .stat-item p { font-size: 10px; }
+    footer { padding: 30px 12px 15px; margin-top: 40px; }
+    .footer-content { gap: 20px; }
+    .footer-section h4 { font-size: 16px; margin-bottom: 10px; }
+    .footer-section ul li { margin-bottom: 6px; font-size: 13px; }
+    .footer-bottom { margin-top: 24px; font-size: 12px; }
+}
 
-    .syllabus-hero h1 {
-        font-size: 2.2rem;
-    }
+/* Mobile general (481px-640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+    header { padding: 12px 14px; gap: 10px; }
+    .logo { font-size: 18px; gap: 8px; }
+    .logo i { font-size: 18px; }
+    .back-btn { font-size: 11px; padding: 7px 12px; }
+    .theme-btn { font-size: 18px; }
+    .syllabus-hero { padding: 50px 16px; }
+    .syllabus-hero h1 { font-size: 32px; margin-bottom: 12px; }
+    .syllabus-hero p { font-size: 15px; }
+    .syllabus-container { margin: 40px auto; padding: 0 16px; }
+    .section-title { margin-bottom: 35px; }
+    .section-title h2 { font-size: 28px; }
+    .section-title h2::after { width: 60px; }
+    .dept-syllabus-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .card-header { padding: 30px 16px; }
+    .card-header .icon-wrap { width: 60px; height: 60px; font-size: 24px; }
+    .card-header h3 { font-size: 18px; }
+    .dept-code { font-size: 11px; padding: 5px 10px; }
+    .stats { margin-top: 34px; padding: 18px 6px; flex-direction: row; justify-content: space-between; gap: 4px; flex-wrap: nowrap; overflow-x: auto; }
+    .stat-item { margin: 0; flex: 1 1 100px; }
+    .stat-item h4 { font-size: 22px; }
+    .stat-item p { font-size: 11px; }
+    footer { padding: 40px 16px 18px; margin-top: 50px; }
+    .footer-content { gap: 24px; }
+    .footer-section h4 { font-size: 17px; }
+    .footer-section ul li { font-size: 14px; }
+    .footer-bottom { margin-top: 28px; font-size: 13px; }
+}
 
-    .stats {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Tablet (641px-1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    header { padding: 14px 24px; }
+    .logo { font-size: 20px; }
+    .back-btn { font-size: 12px; padding: 7px 13px; }
+    .theme-btn { font-size: 20px; }
+    .syllabus-hero { padding: 60px 24px; }
+    .syllabus-hero h1 { font-size: 40px; }
+    .syllabus-hero p { font-size: 17px; }
+    .syllabus-container { margin: 50px auto; padding: 0 24px; }
+    .section-title { margin-bottom: 40px; }
+    .section-title h2 { font-size: 32px; }
+    .dept-syllabus-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .card-header { padding: 35px 20px; }
+    .card-header .icon-wrap { width: 65px; height: 65px; font-size: 26px; }
+    .card-header h3 { font-size: 20px; }
+    .stats { margin-top: 50px; padding: 35px 20px; }
+    .stat-item h4 { font-size: 28px; }
+    footer { padding: 45px 24px 18px; margin-top: 60px; }
+    .footer-section h4 { font-size: 18px; }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .syllabus-hero { padding: 30px 16px; }
+    .syllabus-hero h1 { font-size: 28px; }
+    header { padding: 10px 16px; }
+    .logo { font-size: 16px; }
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+    .syllabus-container { max-width: 1400px; }
+    .dept-syllabus-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ============ DARK MODE STYLES FOR SYLLABUS ============ */
@@ -561,15 +638,193 @@ html.dark p, html.dark span, html.dark a, html.dark h1, html.dark h2, html.dark 
     text-shadow: none !important;
 }
 
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet (768px-1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header { padding: 16px 40px; }
+    .hero { padding: 50px 40px; }
+    .container { padding: 0 40px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    header {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    .back-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .hero {
+        padding: 30px 16px;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+    
+    .tab {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    main {
+        padding: 30px 16px;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .card {
+        padding: 16px;
+    }
+    
+    .card h3 {
+        font-size: 16px;
+    }
+    
+    .card p {
+        font-size: 13px;
+    }
+    
+    .download-btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    footer {
+        padding: 20px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Very small mobile (320px-480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 12px;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    .back-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+    
+    .hero {
+        padding: 24px 12px;
+    }
+    
+    .hero h1 {
+        font-size: 20px;
+    }
+    
+    .hero p {
+        font-size: 13px;
+    }
+    
+    .tabs {
+        gap: 6px;
+    }
+    
+    .tab {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+    
+    main {
+        padding: 24px 12px;
+    }
+    
+    .card {
+        padding: 12px;
+    }
+    
+    .card h3 {
+        font-size: 14px;
+    }
+    
+    .card p {
+        font-size: 12px;
+    }
+    
+    .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .download-btn {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 20px 16px;
+    }
+    
+    .hero h1 {
+        font-size: 22px;
+    }
+    
+    main {
+        padding: 30px 16px;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
 </style>
 </head>
 <body>
-<script>
-(function(){
-    var paths = ['../theme.js','./theme.js','../../theme.js'];
-    paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
-})();
-</script>
+<script src="../Home/theme.js" defer></script>
 <header>
     <div class="logo"><i class="fas fa-book"></i>LearnSkart</div>
     <!-- Navigation removed: site simplified per request -->
