@@ -95,6 +95,7 @@
 
         /* Tabs */
         .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+        #semTabs { display: none !important; }
         .tab-btn {
             padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;
             border: 1px solid var(--border); background: white; color: var(--muted); cursor: pointer; transition: 0.3s;
@@ -745,18 +746,6 @@
 </head>
 <body>
 <script src="../Home/theme.js" defer></script>
-    <script>
-        // Apply saved dark mode on load
-        (function(){
-            try {
-                if (localStorage.getItem('darkMode') === 'true') {
-                    document.addEventListener('DOMContentLoaded', function(){
-                        document.body.classList.add('dark-mode');
-                    });
-                }
-            } catch (e) {}
-        })();
-    </script>
 
     <nav class="nav">
         <div class="container nav-inner">
@@ -771,7 +760,6 @@
                 <a href="../Home/index.html">Home</a>
                 <a href="../Home/#contact">Contact</a>
                 <a href="../Home/about.html">About</a>
-                <!-- <button class="btn-contribute">Contribute</button> -->
             </div>
         </div>
     </nav>
@@ -848,7 +836,7 @@
         let universityData = {};
         let selectedDept = 'CSE';
         let selectedReg = '2021';
-        let selectedSem = 'All';
+        let selectedSem = '1';
         let searchQuery = '';
         let expandedId = null;
         let currentPdfUrl = '';

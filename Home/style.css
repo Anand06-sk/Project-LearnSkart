@@ -1954,6 +1954,9 @@ body.dark-mode .nav-toggle:hover {
     .nav-toggle { display: inline-flex; }
     /* Hide header theme button; dark mode lives in menu */
     .theme-btn { display: none; }
+    
+    /* Ensure nav-theme-item is visible in mobile menu */
+    .nav-theme-item { display: none; }
 
     /* Dropdown panel */
     header { position: sticky; }
@@ -1976,7 +1979,7 @@ body.dark-mode .nav-toggle:hover {
         padding: 10px 12px;
         border-radius: 8px;
         background: transparent;
-        display: inline-flex;
+        display: inline-flex !important;
         align-items: center;
         gap: 10px;
     }
