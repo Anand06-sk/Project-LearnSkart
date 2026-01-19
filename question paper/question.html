@@ -119,8 +119,8 @@
         .reg-btn.active { color: var(--primary); font-weight: 600; background: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
 
         /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
-        .card { background: white; border: 1px solid var(--border); border-radius: 0.75rem; overflow: hidden; transition: 0.3s; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; align-items: start; }
+        .card { background: white; border: 1px solid var(--border); border-radius: 0.75rem; overflow: hidden; transition: 0.3s; height: fit-content; }
         .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
         .card.expanded { ring: 2px solid var(--primary); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
         .card-body { padding: 1.25rem; cursor: pointer; }
@@ -938,8 +938,8 @@
                                             </div>
                                         </div>
                                         <div style="display:flex; gap:4px">
-                                            <button class="btn-icon" onclick="openPdf('${p.pdf}', '${p.title}')"><i data-lucide="eye" style="width:18px"></i></button>
-                                            <button class="btn-icon" style="color:white; background:var(--primary);" onclick="downloadPdf('${p.pdf}', '${p.title}')"><i data-lucide="download" style="width:16px"></i></button>
+                                            <button class="btn-icon" onclick="openPdf('${p.pdf}', '${p.title}', event)"><i data-lucide="eye" style="width:18px"></i></button>
+                                            <button class="btn-icon" style="color:white; background:var(--primary);" onclick="downloadPdf('${p.pdf}', '${p.title}', event)"><i data-lucide="download" style="width:16px"></i></button>
                                         </div>
                                     </div>
                                 `).join('')}
@@ -981,15 +981,23 @@
             renderGrid();
         };
 
-        window.openPdf = (url, title) => {
+        window.openPdf = (url, title, event) => {
+            if (event) event.stopPropagation();
             currentPdfUrl = url;
             currentPdfTitle = title;
-            document.getElementById('pdfFrame').src = url;
+            // Convert Google Drive link to embeddable format
+            let embedUrl = url;
+            if (url.includes('drive.google.com/uc?id=')) {
+                const fileId = url.split('id=')[1];
+                embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+            }
+            document.getElementById('pdfFrame').src = embedUrl;
             document.getElementById('modalTitle').textContent = title;
             document.getElementById('pdfModal').classList.remove('hidden');
         };
 
-        window.downloadPdf = (url, title) => {
+        window.downloadPdf = (url, title, event) => {
+            if (event) event.stopPropagation();
             try {
                 const link = document.createElement('a');
                 link.href = url;

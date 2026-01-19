@@ -1381,8 +1381,8 @@ html.dark .type-badge {
       <h4>Quick Links</h4>
       <ul>
         <li><a href="../Home/index.html">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../Home/about.html">About Us</a></li>
+        <li><a href="../Home/#contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-section">
@@ -1456,7 +1456,7 @@ html.dark .type-badge {
         let data;
         try {
           const resp = await fetch('sydata.json', { cache: 'no-store' });
-          if (!resp.ok) throw new Error('Failed to load sydata.json');
+          if (!resp.ok) throw new Error('Failed to load demo.json');
           data = await resp.json();
         } catch (err) {
           console.error(err);
@@ -1567,15 +1567,14 @@ html.dark .type-badge {
         const core = filename.split(/[?#]/)[0].replace(/\.[^/.]+$/, '');
         // replace separators with space and collapse multiple spaces
         const spaced = core.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
-        // title-case words
-        return spaced.split(' ').map(w => w ? (w.charAt(0).toUpperCase() + w.slice(1)) : '').join(' ');
+        // title-case words - lowercase first, then capitalize each word
+        return spaced.split(' ').map(w => w ? (w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()) : '').join(' ');
       }
 
       // create whole syllabus card
       function createWholeCard(w) {
         const pdf = w && w.pdf ? w.pdf : '';
-        const pdfFileName = pdf ? pdf.split('/').pop() : '';
-        const title = pdfFileName ? formatDisplayName(pdfFileName) : (w && (w.title || 'Complete Syllabus'));
+        const title = (w && w.title) ? w.title : 'Complete Syllabus';
         const card = document.createElement('div');
         card.className = 'pdf-card';
         const header = document.createElement('div'); header.className = 'pdf-header';
@@ -1592,10 +1591,16 @@ html.dark .type-badge {
           view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
           dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
         } else {
-          // Normalize paths: sypdf.html lives inside `syllabus/` so remove leading `syllabus/` if present
-          const href = pdf.startsWith('syllabus/') ? pdf.replace(/^syllabus\//, '') : pdf;
-          view.href = href; view.target = '_blank'; view.rel = 'noopener';
-          dl.href = href; dl.download = href.split('/').pop() || '';
+          // For Google Drive URLs, use viewer. For local files, open directly
+          if (pdf.includes('drive.google.com')) {
+            view.href = pdf.replace('/uc?id=', '/file/d/') + '/preview'; view.target = '_blank'; view.rel = 'noopener';
+            dl.href = pdf; dl.target = '_blank'; dl.rel = 'noopener';
+          } else {
+            // Normalize paths: sypdf.html lives inside `syllabus/` so remove leading `syllabus/` if present
+            const href = pdf.startsWith('syllabus/') ? pdf.replace(/^syllabus\//, '') : pdf;
+            view.href = href; view.target = '_blank'; view.rel = 'noopener';
+            dl.href = href; dl.download = href.split('/').pop() || '';
+          }
         }
         footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
         return card;
@@ -1604,8 +1609,7 @@ html.dark .type-badge {
       // create subject card with type badge
       function createSubjectCard(item, semester) {
         const pdf = item.pdf || '';
-        const pdfFileName = pdf ? pdf.split('/').pop() : '';
-        const subject = pdfFileName ? formatDisplayName(pdfFileName) : (item.subject || item.title || 'Untitled');
+        const subject = (item.title || item.subject) ? (item.title || item.subject) : 'Subject PDF';
         const type = item.type || (item.lab ? 'Lab' : 'Theory');
         const card = document.createElement('div'); card.className = 'pdf-card';
         const header = document.createElement('div'); header.className = 'pdf-header';
@@ -1624,10 +1628,16 @@ html.dark .type-badge {
           view.classList.add('disabled'); view.href = '#'; view.setAttribute('aria-disabled', 'true'); view.tabIndex = -1;
           dl.classList.add('disabled'); dl.href = '#'; dl.setAttribute('aria-disabled', 'true'); dl.tabIndex = -1;
         } else {
-          // For pages inside `syllabus/`, strip leading folder prefix so links resolve correctly
-          const href = pdf.startsWith('syllabus/') ? pdf.replace(/^syllabus\//, '') : pdf;
-          view.href = href; view.target = '_blank'; view.rel = 'noopener';
-          dl.href = href; dl.download = href.split('/').pop() || '';
+          // For Google Drive URLs, use viewer. For local files, open directly
+          if (pdf.includes('drive.google.com')) {
+            view.href = pdf.replace('/uc?id=', '/file/d/') + '/preview'; view.target = '_blank'; view.rel = 'noopener';
+            dl.href = pdf; dl.target = '_blank'; dl.rel = 'noopener';
+          } else {
+            // For pages inside `syllabus/`, strip leading folder prefix so links resolve correctly
+            const href = pdf.startsWith('syllabus/') ? pdf.replace(/^syllabus\//, '') : pdf;
+            view.href = href; view.target = '_blank'; view.rel = 'noopener';
+            dl.href = href; dl.download = href.split('/').pop() || '';
+          }
         }
         footer.appendChild(view); footer.appendChild(dl); card.appendChild(footer);
         return card;
