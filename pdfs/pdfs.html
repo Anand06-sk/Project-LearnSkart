@@ -1031,7 +1031,7 @@
         return;
       }
 
-      const pdfs = (data[department]?.[regulation]?.[semester]?.[subject]?.pdfs) || [];
+      const pdfs = (data[regulation]?.[dept]?.[semester]?.[subject]?.pdfs) || [];
 
       const grid = document.getElementById('pdf-grid');
       const empty = document.getElementById('empty');
