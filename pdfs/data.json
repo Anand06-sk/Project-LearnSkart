@@ -1,355 +1,2798 @@
 {
-  "cse": {
+  "MECH": {
     "2021": {
-      "1": {
-        "Professional English-I": {
+      "6": {
+        "Heat and Mass Transfer": {
           "pdfs": [
-            { "id": 1, "name": "Professional English - Notes", "path": "CSE/sem1/HS3152-Professional English.pdf" },
-            { "id": 2, "name": "Professional English - Handwritten", "path": "CSE/sem1/HS3152-handwritten notes.pdf" }
+            {
+              "name": "ME3691-Heat and Mass Transfer-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=18IiL3p5L9Sl59qpMw8fyU8xTFaGL5y16"
+            },
+            {
+              "name": "ME3691-Heat and Mass Transfer-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1qE65Ha_KeM-b20w2IefBFt2Hzw-mfjfO"
+            }
+          ]
+        }
+      },
+      "7": {
+        "Computer Integrated Manufacturing": {
+          "pdfs": [
+            {
+              "name": "ME3792-Computer Integrated Manufacturing-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1O5DJN82eWzXXYhgXWjatvg-98l_ikKCp"
+            }
           ]
         },
-        "Matrices and Calculus": {
+        "Human Values and Ethics": {
           "pdfs": [
-            { "id": 1, "name": "Matrices - Handwritten 1", "path": "CSE/sem1/MA3151-handwritten notes 1.pdf" },
-            { "id": 2, "name": "Matrices - Handwritten 2", "path": "CSE/sem1/MA3151-handwritten notes 2.pdf" },
-            { "id": 3, "name": "Matrices - Handwritten 3", "path": "CSE/sem1/Ma3151-handwritten notes 3.pdf" }
+            {
+              "name": "GE3791-Human Values and Ethics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1MlWxtlSKqw8btNHv6Op6gE9ZJ6WTHEwk"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1yRDbr65n-SBMOSIUanbiUhs1fdhvtpfL"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1mWcekDSGCOqX1agq9Jg-p0fTyiPLehOY"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1v8ubCMUoBhd4pYLk6WsxNXpMXOP9m1e6"
+            }
           ]
         },
-        "Engineering Physics": {
+        "Industrial Management": {
           "pdfs": [
-            { "id": 1, "name": "Physics - Unit 1", "path": "CSE/sem1/PH3151-Unit1.pdf" },
-            { "id": 2, "name": "Physics - Unit 2", "path": "CSE/sem1/PH3151-Unit2.pdf" },
-            { "id": 3, "name": "Physics - Unit 3", "path": "CSE/sem1/PH3151-Unit3.pdf" },
-            { "id": 4, "name": "Physics - Unit 4", "path": "CSE/sem1/PH3151-Unit4.pdf" },
-            { "id": 5, "name": "Physics - Unit 5", "path": "CSE/sem1/PH3151-Unit5.pdf" },
-            { "id": 6, "name": "Physics - Handwritten", "path": "CSE/sem1/PH3151-Handwritten notes.pdf" }
+            {
+              "name": "GE3792-Industrial Management-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1ujEpRcB4HI1pU2ozMECQKTJ_ulpSUD0g"
+            }
           ]
         },
-        "Engineering Chemistry": {
+        "Mechatronics and IOT": {
           "pdfs": [
-            { "id": 1, "name": "Chemistry - Handwritten 1", "path": "CSE/sem1/CY3151-handwritten notes.pdf" },
-            { "id": 2, "name": "Chemistry - Handwritten 2", "path": "CSE/sem1/CY3151-handwritten notes2.pdf" },
-            { "id": 3, "name": "Chemistry - Handwritten 3", "path": "CSE/sem1/CY3151-handwritten notes3.pdf" }
+            {
+              "name": "ME3791-Mechatronics and IOT-notes.pdf",
+              "url": "https://drive.google.com/uc?id=190Ss1Z_F-qDH3BK1eKFyOHvNg1IDb9lR"
+            }
+          ]
+        }
+      },
+      "5": {
+        "Design of Machine Elements": {
+          "pdfs": [
+            {
+              "name": "ME3591-Design of Machine Elements-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1dLgbj5w5ojTSmlPaB89P_tmefiq0iybu"
+            },
+            {
+              "name": "ME3591-Design of Machine Elements-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1UKdRw_-Kr3VVm3QEVhKy7eJCjav-VPli"
+            }
           ]
         },
-        "Problem Solving and Python Programming": {
+        "Metrology and Measurements": {
           "pdfs": [
-            { "id": 1, "name": "Problem Solving & Python - Lecture Notes", "path": "CSE/sem1/GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf" }
+            {
+              "name": "ME3592-Metrology and Measurements-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=18eo0VmRFXIIb1eYAYEuSb0uivCuKMRiA"
+            }
+          ]
+        }
+      },
+      "4": {
+        "Environmental Sciences and Sustainability": {
+          "pdfs": [
+            {
+              "name": "GE3451-Environmental Sciences and Sustainability-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1X5KsQEkoPkbtErPL-fLpHxDUYXq4jVkC"
+            }
           ]
         },
-        "Heritage of Tamils": {
+        "Hydraulics and Pneumatics": {
           "pdfs": [
-            { "id": 1, "name": "Heritage of Tamils - Handnotes (English)", "path": "CSE/sem1/GE3152-Heritage-of-Tamils-Handnotes-English.pdf" },
-            { "id": 2, "name": "Heritage of Tamils - Unit 1", "path": "CSE/sem1/GE3152-Heritage-of-Tamils-Unit1.pdf" }
+            {
+              "name": "ME3492-Hydraulics and Pneumatics-notes.pdf",
+              "url": "https://drive.google.com/uc?id=15Jh6hVJxlH0ziLym0K4mk5zeYlFxenix"
+            }
+          ]
+        },
+        "Manufacturing Technology": {
+          "pdfs": [
+            {
+              "name": "ME3493-Manufacturing Technology-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1stTdpCMvmxsi9tRRGPPy-OFXJ9BQDg8q"
+            },
+            {
+              "name": "ME3493-Manufacturing Technology-Handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=10w2QZ96-IUbURVaWsaVnkP4QOhH5Xt8B"
+            }
+          ]
+        },
+        "Strength of Materials": {
+          "pdfs": [
+            {
+              "name": "CE3491-Strength of Materials-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1QafWPhzWNgJknTb6RHLjjDJmrPcywSYL"
+            },
+            {
+              "name": "CE3491-Strength of Materials-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ghXJO-_dnLsWVMop531ZMZq1qPDjAIPb"
+            }
+          ]
+        },
+        "Theory of Machines": {
+          "pdfs": [
+            {
+              "name": "ME3491-Theory of Machines-unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1eNaRx3KC6k_kWrzRLqBnnB99jevEeus7"
+            },
+            {
+              "name": "ME3491-Theory of Machines-unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1y4gPv9nDOOli7kieF7askLZRLGL5GF8s"
+            },
+            {
+              "name": "ME3491-Theory of Machines-unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1V5lUsncXlAIhkbAc7TuJtDCupVDGvN4r"
+            },
+            {
+              "name": "ME3491-Theory of Machines-unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1bfwFlaMC6NNyD7e35MtkUjVokUfLFuPA"
+            },
+            {
+              "name": "ME3491-Theory of Machines-unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1GfqiUaedvUz3DS734ByXw7wEDIYqKVro"
+            }
+          ]
+        },
+        "Thermal Engineering": {
+          "pdfs": [
+            {
+              "name": "ME3451-Thermal Engineering-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Pk4GYLMeLxk4LGRFspsrzHsRvDdjHKW_"
+            },
+            {
+              "name": "ME3451-Thermal Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1esj60b_Vs-CWLQfBr0asI7w3H2xDfh8Q"
+            }
           ]
         }
       },
       "2": {
+        "Basic Electrical and Electronics Engineering": {
+          "pdfs": [
+            {
+              "name": "BE3251-Basic-Electrical-and-Electronics-Engineering-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1xVlhR5ku5OaudC2eSwWv9kGPsr0X7lh8"
+            }
+          ]
+        },
+        "Engineering Graphics": {
+          "pdfs": [
+            {
+              "name": "GE3251-Engineering Graphics-Full notes.pdf",
+              "url": "https://drive.google.com/uc?id=1fC6pL7PKTamF-XHW9vWCdGtX0BHurS4R"
+            }
+          ]
+        },
+        "Materials Science": {
+          "pdfs": [
+            {
+              "name": "PH3251-Materials Science-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1RmQE7C21dybuVsyeci4Bz_M8TWuCwMvs"
+            },
+            {
+              "name": "PH3251-Materials Science-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Nh7MRS3zbiee9sI1cZUcalLSk3TPG1HB"
+            }
+          ]
+        },
         "Professional English-II": {
           "pdfs": [
-            { "id": 1, "name": "Professional English-II Notes", "path": "CSE/sem2/prof_english_2.pdf" }
+            {
+              "name": "HS3252-Professional English-II Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1kYRPvUn-H7MV6Z03lVilxuSk3HBXUhAc"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit2,3.pdf",
+              "url": "https://drive.google.com/uc?id=1QC4QcURKv7F2IuY_BLeQjPB0qeP_9fHg"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit4,5.pdf",
+              "url": "https://drive.google.com/uc?id=1ItAjqdqJjvsoXQTHKWbRzFdfc05O4TZa"
+            }
+          ]
+        },
+        "Statistics and Numerical Methods": {
+          "pdfs": [
+            {
+              "name": "MA3251-Statistics and Numerical Methods-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1C74avRWsFaZYNVPu0xyizcAtHQSTgQ0v"
+            }
+          ]
+        },
+        "Tamils and Technology": {
+          "pdfs": [
+            {
+              "name": "GE3252-Tamils and Technology(English)-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Dc5hCldz7bImKar9H0--rE132EcIkxPk"
+            },
+            {
+              "name": "GE3252-Tamils and Technology(Tamil)-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1EKzTxHtXMhUZlrw9hb48AOtCohHEJCAD"
+            }
+          ]
+        }
+      },
+      "3": {
+        "Engineering Materials and Metallurgy": {
+          "pdfs": [
+            {
+              "name": "ME3392-Engineering Materials and Metallurgy-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=15OTOYXu5c_HxmYbWh_PIQXPZBm9a1u_W"
+            }
+          ]
+        },
+        "Engineering Mechanics": {
+          "pdfs": [
+            {
+              "name": "ME3351-Engineering Mechanics-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1jRUvzkjmO-cCZa90mpbWdZzgXAoFvjG5"
+            },
+            {
+              "name": "ME3351-Engineering Mechanics-handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=1WRWBsMGoPBBfQn6Wi-OZPfqcKfHpN6mM"
+            }
+          ]
+        },
+        "Engineering Thermodynamics": {
+          "pdfs": [
+            {
+              "name": "ME3391-Engineering Thermodynamics-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1y6fpBaTMkVEMZvwExByYhiAY9_o8y9xr"
+            },
+            {
+              "name": "ME3391-Engineering Thermodynamics-handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=1zsIdSLTHm12loUqS0Ufz1IXaJSOQTQhY"
+            }
+          ]
+        },
+        "Fluid Mechanics and Machinery": {
+          "pdfs": [
+            {
+              "name": "CE3391-Fluid Mechanics and Machinery-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1ESc_5CxdPcdlMIeuZ112ZbWzFXkMAmWE"
+            },
+            {
+              "name": "CE3391-Fluid Mechanics and Machinery-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1o4cIVr1BfETE3NQpSiFSf-mEmccGwSc3"
+            }
+          ]
+        },
+        "Manufacturing Processes": {
+          "pdfs": [
+            {
+              "name": "ME3393-Manufacturing Processes-handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1RmVHDG8j7ewggeq2OZiyznFLbRcmz6u2"
+            },
+            {
+              "name": "ME3393-Manufacturing Processes-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1xNr9Dy3ZBkF3frpooKSzUSnlkRCCWVPh"
+            }
+          ]
+        },
+        "Transforms and Partial Differential Equations": {
+          "pdfs": [
+            {
+              "name": "MA3351-Transforms and Partial Differential Equations-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=10M5fCoL5GYDXvU09aQ7x2ltzk3vh5Vci"
+            },
+            {
+              "name": "MA3351-Transforms and Partial Differential Equations-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1EA__pvxDw-KNDIJ48_5_CsGEG7YIvnot"
+            }
+          ]
+        }
+      },
+      "1": {
+        "Engineering Chemistry": {
+          "pdfs": [
+            {
+              "name": "CY3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1f_Bi2whTpLZ0FZuQRmAXStbmPjqs9Lzq"
+            },
+            {
+              "name": "CY3151-handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1n9to16CBmwDzHm4SNMz4DAKoy1pmRvlQ"
+            },
+            {
+              "name": "CY3151-handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1s7iTfUBPHOsuHmgOH7kNxKc411kOhI-b"
+            }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            {
+              "name": "PH3151-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1sWOB6sLaHPVI5DJtJure8AoHo_DjzG6b"
+            },
+            {
+              "name": "PH3151-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1SS-L03rSTg-N5xPNUQXuaUiX73WJhXXw"
+            },
+            {
+              "name": "PH3151-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=16lSjDxHdt82YLp6LiejqVDW3miPFBvNe"
+            },
+            {
+              "name": "PH3151-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=12Wf4Mhe5XnSWB2iA3dBrVFCIqkRPBk5a"
+            },
+            {
+              "name": "PH3151-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1JgiO3_cAGDt0yuiBZQ9JUXyw0SmQ1Io3"
+            },
+            {
+              "name": "PH3151-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=18Z1KV-n49pH6k7OgLH_u2OPB9CkDmUdv"
+            }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-English.pdf",
+              "url": "https://drive.google.com/uc?id=1PsrPnuRwxl56FqO_3PLWHaOwPxuvN8Th"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-Tamil.pdf",
+              "url": "https://drive.google.com/uc?id=1TvOKMKCACbd5OUutEp67Y6m2dFjL5n5m"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=122DPNHFyvcRbGrKgX2ZSBhnIg9EpceKr"
+            }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            {
+              "name": "MA3151-handwritten notes 1.pdf",
+              "url": "https://drive.google.com/uc?id=1d-M_t84DQXXbmcyNLQLRzb2i170BN5U1"
+            },
+            {
+              "name": "MA3151-handwritten notes 2.pdf",
+              "url": "https://drive.google.com/uc?id=1pXar9Sgq1s41Ry3KCQiqSm2K_5_qtL09"
+            },
+            {
+              "name": "MA3151-handwritten notes 3.pdf",
+              "url": "https://drive.google.com/uc?id=1bgbr-SyCcnynLthc-9chqqA-psUTiO14"
+            }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            {
+              "name": "GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1uu9bdH55HNID2VXXTx_S1IPC9ijnzXds"
+            },
+            {
+              "name": "GE3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1_WNTq9lzqsvm_Atlcw98DxDcse5WryG_"
+            }
+          ]
+        },
+        "Professional English 1": {
+          "pdfs": [
+            {
+              "name": "HS3152-Professional English.pdf",
+              "url": "https://drive.google.com/uc?id=11Rk8RuYIc5ekJfc1KjQP8QSXjD5YdSDU"
+            },
+            {
+              "name": "HS3152-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1eoMQga3XBq2B2WCC2ZMmLuO3p3V5wRW9"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "EEE": {
+    "2021": {
+      "7": {
+        "High Voltage Engineering": {
+          "pdfs": [
+            {
+              "name": "EE3701-High Voltage Engineering-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Hit4gqCZA7O-c2QRB_eIDSRDVQPJSLom"
+            }
+          ]
+        }
+      },
+      "4": {
+        "Electrical Machines II": {
+          "pdfs": [
+            {
+              "name": "EE3405-Electrical Machines II-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1ruzsLkHD15_xGm6pP0dovzTaCZ-Iv_EL"
+            },
+            {
+              "name": "EE3405-Electrical Machines II-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1A9Q6X59rWpaJ34qP5wntbGTAoz-lXn6Q"
+            },
+            {
+              "name": "EE3405-Electrical Machines II-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1pGaez1Yk0TdMr_MvblxrmdbDtdBpsMmx"
+            },
+            {
+              "name": "EE3405-Electrical Machines II-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1yIXH_X4m6e1L09Ugly9aNgacjmDgwE44"
+            },
+            {
+              "name": "EE3405-Electrical Machines II-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1vBTNsuI4NAX19MUcea_CnxwKeyYxIZ_t"
+            }
+          ]
+        },
+        "Environmental Sciences and Sustainability": {
+          "pdfs": [
+            {
+              "name": "GE3451-Environmental Sciences and Sustainability-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=14ikuK7-ex0SPJ9kBQM6zpMylcwZ_R75R"
+            }
+          ]
+        },
+        "Linear Integrated Circuits": {
+          "pdfs": [
+            {
+              "name": "EE3402-Linear Integrated Circuits-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1LKX0Wwv8jQPeLv3No-nCNB4cEvL4t6rk"
+            }
+          ]
+        },
+        "Measurements and Instrumentation": {
+          "pdfs": [
+            {
+              "name": "EE3403-Measurements and Instrumentation-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Ot21adDdrxHz3heV3CrGEtrUrJhSo1Vo"
+            }
+          ]
+        },
+        "Microprocessor and Microcontroller": {
+          "pdfs": [
+            {
+              "name": "EE3404-Microprocessor and Microcontroller-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1-2LXcMLIHwqVWJlD91QrXDJPkUuX-cp4"
+            },
+            {
+              "name": "EE3404-Microprocessor and Microcontroller-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1VyKHHWjXQdMPLuCmKepXLgy18ltow-lW"
+            }
+          ]
+        },
+        "Transmission and Distribution": {
+          "pdfs": [
+            {
+              "name": "EE3401-Transmission and Distribution-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1eu86SMp8lVTfYimZ8uaStEHpe2qa8G6v"
+            }
+          ]
+        }
+      },
+      "6": {
+        "Power System Operation and Control": {
+          "pdfs": [
+            {
+              "name": "EE3602-Power System Operation and Control-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1yaQL9os_SeeSN82toOIFx-9L6DzxF9oQ"
+            },
+            {
+              "name": "EE3602-Power System Operation and Control-Handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=1cTb-K7Nvso1o3dZ36PB7tHC0AYApDWfu"
+            }
+          ]
+        },
+        "Protection and Switchgear": {
+          "pdfs": [
+            {
+              "name": "EE3601-Protection and Switchgear-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1vv44v8KPIHNfxge5kNOdG3wqmLDXlE6v"
+            },
+            {
+              "name": "EE3601-Protection and Switchgear-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1M4MBmkwM7s2VBMrd8RZ-N-ItQRH8UFj8"
+            }
+          ]
+        }
+      },
+      "3": {
+        "C Programming and Data Structures": {
+          "pdfs": [
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1iaqbD7S4VcVDsnniCEipmnH-5F7H24qD"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1nG6Qm2TYswcUYQsO_tobsZeeR9EJaL6y"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1YAuCPlhZFhPEXWYOgpw6x0TKM8EeYpJc"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1oQNIT3cLPnjBWhELvmr-rlvTbM7ge-Hl"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1Lu5cmQ-XAB0WVZ1hYqtSM7625JbLcJj2"
+            }
+          ]
+        },
+        "Digital Logic Circuits": {
+          "pdfs": [
+            {
+              "name": "EE3302-Digital Logic Circuits-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1HcRUUarXotFjXx2ly5Z0DErPJVr1oRiK"
+            },
+            {
+              "name": "EE3302-Digital Logic Circuits-notes2_compressed.pdf",
+              "url": "https://drive.google.com/uc?id=1QqTU1DH66YGTeiAw9uiMPvPAdHoY4Tii"
+            }
+          ]
+        },
+        "Electrical Machines": {
+          "pdfs": [
+            {
+              "name": "EE3303-Electrical-Machines-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1AVBuKPsi-ySu0lPRv4kvSAJHXJPccaCK"
+            }
+          ]
+        },
+        "Electromagnetic Fields": {
+          "pdfs": [
+            {
+              "name": "EE3301-Electromagnetic Fields-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1VtbIV8IqfdEcN0EFJKk4TNFn0CKOe7Pt"
+            },
+            {
+              "name": "EE3301-Electromagnetic Fields-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1LjTRLX4WYHhK1gACLZz7bEiWW3iw8Zbv"
+            },
+            {
+              "name": "EE3301-Electromagnetic Fields-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1YTId0Gw2adzm1Y30Gw20q3gr-TECkYyB"
+            },
+            {
+              "name": "EE3301-Electromagnetic Fields-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1ILsa20zE4dv814LQXnO7gAEZb5j8_3ba"
+            },
+            {
+              "name": "EE3301-Electromagnetic Fields-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1G2WNNT5ON9AUJtP7ZtmdMYlHleYXG_Wh"
+            },
+            {
+              "name": "EE3301-Electromagnetic Fields-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1mqmUmAHb6TWTsf34mwqiprbWolQfXkhC"
+            }
+          ]
+        },
+        "Electron Devices and Cirrcuits": {
+          "pdfs": [
+            {
+              "name": "EC3301-Electron Devices and Cirrcuits-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1sOPxrcNi9ki0E7ePJOzr585mOJ9OBtYS"
+            }
+          ]
+        },
+        "Probability and Complex Functions": {
+          "pdfs": [
+            {
+              "name": "MA3303-Probability and Complex Functions-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1wkMaeqfyY2R5p5FD7F60nWfGVDXTFuX_"
+            },
+            {
+              "name": "MA3303-Probability and Complex Functions-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1ofXsQ1uFJU4fsaNPT6VE9tiOjdYSujWB"
+            },
+            {
+              "name": "MA3303-Probability and Complex Functions-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1uqG04zqOe08yR-uUrqrWfnEMzSCI5PSN"
+            },
+            {
+              "name": "MA3303-Probability and Complex Functions-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1F29GodLeT3tnDAWxkj45keGAUSlOXhoE"
+            },
+            {
+              "name": "MA3303-Probability and Complex Functions-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1ZWkiD3fSOyPAt1wJeeZjbbb7Qyyxd0mX"
+            }
+          ]
+        }
+      },
+      "5": {
+        "Control Systems": {
+          "pdfs": [
+            {
+              "name": "EE3503-Control Systems-Unit1-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=11nnxAuJEtal4iTv4D3BJ4-T_wi4z0qlu"
+            },
+            {
+              "name": "EE3503-Control Systems-Unit2-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1kJPy_81KvAjFcvKQ-vEUuHOrimT3Xv4n"
+            },
+            {
+              "name": "EE3503-Control Systems-Unit3-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1RpD-f3G5blQ3wHD_F9FCPW8k_9Sz2Nmr"
+            },
+            {
+              "name": "EE3503-Control Systems-Unit4-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Yg3FTtW66KEJ1A_PaMJz6zoxjkPsQL-h"
+            },
+            {
+              "name": "EE3503-Control Systems-Unit5-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1qQ7AVaEG98dCY2quVbgH7kPt5XETsXVy"
+            }
+          ]
+        },
+        "Power Electronics": {
+          "pdfs": [
+            {
+              "name": "EE3591-Power Electronics-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1nxHiKsrLnoGDltnFx-U48XhwyzqRvbIu"
+            },
+            {
+              "name": "EE3591-Power Electronics-Notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1Q8VjMuiYfiBvw58zdBjURCrvJxzUL2dE"
+            }
+          ]
+        },
+        "Power System Analysis": {
+          "pdfs": [
+            {
+              "name": "EE3501-Power System Analysis-Unit1-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1VjEbwb4g7pjZHQhHCT0VtdirhAzLUuW8"
+            },
+            {
+              "name": "EE3501-Power System Analysis-Unit2-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1rUn56NsI5_W_KjO0gv-ut_yO21HtXg9M"
+            },
+            {
+              "name": "EE3501-Power System Analysis-Unit3-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1uVtEnY5CqJWcJpAyaD02mliKD08op574"
+            },
+            {
+              "name": "EE3501-Power System Analysis-Unit4-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1yDA_trrZEW0Nnrd5UnvJuFR6ybD42y9b"
+            },
+            {
+              "name": "EE3501-Power System Analysis-Unit5-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1sebA-FVtNJQcKMJ_WRUGcbB9X9GuJER3"
+            },
+            {
+              "name": "EE3501-Power System Analysis-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ouGWyyhHl86IxA9RnKPr0MXE2qjQ--Cv"
+            }
+          ]
+        }
+      },
+      "2": {
+        "Basic Civil and Mechanical Engineering": {
+          "pdfs": [
+            {
+              "name": "BE3255-Basic Civil and Mechanical Engineering-Handwrittennotes.pdf",
+              "url": "https://drive.google.com/uc?id=1MRn8PTfXQCFZwC66ga1P0xzsHKIUlVOa"
+            }
+          ]
+        },
+        "Electric Circuit Analysis": {
+          "pdfs": [
+            {
+              "name": "EE3251-Electric Circuit Analysis-Handwritten-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1aChFmxnVr6OO26A5utz6hkz8v4X-Mt6V"
+            }
+          ]
+        },
+        "Engineering Graphics": {
+          "pdfs": [
+            {
+              "name": "GE3251-Engineering Graphics-Full notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ZoRCnrhfuO2cBHj8Yx7J2PiFTOQaJnqf"
+            }
+          ]
+        },
+        "Physics for Electrical Engineering": {
+          "pdfs": [
+            {
+              "name": "PH3202-Physics for Electrical Engineering-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=12xj-Go90COZpSDjzCb3X6iVM94Qbb8az"
+            }
+          ]
+        },
+        "Professional English-II": {
+          "pdfs": [
+            {
+              "name": "HS3252-Professional English-II Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1NGbgJe5wzTtYcocF4eLkRQMQA-_VwdUq"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit2,3.pdf",
+              "url": "https://drive.google.com/uc?id=1NKIexk3Ph7YMXmPuWKEkFdxNq2AC8hFc"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit4,5.pdf",
+              "url": "https://drive.google.com/uc?id=1sIsdZ48zhjjMGtJtTtYYNqWWLIvW7bi6"
+            }
+          ]
+        },
+        "Statistics and Numerical Methods": {
+          "pdfs": [
+            {
+              "name": "MA3251-Statistics and Numerical Methods-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=14EVEKo1018j2HY0tIZ8OYRQ3XFW5lENJ"
+            }
+          ]
+        },
+        "Tamils and Technology": {
+          "pdfs": [
+            {
+              "name": "GE3252-Tamils and Technology(English)-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Agm6CCUV2RnsMXYnFKEEPi7RBu3-FS1p"
+            },
+            {
+              "name": "GE3252-Tamils and Technology(Tamil)-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1df7yuNudhLvFDjefFMHGR7ZIgtjjlnpa"
+            }
+          ]
+        }
+      },
+      "1": {
+        "Engineering Chemistry": {
+          "pdfs": [
+            {
+              "name": "CY3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ljv7_iMn2W7rTxpbneT1iSB9ielpEbaO"
+            },
+            {
+              "name": "CY3151-handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=11s9Dsb0QcUVMeAj0p216X7gYy-TwonI1"
+            },
+            {
+              "name": "CY3151-handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1-A-rfIk5cuWsv24d5mPOfdFkblPLXMZX"
+            }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            {
+              "name": "PH3151-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1JxjSG_-DxxWuKaBmb422otxDzn1tgNyv"
+            },
+            {
+              "name": "PH3151-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1GTBXtUNBeNnA3y7OZQLpd-n-2QvEN-qR"
+            },
+            {
+              "name": "PH3151-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1aSYPMcwbw8_GG6ZxPOtXkI6mcRuPpDvs"
+            },
+            {
+              "name": "PH3151-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1qOBoPP5uTBKyfMj0RQrP83Qedxop97ZL"
+            },
+            {
+              "name": "PH3151-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1x6sW9ID7mo99icKe9ZkPxZb46A80GjU4"
+            },
+            {
+              "name": "PH3151-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=132HR8Kyl3Gw__4L10ZSTzgQGJ6CDvyx8"
+            }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-English.pdf",
+              "url": "https://drive.google.com/uc?id=1ycBRHXht4jiBw7bZABV62t6i6JR3FSOV"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-Tamil.pdf",
+              "url": "https://drive.google.com/uc?id=1q5r6BAovu7hAWgRbm6GUcC3ZGXl0W3PN"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1No8blDAFd5-UhNITRAXGZGqa_yyFjMQV"
+            }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            {
+              "name": "MA3151-handwritten notes 1.pdf",
+              "url": "https://drive.google.com/uc?id=13NF9hFY8S2TaAmYraTSddO9w_3TLm6-P"
+            },
+            {
+              "name": "MA3151-handwritten notes 2.pdf",
+              "url": "https://drive.google.com/uc?id=1S6paRn2j19Mf3Z19-aLoUZbpeUqNhqPA"
+            },
+            {
+              "name": "MA3151-handwritten notes 3.pdf",
+              "url": "https://drive.google.com/uc?id=18OhfbrwP0v3tQKk_hvNWvy_800WHP6H4"
+            }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            {
+              "name": "GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1EekWWTM2UriJYw9wiIM-DKI7kmDh4QKi"
+            },
+            {
+              "name": "GE3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1pHYiQ1-5RVXUNv07yG6FOdoI3jldRwNn"
+            }
+          ]
+        },
+        "Professional English 1": {
+          "pdfs": [
+            {
+              "name": "HS3152-Professional English.pdf",
+              "url": "https://drive.google.com/uc?id=1eoDYx7l5mtltRYii0t1xmRx_J8Wh_ijM"
+            },
+            {
+              "name": "HS3152-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1DajdXo8-koQTSvzR2LRkREh_yP0Pw47K"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "IT": {
+    "2021": {
+      "7": {
+        "Human Values and Ethics": {
+          "pdfs": [
+            {
+              "name": "GE3791-Human Values and Ethics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1rCwIUuK4s-5ZylAgwu_YhkjC7fmX8ZFN"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1SYwbwcoWN4_5WVM-SZdOAepyA4llwWrJ"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1Nwn4_ln2i8nCiIAujpjnopjw6oPH4psy"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1qhMfFB7jREWT4ue2SMYg4jO5JamJoIeX"
+            }
+          ]
+        }
+      },
+      "6": {
+        "Object Oriented Software Engineering": {
+          "pdfs": [
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1eHzG31bxa8tDFkFJ24LKbLpFYwLQrQso"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=119crkpQxadxfBpUUvmVfP1m33-C4aT-m"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1J-nwfcQPGjKEHjCb_HKLfGAfamFg09ah"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1m7MR5H2WcCXlsbhZT-NK33o-Mlecv3YW"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1Iug_o-gcU4vEGxf75jLRdWHR4QHQCK64"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=17WR_IhxlQU-pYfxleyXRuGemoRntKZot"
+            }
+          ]
+        }
+      },
+      "3": {
+        "Data Structures and Algorithms": {
+          "pdfs": [
+            {
+              "name": "CD3291-Data Structures and Algorithms-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1p5jxEFmwoa3XJLhBlWFLsuv7wivTx9yH"
+            },
+            {
+              "name": "CD3291-Data Structures and Algorithms-Notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1KFil_Hpnhp_Two9Qa9F147WB92jiCKdx"
+            }
+          ]
+        },
+        "Digital Principles and Computer Organization": {
+          "pdfs": [
+            {
+              "name": "CS3351-Digital Principles and computer Organization- notes.pdf",
+              "url": "https://drive.google.com/uc?id=1PKu8g5Tlmdu9-5nGQoB4-SBhpwWIBEQ_"
+            },
+            {
+              "name": "CS3351-Digital Principles and computer Organization- notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1Xxn2Id-9bZjtGy-8t89IpiITcxEusY-9"
+            }
+          ]
+        },
+        "Discrete Mathematics": {
+          "pdfs": [
+            {
+              "name": "MA3354-Discrete Mathematics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Y2l2XGbXpfMk_hcMxtpWcRX6QFER90Nx"
+            }
+          ]
+        },
+        "Foundations of Data Science": {
+          "pdfs": [
+            {
+              "name": "CS3352-Foundations of Data Science-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1FVmvGYU3BIw87YNVlYEDZNEbswjgHbuv"
+            }
+          ]
+        },
+        "Object Oriented Programming": {
+          "pdfs": [
+            {
+              "name": "CS3391-Object Oriented Programming-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1HC99xG5P7hMpMIb5I7lcxCtyEScZXna4"
+            },
+            {
+              "name": "CS3391-Object Oriented Programming-Notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1CdV5zS3moY8O4hduMwfZxscZWPTzAADF"
+            }
+          ]
+        }
+      },
+      "2": {
+        "Basic Electrical and Electronics Engineering": {
+          "pdfs": [
+            {
+              "name": "BE3251-Basic-Electrical-and-Electronics-Engineering-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1LuUl3Z4NkPJcVOc5S1yh7TwIS7YwNY_g"
+            }
+          ]
+        },
+        "Engineering Graphics": {
+          "pdfs": [
+            {
+              "name": "GE3251-Engineering Graphics-Full notes.pdf",
+              "url": "https://drive.google.com/uc?id=1VCnMiRvWYWaTQTSmW3vWRCsdpCN-oqfa"
+            }
+          ]
+        },
+        "Physics for Information Science": {
+          "pdfs": [
+            {
+              "name": "PH3252-Physics for Information Science-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1iilV0VW4vOduNLq5V5tby8RbaMZOsKiJ"
+            },
+            {
+              "name": "PH3256 -Physics for Information Science- HandWritten Notes - Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1G9IDfwBsd_tRYCKhwUAuhcl95-PH6tHu"
+            },
+            {
+              "name": "PH3256-Physics for Information Science - UNIT 1 - Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1b97u90r6UQ0E_mVvkBSRbgaCsfxjLGwO"
+            },
+            {
+              "name": "PH3256-Physics for Information Science- UNIT 2 - Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1lDe9NhUjwfcm_cH7MKyxZkeYaLrtObQ6"
+            },
+            {
+              "name": "PH3256-Physics for Information Science- UNIT 3 - Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1OYRXIbSP24cx4d6aaQ-HPSD3K1quvv2f"
+            },
+            {
+              "name": "PH3256-Physics for Information Science- UNIT 5-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1AXLXgwKYLaC3ujSV6VUhNAiQcQj4Egsb"
+            },
+            {
+              "name": "PH3256-Physics for Information Science-HandWritten Notes - Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1ND6twP5d3ZrpptISVY6rwvtxNz3ksxcA"
+            },
+            {
+              "name": "PH3256-Physics for Information Science-HandWritten Notes - Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1ytAkC9FfPiZVhUj9NTJrvRzmMdJLxVAQ"
+            }
+          ]
+        },
+        "Professional English-II": {
+          "pdfs": [
+            {
+              "name": "HS3252-Professional English-II Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1mXR5XbVocMjiv0sxueo6PYk1OHLqoJhc"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit2,3.pdf",
+              "url": "https://drive.google.com/uc?id=1HmG3K2_x0pPZrSd7ICvQk77oDOmSNx7q"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit4,5.pdf",
+              "url": "https://drive.google.com/uc?id=1PKXraEll0RmSB08JsrjxL1SuDv0HMyxE"
+            }
           ]
         },
         "Programming in C": {
           "pdfs": [
-            { "id": 1, "name": "C Programming Basics", "path": "CSE/sem2/c_basics.pdf" },
-            { "id": 2, "name": "Pointers & Memory Management", "path": "CSE/sem2/c_pointers.pdf" }
+            {
+              "name": "CS3251-Programming-in-C-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1d6GDS8OiG9GpXLfVFU33MsRPppvWM8Gr"
+            },
+            {
+              "name": "CS3251-Programming-in-C-Lecture-Notes-2.pdf",
+              "url": "https://drive.google.com/uc?id=1ls4GR-fyTuzpRbqVoQTKJ4NLBPIvfUwY"
+            }
+          ]
+        },
+        "Statistics and Numerical Methods": {
+          "pdfs": [
+            {
+              "name": "MA3251-Statistics and Numerical Methods-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1mqj6BfZwwZGhLMFs0FxZi9iTGfl06U3O"
+            }
+          ]
+        },
+        "Tamils and Technology": {
+          "pdfs": [
+            {
+              "name": "GE3252-Tamils and Technology(English)-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1B1gXZolU_A3e27szyHRRwxx2SJaxVn42"
+            },
+            {
+              "name": "GE3252-Tamils and Technology(Tamil)-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=18k_3Ji0HMW4ewbt4S5hJ2yGqPOcdt7_l"
+            }
+          ]
+        }
+      },
+      "5": {
+        "Computer Networks": {
+          "pdfs": [
+            {
+              "name": "CS3591-Computer Networks-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=11e7PBkQHpLEYnwCi0ijSyXftgw6aWQ55"
+            },
+            {
+              "name": "CS3591-Computer Networks-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1Bn68sPa4xjaKH-so325W83waB3FZ_XWh"
+            }
+          ]
+        },
+        "Distributed Computing": {
+          "pdfs": [
+            {
+              "name": "CS3551-Distributed Computing-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=18RHw9uh1fYN1Y2QALqttasFR7afCgNW8"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1ENTi1Lyl03hxvSNhhu4oRAIcsEj9J90b"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1CZI-RQrSmmdv3-XNJDRRjFZ6HFBFrc_K"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1ACgsTtAIlXZalWrM1Ot5YqRP4c87lRTn"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1jShEkfXqr_ty8JK2crKh85LpAxJlFqY_"
+            },
+            {
+              "name": "CS3551-Distributed Computing-notes.pdf",
+              "url": "https://drive.google.com/uc?id=17qzRt9uXJK2WF9MKKvmqdZhh1j2nQxH4"
+            }
+          ]
+        },
+        "Embedded Systems and IoT": {
+          "pdfs": [
+            {
+              "name": "CS3691-Embedded Systems and IoT-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1jjPJBMDtMq4EjC7dzhwPmv5K_KpVZzSj"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit1-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Ih8UvvpOfCbggy4zDeNi8IRCkmwPBUp6"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1VTf93GUwdOGOHNk6i3pOkzIR9eCLxfWI"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit2.pdf",
+              "url": "https://drive.google.com/uc?id=16Lpv10hAZ8ieYnkQAAngctBmZ_HDz_gs"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit3.pdf",
+              "url": "https://drive.google.com/uc?id=18vwOcUscEzr-jnp9jQpjLQdQ-PrSLC6n"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1Vp8ptSzEu5etCW4ZydVCyME7yUDZlmlB"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit5-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1jqsJk1zugxUbBrsQ_kqMBmYFUEU1D6Op"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1ZGABmeYV1wpSE03Idl7loX_Gzfaj5HnY"
+            }
+          ]
+        },
+        "Full Stack Web Development": {
+          "pdfs": [
+            {
+              "name": "IT3501-Full Stack Web Development-notes.pdf",
+              "url": "https://drive.google.com/uc?id=17CNsdWJ2yX8KPMCUFfg7bg0rBn34J1qp"
+            }
+          ]
+        }
+      },
+      "4": {
+        "Artificial Intelligence and Machine Learning": {
+          "pdfs": [
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1LIxiKA0F_sRpjO2jyNONkYL-30_RXOsY"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1aoEJxiBR1a7FZCn1yLDJ7KXCTmcJK6Db"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1HidFUQUzV1NAvph8doK4yBCrepSCw94Y"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1jSeov_2nBzpEMICc08sjyjMNYQgz2phw"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1Gjj26CjkYkmOHY5j1-1d2jpfmAg_W_ff"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning.pdf",
+              "url": "https://drive.google.com/uc?id=1_Xjcmvivda5XG0_cV3Ouf62hCamNqrkJ"
+            }
+          ]
+        },
+        "Database Management Systems": {
+          "pdfs": [
+            {
+              "name": "CS3492-Database Management Systems-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Aoo9AY28XjyCZTABDe2KAVeutHvyt3bv"
+            },
+            {
+              "name": "CS3492-Database Management Systems-handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1K9aKfFTJ_OQqXClHQ7nW2BNY8ZyQkj8y"
+            }
+          ]
+        },
+        "Environmental Sciences and Sustainability": {
+          "pdfs": [
+            {
+              "name": "GE3451-Environmental Sciences and Sustainability-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1cMkfLIbPVe2n_JWyBLuoaQz0L-LN6bJd"
+            }
+          ]
+        },
+        "Introduction to Operation Systems": {
+          "pdfs": [
+            {
+              "name": "CS3451-Introduction to Operation Systems-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1p4Gu9bsQX1-wpnqe7vWYQB4WONW4DnlW"
+            },
+            {
+              "name": "CS3451-Introduction to Operation Systems_compressed.pdf",
+              "url": "https://drive.google.com/uc?id=1KXOd9ISxk4T7QSHuHyPEjfbrDeJFhjIK"
+            }
+          ]
+        },
+        "Theory of Computation": {
+          "pdfs": [
+            {
+              "name": "CS3452-Theory of Computation-handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1ohqxqJDAucCOYTBa7vXCGHqpYZhNhjHp"
+            },
+            {
+              "name": "CS3452-Theory of Computation-handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=1ija3VWIsypJ_ZU_D8Sa_SU8mLPAGjKZd"
+            }
+          ]
+        },
+        "Web Essentials": {
+          "pdfs": [
+            {
+              "name": "IT3401-Web Essentials-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1rZ9-DZijrBGoT8K0o0bw6JRChwZf_Btw"
+            },
+            {
+              "name": "IT3401-Web Essentials-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1pThlVh4vaLVjuKzdGNxNlMmNfLz2ny1P"
+            }
+          ]
+        }
+      },
+      "1": {
+        "Engineering Chemistry": {
+          "pdfs": [
+            {
+              "name": "CY3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1QALXGV1Q2VDM2cT6Zs1AQveJakUTf1Xj"
+            },
+            {
+              "name": "CY3151-handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1hpCP94H6KzFyUYb7JYrC9Lin6_uoIdbS"
+            },
+            {
+              "name": "CY3151-handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1L-xWlFlOPMSg5i1aQaORLBn3pDJr549T"
+            }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            {
+              "name": "PH3151-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1aAXF1Q5o4dLKEYckxwHimgnrEK7Su9Nw"
+            },
+            {
+              "name": "PH3151-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1oG0tsRF7IDdB7lQCzvo-UppKNNESoDSm"
+            },
+            {
+              "name": "PH3151-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1mVKBJ3t9jhJSBnaZOOHFbbqnpzymiPTX"
+            },
+            {
+              "name": "PH3151-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1XUoB9hfAMjYj6Fw6FbbusM3vwm5WCzpf"
+            },
+            {
+              "name": "PH3151-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1yjB1pw0dsUmJgZMGYsS_HAK5TFJHkPmY"
+            },
+            {
+              "name": "PH3151-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1_12JCV8MC2UZcEUW7DiysYeKQP15popk"
+            }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-English.pdf",
+              "url": "https://drive.google.com/uc?id=1Q2WeJhcB35yiq8kSZ0pCcpOPrJt90Vf2"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-Tamil.pdf",
+              "url": "https://drive.google.com/uc?id=1WVM-x2d_vQ9kZGiaO5-mPVzit2cvKyHA"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1YuV1TmP3cRZAoLmGvGM_I5PY4A9PZefU"
+            }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            {
+              "name": "MA3151-handwritten notes 1.pdf",
+              "url": "https://drive.google.com/uc?id=13J9zxy2H9JuLdr_CcCCNxVPO0qIKwDG1"
+            },
+            {
+              "name": "MA3151-handwritten notes 2.pdf",
+              "url": "https://drive.google.com/uc?id=1qgNTEBqeqj6zaU3lsOsYVPGx4G35u7nH"
+            },
+            {
+              "name": "MA3151-handwritten notes 3.pdf",
+              "url": "https://drive.google.com/uc?id=1H-Yu4fXjuiiwWsjXOagyxe3rPRmn6CjN"
+            }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            {
+              "name": "GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1jwGmuQbj9PYiBXQkQVMsv311kCLyOlgj"
+            },
+            {
+              "name": "GE3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1BsSUFTqbem8r4ru-Sx2j1ZcDtuFBJOhK"
+            }
+          ]
+        },
+        "Professional English 1": {
+          "pdfs": [
+            {
+              "name": "HS3152-Professional English.pdf",
+              "url": "https://drive.google.com/uc?id=1AKqlJvoMMMMuCYqm_rvDbmvq2UZUn7fg"
+            },
+            {
+              "name": "HS3152-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1RBmn8Y5CUD4gvmbMhFpH9n9cNC9fOr2i"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "CIVIL": {
+    "2021": {
+      "5": {
+        "Design of Reinforced Concrete Structural Elements": {
+          "pdfs": [
+            {
+              "name": "CE3501-Design of Reinforced Concrete Structural Elements -Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1sg-53XBT84Oj9EyXmQGmLpTUsLLQwYcs"
+            }
+          ]
+        },
+        "Foundation Engineering": {
+          "pdfs": [
+            {
+              "name": "CE3503-Foundation Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1YzNAfqkwqtkxiyr9_cUc6E24fzXGGley"
+            }
+          ]
+        },
+        "Structural Analysis I": {
+          "pdfs": [
+            {
+              "name": "CE3502-Structural Analysis I-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1k4mOqclO0qrXI8OAhyRheVhe_-P-N-ya"
+            }
+          ]
+        }
+      },
+      "7": {
+        "Estimation Costing and Valuation Engineering": {
+          "pdfs": [
+            {
+              "name": "CE3701-Estimation Costing and Valuation Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1w4SizyaRYNcl84rN0mFrSqrW7ZAf49Te"
+            }
+          ]
+        },
+        "Human Values and Ethics": {
+          "pdfs": [
+            {
+              "name": "GE3791-Human Values and Ethics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1YxvIVB82tefDfvDv_DQO1Ii2IKP8uBY-"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1JSgnCsnIyjsY9TcTQs9Hry07XNzhg2jt"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1ty__1WzhtPSBH8PK0JgCepuqvIyarPYz"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1ydpWUTh-UMhh2A0XrzITFGppU-6661it"
+            }
+          ]
+        },
+        "Hydrology and Water Resources Engineering": {
+          "pdfs": [
+            {
+              "name": "AI3404-Hydrology and Water Resources Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=158QgmRJRAS9P0jdMjTmdfe1SOwhLqNK4"
+            }
+          ]
+        },
+        "Total Quality Management": {
+          "pdfs": [
+            {
+              "name": "GE3752-Total Quality Management-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=12jYeKLX4QTC9Q5u-H4BcuKJtZbzF9aGN"
+            },
+            {
+              "name": "GE3752-Total Quality Management-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1VMF7Japh84771_JH2DbL1Rq8J8IIcpxc"
+            },
+            {
+              "name": "GE3752-Total Quality Management-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1_jMDew_o6wyaHJOAUs1o8QNfF3DQlY2E"
+            }
+          ]
+        }
+      },
+      "6": {
+        "Design of Steel Structural Elements": {
+          "pdfs": [
+            {
+              "name": "CE3601-Design of Steel Structural Elements-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1oxIwIDlqkVwVSHHJCIKy4-m1QBHjWSgT"
+            }
+          ]
+        },
+        "Engineering Geology": {
+          "pdfs": [
+            {
+              "name": "AG3601-Engineering Geology-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Y5kGiatiR7VQXFvM_SELDS3fvoU2aVZK"
+            }
+          ]
+        },
+        "Structural Analysis II": {
+          "pdfs": [
+            {
+              "name": "CE3602-Structural Analysis II-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1mEk7SlimNU-bulTCjDYESetuuAwByo0N"
+            },
+            {
+              "name": "CE3602-Structural Analysis II-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1sCg5OX148RuUlNy4lqMXewL_Yo2o-ZXu"
+            }
+          ]
+        }
+      },
+      "2": {
+        "Basic Electrical, Electronics and Instrumentation Engineering": {
+          "pdfs": [
+            {
+              "name": "BE3252-Basic Electrical and Electronics and Instrumentation Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1itqaGp3RYM51AklBMHRMGJXWFND5LIgO"
+            }
+          ]
+        },
+        "Engineering Graphics": {
+          "pdfs": [
+            {
+              "name": "GE3251-Engineering Graphics-Full notes.pdf",
+              "url": "https://drive.google.com/uc?id=18O2_F43zXbGxQIMtNTUdNy8cA_3cfKmC"
+            }
+          ]
+        },
+        "Physics For Civil Engineering": {
+          "pdfs": [
+            {
+              "name": "PH3201-Physics For Civil Engineering-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1xTOAVVZxQnEnARv5QRjkkeciUylIIH9g"
+            },
+            {
+              "name": "PH3201-Physics For Civil Engineering-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1rapxFh8HuyIiCNOhBcCisDsDVryv_WFt"
+            },
+            {
+              "name": "PH3201-Physics For Civil Engineering-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1XnOcWdPTJYTw1JlSzl9L-_GEENeB2R7Q"
+            },
+            {
+              "name": "PH3201-Physics For Civil Engineering-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1pdb5G0-X6U5HHIPrPEIumzrKkE5sGhfi"
+            },
+            {
+              "name": "PH3201-Physics For Civil Engineering-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1kisdVbq9AXrO4gglUYuA8ordFxE6X6Qw"
+            }
+          ]
+        },
+        "Professional English-II": {
+          "pdfs": [
+            {
+              "name": "HS3252-Professional English-II Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1TezOCgVsZ3Em4vCF7ovauEAcX42wI2vn"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit2,3.pdf",
+              "url": "https://drive.google.com/uc?id=1_4KalsCst7y6KiUrqwMjgRzZHf3yIS_V"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit4,5.pdf",
+              "url": "https://drive.google.com/uc?id=1pmPuG8T9_8oxV-8pSnioCwVwD9N_vZXy"
+            }
+          ]
+        },
+        "Statistics and Numerical Methods": {
+          "pdfs": [
+            {
+              "name": "MA3251-Statistics and Numerical Methods-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1P7UcuGqBHJYJMJM9uzThEzohdnpGfazW"
+            }
+          ]
+        },
+        "Tamils and Technology": {
+          "pdfs": [
+            {
+              "name": "GE3252-Tamils and Technology(English)-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1W88dJWLOY-cxE4SQJTL_vjni82M-Bhk_"
+            },
+            {
+              "name": "GE3252-Tamils and Technology(Tamil)-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1MPM6tbHUlKAN-l7AhmOl3Vrq2O8Siz9D"
+            }
+          ]
+        }
+      },
+      "4": {
+        "Applied Hydraulics Engineering": {
+          "pdfs": [
+            {
+              "name": "CE3401-Applied Hydraulics Engineering-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1VJywB5nLx-ctyeaGwRvKYNCrFVV5yGaA"
+            },
+            {
+              "name": "CE3401-Applied Hydraulics Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1BgQSbbg5OaYwZ4Ke3bzSJzEUJ-DdPrNp"
+            }
+          ]
+        },
+        "Concrete Technology": {
+          "pdfs": [
+            {
+              "name": "CE3403-Concrete Technology-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1KfgwVt1ljSpi3F_7XtmNJVgrMLOaIuY6"
+            },
+            {
+              "name": "CE3403-Concrete Technology-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1eW4DoP4lTBxTE31G4pTHZkDS_eDZSnVH"
+            },
+            {
+              "name": "CE3403-Concrete Technology-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1bGakdekDq74S3TfJgQNRoMG3KOT3mxBc"
+            },
+            {
+              "name": "CE3403-Concrete Technology-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1BzSBAo0QR_003vfKxQCurdo3qkmwfQXm"
+            },
+            {
+              "name": "CE3403-Concrete Technology-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=15H58276wQ2PKpRrE6LVRA-HgAcOIL983"
+            }
+          ]
+        },
+        "Environmental Sciences and Sustainability": {
+          "pdfs": [
+            {
+              "name": "GE3451-Environmental Sciences and Sustainability-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1PZdcqhfYjE7suxSdKwDctrIUdtS-Iwza"
+            }
+          ]
+        },
+        "Highway and Railway Engineering": {
+          "pdfs": [
+            {
+              "name": "CE3405-Highway and Railway Engineering-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1AlKWBDXbXl9Ytjjh_M1adeBj_yclxkbG"
+            },
+            {
+              "name": "CE3405-Highway and Railway Engineering-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1vwdD7osEEcvCSjElPSvMG2XfSr35GkPH"
+            }
+          ]
+        },
+        "Soil Mechanics": {
+          "pdfs": [
+            {
+              "name": "CE3404-Soil Mechanics-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1oabONrWo8y5tou-AaiaymhXd2RqShx-J"
+            },
+            {
+              "name": "CE3404-Soil Mechanics-Handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=12DWeJhEIof82TOynLKPV2TLguJl0eYsg"
+            }
+          ]
+        },
+        "Strength of Materials": {
+          "pdfs": [
+            {
+              "name": "CE3402-Strength of Materials-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1bqDYtg__3CJiPt-Yk5GN367nRcJerajg"
+            },
+            {
+              "name": "CE3402-Strength of Materials-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1T57iffCMJUyXKDXrA6CnErjpBGsbuRLF"
+            },
+            {
+              "name": "CE3402-Strength of Materials-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=10CKs7d20zb_xF7zFMLffgldfxMHhTM8N"
+            },
+            {
+              "name": "CE3402-Strength of Materials-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1lm4Rdh0iTr3GgVzLxcA0ICww1XexCiqX"
+            },
+            {
+              "name": "CE3402-Strength of Materials-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1pBuAwOdCJ1mM76a53RiPQjtEEQjsWU-s"
+            }
+          ]
+        }
+      },
+      "3": {
+        "Construction Materials and Technology": {
+          "pdfs": [
+            {
+              "name": "CE3302-Construction Materials and Technology-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1SgC0sChFpHH_tMB_BX2MQDC-LHm-GhUQ"
+            },
+            {
+              "name": "CE3302-Construction Materials and Technology-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1n2a-3bPE19n1R-gAI8KrGk_xpAcUF9UK"
+            }
+          ]
+        },
+        "Engineering Mechanics": {
+          "pdfs": [
+            {
+              "name": "ME3351-Engineering Mechanics-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Sf_sFmO79V5XGytOQnmzH99XsWCGS5tX"
+            },
+            {
+              "name": "ME3351-Engineering Mechanics-handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=1rHy1omuOa3n5uwJYRDJoy5FyVmnAIbAX"
+            }
+          ]
+        },
+        "Fluid Mechanics": {
+          "pdfs": [
+            {
+              "name": "CE3301-Fluid-Mechanics-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1nREGn2WDfAsttRAi7Snzw8H4n7B-fb6G"
+            }
+          ]
+        },
+        "Surveying and Levelling": {
+          "pdfs": [
+            {
+              "name": "CE3351-Surveying and Levelling-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1lqf-naVFTXv0BYBD8E_iilBNBfNa6DNn"
+            }
+          ]
+        },
+        "Transforms and Partial Differential Equations": {
+          "pdfs": [
+            {
+              "name": "MA3351-Transforms and Partial Differential Equations-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1rt44r-h5wgJdHitoJ-Nlu4eiOwkwkAzH"
+            },
+            {
+              "name": "MA3351-Transforms and Partial Differential Equations-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1dBUSBg_mSqAaEAEG_96YsAjCVT1o8rJ7"
+            }
+          ]
+        },
+        "Water Supply and Wastewater Engineering": {
+          "pdfs": [
+            {
+              "name": "CE3303-Water Supply and Wastewater Engineering-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1LgrLO-XqPQL-k3TNIRCiCy6QVvoVHXkm"
+            }
+          ]
+        }
+      },
+      "1": {
+        "Engineering Chemistry": {
+          "pdfs": [
+            {
+              "name": "CY3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1JA76F1_v23-az317W-H_Q_jAMXMMuSuu"
+            },
+            {
+              "name": "CY3151-handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1T9JtXB_bqia5t6J94kXMXYqvPLtDmlUL"
+            },
+            {
+              "name": "CY3151-handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1tY6E4MQYWh3asu2BBsPv8og3W0vg-1ke"
+            }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            {
+              "name": "PH3151-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=16dy8YeYSxmF8fsK6rv60V48Y_VH9YVq3"
+            },
+            {
+              "name": "PH3151-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1v4cSfje4yIT9_ffBHAC-nzYX7JCSOSLn"
+            },
+            {
+              "name": "PH3151-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1chGQMZkOuav_bSge4ksQcopva7deO36t"
+            },
+            {
+              "name": "PH3151-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1b0TyAujxKBTajhRso28utOROKKS4ZlS5"
+            },
+            {
+              "name": "PH3151-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=11UFawuPyFUPa0VJGAHnjJ1u0FWtwgWg_"
+            },
+            {
+              "name": "PH3151-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1AKzBrDprVgI6FAaYFByKLjuCsGC-zfMq"
+            }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-English.pdf",
+              "url": "https://drive.google.com/uc?id=1u4395iYb4TRXr0tKwNljxVyKu4GbsaXR"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-Tamil.pdf",
+              "url": "https://drive.google.com/uc?id=1E9lhbBzswohh0NNDbuphYjn4UP6KgrF5"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1VNNC5Q_dnrjNAvgLXWFn6nfQXOBD7Msd"
+            }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            {
+              "name": "MA3151-handwritten notes 1.pdf",
+              "url": "https://drive.google.com/uc?id=1Vx4MTPJtWwq6a6PyuvCa9WHr4ENaWOPC"
+            },
+            {
+              "name": "MA3151-handwritten notes 2.pdf",
+              "url": "https://drive.google.com/uc?id=172L9hTUfqveeGfmasV0aBlqDb_U7bB1z"
+            },
+            {
+              "name": "MA3151-handwritten notes 3.pdf",
+              "url": "https://drive.google.com/uc?id=1P6Jb11muI73zMD_isb6m-fPvsqMsflj5"
+            }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            {
+              "name": "GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1W5LnVWsEkHgT3ud0Kicf6O7SPQhu9xOL"
+            },
+            {
+              "name": "GE3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1b93V3UY9UIxN9F0uSKCeiknpWuCgUH2u"
+            }
+          ]
+        },
+        "Professional English 1": {
+          "pdfs": [
+            {
+              "name": "HS3152-Professional English.pdf",
+              "url": "https://drive.google.com/uc?id=1j3gOFwO6j0DG9UdLgYrF8hj2yKo9h3Vj"
+            },
+            {
+              "name": "HS3152-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=18iGN5KfIJmGIVwLkmaGw-az2IZeIUcm3"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "CSE": {
+    "2021": {
+      "7": {
+        "Human Values and Ethics": {
+          "pdfs": [
+            {
+              "name": "GE3791-Human Values and Ethics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Gexc0CJzXESfIhePRpB9mBPrErgDXeeC"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1ca0XZ2mKWsX34kHTUmLtgCmYu9lSazX-"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=16HlmqVgiBQANS8pXyfIkG99oGg3Jth5d"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1nSGcIgzvr2uG77M7TdTNb4jgp5BFLpQI"
+            }
+          ]
+        }
+      },
+      "4": {
+        "Algorithms": {
+          "pdfs": [
+            {
+              "name": "CS3401-Algorithms.pdf",
+              "url": "https://drive.google.com/uc?id=1mg4nkazihpQujKD0L3t74gcGr23s_POc"
+            }
+          ]
+        },
+        "Artificial Intelligence and Machine Learning": {
+          "pdfs": [
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1L5MuwIpTBYp_SGIwLFFQN9LwUI0wRZsg"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1lDhgyWnxcqyFxLeQ_TlW92umqxh0EWLn"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1LOOhZHZe1r5Oe1vlcrP9zQoRc8hsyx-O"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=16ps_PxbnOM51sVMvbtr-9sQUSgAS7JKB"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1MGu-LtNgIEVAzZ6uWgCdeWLMNqLUup5B"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning.pdf",
+              "url": "https://drive.google.com/uc?id=1pZZe4AjWZN3Gl9llfzYPo6ueBe7HsoRq"
+            }
+          ]
+        },
+        "Database Management Systems": {
+          "pdfs": [
+            {
+              "name": "CS3492-Database Management Systems-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=16Ih0OWHJYWD6w0ojYKhr7OoghPpNBRo2"
+            },
+            {
+              "name": "CS3492-Database Management Systems-handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1HQnYpADXnqtwbpIr-qU7MAM53yCfQ8ZR"
+            }
+          ]
+        },
+        "Environmental Sciences and Sustainability": {
+          "pdfs": [
+            {
+              "name": "GE3451-Environmental Sciences and Sustainability-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1JPWjWabEvNhuWgjwnkGLzIBahEEuAsxL"
+            }
+          ]
+        },
+        "Introduction to Operation Systems": {
+          "pdfs": [
+            {
+              "name": "CS3451-Introduction to Operation Systems-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1vteVIH3amWKd91y-EbIRso0ESLXEWQ3a"
+            },
+            {
+              "name": "CS3451-Introduction to Operation Systems_compressed.pdf",
+              "url": "https://drive.google.com/uc?id=1UUx-qtA7Vuig_yVIfQbozSx4NK0JNEV-"
+            }
+          ]
+        },
+        "Theory of Computation": {
+          "pdfs": [
+            {
+              "name": "CS3452-Theory of Computation-handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1DsB6xeaCEIweEIWPoRvKu2BwWnTWdeus"
+            },
+            {
+              "name": "CS3452-Theory of Computation-handwritten2.pdf",
+              "url": "https://drive.google.com/uc?id=19PstX58H8UzQj4-zRri9LC4NTng6zYDi"
+            }
+          ]
+        }
+      },
+      "6": {
+        "Embedded Systems and IoT": {
+          "pdfs": [
+            {
+              "name": "CS3691-Embedded Systems and IoT-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1j7we2JWfpwubg3jOD7ARcqOqCFz3XHHk"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit1-handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1rttI09xHOI71xHKBVHiNKHWC-ynU3gTd"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit1.pdf",
+              "url": "https://drive.google.com/uc?id=15sV5xGCn_gaAjzPyxZWZh3V-Snxif8SM"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1GPKiRWnUK-6iaOC5hZoTjuILRhZij4vd"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1NI6bp0t5JKBK8Lo5mSWloZj41zG8oObb"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1iQ2tuLqEYirkDr6zkDLvv9Y-cmoi7MIq"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit5-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1rAhbnpA4q0k1Kz5xm3RlBbzCk1ef5ExN"
+            },
+            {
+              "name": "CS3691-Embedded Systems and IoT-unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1uSlW8s4TLfx-zkPyI5i7lMzJZKRYeTeb"
+            }
+          ]
+        },
+        "Object Oriented Software Engineering": {
+          "pdfs": [
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1308A2FdWcTWVd-ado7mauHiN5vIyoTCm"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1O4_J10CgKfh0-IXqmWFFdTEjQ46Glurt"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1CqB61Zyit4gifK0rN_xZXGz29CuLROKK"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1G_lNx-jukOd6O_Jn7x_gc0XQRcPe0qJA"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=14YkJxTxAU9g2XasEgF4ssf0J2P3DPtzb"
+            },
+            {
+              "name": "CCS356-Object Oriented Software Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1K_2L__D4oIsspK7mFsK8pK8G4TYLhHsk"
+            }
+          ]
+        }
+      },
+      "1": {
+        "Engineering Chemistry": {
+          "pdfs": [
+            {
+              "name": "CY3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1BjlRYGmFjdbDbh5dcQEaH6ZiaSaozLPh"
+            },
+            {
+              "name": "CY3151-handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=10NliRXQ50clTXJNlo9OTNvzQKfCoRQ8R"
+            },
+            {
+              "name": "CY3151-handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1Pg6p0m2zWOPufyUy5poaUpVvzsF4ZA00"
+            }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            {
+              "name": "PH3151-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1kJjROyFIxc32bsTTT2_ITqKkJyPZ4S3R"
+            },
+            {
+              "name": "PH3151-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1bh1t_aadIiYKeGuI-Y9nekPOlYQ6Riou"
+            },
+            {
+              "name": "PH3151-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1b9aT-lAqOfx8mVhE5D72qmIKrUjbXDzK"
+            },
+            {
+              "name": "PH3151-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1tMj_Nx5Zpy8UGBjQCuj2BS58a8hEeK9h"
+            },
+            {
+              "name": "PH3151-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1xNRjyy_bpm1iTenuCPBnmUdr42rJdyjP"
+            },
+            {
+              "name": "PH3151-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1Lu-Epc20o1Fhq8-Ary1W4ZBXnCKYr9lJ"
+            }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-English.pdf",
+              "url": "https://drive.google.com/uc?id=1FU0FIvof8JkibBz4KFYVTMo1kZyjcdsR"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-Tamil.pdf",
+              "url": "https://drive.google.com/uc?id=1_OhR54qMqe939ZAx1z7UZK1ZHbKyDYrn"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1S91ic7JVXBmMRwAoR5qzLMK_vCXQCILU"
+            }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            {
+              "name": "MA3151-handwritten notes 1.pdf",
+              "url": "https://drive.google.com/uc?id=1mLbVIbDeweCH3ZL-CySj5BHiFZaxWtRh"
+            },
+            {
+              "name": "MA3151-handwritten notes 2.pdf",
+              "url": "https://drive.google.com/uc?id=1xe7bY8iv6BxsO2-IS7z0MH6rLxMvVT7a"
+            },
+            {
+              "name": "MA3151-handwritten notes 3.pdf",
+              "url": "https://drive.google.com/uc?id=1uQOV1jnLWFSai2jH4Ycwm6OoegkX8XwS"
+            }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            {
+              "name": "GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1po9yOSLwEfDWSB_BYaZP7aMfwlLS-SS-"
+            },
+            {
+              "name": "GE3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1X83Gz8AQ1nL1fUbxrhU1kRmhXAgnPjuJ"
+            }
+          ]
+        },
+        "Professional English 1": {
+          "pdfs": [
+            {
+              "name": "HS3152-Professional English.pdf",
+              "url": "https://drive.google.com/uc?id=16WOYFv7IbNaxJkwKmBgglxZEyMCrhBho"
+            },
+            {
+              "name": "HS3152-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Ro-Rgz0AkAOQ0xLUnz9J1cVRLFbMIfkq"
+            }
+          ]
+        }
+      },
+      "5": {
+        "Compiler Design": {
+          "pdfs": [
+            {
+              "name": "CS3501-Compiler Design-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=12FgiSOdFv1Rkz1CMwMzwVbKV1c-4eOCG"
+            },
+            {
+              "name": "CS3501-Compiler Design-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1SBJxkCuAzmd50BMEDC60BtqjSepBANN4"
+            }
+          ]
+        },
+        "Computer Networks": {
+          "pdfs": [
+            {
+              "name": "CS3591-Computer Networks-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1Soh8LgZvJmSrtbvTWtp9_8R0OQ2XPHTJ"
+            },
+            {
+              "name": "CS3591-Computer Networks-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1R4I87uw4GR94kEUhLnxdKg2a9QfH3Opt"
+            }
+          ]
+        },
+        "Cryptography and Cyber Security": {
+          "pdfs": [
+            {
+              "name": "CB3491-Cryptography and Cyber Security-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1SAjb6v5aSJX1cOx4soscequtiGC3QbFC"
+            },
+            {
+              "name": "CB3491-Cryptography and Cyber Security-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1mbRMTwDwiZvstnvEFHZommY430UXFjr9"
+            },
+            {
+              "name": "CB3491-Cryptography and Cyber Security-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1yszQcZkwXzgrAtnB0qZ9chkCfIUQKAeA"
+            },
+            {
+              "name": "CB3491-Cryptography and Cyber Security-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=10IgOL1bvGZw6EZNxqbzftqJvn-5M2TJE"
+            },
+            {
+              "name": "CB3491-Cryptography and Cyber Security-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1zIeEkHwBioqPv3tfo6ubQAIQxKCIJ0AJ"
+            },
+            {
+              "name": "CB3491-Cryptography and Cyber Security-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1No6YE6CyU5NlNae7vOxoqfTwZPo2h78T"
+            }
+          ]
+        },
+        "Distributed Computing": {
+          "pdfs": [
+            {
+              "name": "CS3551-Distributed Computing-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1yBi_ruq_kcmdm_c0jREoD_ptrlEALfhf"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1J3E3h-5xzTOtWb6dSTNDFrm6KOtz6z2c"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1HkYyLtshifQRZt3e6sMHrkkRwUbP1vhI"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1FkRR-5AHotbCimJorQiCq8QZ95F1RNHb"
+            },
+            {
+              "name": "CS3551-Distributed Computing-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1A7KVFVHvBJo5f5TY-UOVE7FThgf0xoZJ"
+            },
+            {
+              "name": "CS3551-Distributed Computing-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1rvU7Yo2FsNnFZV8fdskAYeBdCY6Dxty6"
+            }
+          ]
+        }
+      },
+      "2": {
+        "Basic Electrical and Electronics Engineering": {
+          "pdfs": [
+            {
+              "name": "BE3251-Basic-Electrical-and-Electronics-Engineering-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1sv_GpGiZYNVV8ZWCVTaCfg463x-ZGYYl"
+            }
+          ]
+        },
+        "Engineering Graphics": {
+          "pdfs": [
+            {
+              "name": "GE3251-Engineering Graphics-Full notes.pdf",
+              "url": "https://drive.google.com/uc?id=1JGkvrquo1SdiBUi5afeTRPIEL4KKDFs-"
+            }
+          ]
+        },
+        "Physics for Information Science": {
+          "pdfs": [
+            {
+              "name": "PH3252-Physics for Information Science-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ekVVVzG4PET2F8C3-x0jjZk9rTCfDc7_"
+            },
+            {
+              "name": "PH3256 -Physics for Information Science- HandWritten Notes - Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1eGq5PML1qmAsFmp1aP0jLBsj71AD7sdm"
+            },
+            {
+              "name": "PH3256-Physics for Information Science - UNIT 1 - Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1Lfrajdro7yTKiAbjmwQILqAdK1sFGxnU"
+            },
+            {
+              "name": "PH3256-Physics for Information Science- UNIT 2 - Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1PB54QoiJy_LCZ6EGVE21tHK5sutQko3A"
+            },
+            {
+              "name": "PH3256-Physics for Information Science- UNIT 3 - Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1xot0AtZmzYw4taM-jfqQdyCGWDLG35K1"
+            },
+            {
+              "name": "PH3256-Physics for Information Science- UNIT 5-notes.pdf",
+              "url": "https://drive.google.com/uc?id=15tSxkufxxVRVuvbCFGDm8G9Tk2GtHHZS"
+            },
+            {
+              "name": "PH3256-Physics for Information Science-HandWritten Notes - Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1KKv5s9XCkFfxzyx9H4PtT2SOrhcoCbQe"
+            },
+            {
+              "name": "PH3256-Physics for Information Science-HandWritten Notes - Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=18a3ocKdkU1TCI1CQJhV3UWZO0yS1bNk4"
+            }
+          ]
+        },
+        "Professional English-II": {
+          "pdfs": [
+            {
+              "name": "HS3252-Professional English-II Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1K-E8n4_ueIWS_ZlOWDqfPECBhWQ-HG9s"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit2,3.pdf",
+              "url": "https://drive.google.com/uc?id=1cfkeiGB6QLrwBaTQ8Gmm-mxWXGI8aEjN"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit4,5.pdf",
+              "url": "https://drive.google.com/uc?id=1c05hKpgwm_d-aRcVg7iGQ7-NDGMpaAIq"
+            }
+          ]
+        },
+        "Programming in C": {
+          "pdfs": [
+            {
+              "name": "CS3251-Programming-in-C-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1QSzaPFID8JKvdVYj4l8KbAdhfz1iFNMF"
+            },
+            {
+              "name": "CS3251-Programming-in-C-Lecture-Notes-2.pdf",
+              "url": "https://drive.google.com/uc?id=1TbAkjZVMXZxq8TGTrUCCDLxkKEygUH83"
+            }
+          ]
+        },
+        "Statistics and Numerical Methods": {
+          "pdfs": [
+            {
+              "name": "MA3251-Statistics and Numerical Methods-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1wrY6bZYZVS_ifm8-dyOCZkglK3lJJjkP"
+            }
+          ]
+        },
+        "Tamils and Technology": {
+          "pdfs": [
+            {
+              "name": "GE3252-Tamils and Technology(English)-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1GP82pJvp16H1fDaYZwiT2qKyyoeRp7Xq"
+            },
+            {
+              "name": "GE3252-Tamils and Technology(Tamil)-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=17txH_F1n66HtFmfSsjHxe0eRpfzvzqiT"
+            }
           ]
         }
       },
       "3": {
         "Data Structures": {
           "pdfs": [
-            { "id": 1, "name": "Arrays and Linked Lists", "path": "CSE/sem3/ds_arrays_linkedlist.pdf" },
-            { "id": 2, "name": "Trees and Graphs", "path": "CSE/sem3/ds_trees_graphs.pdf" }
+            {
+              "name": "CS3301- Data Structure-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1c88O8_HeNbUtuy-6ksTVQZ2jGo8Fkt8Q"
+            },
+            {
+              "name": "CS3301-Data Structures-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1WyOVYTamjxUoyJ2Op0-j6x7QEvUb39o3"
+            }
           ]
         },
-        "Discrete Mathematics": { "pdfs": [] },
-        "Digital Principles and Computer Organization": { "pdfs": [] },
-        "Foundations of Data Science": { "pdfs": [] },
-        "Object Oriented Programming": { "pdfs": [] }
-      },
-      "4": {
-        "Theory of Computation": { "pdfs": [] },
-        "Artificial Intelligence and Machine Learning": { "pdfs": [] },
-        "Database Management Systems": { "pdfs": [] },
-        "Algorithms": { "pdfs": [] },
-        "Introduction to Operating Systems": { "pdfs": [] },
-        "Environmental Sciences and Sustainability": { "pdfs": [] }
-      },
-      "5": {
-        "Computer Networks": { "pdfs": [] },
-        "Complier Design": { "pdfs": [] },
-        "Cryptography and Cyber Security": { "pdfs": [] },
-        "Distributed Computing": { "pdfs": [] }
-      },
-      "6": {
-        "Object Oriented Software Engineering": { "pdfs": [] },
-        "Embedded Systems and IoT": { "pdfs": [] }
-      },
-      "7": {
-        "Human Values and Ethics": { "pdfs": [] }
-      }
-    },
-    "2025": {
-      "1": {
-        "New Programming Paradigms": {
+        "Digital Principles and Computer Organization": {
           "pdfs": [
-            { "id": 1, "name": "2025 New Subject", "path": "CSE/sem1/2025_new_subject.pdf" }
+            {
+              "name": "CS3351-Digital Principles and computer Organization- notes.pdf",
+              "url": "https://drive.google.com/uc?id=1vgVZGbfH2cq19z5ucSxhQke0sHNyhIOV"
+            },
+            {
+              "name": "CS3351-Digital Principles and computer Organization- notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1-uAWlhJ7BlPrWarwN4ySb_TlAi9I17Uh"
+            }
+          ]
+        },
+        "Discrete Mathematics": {
+          "pdfs": [
+            {
+              "name": "MA3354-Discrete Mathematics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1vTrs3e-CIGhXCAgcy70fu3SKZhrApxEo"
+            }
+          ]
+        },
+        "Foundations of Data Science": {
+          "pdfs": [
+            {
+              "name": "CS3352-Foundations of Data Science-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=14SuXOKKZv3tfYjd53yG5itdj_dVh6SFB"
+            }
+          ]
+        },
+        "Object Oriented Programming": {
+          "pdfs": [
+            {
+              "name": "CS3391-Object Oriented Programming-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=13VH4tWyz3dlJ2LQ5AhYkf0ktPdtPhCkv"
+            },
+            {
+              "name": "CS3391-Object Oriented Programming-Notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1kDgkZS2OeKUbQyqy8Q1MU1F437duz2Ql"
+            }
           ]
         }
       }
     }
   },
-  "ece": {
+  "ECE": {
     "2021": {
-      "1": {
-        "Professional English - I": { "pdfs": [] },
-        "Matrices and Calculus": { "pdfs": [] },
-        "Engineering Physics": { "pdfs": [] },
-        "Engineering Chemistry": { "pdfs": [] },
-        "Problem Solving and Python Programming": { "pdfs": [] },
-        "Heritage of Tamils": { "pdfs": [] }
-      },
-      "2": {
-        "Professional English - II": { "pdfs": [] },
-        "Statistics and Numerical Methods": { "pdfs": [] },
-        "Physics for Electronics Engineering": { "pdfs": [] },
-        "Engineering Graphics": { "pdfs": [] },
-        "Circuit Analysis": { "pdfs": [] },
-        "Tamils and Technology": { "pdfs": [] }
-      },
-      "3": {
-        "Random Processes and Linear Algebra": { "pdfs": [] },
-        "C Programming and Data Structures": { "pdfs": [] },
-        "Signals and Systems": { "pdfs": [] },
-        "Electronic Devices and Circuits": { "pdfs": [] },
-        "Control Systems": { "pdfs": [] },
-        "Digital Systems Design": { "pdfs": [] }
+      "5": {
+        "Transmission Lines and RF Systems": {
+          "pdfs": [
+            {
+              "name": "EC3551-Transmission Lines and RF Systems-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1EDMPDN6GFGPh0lC3O_HlB6-I7Xj1H5n7"
+            }
+          ]
+        },
+        "VLSI and Chip Design": {
+          "pdfs": [
+            {
+              "name": "EC3552-VLSI and Chip Design-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1ODmjLHiMDwfGA5msDHOiFbHuXk3wYjIL"
+            },
+            {
+              "name": "EC3552-VLSI and Chip Design-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1doAK6dK8Lh3yx2qitsEZvExwDk1BiwNi"
+            }
+          ]
+        },
+        "Wireless Communication": {
+          "pdfs": [
+            {
+              "name": "EC3501-Wireless Communication-Unit1-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1rzVkPmXx9da4h3by0JWuX23Pfnx57Rqo"
+            },
+            {
+              "name": "EC3501-Wireless Communication-Unit2-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1AiL1rdabtWkPt0ihKZ3bYPT7YVpPWqvI"
+            },
+            {
+              "name": "EC3501-Wireless Communication-Unit3-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=18Yx-qmEWNe49t59FWLhCqEmuD8qbavAO"
+            },
+            {
+              "name": "EC3501-Wireless Communication-Unit4-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1MVlUKWYVsQDDSIFbmue-psCJZVBztheg"
+            },
+            {
+              "name": "EC3501-Wireless Communication-Unit5-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1Vx51TtAuujmm9cJUSVh2QLkt1GV9FvtQ"
+            }
+          ]
+        }
       },
       "4": {
-        "Electromagnetic Fields": { "pdfs": [] },
-        "Networks and Security": { "pdfs": [] },
-        "Linear Integrated Circuits": { "pdfs": [] },
-        "Digital Signal Processing": { "pdfs": [] },
-        "Communication Systems": { "pdfs": [] },
-        "Environmental Sciences and Sustainability": { "pdfs": [] }
-      },
-      "5": {
-        "Wireless Communication": { "pdfs": [] },
-        "VLSI and Chip Design": { "pdfs": [] },
-        "Transmission Lines and RF Systems": { "pdfs": [] },
-        "VLSI Laboratory": { "pdfs": [] }
-      },
-      "6": {
-        "Embedded Systems and IoT Design": { "pdfs": [] },
-        "Artificial Intelligence and Machine Learning": { "pdfs": [] }
+        "Communication Systems": {
+          "pdfs": [
+            {
+              "name": "EC3491-Communication Systems-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=13ti_eHjYDN_As-7ZWsrOl-p5AUvA28cI"
+            },
+            {
+              "name": "EC3491-Communication Systems-Notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1-JIcZjo6edyEPp4ua3XQhhog8HV9ocaX"
+            }
+          ]
+        },
+        "Digital Signal Processing": {
+          "pdfs": [
+            {
+              "name": "EC3492-Digital Signal Processing-HandwrittenNotes1.pdf",
+              "url": "https://drive.google.com/uc?id=1GIEBT_GQhsWuHq0433QW8YNdMHPjB5QX"
+            },
+            {
+              "name": "EC3492-Digital Signal Processing-HandwrittenNotes2.pdf",
+              "url": "https://drive.google.com/uc?id=1S21rOR6kffb6-5pleRvfxytRaLFp7CM-"
+            },
+            {
+              "name": "EC3492-Digital Signal Processing-HandwrittenNotes3.pdf",
+              "url": "https://drive.google.com/uc?id=10psDw4jXGXlsYi31kGKmCvb1tS-OHtSi"
+            }
+          ]
+        },
+        "Electromagnetic Fields": {
+          "pdfs": [
+            {
+              "name": "EC3452-Electromagnetic Fields-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1a2BYRKGPchKEJV6OEkeuPgeneENXED98"
+            },
+            {
+              "name": "EC3452-Electromagnetic Fields-Handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=19W2FBD-0sXitH5ECztlLo9MFtrwSOwEc"
+            },
+            {
+              "name": "EC3452-Electromagnetic Fields-Handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1JPCgQBkfEflVQELJ2xG-puGCD0cfOCH4"
+            }
+          ]
+        },
+        "Environmental Sciences and Sustainability": {
+          "pdfs": [
+            {
+              "name": "GE3451-Environmental Sciences and Sustainability-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1IAtwZr_1C97yWzpxZUJTkQ1_0MCQqeY-"
+            }
+          ]
+        },
+        "Linear Integrated Circuits": {
+          "pdfs": [
+            {
+              "name": "EC3451-Linear Integrated Circuits-HandwrittenNotes.pdf",
+              "url": "https://drive.google.com/uc?id=1Gdv9MPkSmtPaL7SePTYGvNNTBKOT9uRj"
+            },
+            {
+              "name": "EC3451-Linear Integrated Circuits-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=11OgVPw2EzUV4GRGVUwDbYYpo78nZ3Hw2"
+            },
+            {
+              "name": "EC3451-Linear Integrated Circuits-Notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1wqc4NJrVgZci9RwC9U7aUfAZK1mwrWy1"
+            }
+          ]
+        },
+        "Networks and Security": {
+          "pdfs": [
+            {
+              "name": "EC3401-Networks and Security-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1gfcnlfNiuNdheW66MYUDedgbHIGqnIB4"
+            }
+          ]
+        }
       },
       "7": {
-        "Human Values and Ethics": { "pdfs": [] }
-      }
-    },
-    "2025": {}
-  },
-  "it": {
-    "2021": {
-      "1": {
-        "Professional English - I": { "pdfs": [] },
-        "Matrices and Calculus": { "pdfs": [] },
-        "Engineering Physics": { "pdfs": [] },
-        "Engineering Chemistry": { "pdfs": [] },
-        "Problem Solving and Python Programming": { "pdfs": [] },
-        "Heritage of Tamils": { "pdfs": [] }
+        "Human Values and Ethics": {
+          "pdfs": [
+            {
+              "name": "GE3791-Human Values and Ethics-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ugsNJFdm_BIQ0rh61lMrabig0b5P99tI"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1MiFXkoOuBgFszLtb2Syn8E1Pk9D0dwuT"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1s4hqRYRYnqZnp3RKBYO8IgAnn_5Nikv4"
+            },
+            {
+              "name": "GE3791-Human Values and Ethics-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1i7PBD_QVha8R0x52DMjEDQt-pZdVUps2"
+            }
+          ]
+        }
       },
-      "2": {
-        "Professional English - II": { "pdfs": [] },
-        "Statistics and Numerical Methods": { "pdfs": [] },
-        "Physics for Information Science": { "pdfs": [] },
-        "Basic Electrical and Electronics Engineering": { "pdfs": [] },
-        "Engineering Graphics": { "pdfs": [] },
-        "Programming in C": { "pdfs": [] },
-        "Tamils and Technology": { "pdfs": [] }
+      "6": {
+        "Artificial Intelligence and Machine Learning": {
+          "pdfs": [
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1RuqEf9JBFUG1_y3qscMopcYhmC2NpVCu"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=12RHHoiVPtpeqrVvvmtOf0_7VWsadIhyy"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1AzgIJ-0yLGOTjVPum5_SamgJa65gqigQ"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=10WB7KfTnwFnyNu3UEcYYsymBKAyW4Hm8"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1-7OjkBOZ7NYofQ5SpaSq8YmQ5UEiGtAZ"
+            },
+            {
+              "name": "CS3491-Artificial Intelligence and Machine Learning.pdf",
+              "url": "https://drive.google.com/uc?id=16c4Vioj6CdfmDrnqLFoOsm2LR53DrQys"
+            }
+          ]
+        },
+        "Embedded Systems and IOT Design": {
+          "pdfs": [
+            {
+              "name": "ET3491-Embedded Systems and IOT Design-notes.pdf",
+              "url": "https://drive.google.com/uc?id=19pjnaU9lVsS-uyBHsVKqhE-vls69fZMg"
+            }
+          ]
+        }
       },
       "3": {
-        "Discrete Mathematics": { "pdfs": [] },
-        "Digital Principles and Computer Organization": { "pdfs": [] },
-        "Foundations of Data Science": { "pdfs": [] },
-        "Data Structures and Algorithms": { "pdfs": [] },
-        "Object Oriented Programming": { "pdfs": [] }
+        "C Programming and Data Structures": {
+          "pdfs": [
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit1.pdf",
+              "url": "https://drive.google.com/uc?id=13Ti8hY1BcnKLhMN5vKoJYM4WZ1VOO45_"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1qc3jf_I3_tXiqtZ0VljGHVCmQJYSQphO"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1-wdjLzuFusfB43cpep2btXujZCLsPSxE"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit4.pdf",
+              "url": "https://drive.google.com/uc?id=12cB-qgJoE16ZVGpQzpnX4eaOph-fUvpc"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-Handnotes-unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1Jk1-paeSpNYlIsG-Zp4qv7LjZectyBes"
+            },
+            {
+              "name": "CS3353-C Programming and Data Structures-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1ufdEn5Gec3rXyBSn6sms5T24H-5hG4KU"
+            }
+          ]
+        },
+        "Control Systems": {
+          "pdfs": [
+            {
+              "name": "EC3351-Control Systems-Handwritten-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1jSO9B9XOwAU_z-Cr1dEjEDeEaJ7cxAMW"
+            },
+            {
+              "name": "EC3351-Control Systems-Handwritten-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1XA9QgennHTTl4UxrP6qY8Mzmbt2GtRVr"
+            },
+            {
+              "name": "EC3351-Control Systems-Handwritten-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1vGZRAoMB7A35rLbbiEa-lYSjtXrJsU05"
+            },
+            {
+              "name": "EC3351-Control Systems-Handwritten-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=11Opq2u4rRlOIEuUfbx4X9b8YlDclWng3"
+            },
+            {
+              "name": "EC3351-Control Systems-Handwritten-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1ri2vlyfu8qp_DNT6455ItOis9WvuI8ET"
+            },
+            {
+              "name": "EC3351-Control Systems-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=17Ki0ZgB3UD2eGmdm2n-K3yNciLC6RQUp"
+            }
+          ]
+        },
+        "Digital Systems Design": {
+          "pdfs": [
+            {
+              "name": "EC3352-Digital Systems Design-Notes.pdf",
+              "url": "https://drive.google.com/uc?id=1YVbvhlfq42UB1rJSaVsVA2V7rTt2QEl-"
+            }
+          ]
+        },
+        "Electronic Devices and Circuits": {
+          "pdfs": [
+            {
+              "name": "EC3353-Electronic Devices and Circuits-HandwrittenNotes.pdf",
+              "url": "https://drive.google.com/uc?id=1FLtyyJvKhaSlJdl1OkGBL0BesFVeT7AY"
+            },
+            {
+              "name": "EC3353-Electronic Devices and Circuits-Notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1vdn-_doYqnTMcUdQTzgsyL6PBvaBTXgD"
+            }
+          ]
+        },
+        "Random Processes and Linear Algebra": {
+          "pdfs": [
+            {
+              "name": "MA3355-Random Processes and Linear Algebra-Handwritten.pdf",
+              "url": "https://drive.google.com/uc?id=1mjfZlWRIdWfgZdsgEmDtadOSvh8B3Rmy"
+            },
+            {
+              "name": "MA3355-Random Processes and Linear Algebra-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1ft9L-gZ6aFaBCF8W4DIT5CMLZHkS_NpX"
+            },
+            {
+              "name": "MA3355-Random Processes and Linear Algebra-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1DPaU7DZApYUX-Ch9jTudO8xu969HQLt_"
+            },
+            {
+              "name": "MA3355-Random Processes and Linear Algebra-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=1Da9m8aj_gsNGPWV1fzZqV3wK_L4lavwB"
+            },
+            {
+              "name": "MA3355-Random Processes and Linear Algebra-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1yL-_gfqvVkZghZ--TAPZQl4YXrXrfQh0"
+            },
+            {
+              "name": "MA3355-Random Processes and Linear Algebra-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1s3Xtc_gsQ54TDfXbDpUhdkyq2EEdPn-_"
+            }
+          ]
+        },
+        "Signals and Systems": {
+          "pdfs": [
+            {
+              "name": "EC3354-Signals and Systems-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1jsLF8af7IEoryqJ68HQ6Yx49qEN1Axuz"
+            },
+            {
+              "name": "EC3354-Signals and Systems-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1aRMQRCxuUXpY_R2pvXCXcCYVzIz1V-JC"
+            }
+          ]
+        }
       },
-      "4": {
-        "Theory of Computation": { "pdfs": [] },
-        "Artificial Intelligence and Machine Learning": { "pdfs": [] },
-        "Database Management Systems": { "pdfs": [] },
-        "Web Essentials": { "pdfs": [] },
-        "Introduction to Operating Systems": { "pdfs": [] },
-        "Environmental Sciences and Sustainability": { "pdfs": [] }
-      },
-      "5": {
-        "Network Security": { "pdfs": [] },
-        "Cloud Computing": { "pdfs": [] },
-        "Mobile Application Development": { "pdfs": [] },
-        "Data Analytics": { "pdfs": [] }
-      },
-      "6": {
-        "Advanced Web Development": { "pdfs": [] },
-        "Cyber Security": { "pdfs": [] }
-      },
-      "7": {
-        "Human Values and Ethics": { "pdfs": [] }
-      }
-    },
-    "2025": {}
-  },
-  "eee": {
-    "2021": {
       "1": {
-        "Professional English-I": { "pdfs": [] },
-        "Matrices and Calculus": { "pdfs": [] },
-        "Engineering Physics": { "pdfs": [] },
-        "Engineering Chemistry": { "pdfs": [] },
-        "Problem Solving and Python Programming": { "pdfs": [] },
-        "Heritage of Tamils": { "pdfs": [] }
+        "Engineering Chemistry": {
+          "pdfs": [
+            {
+              "name": "CY3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=19Q_mKg8HigMF1L_1hI4Lz2hclJY8P_gX"
+            },
+            {
+              "name": "CY3151-handwritten notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1ATdxUp70_tp4amKI8yjRdXjaHo3ek7K_"
+            },
+            {
+              "name": "CY3151-handwritten notes3.pdf",
+              "url": "https://drive.google.com/uc?id=1sYGF3Z5VKca80CxgRQ-5zM5tdlImN-hZ"
+            }
+          ]
+        },
+        "Engineering Physics": {
+          "pdfs": [
+            {
+              "name": "PH3151-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1E22O3r2KEb6tsUDZanDRT7dLvInLF2F1"
+            },
+            {
+              "name": "PH3151-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1LacQYVKNnZdXb9q_AruY3Aa8XgI4YXNl"
+            },
+            {
+              "name": "PH3151-Unit2.pdf",
+              "url": "https://drive.google.com/uc?id=1RSzRcQjknKLMTkki4HABfqr6vnLNTuo2"
+            },
+            {
+              "name": "PH3151-Unit3.pdf",
+              "url": "https://drive.google.com/uc?id=15dnXiYas3MuJG4MB8-b9PXkxIk7LF-Xo"
+            },
+            {
+              "name": "PH3151-Unit4.pdf",
+              "url": "https://drive.google.com/uc?id=1bQqkEdkg-vZb8szycjX4ucL0g2Y-J8YH"
+            },
+            {
+              "name": "PH3151-Unit5.pdf",
+              "url": "https://drive.google.com/uc?id=1yPXtSHZpIQxv5ag37Be7XB9Wi76wpF1_"
+            }
+          ]
+        },
+        "Heritage of Tamils": {
+          "pdfs": [
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-English.pdf",
+              "url": "https://drive.google.com/uc?id=1FN4UIMtYOEVKI0PifApI-G8jl_FwUwFu"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Handnotes-Tamil.pdf",
+              "url": "https://drive.google.com/uc?id=164taaBpOdLRyZFkd2y5LXUwW56Y3tFHp"
+            },
+            {
+              "name": "GE3152-Heritage-of-Tamils-Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1Vm0z1Q_ToJurJBqhD2Q1IAHc-fFz15lX"
+            }
+          ]
+        },
+        "Matrices and Calculus": {
+          "pdfs": [
+            {
+              "name": "MA3151-handwritten notes 1.pdf",
+              "url": "https://drive.google.com/uc?id=1otSxA_068cwNaj-z23LRgdgrFTrcmqE-"
+            },
+            {
+              "name": "MA3151-handwritten notes 2.pdf",
+              "url": "https://drive.google.com/uc?id=1XckCOZ6AvssS5qdaRf4yJRF64rabvmFV"
+            },
+            {
+              "name": "MA3151-handwritten notes 3.pdf",
+              "url": "https://drive.google.com/uc?id=1oBf1n0w_M9Hw-a_w9T9y7hz6_KyWmRD_"
+            }
+          ]
+        },
+        "Problem Solving and Python Programming": {
+          "pdfs": [
+            {
+              "name": "GE3151-Problem-Solving-and-Python-Programming-Lecture-Notes-1.pdf",
+              "url": "https://drive.google.com/uc?id=1cHhX5Pkz2hPsdvGCcSRXvICh8VMz5j6K"
+            },
+            {
+              "name": "GE3151-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1PzjTAAML5qZNsPsp8MS__cJ6eIOyuPRe"
+            }
+          ]
+        },
+        "Professional English 1": {
+          "pdfs": [
+            {
+              "name": "HS3152-Professional English.pdf",
+              "url": "https://drive.google.com/uc?id=1_64qZFjCkI57LLkw6rh68T-tCXsMALpC"
+            },
+            {
+              "name": "HS3152-handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1sy9pQQsn7U6QpKbmhNJE2RclMsjirQ5Z"
+            }
+          ]
+        }
       },
       "2": {
-        "Professional English II": { "pdfs": [] },
-        "Statistics and Numerical Methods": { "pdfs": [] },
-        "Physics for Electrical Engineering": { "pdfs": [] },
-        "Basic Civil and Mechanical Engineering": { "pdfs": [] },
-        "Engineering Graphics": { "pdfs": [] },
-        "Electric Circuit Analysis": { "pdfs": [] },
-        "Tamils and Technology": { "pdfs": [] }
-      },
-      "3": {
-        "Probability and Complex Functions": { "pdfs": [] },
-        "Electromagnetic Fields": { "pdfs": [] },
-        "Digital Logic Circuits": { "pdfs": [] },
-        "Electron Devices and Circuits": { "pdfs": [] },
-        "Electrical Machines I": { "pdfs": [] },
-        "C Programming and Data Structures": { "pdfs": [] }
-      },
-      "4": {
-        "Environmental Sciences and Sustainability": { "pdfs": [] },
-        "Transmission and Distribution": { "pdfs": [] },
-        "Linear Integrated Circuits": { "pdfs": [] },
-        "Measurements and Instrumentation": { "pdfs": [] },
-        "Microprocessor and Microcontroller": { "pdfs": [] },
-        "Electrical Machines II": { "pdfs": [] }
-      },
-      "5": {
-        "Power System Protection": { "pdfs": [] },
-        "Power Electronics": { "pdfs": [] },
-        "Control Systems": { "pdfs": [] },
-        "Electrical Design": { "pdfs": [] }
-      },
-      "6": {
-        "Smart Grid Technology": { "pdfs": [] },
-        "Renewable Energy Systems": { "pdfs": [] }
-      },
-      "7": {
-        "Human Values and Ethics": { "pdfs": [] }
+        "Circuit Analysis": {
+          "pdfs": [
+            {
+              "name": "EC3251-Circuit Analysis-Handwritten notes.pdf",
+              "url": "https://drive.google.com/uc?id=1BspBSEyJ95VouqfpxuDIawsrOnbKT7OI"
+            },
+            {
+              "name": "EC3251-Circuit Analysis-Unit1-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1rGVlQ35u6L4ptY-ge127OlZcCAGdgT9c"
+            }
+          ]
+        },
+        "Electrical and Instrumentation Engineering": {
+          "pdfs": [
+            {
+              "name": "BE3254-Electrical and Instrumentation Engineering-Handwritten-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1yZ1lvvAbY47BlQ58-jYKr5O51SX_-rgn"
+            },
+            {
+              "name": "BE3254-Electrical and Instrumentation Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1cMizQlgy7vEcwLjXygIMYF40_jhBCiU4"
+            },
+            {
+              "name": "BE3254-Electrical and Instrumentation Engineering-notes2.pdf",
+              "url": "https://drive.google.com/uc?id=1AVt1kBsKZLhVGXjfY8CsTxOErhB81ocv"
+            }
+          ]
+        },
+        "Engineering Graphics": {
+          "pdfs": [
+            {
+              "name": "GE3251-Engineering Graphics-Full notes.pdf",
+              "url": "https://drive.google.com/uc?id=1pDgVQIRZqBbPZqqiixDO-hx3QFDXXMDM"
+            }
+          ]
+        },
+        "Physics for Electronics Engineering": {
+          "pdfs": [
+            {
+              "name": "PH3254-Physics for Electronics Engineering-notes.pdf",
+              "url": "https://drive.google.com/uc?id=1yFdE9mGSzocHeUDgRHIP9O44OorFGjqQ"
+            }
+          ]
+        },
+        "Professional English-II": {
+          "pdfs": [
+            {
+              "name": "HS3252-Professional English-II Unit1.pdf",
+              "url": "https://drive.google.com/uc?id=1UqDbO2O_DuP6869ujzQD95IgiB5O421l"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit2,3.pdf",
+              "url": "https://drive.google.com/uc?id=10qVFzwq9nQpcCskZ_TnnME-673ZqcaO0"
+            },
+            {
+              "name": "HS3252-Professional English-II Unit4,5.pdf",
+              "url": "https://drive.google.com/uc?id=1MYsERSj3moss383AuzZNp5mGlXnGFfvt"
+            }
+          ]
+        },
+        "Statistics and Numerical Methods": {
+          "pdfs": [
+            {
+              "name": "MA3251-Statistics and Numerical Methods-Handwritten1.pdf",
+              "url": "https://drive.google.com/uc?id=1Pf4OYGPzJq6p1K03AA4XxkHX97ap6wIB"
+            }
+          ]
+        },
+        "Tamils and Technology": {
+          "pdfs": [
+            {
+              "name": "GE3252-Tamils and Technology(English)-notes.pdf",
+              "url": "https://drive.google.com/uc?id=127pgA_jUlcGKYgBrYeTPGFZl16b9wxHx"
+            },
+            {
+              "name": "GE3252-Tamils and Technology(Tamil)-notes1.pdf",
+              "url": "https://drive.google.com/uc?id=1mFsZvm_Dso0sYuEF1PKF4kpLrtMzpOXb"
+            }
+          ]
+        }
       }
-    },
-    "2025": {}
-  },
-  "mech": {
-    "2021": {
-      "1": {
-        "Professional English - I": { "pdfs": [] },
-        "Matrices and Calculus": { "pdfs": [] },
-        "Engineering Physics": { "pdfs": [] },
-        "Engineering Chemistry": { "pdfs": [] },
-        "Problem Solving and Python Programming": { "pdfs": [] },
-        "Heritage of Tamils": { "pdfs": [] }
-      },
-      "2": {
-        "Professional English - II": { "pdfs": [] },
-        "Statistics and Numerical Methods": { "pdfs": [] },
-        "Materials Science": { "pdfs": [] },
-        "Basic Electrical and Electronics Engineering": { "pdfs": [] },
-        "Engineering Graphics": { "pdfs": [] },
-        "Tamils and Technology": { "pdfs": [] }
-      },
-      "3": {
-        "Transforms and Partial Differential Equations": { "pdfs": [] },
-        "Engineering Mechanics": { "pdfs": [] },
-        "Engineering Thermodynamics": { "pdfs": [] },
-        "Fluid Mechanics and Machinery": { "pdfs": [] },
-        "Engineering Materials and Metallurgy": { "pdfs": [] },
-        "Manufacturing Processes": { "pdfs": [] }
-      },
-      "4": {
-        "Theory of Machines": { "pdfs": [] },
-        "Thermal Engineering": { "pdfs": [] },
-        "Hydraulics and Pneumatics": { "pdfs": [] },
-        "Manufacturing Technology": { "pdfs": [] },
-        "Strength of Materials": { "pdfs": [] },
-        "Environmental Sciences and Sustainability": { "pdfs": [] }
-      },
-      "5": {
-        "Advanced Manufacturing": { "pdfs": [] },
-        "Design of Machine Elements": { "pdfs": [] },
-        "Automobile Engineering": { "pdfs": [] },
-        "Industrial Engineering": { "pdfs": [] }
-      },
-      "6": {
-        "Heat Transfer": { "pdfs": [] },
-        "CAD and Simulation": { "pdfs": [] }
-      },
-      "7": {
-        "Human Values and Ethics": { "pdfs": [] }
-      }
-    },
-    "2025": {}
-  },
-  "civil": {
-    "2021": {
-      "1": {
-        "Professional English – I": { "pdfs": [] },
-        "Matrices and Calculus": { "pdfs": [] },
-        "Engineering Physics": { "pdfs": [] },
-        "Engineering Chemistry": { "pdfs": [] },
-        "Problem Solving and Python Programming": { "pdfs": [] },
-        "Heritage of Tamils": { "pdfs": [] }
-      },
-      "2": {
-        "Professional English – II": { "pdfs": [] },
-        "Statistics and Numerical Methods": { "pdfs": [] },
-        "Physics for Civil Engineering": { "pdfs": [] },
-        "Basic Electrical, Electronics and Instrumentation Engineering": { "pdfs": [] },
-        "Engineering Graphics": { "pdfs": [] },
-        "Tamils and Technology": { "pdfs": [] }
-      },
-      "3": {
-        "Transforms and Partial Differential Equations": { "pdfs": [] },
-        "Engineering Mechanics": { "pdfs": [] },
-        "Fluid Mechanics": { "pdfs": [] },
-        "Construction Materials and Technology": { "pdfs": [] },
-        "Water Supply and Wastewater Engineering": { "pdfs": [] },
-        "Surveying and Levelling": { "pdfs": [] }
-      },
-      "4": {
-        "Applied Hydraulics Engineering": { "pdfs": [] },
-        "Strength of Materials": { "pdfs": [] },
-        "Concrete Technology": { "pdfs": [] },
-        "Soil Mechanics": { "pdfs": [] },
-        "Highway and Railway Engineering": { "pdfs": [] },
-        "Environmental Sciences and Sustainability": { "pdfs": [] }
-      },
-      "5": {
-        "Foundation Engineering": { "pdfs": [] },
-        "Bridge Engineering": { "pdfs": [] },
-        "Water Resources Engineering": { "pdfs": [] },
-        "Environmental Engineering": { "pdfs": [] }
-      },
-      "6": {
-        "Construction Management": { "pdfs": [] },
-        "Structural Design": { "pdfs": [] }
-      },
-      "7": {
-        "Human Values and Ethics": { "pdfs": [] }
-      }
-    },
-    "2025": {}
+    }
   }
 }
