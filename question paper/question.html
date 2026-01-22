@@ -95,7 +95,6 @@
 
         /* Tabs */
         .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
-        #semTabs { display: none !important; }
         .tab-btn {
             padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;
             border: 1px solid var(--border); background: white; color: var(--muted); cursor: pointer; transition: 0.3s;
@@ -880,10 +879,10 @@
 
         function renderSemesterTabs() {
             const tabs = document.getElementById('semTabs');
-            const semesters = ['All', '1', '2', '3', '4', '5', '6', '7'];
+            const semesters = ['1', '2', '3', '4', '5', '6', '7'];
             tabs.innerHTML = semesters.map(sem => `
                 <button class="tab-btn ${selectedSem === sem ? 'active' : ''}" onclick="setSem('${sem}')">
-                    ${sem === 'All' ? 'All Semesters' : 'Sem ' + sem}
+                    Sem ${sem}
                 </button>
             `).join('');
         }
