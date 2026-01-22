@@ -390,27 +390,27 @@
     }
 
     .download-btn {
-      background: #3b82f6;
-      border: 1px solid #3b82f6;
-      color: white;
+      background: #f0f4f8;
+      border: 1px solid #e2e8f0;
+      color: #3b82f6;
     }
 
     .download-btn:hover {
-      background: #2563eb;
-      border-color: #2563eb;
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+      background: #eff6ff;
+      border-color: #3b82f6;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
     }
 
     body.dark-mode .download-btn {
-      background: #60a5fa;
-      border-color: #60a5fa;
+      background: rgba(96, 165, 250, 0.15);
+      border-color: rgba(96, 165, 250, 0.3);
+      color: #60a5fa;
     }
 
     body.dark-mode .download-btn:hover {
-      background: #3b82f6;
-      border-color: #3b82f6;
-      box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+      background: rgba(96, 165, 250, 0.25);
+      border-color: #60a5fa;
+      box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
     }
 
     .empty-state {
@@ -892,7 +892,7 @@
     <nav class="header-nav">
       <a id="back-dept" class="nav-btn back-btn" href="../Dept/cse.html">
         <i class="fas fa-arrow-left"></i>
-        <span>Back to CSE</span>
+        <span id="back-dept-label">Back to CSE</span>
       </a>
       <a class="nav-btn home-btn" href="../Home/index.html">
         <i class="fas fa-home"></i>
@@ -977,22 +977,32 @@
         .replace(/'/g, '&#039;');
     }
 
+    function toDriveView(url) {
+      if (!url) return url;
+      const m = url.match(/[?&]id=([^&]+)/) || url.match(/\/d\/([^/]+)/) || url.match(/uc\/(?:export=download)?\?id=([^&]+)/);
+      if (m && m[1]) {
+        return 'https://drive.google.com/file/d/' + m[1] + '/preview';
+      }
+      return url;
+    }
+
     function createCardHTML(pdf) {
-      const href = 'Pdfs/' + pdf.path;
+      const rawUrl = pdf.url || pdf.path || '#';
+      const viewUrl = toDriveView(rawUrl);
+      const name = escapeHtml(pdf.name || 'PDF file');
       return `
         <div class="pdf-card">
           <div class="pdf-header">
             <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
             <div class="pdf-info">
-              <div class="pdf-name">${escapeHtml(pdf.name)}</div>
-              <div class="pdf-path">${escapeHtml(pdf.path)}</div>
+              <div class="pdf-name">${name}</div>
             </div>
           </div>
           <div class="pdf-footer">
-            <a class="action-btn view-btn" href="${href}" target="_blank" rel="noopener noreferrer">
+            <a class="action-btn view-btn" href="${viewUrl}" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-eye"></i> View
             </a>
-            <a class="action-btn download-btn" href="${href}" download>
+            <a class="action-btn download-btn" href="${rawUrl}" download>
               <i class="fas fa-download"></i> Download
             </a>
           </div>
@@ -1000,14 +1010,55 @@
       `;
     }
 
+    function normalizeSubjectName(str) {
+      if (!str) return '';
+      let s = String(str);
+      // Drop subject codes in parentheses, e.g., (HS3152)
+      s = s.replace(/\([^)]*\)/g, ' ');
+      // Normalize dashes to spaces
+      s = s.replace(/[–—-]/g, ' ');
+      // Convert common roman numerals (I..VIII) to digits for matching
+      const romanMap = {
+        'VIII': '8', 'VII': '7', 'VI': '6', 'V': '5', 'IV': '4', 'III': '3', 'II': '2', 'I': '1'
+      };
+      s = s.replace(/\b(VIII|VII|VI|IV|III|II|I)\b/gi, m => romanMap[m.toUpperCase()] || m);
+      // Unify ampersand
+      s = s.replace(/&/g, 'and');
+      // Remove all non-alphanumerics and lowercase
+      return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+
+    function findSubjectNode(semNode, subject) {
+      if (!semNode || !subject) return null;
+      if (semNode[subject]) return semNode[subject];
+
+      const target = normalizeSubjectName(subject);
+      if (!target) return null;
+
+      const keys = Object.keys(semNode);
+      const normalizedMap = keys.reduce((acc, k) => {
+        acc[k] = normalizeSubjectName(k);
+        return acc;
+      }, {});
+
+      // Exact normalized match
+      const exactKey = keys.find(k => normalizedMap[k] === target);
+      if (exactKey) return semNode[exactKey];
+
+      // Partial contains match
+      const partialKey = keys.find(k => normalizedMap[k].includes(target) || target.includes(normalizedMap[k]));
+      if (partialKey) return semNode[partialKey];
+
+      return null;
+    }
+
     async function loadPDFs() {
       const deptRaw = getParam('dept');
       const dept = normalizeDept(deptRaw) || 'CSE';
-      const regulation = getParam('regulation');
-      const semester = getParam('semester');
+      const regulation = (getParam('regulation') || '2021').trim();
+      const semester = (getParam('semester') || '').trim();
       const subjectRaw = getParam('subject');
-      const department = getParam('department') || 'cse';
-      const subject = subjectRaw ? safeDecode(subjectRaw) : '';
+      const subject = subjectRaw ? safeDecode(subjectRaw).trim() : '';
 
       const backLink = document.getElementById('back-dept');
       const backLabel = document.getElementById('back-dept-label');
@@ -1031,7 +1082,10 @@
         return;
       }
 
-      const pdfs = (data[regulation]?.[dept]?.[semester]?.[subject]?.pdfs) || [];
+      const deptNode = data[dept] || data[dept.toUpperCase()] || data[dept.toLowerCase()];
+      const semNode = deptNode?.[regulation]?.[semester];
+      const subjectNode = findSubjectNode(semNode, subject);
+      const pdfs = subjectNode?.pdfs || [];
 
       const grid = document.getElementById('pdf-grid');
       const empty = document.getElementById('empty');
