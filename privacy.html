@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         * {
@@ -783,6 +784,9 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         @media (min-width: 768px) {
@@ -796,8 +800,10 @@
         .footer-bottom p,
         .footer-bottom a {
             font-size: 14px;
-            color: var(--muted-foreground);
+            color: #94a3b8; /* match index footer color */
+            text-align: center;
         }
+        .footer-bottom i { color: var(--primary); }
 
         .footer-links {
             display: flex;
@@ -1082,11 +1088,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 LearnSkart / OpenNotes. All rights reserved.</p>
-            <!-- <div class="footer-links">
-                <a href="#">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
-            </div> -->
+            <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
         </div>
     </footer>
 
