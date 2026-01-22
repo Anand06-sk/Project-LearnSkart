@@ -80,6 +80,11 @@ header {
     color: #3d5a80;
 }
 
+.logo-img {
+    width: 24px;
+    height: 24px;
+}
+
 .back-btn {
     background: #ffffff;
     color: #3b82f6;
