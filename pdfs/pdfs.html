@@ -991,7 +991,7 @@
       const viewUrl = toDriveView(rawUrl);
       const name = escapeHtml(pdf.name || 'PDF file');
       return `
-        <div class="pdf-card">
+        <div class="pdf-card" data-view="${viewUrl}" role="link" tabindex="0">
           <div class="pdf-header">
             <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
             <div class="pdf-info">
@@ -1133,14 +1133,20 @@
       const deptNode = data[dept] || data[dept.toUpperCase()] || data[dept.toLowerCase()];
       const semNode = deptNode?.[regulation]?.[semester];
       const subjectNode = findSubjectNode(semNode, subject);
-      const targetNorm = normalizeSubjectName(subject);
-      let pdfs = subjectNode?.pdfs || [];
-      if (!pdfs.length && semNode) {
-        const matched = collectPdfsFromSem(semNode, targetNorm);
-        if (matched.length) {
-          pdfs = matched;
+      let pdfs = [];
+
+      // If a subject is specified, show ONLY that subject's PDFs.
+      if (subject) {
+        if (subjectNode?.pdfs?.length) {
+          pdfs = subjectNode.pdfs;
         } else {
-          pdfs = collectPdfsFromSem(semNode, ''); // list all from semester as last resort
+          showEmpty();
+          return;
+        }
+      } else {
+        // If no subject is provided, fall back to listing the entire semester.
+        if (semNode) {
+          pdfs = collectPdfsFromSem(semNode, '');
         }
       }
 
@@ -1158,6 +1164,23 @@
 
       pdfs.sort((a,b) => (a.name||'').localeCompare(b.name||''));
       grid.innerHTML = pdfs.map(p => createCardHTML(p)).join('');
+      // Make entire card clickable to open the view URL
+      grid.querySelectorAll('.pdf-card').forEach(card => {
+        const openView = () => {
+          const url = card.getAttribute('data-view');
+          if (url && url !== '#') window.open(url, '_blank', 'noopener');
+        };
+        card.addEventListener('click', (e) => {
+          if ((e.target instanceof Element) && e.target.closest('a')) return; // let buttons work
+          openView();
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openView();
+          }
+        });
+      });
       countBadge.textContent = pdfs.length;
     }
 
