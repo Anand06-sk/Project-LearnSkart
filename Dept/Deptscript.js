@@ -56,13 +56,13 @@ function searchNotes() {
   const regSelect = document.getElementById('reg');
   const semSelect = document.getElementById('sem');
 
-  if (!regSelect || !semSelect || !regSelect.value || !semSelect.value) {
+  const regVal = regSelect ? regSelect.value : '';
+  const semVal = semSelect ? semSelect.value : '';
+
+  if (!regVal || (!semVal && regVal !== '2025')) {
     showToast('Please select Regulation and Semester before searching.', 'error');
     return;
   }
-
-  const regVal = regSelect.value;
-  const semVal = semSelect.value;
 
   // Update top regulation badge and swap content areas
   const regInfo = document.getElementById('reg-info');
