@@ -806,6 +806,13 @@
             <p>Try searching for something else or change the regulation.</p>
         </div>
 
+        <div id="comingSoonState" class="empty-state hidden">
+            <div class="logo-icon" style="margin: 0 auto 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"><i data-lucide="clock"></i></div>
+            <h3 style="color: var(--primary);">Coming Soon!</h3>
+            <p style="font-size: 1rem; margin-top: 0.5rem;">The 2025 regulation question papers are currently being prepared.</p>
+            <p style="color: var(--muted); font-size: 0.875rem;">Please check back later or select the 2021 regulation for available papers.</p>
+        </div>
+
         <div id="grid" class="grid"></div>
     </main>
 
@@ -869,7 +876,7 @@
             }
         }
 
-        function renderTabs() {
+        function renderTabs(){
             const tabs = document.getElementById('deptTabs');
             tabs.innerHTML = Object.keys(universityData).map(dept => `
                 <button class="tab-btn ${selectedDept === dept ? 'active' : ''}" onclick="setDept('${dept}')">
@@ -892,6 +899,21 @@
             const grid = document.getElementById('grid');
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
+
+            // Check if 2025 regulation is selected and show coming soon state
+            if (selectedReg === '2025') {
+                document.getElementById('grid').classList.add('hidden');
+                document.getElementById('emptyState').classList.add('hidden');
+                document.getElementById('comingSoonState').classList.remove('hidden');
+                document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
+                document.getElementById('subjectCount').textContent = '0 Subjects';
+                lucide.createIcons();
+                return;
+            }
+
+            // Reset states for other regulations
+            document.getElementById('grid').classList.remove('hidden');
+            document.getElementById('comingSoonState').classList.add('hidden');
 
             Object.entries(data).forEach(([sem, items]) => {
                 if (selectedSem === 'All' || sem === selectedSem) {
