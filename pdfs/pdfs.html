@@ -929,7 +929,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 LearnSkart — OpenNotes. Helping you ace your exams! 🎓</p>
+    <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
   </footer>
 
   <script>
@@ -991,7 +991,7 @@
       const viewUrl = toDriveView(rawUrl);
       const name = escapeHtml(pdf.name || 'PDF file');
       return `
-        <div class="pdf-card">
+        <div class="pdf-card" data-view="${viewUrl}" role="link" tabindex="0">
           <div class="pdf-header">
             <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
             <div class="pdf-info">
@@ -1028,6 +1028,29 @@
       return s.toLowerCase().replace(/[^a-z0-9]/g, '');
     }
 
+    function normalizeSemester(sem) {
+      if (!sem) return '';
+      let s = String(sem).trim().toUpperCase();
+      const romanMap = { 'VIII':'8','VII':'7','VI':'6','V':'5','IV':'4','III':'3','II':'2','I':'1' };
+      const num = s.match(/\b([1-8])\b/);
+      if (num) return num[1];
+      const roman = s.match(/\b(VIII|VII|VI|V|IV|III|II|I)\b/);
+      if (roman) return romanMap[roman[1]];
+      const anyDigit = s.match(/([1-8])/);
+      if (anyDigit) return anyDigit[1];
+      return s;
+    }
+
+    function normalizeRegulation(reg) {
+      if (!reg) return '2021';
+      const s = String(reg);
+      const year = s.match(/(20\d{2})/);
+      if (year) return year[1];
+      // fallback to digits-only if present
+      const digits = s.replace(/\D/g, '');
+      return digits || '2021';
+    }
+
     function findSubjectNode(semNode, subject) {
       if (!semNode || !subject) return null;
       if (semNode[subject]) return semNode[subject];
@@ -1052,12 +1075,32 @@
       return null;
     }
 
+    function collectPdfsFromSem(semNode, targetNormalized) {
+      const out = [];
+      const keys = Object.keys(semNode || {});
+      for (const k of keys) {
+        const node = semNode[k];
+        if (!node || !Array.isArray(node.pdfs)) continue;
+        if (!targetNormalized) {
+          out.push(...node.pdfs);
+          continue;
+        }
+        const nk = normalizeSubjectName(k);
+        if (nk.includes(targetNormalized) || targetNormalized.includes(nk)) {
+          out.push(...node.pdfs);
+        }
+      }
+      return out;
+    }
+
     async function loadPDFs() {
       const deptRaw = getParam('dept');
       const dept = normalizeDept(deptRaw) || 'CSE';
-      const regulation = (getParam('regulation') || '2021').trim();
-      const semester = (getParam('semester') || '').trim();
-      const subjectRaw = getParam('subject');
+      const regulationRaw = (getParam('regulation') || getParam('reg') || '2021').trim();
+      const regulation = normalizeRegulation(regulationRaw);
+      const semesterRaw = (getParam('semester') || getParam('sem') || '').trim();
+      const semester = normalizeSemester(semesterRaw);
+      const subjectRaw = getParam('subject') || getParam('sub');
       const subject = subjectRaw ? safeDecode(subjectRaw).trim() : '';
 
       const backLink = document.getElementById('back-dept');
@@ -1078,6 +1121,11 @@
         data = await resp.json();
       } catch (err) {
         console.error('Failed to load data.json', err);
+        const empty = document.getElementById('empty');
+        const title = empty?.querySelector('h2');
+        const msg = empty?.querySelector('p');
+        if (title) title.textContent = 'Unable to load data';
+        if (msg) msg.innerHTML = 'I couldn\'t read data.json. If you\'re opening this file directly, please run a local server and open via http://. For VS Code, use the Live Server extension.';
         showEmpty();
         return;
       }
@@ -1085,7 +1133,22 @@
       const deptNode = data[dept] || data[dept.toUpperCase()] || data[dept.toLowerCase()];
       const semNode = deptNode?.[regulation]?.[semester];
       const subjectNode = findSubjectNode(semNode, subject);
-      const pdfs = subjectNode?.pdfs || [];
+      let pdfs = [];
+
+      // If a subject is specified, show ONLY that subject's PDFs.
+      if (subject) {
+        if (subjectNode?.pdfs?.length) {
+          pdfs = subjectNode.pdfs;
+        } else {
+          showEmpty();
+          return;
+        }
+      } else {
+        // If no subject is provided, fall back to listing the entire semester.
+        if (semNode) {
+          pdfs = collectPdfsFromSem(semNode, '');
+        }
+      }
 
       const grid = document.getElementById('pdf-grid');
       const empty = document.getElementById('empty');
@@ -1101,6 +1164,23 @@
 
       pdfs.sort((a,b) => (a.name||'').localeCompare(b.name||''));
       grid.innerHTML = pdfs.map(p => createCardHTML(p)).join('');
+      // Make entire card clickable to open the view URL
+      grid.querySelectorAll('.pdf-card').forEach(card => {
+        const openView = () => {
+          const url = card.getAttribute('data-view');
+          if (url && url !== '#') window.open(url, '_blank', 'noopener');
+        };
+        card.addEventListener('click', (e) => {
+          if ((e.target instanceof Element) && e.target.closest('a')) return; // let buttons work
+          openView();
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openView();
+          }
+        });
+      });
       countBadge.textContent = pdfs.length;
     }
 

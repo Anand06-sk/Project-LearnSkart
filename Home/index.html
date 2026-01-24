@@ -8,6 +8,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css" >
     <link rel="stylesheet" href="theme.css" >
+    <style>
+        .stats-section {
+            padding: 40px 0 20px 0;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #f0f9ff, #f8fafc);
+            border-radius: 15px;
+            padding: 40px 20px;
+            border: 2px solid #e2e8f0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stat-item {
+            text-align: center;
+            margin: 15px;
+            transition: transform 0.3s;
+        }
+        .stat-item:hover {
+            transform: scale(1.1);
+        }
+        .stat-item h4 {
+            font-size: 2.2rem;
+            color: #3b82f6;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        .stat-item .pop { 
+            transform: scale(1.06); 
+            transition: transform 0.5s ease; 
+        }
+        .stat-item p {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        /* Dark mode for stats */
+        body.dark-mode .stats {
+            background: linear-gradient(135deg, #1e40af15 0%, #3b82f615 100%);
+            border-color: rgba(96, 165, 250, 0.2);
+        }
+        body.dark-mode .stat-item h4 {
+            color: #60a5fa;
+        }
+        body.dark-mode .stat-item p {
+            color: #cbd5e1;
+        }
+        /* Responsive */
+        @media (max-width: 480px) {
+            .stats {
+                padding: 20px 10px;
+                gap: 10px;
+            }
+            .stat-item {
+                margin: 8px;
+                flex: 1 1 100px;
+            }
+            .stat-item h4 {
+                font-size: 1.5rem;
+            }
+            .stat-item p {
+                font-size: 0.75rem;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 640px) {
+            .stats {
+                padding: 25px 15px;
+            }
+            .stat-item h4 {
+                font-size: 1.8rem;
+            }
+            .stat-item p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
     <script>
       (function() {
         try {
@@ -129,6 +208,19 @@
         </div>
     </div>
 </section>
+
+<!-- -------------------- STATS SECTION -------------------- -->
+<section class="section stats-section">
+    <div class="container">
+        <div class="stats">
+            <div class="stat-item"><h4 data-target="6">0</h4><p>Departments</p></div>
+            <div class="stat-item"><h4 data-target="48">0</h4><p>Semesters</p></div>
+            <div class="stat-item"><h4 data-target="200" data-suffix="+">0</h4><p>Courses</p></div>
+            <div class="stat-item"><h4 data-target="100" data-suffix="%">0</h4><p>Curriculum Aligned</p></div>
+        </div>
+    </div>
+</section>
+
 <!-- -------------------- CONTACT SECTION -------------------- -->
 <section id="contact" class="section contact-section">
     <div class="section-header">
@@ -203,11 +295,64 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2025 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+        <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
     </div>
 </footer>
 
 <script src="./theme.js" defer></script>
 <script src="./script.js" defer></script>
+<script>
+// Animated counters for stats
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.stat-item h4[data-target]');
+    const duration = 1200; // ms total duration per counter
+
+    // Create intersection observer to trigger animation when stats come into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statsSection = entry.target;
+                const counters = statsSection.querySelectorAll('.stat-item h4[data-target]');
+                counters.forEach(animateCounter);
+                observer.unobserve(statsSection);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const start = 0;
+        let startTime = null;
+
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percent = Math.min(progress / duration, 1);
+            const eased = easeOutQuad(percent);
+            const value = Math.floor(start + (target - start) * eased);
+            el.textContent = value + (percent === 1 ? suffix : '');
+            // add pop animation
+            el.classList.add('pop');
+            setTimeout(() => el.classList.remove('pop'), 120);
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
+            } else {
+                // ensure exact final value
+                el.textContent = target + suffix;
+            }
+        }
+
+        window.requestAnimationFrame(step);
+    }
+
+    function easeOutQuad(t) { return t * (2 - t); }
+});
+</script>
 </body>
 </html>
