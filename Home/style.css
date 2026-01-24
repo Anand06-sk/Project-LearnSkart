@@ -299,6 +299,11 @@ header {
     color: var(--primary);
 }
 
+.logo-img {
+    width: 48px;
+    height: 48px;
+}
+
 .nav-menu {
     display: flex;
     gap: 30px;

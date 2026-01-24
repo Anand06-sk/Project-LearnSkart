@@ -77,7 +77,12 @@ header {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    color: #3d5a80;
+    color: #3b82f6;
+}
+
+.logo-img {
+    width: 48px;
+    height: 48px;
 }
 
 .back-btn {

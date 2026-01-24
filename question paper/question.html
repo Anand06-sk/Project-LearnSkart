@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnSkart - Previous Question Papers</title>
-    
+    <link rel="icon" href="../favicon (2)/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -58,7 +58,8 @@
             background: var(--primary); color: white;
             display: flex; align-items: center; justify-content: center;
         }
-        .logo-text h1 { font-size: 1.25rem; font-weight: 700; line-height: 1; }
+        .logo-img { width: 48px; height: 48px; }
+        .logo-text h1 { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; line-height: 1; color: #3b82f6; }
         .logo-text p { font-size: 10px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
         
         .nav-links { display: flex; align-items: center; gap: 1.5rem; }
@@ -204,7 +205,7 @@
             }
 
             .logo-text h1 {
-                font-size: 14px;
+                font-size: 20px;
             }
 
             .logo-text p {
@@ -418,7 +419,7 @@
             }
 
             .logo-text h1 {
-                font-size: 16px;
+                font-size: 22px;
             }
 
             .logo-text p {
@@ -598,7 +599,7 @@
             }
 
             .logo-text h1 {
-                font-size: 18px;
+                font-size: 24px;
             }
 
             .logo-text p {
@@ -726,7 +727,7 @@
             }
 
             .logo-text h1 {
-                font-size: 14px;
+                font-size: 20px;
             }
         }
 
@@ -750,7 +751,7 @@
     <nav class="nav">
         <div class="container nav-inner">
             <div class="logo-wrap">
-                <div class="logo-icon"><i data-lucide="book-open"></i></div>
+                <div class="logo-icon"><img src="../favicon%20(2)/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
                 <div class="logo-text">
                     <h1>LearnSkart</h1>
                     <p>Question Papers</p>
@@ -806,12 +807,19 @@
             <p>Try searching for something else or change the regulation.</p>
         </div>
 
+        <div id="comingSoonState" class="empty-state hidden">
+            <div class="logo-icon" style="margin: 0 auto 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"><i data-lucide="clock"></i></div>
+            <h3 style="color: var(--primary);">Coming Soon!</h3>
+            <p style="font-size: 1rem; margin-top: 0.5rem;">The 2025 regulation question papers are currently being prepared.</p>
+            <p style="color: var(--muted); font-size: 0.875rem;">Please check back later or select the 2021 regulation for available papers.</p>
+        </div>
+
         <div id="grid" class="grid"></div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><i data-lucide="graduation-cap"></i> LearnSkart</div>
+            <div class="footer-logo"><img src="../favicon%20(2)/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
             <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Designed to help students excel by providing easy access to academic resources.</p>
             <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">© <span id="year"></span> LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</div>
         </div>
@@ -869,7 +877,7 @@
             }
         }
 
-        function renderTabs() {
+        function renderTabs(){
             const tabs = document.getElementById('deptTabs');
             tabs.innerHTML = Object.keys(universityData).map(dept => `
                 <button class="tab-btn ${selectedDept === dept ? 'active' : ''}" onclick="setDept('${dept}')">
@@ -892,6 +900,21 @@
             const grid = document.getElementById('grid');
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
+
+            // Check if 2025 regulation is selected and show coming soon state
+            if (selectedReg === '2025') {
+                document.getElementById('grid').classList.add('hidden');
+                document.getElementById('emptyState').classList.add('hidden');
+                document.getElementById('comingSoonState').classList.remove('hidden');
+                document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
+                document.getElementById('subjectCount').textContent = '0 Subjects';
+                lucide.createIcons();
+                return;
+            }
+
+            // Reset states for other regulations
+            document.getElementById('grid').classList.remove('hidden');
+            document.getElementById('comingSoonState').classList.add('hidden');
 
             Object.entries(data).forEach(([sem, items]) => {
                 if (selectedSem === 'All' || sem === selectedSem) {
