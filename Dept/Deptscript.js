@@ -70,13 +70,18 @@ function searchNotes() {
 
   const content2021 = document.getElementById('content-2021');
   const content2025 = document.getElementById('content-2025');
+  const comingSoon = document.getElementById('coming-soon');
   if (regVal === '2025') {
     if (content2021) content2021.style.display = 'none';
-    if (content2025) content2025.style.display = 'flex';
-  } else {
-    if (content2021) content2021.style.display = 'flex';
     if (content2025) content2025.style.display = 'none';
+    if (comingSoon) comingSoon.classList.remove('hidden');
+    showToast('2025 regulation materials are coming soon.', 'success');
+    return;
   }
+
+  if (comingSoon) comingSoon.classList.add('hidden');
+  if (content2021) content2021.style.display = 'flex';
+  if (content2025) content2025.style.display = 'none';
 
   // Find the target section inside the visible content area
   const containerId = regVal === '2025' ? 'content-2025' : 'content-2021';
