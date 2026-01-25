@@ -381,6 +381,10 @@ body.dark-mode .search-btn:hover {
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.06);
 }
 
+.empty-state.hidden {
+    display: none !important;
+}
+
 .empty-state i {
     font-size: 56px;
     color: #3b82f6;

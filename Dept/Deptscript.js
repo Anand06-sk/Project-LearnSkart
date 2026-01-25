@@ -6,6 +6,23 @@
     // Default to 2021 if nothing selected
     if (!regSelect.value) regSelect.value = '2021';
     if (regInfo) regInfo.textContent = `Current Regulation: ${regSelect.value}`;
+      const content2021 = document.getElementById('content-2021');
+      const content2025 = document.getElementById('content-2025');
+      const comingSoon = document.getElementById('coming-soon');
+
+      function applyRegView(regVal) {
+        if (regVal === '2025') {
+          if (content2021) content2021.style.display = 'none';
+          if (content2025) content2025.style.display = 'none';
+          if (comingSoon) comingSoon.classList.remove('hidden');
+        } else {
+          if (comingSoon) comingSoon.classList.add('hidden');
+          if (content2021) content2021.style.display = 'flex';
+          if (content2025) content2025.style.display = 'none';
+        }
+
+        if (regInfo) regInfo.textContent = `Current Regulation: ${regVal || '2021'}`;
+      }
 
     // Update on change (visual only). Actual application occurs when Search is clicked.
     regSelect.addEventListener('change', function() {
@@ -19,7 +36,10 @@
         regSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
         regSelect.style.background = '#ffffff';
       }, 700);
+
+        applyRegView(regSelect.value);
     });
+      applyRegView(regSelect.value);
   }
 })();
 
