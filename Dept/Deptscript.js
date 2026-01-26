@@ -11,11 +11,8 @@
       const comingSoon = document.getElementById('coming-soon');
 
       function applyRegView(regVal) {
-        if (regVal === '2025') {
-          if (content2021) content2021.style.display = 'none';
-          if (content2025) content2025.style.display = 'none';
-          if (comingSoon) comingSoon.classList.remove('hidden');
-        } else {
+        // Only update the info display, don't show coming soon until search is clicked
+        if (regVal === '2021' || regVal === '2020') {
           if (comingSoon) comingSoon.classList.add('hidden');
           if (content2021) content2021.style.display = 'flex';
           if (content2025) content2025.style.display = 'none';
