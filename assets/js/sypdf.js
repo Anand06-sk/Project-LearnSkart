@@ -53,7 +53,7 @@
 
         let data;
         try {
-          const resp = await fetch('sydata.json', { cache: 'no-store' });
+          const resp = await fetch('../assets/data/sydata.json', { cache: 'no-store' });
           if (!resp.ok) throw new Error('Failed to load demo.json');
           data = await resp.json();
         } catch (err) {
@@ -176,7 +176,7 @@
         const card = document.createElement('div');
         card.className = 'pdf-card';
         const header = document.createElement('div'); header.className = 'pdf-header';
-        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-book"></i></div>`;
+        header.innerHTML = `<div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>`;
         const info = document.createElement('div'); info.className = 'pdf-info';
         const name = document.createElement('div'); name.className = 'pdf-name'; name.textContent = title;
         const meta = document.createElement('div'); meta.className = 'pdf-meta'; meta.textContent = `${dept} / Regulation ${selectedReg}`;

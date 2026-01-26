@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer | LearnSkart</title>
-    <link rel="icon" type="image/svg+xml" href="favicon%20(2)/favicon.svg">
-    <link rel="apple-touch-icon" href="favicon%20(2)/apple-touch-icon.png">
-    <link rel="manifest" href="favicon%20(2)/site.webmanifest">
+    <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/icons/site.webmanifest">
     <meta name="description" content="Disclaimer for LearnSkart — educational content usage terms and legal information.">
     <meta property="og:title" content="Disclaimer | LearnSkart">
     <meta property="og:description" content="Disclaimer for LearnSkart — educational content usage terms and legal information.">
@@ -22,25 +22,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="disclaimer.css">
+        <link rel="stylesheet" href="../assets/css/disclaimer.css">
+        <link rel="stylesheet" href="../assets/css/theme.css">
+        <script>
+            (function() {
+                try {
+                    var theme = localStorage.getItem('site-theme') || 'light';
+                    if (theme === 'dark') {
+                        document.documentElement.classList.add('dark');
+                        document.body.classList.add('dark-mode');
+                    }
+                } catch(e) {}
+            })();
+        </script>
 </head>
 <body>
 
     <!-- Navbar -->
     <nav>
         <div class="nav-content">
-            <a href="#" class="nav-logo">
-                <img src="favicon%20(2)/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
                 <span>LearnSkart</span>
             </a>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="../Home/index.html">Home</a>
-                    <a href="../Home/about.html">About</a>
-                    <a href="../Home/#contact">Contact</a>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="../index.html#contact">Contact</a>
                 </div>
+                <button class="theme-toggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -164,7 +179,7 @@
         <div class="footer-grid">
             <div class="footer-section">
                 <div class="logo-brand">
-                    <img src="favicon%20(2)/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                    <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
                     <span>LearnSkart</span>
                 </div>
                 <p>Your one-stop destination for academic excellence. We provide high-quality educational resources for everyone.</p>
@@ -173,10 +188,10 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="../Home/index.html">Home</a></li>
-                    <li><a href="../Home/about.html">About</a></li>
-                    <li><a href="../Home/#contact">Contact</a></li>
-                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
 
@@ -198,6 +213,7 @@
         </div>
     </footer>
 
-    <script src="disclaimer.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/disclaimer.js"></script>
 </body>
 </html>

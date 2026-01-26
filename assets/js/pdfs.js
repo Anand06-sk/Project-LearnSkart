@@ -19,14 +19,14 @@
     function deptPath(code) {
       const c = normalizeDept(code);
       const map = {
-        'CSE': '../Dept/cse.html',
-        'ECE': '../Dept/ece.html',
-        'EEE': '../Dept/eee.Html',
-        'MECH': '../Dept/mech.html',
-        'CIVIL': '../Dept/civil.html',
-        'IT': '../Dept/it.html'
+        'CSE': 'cse.html',
+        'ECE': 'ece.html',
+        'EEE': 'eee.html',
+        'MECH': 'mech.html',
+        'CIVIL': 'civil.html',
+        'IT': 'it.html'
       };
-      return map[c] || '../Dept/cse.html';
+      return map[c] || 'cse.html';
     }
 
     function safeDecode(raw) {
@@ -182,7 +182,7 @@
 
       let data;
       try {
-        const resp = await fetch('data.json', {cache:'no-store'});
+        const resp = await fetch('../assets/data/data.json', {cache:'no-store'});
         if (!resp.ok) throw new Error('Could not load data.json');
         data = await resp.json();
       } catch (err) {

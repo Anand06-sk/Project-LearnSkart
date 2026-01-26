@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA & CGPA Calculator - LearnSkart</title>
-    <link rel="icon" type="image/svg+xml" href="favicon%20(2)/favicon.svg">
-    <link rel="apple-touch-icon" href="favicon%20(2)/apple-touch-icon.png">
-    <link rel="manifest" href="favicon%20(2)/site.webmanifest">
+     <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/icons/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="../assets/css/calculator.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+        <script>
+            (function() {
+                try {
+                    var theme = localStorage.getItem('site-theme') || 'light';
+                    if (theme === 'dark') {
+                        document.documentElement.classList.add('dark');
+                        document.body.classList.add('dark-mode');
+                    }
+                } catch(e) {}
+            })();
+        </script>
 </head>
 <body>
 
     <header>
-        <a href="Home/index.html" class="logo">
-            <img src="favicon%20(2)/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+        <a href="../index.html" class="logo">
+            <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
             LearnSkart
         </a>
         <div class="back-link">
-            <a class="btn btn-outline" href="Home/index.html">
+                        <button class="theme-btn theme-toggle" title="Toggle Dark Mode" style="margin-right: 1rem;">
+                            <i class="fas fa-moon"></i>
+                        </button>
+            <a class="btn btn-outline" href="../index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
                 Back to Home
             </a>
@@ -164,6 +179,7 @@
     <footer>
         <p>&copy; <span id="year"></span> LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
     </footer>
-    <script src="calculator.js"></script>
+        <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/calculator.js"></script>
 </body>
 </html>
