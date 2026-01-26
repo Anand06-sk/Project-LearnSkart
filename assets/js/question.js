@@ -22,7 +22,7 @@
         async function init() {
             try {
                 // Fetch your JSON file
-                const response = await fetch('qn.json');
+                const response = await fetch('../assets/data/qn.json');
                 universityData = await response.json();
                 
                 document.getElementById('year').textContent = new Date().getFullYear();

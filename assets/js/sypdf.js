@@ -53,7 +53,7 @@
 
         let data;
         try {
-          const resp = await fetch('sydata.json', { cache: 'no-store' });
+          const resp = await fetch('../assets/data/sydata.json', { cache: 'no-store' });
           if (!resp.ok) throw new Error('Failed to load demo.json');
           data = await resp.json();
         } catch (err) {

@@ -272,7 +272,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         
                         // Build proper URL with query parameters
                         const subjectEncoded = encodeURIComponent(subjectName);
-                        const baseUrl = `../pdfs/pdfs.html?regulation=${regYear}&semester=${semNum}&subject=${subjectEncoded}`;
+                        const baseUrl = `pages/pdfs.html?regulation=${regYear}&semester=${semNum}&subject=${subjectEncoded}`;
                         
                         // Check if this is a common semester 1 subject
                         const isCommonSem1 = semNum === '1' && commonSem1Subjects.some(cs => 
@@ -379,9 +379,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     async function buildIndex() {
         const SOURCES = [
-            { url: '../pdfs/data.json', type: 'Notes' },
-            { url: '../syllabus/sydata.json', type: 'Syllabus' },
-            { url: '../question%20paper/qn.json', type: 'Question Paper' }
+            { url: 'assets/data/data.json', type: 'Notes' },
+            { url: 'assets/data/sydata.json', type: 'Syllabus' },
+            { url: 'assets/data/qn.json', type: 'Question Paper' }
         ];
         try {
             const results = await Promise.allSettled(
@@ -398,12 +398,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Add department pages with multiple entry points
             const deptMapping = {
-                'CSE': { name: 'Computer Science & Engineering', url: '../Dept/cse.html' },
-                'ECE': { name: 'Electronics & Communication', url: '../Dept/ece.html' },
-                'EEE': { name: 'Electrical & Electronics Engineering', url: '../Dept/eee.Html' },
-                'MECH': { name: 'Mechanical Engineering', url: '../Dept/mech.html' },
-                'CIVIL': { name: 'Civil Engineering', url: '../Dept/civil.html' },
-                'IT': { name: 'Information Technology', url: '../Dept/it.html' }
+                'CSE': { name: 'Computer Science & Engineering', url: 'pages/cse.html' },
+                'ECE': { name: 'Electronics & Communication', url: 'pages/ece.html' },
+                'EEE': { name: 'Electrical & Electronics Engineering', url: 'pages/eee.html' },
+                'MECH': { name: 'Mechanical Engineering', url: 'pages/mech.html' },
+                'CIVIL': { name: 'Civil Engineering', url: 'pages/civil.html' },
+                'IT': { name: 'Information Technology', url: 'pages/it.html' }
             };
             
             Object.entries(deptMapping).forEach(([code, info]) => {
@@ -455,7 +455,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                             const subjectEncoded = encodeURIComponent(subjectName);
                             all.push({
                                 label: `${subjectName} (${dept} - Sem ${semNum})`,
-                                url: `../pdfs/pdfs.html?regulation=${regYear}&semester=${semNum}&subject=${subjectEncoded}`,
+                                url: `pages/pdfs.html?regulation=${regYear}&semester=${semNum}&subject=${subjectEncoded}`,
                                 type: 'Notes',
                                 subject: subjectName,
                                 dept: dept,
@@ -476,7 +476,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     // Add Notes entry
                     all.push({
                         label: `${entry.code} — ${entry.subject}${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
-                        url: `../pdfs/pdfs.html?regulation=${entry.reg}&semester=${entry.sem}&subject=${subjectEncoded}`,
+                        url: `pages/pdfs.html?regulation=${entry.reg}&semester=${entry.sem}&subject=${subjectEncoded}`,
                         type: 'Notes',
                         subject: entry.subject,
                         dept: dept === 'ALL' ? undefined : dept,

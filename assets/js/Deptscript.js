@@ -172,7 +172,7 @@ function searchNotes() {
         });
 
         // Navigate to pdfs page
-        window.location.href = '../pdfs/pdfs.html?' + params.toString();
+        window.location.href = 'pdfs.html?' + params.toString();
       });
     });
   }
