@@ -170,6 +170,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 Thanks to these wonderful people who have contributed to this project:
 
 ### Main Contributors
+- [@Anand06-sk](https://github.com/Anand06-sk)
 - [@AnuN2006](https://github.com/AnuN2006)
 
 ---
