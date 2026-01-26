@@ -6,6 +6,20 @@
     // Default to 2021 if nothing selected
     if (!regSelect.value) regSelect.value = '2021';
     if (regInfo) regInfo.textContent = `Current Regulation: ${regSelect.value}`;
+      const content2021 = document.getElementById('content-2021');
+      const content2025 = document.getElementById('content-2025');
+      const comingSoon = document.getElementById('coming-soon');
+
+      function applyRegView(regVal) {
+        // Only update the info display, don't show coming soon until search is clicked
+        if (regVal === '2021' || regVal === '2020') {
+          if (comingSoon) comingSoon.classList.add('hidden');
+          if (content2021) content2021.style.display = 'flex';
+          if (content2025) content2025.style.display = 'none';
+        }
+
+        if (regInfo) regInfo.textContent = `Current Regulation: ${regVal || '2021'}`;
+      }
 
     // Update on change (visual only). Actual application occurs when Search is clicked.
     regSelect.addEventListener('change', function() {
@@ -19,7 +33,10 @@
         regSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
         regSelect.style.background = '#ffffff';
       }, 700);
+
+        applyRegView(regSelect.value);
     });
+      applyRegView(regSelect.value);
   }
 })();
 
