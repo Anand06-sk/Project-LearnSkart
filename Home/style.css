@@ -43,6 +43,12 @@ body.dark-mode header {
     border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
+body.dark-mode .nav-menu {
+    background: rgba(30, 41, 59, 0.9);
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 body.dark-mode .logo {
     color: #60a5fa;
 }
@@ -304,9 +310,29 @@ header {
     height: 48px;
 }
 
+@media (max-width: 767px) {
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
 .nav-menu {
     display: flex;
     gap: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
@@ -1020,6 +1046,11 @@ footer {
         font-size: 18px;
     }
 
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
     .hero {
         flex-direction: column;
         padding: 30px 16px;
@@ -1271,6 +1302,11 @@ footer {
 
     .logo i {
         font-size: 16px;
+    }
+
+    .logo-img {
+        width: 36px;
+        height: 36px;
     }
 
     .hero {
