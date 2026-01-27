@@ -29,7 +29,7 @@ LearnSkart is an educational resource hub designed for engineering students to a
 ## 📁 Folder Structure
 
 ```
-Project-OpenNotes/
+Project-LearnSkart/
 │
 ├── index.html                 # Home page
 ├── README.md                  # Project documentation
