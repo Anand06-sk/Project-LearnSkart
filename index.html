@@ -236,7 +236,13 @@
             </div>
             <h3>Email Us</h3>
             <p>For inquiries, support, or feedback</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=learnskart@gmail.com" class="contact-email" target="_blank" rel="noopener">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=learnskart@gmail.com"
+               class="contact-email"
+               target="_blank"
+               rel="noopener"
+               data-desktop-href="https://mail.google.com/mail/?view=cm&fs=1&to=learnskart@gmail.com"
+               data-mobile-href="mailto:learnskart@gmail.com"
+               aria-label="Email learnskart@gmail.com">
                 <i class="fas fa-envelope"></i>
                 learnskart@gmail.com
             </a>
@@ -301,6 +307,33 @@
 
 <script src="assets/js/theme.js" defer></script>
 <script src="assets/js/script.js" defer></script>
+<script>
+// Prefer native mail app on mobile/tablet; keep Gmail compose on desktop
+document.addEventListener('DOMContentLoaded', () => {
+    const emailLink = document.querySelector('.contact-email');
+    if (!emailLink) return;
+
+    const isMobileLike = () => {
+        const ua = navigator.userAgent || '';
+        const touchCapable = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+        const mobileUA = /android|iphone|ipad|ipod|windows phone/i.test(ua);
+        const narrowScreen = Math.max(screen.width, screen.height) <= 900;
+        return mobileUA || (touchCapable && narrowScreen);
+    };
+
+    const mobileHref = emailLink.getAttribute('data-mobile-href');
+    const desktopHref = emailLink.getAttribute('data-desktop-href');
+    const preferMobile = isMobileLike();
+
+    emailLink.setAttribute('href', preferMobile && mobileHref ? mobileHref : desktopHref);
+
+    // Remove target on mobile so it opens in the mail app instead of a new tab
+    if (preferMobile) {
+        emailLink.removeAttribute('target');
+        emailLink.removeAttribute('rel');
+    }
+});
+</script>
 <script>
 // Animated counters for stats
 document.addEventListener('DOMContentLoaded', () => {
