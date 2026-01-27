@@ -102,9 +102,7 @@ The platform uses a simple yet effective architecture:
 
 ## 🌐 Live Website
 
-**GitHub Pages**: [https://your-username.github.io/Project-OpenNotes/](https://your-username.github.io/Project-OpenNotes/)
-
-> Replace `your-username` with your actual GitHub username
+**GitHub Pages**: [https://anand06-sk.github.io/Project-LearnSkart/](https://anand06-sk.github.io/Project-LearnSkart/)
 
 ## 🚀 Usage Instructions
 
@@ -119,8 +117,8 @@ The platform uses a simple yet effective architecture:
 ### For Developers:
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/Project-OpenNotes.git
-   cd Project-OpenNotes
+   git clone https://github.com/anand06-sk/Project-LearnSkart.git
+   cd Project-LearnSkart
    ```
 
 2. **Run locally**:
@@ -159,14 +157,22 @@ This platform is created **solely for educational purposes** to help engineering
 
 - All PDF materials are hosted on Google Drive and are publicly available
 - **Copyright**: Ownership of all documents remains with the original authors, publishers, and educational institutions
-- If you are a copyright holder and wish to have content removed, please [open an issue](https://github.com/your-username/Project-OpenNotes/issues) or contact the repository maintainer
+- If you are a copyright holder and wish to have content removed, please [open an issue](https://github.com/anand06-sk/Project-LearnSkart/issues) or contact the repository maintainer
 - This project does not claim ownership of any educational content shared on the platform
 - Users are encouraged to respect copyright laws and use materials responsibly
 
 ## 📧 Contact & Contributions
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/Project-OpenNotes/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/anand06-sk/Project-LearnSkart/issues).
+
+## 👥 Contributors
+
+Thanks to these wonderful people who have contributed to this project:
+
+### Main Contributors
+- [@Anand06-sk](https://github.com/Anand06-sk)
+- [@AnuN2006](https://github.com/AnuN2006)
 
 ---
 
-**Made with ❤️ for engineering students** | [LearnSkart](https://github.com/your-username/Project-OpenNotes)
+**Made with ❤️ for engineering students** | [LearnSkart](https://github.com/anand06-sk/Project-LearnSkart)
