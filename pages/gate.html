@@ -12,33 +12,34 @@
         }
 
         :root {
-            --primary-color: #1e3c72;
-            --secondary-color: #2a5298;
-            --accent-color: #00d4ff;
-            --text-dark: #1a1a1a;
+            --primary-color: #3b82f6;
+            --secondary-color: #2563eb;
+            --accent-color: #06b6d4;
+            --text-dark: #1f2937;
             --text-light: #ffffff;
-            --background-light: #f5f7fa;
-            --background-dark: #0f1419;
-            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --background-light: #f8fafc;
+            --background-dark: #0f172a;
+            --card-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
             --transition: all 0.3s ease;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--background-light) 0%, #e8f1f8 100%);
-            color: var(--text-dark);
+            background: #ffffff;
+            color: #1f2937;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         /* Navigation Bar */
         nav {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: #ffffff;
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-bottom: 2px solid #e5e7eb;
         }
 
         .nav-container {
@@ -50,7 +51,7 @@
         }
 
         .logo {
-            color: var(--text-light);
+            color: #1e3a8a;
             font-size: 1.8rem;
             font-weight: bold;
             text-decoration: none;
@@ -80,13 +81,13 @@
         }
 
         .home-btn {
-            background: rgba(0, 212, 255, 0.15);
-            border: 2px solid var(--accent-color);
+            background: #eff6ff;
+            border: 2px solid #3b82f6;
             padding: 0.6rem 0.8rem;
             border-radius: 8px;
             font-size: 1.3rem;
             text-decoration: none;
-            color: var(--accent-color);
+            color: #1e40af;
             transition: var(--transition);
             display: flex;
             align-items: center;
@@ -95,16 +96,16 @@
         }
 
         .home-btn:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
+            background: #3b82f6;
+            color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--text-light);
+            background: #ffffff;
+            color: #1f2937;
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
@@ -112,27 +113,11 @@
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 500px;
-            height: 500px;
-            background: rgba(0, 212, 255, 0.1);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
+            display: none;
         }
 
         .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -30%;
-            width: 400px;
-            height: 400px;
-            background: rgba(0, 212, 255, 0.08);
-            border-radius: 50%;
-            animation: float 10s ease-in-out infinite reverse;
+            display: none;
         }
 
         @keyframes float {
@@ -163,23 +148,24 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 800;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            color: #1e3a8a;
+            text-shadow: none;
         }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            opacity: 0.95;
+            opacity: 1;
             line-height: 1.8;
+            color: #4b5563;
         }
 
         .gate-info {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
             margin: 2rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid #e5e7eb;
             animation: slideUp 0.8s ease-out 0.2s both;
         }
 
@@ -197,6 +183,7 @@
         .gate-info h2 {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
+            color: #1e3a8a;
         }
 
         .gate-info-grid {
@@ -208,21 +195,23 @@
         }
 
         .info-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-color);
+            background: #eff6ff;
+            padding: 1.25rem;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
         }
 
         .info-item h3 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
-            color: var(--accent-color);
+            color: #1e40af;
+            font-weight: 700;
         }
 
         .info-item p {
             font-size: 0.95rem;
-            opacity: 0.9;
+            color: #374151;
+            line-height: 1.5;
         }
 
         /* Search Bar */
@@ -237,12 +226,30 @@
 
         .search-bar {
             display: flex;
-            gap: 1rem;
-            background: var(--text-light);
-            padding: 1rem;
+            gap: 0.5rem;
+            background: #ffffff;
+            padding: 1rem 1.5rem;
             border-radius: 12px;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+            border: 2px solid transparent;
+            background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(90deg, #3b82f6, #06b6d4, #3b82f6);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
             align-items: center;
+            animation: searchBarGlow 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes searchBarGlow {
+            0% {
+                box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.2);
+            }
+            50% {
+                box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2), 0 0 30px rgba(6, 182, 212, 0.3);
+            }
+            100% {
+                box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.2);
+            }
         }
 
         .search-input-wrapper {
@@ -250,7 +257,7 @@
             position: relative;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
 
         .search-icon {
@@ -265,11 +272,14 @@
             font-size: 1rem;
             padding: 0.5rem;
             background: transparent;
-            color: var(--text-dark);
+            color: #1f2937;
+            text-align: left;
         }
 
         .search-input::placeholder {
             color: #999;
+            font-size: 0.85rem;
+            text-align: left;
         }
 
         .clear-btn {
@@ -290,7 +300,7 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
 
         /* Section Headers */
@@ -302,7 +312,7 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: #1e3a8a;
             margin-bottom: 0.5rem;
             font-weight: 700;
             position: relative;
@@ -322,28 +332,33 @@
         }
 
         .section-header p {
-            color: #666;
+            color: #6b7280;
             font-size: 1.1rem;
             margin-top: 1rem;
+            font-weight: 500;
         }
 
         /* Subject Cards Grid */
         .subjects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
         .subject-card {
-            background: var(--text-light);
-            border-radius: 12px;
+            background: #ffffff;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             animation: scaleIn 0.5s ease-out forwards;
             opacity: 0;
+            text-align: center;
+            padding: 1.5rem 1.25rem;
+            position: relative;
+            border: 1px solid #f3f4f6;
         }
 
         @keyframes scaleIn {
@@ -366,115 +381,60 @@
         .subject-card:nth-child(n+7) { animation-delay: 0.8s; }
 
         .subject-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+            border-color: #dbeafe;
         }
 
-        .subject-card-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        .subject-icon {
+            font-size: 2.4rem;
+            margin-bottom: 0.65rem;
+            display: inline-block;
+            animation: floatRotate 4s ease-in-out infinite;
+        }
+
+        .subject-code-badge {
+            display: inline-block;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
             color: var(--text-light);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .subject-card-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: rgba(0, 212, 255, 0.1);
-            border-radius: 50%;
-            transform: translate(30%, -30%);
-        }
-
-        .subject-card-header h3 {
-            font-size: 1.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
             margin-bottom: 0.5rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
         }
 
-        .subject-code {
-            color: var(--accent-color);
+        .subject-title {
             font-size: 0.95rem;
-            font-weight: 600;
-            position: relative;
-            z-index: 2;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
         }
 
-        .subject-card-content {
-            padding: 1.5rem;
+        .subject-meta {
+            color: #6b7280;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
         }
 
-        .subject-stats {
+        .subject-tags {
             display: flex;
-            justify-content: space-around;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .stat-label {
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-            text-transform: uppercase;
-        }
-
-        .subject-description {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .view-papers-btn {
-            width: 100%;
-            padding: 0.8rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--text-light);
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+        .subject-tag {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .view-papers-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 212, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .view-papers-btn:hover::before {
-            left: 100%;
-        }
-
-        .view-papers-btn:hover {
-            transform: translateX(2px);
+            border: 1px solid #bfdbfe;
         }
 
         /* No Results */
@@ -482,11 +442,13 @@
             text-align: center;
             padding: 3rem 2rem;
             opacity: 0;
+            display: none;
             animation: slideUp 0.5s ease-out forwards;
         }
 
         .no-results.show {
             opacity: 1;
+            display: block;
         }
 
         .no-results-icon {
@@ -495,8 +457,9 @@
         }
 
         .no-results h3 {
-            color: var(--primary-color);
+            color: #1e3a8a;
             margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
 
         /* Filter Tags */
@@ -510,13 +473,13 @@
         }
 
         .filter-tag {
-            background: #f0f4f8;
-            color: var(--primary-color);
+            background: #eff6ff;
+            color: #1e40af;
             padding: 0.4rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            border: 1px solid #ddd;
+            border: 1px solid #bfdbfe;
             cursor: pointer;
             transition: var(--transition);
         }
@@ -529,8 +492,8 @@
 
         /* Footer */
         footer {
-            background: var(--primary-color);
-            color: var(--text-light);
+            background: #1e3a8a;
+            color: #ffffff;
             text-align: center;
             padding: 2.5rem 2rem;
             margin-top: 3rem;
@@ -556,11 +519,41 @@
             }
 
             .subjects-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 1rem;
+            }
+
+            .subject-card {
+                padding: 1rem 0.75rem;
+            }
+
+            .subject-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .subject-title {
+                font-size: 0.8rem;
+            }
+
+            .subject-meta {
+                font-size: 0.65rem;
+                margin-bottom: 0.5rem;
             }
 
             .search-bar {
-                flex-direction: column;
+                padding: 0.7rem 1rem;
+                gap: 0.3rem;
+            }
+
+            .search-input {
+                text-align: left;
+                font-size: 0.9rem;
+            }
+
+            .search-input::placeholder {
+                text-align: left;
+                font-size: 0.75rem;
             }
 
             .gate-info-grid {
@@ -577,6 +570,89 @@
 
             .view-toggle-btn {
                 flex: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.6rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+                gap: 0.5rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .logo-text {
+                gap: 0.1rem;
+            }
+
+            .logo-text span:first-child {
+                font-size: 1.2rem;
+            }
+
+            .logo-text span:last-child {
+                font-size: 0.6rem;
+            }
+
+            .home-btn {
+                padding: 0.5rem 0.6rem;
+                font-size: 1rem;
+                border: 1.5px solid #3b82f6;
+            }
+
+            .home-btn span {
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .subjects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 0.75rem;
+            }
+
+            .subject-card {
+                padding: 0.85rem 0.6rem;
+            }
+
+            .subject-icon {
+                font-size: 1.8rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .subject-code-badge {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.6rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .subject-title {
+                font-size: 0.7rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .subject-meta {
+                font-size: 0.6rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .subject-tag {
+                padding: 0.15rem 0.4rem;
+                font-size: 0.55rem;
             }
         }
 
@@ -611,6 +687,364 @@
             100% { transform: scale(1); }
         }
 
+        @keyframes floatRotate {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-12px) rotate(4deg);
+            }
+            50% {
+                transform: translateY(-6px) rotate(-3deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(3deg);
+            }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 50;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-height: 80vh;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 60;
+            overflow-y: auto;
+            background: #1e293b;
+            border-radius: 24px 24px 0 0;
+            padding: 2rem;
+        }
+
+        .modal-content.active {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+            color: var(--accent-color);
+        }
+
+        .modal-subject-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(59, 130, 246, 0.08);
+            border-radius: 16px;
+            border-left: 4px solid #06b6d4;
+        }
+
+        .modal-subject-icon {
+            font-size: 3.5rem;
+            animation: floatRotate 4s ease-in-out infinite;
+        }
+
+        .modal-subject-details h2 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .modal-subject-code {
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .modal-subject-details p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        .pyq-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pyq-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.4s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pyq-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #06b6d4;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+        }
+
+        .pyq-item-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pyq-item-name {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pyq-item-action {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .pyq-item:hover .pyq-item-action {
+            opacity: 1;
+        }
+
+        .scroll-container {
+            overflow-y: auto;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Mobile Modal Adjustments */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-height: 70vh;
+                padding: 1.25rem;
+                border-radius: 20px 20px 0 0;
+            }
+
+            .modal-header {
+                margin-bottom: 1.25rem;
+                padding-bottom: 1rem;
+            }
+
+            .modal-title {
+                font-size: 1.2rem;
+            }
+
+            .modal-close {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            .modal-subject-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .modal-subject-icon {
+                font-size: 2.8rem;
+            }
+
+            .modal-subject-details h2 {
+                font-size: 1.4rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .modal-subject-details p {
+                font-size: 0.85rem;
+            }
+
+            .pyq-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .pyq-item {
+                padding: 1rem;
+            }
+
+            .pyq-item-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .pyq-item-name {
+                font-size: 0.9rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .pyq-item-action {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-bar {
+                padding: 0.6rem 0.8rem;
+                gap: 0.25rem;
+            }
+
+            .search-input {
+                font-size: 0.85rem;
+            }
+
+            .search-input::placeholder {
+                font-size: 0.7rem;
+            }
+
+            .modal-content {
+                max-height: 65vh;
+                padding: 1rem;
+            }
+
+            .modal-header {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            .modal-title {
+                font-size: 1rem;
+            }
+
+            .modal-close {
+                font-size: 1.3rem;
+                width: 35px;
+                height: 35px;
+            }
+
+            .modal-subject-info {
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+                border-radius: 12px;
+            }
+
+            .modal-subject-icon {
+                font-size: 2.4rem;
+            }
+
+            .modal-subject-details h2 {
+                font-size: 1.1rem;
+            }
+
+            .modal-subject-code {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.65rem;
+            }
+
+            .modal-subject-details p {
+                font-size: 0.75rem;
+            }
+
+            .pyq-list {
+                gap: 0.75rem;
+            }
+
+            .pyq-item {
+                padding: 0.85rem;
+            }
+
+            .pyq-item-icon {
+                font-size: 1.8rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .pyq-item-name {
+                font-size: 0.8rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .pyq-item-action {
+                font-size: 0.7rem;
+            }
+        }
+
         /* View Toggle Container */
         .view-toggle-container {
             display: flex;
@@ -622,9 +1056,9 @@
 
         .view-toggle-btn {
             padding: 0.75rem 1.5rem;
-            border: 2px solid #ddd;
-            background: var(--text-light);
-            color: var(--primary-color);
+            border: 2px solid #e5e7eb;
+            background: #ffffff;
+            color: #1e3a8a;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
@@ -636,14 +1070,14 @@
         }
 
         .view-toggle-btn.active {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--text-light);
-            border-color: var(--secondary-color);
-            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
         }
 
         .view-toggle-btn:hover:not(.active) {
-            border-color: var(--primary-color);
+            border-color: #1e3a8a;
             background: #f9fafb;
         }
 
@@ -684,7 +1118,7 @@
 
         .stream-title {
             font-size: 1.5rem;
-            color: var(--primary-color);
+            color: #1e3a8a;
             margin-bottom: 1.5rem;
             font-weight: 700;
             display: flex;
@@ -717,11 +1151,11 @@
             align-items: center;
             gap: 0.75rem;
             padding: 1rem;
-            background: var(--text-light);
-            border: 2px solid #e2e8f0;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
             border-radius: 10px;
             text-decoration: none;
-            color: var(--text-dark);
+            color: #1f2937;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -745,17 +1179,17 @@
         }
 
         .subject-link:hover {
-            border-color: var(--secondary-color);
-            background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+            border-color: #1e3a8a;
+            background: #f9fafb;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(30, 60, 114, 0.12);
+            box-shadow: 0 6px 16px rgba(30, 58, 138, 0.12);
         }
 
         .subject-link-icon {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--text-light);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: #ffffff;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -775,7 +1209,7 @@
         .subject-link-title {
             font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text-dark);
+            color: #1f2937;
         }
 
         .subject-link-code {
@@ -786,7 +1220,7 @@
         }
 
         .subject-link-arrow {
-            color: var(--secondary-color);
+            color: #1e3a8a;
             font-size: 1.2rem;
             transition: var(--transition);
         }
@@ -829,9 +1263,14 @@
                     <span style="font-size: 0.75rem; opacity: 0.9;">GATE Papers</span>
                 </div>
             </a>
-            <a href="../index.html" class="home-btn" title="Back to Home">
-                <span>🏠</span>
-            </a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="../index.html" class="home-btn" title="Back to Home">
+                    <span>🏠 Home</span>
+                </a>
+                <a href="../index.html#contact" class="home-btn" title="Contact Us">
+                    <span>📧 Contact</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -891,32 +1330,10 @@
             <p>Select your stream and subject to access previous year papers and solutions</p>
         </div>
 
-        <!-- Links View -->
-        <div id="linksView" class="view-section active">
-            <div class="subjects-by-stream">
-                <!-- Engineering Subjects -->
-                <div class="stream-section">
-                    <h3 class="stream-title">🔧 Engineering Subjects</h3>
-                    <div class="subjects-links-grid" id="engineeringLinks">
-                        <!-- Links will be generated here -->
-                    </div>
-                </div>
-
-                <!-- Science Subjects -->
-                <div class="stream-section">
-                    <h3 class="stream-title">🔬 Science Subjects</h3>
-                    <div class="subjects-links-grid" id="scienceLinks">
-                        <!-- Links will be generated here -->
-                    </div>
-                </div>
-
-                <!-- Social Sciences -->
-                <div class="stream-section">
-                    <h3 class="stream-title">📚 Social Sciences & Humanities</h3>
-                    <div class="subjects-links-grid" id="socialLinks">
-                        <!-- Links will be generated here -->
-                    </div>
-                </div>
+        <!-- Cards View -->
+        <div id="cardsView" class="view-section active">
+            <div class="subjects-grid" id="subjectsGrid">
+                <!-- Cards will be generated here -->
             </div>
 
             <!-- No Results Message -->
@@ -926,6 +1343,16 @@
                 <p>Try adjusting your search terms</p>
             </div>
         </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModal()"></div>
+    <div id="modalContent" class="modal-content scroll-container">
+        <div class="modal-header">
+            <h2 class="modal-title">Previous Year Questions</h2>
+            <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+        <div id="modalBody"></div>
     </div>
 
     <!-- Footer -->
@@ -1190,61 +1617,80 @@
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearBtn');
         const noResults = document.getElementById('noResults');
+        let selectedSubject = null;
+
+        const subjectIcons = {
+            AE: '✈️',
+            AG: '🌾',
+            AR: '🏛️',
+            BM: '🫀',
+            BT: '🧬',
+            CE: '🏗️',
+            CH: '⚗️',
+            CS: '💻',
+            CY: '🧪',
+            DA: '🤖',
+            EC: '📡',
+            EE: '⚡',
+            ES: '🌍',
+            EY: '🦋',
+            GE: '🗺️',
+            GG: '⛰️',
+            IN: '🔬',
+            MA: '📐',
+            ME: '⚙️',
+            MN: '⛏️',
+            MT: '🔥',
+            NM: '🚢',
+            PE: '🛢️',
+            PH: '⚛️',
+            PI: '🏭',
+            ST: '📊',
+            TF: '🧵',
+            XE: '🔧',
+            XH: '📚',
+            XL: '🧫'
+        };
 
         // Initialize subjects on page load
         document.addEventListener('DOMContentLoaded', () => {
-            renderSubjectLinks();
+            renderSubjectCards();
             addEventListeners();
         });
 
-        // Render subject links organized by stream
-        function renderSubjectLinks() {
-            const engineeringLinks = document.getElementById('engineeringLinks');
-            const scienceLinks = document.getElementById('scienceLinks');
-            const socialLinks = document.getElementById('socialLinks');
+        // Render subject cards
+        function renderSubjectCards() {
+            const subjectsGrid = document.getElementById('subjectsGrid');
+            subjectsGrid.innerHTML = '';
 
-            engineeringLinks.innerHTML = '';
-            scienceLinks.innerHTML = '';
-            socialLinks.innerHTML = '';
-
-            const engineering = subjects.filter(s => s.stream === 'Engineering');
-            const science = subjects.filter(s => s.stream === 'Science');
-            const social = subjects.filter(s => s.stream === 'Social Sciences');
-
-            engineering.forEach(subject => {
-                engineeringLinks.appendChild(createSubjectLink(subject));
-            });
-
-            science.forEach(subject => {
-                scienceLinks.appendChild(createSubjectLink(subject));
-            });
-
-            social.forEach(subject => {
-                socialLinks.appendChild(createSubjectLink(subject));
+            subjects.forEach(subject => {
+                subjectsGrid.appendChild(createSubjectCard(subject));
             });
         }
 
-        // Create individual subject link
-        function createSubjectLink(subject) {
-            const link = document.createElement('a');
-            link.className = 'subject-link';
-            link.href = '#';
-            link.dataset.code = subject.code;
-            link.onclick = (e) => {
-                e.preventDefault();
-                handleSubjectClick(subject.code);
-            };
+        // Create individual subject card
+        function createSubjectCard(subject) {
+            const card = document.createElement('div');
+            card.className = 'subject-card';
+            card.dataset.code = subject.code;
+            card.dataset.name = subject.name.toLowerCase();
+            card.dataset.stream = subject.stream.toLowerCase();
+            card.onclick = () => handleSubjectClick(subject.code);
 
-            link.innerHTML = `
-                <div class="subject-link-icon">${subject.code.substring(0, 2).toUpperCase()}</div>
-                <div class="subject-link-name">
-                    <div class="subject-link-title">${subject.name}</div>
-                    <div class="subject-link-code">${subject.code} • ${subject.papers} Papers</div>
+            const icon = subjectIcons[subject.code] || '📘';
+
+            card.innerHTML = `
+                <div class="subject-icon">${icon}</div>
+                <div class="subject-code-badge">${subject.code}</div>
+                <h3 class="subject-title">${subject.name}</h3>
+                <p class="subject-meta">${subject.papers} papers • ${subject.difficulty}</p>
+                <div class="subject-tags">
+                    <span class="subject-tag">${subject.stream}</span>
+                    <span class="subject-tag">${subject.papers}+ PYQs</span>
                 </div>
-                <span class="subject-link-arrow">→</span>
             `;
 
-            return link;
+            return card;
         }
 
         // Search functionality
@@ -1262,36 +1708,24 @@
                 clearBtn.style.display = 'none';
             }
 
-            // Filter links view
-            filterSubjectLinks(searchTerm);
+            // Filter cards view
+            filterSubjectCards(searchTerm);
         }
 
-        function filterSubjectLinks(searchTerm) {
-            const allLinks = document.querySelectorAll('.subject-link');
+        function filterSubjectCards(searchTerm) {
+            const allCards = document.querySelectorAll('.subject-card');
             let visibleCount = 0;
 
-            allLinks.forEach(link => {
-                const subjectName = link.textContent.toLowerCase();
-                if (subjectName.includes(searchTerm)) {
-                    link.classList.remove('hidden');
+            allCards.forEach(card => {
+                const subjectText = `${card.dataset.name} ${card.dataset.code} ${card.dataset.stream}`;
+                if (subjectText.includes(searchTerm)) {
+                    card.classList.remove('hidden');
                     visibleCount++;
                 } else {
-                    link.classList.add('hidden');
+                    card.classList.add('hidden');
                 }
             });
 
-            // Show/hide empty stream sections
-            const streamSections = document.querySelectorAll('.stream-section');
-            streamSections.forEach(section => {
-                const visibleLinks = section.querySelectorAll('.subject-link:not(.hidden)');
-                if (visibleLinks.length === 0) {
-                    section.classList.add('empty-stream');
-                } else {
-                    section.classList.remove('empty-stream');
-                }
-            });
-
-            // Show/hide no results message
             if (visibleCount === 0 && searchTerm) {
                 noResults.classList.add('show');
             } else {
@@ -1302,15 +1736,96 @@
         function clearSearch() {
             searchInput.value = '';
             clearBtn.style.display = 'none';
-            renderSubjectLinks();
+            renderSubjectCards();
             searchInput.focus();
         }
 
-        // Handle subject click (for future functionality)
+        // Handle subject click - Open modal
         function handleSubjectClick(code) {
-            console.log(`Navigating to ${code} papers...`);
-            // Future: Navigate to papers page or open modal with papers
-            alert(`Loading ${code} papers... (Feature coming soon)`);
+            selectedSubject = subjects.find(s => s.code === code);
+            if (selectedSubject) {
+                openModal();
+            }
+        }
+
+        // Open modal
+        function openModal() {
+            if (!selectedSubject) return;
+            document.getElementById('modalOverlay').classList.add('active');
+            document.getElementById('modalContent').classList.add('active');
+            updateModalContent();
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.getElementById('modalContent').classList.remove('active');
+            selectedSubject = null;
+            document.body.style.overflow = 'auto';
+        }
+
+        // Update modal content with selected subject's PYQs
+        function updateModalContent() {
+            if (!selectedSubject) return;
+
+            const modalBody = document.getElementById('modalBody');
+            const icon = subjectIcons[selectedSubject.code] || '📘';
+            const papers = generatePYQs(selectedSubject.code, selectedSubject.papers);
+
+            let pyqsHTML = papers.map((pyq, index) => `
+                <div class="pyq-item" style="animation-delay: ${index * 0.08}s;">
+                    <div class="pyq-item-icon">📄</div>
+                    <div class="pyq-item-name">${pyq}</div>
+                    <div class="pyq-item-action">Click to download →</div>
+                </div>
+            `).join('');
+
+            modalBody.innerHTML = `
+                <div class="modal-subject-info">
+                    <div class="modal-subject-icon">${icon}</div>
+                    <div class="modal-subject-details">
+                        <h2>
+                            ${selectedSubject.name}
+                            <span class="modal-subject-code">${selectedSubject.code}</span>
+                        </h2>
+                        <p>${selectedSubject.papers} Papers Available • ${selectedSubject.difficulty}</p>
+                    </div>
+                </div>
+                <div class="pyq-list">
+                    ${pyqsHTML}
+                </div>
+            `;
+        }
+
+        // Generate PYQ list for a subject
+        function generatePYQs(code, paperCount) {
+            const pyqs = [];
+            const currentYear = 2024;
+            const yearsBack = Math.min(Math.ceil(paperCount / 2), 10);
+
+            for (let year = currentYear; year > currentYear - yearsBack; year--) {
+                const papersPerYear = paperCount >= 14 ? 2 : 1;
+                for (let i = 1; i <= papersPerYear && pyqs.length < paperCount; i++) {
+                    pyqs.push(`${code} ${year} Paper ${papersPerYear > 1 ? i : ''}`.trim());
+                }
+            }
+
+            return pyqs.slice(0, paperCount);
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && selectedSubject) {
+                closeModal();
+            }
+        });
+
+        // Prevent scroll when modal is open
+        function updateBodyScroll() {
+            if (selectedSubject) {
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         // Add keyboard shortcuts
