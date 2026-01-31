@@ -65,6 +65,7 @@ body.dark-mode .nav-link::after {
     background: #60a5fa;
 }
 
+
 body.dark-mode .theme-btn {
     background: rgba(255, 255, 255, 0.1);
     color: #cbd5e1;
@@ -363,6 +364,7 @@ header {
 .nav-link:hover::after {
     width: 100%;
 }
+
 
 .theme-btn {
     background: white;
@@ -1068,7 +1070,6 @@ footer {
         font-size: 32px;
         line-height: 1.2;
     }
-
     .hero-left p {
         font-size: 16px;
         line-height: 1.5;
@@ -2029,6 +2030,7 @@ body.dark-mode .nav-toggle:hover {
         background: var(--primary-light);
     }
 
+
     body.dark-mode .nav-menu.open {
         background: rgba(30, 41, 59, 0.95);
         border-color: rgba(255,255,255,0.1);
@@ -2038,6 +2040,7 @@ body.dark-mode .nav-toggle:hover {
     body.dark-mode .nav-menu.open .nav-theme-item:hover {
         background: rgba(96,165,250,0.15);
     }
+
 }
 /* ============ FILTER TAG BUTTONS DARK MODE ============ */
 html.dark .filter-tag {

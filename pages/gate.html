@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE Previous Year Papers | LearnSkart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #00d4ff;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background-light: #f5f7fa;
+            --background-dark: #0f1419;
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background-light) 0%, #e8f1f8 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .home-btn {
+            background: rgba(0, 212, 255, 0.15);
+            border: 2px solid var(--accent-color);
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .home-btn:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -30%;
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 212, 255, 0.08);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .gate-info {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gate-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gate-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .info-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 1400px;
+            margin: -2rem auto 3rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+            animation: slideUp 0.8s ease-out 0.3s both;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            background: var(--text-light);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            align-items: center;
+        }
+
+        .search-input-wrapper {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-icon {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+            background: transparent;
+            color: var(--text-dark);
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .clear-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #999;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .clear-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Subject Cards Grid */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .subject-card {
+            background: var(--text-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            animation: scaleIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .subject-card:nth-child(1) { animation-delay: 0.5s; }
+        .subject-card:nth-child(2) { animation-delay: 0.55s; }
+        .subject-card:nth-child(3) { animation-delay: 0.6s; }
+        .subject-card:nth-child(4) { animation-delay: 0.65s; }
+        .subject-card:nth-child(5) { animation-delay: 0.7s; }
+        .subject-card:nth-child(6) { animation-delay: 0.75s; }
+        .subject-card:nth-child(n+7) { animation-delay: 0.8s; }
+
+        .subject-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .subject-card-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .subject-card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subject-code {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subject-card-content {
+            padding: 1.5rem;
+        }
+
+        .subject-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        .subject-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .view-papers-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-papers-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 212, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .view-papers-btn:hover::before {
+            left: 100%;
+        }
+
+        .view-papers-btn:hover {
+            transform: translateX(2px);
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 3rem 2rem;
+            opacity: 0;
+            animation: slideUp 0.5s ease-out forwards;
+        }
+
+        .no-results.show {
+            opacity: 1;
+        }
+
+        .no-results-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .no-results h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Filter Tags */
+        .filter-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .filter-tag {
+            background: #f0f4f8;
+            color: var(--primary-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-tag:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .gate-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .view-toggle-container {
+                margin-bottom: 2rem;
+            }
+
+            .subjects-links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .view-toggle-btn {
+                flex: 1;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Highlight Active Search */
+        .subject-card.hidden {
+            display: none;
+        }
+
+        .subject-card.match {
+            animation: pulse 0.6s ease-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        /* View Toggle Container */
+        .view-toggle-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            justify-content: center;
+            animation: slideUp 0.8s ease-out 0.45s both;
+        }
+
+        .view-toggle-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #ddd;
+            background: var(--text-light);
+            color: var(--primary-color);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-toggle-btn.active {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+        }
+
+        .view-toggle-btn:hover:not(.active) {
+            border-color: var(--primary-color);
+            background: #f9fafb;
+        }
+
+        /* View Sections */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Subjects by Stream */
+        .subjects-by-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .stream-section {
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .stream-section:nth-child(1) { animation-delay: 0.2s; }
+        .stream-section:nth-child(2) { animation-delay: 0.3s; }
+        .stream-section:nth-child(3) { animation-delay: 0.4s; }
+
+        .stream-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .stream-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            border-radius: 2px;
+        }
+
+        /* Subjects Links Grid */
+        .subjects-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .subject-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--text-light);
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .subject-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.15), transparent);
+            transition: var(--transition);
+        }
+
+        .subject-link:hover::before {
+            left: 100%;
+        }
+
+        .subject-link:hover {
+            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 60, 114, 0.12);
+        }
+
+        .subject-link-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .subject-link-name {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .subject-link-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .subject-link-code {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .subject-link-arrow {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .subject-link:hover .subject-link-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Search highlight in links view */
+        .subject-link.hidden {
+            display: none;
+        }
+
+        .stream-section.empty-stream {
+            display: none;
+        }
+
+        /* Desktop specific */
+        @media (min-width: 769px) {
+            .view-toggle-container {
+                display: flex;
+            }
+
+            .subjects-links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 100%; height: 100%; border-radius: 50%;">
+                </div>
+                <div class="logo-text">
+                    <span style="font-size: 1.5rem; font-weight: 800;">LearnSkart</span>
+                    <span style="font-size: 0.75rem; opacity: 0.9;">GATE Papers</span>
+                </div>
+            </a>
+            <a href="../index.html" class="home-btn" title="Back to Home">
+                <span>🏠</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>GATE <span style="color: var(--accent-color);">Previous Year</span> Papers</h1>
+            <p>Master your preparation with curated GATE question papers organized by subject, stream, and difficulty level</p>
+            
+            <div class="gate-info">
+                <h2>What is GATE?</h2>
+                <p style="margin-top: 1rem;">The Graduate Aptitude Test in Engineering (GATE) is a nationwide examination that tests the comprehensive understanding of various undergraduate subjects in engineering and technology.</p>
+                
+                <div class="gate-info-grid">
+                    <div class="info-item">
+                        <h3>📅 Exam Pattern</h3>
+                        <p>180 minutes duration, 65-100 questions, Online examination</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>🎓 Eligibility</h3>
+                        <p>Bachelor's degree or final year students in engineering/technology</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>🏆 Benefits</h3>
+                        <p>PSU recruitment, Higher education, Scholarship opportunities</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📊 30+ Subjects</h3>
+                        <p>Engineering, Science, and Humanities & Social Sciences</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="Search subjects by name or code... (e.g., 'CS', 'Mathematics')"
+                >
+                <button class="clear-btn" id="clearBtn" style="display: none;">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2>Explore All Subjects</h2>
+            <p>Select your stream and subject to access previous year papers and solutions</p>
+        </div>
+
+        <!-- Links View -->
+        <div id="linksView" class="view-section active">
+            <div class="subjects-by-stream">
+                <!-- Engineering Subjects -->
+                <div class="stream-section">
+                    <h3 class="stream-title">🔧 Engineering Subjects</h3>
+                    <div class="subjects-links-grid" id="engineeringLinks">
+                        <!-- Links will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Science Subjects -->
+                <div class="stream-section">
+                    <h3 class="stream-title">🔬 Science Subjects</h3>
+                    <div class="subjects-links-grid" id="scienceLinks">
+                        <!-- Links will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Social Sciences -->
+                <div class="stream-section">
+                    <h3 class="stream-title">📚 Social Sciences & Humanities</h3>
+                    <div class="subjects-links-grid" id="socialLinks">
+                        <!-- Links will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults">
+                <div class="no-results-icon">😢</div>
+                <h3>No Subjects Found</h3>
+                <p>Try adjusting your search terms</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+            <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 32px; height: 32px; border-radius: 50%;">
+            <span style="font-weight: 700; font-size: 1.1rem;">LearnSkart</span>
+        </div>
+        <p style="opacity: 0.9; margin-bottom: 1rem;">Your complete resource for GATE exam preparation with organized previous year papers and solutions</p>
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem;">
+            <p>&copy; 2025 LearnSkart. All rights reserved.</p>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">Made with <i class="fas fa-heart"></i> for students</p>
+        </div>
+    </footer>
+
+    <script>
+        // Complete GATE Subjects Data
+        const subjects = [
+            {
+                name: 'Computer Science and Information Technology',
+                code: 'CS',
+                stream: 'Engineering',
+                description: 'Covers algorithms, data structures, databases, operating systems, and computer networks.',
+                papers: 15,
+                difficulty: 'Medium-High'
+            },
+            {
+                name: 'Mechanical Engineering',
+                code: 'ME',
+                stream: 'Engineering',
+                description: 'Includes thermodynamics, fluid mechanics, strength of materials, and machine design.',
+                papers: 14,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Electrical Engineering',
+                code: 'EE',
+                stream: 'Engineering',
+                description: 'Covers circuits, electromagnetics, signals, and power systems.',
+                papers: 14,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Electronics and Communication Engineering',
+                code: 'EC',
+                stream: 'Engineering',
+                description: 'Includes analog circuits, digital electronics, communications, and signal processing.',
+                papers: 14,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Civil Engineering',
+                code: 'CE',
+                stream: 'Engineering',
+                description: 'Covers structural analysis, RCC design, geotechnical engineering, and water resources.',
+                papers: 14,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Mathematics',
+                code: 'MA',
+                stream: 'Science',
+                description: 'Real analysis, linear algebra, complex analysis, and differential equations.',
+                papers: 10,
+                difficulty: 'High'
+            },
+            {
+                name: 'Physics',
+                code: 'PH',
+                stream: 'Science',
+                description: 'Classical mechanics, quantum mechanics, thermodynamics, and optics.',
+                papers: 10,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Chemistry',
+                code: 'CY',
+                stream: 'Science',
+                description: 'Physical chemistry, organic chemistry, inorganic chemistry, and analytical chemistry.',
+                papers: 10,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Statistics',
+                code: 'ST',
+                stream: 'Science',
+                description: 'Probability theory, statistical inference, and regression analysis.',
+                papers: 8,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Data Science and Artificial Intelligence',
+                code: 'DA',
+                stream: 'Engineering',
+                description: 'Machine learning, deep learning, data structures, and algorithms.',
+                papers: 8,
+                difficulty: 'High'
+            },
+            {
+                name: 'Engineering Sciences',
+                code: 'XE',
+                stream: 'Engineering',
+                description: 'Flexible examination with multiple optional papers for specialized knowledge.',
+                papers: 5,
+                difficulty: 'Medium-High'
+            },
+            {
+                name: 'Life Sciences',
+                code: 'XL',
+                stream: 'Science',
+                description: 'Cell biology, genetics, ecology, and biochemistry.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Chemical Engineering',
+                code: 'CH',
+                stream: 'Engineering',
+                description: 'Process calculations, fluid mechanics, heat transfer, and mass transfer.',
+                papers: 13,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Instrumentation Engineering',
+                code: 'IN',
+                stream: 'Engineering',
+                description: 'Measurement systems, sensors, signal processing, and control systems.',
+                papers: 12,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Production and Industrial Engineering',
+                code: 'PI',
+                stream: 'Engineering',
+                description: 'Production processes, quality control, operations research, and manufacturing.',
+                papers: 10,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Metallurgical Engineering',
+                code: 'MT',
+                stream: 'Engineering',
+                description: 'Physical metallurgy, extractive metallurgy, and material science.',
+                papers: 8,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Petroleum Engineering',
+                code: 'PE',
+                stream: 'Engineering',
+                description: 'Drilling, reservoir engineering, and production operations.',
+                papers: 7,
+                difficulty: 'Medium-High'
+            },
+            {
+                name: 'Mining Engineering',
+                code: 'MN',
+                stream: 'Engineering',
+                description: 'Mining methods, mineral processing, and safety engineering.',
+                papers: 6,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Environmental Science and Engineering',
+                code: 'ES',
+                stream: 'Engineering',
+                description: 'Environmental management, wastewater treatment, and air quality.',
+                papers: 6,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Geology and Geophysics',
+                code: 'GG',
+                stream: 'Science',
+                description: 'Mineralogy, structural geology, and geophysical methods.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Geomatics Engineering',
+                code: 'GE',
+                stream: 'Engineering',
+                description: 'Surveying, remote sensing, GIS, and cartography.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Ecology and Evolution',
+                code: 'EY',
+                stream: 'Science',
+                description: 'Population ecology, community ecology, and evolutionary biology.',
+                papers: 4,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Aerospace Engineering',
+                code: 'AE',
+                stream: 'Engineering',
+                description: 'Aerodynamics, flight mechanics, and aircraft design.',
+                papers: 7,
+                difficulty: 'Medium-High'
+            },
+            {
+                name: 'Naval Architecture and Marine Engineering',
+                code: 'NM',
+                stream: 'Engineering',
+                description: 'Ship design, marine propulsion, and ocean engineering.',
+                papers: 6,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Biomedical Engineering',
+                code: 'BM',
+                stream: 'Engineering',
+                description: 'Biomechanics, medical devices, and biomedical signal processing.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Biotechnology',
+                code: 'BT',
+                stream: 'Engineering',
+                description: 'Genetic engineering, fermentation, and biochemical engineering.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Agricultural Engineering',
+                code: 'AG',
+                stream: 'Engineering',
+                description: 'Farm machinery, soil and water conservation, and agricultural processes.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Textile Engineering and Fibre Science',
+                code: 'TF',
+                stream: 'Engineering',
+                description: 'Fiber production, yarn manufacturing, and textile processing.',
+                papers: 4,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Architecture and Planning',
+                code: 'AR',
+                stream: 'Engineering',
+                description: 'Building design, urban planning, and sustainable architecture.',
+                papers: 5,
+                difficulty: 'Medium'
+            },
+            {
+                name: 'Humanities and Social Sciences',
+                code: 'XH',
+                stream: 'Social Sciences',
+                description: 'Economics, psychology, political science, and sociology.',
+                papers: 4,
+                difficulty: 'Medium'
+            }
+        ];
+
+        // DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearBtn');
+        const noResults = document.getElementById('noResults');
+
+        // Initialize subjects on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSubjectLinks();
+            addEventListeners();
+        });
+
+        // Render subject links organized by stream
+        function renderSubjectLinks() {
+            const engineeringLinks = document.getElementById('engineeringLinks');
+            const scienceLinks = document.getElementById('scienceLinks');
+            const socialLinks = document.getElementById('socialLinks');
+
+            engineeringLinks.innerHTML = '';
+            scienceLinks.innerHTML = '';
+            socialLinks.innerHTML = '';
+
+            const engineering = subjects.filter(s => s.stream === 'Engineering');
+            const science = subjects.filter(s => s.stream === 'Science');
+            const social = subjects.filter(s => s.stream === 'Social Sciences');
+
+            engineering.forEach(subject => {
+                engineeringLinks.appendChild(createSubjectLink(subject));
+            });
+
+            science.forEach(subject => {
+                scienceLinks.appendChild(createSubjectLink(subject));
+            });
+
+            social.forEach(subject => {
+                socialLinks.appendChild(createSubjectLink(subject));
+            });
+        }
+
+        // Create individual subject link
+        function createSubjectLink(subject) {
+            const link = document.createElement('a');
+            link.className = 'subject-link';
+            link.href = '#';
+            link.dataset.code = subject.code;
+            link.onclick = (e) => {
+                e.preventDefault();
+                handleSubjectClick(subject.code);
+            };
+
+            link.innerHTML = `
+                <div class="subject-link-icon">${subject.code.substring(0, 2).toUpperCase()}</div>
+                <div class="subject-link-name">
+                    <div class="subject-link-title">${subject.name}</div>
+                    <div class="subject-link-code">${subject.code} • ${subject.papers} Papers</div>
+                </div>
+                <span class="subject-link-arrow">→</span>
+            `;
+
+            return link;
+        }
+
+        // Search functionality
+        function addEventListeners() {
+            searchInput.addEventListener('input', handleSearch);
+            clearBtn.addEventListener('click', clearSearch);
+        }
+
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            if (searchTerm.length > 0) {
+                clearBtn.style.display = 'block';
+            } else {
+                clearBtn.style.display = 'none';
+            }
+
+            // Filter links view
+            filterSubjectLinks(searchTerm);
+        }
+
+        function filterSubjectLinks(searchTerm) {
+            const allLinks = document.querySelectorAll('.subject-link');
+            let visibleCount = 0;
+
+            allLinks.forEach(link => {
+                const subjectName = link.textContent.toLowerCase();
+                if (subjectName.includes(searchTerm)) {
+                    link.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    link.classList.add('hidden');
+                }
+            });
+
+            // Show/hide empty stream sections
+            const streamSections = document.querySelectorAll('.stream-section');
+            streamSections.forEach(section => {
+                const visibleLinks = section.querySelectorAll('.subject-link:not(.hidden)');
+                if (visibleLinks.length === 0) {
+                    section.classList.add('empty-stream');
+                } else {
+                    section.classList.remove('empty-stream');
+                }
+            });
+
+            // Show/hide no results message
+            if (visibleCount === 0 && searchTerm) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+        }
+
+        function clearSearch() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            renderSubjectLinks();
+            searchInput.focus();
+        }
+
+        // Handle subject click (for future functionality)
+        function handleSubjectClick(code) {
+            console.log(`Navigating to ${code} papers...`);
+            // Future: Navigate to papers page or open modal with papers
+            alert(`Loading ${code} papers... (Feature coming soon)`);
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + K for search focus
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+            // Escape to clear search
+            if (e.key === 'Escape' && searchInput.value) {
+                clearSearch();
+            }
+        });
+    </script>
+</body>
+</html>
