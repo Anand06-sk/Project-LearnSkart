@@ -256,6 +256,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      touch-action: manipulation;
     }
 
     body.dark-mode .pdf-card {
@@ -367,6 +368,10 @@
       font-size: 13px;
       text-decoration: none;
       color: white;
+      position: relative;
+      z-index: 2;
+      pointer-events: auto;
+      touch-action: manipulation;
     }
 
     .view-btn {
@@ -619,8 +624,9 @@
 
       .action-btn {
         font-size: 10px;
-        padding: 7px 9px;
+        padding: 10px 9px;
         gap: 3px;
+        min-height: 44px;
       }
 
       .action-btn i {
