@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#3b82f6">
     <title>GATE Previous Year Questions | LearnSkart</title>
     <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,6 +27,26 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        input, button, textarea, select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 16px;
+        }
+
+        button, a {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
         }
 
         :root {
@@ -44,6 +67,9 @@
             color: #1f2937;
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-locale: auto;
         }
 
         /* Navigation Bar */
@@ -132,12 +158,24 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            min-height: 44px;
+            min-width: 44px;
+            justify-content: center;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
-        .back-btn:hover {
-            background: #f8fafc;
-            border-color: #3b82f6;
-            transform: scale(1.05);
+        .back-btn:active {
+            background: #eff6ff;
+            transform: scale(0.98);
+        }
+
+        @media (hover: hover) {
+            .back-btn:hover {
+                background: #f8fafc;
+                border-color: #3b82f6;
+                transform: scale(1.05);
+            }
         }
 
         body.dark-mode .back-btn {
@@ -146,10 +184,16 @@
             border-color: rgba(96, 165, 250, 0.3);
         }
 
-        body.dark-mode .back-btn:hover {
-            background: rgba(96, 165, 250, 0.2);
-            border-color: #60a5fa;
-            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+        body.dark-mode .back-btn:active {
+            background: rgba(96, 165, 250, 0.15);
+        }
+
+        @media (hover: hover) {
+            body.dark-mode .back-btn:hover {
+                background: rgba(96, 165, 250, 0.2);
+                border-color: #60a5fa;
+                box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+            }
         }
 
         /* Hero Section */
@@ -342,6 +386,19 @@
             background: transparent;
             color: #1f2937;
             text-align: left;
+            font-family: inherit;
+        }
+
+        .search-input::-webkit-outer-spin-button,
+        .search-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .search-input {
+                font-size: 16px;
+            }
         }
 
         html.dark .search-input {
@@ -377,18 +434,32 @@
             font-size: 1.2rem;
             padding: 0.5rem;
             transition: var(--transition);
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+        }
+
+        .clear-btn:active {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        @media (hover: hover) {
+            .clear-btn:hover {
+                color: var(--primary-color);
+            }
         }
 
         html.dark .clear-btn {
             color: #94a3b8;
         }
 
-        .clear-btn:hover {
-            color: var(--primary-color);
-        }
-
-        html.dark .clear-btn:hover {
-            color: #93c5fd;
+        @media (hover: hover) {
+            html.dark .clear-btn:hover {
+                color: #93c5fd;
+            }
         }
 
         /* Main Content */
@@ -454,6 +525,28 @@
             padding: 1.5rem 1.25rem;
             position: relative;
             border: 1px solid #f3f4f6;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .subject-card {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        .subject-card:active {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(59, 130, 246, 0.12);
+        }
+
+        @media (hover: hover) {
+            .subject-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+                border-color: #dbeafe;
+            }
         }
 
         @keyframes scaleIn {
@@ -474,12 +567,6 @@
         .subject-card:nth-child(5) { animation-delay: 0.7s; }
         .subject-card:nth-child(6) { animation-delay: 0.75s; }
         .subject-card:nth-child(n+7) { animation-delay: 0.8s; }
-
-        .subject-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
-            border-color: #dbeafe;
-        }
 
         .subject-icon {
             font-size: 2.4rem;
@@ -577,12 +664,23 @@
             border: 1px solid #bfdbfe;
             cursor: pointer;
             transition: var(--transition);
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
-        .filter-tag:hover {
-            background: var(--primary-color);
-            color: var(--text-light);
-            border-color: var(--primary-color);
+        .filter-tag:active {
+            transform: scale(0.98);
+        }
+
+        @media (hover: hover) {
+            .filter-tag:hover {
+                background: var(--primary-color);
+                color: var(--text-light);
+                border-color: var(--primary-color);
+            }
         }
 
         /* Footer */
@@ -599,36 +697,364 @@
             line-height: 1.6;
         }
 
-        /* Responsive */
+        /* Responsive - Tablet */
         @media (max-width: 768px) {
+            * {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            html, body {
+                font-size: 16px;
+            }
+
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+                gap: 0.5rem;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+                min-height: 44px;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
             .hero h1 {
                 font-size: 2rem;
+                margin-bottom: 1rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-container {
+                margin: -1.5rem auto 2rem;
+                padding: 0 1.5rem;
+            }
+
+            .search-bar {
+                padding: 0.85rem 1.2rem;
+                gap: 0.5rem;
+                min-height: 48px;
+            }
+
+            .search-icon {
+                font-size: 1.2rem;
+            }
+
+            .search-input {
+                font-size: 0.95rem;
+            }
+
+            .search-input::placeholder {
+                font-size: 0.85rem;
+            }
+
+            .clear-btn {
+                min-width: 44px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
             }
 
             .section-header h2 {
                 font-size: 1.8rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+                margin-top: 0.75rem;
             }
 
             .subjects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1.2rem;
             }
 
             .subject-card {
-                padding: 1rem 0.75rem;
+                padding: 1.2rem 1rem;
+                min-height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
             .subject-icon {
-                font-size: 2rem;
+                font-size: 2.2rem;
+                margin-bottom: 0.7rem;
+            }
+
+            .subject-code-badge {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.75rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .subject-title {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .subject-meta {
+                font-size: 0.7rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .subject-tag {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.75rem;
+            }
+
+            .gate-info {
+                padding: 1.5rem;
+                margin: 2rem 0;
+                border-radius: 12px;
+            }
+
+            .gate-info h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .gate-info p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .gate-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+            }
+
+            .info-item {
+                padding: 1.2rem;
+                border-left-width: 4px;
+            }
+
+            .info-item h3 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .info-item p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .view-toggle-container {
+                margin-bottom: 2rem;
+                gap: 0.75rem;
+            }
+
+            .view-toggle-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                min-height: 44px;
+                flex: 1;
+            }
+
+            .subjects-links-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .subject-link {
+                padding: 1rem;
+                min-height: 48px;
+                gap: 1rem;
+            }
+
+            .subject-link-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 0.85rem;
+            }
+
+            .subject-link-title {
+                font-size: 0.9rem;
+            }
+
+            .subject-link-code {
+                font-size: 0.7rem;
+            }
+
+            .subject-link-arrow {
+                font-size: 1.1rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            footer p {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Responsive - Mobile */
+        @media (max-width: 480px) {
+            html, body {
+                font-size: 14px;
+            }
+
+            nav {
+                padding: 0.75rem 1rem;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-container {
+                gap: 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                gap: 0.4rem;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .logo-text {
+                gap: 0.08rem;
+                flex-shrink: 1;
+            }
+
+            .logo-title {
+                font-size: 1rem;
+                line-height: 1;
+            }
+
+            .logo-subtitle {
+                font-size: 0.65rem;
+                opacity: 0.85;
+            }
+
+            .back-btn {
+                padding: 10px 14px;
+                font-size: 12px;
+                border: 1.5px solid #3b82f6;
+                min-height: 44px;
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.4rem;
+                line-height: 1.2;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 1.2rem;
+            }
+
+            .search-container {
+                margin: -1.2rem auto 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .search-bar {
+                padding: 0.75rem 1rem;
+                gap: 0.4rem;
+                min-height: 48px;
+                border-radius: 10px;
+            }
+
+            .search-icon {
+                font-size: 1.1rem;
+                flex-shrink: 0;
+            }
+
+            .search-input {
+                font-size: 0.9rem;
+            }
+
+            .search-input::placeholder {
+                font-size: 0.8rem;
+            }
+
+            .clear-btn {
+                min-width: 44px;
+                min-height: 44px;
+                font-size: 1.1rem;
+                padding: 0;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .section-header p {
+                font-size: 0.9rem;
+                margin-top: 0.6rem;
+            }
+
+            .subjects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .subject-card {
+                padding: 1rem 0.7rem;
+                min-height: 180px;
+                border-radius: 14px;
+            }
+
+            .subject-icon {
+                font-size: 1.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .subject-code-badge {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.65rem;
                 margin-bottom: 0.5rem;
             }
 
             .subject-title {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+                margin-bottom: 0.35rem;
             }
 
             .subject-meta {
@@ -636,112 +1062,192 @@
                 margin-bottom: 0.5rem;
             }
 
-            .search-bar {
-                padding: 0.7rem 1rem;
-                gap: 0.3rem;
+            .subject-tag {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.6rem;
             }
 
-            .search-input {
-                text-align: left;
+            .gate-info {
+                padding: 1.25rem 1rem;
+                margin: 1.5rem 0;
+                border-radius: 12px;
+            }
+
+            .gate-info h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .gate-info p {
                 font-size: 0.9rem;
-            }
-
-            .search-input::placeholder {
-                text-align: left;
-                font-size: 0.75rem;
+                line-height: 1.5;
+                margin-top: 0.8rem;
             }
 
             .gate-info-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-top: 1.2rem;
+            }
+
+            .info-item {
+                padding: 1rem;
+                border-left-width: 3px;
+                border-radius: 10px;
+            }
+
+            .info-item h3 {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .info-item p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .modal-content {
+                max-height: 70vh;
+                padding: 1rem;
+                border-radius: 20px 20px 0 0;
+            }
+
+            .modal-header {
+                margin-bottom: 1.2rem;
+                padding-bottom: 1rem;
+            }
+
+            .modal-title {
+                font-size: 1.2rem;
+            }
+
+            .modal-close {
+                font-size: 1.4rem;
+                min-width: 44px;
+                min-height: 44px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .modal-subject-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1.2rem 1rem;
+                margin-bottom: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .modal-subject-icon {
+                font-size: 2.8rem;
+            }
+
+            .modal-subject-details h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .modal-subject-code {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.65rem;
+            }
+
+            .modal-subject-details p {
+                font-size: 0.85rem;
+            }
+
+            .pyq-list {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .pyq-item {
+                padding: 1rem;
+                border-radius: 10px;
+            }
+
+            .pyq-item-icon {
+                font-size: 2rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .pyq-item-name {
+                font-size: 0.85rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .pyq-item-action {
+                font-size: 0.75rem;
+            }
+
+            .pyq-actions {
+                gap: 0.5rem;
+                margin-top: 0.7rem;
+            }
+
+            .pyq-link {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+                min-height: 36px;
+                min-width: 36px;
             }
 
             .view-toggle-container {
-                margin-bottom: 2rem;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .view-toggle-btn {
+                padding: 0.65rem 1rem;
+                font-size: 0.85rem;
+                min-height: 44px;
+                flex: 1;
+                border-radius: 8px;
             }
 
             .subjects-links-grid {
                 grid-template-columns: 1fr;
+                gap: 0.8rem;
             }
 
-            .view-toggle-btn {
-                flex: 1;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 0.6rem 1rem;
+            .subject-link {
+                padding: 0.9rem;
+                min-height: 48px;
+                gap: 0.8rem;
+                border-radius: 10px;
             }
 
-            .logo {
-                font-size: 1.3rem;
-                gap: 0.5rem;
+            .subject-link-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 0.8rem;
             }
 
-            .logo-icon {
-                width: 35px;
-                height: 35px;
+            .subject-link-title {
+                font-size: 0.85rem;
             }
 
-            .logo-text {
-                gap: 0.1rem;
+            .subject-link-code {
+                font-size: 0.65rem;
             }
 
-            .logo-text span:first-child {
-                font-size: 1.2rem;
-            }
-
-            .logo-text span:last-child {
-                font-size: 0.6rem;
-            }
-
-            .back-btn {
-                padding: 0.5rem 0.6rem;
-                font-size: 0.9rem;
-                border: 1.5px solid #3b82f6;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
+            .subject-link-arrow {
                 font-size: 1rem;
             }
 
-            .subjects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 0.75rem;
+            footer {
+                padding: 1.5rem 1rem;
+                margin-top: 2rem;
             }
 
-            .subject-card {
-                padding: 0.85rem 0.6rem;
+            footer p {
+                font-size: 0.85rem;
+                line-height: 1.5;
             }
 
-            .subject-icon {
-                font-size: 1.8rem;
-                margin-bottom: 0.35rem;
-            }
-
-            .subject-code-badge {
-                padding: 0.2rem 0.5rem;
-                font-size: 0.6rem;
-                margin-bottom: 0.35rem;
-            }
-
-            .subject-title {
-                font-size: 0.7rem;
-                margin-bottom: 0.25rem;
-            }
-
-            .subject-meta {
-                font-size: 0.6rem;
-                margin-bottom: 0.4rem;
-            }
-
-            .subject-tag {
-                padding: 0.15rem 0.4rem;
-                font-size: 0.55rem;
+            .loading {
+                width: 18px;
+                height: 18px;
             }
         }
 
@@ -853,16 +1359,29 @@
             cursor: pointer;
             transition: var(--transition);
             padding: 0;
+            min-width: 48px;
+            min-height: 48px;
             width: 50px;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 8px;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
-        .modal-close:hover {
-            transform: scale(1.1);
-            color: var(--accent-color);
+        .modal-close:active {
+            background: rgba(15, 23, 42, 0.08);
+            transform: scale(0.95);
+        }
+
+        @media (hover: hover) {
+            .modal-close:hover {
+                transform: scale(1.1);
+                color: var(--accent-color);
+                background: rgba(15, 23, 42, 0.05);
+            }
         }
 
         .modal-subject-info {
@@ -920,6 +1439,8 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             animation: fadeInUp 0.4s ease-out forwards;
             opacity: 0;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         @keyframes fadeInUp {
@@ -933,11 +1454,18 @@
             }
         }
 
-        .pyq-item:hover {
-            background: #f8fafc;
-            border-color: #06b6d4;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+        .pyq-item:active {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+        }
+
+        @media (hover: hover) {
+            .pyq-item:hover {
+                background: #f8fafc;
+                border-color: #06b6d4;
+                transform: translateY(-4px);
+                box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+            }
         }
 
         .pyq-item-icon {
@@ -1010,6 +1538,23 @@
             background: #e2e8f0;
             text-decoration: none;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            min-height: 36px;
+            min-width: 36px;
+            border: none;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .pyq-link:active:not(.disabled) {
+            transform: translateY(0px) scale(0.97);
+        }
+
+        @media (hover: hover) {
+            .pyq-link:hover:not(.disabled) {
+                transform: translateY(-1px);
+                box-shadow: 0 6px 12px rgba(6, 182, 212, 0.25);
+            }
         }
 
         .pyq-link.secondary {
@@ -1020,11 +1565,6 @@
         html.dark .pyq-link {
             background: rgba(6, 182, 212, 0.18);
             color: #67e8f9;
-        }
-
-        .pyq-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 12px rgba(6, 182, 212, 0.25);
         }
 
         .pyq-link.disabled {
@@ -1224,7 +1764,11 @@
             font-size: 0.95rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            min-height: 44px;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .view-toggle-btn.active {
@@ -1234,9 +1778,15 @@
             box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
         }
 
-        .view-toggle-btn:hover:not(.active) {
-            border-color: #1e3a8a;
-            background: #f9fafb;
+        .view-toggle-btn:active:not(.active) {
+            transform: scale(0.97);
+        }
+
+        @media (hover: hover) {
+            .view-toggle-btn:hover:not(.active) {
+                border-color: #1e3a8a;
+                background: #f9fafb;
+            }
         }
 
         /* View Sections */
@@ -1319,6 +1869,9 @@
             overflow: hidden;
             cursor: pointer;
             font-weight: 500;
+            min-height: 48px;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .subject-link::before {
@@ -1332,15 +1885,21 @@
             transition: var(--transition);
         }
 
-        .subject-link:hover::before {
-            left: 100%;
+        .subject-link:active {
+            transform: scale(0.98);
         }
 
-        .subject-link:hover {
-            border-color: #1e3a8a;
-            background: #f9fafb;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(30, 58, 138, 0.12);
+        @media (hover: hover) {
+            .subject-link:hover::before {
+                left: 100%;
+            }
+
+            .subject-link:hover {
+                border-color: #1e3a8a;
+                background: #f9fafb;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(30, 58, 138, 0.12);
+            }
         }
 
         .subject-link-icon {
@@ -1396,7 +1955,23 @@
             display: none;
         }
 
-        /* Desktop specific */
+        /* Focus states for accessibility */
+        button:focus-visible,
+        a:focus-visible,
+        .subject-card:focus-visible,
+        .filter-tag:focus-visible,
+        .view-toggle-btn:focus-visible,
+        .subject-link:focus-visible,
+        .pyq-link:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        .search-input:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: -2px;
+        }
+
         @media (min-width: 769px) {
             .view-toggle-container {
                 display: flex;
@@ -1404,6 +1979,64 @@
 
             .subjects-links-grid {
                 grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+
+        /* Mobile optimization for no-hover devices */
+        @media (hover: none) and (pointer: coarse) {
+            .subject-card {
+                box-shadow: 0 1px 3px rgba(59, 130, 246, 0.1);
+            }
+
+            .search-bar {
+                box-shadow: 0 1px 4px rgba(59, 130, 246, 0.1);
+            }
+
+            .pyq-item {
+                border: 1px solid #e2e8f0;
+            }
+
+            .subject-link {
+                border: 2px solid #e5e7eb;
+            }
+
+            button, .filter-tag, .view-toggle-btn {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+        }
+
+        /* High DPI screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .subject-card,
+            .pyq-item,
+            .search-bar {
+                border: 0.5px solid #e5e7eb;
+            }
+        }
+
+        /* Landscape mode adjustments */
+        @media (max-height: 500px) {
+            nav {
+                padding: 0.5rem 1rem;
+            }
+
+            .hero {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .search-container {
+                margin: -0.8rem auto 1rem;
+            }
+
+            .gate-info {
+                margin: 1rem 0;
+                padding: 1rem;
             }
         }
     </style>
@@ -1484,8 +2117,8 @@
             <div class="gate-info-grid">
                 <div class="info-item">
                     <h3>📋 GATE Exam Pattern</h3>
-                    <p><strong>Mode:</strong> Computer-Based Test (CBT)<br><strong>Duration:</strong> 3 hours (180 minutes)<br><strong>Total Marks:</strong> 100<br><strong>Question Types:</strong> MCQs, MSQs, NAT<br><strong>Sections:</strong> General Aptitude (15 marks) + Core Subject (85 marks)br
-                    <strong>Negative Marking:</strong> Applicable for MCQs only</p>
+                    <p><strong>Mode:</strong> Computer-Based Test (CBT)<br><strong>Duration:</strong> 3 hours (180 minutes)<br><strong>Total Marks:</strong> 100<br><strong>Question Types:</strong> MCQs, MSQs, NAT<br><strong>Sections:</strong> General Aptitude (15 marks) + Core Subject (85 marks)<br>
+                        <strong>Negative Marking:</strong> Applicable for MCQs only</p>
                 </div>
                 <div class="info-item">
                     <h3>🎓 GATE Eligibility Criteria</h3>
