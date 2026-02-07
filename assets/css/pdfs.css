@@ -76,15 +76,15 @@
     
     @media (max-width: 767px) {
         .logo-img {
-            width: 32px;
-            height: 32px;
+        width: 40px;
+        height: 40px;
         }
     }
     
     @media (max-width: 480px) {
         .logo-img {
-            width: 28px;
-            height: 28px;
+        width: 36px;
+        height: 36px;
         }
     }
 
@@ -496,8 +496,8 @@
       }
 
       .logo {
-        font-size: 12px;
-        gap: 4px;
+        font-size: 16px;
+        gap: 5px;
         letter-spacing: -0.3px;
         flex-shrink: 0;
       }
@@ -667,8 +667,8 @@
       }
 
       .logo {
-        font-size: 14px;
-        gap: 4px;
+        font-size: 18px;
+        gap: 6px;
       }
 
       .logo i {
@@ -781,8 +781,8 @@
       }
 
       .logo {
-        font-size: 16px;
-        gap: 6px;
+        font-size: 24px;
+        gap: 8px;
       }
 
       .logo i {
@@ -883,7 +883,7 @@
       }
     
       header .logo {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
 
