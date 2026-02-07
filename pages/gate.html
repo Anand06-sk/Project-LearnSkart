@@ -923,6 +923,42 @@
             opacity: 1;
         }
 
+        .pyq-actions {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .pyq-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #0f172a;
+            background: #e2e8f0;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .pyq-link.secondary {
+            background: rgba(6, 182, 212, 0.18);
+            color: #67e8f9;
+        }
+
+        .pyq-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(6, 182, 212, 0.25);
+        }
+
+        .pyq-link.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
         .scroll-container {
             overflow-y: auto;
         }
@@ -1701,8 +1737,77 @@
             XL: '🧫'
         };
 
+        const pdfIndex = {};
+
+        function normalizeSubjectName(name) {
+            return (name || '').replace(/\s+/g, ' ').trim();
+        }
+
+        function normalizePdfSubject(name) {
+            const normalized = normalizeSubjectName(name);
+            if (normalized === 'Textiles Engineering and Fibre Science') {
+                return 'Textile Engineering and Fibre Science';
+            }
+            return normalized;
+        }
+
+        function parseDriveId(url) {
+            if (!url) return '';
+            const match = url.match(/\/d\/([^/]+)\//) || url.match(/[?&]id=([^&]+)/);
+            return match ? match[1] : '';
+        }
+
+        function toDownloadUrl(url) {
+            const id = parseDriveId(url);
+            return id ? `https://drive.google.com/uc?export=download&id=${id}` : url;
+        }
+
+        function buildPdfIndex(data) {
+            if (!Array.isArray(data)) return;
+            data.forEach(item => {
+                const subject = normalizePdfSubject(item['Subject']);
+                if (!subject) return;
+                if (!pdfIndex[subject]) pdfIndex[subject] = [];
+                pdfIndex[subject].push({
+                    title: item['PDF File Name'],
+                    url: item['Direct PDF Link']
+                });
+            });
+
+            Object.keys(pdfIndex).forEach(subject => {
+                pdfIndex[subject].sort((a, b) => {
+                    const yearA = (a.title || '').match(/\b(\d{4})\b/);
+                    const yearB = (b.title || '').match(/\b(\d{4})\b/);
+                    const numA = yearA ? parseInt(yearA[1], 10) : 0;
+                    const numB = yearB ? parseInt(yearB[1], 10) : 0;
+                    if (numA !== numB) return numB - numA;
+                    return (a.title || '').localeCompare(b.title || '');
+                });
+            });
+        }
+
+        async function loadPdfIndex() {
+            try {
+                const response = await fetch('../assets/data/gate-qns.json', { cache: 'no-store' });
+                if (!response.ok) throw new Error('Failed to load GATE PDF index');
+                const data = await response.json();
+                buildPdfIndex(data);
+            } catch (error) {
+                console.warn('GATE PDF index unavailable:', error);
+            }
+        }
+
+        function getSubjectPapers(subjectName, code, fallbackCount) {
+            const normalized = normalizeSubjectName(subjectName);
+            if (pdfIndex[normalized] && pdfIndex[normalized].length) {
+                return pdfIndex[normalized];
+            }
+            return generatePYQs(code, fallbackCount).map(title => ({ title: title, url: '' }));
+        }
+
         // Initialize subjects on page load
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadPdfIndex();
             renderSubjectCards();
             addEventListeners();
         });
@@ -1732,7 +1837,7 @@
                 <div class="subject-icon">${icon}</div>
                 <div class="subject-code-badge">${subject.code}</div>
                 <h3 class="subject-title">${subject.name}</h3>
-                <p class="subject-meta">${subject.papers} papers • ${subject.difficulty}</p>
+                <p class="subject-meta">${subject.papers} papers</p>
                 <div class="subject-tags">
                     <span class="subject-tag">${subject.stream}</span>
                     <span class="subject-tag">${subject.papers}+ PYQs</span>
@@ -1820,15 +1925,27 @@
 
             const modalBody = document.getElementById('modalBody');
             const icon = subjectIcons[selectedSubject.code] || '📘';
-            const papers = generatePYQs(selectedSubject.code, selectedSubject.papers);
+            const papers = getSubjectPapers(selectedSubject.name, selectedSubject.code, selectedSubject.papers);
 
-            let pyqsHTML = papers.map((pyq, index) => `
+            let pyqsHTML = papers.map((paper, index) => {
+                const paperTitle = paper.title || '';
+                const viewLink = paper.url || '';
+                const downloadLink = viewLink ? toDownloadUrl(viewLink) : '';
+                const viewAction = viewLink
+                    ? `<a class="pyq-link" href="${viewLink}" target="_blank" rel="noopener">View</a>`
+                    : `<span class="pyq-link disabled">View</span>`;
+                const downloadAction = downloadLink
+                    ? `<a class="pyq-link secondary" href="${downloadLink}" target="_blank" rel="noopener">Download</a>`
+                    : `<span class="pyq-link secondary disabled">Download</span>`;
+
+                return `
                 <div class="pyq-item" style="animation-delay: ${index * 0.08}s;">
                     <div class="pyq-item-icon">📄</div>
-                    <div class="pyq-item-name">${pyq}</div>
-                    <div class="pyq-item-action">Click to download →</div>
+                    <div class="pyq-item-name">${paperTitle}</div>
+                    <div class="pyq-actions">${viewAction}${downloadAction}</div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
 
             modalBody.innerHTML = `
                 <div class="modal-subject-info">
@@ -1838,7 +1955,7 @@
                             ${selectedSubject.name}
                             <span class="modal-subject-code">${selectedSubject.code}</span>
                         </h2>
-                        <p>${selectedSubject.papers} Papers Available • ${selectedSubject.difficulty}</p>
+                        <p>${selectedSubject.papers} Papers Available</p>
                     </div>
                 </div>
                 <div class="pyq-list">

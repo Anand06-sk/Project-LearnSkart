@@ -24,14 +24,9 @@
     // Update on change (visual only). Actual application occurs when Search is clicked.
     regSelect.addEventListener('change', function() {
       // Visual highlight only
-      regSelect.style.boxShadow = '0 0 0 4px rgba(102, 126, 234, 0.4), 0 0 25px rgba(102, 126, 234, 0.6)';
-      regSelect.style.borderColor = 'rgba(102, 126, 234, 0.9)';
-      regSelect.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240, 244, 255, 0.95))';
-
+      regSelect.classList.add('select-flash');
       setTimeout(() => {
-        regSelect.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-        regSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-        regSelect.style.background = '#ffffff';
+        regSelect.classList.remove('select-flash');
       }, 700);
 
         applyRegView(regSelect.value);
@@ -57,14 +52,9 @@
 
   semSelect.addEventListener('change', function() {
     // Visual highlight only; actual scroll/highlight happens on Search
-    semSelect.style.boxShadow = '0 0 0 4px rgba(102, 126, 234, 0.4), 0 0 25px rgba(102, 126, 234, 0.6)';
-    semSelect.style.borderColor = 'rgba(102, 126, 234, 0.9)';
-    semSelect.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240, 244, 255, 0.95))';
-
+    semSelect.classList.add('select-flash');
     setTimeout(() => {
-      semSelect.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-      semSelect.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-      semSelect.style.background = '#ffffff';
+      semSelect.classList.remove('select-flash');
     }, 700);
   });
 })();
