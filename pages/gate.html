@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GATE Previous Year Papers | LearnSkart</title>
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('site-theme') || 'light';
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    document.body.classList.add('dark-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <style>
         * {
             margin: 0;
@@ -240,6 +252,12 @@
             position: relative;
         }
 
+        html.dark .search-bar {
+            background: #0f1a2e;
+            background-image: linear-gradient(#0f1a2e, #0f1a2e), linear-gradient(90deg, #3b82f6, #06b6d4, #3b82f6);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.5), 0 0 18px rgba(96, 165, 250, 0.2);
+        }
+
         @keyframes searchBarGlow {
             0% {
                 box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.2);
@@ -265,6 +283,10 @@
             font-size: 1.3rem;
         }
 
+        html.dark .search-icon {
+            color: #60a5fa;
+        }
+
         .search-input {
             flex: 1;
             border: none;
@@ -276,10 +298,29 @@
             text-align: left;
         }
 
+        html.dark .search-input {
+            color: #f1f5f9;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        html.dark body .search-bar .search-input {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
         .search-input::placeholder {
             color: #999;
             font-size: 0.85rem;
             text-align: left;
+        }
+
+        html.dark .search-input::placeholder {
+            color: #94a3b8;
         }
 
         .clear-btn {
@@ -292,8 +333,16 @@
             transition: var(--transition);
         }
 
+        html.dark .clear-btn {
+            color: #94a3b8;
+        }
+
         .clear-btn:hover {
             color: var(--primary-color);
+        }
+
+        html.dark .clear-btn:hover {
+            color: #93c5fd;
         }
 
         /* Main Content */
@@ -710,7 +759,6 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
@@ -720,6 +768,7 @@
         .modal-overlay.active {
             opacity: 1;
             pointer-events: auto;
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
@@ -1841,5 +1890,6 @@
             }
         });
     </script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 </html>
