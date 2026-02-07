@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GATE Previous Year Papers | LearnSkart</title>
+    <title>GATE Previous Year Questions | LearnSkart</title>
+    <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap">
     <link rel="stylesheet" href="../assets/css/theme.css">
     <script>
         (function() {
@@ -63,13 +66,18 @@
         }
 
         .logo {
-            color: #1e3a8a;
-            font-size: 1.8rem;
-            font-weight: bold;
+            color: #3b82f6;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.75rem;
+        }
+
+        body.dark-mode .logo {
+            color: #ffffff;
         }
 
         .logo-icon {
@@ -92,26 +100,50 @@
             gap: 0.15rem;
         }
 
-        .home-btn {
-            background: #eff6ff;
-            border: 2px solid #3b82f6;
-            padding: 0.6rem 0.8rem;
-            border-radius: 8px;
-            font-size: 1.3rem;
-            text-decoration: none;
-            color: #1e40af;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        .logo-title {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            color: inherit;
+            line-height: 1;
         }
 
-        .home-btn:hover {
-            background: #3b82f6;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        .logo-subtitle {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .back-btn {
+            background: #ffffff;
+            color: #3b82f6;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            transform: scale(1.05);
+        }
+
+        body.dark-mode .back-btn {
+            background: rgba(30, 41, 59, 0.8);
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        body.dark-mode .back-btn:hover {
+            background: rgba(96, 165, 250, 0.2);
+            border-color: #60a5fa;
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
         }
 
         /* Hero Section */
@@ -649,16 +681,10 @@
                 font-size: 0.6rem;
             }
 
-            .home-btn {
+            .back-btn {
                 padding: 0.5rem 0.6rem;
-                font-size: 1rem;
+                font-size: 0.9rem;
                 border: 1.5px solid #3b82f6;
-            }
-
-            .home-btn span {
-                display: flex;
-                align-items: center;
-                gap: 0.3rem;
             }
 
             .hero h1 {
@@ -1377,16 +1403,14 @@
                     <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 100%; height: 100%; border-radius: 50%;">
                 </div>
                 <div class="logo-text">
-                    <span style="font-size: 1.5rem; font-weight: 800;">LearnSkart</span>
-                    <span style="font-size: 0.75rem; opacity: 0.9;">GATE Papers</span>
+                    <span class="logo-title">LearnSkart</span>
+                    <span class="logo-subtitle">GATE Papers</span>
                 </div>
             </a>
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <a href="../index.html" class="home-btn" title="Back to Home">
-                    <span>🏠 Home</span>
-                </a>
-                <a href="../index.html#contact" class="home-btn" title="Contact Us">
-                    <span>📧 Contact</span>
+                <a href="../index.html" class="back-btn" title="Back to Home">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
                 </a>
             </div>
         </div>
