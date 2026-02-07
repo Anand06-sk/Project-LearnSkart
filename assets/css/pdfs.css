@@ -70,6 +70,8 @@
       width: 48px;
       height: 48px;
       transition: all 0.3s ease;
+      border-radius: 50%;
+      object-fit: cover;
     }
     
     @media (max-width: 767px) {
@@ -91,11 +93,12 @@
     }
 
     body.dark-mode .logo {
-      color: #60a5fa;
+      color: #7dd3fc;
+      text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
     }
 
     body.dark-mode .logo i {
-      color: #60a5fa;
+      color: #7dd3fc;
     }
 
     .header-nav {

@@ -50,7 +50,13 @@ body.dark-mode .nav-menu {
 }
 
 body.dark-mode .logo {
-    color: #60a5fa;
+    color: #7dd3fc;
+    text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
+}
+
+body.dark-mode .logo-brand {
+    color: #7dd3fc;
+    text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
 }
 
 body.dark-mode .nav-link {
@@ -309,6 +315,8 @@ header {
 .logo-img {
     width: 48px;
     height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {

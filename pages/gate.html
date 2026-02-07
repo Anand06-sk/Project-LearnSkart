@@ -77,7 +77,13 @@
         }
 
         body.dark-mode .logo {
-            color: #ffffff;
+            color: #7dd3fc;
+            text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
+        }
+
+        body.dark-mode .logo-brand {
+            color: #7dd3fc;
+            text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
         }
 
         .logo-icon {
@@ -194,6 +200,14 @@
             font-weight: 800;
             color: #1e3a8a;
             text-shadow: none;
+        }
+
+        .hero .accent-word {
+            color: var(--accent-color);
+        }
+
+        body.dark-mode .hero .accent-word {
+            color: var(--accent-color) !important;
         }
 
         .hero p {
@@ -1419,7 +1433,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>GATE <span style="color: var(--accent-color);">Previous Year</span> Papers</h1>
+            <h1>GATE <span class="accent-word" style="color: var(--accent-color);">Previous Year</span> Papers</h1>
             <p>Master your preparation with curated GATE question papers organized by subject, stream, and difficulty level</p>
             
             <div class="gate-info">
@@ -1501,7 +1515,7 @@
     <footer>
         <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
             <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 32px; height: 32px; border-radius: 50%;">
-            <span style="font-weight: 700; font-size: 1.1rem;">LearnSkart</span>
+            <span class="logo-brand" style="font-weight: 700; font-size: 1.1rem;">LearnSkart</span>
         </div>
         <p style="opacity: 0.9; margin-bottom: 1rem;">Your complete resource for GATE exam preparation with organized previous year papers and solutions</p>
         <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem;">
