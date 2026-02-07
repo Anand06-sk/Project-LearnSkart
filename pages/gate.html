@@ -781,7 +781,7 @@
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 60;
             overflow-y: auto;
-            background: #1e293b;
+            background: #ffffff;
             border-radius: 24px 24px 0 0;
             padding: 2rem;
         }
@@ -802,14 +802,14 @@
         .modal-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-light);
+            color: #0f172a;
         }
 
         .modal-close {
             background: none;
             border: none;
             font-size: 2rem;
-            color: var(--text-light);
+            color: #0f172a;
             cursor: pointer;
             transition: var(--transition);
             padding: 0;
@@ -831,7 +831,7 @@
             gap: 1.5rem;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: rgba(59, 130, 246, 0.08);
+            background: #f1f5f9;
             border-radius: 16px;
             border-left: 4px solid #06b6d4;
         }
@@ -843,7 +843,7 @@
 
         .modal-subject-details h2 {
             font-size: 1.8rem;
-            color: var(--text-light);
+            color: #0f172a;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
@@ -861,7 +861,7 @@
         }
 
         .modal-subject-details p {
-            color: #9ca3af;
+            color: #475569;
             font-size: 0.95rem;
         }
 
@@ -873,8 +873,8 @@
 
         .pyq-item {
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -894,7 +894,7 @@
         }
 
         .pyq-item:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: #f8fafc;
             border-color: #06b6d4;
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
@@ -906,10 +906,38 @@
         }
 
         .pyq-item-name {
-            color: var(--text-light);
+            color: #0f172a;
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 0.5rem;
+        }
+
+        html.dark .modal-content {
+            background: #1e293b;
+        }
+
+        html.dark .modal-title,
+        html.dark .modal-close,
+        html.dark .modal-subject-details h2,
+        html.dark .pyq-item-name {
+            color: var(--text-light);
+        }
+
+        html.dark .modal-subject-info {
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        html.dark .modal-subject-details p {
+            color: #9ca3af;
+        }
+
+        html.dark .pyq-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        html.dark .pyq-item:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .pyq-item-action {
@@ -945,6 +973,11 @@
         }
 
         .pyq-link.secondary {
+            background: rgba(6, 182, 212, 0.18);
+            color: #67e8f9;
+        }
+
+        html.dark .pyq-link {
             background: rgba(6, 182, 212, 0.18);
             color: #67e8f9;
         }
