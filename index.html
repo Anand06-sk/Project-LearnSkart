@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LearnSkart - Your Learning Platform</title>
+    <title>LearnSkart - For Anna University Students</title>
     <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="assets/icons/site.webmanifest">
@@ -11,6 +11,50 @@
     <link rel="stylesheet" href="assets/css/style.css" >
     <link rel="stylesheet" href="assets/css/theme.css" >
     <style>
+        .anna-highlight {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin: 6px 0 12px 0;
+            display: inline-block;
+            background: linear-gradient(90deg, #1e3a8a, #2563eb, #60a5fa, #2563eb, #1e3a8a);
+            background-size: 220% 100%;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 6px rgba(37, 99, 235, 0.3), 0 0 12px rgba(37, 99, 235, 0.2);
+            animation: annaGlow 3s ease-in-out infinite, annaShine 6s linear infinite;
+        }
+
+        body.dark-mode .anna-highlight {
+            background: linear-gradient(90deg, #93c5fd, #60a5fa, #38bdf8, #60a5fa, #93c5fd);
+            background-size: 220% 100%;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 14px rgba(147, 197, 253, 0.6), 0 0 28px rgba(96, 165, 250, 0.45), 0 0 40px rgba(56, 189, 248, 0.3);
+        }
+
+        @keyframes annaGlow {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(37, 99, 235, 0.25), 0 0 10px rgba(37, 99, 235, 0.15);
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                text-shadow: 0 0 10px rgba(37, 99, 235, 0.45), 0 0 18px rgba(37, 99, 235, 0.3);
+                transform: translateY(-1px) scale(1.01);
+            }
+        }
+
+        @keyframes annaShine {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
         .stats-section {
             padding: 40px 0 20px 0;
         }
@@ -137,6 +181,7 @@
 <section class="hero">
     <div class="hero-left">
         <h1>Your Complete Learning Companion</h1>
+        <p class="anna-highlight">Specially designed for Anna University Students</p>
         <p>Access comprehensive notes, past papers, and resources for all semesters</p>
         
         <div class="search-container">
@@ -154,7 +199,7 @@
     </div>
 
     <div class="hero-right">
-        <h2>Choose Your Department</h2>
+        <h2>Choose Your Department for Notes</h2>
         <div class="departments-grid">
             <a href="pages/cse.html" class="dept-card cse-card" title="Computer Science & Engineering">
                 <i class="fas fa-laptop-code"></i>

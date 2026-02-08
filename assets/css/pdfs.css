@@ -40,6 +40,9 @@
       transition: all 0.3s ease;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
+    header .span{
+      font-size: 25px;
+    }
 
     body.dark-mode header {
       background: #1a1a1a;

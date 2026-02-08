@@ -38,6 +38,9 @@ header {
     animation: slideDown 1s ease;
     border-bottom: 1px solid #e2e8f0;
 }
+header .logo{
+    font-size: 24px;
+}
 
 @keyframes slideDown {
     from {transform: translateY(-100%);}
