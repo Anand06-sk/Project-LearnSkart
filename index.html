@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LearnSkart - For Anna University Students</title>
+    <title>LearnSkart -Cse,It,Mech,Civil,Ece,Eee Notes For Anna University</title>
     <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="assets/icons/site.webmanifest">
@@ -283,7 +283,13 @@
             </div>
             <h3>Email Us</h3>
             <p>For inquiries, support, or feedback</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=learnskart@gmail.com" class="contact-email" target="_blank" rel="noopener">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=learnskart@gmail.com"
+               class="contact-email"
+               target="_blank"
+               rel="noopener"
+               data-desktop-href="https://mail.google.com/mail/?view=cm&fs=1&to=learnskart@gmail.com"
+               data-mobile-href="mailto:learnskart@gmail.com"
+               aria-label="Email learnskart@gmail.com">
                 <i class="fas fa-envelope"></i>
                 learnskart@gmail.com
             </a>
@@ -348,58 +354,5 @@
 
 <script src="assets/js/theme.js" defer></script>
 <script src="assets/js/script.js" defer></script>
-<script>
-// Animated counters for stats
-document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.stat-item h4[data-target]');
-    const duration = 1200; // ms total duration per counter
-
-    // Create intersection observer to trigger animation when stats come into view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const statsSection = entry.target;
-                const counters = statsSection.querySelectorAll('.stat-item h4[data-target]');
-                counters.forEach(animateCounter);
-                observer.unobserve(statsSection);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    const statsSection = document.querySelector('.stats-section');
-    if (statsSection) {
-        observer.observe(statsSection);
-    }
-
-    function animateCounter(el) {
-        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
-        const suffix = el.getAttribute('data-suffix') || '';
-        const start = 0;
-        let startTime = null;
-
-        function step(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const progress = timestamp - startTime;
-            const percent = Math.min(progress / duration, 1);
-            const eased = easeOutQuad(percent);
-            const value = Math.floor(start + (target - start) * eased);
-            el.textContent = value + (percent === 1 ? suffix : '');
-            // add pop animation
-            el.classList.add('pop');
-            setTimeout(() => el.classList.remove('pop'), 120);
-            if (progress < duration) {
-                window.requestAnimationFrame(step);
-            } else {
-                // ensure exact final value
-                el.textContent = target + suffix;
-            }
-        }
-
-        window.requestAnimationFrame(step);
-    }
-
-    function easeOutQuad(t) { return t * (2 - t); }
-});
-</script>
 </body>
 </html>
