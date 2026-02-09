@@ -237,7 +237,9 @@
           if (url && url !== '#') window.open(url, '_blank', 'noopener');
         };
         card.addEventListener('click', (e) => {
-          if ((e.target instanceof Element) && e.target.closest('a')) return; // let buttons work
+          // Check if the clicked element is a button or inside a button
+          const actionBtn = (e.target instanceof Element) && (e.target.closest('.action-btn') || e.target.closest('.view-btn') || e.target.closest('.download-btn'));
+          if (actionBtn) return; // let buttons work
           openView();
         });
         card.addEventListener('keydown', (e) => {

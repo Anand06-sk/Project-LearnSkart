@@ -174,6 +174,20 @@ html.dark button:hover {
   transform: translateY(-1px);
 }
 
+html.dark .home-btn {
+  background: #111729 !important;
+  border-color: rgba(96, 165, 250, 0.6) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.35);
+}
+
+html.dark .home-btn:hover {
+  background: #1a1f3a !important;
+  border-color: #60a5fa !important;
+  color: #f8fafc !important;
+  box-shadow: 0 12px 18px rgba(96, 165, 250, 0.25);
+}
+
 html.dark .btn:active, 
 html.dark button:active {
   transform: translateY(0);

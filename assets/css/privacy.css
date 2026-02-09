@@ -100,9 +100,17 @@
             opacity: 0.8;
         }
 
+        html.dark .nav-logo,
+        html.dark .logo-brand {
+            color: #7dd3fc;
+            text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
+        }
+
         .logo-img {
             width: 48px;
             height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
         }
         
         @media (max-width: 767px) {
