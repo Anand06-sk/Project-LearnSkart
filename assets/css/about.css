@@ -71,6 +71,12 @@ html.dark nav {
     background-color: rgba(15, 20, 25, 0.8);
 }
 
+html.dark .nav-logo,
+html.dark .logo-brand {
+    color: #7dd3fc;
+    text-shadow: 0 0 12px rgba(125, 211, 252, 0.45);
+}
+
 .nav-content {
     max-width: 1200px;
     width: 100%;
@@ -102,6 +108,8 @@ html.dark nav {
 .logo-img {
     width: 48px;
     height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {
