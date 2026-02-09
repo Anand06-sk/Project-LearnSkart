@@ -3,6 +3,19 @@
       // Utility to read URL params - returns '' if not found
       function getParam(name) { const p = new URLSearchParams(window.location.search); return p.get(name) || ''; }
 
+      function normalizeSemester(sem) {
+        if (!sem) return '';
+        let s = String(sem).trim().toUpperCase();
+        const romanMap = { 'VIII':'8','VII':'7','VI':'6','V':'5','IV':'4','III':'3','II':'2','I':'1' };
+        const num = s.match(/\b([1-8])\b/);
+        if (num) return num[1];
+        const roman = s.match(/\b(VIII|VII|VI|V|IV|III|II|I)\b/);
+        if (roman) return romanMap[roman[1]];
+        const anyDigit = s.match(/([1-8])/);
+        if (anyDigit) return anyDigit[1];
+        return s;
+      }
+
       // DOM refs
       const wholeGrid = document.getElementById('whole-grid');
       const semGrid = document.getElementById('sem-grid');
@@ -14,7 +27,7 @@
       const regSelect = document.getElementById('filter-reg');
       
       const defaultReg = '2021';
-      const dept = (getParam('dept') || 'CSE').toUpperCase();
+  const dept = (getParam('dept') || getParam('department') || 'CSE').toUpperCase();
       // Mapping of department codes to full human-friendly names
       const deptNames = {
         'CSE': 'Computer Science and Engineering',
@@ -26,6 +39,8 @@
       };
       const deptFull = deptNames[dept] || dept;
       let selectedReg = (getParam('regulation') || defaultReg);
+  const targetSemester = normalizeSemester(getParam('semester') || getParam('sem'));
+  let didAutoFocus = false;
 
       // Initialize UI
       regSelect.value = selectedReg;
@@ -130,6 +145,9 @@
             // Create a visually grouped block per semester for better alignment
             const semWrap = document.createElement('div');
             semWrap.className = 'semester-section';
+            if (targetSemester && sem === targetSemester) {
+              semWrap.classList.add('is-focus');
+            }
 
             const semHeading = document.createElement('h3');
             semHeading.className = 'semester-heading';
@@ -154,8 +172,25 @@
         let total = 0;
         total += regData.whole ? 1 : 0;
         semKeys.forEach(sem => { total += Array.isArray(semesters[sem]) ? semesters[sem].length : 0; });
-        countBadge.textContent = total;
-        empty.style.display = total ? 'none' : '';
+        countBadge.textContent = total;
+        empty.style.display = total ? 'none' : '';
+
+        if (targetSemester && !didAutoFocus) {
+          const focusSection = semGrid.querySelector('.semester-section.is-focus');
+          if (focusSection) {
+            const header = document.querySelector('.header-wrapper');
+            const headerOffset = header ? header.offsetHeight + 12 : 0;
+            const scrollToFocus = () => {
+              focusSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              window.scrollBy({ top: -headerOffset, left: 0, behavior: 'smooth' });
+            };
+            requestAnimationFrame(() => {
+              requestAnimationFrame(scrollToFocus);
+            });
+            setTimeout(scrollToFocus, 120);
+          }
+          didAutoFocus = true;
+        }
       }
 
       // helper: format filename -> human-friendly display

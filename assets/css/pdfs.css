@@ -223,6 +223,42 @@
       border: 1px solid #dbeafe;
     }
 
+    .page-actions {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .page-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 9999px;
+      border: 1px solid #dbeafe;
+      background: #ffffff;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(59, 130, 246, 0.08);
+    }
+
+    .page-action-btn:hover {
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.16);
+    }
+
+    body.dark-mode .page-action-btn {
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(96, 165, 250, 0.3);
+      color: #93c5fd;
+    }
+
     body.dark-mode .pdf-count {
       background: rgba(96, 165, 250, 0.15);
       color: #60a5fa;
@@ -493,6 +529,10 @@
         border-bottom: 1px solid #e5e7eb !important;
       }
 
+      header .span {
+        font-size: 16px;
+      }
+
       body.dark-mode header {
         background: #1a1a1a !important;
         border-bottom-color: #333333 !important;
@@ -586,6 +626,17 @@
         margin-top: 10px;
       }
 
+      .page-actions {
+        margin-top: 10px;
+        gap: 8px;
+      }
+
+      .page-action-btn {
+        padding: 8px 12px;
+        font-size: 11px;
+        gap: 6px;
+      }
+
       .pdf-count i {
         font-size: 12px;
       }
@@ -669,6 +720,10 @@
         gap: 6px;
       }
 
+      header .span {
+        font-size: 18px;
+      }
+
       .logo {
         font-size: 18px;
         gap: 6px;
@@ -729,6 +784,16 @@
         font-size: 12px;
         padding: 6px 12px;
         margin-top: 12px;
+      }
+
+      .page-actions {
+        margin-top: 12px;
+        gap: 10px;
+      }
+
+      .page-action-btn {
+        padding: 9px 14px;
+        font-size: 12px;
       }
 
       .pdf-grid {

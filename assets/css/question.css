@@ -146,6 +146,8 @@
         .card { background: white; border: 1px solid var(--border); border-radius: 0.75rem; overflow: hidden; transition: 0.3s; height: fit-content; }
         .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
         .card.expanded { ring: 2px solid var(--primary); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .card.is-focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); }
+        .card.is-focus .card-body { background: #eff6ff; }
         .card-body { padding: 1.25rem; cursor: pointer; }
 
         .card-header { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
@@ -210,6 +212,8 @@
         body.dark-mode .tab-btn { background: #0f172a; border-color: var(--border); color: #94a3b8; }
         body.dark-mode .tab-btn.active { background: var(--primary); color:#fff; border-color: var(--primary); }
         body.dark-mode .card { background: #0f172a; border-color: var(--border); }
+        body.dark-mode .card.is-focus { border-color: #60a5fa; box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2); }
+        body.dark-mode .card.is-focus .card-body { background: rgba(30, 64, 175, 0.18); }
         body.dark-mode .papers-list { background: #0b1220; border-top-color: var(--border); }
         body.dark-mode .paper-item { background: #0f172a; border-color: var(--border); }
         body.dark-mode .btn-icon { color: #9ca3af; }

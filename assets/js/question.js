@@ -1,4 +1,44 @@
 
+        function getParam(name) {
+            const p = new URLSearchParams(window.location.search);
+            return p.get(name) || '';
+        }
+
+        function normalizeSubjectName(str) {
+            if (!str) return '';
+            let s = String(str);
+            s = s.replace(/\([^)]*\)/g, ' ');
+            s = s.replace(/[–—-]/g, ' ');
+            const romanMap = {
+                'VIII': '8', 'VII': '7', 'VI': '6', 'V': '5', 'IV': '4', 'III': '3', 'II': '2', 'I': '1'
+            };
+            s = s.replace(/\b(VIII|VII|VI|IV|III|II|I)\b/gi, m => romanMap[m.toUpperCase()] || m);
+            s = s.replace(/&/g, 'and');
+            return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+        }
+
+        function normalizeSemester(sem) {
+            if (!sem) return '';
+            let s = String(sem).trim().toUpperCase();
+            const romanMap = { 'VIII':'8','VII':'7','VI':'6','V':'5','IV':'4','III':'3','II':'2','I':'1' };
+            const num = s.match(/\b([1-8])\b/);
+            if (num) return num[1];
+            const roman = s.match(/\b(VIII|VII|VI|V|IV|III|II|I)\b/);
+            if (roman) return romanMap[roman[1]];
+            const anyDigit = s.match(/([1-8])/);
+            if (anyDigit) return anyDigit[1];
+            return s;
+        }
+
+        function normalizeRegulation(reg) {
+            if (!reg) return '2021';
+            const s = String(reg);
+            const year = s.match(/(20\d{2})/);
+            if (year) return year[1];
+            const digits = s.replace(/\D/g, '');
+            return digits || '2021';
+        }
+
         // App State
         let universityData = {};
         let selectedDept = 'CSE';
@@ -8,6 +48,8 @@
         let expandedId = null;
         let currentPdfUrl = '';
         let currentPdfTitle = '';
+        let targetSubjectNormalized = '';
+        let didAutoFocus = false;
 
         const deptFullNames = {
             "CSE": "Computer Science & Engineering",
@@ -26,6 +68,16 @@
                 universityData = await response.json();
                 
                 document.getElementById('year').textContent = new Date().getFullYear();
+                const deptRaw = getParam('dept');
+                const semRaw = getParam('semester') || getParam('sem');
+                const regRaw = getParam('regulation') || getParam('reg');
+                const subjectRaw = getParam('subject') || getParam('sub');
+
+                if (deptRaw) selectedDept = deptRaw.toUpperCase();
+                if (semRaw) selectedSem = normalizeSemester(semRaw) || selectedSem;
+                if (regRaw) selectedReg = normalizeRegulation(regRaw) || selectedReg;
+                if (subjectRaw) targetSubjectNormalized = normalizeSubjectName(subjectRaw);
+
                 renderTabs();
                 renderSemesterTabs();
                 renderGrid();
@@ -59,6 +111,7 @@
             const grid = document.getElementById('grid');
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
+            let autoExpandedId = null;
 
             // Check if 2025 regulation is selected and show coming soon state
             if (selectedReg === '2025') {
@@ -86,16 +139,29 @@
             });
 
             subjects.sort((a, b) => a.sem - b.sem);
+
+            if (!didAutoFocus && targetSubjectNormalized) {
+                const match = subjects.find(s => {
+                    const subjectNormalized = normalizeSubjectName(s.name);
+                    return subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized);
+                });
+                autoExpandedId = match ? match.id : null;
+                if (autoExpandedId && !expandedId) {
+                    expandedId = autoExpandedId;
+                }
+            }
             
             document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
             document.getElementById('subjectCount').textContent = `${subjects.length} Subjects`;
             document.getElementById('emptyState').classList.toggle('hidden', subjects.length > 0);
 
             grid.innerHTML = subjects.map(s => {
-                const isExp = expandedId === s.id;
+                const subjectNormalized = normalizeSubjectName(s.name);
+                const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
+                const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
                 return `
-                    <div class="card ${isExp ? 'expanded' : ''}">
+                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">
                             <div class="card-header">
                                 <span class="sem-tag">SEM ${s.sem}</span>
@@ -131,6 +197,16 @@
                 `;
             }).join('');
             lucide.createIcons();
+
+            if (autoExpandedId && !didAutoFocus) {
+                const focusCard = grid.querySelector('.card.is-focus');
+                if (focusCard) {
+                    requestAnimationFrame(() => {
+                        focusCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
+                }
+                didAutoFocus = true;
+            }
         }
 
         // Event Handlers
