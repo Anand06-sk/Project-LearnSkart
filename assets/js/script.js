@@ -714,3 +714,80 @@ function initNavToggle(){
         }
     });
 }
+// -------------------- CONTACT EMAIL HANDOFF --------------------
+document.addEventListener('DOMContentLoaded', () => {
+    initContactEmailLink();
+    initStatsCounters();
+});
+
+function initContactEmailLink(){
+    const emailLink = document.querySelector('.contact-email');
+    if(!emailLink) return;
+
+    const isMobileLike = () => {
+        const ua = navigator.userAgent || '';
+        const touchCapable = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+        const mobileUA = /android|iphone|ipad|ipod|windows phone/i.test(ua);
+        const narrowScreen = Math.max(screen.width, screen.height) <= 900;
+        return mobileUA || (touchCapable && narrowScreen);
+    };
+
+    const mobileHref = emailLink.getAttribute('data-mobile-href');
+    const desktopHref = emailLink.getAttribute('data-desktop-href');
+    const preferMobile = isMobileLike();
+
+    emailLink.setAttribute('href', preferMobile && mobileHref ? mobileHref : desktopHref);
+
+    if(preferMobile){
+        emailLink.removeAttribute('target');
+        emailLink.removeAttribute('rel');
+    }
+}
+
+// -------------------- STATS COUNTERS --------------------
+function initStatsCounters(){
+    const statsSection = document.querySelector('.stats-section');
+    if(!statsSection) return;
+
+    const duration = 1200; // ms per counter
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                statsSection.querySelectorAll('.stat-item h4[data-target]').forEach(animateCounter);
+                observer.unobserve(statsSection);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+
+    function animateCounter(el){
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const start = 0;
+        let startTime = null;
+
+        function step(timestamp){
+            if(!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percent = Math.min(progress / duration, 1);
+            const eased = easeOutQuad(percent);
+            const value = Math.floor(start + (target - start) * eased);
+            el.textContent = value + (percent === 1 ? suffix : '');
+            el.classList.add('pop');
+            setTimeout(() => el.classList.remove('pop'), 120);
+            if(progress < duration){
+                window.requestAnimationFrame(step);
+            } else {
+                el.textContent = target + suffix;
+            }
+        }
+
+        window.requestAnimationFrame(step);
+    }
+
+    function easeOutQuad(t){
+        return t * (2 - t);
+    }
+}
