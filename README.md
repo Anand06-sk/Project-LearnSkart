@@ -11,7 +11,7 @@ LearnSkart is an educational resource hub designed for engineering students to a
 - **Department-wise Navigation**: Dedicated pages for CSE, ECE, EEE, Mechanical, Civil, and IT departments
 - **Smart Filtering**: Filter resources by regulation year, semester, and subject
 - **Google Drive Integration**: All PDFs hosted on Google Drive with direct viewing links
-- **Dark Mode Support**: Toggle between light and dark themes for comfortable viewing
+- **Dark Mode Support**: Toggle on the home page with site-wide persistence
 - **Mobile Responsive**: Fully optimized for smartphones, tablets, and desktop devices
 - **Fast & Lightweight**: Pure static site with no backend dependencies
 - **CGPA Calculator**: Built-in tool to calculate academic performance
@@ -29,17 +29,18 @@ LearnSkart is an educational resource hub designed for engineering students to a
 ## 📁 Folder Structure
 
 ```
-Project-LearnSkart/
+Project-OpenNotes/
 │
 ├── index.html                 # Home page
 ├── README.md                  # Project documentation
+├── sitemap.xml                # Sitemap for GitHub Pages
 │
 ├── assets/
 │   ├── css/                   # Stylesheets
 │   │   ├── style.css          # Main stylesheet
 │   │   ├── theme.css          # Dark mode theme
 │   │   ├── Deptstyle.css      # Department page styles
-│   │   ├── pdfs.css           # PDF listing styles
+│   │   ├── pdfs.css           # Study notes listing styles
 │   │   ├── question.css       # Question paper styles
 │   │   ├── syllabus.css       # Syllabus page styles
 │   │   └── ...                # Other component styles
@@ -54,26 +55,31 @@ Project-LearnSkart/
 │   └── js/                    # JavaScript modules
 │       ├── script.js          # Main application logic
 │       ├── Deptscript.js      # Department page logic
-│       ├── pdfs.js            # PDF listing handler
+│       ├── pdfs.js            # Study notes listing handler
 │       ├── populate-pyq.js    # Question paper handler
 │       ├── syllabus.js        # Syllabus handler
-│       ├── theme.js           # Dark mode toggle
+│       ├── theme.js           # Dark mode persistence/toggle
 │       └── ...                # Other utilities
 │
-└── pages/                     # HTML pages
-    ├── cse.html               # CSE department page
-    ├── ece.html               # ECE department page
-    ├── eee.html               # EEE department page
-    ├── mech.html              # Mechanical department page
-    ├── civil.html             # Civil department page
-    ├── it.html                # IT department page
-    ├── pdfs.html              # PDF listing page
-    ├── question.html          # Question papers page
-    ├── syllabus.html          # Syllabus page
-    ├── calculator.html        # CGPA calculator
-    ├── about.html             # About page
-    ├── privacy.html           # Privacy policy
-    └── disclaimer.html        # Content disclaimer
+├── academics/                 # Department pages
+│   ├── cse/                   # CSE department page
+│   ├── ece/                   # ECE department page
+│   ├── eee/                   # EEE department page
+│   ├── mech/                  # Mechanical department page
+│   ├── civil/                 # Civil department page
+│   └── it/                    # IT department page
+│
+├── syllabus/                  # Syllabus pages
+│   ├── index.html             # Syllabus landing page
+│   └── pdfs.html              # Syllabus PDF list page
+│
+├── study-notes/               # Study notes listing page
+├── previous-year-questions/   # Question papers page
+├── gate-pyqs/                 # GATE PYQs page
+├── cgpa-calculator/           # CGPA calculator page
+├── about/                     # About page
+├── privacy/                   # Privacy policy
+└── disclaimer/                # Content disclaimer
 ```
 
 ## ⚙️ How It Works (Google Drive + JSON)
@@ -102,7 +108,7 @@ The platform uses a simple yet effective architecture:
 
 ## 🌐 Live Website
 
-**GitHub Pages**: [https://anand06-sk.github.io/Project-LearnSkart/](https://anand06-sk.github.io/Project-LearnSkart/)
+**GitHub Pages**: [https://anand06-sk.github.io/Project-OpenNotes/](https://anand06-sk.github.io/Project-OpenNotes/)
 
 ## 🚀 Usage Instructions
 
@@ -117,8 +123,8 @@ The platform uses a simple yet effective architecture:
 ### For Developers:
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/anand06-sk/Project-LearnSkart.git
-   cd Project-LearnSkart
+   git clone https://github.com/anand06-sk/Project-OpenNotes.git
+   cd Project-OpenNotes
    ```
 
 2. **Run locally**:
@@ -157,13 +163,13 @@ This platform is created **solely for educational purposes** to help engineering
 
 - All PDF materials are hosted on Google Drive and are publicly available
 - **Copyright**: Ownership of all documents remains with the original authors, publishers, and educational institutions
-- If you are a copyright holder and wish to have content removed, please [open an issue](https://github.com/anand06-sk/Project-LearnSkart/issues) or contact the repository maintainer
+- If you are a copyright holder and wish to have content removed, please [open an issue](https://github.com/anand06-sk/Project-OpenNotes/issues) or contact the repository maintainer
 - This project does not claim ownership of any educational content shared on the platform
 - Users are encouraged to respect copyright laws and use materials responsibly
 
 ## 📧 Contact & Contributions
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/anand06-sk/Project-LearnSkart/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/anand06-sk/Project-OpenNotes/issues).
 
 ## 👥 Contributors
 
@@ -175,4 +181,4 @@ Thanks to these wonderful people who have contributed to this project:
 
 ---
 
-**Made with ❤️ for engineering students** | [LearnSkart](https://github.com/anand06-sk/Project-LearnSkart)
+**Made with ❤️ for engineering students** | [LearnSkart](https://github.com/anand06-sk/Project-OpenNotes)
