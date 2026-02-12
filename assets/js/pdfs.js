@@ -19,14 +19,14 @@
     function deptPath(code) {
       const c = normalizeDept(code);
       const map = {
-        'CSE': 'cse.html',
-        'ECE': 'ece.html',
-        'EEE': 'eee.html',
-        'MECH': 'mech.html',
-        'CIVIL': 'civil.html',
-        'IT': 'it.html'
+        'CSE': '../academics/cse/index.html',
+        'ECE': '../academics/ece/index.html',
+        'EEE': '../academics/eee/index.html',
+        'MECH': '../academics/mech/index.html',
+        'CIVIL': '../academics/civil/index.html',
+        'IT': '../academics/it/index.html'
       };
-      return map[c] || 'cse.html';
+      return map[c] || '../academics/cse/index.html';
     }
 
     function safeDecode(raw) {

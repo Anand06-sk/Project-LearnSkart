@@ -3,71 +3,71 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/</loc>
   </url>
 
   <!-- Pages folder -->
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/about.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/about/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/calculator.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/cgpa-calculator/</loc>
   </url>
 
   <!-- Branch pages -->
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/civil.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/academics/civil/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/cse.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/academics/cse/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/ece.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/academics/ece/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/eee.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/academics/eee/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/mech.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/academics/mech/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/it.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/academics/it/</loc>
   </url>
 
   <!-- GATE & academic -->
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/gate.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/gate-pyqs/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/sypdf.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/syllabus/pdfs.html</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/syllabus.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/syllabus/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/pdfs.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/study-notes/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/question.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/previous-year-questions/</loc>
   </url>
 
   <!-- Legal -->
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/privacy.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/privacy/</loc>
   </url>
 
   <url>
-    <loc>https://anand06-sk.github.io/Project-LearnSkart/pages/disclaimer.html</loc>
+    <loc>https://anand06-sk.github.io/Project-OpenNotes/disclaimer/</loc>
   </url>
 
 </urlset>
