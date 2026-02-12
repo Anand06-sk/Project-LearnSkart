@@ -1,3 +1,14 @@
+// Early theme setup to match stored preference.
+(function() {
+    try {
+        var theme = localStorage.getItem('site-theme') || 'light';
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark-mode');
+        }
+    } catch (e) {}
+})();
+
 function toggleDarkMode() {
     // Use shared theme system
     if(window.theme && window.theme.toggle){
