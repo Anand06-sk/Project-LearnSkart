@@ -1,4 +1,14 @@
 
+(function() {
+    try {
+        var theme = localStorage.getItem('site-theme') || 'light';
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark-mode');
+        }
+    } catch (e) {}
+})();
+
 (function(){
     var paths = ['Home/theme.js','./theme.js','../theme.js','../../theme.js'];
     paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
