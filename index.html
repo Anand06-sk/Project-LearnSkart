@@ -3,147 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LearnSkart -Cse,It,Mech,Civil,Ece,Eee Notes For Anna University</title>
-    <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
+    <title>Anna University Notes,Syllabus & PYQs-LearnSkart</title>
+    <meta name="description" content="Access Anna University notes, syllabus, previous year question papers, GATE questions and CGPA calculator for CSE, IT, ECE, EEE, MECH & CIVIL students. Free and organized resources. ">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Anna University Notes, Syllabus & PYQs – LearnSkart">
+    <meta property="og:description" content="All-in-one academic platform for Anna University students. Notes, syllabus, PYQs, GATE questions and CGPA calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anand06-sk.github.io/Project-LearnSkart/">
+    <link rel="canonical" href="https://anand06-sk.github.io/Project-LearnSkart/">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="assets/icons/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css" >
     <link rel="stylesheet" href="assets/css/theme.css" >
-    <style>
-        .anna-highlight {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 800;
-            margin: 6px 0 12px 0;
-            display: inline-block;
-            background: linear-gradient(90deg, #1e3a8a, #2563eb, #60a5fa, #2563eb, #1e3a8a);
-            background-size: 220% 100%;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 6px rgba(37, 99, 235, 0.3), 0 0 12px rgba(37, 99, 235, 0.2);
-            animation: annaGlow 3s ease-in-out infinite, annaShine 6s linear infinite;
-        }
-
-        body.dark-mode .anna-highlight {
-            background: linear-gradient(90deg, #93c5fd, #60a5fa, #38bdf8, #60a5fa, #93c5fd);
-            background-size: 220% 100%;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 14px rgba(147, 197, 253, 0.6), 0 0 28px rgba(96, 165, 250, 0.45), 0 0 40px rgba(56, 189, 248, 0.3);
-        }
-
-        @keyframes annaGlow {
-            0%, 100% {
-                text-shadow: 0 0 5px rgba(37, 99, 235, 0.25), 0 0 10px rgba(37, 99, 235, 0.15);
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                text-shadow: 0 0 10px rgba(37, 99, 235, 0.45), 0 0 18px rgba(37, 99, 235, 0.3);
-                transform: translateY(-1px) scale(1.01);
-            }
-        }
-
-        @keyframes annaShine {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .stats-section {
-            padding: 40px 0 20px 0;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            background: linear-gradient(135deg, #f0f9ff, #f8fafc);
-            border-radius: 15px;
-            padding: 40px 20px;
-            border: 2px solid #e2e8f0;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .stat-item {
-            text-align: center;
-            margin: 15px;
-            transition: transform 0.3s;
-        }
-        .stat-item:hover {
-            transform: scale(1.1);
-        }
-        .stat-item h4 {
-            font-size: 2.2rem;
-            color: #3b82f6;
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-        .stat-item .pop { 
-            transform: scale(1.06); 
-            transition: transform 0.5s ease; 
-        }
-        .stat-item p {
-            font-weight: 600;
-            color: #555;
-            font-size: 0.95rem;
-            white-space: nowrap;
-        }
-        /* Dark mode for stats */
-        body.dark-mode .stats {
-            background: linear-gradient(135deg, #1e40af15 0%, #3b82f615 100%);
-            border-color: rgba(96, 165, 250, 0.2);
-        }
-        body.dark-mode .stat-item h4 {
-            color: #60a5fa;
-        }
-        body.dark-mode .stat-item p {
-            color: #cbd5e1;
-        }
-        /* Responsive */
-        @media (max-width: 480px) {
-            .stats {
-                padding: 20px 10px;
-                gap: 10px;
-            }
-            .stat-item {
-                margin: 8px;
-                flex: 1 1 100px;
-            }
-            .stat-item h4 {
-                font-size: 1.5rem;
-            }
-            .stat-item p {
-                font-size: 0.75rem;
-            }
-        }
-        @media (min-width: 481px) and (max-width: 640px) {
-            .stats {
-                padding: 25px 15px;
-            }
-            .stat-item h4 {
-                font-size: 1.8rem;
-            }
-            .stat-item p {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
-    <script>
-      (function() {
-        try {
-          var theme = localStorage.getItem('site-theme') || 'light';
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark-mode');
-          }
-        } catch(e) {}
-      })();
-    </script>
 </head>
 
 <body>
@@ -157,11 +30,11 @@
     </div>
     <nav class="nav-menu" id="primary-nav">
         
-        <a href="pages/syllabus.html" class="nav-link">Syllabus</a>
-        <a href="pages/gate.html" class="nav-link"> GATE Qns</a>
-        <a href="pages/disclaimer.html" class="nav-link">Disclaimer</a>
-        <a href="pages/privacy.html" class="nav-link">Privacy Policy</a>
-        <a href="pages/about.html" class="nav-link">About</a>
+        <a href="syllabus/" class="nav-link">Syllabus</a>
+        <a href="gate-pyqs/" class="nav-link"> GATE Qns</a>
+        <a href="disclaimer/" class="nav-link">Disclaimer</a>
+        <a href="privacy/" class="nav-link">Privacy Policy</a>
+        <a href="about/" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
             <!-- Mobile/Tablet only: dark mode inside menu -->
             <button type="button" class="nav-link theme-toggle nav-theme-item" aria-label="Toggle Dark Mode">
@@ -191,37 +64,37 @@
         </div>
 
         <div class="quick-filters">
-            <a href="pages/syllabus.html" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-file-pdf"></i> Syllabus</a>
-            <a href="pages/question.html" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-question-circle"></i> PYQs</a>
-            <a href="pages/gate.html" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-graduation-cap"></i> GATE Qns</a>
-            <a href="pages/calculator.html" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-calculator"></i>CGPA Calculator</a>
+            <a href="syllabus/" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-file-pdf"></i> Syllabus</a>
+            <a href="previous-year-questions/" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-question-circle"></i> PYQs</a>
+            <a href="gate-pyqs/" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-graduation-cap"></i> GATE Qns</a>
+            <a href="cgpa-calculator/" class="filter-tag" role="button" style="text-decoration: none;"><i class="fas fa-calculator"></i>CGPA Calculator</a>
         </div>
     </div>
 
     <div class="hero-right">
         <h2>Choose Your Department for Notes</h2>
         <div class="departments-grid">
-            <a href="pages/cse.html" class="dept-card cse-card" title="Computer Science & Engineering">
+            <a href="academics/cse/" class="dept-card cse-card" title="Computer Science & Engineering">
                 <i class="fas fa-laptop-code"></i>
                 <span>CSE</span>
             </a>
-            <a href="pages/ece.html" class="dept-card ece-card" title="Electronics & Communication">
+            <a href="academics/ece/" class="dept-card ece-card" title="Electronics & Communication">
                 <i class="fas fa-microchip"></i>
                 <span>ECE</span>
             </a>
-            <a href="pages/eee.html" class="dept-card eee-card" title="Electrical & Electronics Engineering">
+            <a href="academics/eee/" class="dept-card eee-card" title="Electrical & Electronics Engineering">
                 <i class="fas fa-bolt"></i>
                 <span>EEE</span>
             </a>
-            <a href="pages/mech.html" class="dept-card mech-card" title="Mechanical Engineering">
+            <a href="academics/mech/" class="dept-card mech-card" title="Mechanical Engineering">
                 <i class="fas fa-cogs"></i>
                 <span>Mechanical</span>
             </a>
-            <a href="pages/civil.html" class="dept-card civil-card" title="Civil Engineering">
+            <a href="academics/civil/" class="dept-card civil-card" title="Civil Engineering">
                 <i class="fas fa-building"></i>
                 <span>Civil</span>
             </a>
-            <a href="pages/it.html" class="dept-card it-card" title="Information Technology">
+            <a href="academics/it/" class="dept-card it-card" title="Information Technology">
                 <i class="fas fa-server"></i>
                 <span>B.Tech IT</span>
             </a>
@@ -333,10 +206,10 @@
             <h4>Quick Links</h4>
             <ul>
                
-                <li><a href="pages/syllabus.html">Syllabus</a></li>
-                <li><a href="pages/disclaimer.html">Disclaimer</a></li>
-                <li><a href="pages/privacy.html">Privacy Policy</a></li>
-                 <li><a href="pages/about.html">About</a></li>
+                <li><a href="syllabus/">Syllabus</a></li>
+                <li><a href="disclaimer/">Disclaimer</a></li>
+                <li><a href="privacy/">Privacy Policy</a></li>
+                 <li><a href="about/">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>

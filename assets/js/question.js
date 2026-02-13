@@ -1,4 +1,92 @@
 
+        const deptPages = [
+            { dept: 'CSE', path: '../academics/cse/index.html' },
+            { dept: 'ECE', path: '../academics/ece/index.html' },
+            { dept: 'EEE', path: '../academics/eee/index.html' },
+            { dept: 'IT', path: '../academics/it/index.html' },
+            { dept: 'MECH', path: '../academics/mech/index.html' },
+            { dept: 'CIVIL', path: '../academics/civil/index.html' }
+        ];
+
+        let subjectNameToCode = {};
+        let subjectCodeToInfo = {};
+
+        function getParam(name) {
+            const p = new URLSearchParams(window.location.search);
+            return p.get(name) || '';
+        }
+
+        function normalizeSubjectName(str) {
+            if (!str) return '';
+            let s = String(str);
+            s = s.replace(/\([^)]*\)/g, ' ');
+            s = s.replace(/[–—-]/g, ' ');
+            const romanMap = {
+                'VIII': '8', 'VII': '7', 'VI': '6', 'V': '5', 'IV': '4', 'III': '3', 'II': '2', 'I': '1'
+            };
+            s = s.replace(/\b(VIII|VII|VI|IV|III|II|I)\b/gi, m => romanMap[m.toUpperCase()] || m);
+            s = s.replace(/&/g, 'and');
+            return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+        }
+
+        function extractSubjectCodesFromHtml(html, dept) {
+            try {
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const cards = doc.querySelectorAll('.note-card');
+                cards.forEach(card => {
+                    const text = (card.textContent || '').trim();
+                    const match = text.match(/^(.*)\(([^)]+)\)\s*$/);
+                    if (!match) return;
+                    const name = match[1].trim();
+                    let code = match[2].trim();
+                    if (!name || !code) return;
+                    code = code.replace(/\s+/g, '').toUpperCase();
+                    const normalized = normalizeSubjectName(name);
+                    if (!normalized) return;
+
+                    if (!subjectNameToCode[normalized]) subjectNameToCode[normalized] = code;
+                    if (!subjectCodeToInfo[code]) subjectCodeToInfo[code] = { name: name, depts: new Set() };
+                    subjectCodeToInfo[code].depts.add(dept);
+                    if (!subjectCodeToInfo[code].name) subjectCodeToInfo[code].name = name;
+                });
+            } catch (e) {
+                console.warn('Subject code parse failed:', dept, e);
+            }
+        }
+
+        async function loadSubjectCodeMaps() {
+            const results = await Promise.allSettled(
+                deptPages.map(page => fetch(page.path).then(r => r.text()).then(html => ({ dept: page.dept, html })))
+            );
+            results.forEach(result => {
+                if (result.status === 'fulfilled') {
+                    extractSubjectCodesFromHtml(result.value.html, result.value.dept);
+                }
+            });
+        }
+
+        function normalizeSemester(sem) {
+            if (!sem) return '';
+            let s = String(sem).trim().toUpperCase();
+            const romanMap = { 'VIII':'8','VII':'7','VI':'6','V':'5','IV':'4','III':'3','II':'2','I':'1' };
+            const num = s.match(/\b([1-8])\b/);
+            if (num) return num[1];
+            const roman = s.match(/\b(VIII|VII|VI|V|IV|III|II|I)\b/);
+            if (roman) return romanMap[roman[1]];
+            const anyDigit = s.match(/([1-8])/);
+            if (anyDigit) return anyDigit[1];
+            return s;
+        }
+
+        function normalizeRegulation(reg) {
+            if (!reg) return '2021';
+            const s = String(reg);
+            const year = s.match(/(20\d{2})/);
+            if (year) return year[1];
+            const digits = s.replace(/\D/g, '');
+            return digits || '2021';
+        }
+
         // App State
         let universityData = {};
         let selectedDept = 'CSE';
@@ -8,6 +96,8 @@
         let expandedId = null;
         let currentPdfUrl = '';
         let currentPdfTitle = '';
+        let targetSubjectNormalized = '';
+        let didAutoFocus = false;
 
         const deptFullNames = {
             "CSE": "Computer Science & Engineering",
@@ -24,8 +114,20 @@
                 // Fetch your JSON file
                 const response = await fetch('../assets/data/qn.json');
                 universityData = await response.json();
+
+            await loadSubjectCodeMaps();
                 
                 document.getElementById('year').textContent = new Date().getFullYear();
+                const deptRaw = getParam('dept');
+                const semRaw = getParam('semester') || getParam('sem');
+                const regRaw = getParam('regulation') || getParam('reg');
+                const subjectRaw = getParam('subject') || getParam('sub');
+
+                if (deptRaw) selectedDept = deptRaw.toUpperCase();
+                if (semRaw) selectedSem = normalizeSemester(semRaw) || selectedSem;
+                if (regRaw) selectedReg = normalizeRegulation(regRaw) || selectedReg;
+                if (subjectRaw) targetSubjectNormalized = normalizeSubjectName(subjectRaw);
+
                 renderTabs();
                 renderSemesterTabs();
                 renderGrid();
@@ -59,6 +161,7 @@
             const grid = document.getElementById('grid');
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
+            let autoExpandedId = null;
 
             // Check if 2025 regulation is selected and show coming soon state
             if (selectedReg === '2025') {
@@ -86,22 +189,43 @@
             });
 
             subjects.sort((a, b) => a.sem - b.sem);
+
+            if (!didAutoFocus && targetSubjectNormalized) {
+                const match = subjects.find(s => {
+                    const subjectNormalized = normalizeSubjectName(s.name);
+                    return subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized);
+                });
+                autoExpandedId = match ? match.id : null;
+                if (autoExpandedId && !expandedId) {
+                    expandedId = autoExpandedId;
+                }
+            }
             
             document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
             document.getElementById('subjectCount').textContent = `${subjects.length} Subjects`;
             document.getElementById('emptyState').classList.toggle('hidden', subjects.length > 0);
 
             grid.innerHTML = subjects.map(s => {
-                const isExp = expandedId === s.id;
+                const subjectNormalized = normalizeSubjectName(s.name);
+                const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
+                const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
+                const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                const subjectMeta = subjectCode ? `
+                            <div class="subject-meta">
+                                <span class="subject-code">${subjectCode}</span>
+                                <a class="subject-link" href="../pyq.html?code=${encodeURIComponent(subjectCode)}">View Question Papers</a>
+                            </div>
+                        ` : '';
                 return `
-                    <div class="card ${isExp ? 'expanded' : ''}">
+                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">
                             <div class="card-header">
                                 <span class="sem-tag">SEM ${s.sem}</span>
                                 <span class="reg-tag ${s.sem % 2 === 0 ? 'even' : 'odd'}">Reg ${selectedReg}</span>
                             </div>
                             <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">${s.name}</h3>
+                            ${subjectMeta}
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem;">
                                 <span style="font-size:0.75rem; color:var(--muted); display:flex; gap:4px; align-items:center;">
                                     <i data-lucide="file-text" style="width:14px"></i> ${available} Papers available
@@ -130,7 +254,21 @@
                     </div>
                 `;
             }).join('');
+            grid.querySelectorAll('.subject-link').forEach(link => {
+                link.addEventListener('click', e => e.stopPropagation());
+            });
+
             lucide.createIcons();
+
+            if (autoExpandedId && !didAutoFocus) {
+                const focusCard = grid.querySelector('.card.is-focus');
+                if (focusCard) {
+                    requestAnimationFrame(() => {
+                        focusCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
+                }
+                didAutoFocus = true;
+            }
         }
 
         // Event Handlers

@@ -1,8 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://anand06-sk.github.io/Project-LearnSkart/</loc>
+  </url>
+
+  <!-- Pages folder -->
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/about/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/cgpa-calculator/</loc>
+  </url>
+
+  <!-- Branch pages -->
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/academics/civil/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/academics/cse/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/academics/ece/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/academics/eee/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/academics/mech/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/academics/it/</loc>
+  </url>
+
+  <!-- GATE & academic -->
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/gate-pyqs/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/syllabus/pdfs.html</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/syllabus/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/study-notes/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/previous-year-questions/</loc>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/privacy/</loc>
+  </url>
+
+  <url>
+    <loc>https://anand06-sk.github.io/Project-LearnSkart/disclaimer/</loc>
   </url>
 
 </urlset>

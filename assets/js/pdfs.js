@@ -19,14 +19,14 @@
     function deptPath(code) {
       const c = normalizeDept(code);
       const map = {
-        'CSE': 'cse.html',
-        'ECE': 'ece.html',
-        'EEE': 'eee.html',
-        'MECH': 'mech.html',
-        'CIVIL': 'civil.html',
-        'IT': 'it.html'
+        'CSE': '../academics/cse/index.html',
+        'ECE': '../academics/ece/index.html',
+        'EEE': '../academics/eee/index.html',
+        'MECH': '../academics/mech/index.html',
+        'CIVIL': '../academics/civil/index.html',
+        'IT': '../academics/it/index.html'
       };
-      return map[c] || 'cse.html';
+      return map[c] || '../academics/cse/index.html';
     }
 
     function safeDecode(raw) {
@@ -160,7 +160,7 @@
     }
 
     async function loadPDFs() {
-      const deptRaw = getParam('dept');
+      const deptRaw = getParam('dept') || getParam('department');
       const dept = normalizeDept(deptRaw) || 'CSE';
       const regulationRaw = (getParam('regulation') || getParam('reg') || '2021').trim();
       const regulation = normalizeRegulation(regulationRaw);
@@ -168,6 +168,23 @@
       const semester = normalizeSemester(semesterRaw);
       const subjectRaw = getParam('subject') || getParam('sub');
       const subject = subjectRaw ? safeDecode(subjectRaw).trim() : '';
+
+      const pyqsBtn = document.getElementById('pyqs-btn');
+      const syllabusBtn = document.getElementById('syllabus-btn');
+      const qParams = new URLSearchParams({
+        dept: dept || 'CSE',
+        regulation: regulation || '2021',
+        semester: semester || '',
+        subject: subject || ''
+      });
+      if (pyqsBtn) {
+        pyqsBtn.href = `question.html?${qParams.toString()}`;
+        pyqsBtn.querySelector('span').textContent = `${dept} PYQs`;
+      }
+      if (syllabusBtn) {
+        syllabusBtn.href = `sypdf.html?${qParams.toString()}`;
+        syllabusBtn.querySelector('span').textContent = `${dept} Syllabus`;
+      }
 
       const backLink = document.getElementById('back-dept');
       const backLabel = document.getElementById('back-dept-label');

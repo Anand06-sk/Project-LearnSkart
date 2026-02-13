@@ -161,8 +161,8 @@ function searchNotes() {
           dept: dept
         });
 
-        // Navigate to pdfs page
-        window.location.href = 'pdfs.html?' + params.toString();
+        // Navigate to study notes page
+        window.location.href = '../../study-notes/index.html?' + params.toString();
       });
     });
   }
