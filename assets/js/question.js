@@ -1,4 +1,16 @@
 
+        const deptPages = [
+            { dept: 'CSE', path: '../academics/cse/index.html' },
+            { dept: 'ECE', path: '../academics/ece/index.html' },
+            { dept: 'EEE', path: '../academics/eee/index.html' },
+            { dept: 'IT', path: '../academics/it/index.html' },
+            { dept: 'MECH', path: '../academics/mech/index.html' },
+            { dept: 'CIVIL', path: '../academics/civil/index.html' }
+        ];
+
+        let subjectNameToCode = {};
+        let subjectCodeToInfo = {};
+
         function getParam(name) {
             const p = new URLSearchParams(window.location.search);
             return p.get(name) || '';
@@ -15,6 +27,42 @@
             s = s.replace(/\b(VIII|VII|VI|IV|III|II|I)\b/gi, m => romanMap[m.toUpperCase()] || m);
             s = s.replace(/&/g, 'and');
             return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+        }
+
+        function extractSubjectCodesFromHtml(html, dept) {
+            try {
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const cards = doc.querySelectorAll('.note-card');
+                cards.forEach(card => {
+                    const text = (card.textContent || '').trim();
+                    const match = text.match(/^(.*)\(([^)]+)\)\s*$/);
+                    if (!match) return;
+                    const name = match[1].trim();
+                    let code = match[2].trim();
+                    if (!name || !code) return;
+                    code = code.replace(/\s+/g, '').toUpperCase();
+                    const normalized = normalizeSubjectName(name);
+                    if (!normalized) return;
+
+                    if (!subjectNameToCode[normalized]) subjectNameToCode[normalized] = code;
+                    if (!subjectCodeToInfo[code]) subjectCodeToInfo[code] = { name: name, depts: new Set() };
+                    subjectCodeToInfo[code].depts.add(dept);
+                    if (!subjectCodeToInfo[code].name) subjectCodeToInfo[code].name = name;
+                });
+            } catch (e) {
+                console.warn('Subject code parse failed:', dept, e);
+            }
+        }
+
+        async function loadSubjectCodeMaps() {
+            const results = await Promise.allSettled(
+                deptPages.map(page => fetch(page.path).then(r => r.text()).then(html => ({ dept: page.dept, html })))
+            );
+            results.forEach(result => {
+                if (result.status === 'fulfilled') {
+                    extractSubjectCodesFromHtml(result.value.html, result.value.dept);
+                }
+            });
         }
 
         function normalizeSemester(sem) {
@@ -66,6 +114,8 @@
                 // Fetch your JSON file
                 const response = await fetch('../assets/data/qn.json');
                 universityData = await response.json();
+
+            await loadSubjectCodeMaps();
                 
                 document.getElementById('year').textContent = new Date().getFullYear();
                 const deptRaw = getParam('dept');
@@ -160,6 +210,13 @@
                 const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
                 const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
+                const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                const subjectMeta = subjectCode ? `
+                            <div class="subject-meta">
+                                <span class="subject-code">${subjectCode}</span>
+                                <a class="subject-link" href="../pyq.html?code=${encodeURIComponent(subjectCode)}">View Question Papers</a>
+                            </div>
+                        ` : '';
                 return `
                     <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">
@@ -168,6 +225,7 @@
                                 <span class="reg-tag ${s.sem % 2 === 0 ? 'even' : 'odd'}">Reg ${selectedReg}</span>
                             </div>
                             <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">${s.name}</h3>
+                            ${subjectMeta}
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem;">
                                 <span style="font-size:0.75rem; color:var(--muted); display:flex; gap:4px; align-items:center;">
                                     <i data-lucide="file-text" style="width:14px"></i> ${available} Papers available
@@ -196,6 +254,10 @@
                     </div>
                 `;
             }).join('');
+            grid.querySelectorAll('.subject-link').forEach(link => {
+                link.addEventListener('click', e => e.stopPropagation());
+            });
+
             lucide.createIcons();
 
             if (autoExpandedId && !didAutoFocus) {
