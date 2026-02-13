@@ -29,6 +29,11 @@
             return s.toLowerCase().replace(/[^a-z0-9]/g, '');
         }
 
+        function normalizeSubjectCode(str) {
+            if (!str) return '';
+            return String(str).toUpperCase().replace(/[^A-Z0-9]/g, '');
+        }
+
         function extractSubjectCodesFromHtml(html, dept) {
             try {
                 const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -98,6 +103,8 @@
         let currentPdfTitle = '';
         let targetSubjectNormalized = '';
         let didAutoFocus = false;
+        let didSearchFocus = false;
+        let searchTriggered = false;
 
         const deptFullNames = {
             "CSE": "Computer Science & Engineering",
@@ -162,6 +169,10 @@
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
             let autoExpandedId = null;
+            let searchExpandedId = null;
+            const searchNormalized = normalizeSubjectName(searchQuery);
+            const searchCode = normalizeSubjectCode(searchQuery);
+            const searchAcrossSem = Boolean(searchQuery);
 
             // Check if 2025 regulation is selected and show coming soon state
             if (selectedReg === '2025') {
@@ -179,10 +190,20 @@
             document.getElementById('comingSoonState').classList.add('hidden');
 
             Object.entries(data).forEach(([sem, items]) => {
-                if (selectedSem === 'All' || sem === selectedSem) {
+                if (searchAcrossSem || selectedSem === 'All' || sem === selectedSem) {
                     Object.entries(items).forEach(([name, papers]) => {
-                        if (!searchQuery || name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                            subjects.push({ id: `${selectedDept}-${sem}-${name}`, sem, name, papers });
+                        const subjectNormalized = normalizeSubjectName(name);
+                        const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                        const subjectCodeNormalized = normalizeSubjectCode(subjectCode);
+                        const matchesSearch = !searchQuery
+                            || subjectNormalized.includes(searchNormalized)
+                            || searchNormalized.includes(subjectNormalized)
+                            || (subjectCodeNormalized && (subjectCodeNormalized.includes(searchCode) || searchCode.includes(subjectCodeNormalized)));
+                        if (!matchesSearch) return;
+                        const id = `${selectedDept}-${sem}-${name}`;
+                        subjects.push({ id, sem, name, papers, subjectCode });
+                        if (!searchExpandedId && searchTriggered && searchQuery) {
+                            searchExpandedId = id;
                         }
                     });
                 }
@@ -200,6 +221,10 @@
                     expandedId = autoExpandedId;
                 }
             }
+
+            if (searchExpandedId) {
+                expandedId = searchExpandedId;
+            }
             
             document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
             document.getElementById('subjectCount').textContent = `${subjects.length} Subjects`;
@@ -210,7 +235,7 @@
                 const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
                 const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
-                const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                const subjectCode = s.subjectCode || subjectNameToCode[subjectNormalized] || '';
                 const subjectMeta = subjectCode ? `
                             <div class="subject-meta">
                                 <span class="subject-code">${subjectCode}</span>
@@ -218,7 +243,7 @@
                             </div>
                         ` : '';
                 return `
-                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}">
+                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}" data-subject-id="${s.id}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">
                             <div class="card-header">
                                 <span class="sem-tag">SEM ${s.sem}</span>
@@ -269,17 +294,32 @@
                 }
                 didAutoFocus = true;
             }
+
+            if (searchExpandedId && !didSearchFocus) {
+                const focusCard = grid.querySelector(`.card[data-subject-id="${searchExpandedId}"]`);
+                if (focusCard) {
+                    requestAnimationFrame(() => {
+                        focusCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
+                }
+                didSearchFocus = true;
+                searchTriggered = false;
+            }
         }
 
         // Event Handlers
         window.setDept = (dept) => {
             selectedDept = dept;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderTabs();
             renderGrid();
         };
 
         window.setSem = (sem) => {
             selectedSem = sem;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderSemesterTabs();
             renderGrid();
         };
@@ -288,18 +328,44 @@
             selectedReg = reg;
             document.querySelectorAll('.reg-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            didSearchFocus = false;
+            searchTriggered = false;
             renderGrid();
         };
 
         window.toggleCard = (id) => {
             expandedId = expandedId === id ? null : id;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderGrid();
         };
 
         document.getElementById('searchInput').oninput = (e) => {
             searchQuery = e.target.value;
+            expandedId = null;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderGrid();
         };
+
+        document.getElementById('searchInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                runSearch();
+            }
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            runSearch();
+        });
+
+        function runSearch() {
+            searchQuery = document.getElementById('searchInput').value;
+            expandedId = null;
+            didSearchFocus = false;
+            searchTriggered = true;
+            renderGrid();
+        }
 
         window.openPdf = (url, title, event) => {
             if (event) event.stopPropagation();
