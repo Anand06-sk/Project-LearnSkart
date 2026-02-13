@@ -423,6 +423,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
     padding: 16px 60px;
     background: rgba(255, 255, 255, 0.9);
     border-bottom: none;
@@ -467,6 +468,10 @@ header {
 .nav-menu {
     display: flex;
     gap: 30px;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 0;
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     border-radius: 10px;
@@ -514,6 +519,8 @@ header {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .theme-btn:hover {
@@ -2124,6 +2131,7 @@ body.dark-mode .nav-toggle:hover {
     .nav-toggle { display: none; }
     .nav-menu { display: flex; }
     .nav-theme-item { display: none !important; }
+    .theme-btn { display: inline-flex; align-items: center; }
 }
 
 /* Tablet/Mobile: hamburger visible, dropdown nav */
