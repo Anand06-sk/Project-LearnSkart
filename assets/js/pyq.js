@@ -214,6 +214,7 @@ function renderPapers(grouped) {
         const papers = grouped[year];
         const paperMarkup = papers.map(paper => {
             const safePdf = paper.pdf || '#';
+            const viewUrl = buildViewUrl(safePdf);
             return `
                 <div class="pyq-paper">
                     <div>
@@ -221,7 +222,7 @@ function renderPapers(grouped) {
                         <div class="pyq-paper-meta">Semester ${paper.sem} | ${paper.dept}${paper.reg ? ` | Reg ${paper.reg}` : ''}</div>
                     </div>
                     <div class="pyq-actions">
-                        <a class="pyq-btn" href="${safePdf}" target="_blank" rel="noopener">View PDF</a>
+                        <a class="pyq-btn" href="${viewUrl}" target="_blank" rel="noopener">View PDF</a>
                             <button class="pyq-btn primary pyq-download" type="button" data-url="${safePdf}" data-title="${paper.title}">Download</button>
                     </div>
                 </div>
@@ -243,6 +244,18 @@ function renderPapers(grouped) {
             downloadPdf(url, title);
         });
     });
+}
+
+function getDriveFileId(url) {
+    if (!url) return '';
+    const match = String(url).match(/drive\.google\.com\/(?:uc\?id=|file\/d\/)([a-zA-Z0-9_-]+)/);
+    return match ? match[1] : '';
+}
+
+function buildViewUrl(url) {
+    const id = getDriveFileId(url);
+    if (id) return `https://drive.google.com/file/d/${id}/preview`;
+    return url;
 }
 
 function downloadPdf(url, title) {
