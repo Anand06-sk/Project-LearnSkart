@@ -308,7 +308,7 @@ async function init() {
 
     setMeta(titleText, metaDescription, canonicalUrl);
 
-    document.getElementById('subjectTitle').textContent = `${subjectName} Question Papers`;
+    document.getElementById('subjectTitle').textContent = `${subjectName} (${code}) Question Papers`;
     document.getElementById('subjectCode').textContent = `Code: ${code}`;
     document.getElementById('subjectDept').textContent = `Department: ${deptLabel || 'All Departments'}`;
     document.getElementById('subjectReg').textContent = regText ? `Regulation: ${regText}` : 'Regulation: Multiple';
