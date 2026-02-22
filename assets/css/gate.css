@@ -500,6 +500,9 @@
             padding: 1.5rem 1.25rem;
             position: relative;
             border: 1px solid #f3f4f6;
+            display: block;
+            text-decoration: none;
+            color: inherit;
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;

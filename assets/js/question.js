@@ -34,6 +34,35 @@
             return String(str).toUpperCase().replace(/[^A-Z0-9]/g, '');
         }
 
+        function slugifySubjectName(str) {
+            if (!str) return '';
+            return String(str)
+                .toLowerCase()
+                .replace(/&/g, ' and ')
+                .replace(/\([^)]*\)/g, ' ')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
+        }
+
+        function inferPyqFolder(subjectCode, subjectName, papers) {
+            const firstPaperTitle = Array.isArray(papers) && papers.length > 0 ? (papers[0].title || '') : '';
+            if (firstPaperTitle) {
+                const fromTitle = firstPaperTitle.match(/-\s*([A-Z]{2,5}\d{4})-([A-Za-z0-9-]+)-previous-year-question-papers/i);
+                if (fromTitle) {
+                    const inferredCode = normalizeSubjectCode(fromTitle[1]);
+                    const inferredSlug = String(fromTitle[2]).toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+                    if (inferredCode && inferredSlug) return `${inferredCode}-${inferredSlug}`;
+                }
+            }
+
+            const normalizedCode = normalizeSubjectCode(subjectCode);
+            const slug = slugifySubjectName(subjectName);
+            if (normalizedCode && slug) return `${normalizedCode}-${slug}`;
+            if (normalizedCode) return normalizedCode;
+            return '';
+        }
+
         function extractSubjectCodesFromHtml(html, dept) {
             try {
                 const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -236,10 +265,11 @@
                 const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
                 const subjectCode = s.subjectCode || subjectNameToCode[subjectNormalized] || '';
-                const subjectMeta = subjectCode ? `
+                const pyqFolder = inferPyqFolder(subjectCode, s.name, s.papers);
+                const subjectMeta = pyqFolder ? `
                             <div class="subject-meta">
                                 <span class="subject-code">${subjectCode}</span>
-                                <a class="subject-link" href="../pyq.html?code=${encodeURIComponent(subjectCode)}">View Question Papers</a>
+                                <a class="subject-link" href="../pyq/${encodeURIComponent(pyqFolder)}/">View Question Papers</a>
                             </div>
                         ` : '';
                 return `

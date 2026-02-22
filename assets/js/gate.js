@@ -258,7 +258,6 @@ const subjects = [
 const searchInput = document.getElementById('searchInput');
 const clearBtn = document.getElementById('clearBtn');
 const noResults = document.getElementById('noResults');
-let selectedSubject = null;
 
 const subjectIcons = {
     AE: '✈️',
@@ -305,6 +304,20 @@ function normalizePdfSubject(name) {
         return 'Textile Engineering and Fibre Science';
     }
     return normalized;
+}
+
+function slugifySubjectName(name) {
+    return normalizeSubjectName(name)
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .trim()
+        .replace(/\s+/g, '-');
+}
+
+function buildSubjectPageUrl(subject) {
+    const code = String(subject.code || '').toLowerCase();
+    const nameSlug = slugifySubjectName(subject.name || 'subject');
+    return `/gate/${code}-${nameSlug}/`;
 }
 
 function parseDriveId(url) {
@@ -363,7 +376,6 @@ function getSubjectPapers(subjectName, code, fallbackCount) {
 
 // Initialize subjects on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadPdfIndex();
     renderSubjectCards();
     addEventListeners();
 });
@@ -380,12 +392,14 @@ function renderSubjectCards() {
 
 // Create individual subject card
 function createSubjectCard(subject) {
-    const card = document.createElement('div');
+    const card = document.createElement('a');
     card.className = 'subject-card';
     card.dataset.code = subject.code;
     card.dataset.name = subject.name.toLowerCase();
     card.dataset.stream = subject.stream.toLowerCase();
-    card.onclick = () => handleSubjectClick(subject.code);
+    card.href = buildSubjectPageUrl(subject);
+    card.title = `${subject.name} (${subject.code}) - GATE PYQ`;
+    card.setAttribute('aria-label', `${subject.name} (${subject.code}) - GATE PYQ`);
 
     const icon = subjectIcons[subject.code] || '📘';
 
@@ -446,106 +460,6 @@ function clearSearch() {
     clearBtn.style.display = 'none';
     renderSubjectCards();
     searchInput.focus();
-}
-
-// Handle subject click - Open modal
-function handleSubjectClick(code) {
-    selectedSubject = subjects.find(s => s.code === code);
-    if (selectedSubject) {
-        openModal();
-    }
-}
-
-// Open modal
-function openModal() {
-    if (!selectedSubject) return;
-    document.getElementById('modalOverlay').classList.add('active');
-    document.getElementById('modalContent').classList.add('active');
-    updateModalContent();
-    document.body.style.overflow = 'hidden';
-}
-
-// Close modal
-function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('active');
-    document.getElementById('modalContent').classList.remove('active');
-    selectedSubject = null;
-    document.body.style.overflow = 'auto';
-}
-
-// Update modal content with selected subject's PYQs
-function updateModalContent() {
-    if (!selectedSubject) return;
-
-    const modalBody = document.getElementById('modalBody');
-    const icon = subjectIcons[selectedSubject.code] || '📘';
-    const papers = getSubjectPapers(selectedSubject.name, selectedSubject.code, selectedSubject.papers);
-
-    let pyqsHTML = papers.map((paper, index) => {
-        const paperTitle = paper.title || '';
-        const viewLink = paper.url || '';
-        const downloadLink = viewLink ? toDownloadUrl(viewLink) : '';
-        const viewAction = viewLink
-            ? `<a class="pyq-link" href="${viewLink}" target="_blank" rel="noopener">View</a>`
-            : `<span class="pyq-link disabled">View</span>`;
-        const downloadAction = downloadLink
-            ? `<a class="pyq-link secondary" href="${downloadLink}" target="_blank" rel="noopener">Download</a>`
-            : `<span class="pyq-link secondary disabled">Download</span>`;
-
-        return `
-        <div class="pyq-item" style="animation-delay: ${index * 0.08}s;">
-            <div class="pyq-item-icon">📄</div>
-            <div class="pyq-item-name">${paperTitle}</div>
-            <div class="pyq-actions">${viewAction}${downloadAction}</div>
-        </div>
-        `;
-    }).join('');
-
-    modalBody.innerHTML = `
-        <div class="modal-subject-info">
-            <div class="modal-subject-icon">${icon}</div>
-            <div class="modal-subject-details">
-                <h2>
-                    ${selectedSubject.name}
-                    <span class="modal-subject-code">${selectedSubject.code}</span>
-                </h2>
-                <p>${selectedSubject.papers} Papers Available</p>
-            </div>
-        </div>
-        <div class="pyq-list">
-            ${pyqsHTML}
-        </div>
-    `;
-}
-
-// Generate PYQ list for a subject
-function generatePYQs(code, paperCount) {
-    const pyqs = [];
-    const currentYear = 2024;
-    const yearsBack = Math.min(Math.ceil(paperCount / 2), 10);
-
-    for (let year = currentYear; year > currentYear - yearsBack; year--) {
-        const papersPerYear = paperCount >= 14 ? 2 : 1;
-        for (let i = 1; i <= papersPerYear && pyqs.length < paperCount; i++) {
-            pyqs.push(`${code} ${year} Paper ${papersPerYear > 1 ? i : ''}`.trim());
-        }
-    }
-
-    return pyqs.slice(0, paperCount);
-}
-
-// Close modal on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && selectedSubject) {
-        closeModal();
-    }
-});
-
-// Prevent scroll when modal is open
-function updateBodyScroll() {
-    if (selectedSubject) {
-        document.body.style.overflow = 'hidden';
-    }
 }
 
 // Add keyboard shortcuts

@@ -119,6 +119,7 @@ function searchNotes() {
 (function () {
   function addClickHandlers() {
     document.querySelectorAll('.note-card').forEach(card => {
+      if (card.tagName && card.tagName.toLowerCase() === 'a' && card.getAttribute('href')) return;
       if (card.dataset.clickBound === '1') return;
       card.dataset.clickBound = '1';
       card.style.cursor = 'pointer';
