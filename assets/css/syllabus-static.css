@@ -237,6 +237,12 @@ body.dark-mode .subject-card:hover {
   border-color: #334155;
 }
 
+/* hero-meta styling for dark mode */
+body.dark-mode .hero-meta {
+  color: #1f2937; /* dark text for readability */
+  background: var(--primary); /* light-blue background similar to download buttons */
+}
+
 @media (max-width: 900px) {
   .syllabus-hero {
     grid-template-columns: 1fr;
