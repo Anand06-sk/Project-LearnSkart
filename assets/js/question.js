@@ -46,6 +46,15 @@
         }
 
         function inferPyqFolder(subjectCode, subjectName, papers) {
+            const normalizedCode = normalizeSubjectCode(subjectCode);
+            const folderOverrides = {
+                HS3152: 'HS3152-professional-englishi',
+                HS3252: 'HS3252-professional-englishii'
+            };
+            if (normalizedCode && folderOverrides[normalizedCode]) {
+                return folderOverrides[normalizedCode];
+            }
+
             const firstPaperTitle = Array.isArray(papers) && papers.length > 0 ? (papers[0].title || '') : '';
             if (firstPaperTitle) {
                 const fromTitle = firstPaperTitle.match(/-\s*([A-Z]{2,5}\d{4})-([A-Za-z0-9-]+)-previous-year-question-papers/i);
@@ -56,7 +65,6 @@
                 }
             }
 
-            const normalizedCode = normalizeSubjectCode(subjectCode);
             const slug = slugifySubjectName(subjectName);
             if (normalizedCode && slug) return `${normalizedCode}-${slug}`;
             if (normalizedCode) return normalizedCode;
