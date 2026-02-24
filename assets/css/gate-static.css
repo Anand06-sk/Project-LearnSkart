@@ -155,14 +155,21 @@
 
 .pyq-btn {
   border: 1px solid var(--gate-card-border);
-  background: #ffffff;
-  color: var(--foreground);
+  background: #1f2937; /* dark button background for view */
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.38rem 0.8rem;
   border-radius: 0.5rem;
   cursor: pointer;
   text-decoration: none;
+}
+
+/* keep download button primary blue */
+.pyq-btn.primary {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
 }
 
 .pyq-btn.primary {

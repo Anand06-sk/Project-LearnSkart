@@ -597,6 +597,30 @@
             border: 1px solid #bfdbfe;
         }
 
+        /* Dark theme adjustments for subject cards */
+        body.dark-mode .subject-card {
+            background: #0b1220; /* dark card background */
+            border-color: #1f2937;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .subject-card:hover {
+            border-color: #334155;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        body.dark-mode .subject-card:active {
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .subject-tag,
+        body.dark-mode .subject-code-badge {
+            background: #111827;
+            color: #cbd5e1;
+            border-color: #334155;
+        }
+
         /* No Results */
         .no-results {
             text-align: center;
