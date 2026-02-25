@@ -146,6 +146,97 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     function toArray(v) { return Array.isArray(v) ? v : (v ? [v] : []); }
 
+    function slugifyGateSubject(name) {
+        return (name || '')
+            .toString()
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .trim()
+            .replace(/\s+/g, '-');
+    }
+
+    function deptSlug(dept) {
+        return (dept || '').toString().trim().toLowerCase();
+    }
+
+    function buildNotesUrl(dept, regYear, semNum, subjectName) {
+        const slug = deptSlug(dept);
+        if (!slug) return './';
+        const params = new URLSearchParams({
+            regulation: String(regYear || '2021'),
+            semester: String(semNum || ''),
+            subject: String(subjectName || ''),
+            dept: String(dept || '')
+        });
+        return `academics/${slug}/?${params.toString()}`;
+    }
+
+    function buildSyllabusUrl(dept, regYear, semNum) {
+        const slug = deptSlug(dept);
+        if (!slug) return 'syllabus/';
+        const params = new URLSearchParams({
+            regulation: String(regYear || '2021')
+        });
+        if (semNum) params.set('semester', String(semNum));
+        return `syllabus/${slug}/?${params.toString()}`;
+    }
+
+    function buildQuestionPaperUrl(dept, regYear, semNum, subjectName) {
+        const params = new URLSearchParams({
+            dept: String(dept || ''),
+            regulation: String(regYear || '2021'),
+            semester: String(semNum || ''),
+            subject: String(subjectName || '')
+        });
+        return `previous-year-questions/?${params.toString()}`;
+    }
+
+    const GATE_SUBJECT_CODE_MAP = {
+        'aerospace engineering': 'AE',
+        'agricultural engineering': 'AG',
+        'architecture and planning': 'AR',
+        'biomedical engineering': 'BM',
+        'biotechnology': 'BT',
+        'civil engineering': 'CE',
+        'chemical engineering': 'CH',
+        'computer science and information technology': 'CS',
+        'chemistry': 'CY',
+        'data science and artificial intelligence': 'DA',
+        'electronics and communication engineering': 'EC',
+        'electrical engineering': 'EE',
+        'environmental science and engineering': 'ES',
+        'ecology and evolution': 'EY',
+        'geomatics engineering': 'GE',
+        'geology and geophysics': 'GG',
+        'instrumentation engineering': 'IN',
+        'mathematics': 'MA',
+        'mechanical engineering': 'ME',
+        'mining engineering': 'MN',
+        'metallurgical engineering': 'MT',
+        'naval architecture and marine engineering': 'NM',
+        'petroleum engineering': 'PE',
+        'physics': 'PH',
+        'production and industrial engineering': 'PI',
+        'statistics': 'ST',
+        'textiles engineering and fibre science': 'TF',
+        'engineering sciences': 'XE',
+        'humanities and social sciences': 'XH',
+        'life sciences': 'XL'
+    };
+
+    const GATE_ROUTE_OVERRIDES = {
+        'civil engineering': 'ce-civil-engineering',
+        'textiles engineering and fibre science': 'tf-textile-engineering-and-fibre-science'
+    };
+
+    function extractGateCode(item, subject) {
+        const fileName = (item && item['PDF File Name']) ? String(item['PDF File Name']).trim() : '';
+        const direct = fileName.match(/^([A-Z]{1,3})\b/i);
+        if (direct) return direct[1].toUpperCase();
+        const key = normalize(subject);
+        return GATE_SUBJECT_CODE_MAP[key] || '';
+    }
+
     // Subject-code catalog (used when PDF metadata lacks codes)
     const SUBJECT_CODE_ENTRIES = [
         // Common Semester 1
@@ -256,6 +347,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     function extractItems(json, type) {
         const items = [];
+
+        if (type === 'GATE' && Array.isArray(json)) {
+            const bySubject = new Map();
+
+            json.forEach((row) => {
+                const subject = (row && row.Subject) ? String(row.Subject).trim() : '';
+                if (!subject) return;
+                const subjectKey = normalize(subject);
+                if (!bySubject.has(subjectKey)) {
+                    bySubject.set(subjectKey, { subject, codes: new Set(), count: 0 });
+                }
+                const rec = bySubject.get(subjectKey);
+                rec.count += 1;
+                const code = extractGateCode(row, subject);
+                if (code) rec.codes.add(code);
+            });
+
+            bySubject.forEach((rec) => {
+                const codes = Array.from(rec.codes);
+                const primaryCode = codes[0] || 'gate';
+                const slug = slugifyGateSubject(rec.subject);
+                const routeOverride = GATE_ROUTE_OVERRIDES[normalize(rec.subject)];
+                const route = routeOverride || (slug ? `${primaryCode.toLowerCase()}-${slug}` : '');
+                const url = route ? `gate/${route}/` : 'gate-pyqs/';
+
+                const labelCodes = codes.length ? ` (${codes.join('/')})` : '';
+                items.push({
+                    label: `GATE ${rec.subject}${labelCodes}`,
+                    url,
+                    type: 'GATE',
+                    subject: rec.subject,
+                    keywords: ['gate', 'gate pyq', 'gate question paper', 'gate questions', rec.subject, ...codes],
+                    searchText: normalize(`gate ${rec.subject} ${codes.join(' ')} pyq question paper previous year`)
+                });
+
+                codes.forEach((code) => {
+                    items.push({
+                        label: `GATE ${code} - ${rec.subject}`,
+                        url,
+                        type: 'GATE',
+                        subject: rec.subject,
+                        keywords: ['gate', code, rec.subject, 'pyq', 'question paper', 'previous year'],
+                        searchText: normalize(`gate ${code} ${rec.subject} pyq question paper previous year`)
+                    });
+                });
+            });
+
+            items.push({
+                label: 'GATE Previous Year Questions',
+                url: 'gate-pyqs/',
+                type: 'GATE',
+                subject: 'GATE PYQs',
+                keywords: ['gate', 'gate pyq', 'gate question papers', 'gate subjects'],
+                searchText: normalize('gate pyq previous year questions subjects')
+            });
+
+            return items;
+        }
         
         // Common first semester subjects across all departments
         const commonSem1Subjects = [
@@ -282,8 +431,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         const subjectCodes = collectSubjectCodes(subjectName, subjectData.pdfs);
                         
                         // Build proper URL with query parameters
-                        const subjectEncoded = encodeURIComponent(subjectName);
-                        const baseUrl = `pages/pdfs.html?regulation=${regYear}&semester=${semNum}&subject=${subjectEncoded}`;
+                        const baseUrl = buildNotesUrl('', regYear, semNum, subjectName);
                         
                         // Check if this is a common semester 1 subject
                         const isCommonSem1 = semNum === '1' && commonSem1Subjects.some(cs => 
@@ -296,7 +444,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                             allDepts.forEach(dept => {
                                 items.push({
                                     label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (${dept})`,
-                                    url: baseUrl,
+                                    url: buildNotesUrl(dept, regYear, semNum, subjectName),
                                     type,
                                     subject: subjectName,
                                     keywords: [subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear, ...subjectCodes],
@@ -329,7 +477,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         if (regData.whole && regData.whole.pdf) {
                             items.push({
                                 label: regData.whole.title || `${dept} Complete Syllabus`,
-                                url: '../syllabus/syllabus.html',
+                                url: buildSyllabusUrl(dept, regYear),
                                 type,
                                 subject: dept,
                                 keywords: [dept, regYear, 'complete', 'syllabus'],
@@ -341,7 +489,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                             Object.entries(regData.semesters).forEach(([semNum, semData]) => {
                                 items.push({
                                     label: `${dept} Semester ${semNum} Syllabus`,
-                                    url: '../syllabus/syllabus.html',
+                                    url: buildSyllabusUrl(dept, regYear, semNum),
                                     type,
                                     subject: dept,
                                     keywords: [dept, `sem${semNum}`, regYear, 'syllabus'],
@@ -368,7 +516,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                                             const subjectCodes = collectSubjectCodes(subjectName, papers);
                                             items.push({
                                                 label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (${dept})`,
-                                                url: '../question%20paper/question.html',
+                                                url: buildQuestionPaperUrl(dept, regYear, semNum, subjectName),
                                                 type,
                                                 subject: subjectName,
                                                 keywords: [dept, subjectName, `sem${semNum}`, regYear, 'question', 'paper', 'pyq', ...subjectCodes],
@@ -392,7 +540,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const SOURCES = [
             { url: 'assets/data/data.json', type: 'Notes' },
             { url: 'assets/data/sydata.json', type: 'Syllabus' },
-            { url: 'assets/data/qn.json', type: 'Question Paper' }
+            { url: 'assets/data/qn.json', type: 'Question Paper' },
+            { url: 'assets/data/gate-qns.json', type: 'GATE' }
         ];
         try {
             const results = await Promise.allSettled(
@@ -409,12 +558,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Add department pages with multiple entry points
             const deptMapping = {
-                'CSE': { name: 'Computer Science & Engineering', url: 'pages/cse.html' },
-                'ECE': { name: 'Electronics & Communication', url: 'pages/ece.html' },
-                'EEE': { name: 'Electrical & Electronics Engineering', url: 'pages/eee.html' },
-                'MECH': { name: 'Mechanical Engineering', url: 'pages/mech.html' },
-                'CIVIL': { name: 'Civil Engineering', url: 'pages/civil.html' },
-                'IT': { name: 'Information Technology', url: 'pages/it.html' }
+                'CSE': { name: 'Computer Science & Engineering', url: 'academics/cse/' },
+                'ECE': { name: 'Electronics & Communication', url: 'academics/ece/' },
+                'EEE': { name: 'Electrical & Electronics Engineering', url: 'academics/eee/' },
+                'MECH': { name: 'Mechanical Engineering', url: 'academics/mech/' },
+                'CIVIL': { name: 'Civil Engineering', url: 'academics/civil/' },
+                'IT': { name: 'Information Technology', url: 'academics/it/' }
             };
             
             Object.entries(deptMapping).forEach(([code, info]) => {
@@ -441,7 +590,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             // Add CGPA/GPA Calculator entries
             all.push({
                 label: 'CGPA Calculator',
-                url: '../calculator.html#cgpa-panel',
+                url: 'cgpa-calculator/',
                 type: 'Tool',
                 subject: 'CGPA Calculator',
                 keywords: ['cgpa', 'calculator', 'cumulative', 'grade', 'point', 'average', 'calculate'],
@@ -450,7 +599,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             all.push({
                 label: 'GPA Calculator',
-                url: '../calculator.html#gpa-panel',
+                url: 'cgpa-calculator/',
                 type: 'Tool',
                 subject: 'GPA Calculator',
                 keywords: ['gpa', 'calculator', 'grade', 'point', 'average', 'calculate', 'semester'],
@@ -463,10 +612,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     Object.entries(semesters).forEach(([semNum, subjects]) => {
                         subjects.forEach(subjectName => {
                             if (!subjectName || subjectName.trim() === '') return;
-                            const subjectEncoded = encodeURIComponent(subjectName);
                             all.push({
                                 label: `${subjectName} (${dept} - Sem ${semNum})`,
-                                url: `pages/pdfs.html?regulation=${regYear}&semester=${semNum}&subject=${subjectEncoded}`,
+                                url: buildNotesUrl(dept, regYear, semNum, subjectName),
                                 type: 'Notes',
                                 subject: subjectName,
                                 dept: dept,
@@ -480,14 +628,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
             // Add direct code-based entries for quick lookups (e.g., "HS3152 notes")
             SUBJECT_CODE_ENTRIES.forEach(entry => {
-                const subjectEncoded = encodeURIComponent(entry.subject);
                 const departments = entry.depts && entry.depts.length ? entry.depts : [entry.dept || 'ALL'];
 
                 departments.forEach(dept => {
                     // Add Notes entry
                     all.push({
                         label: `${entry.code} — ${entry.subject}${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
-                        url: `pages/pdfs.html?regulation=${entry.reg}&semester=${entry.sem}&subject=${subjectEncoded}`,
+                        url: buildNotesUrl(dept && dept !== 'ALL' ? dept : 'CSE', entry.reg, entry.sem, entry.subject),
                         type: 'Notes',
                         subject: entry.subject,
                         dept: dept === 'ALL' ? undefined : dept,
@@ -498,7 +645,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     // Add Question Paper entry
                     all.push({
                         label: `${entry.code} — ${entry.subject} PYQ${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
-                        url: `../question%20paper/question.html`,
+                        url: buildQuestionPaperUrl(dept && dept !== 'ALL' ? dept : '', entry.reg, entry.sem, entry.subject),
                         type: 'Question Paper',
                         subject: entry.subject,
                         dept: dept === 'ALL' ? undefined : dept,
