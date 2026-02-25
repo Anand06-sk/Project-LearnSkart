@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syllabus Redirect | LearnSkart</title>
+  <meta name="robots" content="noindex, follow">
+</head>
+<body>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var deptRaw = (params.get('dept') || '').trim().toUpperCase();
+      var deptMap = {
+        CSE: 'cse',
+        CS: 'cse',
+        ECE: 'ece',
+        EEE: 'eee',
+        CIVIL: 'civil',
+        CE: 'civil',
+        MECH: 'mech',
+        ME: 'mech',
+        IT: 'it'
+      };
+      var dept = deptMap[deptRaw];
+      var target = dept ? ('/syllabus/' + dept + '/index.html') : '/syllabus/index.html';
+      window.location.replace(target);
+    })();
+  </script>
+  <noscript>
+    <p><a href="/syllabus/index.html">Open Syllabus</a></p>
+  </noscript>
+</body>
+</html>

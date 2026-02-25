@@ -62,7 +62,6 @@ Project-OpenNotes/
 ├── privacy/
 ├── pyq/
 ├── scripts/
-├── study-notes/
 └── syllabus/
 ```
 

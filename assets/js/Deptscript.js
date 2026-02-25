@@ -162,8 +162,8 @@ function searchNotes() {
           dept: dept
         });
 
-        // Navigate to study notes page
-        window.location.href = '../../study-notes/index.html?' + params.toString();
+        // Navigate to subject page in academics
+        window.location.href = '../../academics/' + dept.toLowerCase() + '/' + subject.toLowerCase() + '/';
       });
     });
   }
