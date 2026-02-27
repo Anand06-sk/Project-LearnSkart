@@ -372,7 +372,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 const route = routeOverride || (slug ? `${primaryCode.toLowerCase()}-${slug}` : '');
                 const url = route ? `gate/${route}/` : 'gate-pyqs/';
 
-                const labelCodes = codes.length ? ` (${codes.join('/')})` : '';
+                const labelCodes = codes.length ? ` (${codes.join(', ')})` : '';
                 items.push({
                     label: `GATE ${rec.subject}${labelCodes}`,
                     url,
@@ -443,7 +443,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                             // Add separate entry for each department
                             allDepts.forEach(dept => {
                                 items.push({
-                                    label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (${dept})`,
+                                    label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join(', ')}]` : ''} (${dept})`,
                                     url: buildNotesUrl(dept, regYear, semNum, subjectName),
                                     type,
                                     subject: subjectName,
@@ -454,7 +454,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         } else {
                             // Regular subject - single entry
                             items.push({
-                                label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (Sem ${semNum})`,
+                                label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join(', ')}]` : ''} (Sem ${semNum})`,
                                 url: baseUrl,
                                 type,
                                 subject: subjectName,
@@ -515,7 +515,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                                         if (Array.isArray(papers) && papers.some(p => p.pdf)) {
                                             const subjectCodes = collectSubjectCodes(subjectName, papers);
                                             items.push({
-                                                label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join('/')}]` : ''} (${dept})`,
+                                                label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join(', ')}]` : ''} (${dept})`,
                                                 url: buildQuestionPaperUrl(dept, regYear, semNum, subjectName),
                                                 type,
                                                 subject: subjectName,

@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
   function updateThemeIcon(mode){
     try{
       var toggles = document.querySelectorAll('.theme-btn, .theme-toggle, .theme-button');
@@ -59,14 +59,12 @@
         'mech/ce3491-strength-of-materials': true
       };
       var key = dept + '/' + subject;
-      var subjectHref = subject ? ('/syllabus/' + dept + '/' + subject + '/') : ('/syllabus/' + dept + '/index.html');
-      var deptHref = '/syllabus/' + dept + '/index.html';
-      var resolvedHref = (subject && !missingSubjectTargets[key]) ? subjectHref : deptHref;
+      var resolvedHref = '../../syllabus/index.html';
 
       document.querySelectorAll('a').forEach(function(link){
         var href = link.getAttribute('href') || '';
         var label = (link.textContent || '').trim().toLowerCase();
-        var hasLegacyHref = href.indexOf('/syllabus/pdfs.html') !== -1;
+        var hasLegacyHref = href.indexOf('../../syllabus/index.html') !== -1;
         var isViewSyllabusBtn = label === 'view syllabus';
 
         if(!hasLegacyHref && !isViewSyllabusBtn) return;
@@ -170,3 +168,4 @@
     }catch(e){}
   }, false);
 })();
+

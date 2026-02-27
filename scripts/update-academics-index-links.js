@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ACADEMICS_ROOT = path.join(__dirname, '..', 'academics');
-const BASE_PATH = (process.env.BASE_PATH || '/Project-LearnSkart').replace(/\/+$/, '');
+const BASE_PATH = (process.env.BASE_PATH || '../index.html').replace(/\/+$/, '');
 const DEPTS = ['cse', 'ece', 'eee', 'mech', 'civil', 'it'];
 
 function slugifySubjectName(str) {

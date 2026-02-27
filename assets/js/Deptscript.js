@@ -115,7 +115,7 @@ function searchNotes() {
   }
 }
 
-// Make note cards clickable and navigate to pdfs.html
+// Make note cards clickable and navigate to academics subject pages
 (function () {
   function addClickHandlers() {
     document.querySelectorAll('.note-card').forEach(card => {

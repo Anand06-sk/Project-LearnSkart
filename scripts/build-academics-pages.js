@@ -1,10 +1,10 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const TEMPLATE_PATH = path.join(__dirname, '..', 'assets', 'data', 'academics-templates.json');
 const OUTPUT_ROOT = path.join(__dirname, '..', 'academics');
 const BASE_URL = (process.env.BASE_URL || 'https://anand06-sk.github.io/Project-LearnSkart/').replace(/\/+$/, '');
-const BASE_PATH = (process.env.BASE_PATH || '/Project-LearnSkart').replace(/\/+$/, '');
+const BASE_PATH = (process.env.BASE_PATH || '../index.html').replace(/\/+$/, '');
 
 const DEPT_NAMES = {
   CSE: 'Computer Science and Engineering',
@@ -133,7 +133,7 @@ function buildNotesCards(pdfs) {
       '  <div class="card-icon"><i class="fas fa-file-pdf"></i></div>',
       `  <h3>${title}</h3>`,
       '  <p>',
-      `    <a href="${viewUrl}" target="_blank" rel="noopener">View</a> · `,
+      `    <a href="${viewUrl}" target="_blank" rel="noopener">View</a> Â· `,
       `    <a href="${url}" target="_blank" rel="noopener" download>Download</a>`,
       '  </p>',
       '</div>'
@@ -149,7 +149,7 @@ function buildStudyMaterialButtons(entry, folderSlug, subjectCode) {
   const reg = entry.regulation || '';
   const code = subjectCode || entry.subject_code || '';
 
-  const syllabusHref = `/syllabus/pdfs.html?dept=${encodeURIComponent(deptCode)}&regulation=${encodeURIComponent(reg)}&semester=${encodeURIComponent(sem)}`;
+  const syllabusHref = `/syllabus/index.html`;
   const pyqHref = code ? `/pyq/${code.toUpperCase()}/` : '#';
 
   const buttons = [];
@@ -166,7 +166,7 @@ function buildStudyMaterialButtons(entry, folderSlug, subjectCode) {
 function buildBreadcrumb(deptLower, deptLabel, subjectName) {
   return [
     '<nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">',
-    `  <a href="/">Home</a> &gt; <a href="/academics/${deptLower}/index.html">${deptLabel}</a> &gt; <span>${subjectName}</span>`,
+    `  <a href="../index.html">Home</a> &gt; <a href="../academics/${deptLower}/index.html">${deptLabel}</a> &gt; <span>${subjectName}</span>`,
     '</nav>'
   ].join('\n');
 }
@@ -231,23 +231,23 @@ function buildHtml(entry, canonicalUrl, folderSlug) {
     <meta name="keywords" content="${metaKeywords}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="${canonicalUrl}">
-    <link rel="stylesheet" href="/assets/css/question.css">
-    <link rel="stylesheet" href="/assets/css/pyq-static.css">
+    <link rel="stylesheet" href="../assets/css/question.css">
+    <link rel="stylesheet" href="../assets/css/pyq-static.css">
 </head>
 <body>
     <nav class="nav">
         <div class="container nav-inner">
             <div class="logo-wrap">
-                <div class="logo-icon"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
+                <div class="logo-icon"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
                 <div class="logo-text">
                     <h1>LearnSkart</h1>
                     <p>Study Notes</p>
                 </div>
             </div>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/academics/${deptLower}/index.html">${deptLabel}</a>
-                <a href="/syllabus/pdfs.html">Syllabus</a>
+                <a href="../index.html">Home</a>
+                <a href="../academics/${deptLower}/index.html">${deptLabel}</a>
+                <a href="../syllabus/index.html">Syllabus</a>
             </div>
         </div>
     </nav>
@@ -277,12 +277,12 @@ ${buildStudyMaterialButtons(entry, folderSlug, subjectCode)}
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+            <div class="footer-logo"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
             <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
             <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
-    <script src="/assets/js/theme.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
 </body>
 </html>`;
 
@@ -328,3 +328,4 @@ entries.forEach(entry => {
 });
 
 console.log(`Generated ${written} academic subject pages in ${OUTPUT_ROOT}`);
+

@@ -35,7 +35,7 @@ folders.forEach(folder => {
   
   const before = html.slice(0, bodyCloseIdx);
   const after = html.slice(bodyCloseIdx);
-  const updatedHtml = before + '    <script src="/assets/js/theme.js" defer></script>\n' + after;
+  const updatedHtml = before + '    <script src="../assets/js/theme.js" defer></script>\n' + after;
   
   fs.writeFileSync(indexPath, updatedHtml, 'utf8');
   fixed++;

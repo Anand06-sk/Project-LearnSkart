@@ -65,12 +65,12 @@ function slugFromHref(href) {
   cleaned = cleaned.replace(/index\.html$/i, '');
   cleaned = cleaned.replace(/^\.+\//, '');
   cleaned = cleaned.replace(/\/+$/, '');
-  const parts = cleaned.split('/').filter(Boolean);
+  const parts = cleaned.split('../index.html').filter(Boolean);
   return parts[parts.length - 1] || '';
 }
 
 function parseAcademicsSubjects(html) {
-  const reg2021BlockMatch = String(html).match(/<div class="content-area" id="content-2021">([\s\S]*?)<div class="content-area" id="content-2025"/i);
+  const reg2021BlockMatch = String(html).match(/<div class="content-area" id="content-2021">([\s\S]*?)<div class="content-area" id="content-2025"../i);
   const sourceHtml = reg2021BlockMatch ? reg2021BlockMatch[1] : String(html);
   const semesters = {};
   const sectionRegex = /<div class="section"[^>]*id="semester-(\d+)"[\s\S]*?<div class="cards-row">([\s\S]*?)<\/div>/gi;
@@ -169,7 +169,7 @@ function buildDeptPage(options) {
             ? `<span class="subject-code">${subject.code}</span>`
             : '';
           return [
-            `<a class="subject-card" href="/syllabus/${deptLower}/${subject.slug}/">`,
+            `<a class="subject-card" href="../syllabus/${deptLower}/${subject.slug}/">`,
             `  <div class="subject-title">${subject.name}</div>`,
             `  ${codeBadge}`,
             '</a>'
@@ -196,37 +196,37 @@ function buildDeptPage(options) {
   <meta name="keywords" content="${keywords}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${canonicalUrl}">
-  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/question.css">
-  <link rel="stylesheet" href="/assets/css/pyq-static.css">
-  <link rel="stylesheet" href="/assets/css/syllabus-static.css">
+  <link rel="stylesheet" href="../assets/css/question.css">
+  <link rel="stylesheet" href="../assets/css/pyq-static.css">
+  <link rel="stylesheet" href="../assets/css/syllabus-static.css">
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
       <div class="logo-wrap">
-        <div class="logo-icon"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
+        <div class="logo-icon"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
         <div class="logo-text">
           <h1>LearnSkart</h1>
           <p>Syllabus</p>
         </div>
       </div>
       <div class="mobile-top-links">
-        <a href="/">Home</a>
-        <a href="/syllabus/index.html">Dept Syllabus</a>
+        <a href="../index.html">Home</a>
+        <a href="../syllabus/index.html">Dept Syllabus</a>
       </div>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/syllabus/">Syllabus Home</a>
-        <a href="/academics/${deptLower}/index.html">${deptName}</a>
+        <a href="../index.html">Home</a>
+        <a href="../syllabus/">Syllabus Home</a>
+        <a href="../academics/${deptLower}/index.html">${deptName}</a>
       </div>
     </div>
   </nav>
 
   <main class="main container">
     <nav aria-label="Breadcrumb">
-      <a href="/">Home</a> &gt; <a href="/syllabus/">Syllabus</a> &gt; <span>${deptName}</span>
+      <a href="../index.html">Home</a> &gt; <a href="../syllabus/">Syllabus</a> &gt; <span>${deptName}</span>
     </nav>
 
     <header class="syllabus-hero">
@@ -260,12 +260,12 @@ function buildDeptPage(options) {
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+      <div class="footer-logo"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
       <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University syllabus PDFs arranged by department and semester.</p>
       <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
     </div>
   </footer>
-  <script src="/assets/js/theme.js" defer></script>
+  <script src="../assets/js/theme.js" defer></script>
 </body>
 </html>`;
 }
@@ -318,37 +318,37 @@ function buildSubjectPage(options) {
   <meta name="keywords" content="${keywords}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${canonicalUrl}">
-  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/question.css">
-  <link rel="stylesheet" href="/assets/css/pyq-static.css">
-  <link rel="stylesheet" href="/assets/css/syllabus-static.css">
+  <link rel="stylesheet" href="../assets/css/question.css">
+  <link rel="stylesheet" href="../assets/css/pyq-static.css">
+  <link rel="stylesheet" href="../assets/css/syllabus-static.css">
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
       <div class="logo-wrap">
-        <div class="logo-icon"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
+        <div class="logo-icon"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
         <div class="logo-text">
           <h1>LearnSkart</h1>
           <p>Syllabus</p>
         </div>
       </div>
       <div class="mobile-top-links">
-        <a href="/">Home</a>
-        <a href="/syllabus/index.html">Dept Syllabus</a>
+        <a href="../index.html">Home</a>
+        <a href="../syllabus/index.html">Dept Syllabus</a>
       </div>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/syllabus/">Syllabus Home</a>
-        <a href="/syllabus/${deptLower}/">${deptName}</a>
+        <a href="../index.html">Home</a>
+        <a href="../syllabus/">Syllabus Home</a>
+        <a href="../syllabus/${deptLower}/">${deptName}</a>
       </div>
     </div>
   </nav>
 
   <main class="main container">
     <nav aria-label="Breadcrumb">
-      <a href="/">Home</a> &gt; <a href="/syllabus/">Syllabus</a> &gt; <a href="/syllabus/${deptLower}/">${deptName}</a> &gt; <span>${subject.name}</span>
+      <a href="../index.html">Home</a> &gt; <a href="../syllabus/">Syllabus</a> &gt; <a href="../syllabus/${deptLower}/">${deptName}</a> &gt; <span>${subject.name}</span>
     </nav>
 
     <header class="content-header" style="align-items:flex-start;">
@@ -374,12 +374,12 @@ function buildSubjectPage(options) {
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+      <div class="footer-logo"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
       <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University syllabus PDFs arranged by department and semester.</p>
       <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
     </div>
   </footer>
-  <script src="/assets/js/theme.js" defer></script>
+  <script src="../assets/js/theme.js" defer></script>
 </body>
 </html>`;
 }

@@ -112,7 +112,7 @@ function buildFallbackHtml(entry, canonicalUrl) {
   const keywords = `${name}, ${code}, Anna University, previous year question papers, Anna University question papers, ${entry.department || 'Multiple Departments'}`;
   const intro = entry.intro || `Find Anna University ${name} (${code}) previous year question papers for ${entry.department || 'Multiple Departments'}.`;
 
-  return `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>${title}</title>\n    <meta name="description" content="${description}">\n    <meta name="keywords" content="${keywords}">\n    <meta name="robots" content="index, follow">\n    <link rel="canonical" href="${canonicalUrl}">\n    <link rel="stylesheet" href="/assets/css/question.css">\n</head>\n<body>\n    <main class="main container">\n        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">\n            <a href="/">Home</a> &gt; <span>${entry.department || 'Departments'}</span> &gt; <span>${name}</span>\n        </nav>\n        <h1>${code} ${name} Previous Year Question Papers</h1>\n        <p>${intro}</p>\n    </main>\n    <script src="/assets/js/theme.js" defer></script>\n</body>\n</html>`;
+  return `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>${title}</title>\n    <meta name="description" content="${description}">\n    <meta name="keywords" content="${keywords}">\n    <meta name="robots" content="index, follow">\n    <link rel="canonical" href="${canonicalUrl}">\n    <link rel="stylesheet" href="../assets/css/question.css">\n</head>\n<body>\n    <main class="main container">\n        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">\n            <a href="../index.html">Home</a> &gt; <span>${entry.department || 'Departments'}</span> &gt; <span>${name}</span>\n        </nav>\n        <h1>${code} ${name} Previous Year Question Papers</h1>\n        <p>${intro}</p>\n    </main>\n    <script src="../assets/js/theme.js" defer></script>\n</body>\n</html>`;
 }
 
 function enhancePdfList(html) {
@@ -148,7 +148,7 @@ function ensureThemeScript(html) {
   if (html.includes('theme.js')) return html;
   const bodyCloseIdx = html.lastIndexOf('</body>');
   if (bodyCloseIdx === -1) return html;
-  return html.slice(0, bodyCloseIdx) + '    <script src="/assets/js/theme.js" defer></script>\n' + html.slice(bodyCloseIdx);
+  return html.slice(0, bodyCloseIdx) + '    <script src="../assets/js/theme.js" defer></script>\n' + html.slice(bodyCloseIdx);
 }
 
 function mergeEntry(target, incoming) {
@@ -207,7 +207,7 @@ merged.forEach(entry => {
   html = ensureMeta(html, 'keywords', metaKeywords);
   html = ensureMeta(html, 'robots', 'index, follow');
   html = ensureCanonical(html, canonicalUrl);
-  html = ensureStylesheet(html, '/assets/css/pyq-static.css');
+  html = ensureStylesheet(html, '../assets/css/pyq-static.css');
   html = ensureH1(html, `${code} ${entry.subject_name || 'Subject'} Previous Year Question Papers`);
   html = enhancePdfList(html);
   html = ensureThemeScript(html);

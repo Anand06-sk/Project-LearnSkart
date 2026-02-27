@@ -39,15 +39,15 @@
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+        .replace(/"../../g, '&quot;')
+        .replace(/'../../g, '&#039;');
     }
 
     function toDriveView(url) {
       if (!url) return url;
       const m = url.match(/[?&]id=([^&]+)/) || url.match(/\/d\/([^/]+)/) || url.match(/uc\/(?:export=download)?\?id=([^&]+)/);
       if (m && m[1]) {
-        return 'https://drive.google.com/file/d/' + m[1] + '/preview';
+        return 'https://drive.google.com/file/d/' + m[1] + '../../preview';
       }
       return url;
     }

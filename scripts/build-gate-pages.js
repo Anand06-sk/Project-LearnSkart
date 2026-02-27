@@ -17,8 +17,8 @@ function htmlEscape(value) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+    .replace(/"../g, '&quot;')
+    .replace(/'../g, '&#39;');
 }
 
 function normalizeSubjectName(name) {
@@ -222,28 +222,28 @@ function buildSubjectPage(subject, subjectIcons, papers) {
   <meta name="keywords" content="${htmlEscape(keywords)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${BASE_URL}/gate/${subjectPath}/">
-  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/question.css">
-  <link rel="stylesheet" href="/assets/css/gate-static.css">
+  <link rel="stylesheet" href="../assets/css/question.css">
+  <link rel="stylesheet" href="../assets/css/gate-static.css">
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
       <div class="logo-wrap">
-        <div class="logo-icon"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
+        <div class="logo-icon"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
         <div class="logo-text"><h1>LearnSkart</h1><p>GATE Papers</p></div>
       </div>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/gate-pyqs/">GATE</a>
+        <a href="../index.html">Home</a>
+        <a href="../gate-pyqs/">GATE</a>
       </div>
     </div>
   </nav>
 
   <main class="main container gate-main">
     <nav aria-label="Breadcrumb" class="breadcrumb">
-      <a href="/">Home</a> &gt; <a href="/gate-pyqs/">GATE</a> &gt; <span>${htmlEscape(titleCore)}</span>
+      <a href="../index.html">Home</a> &gt; <a href="../gate-pyqs/">GATE</a> &gt; <span>${htmlEscape(titleCore)}</span>
     </nav>
 
     <header class="content-header" style="align-items:flex-start;">
@@ -261,12 +261,12 @@ function buildSubjectPage(subject, subjectIcons, papers) {
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+      <div class="footer-logo"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
       <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">GATE previous year papers organized subject-wise for quick preparation.</p>
       <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
     </div>
   </footer>
-  <script src="/assets/js/theme.js" defer></script>
+  <script src="../assets/js/theme.js" defer></script>
 </body>
 </html>`;
 }
