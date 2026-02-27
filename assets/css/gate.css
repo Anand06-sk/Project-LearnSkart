@@ -364,6 +364,18 @@
             font-family: inherit;
         }
 
+        .search-bar .search-input,
+        .search-bar .search-input:focus,
+        .search-bar .search-input:focus-visible,
+        html.dark .search-bar .search-input,
+        html.dark .search-bar .search-input:focus,
+        html.dark .search-bar .search-input:focus-visible {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+
         .search-input::-webkit-outer-spin-button,
         .search-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
@@ -500,6 +512,9 @@
             padding: 1.5rem 1.25rem;
             position: relative;
             border: 1px solid #f3f4f6;
+            display: block;
+            text-decoration: none;
+            color: inherit;
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
@@ -592,6 +607,30 @@
             font-size: 0.7rem;
             font-weight: 600;
             border: 1px solid #bfdbfe;
+        }
+
+        /* Dark theme adjustments for subject cards */
+        body.dark-mode .subject-card {
+            background: #0b1220; /* dark card background */
+            border-color: #1f2937;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .subject-card:hover {
+            border-color: #334155;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        body.dark-mode .subject-card:active {
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .subject-tag,
+        body.dark-mode .subject-code-badge {
+            background: #111827;
+            color: #cbd5e1;
+            border-color: #334155;
         }
 
         /* No Results */
@@ -1967,8 +2006,7 @@
         }
 
         .search-input:focus-visible {
-            outline: 2px solid #3b82f6;
-            outline-offset: -2px;
+            outline: none;
         }
 
         @media (min-width: 769px) {

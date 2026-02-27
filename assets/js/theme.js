@@ -40,6 +40,40 @@
   }
   function getStored(){ try{return localStorage.getItem('site-theme')||'light'}catch(e){return 'light'} }
   function setStored(m){ try{localStorage.setItem('site-theme',m)}catch(e){} }
+  function rewriteAcademicSyllabusLinks(){
+    try{
+      var pathname = (location.pathname || '').replace(/\\/g, '/');
+      var cleaned = pathname.replace(/\/index\.html$/i, '').replace(/\/+$/, '');
+      var parts = cleaned.split('/').filter(Boolean);
+      if(parts.length < 3 || String(parts[0]).toLowerCase() !== 'academics') return;
+
+      var dept = String(parts[1] || '').toLowerCase();
+      var subject = String(parts[2] || '').toLowerCase();
+      if(!dept) return;
+
+      var missingSubjectTargets = {
+        'ece/be3254-electrical-and-instrumentation-engineering': true,
+        'ece/ec3492-digital-signal-processing': true,
+        'eee/ec3301-electron-devices-and-cirrcuits': true,
+        'mech/ce3391-fluid-mechanics-and-machinery': true,
+        'mech/ce3491-strength-of-materials': true
+      };
+      var key = dept + '/' + subject;
+      var subjectHref = subject ? ('/syllabus/' + dept + '/' + subject + '/') : ('/syllabus/' + dept + '/index.html');
+      var deptHref = '/syllabus/' + dept + '/index.html';
+      var resolvedHref = (subject && !missingSubjectTargets[key]) ? subjectHref : deptHref;
+
+      document.querySelectorAll('a').forEach(function(link){
+        var href = link.getAttribute('href') || '';
+        var label = (link.textContent || '').trim().toLowerCase();
+        var hasLegacyHref = href.indexOf('/syllabus/pdfs.html') !== -1;
+        var isViewSyllabusBtn = label === 'view syllabus';
+
+        if(!hasLegacyHref && !isViewSyllabusBtn) return;
+        link.setAttribute('href', resolvedHref);
+      });
+    }catch(e){/* ignore */}
+  }
   window.theme = {
     init: function(){ applyTheme(getStored()); },
     toggle: function(){ var cur = getStored(); var next = cur==='dark'?'light':'dark'; setStored(next); applyTheme(next); },
@@ -83,6 +117,7 @@
   // Also init icons after a small delay to ensure DOM is ready
   setTimeout(function(){
     try{
+      rewriteAcademicSyllabusLinks();
       var mode = getStored();
       updateThemeIcon(mode);
       // Force dark mode reapplication for all elements
@@ -117,15 +152,19 @@
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', function(){
       try{
+        rewriteAcademicSyllabusLinks();
         var mode = getStored();
         applyTheme(mode);
       }catch(e){}
     });
+  } else {
+    try{ rewriteAcademicSyllabusLinks(); }catch(e){}
   }
 
   // Also apply on window load for late-loaded content
   window.addEventListener('load', function(){
     try{
+      rewriteAcademicSyllabusLinks();
       var mode = getStored();
       applyTheme(mode);
     }catch(e){}

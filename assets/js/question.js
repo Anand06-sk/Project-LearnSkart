@@ -1,4 +1,16 @@
 
+        const deptPages = [
+            { dept: 'CSE', path: '../academics/cse/index.html' },
+            { dept: 'ECE', path: '../academics/ece/index.html' },
+            { dept: 'EEE', path: '../academics/eee/index.html' },
+            { dept: 'IT', path: '../academics/it/index.html' },
+            { dept: 'MECH', path: '../academics/mech/index.html' },
+            { dept: 'CIVIL', path: '../academics/civil/index.html' }
+        ];
+
+        let subjectNameToCode = {};
+        let subjectCodeToInfo = {};
+
         function getParam(name) {
             const p = new URLSearchParams(window.location.search);
             return p.get(name) || '';
@@ -15,6 +27,84 @@
             s = s.replace(/\b(VIII|VII|VI|IV|III|II|I)\b/gi, m => romanMap[m.toUpperCase()] || m);
             s = s.replace(/&/g, 'and');
             return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+        }
+
+        function normalizeSubjectCode(str) {
+            if (!str) return '';
+            return String(str).toUpperCase().replace(/[^A-Z0-9]/g, '');
+        }
+
+        function slugifySubjectName(str) {
+            if (!str) return '';
+            return String(str)
+                .toLowerCase()
+                .replace(/&/g, ' and ')
+                .replace(/\([^)]*\)/g, ' ')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
+        }
+
+        function inferPyqFolder(subjectCode, subjectName, papers) {
+            const normalizedCode = normalizeSubjectCode(subjectCode);
+            const folderOverrides = {
+                HS3152: 'HS3152-professional-englishi',
+                HS3252: 'HS3252-professional-englishii'
+            };
+            if (normalizedCode && folderOverrides[normalizedCode]) {
+                return folderOverrides[normalizedCode];
+            }
+
+            const firstPaperTitle = Array.isArray(papers) && papers.length > 0 ? (papers[0].title || '') : '';
+            if (firstPaperTitle) {
+                const fromTitle = firstPaperTitle.match(/-\s*([A-Z]{2,5}\d{4})-([A-Za-z0-9-]+)-previous-year-question-papers/i);
+                if (fromTitle) {
+                    const inferredCode = normalizeSubjectCode(fromTitle[1]);
+                    const inferredSlug = String(fromTitle[2]).toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+                    if (inferredCode && inferredSlug) return `${inferredCode}-${inferredSlug}`;
+                }
+            }
+
+            const slug = slugifySubjectName(subjectName);
+            if (normalizedCode && slug) return `${normalizedCode}-${slug}`;
+            if (normalizedCode) return normalizedCode;
+            return '';
+        }
+
+        function extractSubjectCodesFromHtml(html, dept) {
+            try {
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const cards = doc.querySelectorAll('.note-card');
+                cards.forEach(card => {
+                    const text = (card.textContent || '').trim();
+                    const match = text.match(/^(.*)\(([^)]+)\)\s*$/);
+                    if (!match) return;
+                    const name = match[1].trim();
+                    let code = match[2].trim();
+                    if (!name || !code) return;
+                    code = code.replace(/\s+/g, '').toUpperCase();
+                    const normalized = normalizeSubjectName(name);
+                    if (!normalized) return;
+
+                    if (!subjectNameToCode[normalized]) subjectNameToCode[normalized] = code;
+                    if (!subjectCodeToInfo[code]) subjectCodeToInfo[code] = { name: name, depts: new Set() };
+                    subjectCodeToInfo[code].depts.add(dept);
+                    if (!subjectCodeToInfo[code].name) subjectCodeToInfo[code].name = name;
+                });
+            } catch (e) {
+                console.warn('Subject code parse failed:', dept, e);
+            }
+        }
+
+        async function loadSubjectCodeMaps() {
+            const results = await Promise.allSettled(
+                deptPages.map(page => fetch(page.path).then(r => r.text()).then(html => ({ dept: page.dept, html })))
+            );
+            results.forEach(result => {
+                if (result.status === 'fulfilled') {
+                    extractSubjectCodesFromHtml(result.value.html, result.value.dept);
+                }
+            });
         }
 
         function normalizeSemester(sem) {
@@ -50,6 +140,8 @@
         let currentPdfTitle = '';
         let targetSubjectNormalized = '';
         let didAutoFocus = false;
+        let didSearchFocus = false;
+        let searchTriggered = false;
 
         const deptFullNames = {
             "CSE": "Computer Science & Engineering",
@@ -66,6 +158,8 @@
                 // Fetch your JSON file
                 const response = await fetch('../assets/data/qn.json');
                 universityData = await response.json();
+
+            await loadSubjectCodeMaps();
                 
                 document.getElementById('year').textContent = new Date().getFullYear();
                 const deptRaw = getParam('dept');
@@ -112,6 +206,10 @@
             const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
             let autoExpandedId = null;
+            let searchExpandedId = null;
+            const searchNormalized = normalizeSubjectName(searchQuery);
+            const searchCode = normalizeSubjectCode(searchQuery);
+            const searchAcrossSem = Boolean(searchQuery);
 
             // Check if 2025 regulation is selected and show coming soon state
             if (selectedReg === '2025') {
@@ -129,10 +227,20 @@
             document.getElementById('comingSoonState').classList.add('hidden');
 
             Object.entries(data).forEach(([sem, items]) => {
-                if (selectedSem === 'All' || sem === selectedSem) {
+                if (searchAcrossSem || selectedSem === 'All' || sem === selectedSem) {
                     Object.entries(items).forEach(([name, papers]) => {
-                        if (!searchQuery || name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                            subjects.push({ id: `${selectedDept}-${sem}-${name}`, sem, name, papers });
+                        const subjectNormalized = normalizeSubjectName(name);
+                        const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                        const subjectCodeNormalized = normalizeSubjectCode(subjectCode);
+                        const matchesSearch = !searchQuery
+                            || subjectNormalized.includes(searchNormalized)
+                            || searchNormalized.includes(subjectNormalized)
+                            || (subjectCodeNormalized && (subjectCodeNormalized.includes(searchCode) || searchCode.includes(subjectCodeNormalized)));
+                        if (!matchesSearch) return;
+                        const id = `${selectedDept}-${sem}-${name}`;
+                        subjects.push({ id, sem, name, papers, subjectCode });
+                        if (!searchExpandedId && searchTriggered && searchQuery) {
+                            searchExpandedId = id;
                         }
                     });
                 }
@@ -150,6 +258,10 @@
                     expandedId = autoExpandedId;
                 }
             }
+
+            if (searchExpandedId) {
+                expandedId = searchExpandedId;
+            }
             
             document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
             document.getElementById('subjectCount').textContent = `${subjects.length} Subjects`;
@@ -160,14 +272,23 @@
                 const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
                 const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
+                const subjectCode = s.subjectCode || subjectNameToCode[subjectNormalized] || '';
+                const pyqFolder = inferPyqFolder(subjectCode, s.name, s.papers);
+                const subjectMeta = pyqFolder ? `
+                            <div class="subject-meta">
+                                <span class="subject-code">${subjectCode}</span>
+                                <a class="subject-link" href="../pyq/${encodeURIComponent(pyqFolder)}/">View Question Papers</a>
+                            </div>
+                        ` : '';
                 return `
-                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}">
+                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}" data-subject-id="${s.id}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">
                             <div class="card-header">
                                 <span class="sem-tag">SEM ${s.sem}</span>
                                 <span class="reg-tag ${s.sem % 2 === 0 ? 'even' : 'odd'}">Reg ${selectedReg}</span>
                             </div>
                             <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">${s.name}</h3>
+                            ${subjectMeta}
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem;">
                                 <span style="font-size:0.75rem; color:var(--muted); display:flex; gap:4px; align-items:center;">
                                     <i data-lucide="file-text" style="width:14px"></i> ${available} Papers available
@@ -196,6 +317,10 @@
                     </div>
                 `;
             }).join('');
+            grid.querySelectorAll('.subject-link').forEach(link => {
+                link.addEventListener('click', e => e.stopPropagation());
+            });
+
             lucide.createIcons();
 
             if (autoExpandedId && !didAutoFocus) {
@@ -207,17 +332,32 @@
                 }
                 didAutoFocus = true;
             }
+
+            if (searchExpandedId && !didSearchFocus) {
+                const focusCard = grid.querySelector(`.card[data-subject-id="${searchExpandedId}"]`);
+                if (focusCard) {
+                    requestAnimationFrame(() => {
+                        focusCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
+                }
+                didSearchFocus = true;
+                searchTriggered = false;
+            }
         }
 
         // Event Handlers
         window.setDept = (dept) => {
             selectedDept = dept;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderTabs();
             renderGrid();
         };
 
         window.setSem = (sem) => {
             selectedSem = sem;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderSemesterTabs();
             renderGrid();
         };
@@ -226,18 +366,44 @@
             selectedReg = reg;
             document.querySelectorAll('.reg-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            didSearchFocus = false;
+            searchTriggered = false;
             renderGrid();
         };
 
         window.toggleCard = (id) => {
             expandedId = expandedId === id ? null : id;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderGrid();
         };
 
         document.getElementById('searchInput').oninput = (e) => {
             searchQuery = e.target.value;
+            expandedId = null;
+            didSearchFocus = false;
+            searchTriggered = false;
             renderGrid();
         };
+
+        document.getElementById('searchInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                runSearch();
+            }
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            runSearch();
+        });
+
+        function runSearch() {
+            searchQuery = document.getElementById('searchInput').value;
+            expandedId = null;
+            didSearchFocus = false;
+            searchTriggered = true;
+            renderGrid();
+        }
 
         window.openPdf = (url, title, event) => {
             if (event) event.stopPropagation();

@@ -102,7 +102,9 @@
 
             document.getElementById('gpa-value').textContent = gpa;
             document.getElementById('gpa-grade').textContent = gradeClass;
-            document.getElementById('gpa-result').classList.remove('hidden');
+            const gpaResult = document.getElementById('gpa-result');
+            gpaResult.classList.remove('hidden');
+            gpaResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function resetGPA() {
@@ -165,7 +167,9 @@
 
             document.getElementById('cgpa-value').textContent = cgpa;
             document.getElementById('cgpa-grade').textContent = gradeClass;
-            document.getElementById('cgpa-result').classList.remove('hidden');
+            const cgpaResult = document.getElementById('cgpa-result');
+            cgpaResult.classList.remove('hidden');
+            cgpaResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function resetCGPA() {

@@ -1,0 +1,230 @@
+:root {
+  --gate-card-bg: #ffffff;
+  --gate-card-border: #e2e8f0;
+}
+
+.gate-main {
+  padding-bottom: 3rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 1.5rem 0 1rem;
+}
+
+.breadcrumb a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 600;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  transition: 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary);
+  background: #dbeafe;
+}
+
+.gate-page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.55rem;
+}
+
+.gate-page-intro {
+  color: var(--muted);
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.subject-card {
+  text-decoration: none;
+  color: var(--foreground);
+  border: 1px solid var(--gate-card-border);
+  border-radius: 1rem;
+  background: var(--gate-card-bg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.1);
+  border-color: #bfdbfe;
+}
+
+.subject-icon {
+  font-size: 1.35rem;
+}
+
+.subject-code-badge {
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+}
+
+.subject-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.subject-tags {
+  display: flex;
+}
+
+.subject-tag {
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--gate-card-border);
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: #f8fafc;
+}
+
+.pyq-list h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.pyq-year {
+  border: 1px solid var(--gate-card-border);
+  border-radius: 1rem;
+  background: var(--gate-card-bg);
+  padding: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.pyq-year h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.pyq-year ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.pyq-paper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--gate-card-border);
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  padding: 0.72rem 0.9rem;
+}
+
+.pyq-paper-title {
+  font-weight: 600;
+  font-size: 0.93rem;
+}
+
+.pyq-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pyq-btn {
+  border: 1px solid var(--gate-card-border);
+  background: #1f2937; /* dark button background for view */
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.38rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* keep download button primary blue */
+.pyq-btn.primary {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.pyq-btn.primary {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.empty-state-msg {
+  border: 1px dashed var(--gate-card-border);
+  border-radius: 0.85rem;
+  padding: 1rem;
+  color: var(--muted);
+}
+
+body.dark-mode {
+  --gate-card-bg: #0f172a;
+  --gate-card-border: #1f2937;
+}
+
+body.dark-mode .subject-card,
+body.dark-mode .pyq-year,
+body.dark-mode .pyq-paper {
+  background: #0b1220;
+}
+
+body.dark-mode .subject-tag,
+body.dark-mode .subject-code-badge {
+  background: #111827;
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+body.dark-mode .breadcrumb a {
+  background: #0b1220;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+
+body.dark-mode .breadcrumb a:hover {
+  color: #93c5fd;
+  background: #111827;
+}
+
+@media (max-width: 768px) {
+  .gate-page-title {
+    font-size: 1.6rem;
+  }
+
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pyq-paper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

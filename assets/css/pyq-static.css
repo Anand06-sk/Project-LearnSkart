@@ -1,0 +1,158 @@
+:root {
+    --pyq-card-bg: #ffffff;
+    --pyq-card-border: #e2e8f0;
+}
+
+.pyq-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.main nav[aria-label="Breadcrumb"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.main nav[aria-label="Breadcrumb"] a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: 600;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+.main nav[aria-label="Breadcrumb"] a:hover {
+    color: var(--primary);
+    background: #dbeafe;
+}
+
+.main nav[aria-label="Breadcrumb"] span {
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.pyq-year {
+    border: 1px solid var(--pyq-card-border);
+    border-radius: 1rem;
+    background: var(--pyq-card-bg);
+    padding: 1.25rem;
+}
+
+.pyq-year h2 {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+}
+
+.pyq-year ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.pyq-year li {
+    border: 1px solid var(--pyq-card-border);
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+}
+
+.pyq-paper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.pyq-paper-title {
+    color: var(--foreground);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.pyq-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.pyq-btn {
+    border: 1px solid var(--pyq-card-border);
+    background: white;
+    color: var(--foreground);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pyq-btn.primary {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .pyq-year {
+        padding: 1rem;
+    }
+
+    .pyq-year li {
+        padding: 0.65rem 0.85rem;
+    }
+
+    .pyq-paper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pyq-actions {
+        width: 100%;
+    }
+}
+
+body.dark-mode {
+    --pyq-card-bg: #0f172a;
+    --pyq-card-border: #1f2937;
+}
+
+body.dark-mode .pyq-year li {
+    background: #0b1220;
+}
+
+body.dark-mode .pyq-paper-title {
+    color: #e5e7eb;
+}
+
+body.dark-mode .pyq-btn {
+    background: #0b1220;
+    border-color: #1f2937;
+    color: #e5e7eb;
+}
+
+body.dark-mode .pyq-btn.primary {
+    background: var(--primary);
+    color: #0b1220;
+}
+
+body.dark-mode .main nav[aria-label="Breadcrumb"] a {
+    background: #0b1220;
+    border-color: #1f2937;
+    color: #e5e7eb;
+}
+
+body.dark-mode .main nav[aria-label="Breadcrumb"] a:hover {
+    color: #93c5fd;
+    background: #111827;
+}

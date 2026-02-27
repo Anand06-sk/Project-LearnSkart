@@ -119,6 +119,7 @@ function searchNotes() {
 (function () {
   function addClickHandlers() {
     document.querySelectorAll('.note-card').forEach(card => {
+      if (card.tagName && card.tagName.toLowerCase() === 'a' && card.getAttribute('href')) return;
       if (card.dataset.clickBound === '1') return;
       card.dataset.clickBound = '1';
       card.style.cursor = 'pointer';
@@ -161,8 +162,8 @@ function searchNotes() {
           dept: dept
         });
 
-        // Navigate to study notes page
-        window.location.href = '../../study-notes/index.html?' + params.toString();
+        // Navigate to subject page in academics
+        window.location.href = '../../academics/' + dept.toLowerCase() + '/' + subject.toLowerCase() + '/';
       });
     });
   }
