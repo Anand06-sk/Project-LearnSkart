@@ -120,7 +120,7 @@ These scripts help generate and maintain static pages from JSON/template data.
 
 - PYQ pages use folder-based routes under `pyq/`.
 - Keep subject slugs in links consistent with real folder names.
-- For static hosting, prefer absolute site-root paths (e.g. `/pyq/.../`) only when deployed from the expected base path.
+- For GitHub Pages project-site hosting, prefer relative internal links (for example `../pyq/.../` or `../../gate/.../`) instead of root-absolute links like `/pyq/.../`.
 
 ## Disclaimer
 
