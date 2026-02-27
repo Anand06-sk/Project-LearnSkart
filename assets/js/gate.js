@@ -349,7 +349,7 @@ function slugifySubjectName(name) {
 function buildSubjectPageUrl(subject) {
     const code = String(subject.code || '').toLowerCase();
     const nameSlug = slugifySubjectName(subject.name || 'subject');
-    return `/gate/${code}-${nameSlug}/`;
+    return `../gate/${code}-${nameSlug}/`;
 }
 
 function buildSubjectSearchTokens(subject) {
