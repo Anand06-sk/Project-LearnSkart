@@ -349,7 +349,11 @@ function slugifySubjectName(name) {
 function buildSubjectPageUrl(subject) {
     const code = String(subject.code || '').toLowerCase();
     const nameSlug = slugifySubjectName(subject.name || 'subject');
-    return `../gate/${code}-${nameSlug}/`;
+    const pathname = (window.location.pathname || '').replace(/\\/g, '/');
+    const markerMatch = pathname.match(/^(.*)\/gate-pyqs(?:\/index\.html)?\/?$/i);
+    const siteBase = markerMatch ? markerMatch[1] : '';
+    const normalizedBase = siteBase === '/' ? '' : siteBase.replace(/\/+$/, '');
+    return `${normalizedBase}/gate/${code}-${nameSlug}/`;
 }
 
 function buildSubjectSearchTokens(subject) {
