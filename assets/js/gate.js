@@ -292,6 +292,38 @@ const subjectIcons = {
     XL: '🧫'
 };
 
+const subjectAliases = {
+    AE: ['aero', 'aerospace'],
+    AG: ['agri', 'agriculture'],
+    AR: ['arch', 'architecture'],
+    BM: ['biomed', 'biomedical'],
+    BT: ['biotech', 'biotechnology'],
+    CE: ['civil'],
+    CH: ['chemical'],
+    CS: ['cse', 'csit', 'comp', 'computer'],
+    CY: ['chem'],
+    DA: ['ds', 'ai', 'dsai', 'datascience'],
+    EC: ['ece', 'electronics'],
+    EE: ['eee', 'electrical'],
+    ES: ['environmental', 'env'],
+    GE: ['geomatics', 'gis'],
+    GG: ['geology', 'geophysics'],
+    IN: ['instr', 'instrumentation'],
+    MA: ['maths', 'mathematics'],
+    ME: ['mech', 'mechanical'],
+    MN: ['mining'],
+    MT: ['metallurgy', 'metallurgical'],
+    NM: ['naval', 'marine'],
+    PE: ['petroleum'],
+    PH: ['physics'],
+    PI: ['production', 'industrial'],
+    ST: ['stats', 'statistics'],
+    TF: ['textile'],
+    XE: ['engg sciences', 'engineering sciences'],
+    XH: ['hss', 'humanities'],
+    XL: ['life science', 'lifescience']
+};
+
 const pdfIndex = {};
 
 function normalizeSubjectName(name) {
@@ -318,6 +350,43 @@ function buildSubjectPageUrl(subject) {
     const code = String(subject.code || '').toLowerCase();
     const nameSlug = slugifySubjectName(subject.name || 'subject');
     return `/gate/${code}-${nameSlug}/`;
+}
+
+function buildSubjectSearchTokens(subject) {
+    const baseTokens = [
+        subject.name || '',
+        subject.code || '',
+        subject.stream || ''
+    ];
+
+    const aliases = subjectAliases[subject.code] || [];
+    return baseTokens.concat(aliases).join(' ').toLowerCase();
+}
+
+function getSearchScore(card, searchTerm) {
+    const code = String(card.dataset.code || '').toLowerCase();
+    const name = String(card.dataset.name || '').toLowerCase();
+    const stream = String(card.dataset.stream || '').toLowerCase();
+    const aliases = String(card.dataset.aliases || '').split(' ').filter(Boolean);
+    const tokens = String(card.dataset.searchTokens || '').toLowerCase();
+
+    if (!searchTerm || !tokens.includes(searchTerm)) {
+        return -1;
+    }
+
+    if (code === searchTerm) return 1000;
+    if (aliases.includes(searchTerm)) return 950;
+    if (name === searchTerm) return 900;
+
+    if (code.startsWith(searchTerm)) return 860;
+    if (aliases.some(alias => alias.startsWith(searchTerm))) return 820;
+    if (name.startsWith(searchTerm)) return 780;
+
+    const wordBoundaryMatch = new RegExp(`\\b${searchTerm.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}`);
+    if (wordBoundaryMatch.test(name)) return 720;
+    if (wordBoundaryMatch.test(stream)) return 680;
+
+    return 600 - tokens.indexOf(searchTerm);
 }
 
 function parseDriveId(url) {
@@ -397,6 +466,8 @@ function createSubjectCard(subject) {
     card.dataset.code = subject.code;
     card.dataset.name = subject.name.toLowerCase();
     card.dataset.stream = subject.stream.toLowerCase();
+    card.dataset.aliases = (subjectAliases[subject.code] || []).join(' ').toLowerCase();
+    card.dataset.searchTokens = buildSubjectSearchTokens(subject);
     card.href = buildSubjectPageUrl(subject);
     card.title = `${subject.name} (${subject.code}) - GATE PYQ`;
     card.setAttribute('aria-label', `${subject.name} (${subject.code}) - GATE PYQ`);
@@ -435,18 +506,38 @@ function handleSearch(e) {
 }
 
 function filterSubjectCards(searchTerm) {
+    if (!searchTerm) {
+        renderSubjectCards();
+        noResults.classList.remove('show');
+        return;
+    }
+
     const allCards = document.querySelectorAll('.subject-card');
+    const subjectsGrid = document.getElementById('subjectsGrid');
     let visibleCount = 0;
+    const matchedCards = [];
 
     allCards.forEach(card => {
-        const subjectText = `${card.dataset.name} ${card.dataset.code} ${card.dataset.stream}`;
-        if (subjectText.includes(searchTerm)) {
+        const score = getSearchScore(card, searchTerm);
+        if (score >= 0) {
             card.classList.remove('hidden');
             visibleCount++;
+            matchedCards.push({ card, score });
         } else {
             card.classList.add('hidden');
         }
     });
+
+    matchedCards
+        .sort((a, b) => {
+            if (b.score !== a.score) return b.score - a.score;
+            const codeA = String(a.card.dataset.code || '');
+            const codeB = String(b.card.dataset.code || '');
+            return codeA.localeCompare(codeB);
+        })
+        .forEach(item => {
+            subjectsGrid.appendChild(item.card);
+        });
 
     if (visibleCount === 0 && searchTerm) {
         noResults.classList.add('show');
