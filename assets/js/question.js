@@ -152,6 +152,29 @@
             "IT": "Information Technology"
         };
 
+        const deptSearchAliases = {
+            CSE: ['cse', 'computer science', 'computer science engineering', 'computer science and engineering'],
+            ECE: ['ece', 'electronics and communication', 'electronics communication', 'electronics'],
+            EEE: ['eee', 'electrical and electronics', 'electrical electronics', 'electrical'],
+            IT: ['it', 'information technology', 'information tech'],
+            MECH: ['mech', 'mechanical', 'mechanical engineering'],
+            CIVIL: ['civil', 'civil engineering']
+        };
+
+        function normalizeSearchText(str) {
+            if (!str) return '';
+            return String(str).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+        }
+
+        function getMatchedDepartmentsFromQuery(query) {
+            const normalizedQuery = normalizeSearchText(query);
+            if (!normalizedQuery) return [];
+
+            return Object.entries(deptSearchAliases)
+                .filter(([, aliases]) => aliases.some(alias => normalizedQuery.includes(alias)))
+                .map(([dept]) => dept);
+        }
+
         // Initialize
         async function init() {
             try {
@@ -203,13 +226,21 @@
 
         function renderGrid() {
             const grid = document.getElementById('grid');
-            const data = universityData[selectedDept]?.[selectedReg] || {};
             let subjects = [];
             let autoExpandedId = null;
             let searchExpandedId = null;
-            const searchNormalized = normalizeSubjectName(searchQuery);
-            const searchCode = normalizeSubjectCode(searchQuery);
-            const searchAcrossSem = Boolean(searchQuery);
+            const query = (searchQuery || '').trim();
+            const hasSearch = Boolean(query);
+            const searchNormalized = normalizeSubjectName(query);
+            const searchCode = normalizeSubjectCode(query);
+            const searchText = normalizeSearchText(query);
+            const searchAcrossSem = hasSearch;
+            const matchedDepts = getMatchedDepartmentsFromQuery(query);
+
+            const allDepartments = Object.keys(universityData);
+            const departmentsToScan = hasSearch
+                ? (matchedDepts.length ? matchedDepts : allDepartments)
+                : [selectedDept];
 
             // Check if 2025 regulation is selected and show coming soon state
             if (selectedReg === '2025') {
@@ -226,27 +257,39 @@
             document.getElementById('grid').classList.remove('hidden');
             document.getElementById('comingSoonState').classList.add('hidden');
 
-            Object.entries(data).forEach(([sem, items]) => {
-                if (searchAcrossSem || selectedSem === 'All' || sem === selectedSem) {
-                    Object.entries(items).forEach(([name, papers]) => {
-                        const subjectNormalized = normalizeSubjectName(name);
-                        const subjectCode = subjectNameToCode[subjectNormalized] || '';
-                        const subjectCodeNormalized = normalizeSubjectCode(subjectCode);
-                        const matchesSearch = !searchQuery
-                            || subjectNormalized.includes(searchNormalized)
-                            || searchNormalized.includes(subjectNormalized)
-                            || (subjectCodeNormalized && (subjectCodeNormalized.includes(searchCode) || searchCode.includes(subjectCodeNormalized)));
-                        if (!matchesSearch) return;
-                        const id = `${selectedDept}-${sem}-${name}`;
-                        subjects.push({ id, sem, name, papers, subjectCode });
-                        if (!searchExpandedId && searchTriggered && searchQuery) {
-                            searchExpandedId = id;
-                        }
-                    });
-                }
+            departmentsToScan.forEach((dept) => {
+                const data = universityData[dept]?.[selectedReg] || {};
+                Object.entries(data).forEach(([sem, items]) => {
+                    if (searchAcrossSem || selectedSem === 'All' || sem === selectedSem) {
+                        Object.entries(items).forEach(([name, papers]) => {
+                            const subjectNormalized = normalizeSubjectName(name);
+                            const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                            const subjectCodeNormalized = normalizeSubjectCode(subjectCode);
+                            const deptText = normalizeSearchText(`${dept} ${deptFullNames[dept] || ''}`);
+                            const nameText = normalizeSearchText(name);
+
+                            const matchesSearch = !hasSearch
+                                || (searchNormalized && (subjectNormalized.includes(searchNormalized) || searchNormalized.includes(subjectNormalized)))
+                                || (searchCode && subjectCodeNormalized && (subjectCodeNormalized.includes(searchCode) || searchCode.includes(subjectCodeNormalized)))
+                                || (searchText && (nameText.includes(searchText) || deptText.includes(searchText)));
+
+                            if (!matchesSearch) return;
+
+                            const id = `${dept}-${sem}-${name}`;
+                            subjects.push({ id, dept, sem, name, papers, subjectCode });
+                            if (!searchExpandedId && searchTriggered && hasSearch) {
+                                searchExpandedId = id;
+                            }
+                        });
+                    }
+                });
             });
 
-            subjects.sort((a, b) => a.sem - b.sem);
+            subjects.sort((a, b) => {
+                if (a.dept !== b.dept) return a.dept.localeCompare(b.dept);
+                if (Number(a.sem) !== Number(b.sem)) return Number(a.sem) - Number(b.sem);
+                return a.name.localeCompare(b.name);
+            });
 
             if (!didAutoFocus && targetSubjectNormalized) {
                 const match = subjects.find(s => {
@@ -263,8 +306,14 @@
                 expandedId = searchExpandedId;
             }
             
-            document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
-            document.getElementById('subjectCount').textContent = `${subjects.length} Subjects`;
+            const displayDeptName = hasSearch
+                ? (departmentsToScan.length === 1
+                    ? (deptFullNames[departmentsToScan[0]] || departmentsToScan[0])
+                    : 'All Departments')
+                : (deptFullNames[selectedDept] || selectedDept);
+
+            document.getElementById('displayDeptName').textContent = displayDeptName;
+            document.getElementById('subjectCount').textContent = `${subjects.length} ${hasSearch ? 'Results' : 'Subjects'}`;
             document.getElementById('emptyState').classList.toggle('hidden', subjects.length > 0);
 
             grid.innerHTML = subjects.map(s => {
@@ -284,7 +333,7 @@
                     <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}" data-subject-id="${s.id}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">
                             <div class="card-header">
-                                <span class="sem-tag">SEM ${s.sem}</span>
+                                <span class="sem-tag">${s.dept} · SEM ${s.sem}</span>
                                 <span class="reg-tag ${s.sem % 2 === 0 ? 'even' : 'odd'}">Reg ${selectedReg}</span>
                             </div>
                             <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">${s.name}</h3>
