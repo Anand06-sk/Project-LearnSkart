@@ -6,7 +6,7 @@ const ROOT = path.join(__dirname, '..');
 const GATE_JS_PATH = path.join(ROOT, 'assets', 'js', 'gate.js');
 const GATE_DATA_PATH = path.join(ROOT, 'assets', 'data', 'gate-qns.json');
 const OUTPUT_ROOT = path.join(ROOT, 'gate');
-const BASE_URL = (process.env.BASE_URL || 'https://anand06-sk.github.io/Project-LearnSkart').replace(/\/+$/, '');
+const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in').replace(/\/+$/, '');
 
 function readText(filePath) {
   return fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');

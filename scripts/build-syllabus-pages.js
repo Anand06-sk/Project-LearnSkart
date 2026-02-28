@@ -4,7 +4,7 @@ const path = require('path');
 const SYDATA_PATH = path.join(__dirname, '..', 'assets', 'data', 'sydata.json');
 const ACADEMICS_ROOT = path.join(__dirname, '..', 'academics');
 const OUTPUT_ROOT = path.join(__dirname, '..', 'syllabus');
-const BASE_URL = (process.env.BASE_URL || 'https://anand06-sk.github.io/Project-LearnSkart').replace(/\/+$/, '');
+const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in').replace(/\/+$/, '');
 const DEFAULT_REG = String(process.env.SYLLABUS_REG || '2021');
 
 const DEPT_NAMES = {

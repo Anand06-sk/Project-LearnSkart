@@ -87,7 +87,7 @@ function generateHTML(grouped) {
     <title>LearnSkart - Previous Question Papers</title>
     <meta name="description" content="Browse and download previous year question papers for all Anna University engineering subjects. Organized by department and regulation.">
     <meta name="keywords" content="previous year questions, Anna University, PYQ, exam papers, engineering, Civil, CSE, ECE, EEE, IT, Mechanical">
-    <link rel="canonical" href="https://anand06-sk.github.io/Project-LearnSkart/previous-year-questions/">
+    <link rel="canonical" href="https://learnskart.in/previous-year-questions/">
     <link rel="icon" href="../assets/icons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="../assets/icons/site.webmanifest">

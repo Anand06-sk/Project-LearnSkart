@@ -3,7 +3,7 @@ const path = require('path');
 
 const TEMPLATE_PATH = path.join(__dirname, '..', 'assets', 'data', 'academics-templates.json');
 const OUTPUT_ROOT = path.join(__dirname, '..', 'academics');
-const BASE_URL = (process.env.BASE_URL || 'https://anand06-sk.github.io/Project-LearnSkart/').replace(/\/+$/, '');
+const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in/').replace(/\/+$/, '');
 const BASE_PATH = (process.env.BASE_PATH || '../index.html').replace(/\/+$/, '');
 
 const DEPT_NAMES = {

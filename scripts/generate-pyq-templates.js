@@ -4,7 +4,7 @@ const path = require('path');
 const qnPath = path.join(__dirname, '..', 'assets', 'data', 'qn.json');
 const outPath = path.join(__dirname, '..', 'assets', 'data', 'pyq-templates.json');
 
-const BASE_URL = 'https://anand06-sk.github.io/Project-LearnSkart';
+const BASE_URL = 'https://learnskart.in';
 
 const deptFullNames = {
   CSE: 'Computer Science and Engineering',

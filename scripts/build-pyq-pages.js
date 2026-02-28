@@ -3,7 +3,7 @@ const path = require('path');
 
 const TEMPLATE_PATH = path.join(__dirname, '..', 'assets', 'data', 'pyq-templates.json');
 const OUTPUT_ROOT = path.join(__dirname, '..', 'pyq');
-const BASE_URL = (process.env.BASE_URL || 'https://anand06-sk.github.io/Project-LearnSkart/').replace(/\/+$/, '');
+const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in/').replace(/\/+$/, '');
 
 function normalizeCode(code) {
   if (!code) return '';
