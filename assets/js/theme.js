@@ -1,4 +1,4 @@
-﻿(function(){
+(function(){
   function updateThemeIcon(mode){
     try{
       var toggles = document.querySelectorAll('.theme-btn, .theme-toggle, .theme-button');

@@ -1,4 +1,4 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 const TEMPLATE_PATH = path.join(__dirname, '..', 'assets', 'data', 'academics-templates.json');
@@ -133,7 +133,7 @@ function buildNotesCards(pdfs) {
       '  <div class="card-icon"><i class="fas fa-file-pdf"></i></div>',
       `  <h3>${title}</h3>`,
       '  <p>',
-      `    <a href="${viewUrl}" target="_blank" rel="noopener">View</a> Â· `,
+      `    <a href="${viewUrl}" target="_blank" rel="noopener">View</a> · `,
       `    <a href="${url}" target="_blank" rel="noopener" download>Download</a>`,
       '  </p>',
       '</div>'
