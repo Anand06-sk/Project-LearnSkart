@@ -1,7 +1,21 @@
+function getPreferredTheme() {
+    try {
+        const siteTheme = localStorage.getItem('site-theme');
+        if (siteTheme === 'dark' || siteTheme === 'light') return siteTheme;
+        return localStorage.getItem('darkMode') === 'true' ? 'dark' : 'light';
+    } catch (e) {
+        return 'light';
+    }
+}
+
 function toggleDarkMode() {
     const isDark = !document.body.classList.contains('dark-mode');
     document.body.classList.toggle('dark-mode');
-    try { localStorage.setItem('darkMode', String(isDark)); } catch (e) {}
+    document.documentElement.classList.toggle('dark', isDark);
+    try {
+        localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
+        localStorage.setItem('darkMode', String(isDark));
+    } catch (e) {}
     const icon = document.querySelector('.theme-btn i');
     if (icon) {
         if (isDark) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
@@ -12,8 +26,9 @@ function toggleDarkMode() {
 // Apply saved preference on load
 (function(){
     try {
-        if (localStorage.getItem('darkMode') === 'true') {
+        if (getPreferredTheme() === 'dark') {
             document.addEventListener('DOMContentLoaded', function(){
+                document.documentElement.classList.add('dark');
                 document.body.classList.add('dark-mode');
                 const icon = document.querySelector('.theme-btn i');
                 if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
