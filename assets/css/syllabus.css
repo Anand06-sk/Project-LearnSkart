@@ -414,6 +414,36 @@ footer {
     border-color: #1f2937;
 }
 
+.dark-mode header {
+    background: rgba(30, 41, 59, 0.95) !important;
+    color: var(--text-light) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .logo {
+    color: #7dd3fc !important;
+    text-shadow: 0 0 12px rgba(125, 211, 252, 0.45) !important;
+}
+
+.dark-mode .back-btn {
+    background: rgba(125, 211, 252, 0.1) !important;
+    color: #7dd3fc !important;
+    border-color: rgba(125, 211, 252, 0.3) !important;
+}
+
+.dark-mode .back-btn:hover {
+    background: rgba(125, 211, 252, 0.2) !important;
+    border-color: #7dd3fc !important;
+}
+
+.dark-mode .theme-btn {
+    color: #7dd3fc !important;
+}
+
+.dark-mode .theme-btn:hover {
+    color: #60a5fa !important;
+}
+
 html.dark {
     --bg-dark: #0b1220;
 }

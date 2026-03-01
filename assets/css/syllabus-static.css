@@ -223,6 +223,28 @@ body.dark-mode {
   --syllabus-muted: #9ca3af;
 }
 
+body.dark-mode .mobile-top-links a {
+  color: #7dd3fc !important;
+  background: rgba(125, 211, 252, 0.1) !important;
+  border-color: rgba(125, 211, 252, 0.3) !important;
+}
+
+body.dark-mode .mobile-top-links a:hover {
+  background: rgba(125, 211, 252, 0.2) !important;
+  color: #60a5fa !important;
+}
+
+body.dark-mode .main nav[aria-label="Breadcrumb"] a {
+  color: #7dd3fc !important;
+  background: rgba(125, 211, 252, 0.1) !important;
+  border-color: rgba(125, 211, 252, 0.3) !important;
+}
+
+body.dark-mode .main nav[aria-label="Breadcrumb"] a:hover {
+  color: #60a5fa !important;
+  background: rgba(125, 211, 252, 0.2) !important;
+}
+
 body.dark-mode .syllabus-hero,
 body.dark-mode .syllabus-card,
 body.dark-mode .subject-card {
