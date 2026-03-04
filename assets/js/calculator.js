@@ -110,7 +110,7 @@ function addManualSubject() {
         </div>
         <div>
             <label>Credits</label>
-            <input type="number" class="subject-credits" min="0.5" step="0.5" placeholder="3">
+            <input type="number" class="subject-credits" min="0.5" step="0.5" placeholder="e.g., 3">
         </div>
         <div>
             <label>Grade</label>
@@ -243,14 +243,10 @@ function calculateGPA() {
         row.classList.remove('row-error');
         const credits = parseFloat(row.querySelector('.subject-credits').value) || 0;
         const grade = row.querySelector('.subject-grade').value;
-        const subjectCodeInput = row.querySelector('.subject-code');
-        const subjectCode = subjectCodeInput ? subjectCodeInput.value.trim() : '';
-
-        const hasInvalidCode = !subjectCode;
         const hasInvalidCredit = credits <= 0;
         const hasMissingGrade = !grade;
 
-        if (hasInvalidCode || hasInvalidCredit || hasMissingGrade) {
+        if (hasInvalidCredit || hasMissingGrade) {
             row.classList.add('row-error');
             if (!firstInvalidRow) firstInvalidRow = row;
             return;
@@ -262,9 +258,9 @@ function calculateGPA() {
     });
 
     if (firstInvalidRow) {
-        gpaFilterNote.textContent = 'Please complete subject code, credits, and grade for highlighted rows.';
+        gpaFilterNote.textContent = 'Please enter credits and select grade for highlighted rows.';
         firstInvalidRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        const focusTarget = firstInvalidRow.querySelector('.subject-grade') || firstInvalidRow.querySelector('.subject-code');
+        const focusTarget = firstInvalidRow.querySelector('.subject-grade') || firstInvalidRow.querySelector('.subject-credits');
         if (focusTarget) focusTarget.focus();
         return;
     }
