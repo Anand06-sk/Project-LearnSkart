@@ -856,10 +856,14 @@
             }
 
             .subject-row.gpa-row {
-                grid-template-columns: minmax(120px, 1.25fr) 78px 86px 34px;
+                grid-template-columns: minmax(0, 1fr) 72px 78px 32px;
                 gap: 0.4rem;
                 padding: 0.5rem;
                 align-items: center;
+            }
+
+            .subject-row.gpa-row > div {
+                min-width: 0;
             }
 
             .subject-row.gpa-row label {
@@ -870,11 +874,18 @@
             .subject-row.gpa-row select {
                 padding: 0.48rem 0.42rem;
                 font-size: 0.79rem;
+                min-width: 0;
+            }
+
+            .subject-row.gpa-row select {
+                padding-right: 1.3rem;
+                background-size: 14px;
+                background-position: right 0.25rem center;
             }
 
             .subject-row.gpa-row .manual-remove {
-                width: 34px;
-                height: 34px;
+                width: 32px;
+                height: 32px;
                 font-size: 1rem;
             }
 
@@ -934,6 +945,29 @@
             #gpa-filters select {
                 padding: 0.52rem 1.9rem 0.52rem 0.65rem;
                 font-size: 0.8rem;
+            }
+
+            .subject-row.gpa-row {
+                grid-template-columns: minmax(0, 1fr) 66px 72px 30px;
+                gap: 0.35rem;
+                padding: 0.45rem;
+            }
+
+            .subject-row.gpa-row input,
+            .subject-row.gpa-row select {
+                font-size: 0.76rem;
+                padding: 0.44rem 0.36rem;
+            }
+
+            .subject-row.gpa-row select {
+                padding-right: 1.2rem;
+                background-size: 13px;
+                background-position: right 0.2rem center;
+            }
+
+            .subject-row.gpa-row .manual-remove {
+                width: 30px;
+                height: 30px;
             }
         }
     
