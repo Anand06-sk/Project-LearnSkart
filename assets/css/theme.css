@@ -579,7 +579,7 @@ html.dark [style*="background:rgba(255,255,255"],
 html.dark [style*="background: rgba(255, 255, 255"],
 html.dark [style*="background:rgba(248,249,250"],
 html.dark [style*="background: rgba(248, 249, 250"] {
-  background: var(--surface) !important !important;
+  background: var(--surface) !important ;
   color: #f1f5f9 !important;
 }
 

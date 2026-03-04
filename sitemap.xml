@@ -1999,8 +1999,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/syllabus/civil/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://learnskart.in/syllabus/2021/civil/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/syllabus/2025/civil/</loc>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2209,8 +2215,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/syllabus/cse/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://learnskart.in/syllabus/2021/cse/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/syllabus/2025/cse/</loc>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2401,8 +2413,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/syllabus/ece/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://learnskart.in/syllabus/2021/ece/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/syllabus/2025/ece/</loc>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2581,8 +2599,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/syllabus/eee/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://learnskart.in/syllabus/2021/eee/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/syllabus/2025/eee/</loc>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2779,8 +2803,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/syllabus/it/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://learnskart.in/syllabus/2021/it/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/syllabus/2025/it/</loc>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2965,8 +2995,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/syllabus/mech/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://learnskart.in/syllabus/2021/mech/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/syllabus/2025/mech/</loc>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

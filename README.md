@@ -63,6 +63,27 @@ Project-OpenNotes/
 ├── pyq/
 ├── scripts/
 └── syllabus/
+   ├── index.html
+   ├── 2021/
+   │   ├── civil/
+   │   ├── cse/
+   │   ├── ece/
+   │   ├── eee/
+   │   ├── it/
+   │   └── mech/
+   ├── 2025/
+   │   ├── civil/
+   │   ├── cse/
+   │   ├── ece/
+   │   ├── eee/
+   │   ├── it/
+   │   └── mech/
+   ├── civil/
+   ├── cse/
+   ├── ece/
+   ├── eee/
+   ├── it/
+   └── mech/
 ```
 
 ## Data Sources
@@ -119,6 +140,8 @@ These scripts help generate and maintain static pages from JSON/template data.
 ## Notes on Routing
 
 - PYQ pages use folder-based routes under `pyq/`.
+- Syllabus department landing pages are regulation-based under `syllabus/2021/` and `syllabus/2025/`.
+- Subject syllabus pages continue under department routes like `syllabus/cse/...` and `syllabus/ece/...`.
 - Keep subject slugs in links consistent with real folder names.
 - For GitHub Pages project-site hosting, prefer relative internal links (for example `../pyq/.../` or `../../gate/.../`) instead of root-absolute links like `/pyq/.../`.
 
