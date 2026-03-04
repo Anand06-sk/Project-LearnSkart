@@ -404,5 +404,169 @@
       }
  }
 
+  },
+  "Regulation2025": {
+     "CSE": {
+      "Sem1": {
+        "MA25C01": { "credits": 4 },
+        "EN25C01": { "credits": 2 },
+        "UC25H01": { "credits": 1 },
+        "PH25C01": { "credits": 3 },
+        "CY25C01": { "credits": 3 },
+        "CS25C01": { "credits": 3 },
+        "CS25C03": { "credits": 3 },
+        "ME25C04": { "credits": 2 },
+        "UC25A01": { "credits": 1 },
+        "UC25A02": { "credits": 1 }
+      },
+      "Sem2": {
+        "MA25C02": { "credits": 4 },
+        "EE25C01": { "credits": 3 },
+        "CS25C06": { "credits": 4 },
+        "UC25H02": { "credits": 1 },
+        "PH25C03": { "credits": 3 },
+        "CS25C07": { "credits": 5 },
+        "EN25C02": { "credits": 2 },
+        "ME25C05": { "credits": 2 },
+        "UC25A03": { "credits": 1 },
+        "UC25A04": { "credits": 1 }
+      }
+    },
+     "IT": {
+
+      "Sem1": {
+        "MA25C01": { "credits": 4 },
+        "EN25C01": { "credits": 2 },
+        "UC25H01": { "credits": 1 },
+        "PH25C01": { "credits": 3 },
+        "CY25C01": { "credits": 3 },
+        "CS25C01": { "credits": 3 },
+        "CS25C03": { "credits": 3 },
+        "ME25C04": { "credits": 2 },
+        "UC25A01": { "credits": 1 },
+        "UC25A02": { "credits": 1 }
+      },
+
+      "Sem2": {
+        "MA25C02": { "credits": 4 },
+        "UC25H02": { "credits": 1 },
+        "EE25C01": { "credits": 3 },
+        "PH25C03": { "credits": 3 },
+        "IT25201": { "credits": 4 },
+        "IT25202": { "credits": 4 },
+        "EN25C02": { "credits": 2 },
+        "ME25C05": { "credits": 2 },
+        "UC25A03": { "credits": 1 },
+        "UC25A04": { "credits": 1 }
+      }
+
+    },
+    "ECE": {
+      "Sem1": {
+        "MA25C01": { "credits": 4 },
+        "EN25C01": { "credits": 2 },
+        "UC25H01": { "credits": 1 },
+        "EE25C04": { "credits": 3 },
+        "PH25C01": { "credits": 3 },
+        "CY25C01": { "credits": 3 },
+        "CS25C01": { "credits": 3 },
+        "ME25C04": { "credits": 2 },
+        "UC25A01": { "credits": 1 },
+        "UC25A02": { "credits": 1 }
+      },
+      "Sem2": {
+        "MA25C02": { "credits": 4 },
+        "UC25H02": { "credits": 1 },
+        "EN25C02": { "credits": 2 },
+        "EC25C01": { "credits": 3 },
+        "EC25C02": { "credits": 3 },
+        "CS25C05": { "credits": 4 },
+        "ME25C05": { "credits": 2 },
+        "UC25A03": { "credits": 1 },
+        "EC25C03": { "credits": 2 },
+        "UC25A04": { "credits": 1 }
+      }
+    },
+     "Civil": {
+      "Sem1": {
+        "MA25C01": { "credits": 4 },
+        "CE25C01": { "credits": 3 },
+        "PH25C01": { "credits": 3 },
+        "CY25C01": { "credits": 3 },
+        "ME25C01": { "credits": 4 },
+        "UC25H01": { "credits": 1 },
+        "EN25C01": { "credits": 2 },
+        "CS25C02": { "credits": 3 },
+        "ME25C04": { "credits": 2 },
+        "UC25A01": { "credits": 1 },
+        "UC25A02": { "credits": 1 }
+      },
+      "Sem2": {
+        "MA25C02": { "credits": 4 },
+        "ME25C02": { "credits": 4 },
+        "PH25C02": { "credits": 3 },
+        "EE25C01": { "credits": 3 },
+        "CY25C02": { "credits": 2 },
+        "UC25H02": { "credits": 1 },
+        "CE25201": { "credits": 3 },
+        "EN25C02": { "credits": 2 },
+        "ME25C05": { "credits": 2 },
+        "UC25A03": { "credits": 1 },
+        "UC25A04": { "credits": 1 }
+      }
+    },
+    "Mech": {
+      "Sem1": {
+        "MA25C01": { "credits": 4 },
+        "ME25C03": { "credits": 3 },
+        "ME25C01": { "credits": 4 },
+        "PH25C01": { "credits": 3 },
+        "CY25C01": { "credits": 3 },
+        "UC25H01": { "credits": 1 },
+        "EN25C01": { "credits": 2 },
+        "CS25C02": { "credits": 3 },
+        "ME25C04": { "credits": 2 },
+        "UC25A01": { "credits": 1 },
+        "UC25A02": { "credits": 1 }
+      },
+      "Sem2": {
+        "MA25C02": { "credits": 4 },
+        "ME25C02": { "credits": 4 },
+        "EE25C01": { "credits": 3 },
+        "PH25C05": { "credits": 3 },
+        "CY25C03": { "credits": 2 },
+        "UC25H02": { "credits": 1 },
+        "ME25C05": { "credits": 2 },
+        "EN25C02": { "credits": 2 },
+        "UC25A03": { "credits": 1 },
+        "UC25A04": { "credits": 1 }
+      }
+    },
+     "EEE": {
+      "Sem1": {
+        "MA25C01": { "credits": 4 },
+        "EE25C03": { "credits": 3 },
+        "UC25H01": { "credits": 1 },
+        "EN25C01": { "credits": 2 },
+        "PH25C01": { "credits": 3 },
+        "CY25C01": { "credits": 3 },
+        "CS25C01": { "credits": 3 },
+        "ME25C04": { "credits": 2 },
+        "UC25A01": { "credits": 1 },
+        "UC25A02": { "credits": 1 }
+      },
+      "Sem2": {
+        "MA25C03": { "credits": 4 },
+        "UC25H02": { "credits": 1 },
+        "GE25C01": { "credits": 3 },
+        "PH25C04": { "credits": 3 },
+        "ME25C01": { "credits": 3 },
+        "EN25C02": { "credits": 2 },
+        "CS25C04": { "credits": 4 },
+        "ME25C05": { "credits": 2 },
+        "UC25A03": { "credits": 1 },
+        "UC25A04": { "credits": 1 }
+      }
+    }
   }
 }

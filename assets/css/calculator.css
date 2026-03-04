@@ -832,6 +832,20 @@
                 gap: 0.7rem;
             }
 
+            #gpa-filters label {
+                font-size: 0.8rem;
+                margin-bottom: 0.35rem;
+            }
+
+            #gpa-filters select {
+                padding: 0.58rem 2rem 0.58rem 0.7rem;
+                font-size: 0.84rem;
+                line-height: 1.2;
+                background-size: 16px;
+                background-position: right 0.6rem center;
+                border-radius: 0.45rem;
+            }
+
             .subject-row {
                 grid-template-columns: 1fr;
                 gap: 0.75rem;
@@ -913,6 +927,13 @@
             .back-link .btn svg {
                 width: 12px;
                 height: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #gpa-filters select {
+                padding: 0.52rem 1.9rem 0.52rem 0.65rem;
+                font-size: 0.8rem;
             }
         }
     

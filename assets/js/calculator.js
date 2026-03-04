@@ -56,6 +56,11 @@ function getNumericSemValue(semKey) {
 
 function titleCaseDepartment(dept) {
     if (!dept) return '';
+    const labels = {
+        Mech: 'MECH',
+        Civil: 'CIVIL'
+    };
+    if (labels[dept]) return labels[dept];
     if (dept.toUpperCase() === dept) return dept;
     return dept.charAt(0).toUpperCase() + dept.slice(1).toLowerCase();
 }
@@ -189,7 +194,15 @@ function syncDepartmentAndSemester() {
     const semesters = Object.keys(creditData[regulation][currentDepartment] || {})
         .sort((a, b) => getNumericSemValue(a) - getNumericSemValue(b));
 
+    if (!semesters.length) {
+        semesterFilter.innerHTML = '';
+        renderEmptySubjects('No semesters available for the selected department.');
+        return;
+    }
+
+    const currentSemester = semesters.includes(semesterFilter.value) ? semesterFilter.value : semesters[0];
     createOptions(semesterFilter, semesters, sem => `Semester ${getNumericSemValue(sem)}`);
+    semesterFilter.value = currentSemester;
     renderGPASubjects();
 }
 
@@ -209,13 +222,24 @@ async function initializeGPAFilters() {
         }
 
         createOptions(regulationFilter, regulations, regulation => regulation.replace(/([A-Za-z]+)(\d+)/, '$1 $2'));
+        const defaultRegulation = regulations.includes('Regulation2021') ? 'Regulation2021' : regulations[0];
+        regulationFilter.value = defaultRegulation;
         regulationFilter.addEventListener('change', syncDepartmentAndSemester);
 
         departmentFilter.addEventListener('change', () => {
             const regulation = regulationFilter.value;
             const semesters = Object.keys(creditData?.[regulation]?.[departmentFilter.value] || {})
                 .sort((a, b) => getNumericSemValue(a) - getNumericSemValue(b));
+
+            if (!semesters.length) {
+                semesterFilter.innerHTML = '';
+                renderEmptySubjects('No semesters available for the selected department.');
+                return;
+            }
+
+            const currentSemester = semesters.includes(semesterFilter.value) ? semesterFilter.value : semesters[0];
             createOptions(semesterFilter, semesters, sem => `Semester ${getNumericSemValue(sem)}`);
+            semesterFilter.value = currentSemester;
             renderGPASubjects();
         });
 
