@@ -40,6 +40,7 @@ function toggleDarkMode() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Handle counter animations
     const counters = document.querySelectorAll('.stat-item h4[data-target]');
     const duration = 1200; // ms total duration per counter
 
@@ -71,4 +72,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function easeOutQuad(t) {return t * (2 - t); }
+
+    // Handle regulation dropdown
+    const regulationDropdown = document.getElementById('regulation-dropdown');
+    const syllabusFCards = document.querySelectorAll('.syllabus-card');
+
+    if (regulationDropdown) {
+        // Load saved regulation preference
+        try {
+            const savedRegulation = localStorage.getItem('syllabus-regulation') || '2021';
+            regulationDropdown.value = savedRegulation;
+            updateCardsForRegulation(savedRegulation);
+        } catch (e) {}
+
+        // Handle regulation change
+        regulationDropdown.addEventListener('change', (e) => {
+            const selectedRegulation = e.target.value;
+            updateCardsForRegulation(selectedRegulation);
+            
+            // Save preference
+            try {
+                localStorage.setItem('syllabus-regulation', selectedRegulation);
+            } catch (error) {}
+        });
+    }
+
+    function updateCardsForRegulation(regulation) {
+        syllabusFCards.forEach(card => {
+            const hrefKey = `data-href-${regulation}`;
+            const newHref = card.getAttribute(hrefKey);
+            
+            if (newHref) {
+                card.href = newHref;
+                card.setAttribute('data-regulation', regulation);
+            }
+            
+            // Update badge text
+            const badge = card.querySelector('.reg-badge');
+            if (badge) {
+                badge.textContent = `Regulation ${regulation}`;
+            }
+        });
+    }
 });

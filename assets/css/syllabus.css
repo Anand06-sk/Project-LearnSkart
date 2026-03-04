@@ -154,6 +154,51 @@ main {
     line-height: 1.6;
 }
 
+.regulation-selector {
+    margin: 24px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.regulation-selector label {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.96rem;
+}
+
+.regulation-dropdown {
+    padding: 10px 16px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.96rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.regulation-dropdown:hover {
+    border-color: var(--primary-strong);
+    box-shadow: 0 4px 12px rgba(47, 109, 246, 0.2);
+}
+
+.regulation-dropdown:focus {
+    outline: none;
+    border-color: var(--primary-strong);
+    box-shadow: 0 4px 16px rgba(47, 109, 246, 0.3);
+}
+
+.regulation-dropdown option {
+    background: var(--surface);
+    color: var(--text);
+    padding: 10px;
+}
+
 .syllabus-container {
     max-width: 1120px;
     margin: 18px auto 0;
@@ -520,6 +565,36 @@ html.dark .syllabus-hero p,
 html.dark .section-title p,
 html.dark .quick-link-card p {
     color: #9db0d4;
+}
+
+body.dark-mode .regulation-selector label,
+html.dark .regulation-selector label {
+    color: #dce8ff;
+}
+
+body.dark-mode .regulation-dropdown,
+html.dark .regulation-dropdown {
+    background: #0e1a31;
+    color: #dce8ff;
+    border-color: #4a7adb;
+}
+
+body.dark-mode .regulation-dropdown:hover,
+html.dark .regulation-dropdown:hover {
+    border-color: #6b95ff;
+    box-shadow: 0 4px 16px rgba(47, 109, 246, 0.3);
+}
+
+body.dark-mode .regulation-dropdown:focus,
+html.dark .regulation-dropdown:focus {
+    border-color: #6b95ff;
+    box-shadow: 0 4px 20px rgba(47, 109, 246, 0.4);
+}
+
+body.dark-mode .regulation-dropdown option,
+html.dark .regulation-dropdown option {
+    background: #0e1a31;
+    color: #dce8ff;
 }
 
 body.dark-mode footer,
