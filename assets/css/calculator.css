@@ -407,6 +407,23 @@
             margin-bottom: 1.5rem;
         }
 
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .filter-grid .form-group {
+            margin-bottom: 0;
+        }
+
+        .filter-note {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+        }
+
         label {
             display: block;
             font-size: 0.875rem;
@@ -472,6 +489,12 @@
             animation: slideIn 0.3s ease;
         }
 
+        .subject-row.gpa-row {
+            grid-template-columns: minmax(140px, 1.45fr) 96px 112px 40px;
+            gap: 0.65rem;
+            padding: 0.75rem;
+        }
+
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -486,6 +509,62 @@
         .subject-row > div:first-child label {
             font-size: 0.75rem;
             color: var(--text-secondary);
+        }
+
+        .subject-row .subject-index {
+            align-self: center;
+            justify-self: center;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .subject-row.gpa-row .subject-index {
+            display: none;
+        }
+
+        .subject-row.gpa-row input,
+        .subject-row.gpa-row select {
+            padding: 0.6rem 0.65rem;
+            font-size: 0.86rem;
+        }
+
+        .subject-row.gpa-row label {
+            margin-bottom: 0.3rem;
+            font-size: 0.72rem;
+        }
+
+        .manual-remove {
+            font-size: 1.15rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .subject-row input[readonly] {
+            background: rgba(148, 163, 184, 0.08);
+            color: var(--text-primary);
+            border-style: dashed;
+            cursor: not-allowed;
+        }
+
+        .row-error {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.12);
+            background: rgba(254, 242, 242, 0.65);
+        }
+
+        html.dark .row-error {
+            background: rgba(127, 29, 29, 0.18);
+        }
+
+        .empty-state {
+            border: 1px dashed var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            background: var(--background);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 1rem;
         }
 
         /* Buttons */
@@ -748,9 +827,41 @@
                 font-size: 1.75rem;
             }
 
+            .filter-grid {
+                grid-template-columns: 1fr;
+                gap: 0.7rem;
+            }
+
             .subject-row {
                 grid-template-columns: 1fr;
                 gap: 0.75rem;
+            }
+
+            .subject-row .subject-index {
+                justify-self: flex-start;
+            }
+
+            .subject-row.gpa-row {
+                grid-template-columns: minmax(120px, 1.25fr) 78px 86px 34px;
+                gap: 0.4rem;
+                padding: 0.5rem;
+                align-items: center;
+            }
+
+            .subject-row.gpa-row label {
+                display: none;
+            }
+
+            .subject-row.gpa-row input,
+            .subject-row.gpa-row select {
+                padding: 0.48rem 0.42rem;
+                font-size: 0.79rem;
+            }
+
+            .subject-row.gpa-row .manual-remove {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
             }
 
             .tab-btn {
