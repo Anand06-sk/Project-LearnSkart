@@ -51,23 +51,15 @@
       var subject = String(parts[2] || '').toLowerCase();
       if(!dept) return;
 
-      var missingSubjectTargets = {
-        'ece/be3254-electrical-and-instrumentation-engineering': true,
-        'ece/ec3492-digital-signal-processing': true,
-        'eee/ec3301-electron-devices-and-cirrcuits': true,
-        'mech/ce3391-fluid-mechanics-and-machinery': true,
-        'mech/ce3491-strength-of-materials': true
-      };
-      var key = dept + '/' + subject;
-      var resolvedHref = '../../syllabus/index.html';
+      var resolvedHref = subject
+        ? ('../../../syllabus/' + dept + '/' + subject + '/')
+        : '../../../syllabus/index.html';
 
       document.querySelectorAll('a').forEach(function(link){
-        var href = link.getAttribute('href') || '';
         var label = (link.textContent || '').trim().toLowerCase();
-        var hasLegacyHref = href.indexOf('../../syllabus/index.html') !== -1;
         var isViewSyllabusBtn = label === 'view syllabus';
 
-        if(!hasLegacyHref && !isViewSyllabusBtn) return;
+        if(!isViewSyllabusBtn) return;
         link.setAttribute('href', resolvedHref);
       });
     }catch(e){/* ignore */}
