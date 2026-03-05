@@ -395,7 +395,7 @@ function calculatePercentage() {
     const cgpa = parseFloat(document.getElementById('cgpa-input').value);
     if (isNaN(cgpa)) return;
 
-    const percentage = ((cgpa - 0.75) * 10).toFixed(2);
+    const percentage = (cgpa * 10).toFixed(2);
     const numPerc = parseFloat(percentage);
     let gradeClass = '';
 
