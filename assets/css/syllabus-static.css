@@ -93,6 +93,13 @@
   font-weight: 600;
 }
 
+.hero-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
 .hero-card {
   border: 1px solid var(--syllabus-card-border);
   background: #f8fafc;
