@@ -257,8 +257,8 @@ function buildHtml(entry, canonicalUrl, folderSlug) {
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">${h1Text}</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Find Anna University ${subjectName} (${subjectCode}) study notes for ${deptLabel}. This page is aligned to regulation ${regLabel} - ${semLabel} and provides curated PDFs for exam preparation.</p>
+                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">${h1Text} Notes – Anna University Regulation 2021</h1>
+                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>${h1Text}</strong> Notes for Anna University ${regLabel} students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>${deptLabel} ${semLabel}</strong>. Students can easily access <strong>${subjectName} notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
             </div>
         </header>
 
@@ -273,6 +273,8 @@ function buildHtml(entry, canonicalUrl, folderSlug) {
 ${buildStudyMaterialButtons(entry, folderSlug, subjectCode)}
             </div>
         </section>
+
+        <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>${subjectCode} Anna University notes PDF</strong> and start your exam preparation today.</p>
     </main>
 
     <footer class="footer">
