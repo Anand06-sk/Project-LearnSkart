@@ -72,20 +72,6 @@
   // auto-init immediately
   try{applyTheme(localStorage.getItem('site-theme')||'light')}catch(e){}
 
-  // Inject theme.css from the same directory as this script
-  try{
-    // Get the script's source path to determine where theme.css is
-    var scripts = document.querySelectorAll('script[src*="theme.js"]');
-    var scriptPath = scripts.length > 0 ? scripts[scripts.length - 1].src : '';
-    if(scriptPath){
-      var themeCssPath = scriptPath.replace('theme.js', 'theme.css');
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = themeCssPath;
-      document.head.appendChild(link);
-    }
-  }catch(e){}
-
   // Hide any existing theme toggle on non-index pages, show only on index
   try{
     var p = (location.pathname||'').toLowerCase();
