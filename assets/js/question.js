@@ -39,10 +39,24 @@
         function extractCodeFromText(str) {
             if (!str) return '';
             const text = String(str).toUpperCase();
-            const compact = text.match(/\b([A-Z]{2,5}\d{4})\b/);
-            if (compact && compact[1]) return normalizeSubjectCode(compact[1]);
-            const spaced = text.match(/\b([A-Z]{2,5})\s*-?\s*(\d{4})\b/);
-            if (spaced && spaced[1] && spaced[2]) return normalizeSubjectCode(`${spaced[1]}${spaced[2]}`);
+
+            const ignoredPrefixes = new Set(['AM', 'PM', 'ND', 'FN', 'AN', 'AQ', 'QP']);
+            const pattern = /\b([A-Z]{2,5})\s*-?\s*(\d{4})\b/g;
+            let match;
+
+            while ((match = pattern.exec(text)) !== null) {
+                const prefix = match[1];
+                const digits = match[2];
+                const year = Number(digits);
+
+                // Ignore exam-session/year tokens like AM-2024 or ND2023.
+                if (ignoredPrefixes.has(prefix) && year >= 2000 && year <= 2099) {
+                    continue;
+                }
+
+                return normalizeSubjectCode(`${prefix}${digits}`);
+            }
+
             return '';
         }
 
@@ -55,7 +69,8 @@
             const lower = text.toLowerCase();
             const previousYearPattern = lower.match(/-\s*([a-z]{2,5}\s*-?\s*\d{4})-([a-z0-9-]+)-previous-year-question-papers/i);
             if (previousYearPattern && previousYearPattern[2]) {
-                const slug = String(previousYearPattern[2]).toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+                const rawSlug = String(previousYearPattern[2]).toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+                const slug = removeLeadingCodeFromSlug(rawSlug, code);
                 return slug ? `${code}-${slug}` : '';
             }
 
@@ -68,7 +83,7 @@
 
             const splitById = rest.split(/-\d{3,}.*/i)[0];
             const splitByMeta = splitById.split(/-(?:apr|may|nov|dec|question|paper|download|am|nd|202\d)\b/i)[0];
-            const slug = slugifySubjectName(splitByMeta);
+            const slug = removeLeadingCodeFromSlug(slugifySubjectName(splitByMeta), code);
             if (!slug) return '';
 
             return `${code}-${slug}`;
@@ -83,6 +98,20 @@
                 .replace(/[^a-z0-9]+/g, '-')
                 .replace(/-+/g, '-')
                 .replace(/^-|-$/g, '');
+        }
+
+        function removeLeadingCodeFromSlug(subjectSlug, subjectCode) {
+            const slug = String(subjectSlug || '').toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+            const code = normalizeSubjectCode(subjectCode || '');
+            if (!slug || !code) return slug;
+
+            const compactCode = code.toLowerCase();
+                const splitCode = compactCode.replace(/^([a-z]{2,5})(\d{4})$/, '$1-$2');
+
+            if (slug === compactCode || slug === splitCode) return '';
+            if (slug.startsWith(`${compactCode}-`)) return slug.slice(compactCode.length + 1);
+            if (slug.startsWith(`${splitCode}-`)) return slug.slice(splitCode.length + 1);
+            return slug;
         }
 
         function inferPyqFolder(subjectCode, subjectName, papers) {
@@ -104,12 +133,13 @@
 
                 const firstPaperTitle = papers[0].title || '';
                 const inferredFromLooseTitle = extractCodeFromText(firstPaperTitle);
-                if (inferredFromLooseTitle && slugifySubjectName(subjectName)) {
-                    return `${inferredFromLooseTitle}-${slugifySubjectName(subjectName)}`;
+                const cleanedSubjectSlug = removeLeadingCodeFromSlug(slugifySubjectName(subjectName), inferredFromLooseTitle);
+                if (inferredFromLooseTitle && cleanedSubjectSlug) {
+                    return `${inferredFromLooseTitle}-${cleanedSubjectSlug}`;
                 }
             }
 
-            const slug = slugifySubjectName(subjectName);
+            const slug = removeLeadingCodeFromSlug(slugifySubjectName(subjectName), normalizedCode);
             if (normalizedCode && slug) return `${normalizedCode}-${slug}`;
             if (normalizedCode) return normalizedCode;
             return '';
@@ -121,7 +151,7 @@
 
         function buildTemplateFolder(row) {
             const subjectCode = normalizeSubjectCode(row.subject_code || '');
-            const subjectSlug = slugifySubjectName(row.subject_name || '');
+            const subjectSlug = removeLeadingCodeFromSlug(slugifySubjectName(row.subject_name || ''), subjectCode);
 
             const fromPaperTitle = Array.isArray(row.papers)
                 ? (row.papers.map(p => inferFolderFromPaperTitle(p && p.title ? p.title : '')).find(Boolean) || '')
@@ -432,7 +462,8 @@
                 const displayCode = subjectCode || paperTitleCode;
                 const templateFolder = getTemplateFolder(s.dept, s.sem, s.name);
                 const inferredFolder = inferPyqFolder(displayCode, s.name, s.papers);
-                const fallbackFolder = normalizeFolderName(`${displayCode}-${slugifySubjectName(s.name)}`);
+                const fallbackSlug = removeLeadingCodeFromSlug(slugifySubjectName(s.name), displayCode);
+                const fallbackFolder = normalizeFolderName(fallbackSlug ? `${displayCode}-${fallbackSlug}` : displayCode);
                 const pyqFolder = templateFolder || inferredFolder || fallbackFolder;
                 const pyqHref = `../pyq/${encodeURIComponent(pyqFolder)}/`;
                 const subjectMeta = `
