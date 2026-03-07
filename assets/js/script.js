@@ -51,9 +51,73 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     let visible = false;
     let active = -1;
     let lastResults = [];
+    let indexBuilt = false;
 
     const normalize = (s) => (s || '').toString().toLowerCase();
     const tokenize = (q) => normalize(q).split(/\s+/).filter(Boolean);
+
+    const DEPT_KEYWORDS = {
+        CSE: ['cse', 'computer science', 'computer science and engineering'],
+        ECE: ['ece', 'electronics and communication', 'electronics communication'],
+        EEE: ['eee', 'electrical and electronics', 'electrical engineering'],
+        MECH: ['mech', 'mechanical', 'mechanical engineering'],
+        CIVIL: ['civil', 'civil engineering'],
+        IT: ['it', 'information technology']
+    };
+
+    const TYPE_ALIASES = {
+        Notes: 'notes',
+        Syllabus: 'syllabus',
+        'Question Paper': 'question',
+        GATE: 'gate'
+    };
+
+    const INTENT_KEYWORDS = {
+        notes: ['note', 'notes', 'material', 'materials', 'study'],
+        syllabus: ['syllabus', 'curriculum', 'regulation'],
+        question: ['question', 'questions', 'paper', 'papers', 'pyq', 'qp', 'previous year', 'previous-year']
+    };
+
+    const NOTES_FOLDER_OVERRIDES = {
+        CS3501: 'cs3501-compiler-design',
+        CS3451: 'cs3451-introduction-to-operation-systems'
+    };
+
+    const SYLLABUS_FOLDER_OVERRIDES = {
+        CS3451: 'cs3451-introduction-to-operation-systems',
+        EE3303: 'ee3303-electrical-machines'
+    };
+
+    const PYQ_FOLDER_OVERRIDES = {
+        HS3152: 'HS3152-professional-englishi',
+        HS3252: 'HS3252-professional-englishii',
+        CS3501: 'CS3501-complier-design'
+    };
+
+    function detectDeptFromQuery(queryText) {
+        const q = normalize(queryText);
+        for (const [dept, keys] of Object.entries(DEPT_KEYWORDS)) {
+            if (keys.some(k => q.includes(k))) return dept;
+        }
+        return '';
+    }
+
+    function detectIntent(queryText) {
+        const q = normalize(queryText);
+        if (INTENT_KEYWORDS.question.some(k => q.includes(k))) return 'question';
+        if (INTENT_KEYWORDS.syllabus.some(k => q.includes(k))) return 'syllabus';
+        if (INTENT_KEYWORDS.notes.some(k => q.includes(k))) return 'notes';
+        return '';
+    }
+
+    function typeMatchesIntent(itemType, intent) {
+        if (!intent) return true;
+        const mapped = TYPE_ALIASES[itemType] || '';
+        if (intent === 'notes') return mapped === 'notes';
+        if (intent === 'syllabus') return mapped === 'syllabus';
+        if (intent === 'question') return mapped === 'question';
+        return false;
+    }
 
     // Comprehensive mapping of all department subjects
     const DEPT_SUBJECTS = {
@@ -159,21 +223,63 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         return (dept || '').toString().trim().toLowerCase();
     }
 
-    function buildNotesUrl(dept, regYear, semNum, subjectName) {
+    function normalizeSubjectCode(code) {
+        return String(code || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    }
+
+    function slugifySubjectName(str) {
+        if (!str) return '';
+        return String(str)
+            .toLowerCase()
+            .replace(/&/g, ' and ')
+            .replace(/\([^)]*\)/g, ' ')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+    }
+
+    function removeLeadingCodeFromSlug(subjectSlug, subjectCode) {
+        const slug = String(subjectSlug || '').toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+        const code = normalizeSubjectCode(subjectCode || '');
+        if (!slug || !code) return slug;
+
+        const compactCode = code.toLowerCase();
+        const splitCode = compactCode.replace(/^([a-z]{2,5})(\d{4})$/, '$1-$2');
+
+        if (slug === compactCode || slug === splitCode) return '';
+        if (slug.startsWith(`${compactCode}-`)) return slug.slice(compactCode.length + 1);
+        if (slug.startsWith(`${splitCode}-`)) return slug.slice(splitCode.length + 1);
+        return slug;
+    }
+
+    function buildFolderName(subjectCode, subjectName, overrides, useUpperCode) {
+        const code = normalizeSubjectCode(subjectCode);
+        if (!code) return '';
+        if (overrides && overrides[code]) return overrides[code];
+        const subjectSlug = removeLeadingCodeFromSlug(slugifySubjectName(subjectName), code);
+        if (!subjectSlug) return '';
+        return `${useUpperCode ? code : code.toLowerCase()}-${subjectSlug}`;
+    }
+
+    function buildNotesUrl(dept, regYear, semNum, subjectName, subjectCode) {
         const slug = deptSlug(dept);
         if (!slug) return './';
+        const folder = buildFolderName(subjectCode, subjectName, NOTES_FOLDER_OVERRIDES, false);
+        if (folder) return `anna-university-notes/${slug}/${folder}/`;
         const params = new URLSearchParams({
             regulation: String(regYear || '2021'),
             semester: String(semNum || ''),
             subject: String(subjectName || ''),
             dept: String(dept || '')
         });
-        return `academics/${slug}/?${params.toString()}`;
+        return `anna-university-notes/${slug}/?${params.toString()}`;
     }
 
-    function buildSyllabusUrl(dept, regYear, semNum) {
+    function buildSyllabusUrl(dept, regYear, semNum, subjectName, subjectCode) {
         const slug = deptSlug(dept);
         if (!slug) return 'syllabus/';
+        const folder = buildFolderName(subjectCode, subjectName, SYLLABUS_FOLDER_OVERRIDES, false);
+        if (folder) return `syllabus/${slug}/${folder}/`;
         const params = new URLSearchParams({
             regulation: String(regYear || '2021')
         });
@@ -181,7 +287,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         return `syllabus/${slug}/?${params.toString()}`;
     }
 
-    function buildQuestionPaperUrl(dept, regYear, semNum, subjectName) {
+    function buildQuestionPaperUrl(dept, regYear, semNum, subjectName, subjectCode) {
+        const folder = buildFolderName(subjectCode, subjectName, PYQ_FOLDER_OVERRIDES, true);
+        if (folder) return `pyq/${folder}/`;
         const params = new URLSearchParams({
             dept: String(dept || ''),
             regulation: String(regYear || '2021'),
@@ -442,20 +550,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         if (isCommonSem1) {
                             // Add separate entry for each department
                             allDepts.forEach(dept => {
+                                const primaryCode = subjectCodes[0] || '';
                                 items.push({
                                     label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join(', ')}]` : ''} (${dept})`,
-                                    url: buildNotesUrl(dept, regYear, semNum, subjectName),
+                                    url: buildNotesUrl(dept, regYear, semNum, subjectName, primaryCode),
                                     type,
                                     subject: subjectName,
+                                    dept,
                                     keywords: [subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear, ...subjectCodes],
                                     searchText: normalize(`${subjectName} ${dept} sem${semNum} semester ${semNum} ${regYear} ${subjectCodes.join(' ')}`)
                                 });
                             });
                         } else {
                             // Regular subject - single entry
+                            const primaryCode = subjectCodes[0] || '';
                             items.push({
                                 label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join(', ')}]` : ''} (Sem ${semNum})`,
-                                url: baseUrl,
+                                url: buildNotesUrl('', regYear, semNum, subjectName, primaryCode) === './' ? baseUrl : buildNotesUrl('', regYear, semNum, subjectName, primaryCode),
                                 type,
                                 subject: subjectName,
                                 keywords: [subjectName, `sem${semNum}`, `semester${semNum}`, regYear, ...subjectCodes],
@@ -492,6 +603,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                                     url: buildSyllabusUrl(dept, regYear, semNum),
                                     type,
                                     subject: dept,
+                                    dept,
                                     keywords: [dept, `sem${semNum}`, regYear, 'syllabus'],
                                     searchText: normalize(`${dept} semester ${semNum} ${regYear} syllabus`)
                                 });
@@ -516,9 +628,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                                             const subjectCodes = collectSubjectCodes(subjectName, papers);
                                             items.push({
                                                 label: `${subjectName}${subjectCodes.length ? ` [${subjectCodes.join(', ')}]` : ''} (${dept})`,
-                                                url: buildQuestionPaperUrl(dept, regYear, semNum, subjectName),
+                                                url: buildQuestionPaperUrl(dept, regYear, semNum, subjectName, subjectCodes[0] || ''),
                                                 type,
                                                 subject: subjectName,
+                                                dept,
                                                 keywords: [dept, subjectName, `sem${semNum}`, regYear, 'question', 'paper', 'pyq', ...subjectCodes],
                                                 searchText: normalize(`${subjectName} ${dept} sem${semNum} ${regYear} question paper pyq ${subjectCodes.join(' ')}`)
                                             });
@@ -532,6 +645,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
             return items;
         }
+
+        if (type === 'Templates' && Array.isArray(json)) {
+            json.forEach((row) => {
+                const dept = String(guess(row, ['dept_code', 'dept']) || '').toUpperCase();
+                const semNum = String(guess(row, ['semester', 'sem']) || '').trim();
+                const subjectName = String(guess(row, ['subject_name', 'subject']) || '').trim();
+                const subjectCode = normalizeSubjectCode(guess(row, ['subject_code', 'code']) || '');
+                const regYear = '2021';
+                if (!dept || !semNum || !subjectName) return;
+
+                items.push({
+                    label: `${subjectCode ? `${subjectCode} - ` : ''}${subjectName} (${dept})`,
+                    url: buildNotesUrl(dept, regYear, semNum, subjectName, subjectCode),
+                    type: 'Notes',
+                    subject: subjectName,
+                    dept,
+                    keywords: [subjectCode, subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear, 'notes'],
+                    searchText: normalize(`${subjectCode} ${subjectName} ${dept} sem${semNum} semester ${semNum} ${regYear} notes`)
+                });
+
+                items.push({
+                    label: `${subjectCode ? `${subjectCode} - ` : ''}${subjectName} PYQ (${dept})`,
+                    url: buildQuestionPaperUrl(dept, regYear, semNum, subjectName, subjectCode),
+                    type: 'Question Paper',
+                    subject: subjectName,
+                    dept,
+                    keywords: [subjectCode, subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear, 'question', 'paper', 'pyq', 'previous', 'year'],
+                    searchText: normalize(`${subjectCode} ${subjectName} ${dept} sem${semNum} semester ${semNum} ${regYear} question paper pyq previous year`)
+                });
+
+                items.push({
+                    label: `${subjectCode ? `${subjectCode} - ` : ''}${subjectName} Syllabus (${dept})`,
+                    url: buildSyllabusUrl(dept, regYear, semNum, subjectName, subjectCode),
+                    type: 'Syllabus',
+                    subject: subjectName,
+                    dept,
+                    keywords: [subjectCode, subjectName, dept, `sem${semNum}`, `semester${semNum}`, regYear, 'syllabus'],
+                    searchText: normalize(`${subjectCode} ${subjectName} ${dept} sem${semNum} semester ${semNum} ${regYear} syllabus`)
+                });
+            });
+            return items;
+        }
         
         return items;
     }
@@ -541,6 +696,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             { url: 'assets/data/data.json', type: 'Notes' },
             { url: 'assets/data/sydata.json', type: 'Syllabus' },
             { url: 'assets/data/qn.json', type: 'Question Paper' },
+            { url: 'assets/data/pyq-templates.json', type: 'Templates' },
             { url: 'assets/data/gate-qns.json', type: 'GATE' }
         ];
         try {
@@ -558,12 +714,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Add department pages with multiple entry points
             const deptMapping = {
-                'CSE': { name: 'Computer Science & Engineering', url: 'academics/cse/' },
-                'ECE': { name: 'Electronics & Communication', url: 'academics/ece/' },
-                'EEE': { name: 'Electrical & Electronics Engineering', url: 'academics/eee/' },
-                'MECH': { name: 'Mechanical Engineering', url: 'academics/mech/' },
-                'CIVIL': { name: 'Civil Engineering', url: 'academics/civil/' },
-                'IT': { name: 'Information Technology', url: 'academics/it/' }
+                'CSE': { name: 'Computer Science & Engineering', url: 'anna-university-notes/cse/' },
+                'ECE': { name: 'Electronics & Communication', url: 'anna-university-notes/ece/' },
+                'EEE': { name: 'Electrical & Electronics Engineering', url: 'anna-university-notes/eee/' },
+                'MECH': { name: 'Mechanical Engineering', url: 'anna-university-notes/mech/' },
+                'CIVIL': { name: 'Civil Engineering', url: 'anna-university-notes/civil/' },
+                'IT': { name: 'Information Technology', url: 'anna-university-notes/it/' }
             };
             
             Object.entries(deptMapping).forEach(([code, info]) => {
@@ -634,7 +790,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     // Add Notes entry
                     all.push({
                         label: `${entry.code} — ${entry.subject}${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
-                        url: buildNotesUrl(dept && dept !== 'ALL' ? dept : 'CSE', entry.reg, entry.sem, entry.subject),
+                        url: buildNotesUrl(dept && dept !== 'ALL' ? dept : 'CSE', entry.reg, entry.sem, entry.subject, entry.code),
                         type: 'Notes',
                         subject: entry.subject,
                         dept: dept === 'ALL' ? undefined : dept,
@@ -645,7 +801,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     // Add Question Paper entry
                     all.push({
                         label: `${entry.code} — ${entry.subject} PYQ${dept && dept !== 'ALL' ? ` (${dept})` : ''}`,
-                        url: buildQuestionPaperUrl(dept && dept !== 'ALL' ? dept : '', entry.reg, entry.sem, entry.subject),
+                        url: buildQuestionPaperUrl(dept && dept !== 'ALL' ? dept : '', entry.reg, entry.sem, entry.subject, entry.code),
                         type: 'Question Paper',
                         subject: entry.subject,
                         dept: dept === 'ALL' ? undefined : dept,
@@ -662,6 +818,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 seen.add(key);
                 return true;
             });
+            indexBuilt = true;
         } catch (e) {
             console.error('Search index build failed', e);
         }
@@ -690,6 +847,60 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             if (item.searchText && item.searchText.includes(t)) score += 1;
         }
         return score;
+    }
+
+    function scoreAssistantItem(item, tokens, queryText, intent, targetDept) {
+        let score = scoreItem(item, tokens);
+        const label = normalize(item.label);
+
+        if (intent) {
+            score += typeMatchesIntent(item.type, intent) ? 180 : -60;
+        } else if (item.type === 'Notes') {
+            score += 25;
+        }
+
+        if (targetDept) {
+            const itemDept = normalize(item.dept || '');
+            if (itemDept === normalize(targetDept)) score += 40;
+        }
+
+        const codeMatches = queryText.toUpperCase().match(/\b[A-Z]{2,5}\s*-?\s*\d{3,4}\b/g) || [];
+        codeMatches.forEach(rawCode => {
+            const compact = rawCode.replace(/[^A-Z0-9]/gi, '').toLowerCase();
+            if (compact && label.includes(compact)) score += 90;
+        });
+
+        if (queryText && label.includes(normalize(queryText))) score += 20;
+        return score;
+    }
+
+    function getBestAssistantMatch(queryText) {
+        const tokens = tokenize(queryText);
+        if (!tokens.length || !index.length) return null;
+
+        const intent = detectIntent(queryText);
+        const targetDept = detectDeptFromQuery(queryText);
+
+        const ranked = index
+            .map(it => ({
+                it,
+                s: scoreAssistantItem(it, tokens, queryText, intent, targetDept)
+            }))
+            .filter(x => x.s > 0)
+            .sort((a, b) => b.s - a.s);
+
+        return ranked.length ? ranked[0].it : null;
+    }
+
+    function fallbackRouteForQuery(queryText) {
+        const intent = detectIntent(queryText);
+        const dept = deptSlug(detectDeptFromQuery(queryText));
+        if (!intent) return '';
+
+        if (intent === 'syllabus') return dept ? `syllabus/${dept}/` : 'syllabus/';
+        if (intent === 'question') return 'previous-year-questions/';
+        if (intent === 'notes') return dept ? `anna-university-notes/${dept}/` : 'anna-university-notes/cse/';
+        return '';
     }
 
     function highlight(text, tokens) {
@@ -752,8 +963,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const q = e.target.value || '';
         const tokens = tokenize(q);
         if (!tokens.length) { hideSuggestions(); return; }
+        const intent = detectIntent(q);
+        const targetDept = detectDeptFromQuery(q);
         const matches = index
-            .map(it => ({ it, s: scoreItem(it, tokens) }))
+            .map(it => ({ it, s: scoreAssistantItem(it, tokens, q, intent, targetDept) }))
             .filter(x => x.s > 0)
             .sort((a,b) => b.s - a.s)
             .map(x => x.it);
@@ -764,24 +977,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     input.addEventListener('input', onInput);
 
     input.addEventListener('keydown', (e) => {
-        if (!visible) return;
         if (e.key === 'ArrowDown' || e.key === 'Down') {
+            if (!visible) return;
             e.preventDefault();
             const len = Math.min(lastResults.length, MAX_SUGGESTIONS);
             if (len === 0) return;
             active = (active + 1 + len) % len;
             selectByIndex(active);
         } else if (e.key === 'ArrowUp' || e.key === 'Up') {
+            if (!visible) return;
             e.preventDefault();
             const len = Math.min(lastResults.length, MAX_SUGGESTIONS);
             if (len === 0) return;
             active = (active - 1 + len) % len;
             selectByIndex(active);
         } else if (e.key === 'Enter') {
-            if (lastResults.length) {
-                e.preventDefault();
+            const q = (input.value || '').trim();
+            if (!q) return;
+
+            e.preventDefault();
+
+            if (visible && lastResults.length) {
                 const target = active >= 0 ? lastResults[active] : lastResults[0];
                 navigateTo(target);
+                return;
+            }
+
+            const best = getBestAssistantMatch(q);
+            if (best) {
+                navigateTo(best);
+                return;
+            }
+
+            if (!indexBuilt) {
+                const fallback = fallbackRouteForQuery(q);
+                if (fallback) window.location.href = fallback;
             }
         } else if (e.key === 'Escape' || e.key === 'Esc') {
             hideSuggestions();

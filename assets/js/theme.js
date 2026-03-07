@@ -45,7 +45,7 @@
       var pathname = (location.pathname || '').replace(/\\/g, '/');
       var cleaned = pathname.replace(/\/index\.html$/i, '').replace(/\/+$/, '');
       var parts = cleaned.split('/').filter(Boolean);
-      if(parts.length < 3 || String(parts[0]).toLowerCase() !== 'academics') return;
+      if(parts.length < 3 || String(parts[0]).toLowerCase() !== 'anna-university-notes') return;
 
       var dept = String(parts[1] || '').toLowerCase();
       var subject = String(parts[2] || '').toLowerCase();

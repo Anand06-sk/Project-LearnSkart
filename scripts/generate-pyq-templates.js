@@ -121,7 +121,7 @@ function buildTemplate(entry) {
   const pdfList = buildPdfList(grouped);
 
   const deptLinks = (entry.department_codes || []).map(dept => {
-    const href = `/academics/${dept.toLowerCase()}/index.html`;
+    const href = `/anna-university-notes/${dept.toLowerCase()}/index.html`;
     const label = deptFullNames[dept] || dept;
     return `<a href=\"${href}\">${label}</a>`;
   }).join(' / ');

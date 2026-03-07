@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ACADEMICS_ROOT = path.join(__dirname, '..', 'academics');
+const ACADEMICS_ROOT = path.join(__dirname, '..', 'anna-university-notes');
 const BASE_PATH = (process.env.BASE_PATH || '../index.html').replace(/\/+$/, '');
 const DEPTS = ['cse', 'ece', 'eee', 'mech', 'civil', 'it'];
 

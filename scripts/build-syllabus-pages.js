@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SYDATA_PATH = path.join(__dirname, '..', 'assets', 'data', 'sydata.json');
-const ACADEMICS_ROOT = path.join(__dirname, '..', 'academics');
+const ACADEMICS_ROOT = path.join(__dirname, '..', 'anna-university-notes');
 const OUTPUT_ROOT = path.join(__dirname, '..', 'syllabus');
 const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in').replace(/\/+$/, '');
 const DEFAULT_REG = String(process.env.SYLLABUS_REG || '2021');
@@ -219,7 +219,7 @@ function buildDeptPage(options) {
       <div class="nav-links">
         <a href="../index.html">Home</a>
         <a href="../syllabus/">Syllabus Home</a>
-        <a href="../academics/${deptLower}/index.html">${deptName}</a>
+        <a href="../anna-university-notes/${deptLower}/index.html">${deptName}</a>
       </div>
     </div>
   </nav>
