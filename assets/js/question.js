@@ -1,15 +1,17 @@
 
         const deptPages = [
-            { dept: 'CSE', path: '../academics/cse/index.html' },
-            { dept: 'ECE', path: '../academics/ece/index.html' },
-            { dept: 'EEE', path: '../academics/eee/index.html' },
-            { dept: 'IT', path: '../academics/it/index.html' },
-            { dept: 'MECH', path: '../academics/mech/index.html' },
-            { dept: 'CIVIL', path: '../academics/civil/index.html' }
+            { dept: 'CSE', path: '../anna-university-notes/cse/index.html' },
+            { dept: 'ECE', path: '../anna-university-notes/ece/index.html' },
+            { dept: 'EEE', path: '../anna-university-notes/eee/index.html' },
+            { dept: 'IT', path: '../anna-university-notes/it/index.html' },
+            { dept: 'MECH', path: '../anna-university-notes/mech/index.html' },
+            { dept: 'CIVIL', path: '../anna-university-notes/civil/index.html' }
         ];
 
         let subjectNameToCode = {};
         let subjectCodeToInfo = {};
+        let templateCodeMap = {};
+        let templateFolderMap = {};
 
         function getParam(name) {
             const p = new URLSearchParams(window.location.search);
@@ -34,6 +36,44 @@
             return String(str).toUpperCase().replace(/[^A-Z0-9]/g, '');
         }
 
+        function extractCodeFromText(str) {
+            if (!str) return '';
+            const text = String(str).toUpperCase();
+            const compact = text.match(/\b([A-Z]{2,5}\d{4})\b/);
+            if (compact && compact[1]) return normalizeSubjectCode(compact[1]);
+            const spaced = text.match(/\b([A-Z]{2,5})\s*-?\s*(\d{4})\b/);
+            if (spaced && spaced[1] && spaced[2]) return normalizeSubjectCode(`${spaced[1]}${spaced[2]}`);
+            return '';
+        }
+
+        function inferFolderFromPaperTitle(title) {
+            if (!title) return '';
+            const text = String(title);
+            const code = extractCodeFromText(text);
+            if (!code) return '';
+
+            const lower = text.toLowerCase();
+            const previousYearPattern = lower.match(/-\s*([a-z]{2,5}\s*-?\s*\d{4})-([a-z0-9-]+)-previous-year-question-papers/i);
+            if (previousYearPattern && previousYearPattern[2]) {
+                const slug = String(previousYearPattern[2]).toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+                return slug ? `${code}-${slug}` : '';
+            }
+
+            const codeMatch = text.match(/([A-Za-z]{2,5}\s*-?\s*\d{4})/);
+            if (!codeMatch || typeof codeMatch.index !== 'number') return '';
+
+            let rest = text.slice(codeMatch.index + codeMatch[0].length);
+            rest = rest.replace(/^[\s\-_:]+/, '');
+            rest = rest.replace(/\.pdf$/i, '');
+
+            const splitById = rest.split(/-\d{3,}.*/i)[0];
+            const splitByMeta = splitById.split(/-(?:apr|may|nov|dec|question|paper|download|am|nd|202\d)\b/i)[0];
+            const slug = slugifySubjectName(splitByMeta);
+            if (!slug) return '';
+
+            return `${code}-${slug}`;
+        }
+
         function slugifySubjectName(str) {
             if (!str) return '';
             return String(str)
@@ -49,25 +89,53 @@
             const normalizedCode = normalizeSubjectCode(subjectCode);
             const folderOverrides = {
                 HS3152: 'HS3152-professional-englishi',
-                HS3252: 'HS3252-professional-englishii'
+                HS3252: 'HS3252-professional-englishii',
+                CS3501: 'CS3501-complier-design'
             };
             if (normalizedCode && folderOverrides[normalizedCode]) {
                 return folderOverrides[normalizedCode];
             }
 
-            const firstPaperTitle = Array.isArray(papers) && papers.length > 0 ? (papers[0].title || '') : '';
-            if (firstPaperTitle) {
-                const fromTitle = firstPaperTitle.match(/-\s*([A-Z]{2,5}\d{4})-([A-Za-z0-9-]+)-previous-year-question-papers/i);
-                if (fromTitle) {
-                    const inferredCode = normalizeSubjectCode(fromTitle[1]);
-                    const inferredSlug = String(fromTitle[2]).toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
-                    if (inferredCode && inferredSlug) return `${inferredCode}-${inferredSlug}`;
+            if (Array.isArray(papers) && papers.length > 0) {
+                const inferredFromAnyTitle = papers
+                    .map(p => inferFolderFromPaperTitle(p && p.title ? p.title : ''))
+                    .find(Boolean);
+                if (inferredFromAnyTitle) return inferredFromAnyTitle;
+
+                const firstPaperTitle = papers[0].title || '';
+                const inferredFromLooseTitle = extractCodeFromText(firstPaperTitle);
+                if (inferredFromLooseTitle && slugifySubjectName(subjectName)) {
+                    return `${inferredFromLooseTitle}-${slugifySubjectName(subjectName)}`;
                 }
             }
 
             const slug = slugifySubjectName(subjectName);
             if (normalizedCode && slug) return `${normalizedCode}-${slug}`;
             if (normalizedCode) return normalizedCode;
+            return '';
+        }
+
+        function normalizeFolderName(str) {
+            return String(str || '').toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+        }
+
+        function buildTemplateFolder(row) {
+            const subjectCode = normalizeSubjectCode(row.subject_code || '');
+            const subjectSlug = slugifySubjectName(row.subject_name || '');
+
+            const fromPaperTitle = Array.isArray(row.papers)
+                ? (row.papers.map(p => inferFolderFromPaperTitle(p && p.title ? p.title : '')).find(Boolean) || '')
+                : '';
+            if (fromPaperTitle) return normalizeFolderName(fromPaperTitle);
+
+            const folderOverrides = {
+                HS3152: 'hs3152-professional-englishi',
+                HS3252: 'hs3252-professional-englishii',
+                CS3501: 'cs3501-complier-design'
+            };
+            if (subjectCode && folderOverrides[subjectCode]) return folderOverrides[subjectCode];
+
+            if (subjectCode && subjectSlug) return normalizeFolderName(`${subjectCode}-${subjectSlug}`);
             return '';
         }
 
@@ -105,6 +173,35 @@
                     extractSubjectCodesFromHtml(result.value.html, result.value.dept);
                 }
             });
+        }
+
+        function buildTemplateMaps(rows) {
+            const codeMap = {};
+            const folderMap = {};
+            if (!Array.isArray(rows)) return { codeMap, folderMap };
+            rows.forEach(row => {
+                const dept = String(row.dept_code || '').toUpperCase();
+                const sem = normalizeSemester(row.semester || '');
+                const name = normalizeSubjectName(row.subject_name || '');
+                const code = normalizeSubjectCode(row.subject_code || '');
+                if (!dept || !sem || !name) return;
+                const key = `${dept}|${sem}|${name}`;
+                if (code) codeMap[key] = code;
+
+                const folder = buildTemplateFolder(row);
+                if (folder) folderMap[key] = folder;
+            });
+            return { codeMap, folderMap };
+        }
+
+        function getTemplateCode(dept, sem, subjectName) {
+            const key = `${String(dept || '').toUpperCase()}|${normalizeSemester(sem || '')}|${normalizeSubjectName(subjectName || '')}`;
+            return templateCodeMap[key] || '';
+        }
+
+        function getTemplateFolder(dept, sem, subjectName) {
+            const key = `${String(dept || '').toUpperCase()}|${normalizeSemester(sem || '')}|${normalizeSubjectName(subjectName || '')}`;
+            return templateFolderMap[key] || '';
         }
 
         function normalizeSemester(sem) {
@@ -181,6 +278,12 @@
                 // Fetch your JSON file
                 const response = await fetch('../assets/data/qn.json');
                 universityData = await response.json();
+
+                const tplResp = await fetch('../assets/data/pyq-templates.json');
+                const tplData = await tplResp.json();
+                const maps = buildTemplateMaps(tplData);
+                templateCodeMap = maps.codeMap;
+                templateFolderMap = maps.folderMap;
 
             await loadSubjectCodeMaps();
                 
@@ -263,7 +366,8 @@
                     if (searchAcrossSem || selectedSem === 'All' || sem === selectedSem) {
                         Object.entries(items).forEach(([name, papers]) => {
                             const subjectNormalized = normalizeSubjectName(name);
-                            const subjectCode = subjectNameToCode[subjectNormalized] || '';
+                            const templateCode = getTemplateCode(dept, sem, name);
+                            const subjectCode = templateCode || subjectNameToCode[subjectNormalized] || '';
                             const subjectCodeNormalized = normalizeSubjectCode(subjectCode);
                             const deptText = normalizeSearchText(`${dept} ${deptFullNames[dept] || ''}`);
                             const nameText = normalizeSearchText(name);
@@ -276,7 +380,7 @@
                             if (!matchesSearch) return;
 
                             const id = `${dept}-${sem}-${name}`;
-                            subjects.push({ id, dept, sem, name, papers, subjectCode });
+                            subjects.push({ id, dept, sem, name, papers, subjectCode, templateCode });
                             if (!searchExpandedId && searchTriggered && hasSearch) {
                                 searchExpandedId = id;
                             }
@@ -321,14 +425,22 @@
                 const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
                 const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
                 const available = s.papers.filter(p => p.pdf).length;
-                const subjectCode = s.subjectCode || subjectNameToCode[subjectNormalized] || '';
-                const pyqFolder = inferPyqFolder(subjectCode, s.name, s.papers);
-                const subjectMeta = pyqFolder ? `
+                const subjectCode = s.templateCode || s.subjectCode || subjectNameToCode[subjectNormalized] || '';
+                const paperTitleCode = Array.isArray(s.papers)
+                    ? (s.papers.map(p => extractCodeFromText(p && p.title ? p.title : '')).find(Boolean) || '')
+                    : '';
+                const displayCode = subjectCode || paperTitleCode;
+                const templateFolder = getTemplateFolder(s.dept, s.sem, s.name);
+                const inferredFolder = inferPyqFolder(displayCode, s.name, s.papers);
+                const fallbackFolder = normalizeFolderName(`${displayCode}-${slugifySubjectName(s.name)}`);
+                const pyqFolder = templateFolder || inferredFolder || fallbackFolder;
+                const pyqHref = `../pyq/${encodeURIComponent(pyqFolder)}/`;
+                const subjectMeta = `
                             <div class="subject-meta">
-                                <span class="subject-code">${subjectCode}</span>
-                                <a class="subject-link" href="../pyq/${encodeURIComponent(pyqFolder)}/">View Question Papers</a>
+                                ${displayCode ? `<span class="subject-code">${displayCode}</span>` : ''}
+                                <a class="subject-link" href="${pyqHref}">View Question Papers</a>
                             </div>
-                        ` : '';
+                        `;
                 return `
                     <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}" data-subject-id="${s.id}">
                         <div class="card-body" onclick="toggleCard('${s.id}')">

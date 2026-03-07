@@ -42,7 +42,7 @@ Project-OpenNotes/
 ├── sitemap.xml
 ├── google098b234d6180b677.html
 ├── about/
-├── academics/
+├── anna-university-notes/
 │   ├── civil/
 │   ├── cse/
 │   ├── ece/

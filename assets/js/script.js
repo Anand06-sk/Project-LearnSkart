@@ -168,7 +168,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             subject: String(subjectName || ''),
             dept: String(dept || '')
         });
-        return `academics/${slug}/?${params.toString()}`;
+        return `anna-university-notes/${slug}/?${params.toString()}`;
     }
 
     function buildSyllabusUrl(dept, regYear, semNum) {
@@ -558,12 +558,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Add department pages with multiple entry points
             const deptMapping = {
-                'CSE': { name: 'Computer Science & Engineering', url: 'academics/cse/' },
-                'ECE': { name: 'Electronics & Communication', url: 'academics/ece/' },
-                'EEE': { name: 'Electrical & Electronics Engineering', url: 'academics/eee/' },
-                'MECH': { name: 'Mechanical Engineering', url: 'academics/mech/' },
-                'CIVIL': { name: 'Civil Engineering', url: 'academics/civil/' },
-                'IT': { name: 'Information Technology', url: 'academics/it/' }
+                'CSE': { name: 'Computer Science & Engineering', url: 'anna-university-notes/cse/' },
+                'ECE': { name: 'Electronics & Communication', url: 'anna-university-notes/ece/' },
+                'EEE': { name: 'Electrical & Electronics Engineering', url: 'anna-university-notes/eee/' },
+                'MECH': { name: 'Mechanical Engineering', url: 'anna-university-notes/mech/' },
+                'CIVIL': { name: 'Civil Engineering', url: 'anna-university-notes/civil/' },
+                'IT': { name: 'Information Technology', url: 'anna-university-notes/it/' }
             };
             
             Object.entries(deptMapping).forEach(([code, info]) => {
