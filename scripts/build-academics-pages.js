@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const TEMPLATE_PATH = path.join(__dirname, '..', 'assets', 'data', 'academics-templates.json');
-const OUTPUT_ROOT = path.join(__dirname, '..', 'academics');
+const OUTPUT_ROOT = path.join(__dirname, '..', 'anna-university-notes');
 const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in/').replace(/\/+$/, '');
 const BASE_PATH = (process.env.BASE_PATH || '../index.html').replace(/\/+$/, '');
 
@@ -166,7 +166,7 @@ function buildStudyMaterialButtons(entry, folderSlug, subjectCode) {
 function buildBreadcrumb(deptLower, deptLabel, subjectName) {
   return [
     '<nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">',
-    `  <a href="../index.html">Home</a> &gt; <a href="../academics/${deptLower}/index.html">${deptLabel}</a> &gt; <span>${subjectName}</span>`,
+    `  <a href="../index.html">Home</a> &gt; <a href="../anna-university-notes/${deptLower}/index.html">${deptLabel}</a> &gt; <span>${subjectName}</span>`,
     '</nav>'
   ].join('\n');
 }
@@ -246,7 +246,7 @@ function buildHtml(entry, canonicalUrl, folderSlug) {
             </div>
             <div class="nav-links">
                 <a href="../index.html">Home</a>
-                <a href="../academics/${deptLower}/index.html">${deptLabel}</a>
+                <a href="../anna-university-notes/${deptLower}/index.html">${deptLabel}</a>
                 <a href="../syllabus/index.html">Syllabus</a>
             </div>
         </div>
@@ -320,7 +320,7 @@ entries.forEach(entry => {
   const folderSlug = existing?.slug || (codeSlug ? `${codeSlug}-${nameSlug}` : nameSlug);
   if (!folderSlug) return;
 
-  const canonicalUrl = `${BASE_URL}/academics/${deptLower}/${folderSlug}/`;
+  const canonicalUrl = `${BASE_URL}/anna-university-notes/${deptLower}/${folderSlug}/`;
   const html = buildHtml({ ...entry, subject_code: inferredCode || entry.subject_code }, canonicalUrl, folderSlug);
 
   const outputDir = path.join(OUTPUT_ROOT, deptLower, folderSlug);

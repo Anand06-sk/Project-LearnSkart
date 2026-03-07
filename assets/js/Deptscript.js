@@ -163,7 +163,7 @@ function searchNotes() {
         });
 
         // Navigate to subject page in academics
-        window.location.href = '../../academics/' + dept.toLowerCase() + '/' + subject.toLowerCase() + '/';
+        window.location.href = '../../anna-university-notes/' + dept.toLowerCase() + '/' + subject.toLowerCase() + '/';
       });
     });
   }
