@@ -117,8 +117,8 @@
         function inferPyqFolder(subjectCode, subjectName, papers) {
             const normalizedCode = normalizeSubjectCode(subjectCode);
             const folderOverrides = {
-                HS3152: 'HS3152-professional-englishi',
-                HS3252: 'HS3252-professional-englishii',
+                HS3152: 'HS3152-professional-english-1',
+                HS3252: 'HS3252-professional-english-ii',
                 CS3501: 'CS3501-complier-design'
             };
             if (normalizedCode && folderOverrides[normalizedCode]) {
@@ -159,8 +159,8 @@
             if (fromPaperTitle) return normalizeFolderName(fromPaperTitle);
 
             const folderOverrides = {
-                HS3152: 'hs3152-professional-englishi',
-                HS3252: 'hs3252-professional-englishii',
+                HS3152: 'hs3152-professional-english-1',
+                HS3252: 'hs3252-professional-english-ii',
                 CS3501: 'cs3501-complier-design'
             };
             if (subjectCode && folderOverrides[subjectCode]) return folderOverrides[subjectCode];

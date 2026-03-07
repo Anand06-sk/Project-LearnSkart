@@ -105,7 +105,6 @@ In `scripts/`:
 - `generate-academics-templates.js`
 - `generate-pyq-templates.js`
 - `generate-pyq-index.js`
-- `generate-pyq.js`
 - `update-academics-index-links.js`
 - `fix-pyq-theme.js`
 

@@ -89,8 +89,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     };
 
     const PYQ_FOLDER_OVERRIDES = {
-        HS3152: 'HS3152-professional-englishi',
-        HS3252: 'HS3252-professional-englishii',
+        HS3152: 'HS3152-professional-english-1',
+        HS3252: 'HS3252-professional-english-ii',
         CS3501: 'CS3501-complier-design'
     };
 
