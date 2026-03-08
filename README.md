@@ -19,6 +19,7 @@ The site is built as a pure static project (HTML/CSS/JavaScript) and is designed
 - Subject-wise resource discovery
 - Previous-year question paper pages under `pyq/`
 - GATE stream pages under `gate/`
+- Anna University results hub page under `anna-university-results/`
 - CGPA calculator
 - Dark mode support
 - Mobile-first responsive UI
@@ -42,6 +43,7 @@ Project-OpenNotes/
 ├── sitemap.xml
 ├── google098b234d6180b677.html
 ├── about/
+├── anna-university-results/
 ├── anna-university-notes/
 │   ├── civil/
 │   ├── cse/

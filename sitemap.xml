@@ -5,10 +5,18 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
+  </url>
   <url>
     <loc>https://learnskart.in/about/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://learnskart.in/anna-university-results/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3181,3 +3189,4 @@
     <priority>0.7</priority>
   </url>
 </urlset>
+
