@@ -276,9 +276,9 @@
         let searchTriggered = false;
 
         const deptFullNames = {
-            "CSE": "Computer Science & Engineering",
-            "ECE": "Electronics & Communication",
-            "EEE": "Electrical & Electronics",
+            "CSE": "Computer Science and Engineering",
+            "ECE": "Electronics and Communication Engineering",
+            "EEE": "Electrical and Electronics Engineering",
             "MECH": "Mechanical Engineering",
             "CIVIL": "Civil Engineering",
             "IT": "Information Technology"
