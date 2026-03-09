@@ -21,6 +21,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    try {
+      if (localStorage.getItem('site-theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {
+      // Ignore localStorage access issues.
+    }
+  </script>
   <style>
     :root {
       --bg: #f6f8fb;
@@ -36,6 +45,22 @@
       --ok: #107c41;
       --border: #dce5ef;
       --shadow: 0 12px 30px rgba(14, 34, 57, 0.08);
+    }
+
+    html.dark {
+      --bg: #0b1220;
+      --surface: #121a2b;
+      --text: #e2e8f0;
+      --muted: #9fb2c8;
+      --foreground: #e2e8f0;
+      --text-light: #9fb2c8;
+      --primary: #7cb8ff;
+      --brand: #66adff;
+      --brand-dark: #3e90ee;
+      --accent: #17243a;
+      --ok: #44d08d;
+      --border: #2a3a56;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
     * {
@@ -55,6 +80,13 @@
       background:
         radial-gradient(1100px 500px at 10% -10%, #dcebff 0%, transparent 60%),
         radial-gradient(900px 450px at 90% -20%, #e6fff4 0%, transparent 58%),
+        var(--bg);
+    }
+
+    html.dark body {
+      background:
+        radial-gradient(1000px 450px at 10% -10%, #1a2e4a 0%, transparent 58%),
+        radial-gradient(900px 420px at 90% -20%, #14302a 0%, transparent 56%),
         var(--bg);
     }
 
@@ -92,6 +124,10 @@
       position: sticky;
       top: 0;
       z-index: 12;
+    }
+
+    html.dark header {
+      background: rgba(14, 23, 37, 0.9);
     }
 
     .topbar {
@@ -144,6 +180,7 @@
       box-shadow: 0 7px 16px rgba(12, 76, 134, 0.18);
       outline: none;
     }
+
 
     .sr-only {
       position: absolute;
@@ -241,6 +278,10 @@
       padding: clamp(1rem, 2.8vw, 2rem);
     }
 
+    html.dark .hero-wrap {
+      background: linear-gradient(140deg, #141f32, #18273f 50%, #153328);
+    }
+
     .hero h1 {
       line-height: 1.2;
       font-size: clamp(1.5rem, 4.8vw, 2.3rem);
@@ -249,11 +290,19 @@
       color: #0e2f50;
     }
 
+    html.dark .hero h1 {
+      color: #e6f0ff;
+    }
+
     .hero p.lead {
       margin-top: 0.95rem;
       color: #325170;
       max-width: 65ch;
       font-size: clamp(1rem, 2.6vw, 1.06rem);
+    }
+
+    html.dark .hero p.lead {
+      color: #b9cae0;
     }
 
     .cta-grid {
@@ -291,6 +340,12 @@
       border-color: #a8caef;
     }
 
+    html.dark .btn-secondary {
+      background: #1a2940;
+      color: #d8e9ff;
+      border-color: #45638e;
+    }
+
     .result-btn:hover,
     .result-btn:focus-visible {
       transform: translateY(-2px);
@@ -316,10 +371,18 @@
       margin-bottom: 0.7rem;
     }
 
+    html.dark h2 {
+      color: #cde5ff;
+    }
+
     h3 {
       font-size: clamp(1.02rem, 2.5vw, 1.22rem);
       color: #174d7d;
       margin: 1rem 0 0.45rem;
+    }
+
+    html.dark h3 {
+      color: #bad8fb;
     }
 
     p + p {
@@ -339,6 +402,12 @@
       padding: 0.65rem 0.78rem;
       font-weight: 600;
       color: #2b4764;
+    }
+
+    html.dark .steps li {
+      background: #172237;
+      border-color: #2c4266;
+      color: #c4d8f0;
     }
 
     .step-num {
@@ -370,11 +439,21 @@
       background: #f9fcff;
     }
 
+    html.dark .quick-list li {
+      border-color: #304968;
+      background: #162439;
+    }
+
     details {
       border: 1px solid #d7e5f2;
       border-radius: 0.7rem;
       padding: 0.55rem 0.7rem;
       background: #fbfdff;
+    }
+
+    html.dark details {
+      border-color: #324a67;
+      background: #162338;
     }
 
     details + details {
@@ -387,11 +466,19 @@
       color: #1c4871;
     }
 
+    html.dark summary {
+      color: #c6ddfb;
+    }
+
     footer {
       margin-top: 60px;
       border-top: 1px solid var(--border);
       background: white;
       color: var(--foreground);
+    }
+
+    html.dark footer {
+      background: #0f1726;
     }
 
     .footer-content {
@@ -479,6 +566,10 @@
       font-weight: 700;
     }
 
+    html.dark .portal-links a {
+      color: #88c1ff;
+    }
+
     .img-note {
       display: grid;
       grid-template-columns: 90px 1fr;
@@ -491,6 +582,11 @@
       border-radius: 0.7rem;
     }
 
+    html.dark .img-note {
+      background: #142238;
+      border-color: #3b5477;
+    }
+
     .img-note img {
       width: 82px;
       height: 82px;
@@ -498,6 +594,11 @@
       object-fit: contain;
       background: #fff;
       border: 1px solid #dce8f4;
+    }
+
+    html.dark .img-note img {
+      background: #0e1728;
+      border-color: #324b68;
     }
 
     @media (max-width: 760px) {
@@ -644,6 +745,7 @@
           <a href="/syllabus/">Syllabus</a>
           <a href="/previous-year-questions/">PYQs</a>
           <a href="/cgpa-calculator/">CGPA Calculator</a>
+          <a href="https://learnskart.in/">Home</a>
         </nav>
       </div>
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -738,7 +840,7 @@
           <ul class="quick-list">
             <li>Keep register number and date of birth ready before result time.</li>
             <li>Check both portals from the two buttons on this page if traffic is high.</li>
-            <li>Use internal preparation links after results: <a href="/anna-university-notes/">Notes</a>, <a href="/syllabus/">Syllabus</a>, and <a href="/previous-year-questions/">PYQs</a>.</li>
+            <li>Use internal preparation links after results: <a href="https://learnskart.in/">Notes</a>, <a href="/syllabus/">Syllabus</a>, and <a href="/previous-year-questions/">PYQs</a>.</li>
           </ul>
         </article>
       </div>
@@ -830,5 +932,6 @@
       });
     }
   </script>
+  <script src="../assets/js/theme.js" defer></script>
 </body>
 </html>
