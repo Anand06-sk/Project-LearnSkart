@@ -146,7 +146,12 @@
         }
 
         function normalizeFolderName(str) {
-            return String(str || '').toLowerCase().replace(/-+/g, '-').replace(/^-|-$/g, '');
+            return String(str || '').replace(/-+/g, '-').replace(/^-|-$/g, '');
+        }
+
+        function enforceFolderCodeCase(folder) {
+            const value = String(folder || '');
+            return value.replace(/^([a-z]{2,5}\d{4})(?=-|$)/i, (_, code) => code.toUpperCase());
         }
 
         function buildTemplateFolder(row) {
@@ -159,9 +164,9 @@
             if (fromPaperTitle) return normalizeFolderName(fromPaperTitle);
 
             const folderOverrides = {
-                HS3152: 'hs3152-professional-english-1',
-                HS3252: 'hs3252-professional-english-ii',
-                CS3501: 'cs3501-complier-design'
+                HS3152: 'HS3152-professional-english-1',
+                HS3252: 'HS3252-professional-english-ii',
+                CS3501: 'CS3501-complier-design'
             };
             if (subjectCode && folderOverrides[subjectCode]) return folderOverrides[subjectCode];
 
@@ -464,7 +469,7 @@
                 const inferredFolder = inferPyqFolder(displayCode, s.name, s.papers);
                 const fallbackSlug = removeLeadingCodeFromSlug(slugifySubjectName(s.name), displayCode);
                 const fallbackFolder = normalizeFolderName(fallbackSlug ? `${displayCode}-${fallbackSlug}` : displayCode);
-                const pyqFolder = templateFolder || inferredFolder || fallbackFolder;
+                const pyqFolder = enforceFolderCodeCase(templateFolder || inferredFolder || fallbackFolder);
                 const pyqHref = `../pyq/${encodeURIComponent(pyqFolder)}/`;
                 const subjectMeta = `
                             <div class="subject-meta">
