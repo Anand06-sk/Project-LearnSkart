@@ -142,6 +142,10 @@
   gap: 1.25rem;
 }
 
+.info-section {
+  margin-top: 2rem;
+}
+
 .syllabus-card {
   border: 1px solid var(--syllabus-card-border);
   background: var(--syllabus-card-bg);
