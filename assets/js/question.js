@@ -364,7 +364,8 @@
 
         function renderGrid() {
             const grid = document.getElementById('grid');
-            let subjects = [];
+            const cards = Array.from(grid.querySelectorAll('.qp-card'));
+            let visibleCards = [];
             let autoExpandedId = null;
             let searchExpandedId = null;
             const query = (searchQuery || '').trim();
@@ -380,62 +381,57 @@
                 ? (matchedDepts.length ? matchedDepts : allDepartments)
                 : [selectedDept];
 
-            // Check if 2025 regulation is selected and show coming soon state
             if (selectedReg === '2025') {
                 document.getElementById('grid').classList.add('hidden');
                 document.getElementById('emptyState').classList.add('hidden');
                 document.getElementById('comingSoonState').classList.remove('hidden');
                 document.getElementById('displayDeptName').textContent = deptFullNames[selectedDept] || selectedDept;
                 document.getElementById('subjectCount').textContent = '0 Subjects';
+                cards.forEach(card => card.classList.add('hidden'));
                 lucide.createIcons();
                 return;
             }
 
-            // Reset states for other regulations
             document.getElementById('grid').classList.remove('hidden');
             document.getElementById('comingSoonState').classList.add('hidden');
 
-            departmentsToScan.forEach((dept) => {
-                const data = universityData[dept]?.[selectedReg] || {};
-                Object.entries(data).forEach(([sem, items]) => {
-                    if (searchAcrossSem || selectedSem === 'All' || sem === selectedSem) {
-                        Object.entries(items).forEach(([name, papers]) => {
-                            const subjectNormalized = normalizeSubjectName(name);
-                            const templateCode = getTemplateCode(dept, sem, name);
-                            const subjectCode = templateCode || subjectNameToCode[subjectNormalized] || '';
-                            const subjectCodeNormalized = normalizeSubjectCode(subjectCode);
-                            const deptText = normalizeSearchText(`${dept} ${deptFullNames[dept] || ''}`);
-                            const nameText = normalizeSearchText(name);
+            cards.forEach(card => {
+                const dept = (card.dataset.dept || '').toUpperCase();
+                const sem = String(card.dataset.sem || '');
+                const name = card.dataset.name || '';
+                const subjectNormalized = card.dataset.nameNormalized || normalizeSubjectName(name);
+                const subjectCodeNormalized = card.dataset.code || '';
+                const deptText = normalizeSearchText(`${dept} ${deptFullNames[dept] || ''}`);
+                const nameText = normalizeSearchText(name);
 
-                            const matchesSearch = !hasSearch
-                                || (searchNormalized && (subjectNormalized.includes(searchNormalized) || searchNormalized.includes(subjectNormalized)))
-                                || (searchCode && subjectCodeNormalized && (subjectCodeNormalized.includes(searchCode) || searchCode.includes(subjectCodeNormalized)))
-                                || (searchText && (nameText.includes(searchText) || deptText.includes(searchText)));
+                const deptMatch = departmentsToScan.includes(dept);
+                const semMatch = searchAcrossSem || selectedSem === 'All' || sem === selectedSem;
+                const matchesSearch = !hasSearch
+                    || (searchNormalized && (subjectNormalized.includes(searchNormalized) || searchNormalized.includes(subjectNormalized)))
+                    || (searchCode && subjectCodeNormalized && (subjectCodeNormalized.includes(searchCode) || searchCode.includes(subjectCodeNormalized)))
+                    || (searchText && (nameText.includes(searchText) || deptText.includes(searchText)));
 
-                            if (!matchesSearch) return;
+                const isVisible = deptMatch && semMatch && matchesSearch;
+                card.classList.toggle('hidden', !isVisible);
+                if (!isVisible) {
+                    card.classList.remove('expanded', 'is-focus');
+                    return;
+                }
 
-                            const id = `${dept}-${sem}-${name}`;
-                            subjects.push({ id, dept, sem, name, papers, subjectCode, templateCode });
-                            if (!searchExpandedId && searchTriggered && hasSearch) {
-                                searchExpandedId = id;
-                            }
-                        });
-                    }
-                });
-            });
-
-            subjects.sort((a, b) => {
-                if (a.dept !== b.dept) return a.dept.localeCompare(b.dept);
-                if (Number(a.sem) !== Number(b.sem)) return Number(a.sem) - Number(b.sem);
-                return a.name.localeCompare(b.name);
+                visibleCards.push(card);
+                if (!searchExpandedId && searchTriggered && hasSearch) {
+                    searchExpandedId = card.dataset.subjectId || null;
+                }
             });
 
             if (!didAutoFocus && targetSubjectNormalized) {
-                const match = subjects.find(s => {
-                    const subjectNormalized = normalizeSubjectName(s.name);
-                    return subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized);
+                const match = visibleCards.find(card => {
+                    const subjectNormalized = card.dataset.nameNormalized || '';
+                    return subjectNormalized === targetSubjectNormalized
+                        || subjectNormalized.includes(targetSubjectNormalized)
+                        || targetSubjectNormalized.includes(subjectNormalized);
                 });
-                autoExpandedId = match ? match.id : null;
+                autoExpandedId = match ? (match.dataset.subjectId || null) : null;
                 if (autoExpandedId && !expandedId) {
                     expandedId = autoExpandedId;
                 }
@@ -444,7 +440,7 @@
             if (searchExpandedId) {
                 expandedId = searchExpandedId;
             }
-            
+
             const displayDeptName = hasSearch
                 ? (departmentsToScan.length === 1
                     ? (deptFullNames[departmentsToScan[0]] || departmentsToScan[0])
@@ -452,70 +448,31 @@
                 : (deptFullNames[selectedDept] || selectedDept);
 
             document.getElementById('displayDeptName').textContent = displayDeptName;
-            document.getElementById('subjectCount').textContent = `${subjects.length} ${hasSearch ? 'Results' : 'Subjects'}`;
-            document.getElementById('emptyState').classList.toggle('hidden', subjects.length > 0);
+            document.getElementById('subjectCount').textContent = `${visibleCards.length} ${hasSearch ? 'Results' : 'Subjects'}`;
+            document.getElementById('emptyState').classList.toggle('hidden', visibleCards.length > 0);
 
-            grid.innerHTML = subjects.map(s => {
-                const subjectNormalized = normalizeSubjectName(s.name);
-                const isTarget = targetSubjectNormalized && (subjectNormalized === targetSubjectNormalized || subjectNormalized.includes(targetSubjectNormalized) || targetSubjectNormalized.includes(subjectNormalized));
-                const isExp = expandedId ? expandedId === s.id : autoExpandedId === s.id;
-                const available = s.papers.filter(p => p.pdf).length;
-                const subjectCode = s.templateCode || s.subjectCode || subjectNameToCode[subjectNormalized] || '';
-                const paperTitleCode = Array.isArray(s.papers)
-                    ? (s.papers.map(p => extractCodeFromText(p && p.title ? p.title : '')).find(Boolean) || '')
-                    : '';
-                const displayCode = subjectCode || paperTitleCode;
-                const templateFolder = getTemplateFolder(s.dept, s.sem, s.name);
-                const inferredFolder = inferPyqFolder(displayCode, s.name, s.papers);
-                const fallbackSlug = removeLeadingCodeFromSlug(slugifySubjectName(s.name), displayCode);
-                const fallbackFolder = normalizeFolderName(fallbackSlug ? `${displayCode}-${fallbackSlug}` : displayCode);
-                const pyqFolder = enforceFolderCodeCase(templateFolder || inferredFolder || fallbackFolder);
-                const pyqHref = `../pyq/${encodeURIComponent(pyqFolder)}/`;
-                const subjectMeta = `
-                            <div class="subject-meta">
-                                ${displayCode ? `<span class="subject-code">${displayCode}</span>` : ''}
-                                <a class="subject-link" href="${pyqHref}">View Question Papers</a>
-                            </div>
-                        `;
-                return `
-                    <div class="card ${isExp ? 'expanded' : ''} ${isTarget ? 'is-focus' : ''}" data-subject-id="${s.id}">
-                        <div class="card-body" onclick="toggleCard('${s.id}')">
-                            <div class="card-header">
-                                <span class="sem-tag">${s.dept} · SEM ${s.sem}</span>
-                                <span class="reg-tag ${s.sem % 2 === 0 ? 'even' : 'odd'}">Reg ${selectedReg}</span>
-                            </div>
-                            <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">${s.name}</h3>
-                            ${subjectMeta}
-                            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem;">
-                                <span style="font-size:0.75rem; color:var(--muted); display:flex; gap:4px; align-items:center;">
-                                    <i data-lucide="file-text" style="width:14px"></i> ${available} Papers available
-                                </span>
-                                <i data-lucide="chevron-down" style="width:16px; transition:0.3s; transform:${isExp?'rotate(180deg)':'none'}"></i>
-                            </div>
-                        </div>
-                        ${isExp ? `
-                            <div class="papers-list">
-                                ${s.papers.map(p => `
-                                    <div class="paper-item">
-                                        <div style="overflow:hidden">
-                                            <div style="font-weight:600; font-size:0.875rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${p.title}</div>
-                                            <div style="font-size:0.75rem; color:var(--muted); display:flex; gap:4px; align-items:center;">
-                                                <i data-lucide="calendar" style="width:12px"></i> ${p.year}
-                                            </div>
-                                        </div>
-                                        <div style="display:flex; gap:4px">
-                                            <button class="btn-icon" onclick="openPdf('${p.pdf}', '${p.title}', event)"><i data-lucide="eye" style="width:18px"></i></button>
-                                            <button class="btn-icon" style="color:white; background:var(--primary);" onclick="downloadPdf('${p.pdf}', '${p.title}', event)"><i data-lucide="download" style="width:16px"></i></button>
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-            }).join('');
+            visibleCards.forEach(card => {
+                const cardId = card.dataset.subjectId || '';
+                const isTarget = targetSubjectNormalized && (() => {
+                    const subjectNormalized = card.dataset.nameNormalized || '';
+                    return subjectNormalized === targetSubjectNormalized
+                        || subjectNormalized.includes(targetSubjectNormalized)
+                        || targetSubjectNormalized.includes(subjectNormalized);
+                })();
+                const isExp = expandedId ? expandedId === cardId : autoExpandedId === cardId;
+                card.classList.toggle('expanded', Boolean(isExp));
+                card.classList.toggle('is-focus', Boolean(isTarget));
+
+                const chevron = card.querySelector('[data-lucide="chevron-down"], .lucide-chevron-down');
+                if (chevron) {
+                    chevron.style.transform = isExp ? 'rotate(180deg)' : 'none';
+                }
+            });
+
             grid.querySelectorAll('.subject-link').forEach(link => {
+                if (link.dataset.boundClick === '1') return;
                 link.addEventListener('click', e => e.stopPropagation());
+                link.dataset.boundClick = '1';
             });
 
             lucide.createIcons();
@@ -569,10 +526,11 @@
         };
 
         window.toggleCard = (id) => {
-            expandedId = expandedId === id ? null : id;
-            didSearchFocus = false;
-            searchTriggered = false;
-            renderGrid();
+            const card = Array.from(document.querySelectorAll('.qp-card')).find(c => (c.dataset.subjectId || '') === id);
+            const link = card ? card.querySelector('.subject-link') : null;
+            if (link && link.href) {
+                window.location.href = link.href;
+            }
         };
 
         document.getElementById('searchInput').oninput = (e) => {
