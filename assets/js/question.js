@@ -261,11 +261,77 @@
             return digits || '2021';
         }
 
+        const selectionStorageKey = 'pyqSelectionState';
+        const defaultDept = 'CSE';
+        const defaultSem = '1';
+        const validSemesters = new Set(['1', '2', '3', '4', '5', '6', '7']);
+
+        function shouldRestoreSavedSelection() {
+            try {
+                if (!document.referrer) return false;
+                const referrerUrl = new URL(document.referrer, window.location.origin);
+                if (referrerUrl.origin !== window.location.origin) return false;
+
+                const normalizedPath = referrerUrl.pathname.toLowerCase().replace(/\/index\.html$/, '/');
+                return /^\/pyq\/[^/]+\/$/.test(normalizedPath);
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function readSavedSelection() {
+            try {
+                const savedValue = window.sessionStorage.getItem(selectionStorageKey);
+                if (!savedValue) return null;
+
+                const parsed = JSON.parse(savedValue);
+                const dept = String(parsed?.dept || '').toUpperCase();
+                const sem = normalizeSemester(parsed?.sem || '');
+
+                return {
+                    dept,
+                    sem
+                };
+            } catch (error) {
+                console.warn('Unable to restore saved PYQ selection:', error);
+                return null;
+            }
+        }
+
+        function persistSelection() {
+            try {
+                window.sessionStorage.setItem(selectionStorageKey, JSON.stringify({
+                    dept: selectedDept,
+                    sem: selectedSem
+                }));
+            } catch (error) {
+                console.warn('Unable to save PYQ selection:', error);
+            }
+        }
+
+        function clearSavedSelection() {
+            try {
+                window.sessionStorage.removeItem(selectionStorageKey);
+            } catch (error) {
+                console.warn('Unable to clear PYQ selection:', error);
+            }
+        }
+
+        function ensureValidSelection() {
+            if (!Object.prototype.hasOwnProperty.call(universityData, selectedDept)) {
+                selectedDept = defaultDept;
+            }
+
+            if (!validSemesters.has(selectedSem)) {
+                selectedSem = defaultSem;
+            }
+        }
+
         // App State
         let universityData = {};
-        let selectedDept = 'CSE';
+        let selectedDept = defaultDept;
         let selectedReg = '2021';
-        let selectedSem = '1';
+        let selectedSem = defaultSem;
         let searchQuery = '';
         let expandedId = null;
         let currentPdfUrl = '';
@@ -320,7 +386,7 @@
                 templateCodeMap = maps.codeMap;
                 templateFolderMap = maps.folderMap;
 
-            await loadSubjectCodeMaps();
+                await loadSubjectCodeMaps();
                 
                 document.getElementById('year').textContent = new Date().getFullYear();
                 const deptRaw = getParam('dept');
@@ -328,10 +394,23 @@
                 const regRaw = getParam('regulation') || getParam('reg');
                 const subjectRaw = getParam('subject') || getParam('sub');
 
+                if (shouldRestoreSavedSelection()) {
+                    const savedSelection = readSavedSelection();
+                    if (savedSelection?.dept) selectedDept = savedSelection.dept;
+                    if (savedSelection?.sem) selectedSem = savedSelection.sem;
+                } else {
+                    clearSavedSelection();
+                    selectedDept = defaultDept;
+                    selectedSem = defaultSem;
+                }
+
                 if (deptRaw) selectedDept = deptRaw.toUpperCase();
                 if (semRaw) selectedSem = normalizeSemester(semRaw) || selectedSem;
                 if (regRaw) selectedReg = normalizeRegulation(regRaw) || selectedReg;
                 if (subjectRaw) targetSubjectNormalized = normalizeSubjectName(subjectRaw);
+
+                ensureValidSelection();
+                persistSelection();
 
                 renderTabs();
                 renderSemesterTabs();
@@ -502,6 +581,8 @@
         // Event Handlers
         window.setDept = (dept) => {
             selectedDept = dept;
+            ensureValidSelection();
+            persistSelection();
             didSearchFocus = false;
             searchTriggered = false;
             renderTabs();
@@ -510,6 +591,8 @@
 
         window.setSem = (sem) => {
             selectedSem = sem;
+            ensureValidSelection();
+            persistSelection();
             didSearchFocus = false;
             searchTriggered = false;
             renderSemesterTabs();
@@ -529,6 +612,7 @@
             const card = Array.from(document.querySelectorAll('.qp-card')).find(c => (c.dataset.subjectId || '') === id);
             const link = card ? card.querySelector('.subject-link') : null;
             if (link && link.href) {
+                persistSelection();
                 window.location.href = link.href;
             }
         };

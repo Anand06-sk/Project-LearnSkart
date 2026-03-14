@@ -1465,16 +1465,43 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/CE3351-surveying-and-levelling/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://learnskart.in/pyq/CE3391-fluid-mechanics-and-machinery/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/CE3401-applied-hydraulics-engineering/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/pyq/CE3402-strength-of-materials/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://learnskart.in/pyq/CE3403-concrete-technology/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/CE3404-soil-mechanics/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/pyq/CE3405-highway-and-railway-engineering/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1511,6 +1538,11 @@
   <url>
     <loc>https://learnskart.in/pyq/CE3602-structural-analysis-ii/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/CE3701-estimation-coasting-and-valuation-engineering/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1581,8 +1613,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/pyq/CS3501-complier-design/</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://learnskart.in/pyq/CS3501-compiler-design/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1613,6 +1645,11 @@
   <url>
     <loc>https://learnskart.in/pyq/EC3251-circuit-analysis/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/EC3251-circuit-theory/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1743,8 +1780,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learnskart.in/pyq/EE3453-microprocessor-and-microcontroller/</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://learnskart.in/pyq/EE3404-microprocessor-and-microcontroller/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1853,6 +1890,11 @@
   <url>
     <loc>https://learnskart.in/pyq/IT3401-web-essentials/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/IT3501-full-stack-web-development/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1973,6 +2015,11 @@
   <url>
     <loc>https://learnskart.in/pyq/PH3151-engineering-physics/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://learnskart.in/pyq/PH3201-physics-for-civil-engineering/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

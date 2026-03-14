@@ -63,6 +63,13 @@ Project-OpenNotes/
 ├── previous-year-questions/
 ├── privacy/
 ├── pyq/
+│   ├── CE3351-surveying-and-levelling/
+│   ├── CE3401-applied-hydraulics-engineering/
+│   ├── CE3701-estimation-coasting-and-valuation-engineering/
+│   ├── CS3501-compiler-design/
+│   ├── EE3404-microprocessor-and-microcontroller/
+│   ├── IT3501-full-stack-web-development/
+│   └── ...
 ├── scripts/
 └── syllabus/
    ├── index.html
@@ -141,8 +148,10 @@ These scripts help generate and maintain static pages from JSON/template data.
 ## Notes on Routing
 
 - PYQ pages use folder-based routes under `pyq/`.
+- The sitemap should mirror the exact `pyq/` folder names used in the repository.
 - Syllabus department landing pages are regulation-based under `syllabus/2021/` and `syllabus/2025/`.
 - Subject syllabus pages continue under department routes like `syllabus/cse/...` and `syllabus/ece/...`.
+- Current PYQ route examples include `pyq/CE3351-surveying-and-levelling/`, `pyq/CE3701-estimation-coasting-and-valuation-engineering/`, `pyq/CS3501-compiler-design/`, `pyq/IT3501-full-stack-web-development/`, and `pyq/PH3201-physics-for-civil-engineering/`.
 - Keep subject slugs in links consistent with real folder names.
 - For GitHub Pages project-site hosting, prefer relative internal links (for example `../pyq/.../` or `../../gate/.../`) instead of root-absolute links like `/pyq/.../`.
 
