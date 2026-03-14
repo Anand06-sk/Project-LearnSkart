@@ -5,7 +5,8 @@
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
+  </url>
+
   <url>
     <loc>https://learnskart.in/about/</loc>
     <lastmod>2026-03-07</lastmod>
@@ -761,6 +762,12 @@
   <url>
     <loc>https://learnskart.in/anna-university-notes/eee/ge3451-environmental-sciences-and-sustainability/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/anna-university-notes/eee/ge3791-human-values-and-ethics/</loc>
+    <lastmod>2026-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
