@@ -14,6 +14,20 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://learnskart.in/contact/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://learnskart.in/terms-and-conditions/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   
   <url>
     <loc>https://learnskart.in/anna-university-results/</loc>
