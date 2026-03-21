@@ -346,14 +346,31 @@ function slugifySubjectName(name) {
         .replace(/\s+/g, '-');
 }
 
+function getSectionConfig() {
+    const pathname = (window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
+
+    if (/\/gate-syllabus(?:\/index\.html)?\/?$/.test(pathname)) {
+        return {
+            segment: 'gate-syllabus',
+            label: 'GATE Syllabus'
+        };
+    }
+
+    return {
+        segment: 'gate',
+        label: 'GATE PYQ'
+    };
+}
+
 function buildSubjectPageUrl(subject) {
     const code = String(subject.code || '').toLowerCase();
     const nameSlug = slugifySubjectName(subject.name || 'subject');
+    const section = getSectionConfig();
     const pathname = (window.location.pathname || '').replace(/\\/g, '/');
-    const markerMatch = pathname.match(/^(.*)\/gate-pyqs(?:\/index\.html)?\/?$/i);
+    const markerMatch = pathname.match(/^(.*)\/(?:gate-pyqs|gate-syllabus)(?:\/index\.html)?\/?$/i);
     const siteBase = markerMatch ? markerMatch[1] : '';
     const normalizedBase = siteBase === '/' ? '' : siteBase.replace(/\/+$/, '');
-    return `${normalizedBase}/gate/${code}-${nameSlug}/`;
+    return `${normalizedBase}/${section.segment}/${code}-${nameSlug}/`;
 }
 
 function buildSubjectSearchTokens(subject) {
@@ -465,6 +482,7 @@ function renderSubjectCards() {
 
 // Create individual subject card
 function createSubjectCard(subject) {
+    const section = getSectionConfig();
     const card = document.createElement('a');
     card.className = 'subject-card';
     card.dataset.code = subject.code;
@@ -473,8 +491,8 @@ function createSubjectCard(subject) {
     card.dataset.aliases = (subjectAliases[subject.code] || []).join(' ').toLowerCase();
     card.dataset.searchTokens = buildSubjectSearchTokens(subject);
     card.href = buildSubjectPageUrl(subject);
-    card.title = `${subject.name} (${subject.code}) - GATE PYQ`;
-    card.setAttribute('aria-label', `${subject.name} (${subject.code}) - GATE PYQ`);
+    card.title = `${subject.name} (${subject.code}) - ${section.label}`;
+    card.setAttribute('aria-label', `${subject.name} (${subject.code}) - ${section.label}`);
 
     const icon = subjectIcons[subject.code] || '📘';
 

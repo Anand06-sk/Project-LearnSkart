@@ -1,18 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="/assets/js/analytics.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GATE CH (Chemical Engineering) Syllabus 2026 PDF</title>
-    <meta name="description" content="GATE Chemical Engineering (CH) syllabus 2026 with complete topics. Download official PDF including thermodynamics, fluid mechanics, reaction engineering.">
-    <meta name="keywords" content="GATE CH syllabus, Chemical Engineering GATE 2026, thermodynamics, reaction engineering, mass transfer, GATE CH PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/gate-syllabus/ch-chemical-engineering/">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap">
-    <link rel="stylesheet" href="../../assets/css/theme.css">
-    <link rel="stylesheet" href="../../assets/css/gate.css">
+$files = Get-ChildItem -Path 'd:\Project-OpenNotes\gate-syllabus' -Filter 'index.html' -Recurse
+
+foreach ($file in $files) {
+    $content = Get-Content -Raw -Path $file.FullName
+
+    $prefix = if ($file.Directory.Name -eq 'gate-syllabus') { '../' } else { '../../' }
+
+    $navMarkup = @"
+<nav class="custom-nav">
+    <div class="nav-container">
+        <a href="${prefix}" class="logo" aria-label="LearnSkart Home">
+            <div class="logo-icon">
+                <img src="${prefix}assets/icons/favicon-96x96.png" alt="LearnSkart" style="width: 100%; height: 100%; border-radius: 50%;">
+            </div>
+            <div class="logo-text">
+                <span class="logo-title">LearnSkart</span>
+            </div>
+        </a>
+
+        <div class="nav-links-desktop" aria-label="Primary">
+            <a href="${prefix}gate-syllabus/" class="back-btn">GATE Syllabus</a>
+            <a href="${prefix}gate-pyqs/" class="back-btn">GATE PYQ</a>
+            <a href="${prefix}" class="back-btn">Home</a>
+            <a href="${prefix}about/" class="back-btn">About</a>
+            <a href="${prefix}contact/" class="back-btn">Contact</a>
+        </div>
+
+        <div class="nav-primary-mobile" aria-label="Primary mobile quick links">
+            <a href="${prefix}gate-syllabus/" class="back-btn">GATE Syllabus</a>
+            <a href="${prefix}gate-pyqs/" class="back-btn">GATE PYQ</a>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile menu">
+        <a href="${prefix}">Home</a>
+        <a href="${prefix}about/">About</a>
+        <a href="${prefix}contact/">Contact</a>
+    </div>
+</nav>
+"@
+
+    $navRegex = [regex]::new('<nav[\s\S]*?</nav>', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    $content = $navRegex.Replace($content, $navMarkup, 1)
+
+    $styleBlock = @"
 <style id="custom-nav-style">
     .custom-nav {
         position: sticky;
@@ -265,47 +297,19 @@
         }
     }
 </style>
-</head>
-<body>
-    <nav class="custom-nav">
-    <div class="nav-container">
-        <a href="../../" class="logo" aria-label="LearnSkart Home">
-            <div class="logo-icon">
-                <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart" style="width: 100%; height: 100%; border-radius: 50%;">
-            </div>
-            <div class="logo-text">
-                <span class="logo-title">LearnSkart</span>
-            </div>
-        </a>
+"@
 
-        <div class="nav-links-desktop" aria-label="Primary">
-            <a href="../../gate-syllabus/" class="back-btn">GATE Syllabus</a>
-            <a href="../../gate-pyqs/" class="back-btn">GATE PYQ</a>
-            <a href="../../" class="back-btn">Home</a>
-            <a href="../../about/" class="back-btn">About</a>
-            <a href="../../contact/" class="back-btn">Contact</a>
-        </div>
+    if ($content -match '<style id="custom-nav-style">[\s\S]*?</style>') {
+        $content = [regex]::Replace($content, '<style id="custom-nav-style">[\s\S]*?</style>', $styleBlock, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    } else {
+        $content = $content -replace '</head>', "$styleBlock`r`n</head>"
+    }
 
-        <div class="nav-primary-mobile" aria-label="Primary mobile quick links">
-            <a href="../../gate-syllabus/" class="back-btn">GATE Syllabus</a>
-            <a href="../../gate-pyqs/" class="back-btn">GATE PYQ</a>
-            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-        </div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile menu">
-        <a href="../../">Home</a>
-        <a href="../../about/">About</a>
-        <a href="../../contact/">Contact</a>
-    </div>
-</nav>
-    <header class="hero"><div class="hero-content"><h1>GATE <span style="color: #3b82f6;">CH</span> Syllabus 2026</h1></div></header>
-    <main class="container" style="padding: 2rem;"><article><section style="background: #f0f9ff; border-left: 4px solid #3b82f6; padding: 1.5rem; margin: 2rem 0;"><h2 style="color: #1e3a8a;">Chemical Engineering Syllabus</h2><p><span style="display: inline-flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;"><a href="https://drive.google.com/file/d/1P2m_3xZkL7qR4nW8vX3sY6uZ9aB0cD4e/view" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-eye"></i> View Syllabus</a><a href="https://drive.google.com/uc?export=download&id=1P2m_3xZkL7qR4nW8vX3sY6uZ9aB0cD4e" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-download"></i> Download PDF</a></span></p></section><section style="margin: 2rem 0;"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;"><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">🔥 Thermodynamics</h3><ul style="font-size: 0.9rem;"><li>Laws of thermodynamics</li><li>Equilibrium</li><li>Cycles</li></ul></div><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">💨 Fluid Mechanics</h3><ul style="font-size: 0.9rem;"><li>Flow types</li><li>Pipe flows</li><li>Pumps & compressors</li></ul></div><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">⚗️ Reaction Engineering</h3><ul style="font-size: 0.9rem;"><li>Reactor kinetics</li><li>Ideal reactors</li><li>Non-ideal flow</li></ul></div><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">📦 Heat & Mass Transfer</h3><ul style="font-size: 0.9rem;"><li>Conduction</li><li>Convection</li><li>Mass transfer</li></ul></div></div></section></article></main>
-    <footer class="gate-footer">
+    $footerMarkup = @"
+<footer class="gate-footer">
     <div class="footer-wrap">
         <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-            <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 30px; height: 30px; border-radius: 50%;">
+            <img src="${prefix}assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 30px; height: 30px; border-radius: 50%;">
             <span style="font-weight: 700; font-size: 1.05rem;">LearnSkart</span>
         </div>
 
@@ -313,11 +317,11 @@
             <div class="footer-section" aria-label="Footer quick links">
                 <h3 class="footer-title">Quick Links</h3>
                 <div class="quick-links">
-                    <a href="../../">Home</a>
-                    <a href="../../about/">About</a>
-                    <a href="../../terms-and-conditions/">Terms &amp; Conditions</a>
-                    <a href="../../contact/">Contact</a>
-                    <a href="../../privacy/">Privacy Policy</a>
+                    <a href="${prefix}">Home</a>
+                    <a href="${prefix}about/">About</a>
+                    <a href="${prefix}terms-and-conditions/">Terms &amp; Conditions</a>
+                    <a href="${prefix}contact/">Contact</a>
+                    <a href="${prefix}privacy/">Privacy Policy</a>
                 </div>
             </div>
 
@@ -334,7 +338,13 @@
         </div>
     </div>
 </footer>
-    <script id="custom-nav-script">
+"@
+
+    $footerRegex = [regex]::new('<footer[\s\S]*?</footer>', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    $content = $footerRegex.Replace($content, $footerMarkup, 1)
+
+    $scriptBlock = @"
+<script id="custom-nav-script">
     document.addEventListener('DOMContentLoaded', () => {
         const toggleBtn = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -363,7 +373,13 @@
         });
     });
 </script>
-<script src="../../assets/js/theme.js"></script>
-</body>
-</html>
+"@
 
+    if ($content -match '<script id="custom-nav-script">[\s\S]*?</script>') {
+        $content = [regex]::Replace($content, '<script id="custom-nav-script">[\s\S]*?</script>', $scriptBlock, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    } else {
+        $content = $content -replace '<script src="(?:\.\./)+assets/js/theme\.js"></script>', "$scriptBlock`r`n`$0"
+    }
+
+    Set-Content -Path $file.FullName -Value $content -NoNewline
+}

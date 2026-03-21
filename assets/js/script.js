@@ -761,6 +761,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 keywords: ['gpa', 'calculator', 'grade', 'point', 'average', 'calculate', 'semester'],
                 searchText: normalize('gpa calculator grade point average calculate semester')
             });
+
+            all.push({
+                label: 'GATE Syllabus (All Subjects)',
+                url: 'gate-syllabus/',
+                type: 'GATE',
+                subject: 'GATE Syllabus',
+                keywords: ['gate', 'gate syllabus', 'syllabus', 'all subjects', 'subject list'],
+                searchText: normalize('gate syllabus all subjects gate-syllabus')
+            });
             
             // Add all department subjects for Notes
             Object.entries(DEPT_SUBJECTS).forEach(([dept, regulations]) => {
