@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LearnSkart Daily Path Puzzle - Connect letters by swiping through all grid tiles">
+    <meta name="theme-color" content="#2563eb">
+    <title>LearnSkart Daily Path Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Game Container -->
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="header-top">
+                <h1 class="game-title">LearnSkart Daily Path Puzzle</h1>
+                <div class="streak-badge">
+                    <span class="streak-icon">🔥</span>
+                    <span class="streak-count" id="streakCount">0</span>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat stat-timer">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="timer">00:00</span>
+                </div>
+                <div class="stat stat-target">
+                    <span class="stat-label">Connect:</span>
+                    <span class="stat-value target-word" id="targetWord">-</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Area -->
+        <main class="game-area">
+            <!-- Grid Container -->
+            <div class="grid-wrapper">
+                <div class="game-grid" id="gameGrid"></div>
+                <canvas id="pathCanvas" class="path-canvas"></canvas>
+            </div>
+
+            <!-- Unvisited Hint -->
+            <div class="unvisited-hint" id="unvisitedHint" style="display: none;">
+                <span class="hint-text">You reached the final letter, but some tiles are still unvisited!</span>
+            </div>
+
+            <!-- Word Completed Hint -->
+            <div class="word-complete-hint" id="wordCompleteHint" style="display: none;">
+                <span class="hint-text">You must cover all tiles to complete the puzzle.</span>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn btn-secondary" id="resetBtn" title="Reset the puzzle">
+                🔄 Reset
+            </button>
+            <button class="btn btn-secondary" id="hintBtn" title="Get a hint (adds 5 seconds)">
+                💡 Hint
+            </button>
+        </div>
+    </div>
+
+    <!-- Hint Popup Modal -->
+    <div class="modal" id="hintModal" style="display: none;">
+        <div class="modal-content">
+            <p>Using a hint will add <strong>+5 seconds</strong> to your time.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" id="hintCancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="hintConfirmBtn">OK, Use Hint</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completion Modal -->
+    <div class="modal" id="completionModal" style="display: none;">
+        <div class="modal-content completion-modal">
+            <div class="completion-celebration">
+                <div class="confetti" id="confetti"></div>
+                <h2 id="completionTitle">Puzzle Complete! 🎉</h2>
+                <div class="completion-stats">
+                    <div class="stat-row">
+                        <span class="label">Time Taken:</span>
+                        <span class="value" id="completionTime">00:00</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Your Rank:</span>
+                        <span class="value" id="completionRank">-</span>
+                    </div>
+                </div>
+
+                <!-- Name Input Section -->
+                <div class="name-input-section" id="nameInputSection">
+                    <label for="playerName" class="input-label">Enter your name to save score:</label>
+                    <input
+                        type="text"
+                        id="playerName"
+                        class="name-input"
+                        placeholder="Your name (3-20 characters)"
+                        autocomplete="off"
+                        maxlength="20"
+                    />
+                    <div class="name-validation" id="nameValidation"></div>
+                </div>
+
+                <div class="submission-limit" id="submissionLimitMessage" style="display: none;">
+                    You already submitted twice today. Come back tomorrow!
+                </div>
+
+                <!-- Leaderboard Section -->
+                <div class="leaderboard-section" id="leaderboardSection" style="display: none;">
+                    <h3>Today's Top Players</h3>
+                    <div class="leaderboard" id="leaderboard">
+                        <div class="loading">Loading leaderboard...</div>
+                    </div>
+                    <div class="your-rank" id="yourRank" style="display: none;"></div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="submitScoreBtn">Submit Score</button>
+                    <button class="btn btn-secondary" id="playAgainBtn">Play Again Tomorrow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading puzzle...</p>
+    </div>
+
+    <!-- Debug Info (Remove in Production) -->
+    <div id="debugInfo" style="display: none; position: fixed; bottom: 10px; right: 10px; background: #f0f0f0; padding: 10px; border-radius: 5px; font-size: 10px; max-width: 300px; z-index: 9999;">
+        <strong>Debug Info:</strong>
+        <div id="debugLog"></div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast" id="errorToast" style="display: none;">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
