@@ -23,6 +23,7 @@ const CONFIG = {
     LEADERBOARD_LIMIT: 20,
     MAX_TIME_SECONDS: 900,
     MAX_SUBMISSIONS_PER_DAY: 2,
+    MAX_ATTEMPTS_PER_DAY: 2,
 };
 
 CONFIG.TOTAL_TILES = CONFIG.GRID_SIZE * CONFIG.GRID_SIZE;
@@ -57,7 +58,11 @@ const state = {
     isAnimatingPath: false,
     hintOverlayTimeout: null,
     hintAcknowledged: false,
+    attemptRecorded: false,
+    attemptsLocked: false,
 };
+
+let popperCleanupTimeout = null;
 
 // Firebase configuration
 const firebaseConfig = {
@@ -134,6 +139,7 @@ function formatTime(seconds) {
 
 function startTimer() {
     if (state.timerStarted) return;
+    if (!ensureAttemptAvailability()) return;
     state.timerStarted = true;
     state.timerInterval = setInterval(() => {
         state.elapsedSeconds += 1;
@@ -170,14 +176,21 @@ function getTodayDateString() {
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const date = String(today.getDate()).padStart(2, '0');
-    return `${year}_${month}_${date}`;
+    return `${year}-${month}-${date}`;
+}
+
+function normalizeStoredDate(value) {
+    if (!value) return null;
+    return value.includes('_') ? value.replace(/_/g, '-') : value;
 }
 
 function getStreak() {
     const raw = localStorage.getItem('dailyPathStreak');
     if (!raw) return { count: 0, lastPlayDate: null };
     try {
-        return JSON.parse(raw);
+        const parsed = JSON.parse(raw);
+        parsed.lastPlayDate = normalizeStoredDate(parsed.lastPlayDate);
+        return parsed;
     } catch (error) {
         return { count: 0, lastPlayDate: null };
     }
@@ -208,8 +221,8 @@ function applyCompletionStreak() {
         return;
     }
 
-    const lastDate = new Date(current.lastPlayDate.replace(/_/g, '-'));
-    const todayDate = new Date(today.replace(/_/g, '-'));
+    const lastDate = new Date(normalizeStoredDate(current.lastPlayDate));
+    const todayDate = new Date(today);
     const diffDays = Math.round((todayDate - lastDate) / (1000 * 60 * 60 * 24));
 
     if (diffDays === 1) {
@@ -217,6 +230,94 @@ function applyCompletionStreak() {
     } else {
         updateStreak(1);
     }
+}
+
+// ========================================
+// ATTEMPT LIMIT MANAGEMENT
+// ========================================
+
+const ATTEMPT_STORAGE_KEY = 'dailyPathAttemptInfo';
+
+function getAttemptInfo() {
+    const today = getTodayDateString();
+    const raw = localStorage.getItem(ATTEMPT_STORAGE_KEY);
+    if (!raw) {
+        return { date: today, attempts: 0 };
+    }
+    try {
+        const parsed = JSON.parse(raw);
+        parsed.date = normalizeStoredDate(parsed.date) || today;
+        if (!parsed.attempts && parsed.attempts !== 0) {
+            parsed.attempts = 0;
+        }
+        return parsed;
+    } catch (error) {
+        return { date: today, attempts: 0 };
+    }
+}
+
+function saveAttemptInfo(info) {
+    localStorage.setItem(ATTEMPT_STORAGE_KEY, JSON.stringify(info));
+}
+
+function ensureAttemptInfoFresh() {
+    const today = getTodayDateString();
+    const info = getAttemptInfo();
+    if (info.date !== today) {
+        const fresh = { date: today, attempts: 0 };
+        saveAttemptInfo(fresh);
+        return fresh;
+    }
+    return info;
+}
+
+function canStartAttempt() {
+    const info = ensureAttemptInfoFresh();
+    return info.attempts < CONFIG.MAX_ATTEMPTS_PER_DAY;
+}
+
+function recordAttemptStart() {
+    const info = ensureAttemptInfoFresh();
+    info.attempts += 1;
+    saveAttemptInfo(info);
+}
+
+function lockGameForAttempts() {
+    state.attemptsLocked = true;
+    state.mouseDown = false;
+    state.touchActive = false;
+    stopTimer();
+    document.body.classList.add('attempt-locked');
+    const overlay = document.getElementById('attemptLimitOverlay');
+    if (overlay) {
+        overlay.style.display = 'flex';
+    }
+}
+
+function unlockGameFromAttempts() {
+    state.attemptsLocked = false;
+    document.body.classList.remove('attempt-locked');
+    const overlay = document.getElementById('attemptLimitOverlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}
+
+function ensureAttemptAvailability() {
+    if (state.attemptsLocked) {
+        showToast('Daily attempt limit reached. Come back tomorrow.');
+        return false;
+    }
+    if (!canStartAttempt()) {
+        lockGameForAttempts();
+        showToast('Daily attempt limit reached. Come back tomorrow.');
+        return false;
+    }
+    if (!state.attemptRecorded) {
+        recordAttemptStart();
+        state.attemptRecorded = true;
+    }
+    return true;
 }
 
 // ========================================
@@ -232,6 +333,7 @@ function initializeGame() {
     state.completed = false;
     state.isAnimatingPath = false;
     state.hintOverlayTimeout = null;
+    state.attemptRecorded = false;
     resetTimer();
     hideWordCompleteHint();
     clearToast();
@@ -239,6 +341,12 @@ function initializeGame() {
     setupCanvas();
     updateTimerDisplay();
     refreshStreakUI();
+    ensureAttemptInfoFresh();
+    if (canStartAttempt()) {
+        unlockGameFromAttempts();
+    } else {
+        lockGameForAttempts();
+    }
 }
 
 function setupGridTiles() {
@@ -336,9 +444,9 @@ function handleMouseUp() {
 }
 
 function processTile(tile) {
+    if (state.attemptsLocked) return;
     const row = Number(tile.dataset.row);
     const col = Number(tile.dataset.col);
-    const key = coordKey(row, col);
 
     if (state.path.length === 0) {
         if (state.grid[row][col] !== CONFIG.WORD[0]) {
@@ -725,11 +833,60 @@ function clearToast() {
 }
 
 // ========================================
+// NAVIGATION & GLOBAL UI
+// ========================================
+
+function openMenu() {
+    document.body.classList.add('menu-open');
+    const menu = document.getElementById('mobileMenu');
+    if (menu) menu.setAttribute('aria-hidden', 'false');
+    const backdrop = document.getElementById('menuBackdrop');
+    if (backdrop) backdrop.style.display = 'block';
+}
+
+function closeMenu() {
+    document.body.classList.remove('menu-open');
+    const menu = document.getElementById('mobileMenu');
+    if (menu) menu.setAttribute('aria-hidden', 'true');
+    const backdrop = document.getElementById('menuBackdrop');
+    if (backdrop) backdrop.style.display = 'none';
+}
+
+function toggleMenu() {
+    if (document.body.classList.contains('menu-open')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+}
+
+function openLeaderboardOverlay(options = {}) {
+    const { refresh = true } = options;
+    const overlay = document.getElementById('leaderboardOverlay');
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    document.body.classList.add('leaderboard-open');
+    if (refresh) {
+        loadLeaderboard({ containerId: 'globalLeaderboard', sectionId: null });
+    }
+}
+
+function closeLeaderboardOverlay() {
+    const overlay = document.getElementById('leaderboardOverlay');
+    if (!overlay) return;
+    overlay.style.display = 'none';
+    document.body.classList.remove('leaderboard-open');
+}
+
+// ========================================
 // LEADERBOARD (FIREBASE)
 // ========================================
 
 async function saveScore(name, time) {
-    if (!db) return false;
+    if (!db) {
+        console.error('saveScore error: Firebase not initialized');
+        return false;
+    }
     try {
         await addDoc(collection(db, 'leaderboard'), {
             name,
@@ -737,18 +894,26 @@ async function saveScore(name, time) {
             timestamp: Date.now(),
             date: getTodayDateString(),
         });
+        console.log('Score saved successfully:', { name, time, date: getTodayDateString() });
         return true;
     } catch (error) {
-        console.error('saveScore error', error);
+        console.error('saveScore error:', error.code, error.message, error);
+        if (error.code === 'permission-denied') {
+            console.warn('Firebase permission denied. Check security rules.');
+        }
         return false;
     }
 }
 
 async function getScoresForToday(limitCount = null) {
-    if (!db) return [];
+    if (!db) {
+        console.error('getScoresForToday error: Firebase not initialized');
+        return [];
+    }
     try {
+        const todayStr = getTodayDateString();
         const constraints = [
-            where('date', '==', getTodayDateString()),
+            where('date', '==', todayStr),
             orderBy('time', 'asc'),
         ];
         if (limitCount) {
@@ -757,9 +922,15 @@ async function getScoresForToday(limitCount = null) {
         const snapshot = await getDocs(query(collection(db, 'leaderboard'), ...constraints));
         const results = [];
         snapshot.forEach(doc => results.push(doc.data()));
+        console.log(`getScoresForToday success: Found ${results.length} scores for ${todayStr}`);
         return results;
     } catch (error) {
-        console.error('getScoresForToday error', error);
+        console.error('getScoresForToday error:', error.code, error.message, error);
+        if (error.code === 'failed-precondition') {
+            console.warn('Query requires composite index. Check Firebase console.');
+        } else if (error.code === 'permission-denied') {
+            console.warn('Firebase permission denied. Check security rules.');
+        }
         return [];
     }
 }
@@ -779,48 +950,227 @@ async function estimatePlayerRank(timeSeconds, includePendingEntry = false) {
     return { position, total };
 }
 
-async function loadLeaderboard() {
-    const leaderboardDiv = document.getElementById('leaderboard');
-    const leaderboardSection = document.getElementById('leaderboardSection');
+function getRankEmoji(position) {
+    if (position === 1) return '🥇';
+    if (position === 2) return '🥈';
+    if (position === 3) return '🥉';
+    return null;
+}
+
+function getStreakEmoji() {
+    return '🔥';
+}
+
+async function loadLeaderboard(options = {}) {
+    const {
+        containerId = 'leaderboard',
+        sectionId = 'leaderboardSection',
+    } = options;
+
+    const leaderboardDiv = document.getElementById(containerId);
+    if (!leaderboardDiv) return;
     leaderboardDiv.innerHTML = '<div class="loading">Loading leaderboard...</div>';
 
-    const scores = await getTopScores();
-    leaderboardDiv.innerHTML = '';
+    try {
+        const scores = await getTopScores();
+        leaderboardDiv.innerHTML = '';
+        const highlightName = (localStorage.getItem('dailyPathLastName') || '').trim().toLowerCase();
 
-    if (!scores.length) {
-        leaderboardDiv.innerHTML = '<div class="no-scores">No scores yet. Be the first!</div>';
-        leaderboardSection.style.display = 'block';
-        return;
+        if (!scores.length) {
+            leaderboardDiv.innerHTML = '<div class="no-scores">No scores yet. Be the first!</div>';
+            if (sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) section.style.display = 'block';
+            }
+            return;
+        }
+
+        scores.forEach((score, index) => {
+            const position = index + 1;
+            const entry = document.createElement('div');
+            entry.className = 'leaderboard-entry';
+            
+            const rankEmoji = getRankEmoji(position);
+            const rankDisplay = rankEmoji 
+                ? `<span class="rank-emoji animated-emoji">${rankEmoji}</span>`
+                : `<span class="rank">#${position}</span>`;
+            
+            entry.innerHTML = `
+                ${rankDisplay}
+                <span class="name">${htmlEscape(score.name)}</span>
+                <span class="time">${formatTime(score.time)}</span>
+            `;
+            
+            if (highlightName && score.name && score.name.trim().toLowerCase() === highlightName) {
+                entry.classList.add('current-user');
+            }
+            
+            if (position <= 3) {
+                entry.classList.add(`rank-${position}`);
+            }
+            
+            leaderboardDiv.appendChild(entry);
+        });
+
+        if (sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) section.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('loadLeaderboard error:', error);
+        leaderboardDiv.innerHTML = '<div class="error-message">Failed to load leaderboard. Please try again.</div>';
+        if (sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) section.style.display = 'block';
+        }
     }
+}
 
-    scores.forEach((score, index) => {
-        const entry = document.createElement('div');
-        entry.className = 'leaderboard-entry';
-        entry.innerHTML = `
-            <span class="rank">#${index + 1}</span>
-            <span class="name">${score.name}</span>
-            <span class="time">${formatTime(score.time)}</span>
-        `;
-        leaderboardDiv.appendChild(entry);
-    });
+function htmlEscape(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
 
-    leaderboardSection.style.display = 'block';
+async function refreshAllLeaderboards() {
+    try {
+        await Promise.all([
+            loadLeaderboard().catch(e => console.error('refreshAllLeaderboards: loadLeaderboard failed', e)),
+            loadLeaderboard({ containerId: 'globalLeaderboard', sectionId: null }).catch(e => console.error('refreshAllLeaderboards: globalLeaderboard failed', e)),
+        ]);
+    } catch (error) {
+        console.error('refreshAllLeaderboards error:', error);
+    }
 }
 
 async function updateRankBanner(includePendingEntry = false) {
     const rankBlock = document.getElementById('yourRank');
     if (!rankBlock) return;
-    const rank = await estimatePlayerRank(state.elapsedSeconds, includePendingEntry);
-    if (!rank) {
+    try {
+        const rank = await estimatePlayerRank(state.elapsedSeconds, includePendingEntry);
+        if (!rank) {
+            rankBlock.style.display = 'none';
+            return;
+        }
+
+        rankBlock.style.display = 'block';
+        if (rank.position > CONFIG.LEADERBOARD_LIMIT) {
+            rankBlock.textContent = `You are at position ${rank.position} today. Try tomorrow!`;
+        } else {
+            rankBlock.textContent = `Current rank: #${rank.position} out of ${Math.max(rank.total, rank.position)} players.`;
+        }
+    } catch (error) {
+        console.error('updateRankBanner error:', error);
         rankBlock.style.display = 'none';
-        return;
+    }
+}
+
+// ========================================
+// TOP RANK CELEBRATION
+// ========================================
+
+function resetTopRankBanner() {
+    const banner = document.getElementById('topRankCongrats');
+    if (!banner) return;
+    banner.style.display = 'none';
+    banner.classList.remove('show', 'rank-1', 'rank-2', 'rank-3');
+}
+
+function clearTopRankPoppers() {
+    const container = document.getElementById('confetti');
+    if (container) {
+        container.innerHTML = '';
+    }
+    if (popperCleanupTimeout) {
+        clearTimeout(popperCleanupTimeout);
+        popperCleanupTimeout = null;
+    }
+}
+
+function launchTopRankPoppers(position) {
+    const container = document.getElementById('confetti');
+    if (!container) return;
+    clearTopRankPoppers();
+    const palette = {
+        1: ['#fcd34d', '#fbbf24', '#fde68a'],
+        2: ['#e2e8f0', '#94a3b8', '#cbd5f5'],
+        3: ['#fdba74', '#fb923c', '#fecdd3'],
+    };
+    const colors = palette[position] || ['#60a5fa', '#34d399', '#f472b6'];
+    const pieceCount = 56;
+    for (let i = 0; i < pieceCount; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti-piece';
+        piece.style.setProperty('--popper-color', colors[i % colors.length]);
+        const side = i % 4;
+        let top = '50%';
+        let left = '50%';
+        let travelX = `${(Math.random() - 0.5) * 220}px`;
+        let travelY = `${(Math.random() - 0.5) * 220}px`;
+
+        if (side === 0) {
+            top = '0%';
+            left = `${Math.random() * 100}%`;
+            travelY = `${140 + Math.random() * 120}px`;
+        } else if (side === 1) {
+            top = `${Math.random() * 100}%`;
+            left = '100%';
+            travelX = `${-140 - Math.random() * 120}px`;
+        } else if (side === 2) {
+            top = '100%';
+            left = `${Math.random() * 100}%`;
+            travelY = `${-140 - Math.random() * 120}px`;
+        } else {
+            top = `${Math.random() * 100}%`;
+            left = '0%';
+            travelX = `${140 + Math.random() * 120}px`;
+        }
+
+        piece.style.top = top;
+        piece.style.left = left;
+        piece.style.setProperty('--travelX', travelX);
+        piece.style.setProperty('--travelY', travelY);
+        container.appendChild(piece);
     }
 
-    rankBlock.style.display = 'block';
-    if (rank.position > CONFIG.LEADERBOARD_LIMIT) {
-        rankBlock.textContent = `You are at position ${rank.position} today. Try tomorrow!`;
-    } else {
-        rankBlock.textContent = `Current rank: #${rank.position} out of ${Math.max(rank.total, rank.position)} players.`;
+    popperCleanupTimeout = setTimeout(() => {
+        clearTopRankPoppers();
+    }, 2200);
+}
+
+async function checkAndCelebrateTopRank() {
+    const banner = document.getElementById('topRankCongrats');
+    const medal = document.getElementById('topRankMedal');
+    const title = document.getElementById('topRankTitle');
+    const subtitle = document.getElementById('topRankSubtitle');
+    if (!banner || !medal || !title || !subtitle) return;
+    resetTopRankBanner();
+
+    try {
+        const rank = await estimatePlayerRank(state.elapsedSeconds, true);
+        if (!rank || rank.position > 3) {
+            clearTopRankPoppers();
+            return;
+        }
+
+        const position = rank.position;
+        const titleMap = {
+            1: 'Legendary Run!',
+            2: 'Lightning Fast!',
+            3: 'Podium Finish!',
+        };
+
+        banner.classList.add(`rank-${position}`);
+        medal.textContent = `#${position}`;
+        title.textContent = titleMap[position] || 'Amazing Speed!';
+        subtitle.textContent = `You secured position #${position} today. Incredible work!`;
+        banner.style.display = 'flex';
+        requestAnimationFrame(() => {
+            banner.classList.add('show');
+        });
+        launchTopRankPoppers(position);
+    } catch (error) {
+        console.error('checkAndCelebrateTopRank error:', error);
     }
 }
 
@@ -831,13 +1181,13 @@ async function updateRankBanner(includePendingEntry = false) {
 function validatePlayerName(name) {
     const trimmed = name.trim();
     if (trimmed.length < 3) {
-        return { valid: false, error: 'Minimum 3 letters required.' };
+        return { valid: false, error: 'Minimum 3 characters required.' };
     }
-    if (trimmed.length > 20) {
-        return { valid: false, error: 'Maximum 20 letters allowed.' };
+    if (trimmed.length > 60) {
+        return { valid: false, error: 'Maximum 60 characters allowed.' };
     }
-    if (!/^[a-zA-Z]+$/.test(trimmed)) {
-        return { valid: false, error: 'Letters only. No numbers or symbols.' };
+    if (!/^[a-zA-Z\s]+$/.test(trimmed)) {
+        return { valid: false, error: 'Letters and spaces only. No numbers or symbols.' };
     }
     return { valid: true, error: '' };
 }
@@ -881,15 +1231,34 @@ async function submitScore() {
     validationEl.textContent = '';
     validationEl.classList.remove('error');
 
+    const submitBtn = document.getElementById('submitScoreBtn');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Saving...';
+
     recordSubmission();
-    const success = await saveScore(name.trim(), state.elapsedSeconds);
-    if (success) {
-        showToast('Score submitted!');
-        nameInput.value = '';
-        await loadLeaderboard();
-        await updateRankBanner(true);
-    } else {
+    const trimmedName = name.trim();
+
+    try {
+        const success = await saveScore(trimmedName, state.elapsedSeconds);
+
+        if (success) {
+            showToast('Score submitted!');
+            localStorage.setItem('dailyPathLastName', trimmedName);
+            nameInput.value = '';
+            await refreshAllLeaderboards();
+            await updateRankBanner(true);
+            hideCompletionModal();
+            openLeaderboardOverlay({ refresh: false });
+        } else {
+            showToast('Could not save score. Try again later.');
+        }
+    } catch (error) {
+        console.error('submitScore error', error);
         showToast('Could not save score. Try again later.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
     }
 }
 
@@ -916,10 +1285,13 @@ function showCompletionModal() {
 
     loadLeaderboard();
     updateRankBanner(false);
+    checkAndCelebrateTopRank();
 }
 
 function hideCompletionModal() {
     document.getElementById('completionModal').style.display = 'none';
+    resetTopRankBanner();
+    clearTopRankPoppers();
 }
 
 // ========================================
@@ -971,6 +1343,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', syncCanvasSize);
+
+    // Mobile menu controls
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', toggleMenu);
+    }
+    const menuBackdrop = document.getElementById('menuBackdrop');
+    if (menuBackdrop) {
+        menuBackdrop.addEventListener('click', closeMenu);
+    }
+    const menuCloseBtn = document.getElementById('menuCloseBtn');
+    if (menuCloseBtn) {
+        menuCloseBtn.addEventListener('click', closeMenu);
+    }
+    const menuLeaderboardBtn = document.getElementById('menuLeaderboardBtn');
+    if (menuLeaderboardBtn) {
+        menuLeaderboardBtn.addEventListener('click', () => {
+            closeMenu();
+            openLeaderboardOverlay();
+        });
+    }
+    document.querySelectorAll('.menu-list a').forEach((link) => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+
+    // Leaderboard overlay controls
+    const leaderboardCloseBtn = document.getElementById('leaderboardCloseBtn');
+    if (leaderboardCloseBtn) {
+        leaderboardCloseBtn.addEventListener('click', closeLeaderboardOverlay);
+    }
+    const leaderboardOverlay = document.getElementById('leaderboardOverlay');
+    if (leaderboardOverlay) {
+        leaderboardOverlay.addEventListener('click', (event) => {
+            if (event.target === leaderboardOverlay) {
+                closeLeaderboardOverlay();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+            closeLeaderboardOverlay();
+        }
+    });
+
+    const attemptHomeBtn = document.getElementById('attemptHomeBtn');
+    if (attemptHomeBtn) {
+        attemptHomeBtn.addEventListener('click', () => {
+            closeMenu();
+            closeLeaderboardOverlay();
+            const overlay = document.getElementById('attemptLimitOverlay');
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+    }
 });
 
 // ========================================
