@@ -15,10 +15,15 @@ import {
    Rebuilt swipe system, validation, and leaderboard
    ======================================== */
 
+// Custom loop pattern applied (do not modify logic)
+const LETTER_LAYOUTS = [
+    [0, 5, 25, 14, 10, 7, 28, 29, 35, 21],
+];
+
 const CONFIG = {
     GRID_SIZE: 6,
     WORD: 'LEARNSKART',
-    LETTER_PATH_INDICES: [0, 4, 8, 12, 16, 20, 25, 29, 32, 35],
+    LETTER_PATH_INDICES: [],
     HINT_TIME_PENALTY: 5,
     LEADERBOARD_LIMIT: 20,
     MAX_TIME_SECONDS: 900,
@@ -26,17 +31,72 @@ const CONFIG = {
     MAX_ATTEMPTS_PER_DAY: 2,
 };
 
+const {
+    indices: ACTIVE_LETTER_INDICES,
+    layoutIndex: ACTIVE_LAYOUT_INDEX,
+} = getDailyLetterLayout();
+
+CONFIG.LETTER_PATH_INDICES = ACTIVE_LETTER_INDICES;
+CONFIG.ACTIVE_LAYOUT_INDEX = ACTIVE_LAYOUT_INDEX;
+
+function getDailyLetterLayout() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const millisPerDay = 24 * 60 * 60 * 1000;
+    const daySeed = Math.floor(today.getTime() / millisPerDay);
+    const layoutIndex = daySeed % LETTER_LAYOUTS.length;
+    const layout = LETTER_LAYOUTS[layoutIndex] || LETTER_LAYOUTS[0];
+    return {
+        indices: [...layout],
+        layoutIndex,
+    };
+}
+
 CONFIG.TOTAL_TILES = CONFIG.GRID_SIZE * CONFIG.GRID_SIZE;
 
 const SOLUTION_PATH = buildSerpentinePath(CONFIG.GRID_SIZE);
-const SOLUTION_INDEX_LOOKUP = new Map();
-SOLUTION_PATH.forEach((coord, index) => {
-    SOLUTION_INDEX_LOOKUP.set(coordKey(coord.row, coord.col), index);
-});
 const LETTER_COORDS = CONFIG.LETTER_PATH_INDICES.map(index => SOLUTION_PATH[index]);
 const LETTER_COORD_KEY_LOOKUP = new Map(
     LETTER_COORDS.map((coord, idx) => [coordKey(coord.row, coord.col), idx])
 );
+const HINT_PATH_SEQUENCE = [
+    { row: 0, col: 0 },
+    { row: 0, col: 1 },
+    { row: 0, col: 2 },
+    { row: 0, col: 3 },
+    { row: 0, col: 4 },
+    { row: 0, col: 5 },
+    { row: 1, col: 5 },
+    { row: 2, col: 5 },
+    { row: 3, col: 5 },
+    { row: 4, col: 5 },
+    { row: 5, col: 5 },
+    { row: 5, col: 4 },
+    { row: 5, col: 3 },
+    { row: 5, col: 2 },
+    { row: 5, col: 1 },
+    { row: 5, col: 0 },
+    { row: 4, col: 0 },
+    { row: 3, col: 0 },
+    { row: 2, col: 0 },
+    { row: 1, col: 0 },
+    { row: 1, col: 1 },
+    { row: 1, col: 2 },
+    { row: 1, col: 3 },
+    { row: 1, col: 4 },
+    { row: 2, col: 4 },
+    { row: 3, col: 4 },
+    { row: 4, col: 4 },
+    { row: 4, col: 3 },
+    { row: 4, col: 2 },
+    { row: 4, col: 1 },
+    { row: 3, col: 1 },
+    { row: 2, col: 1 },
+    { row: 2, col: 2 },
+    { row: 2, col: 3 },
+    { row: 3, col: 3 },
+    { row: 3, col: 2 },
+];
 const GRID_TEMPLATE = buildGridTemplate();
 
 const state = {
@@ -57,6 +117,7 @@ const state = {
     ctx: null,
     isAnimatingPath: false,
     hintOverlayTimeout: null,
+    hintAnimationToken: 0,
     hintAcknowledged: false,
     attemptRecorded: false,
     attemptsLocked: false,
@@ -127,6 +188,13 @@ function coordKey(row, col) {
     return `${row}-${col}`;
 }
 
+const DIRECTIONS = [
+    { row: 1, col: 0 },
+    { row: -1, col: 0 },
+    { row: 0, col: 1 },
+    { row: 0, col: -1 },
+];
+
 // ========================================
 // TIMER & STREAK UTILITIES
 // ========================================
@@ -170,7 +238,7 @@ function resetTimer() {
 function updateTimerDisplay() {
     document.getElementById('timer').textContent = formatTime(state.elapsedSeconds);
 }
-
+ 
 function getTodayDateString() {
     const today = new Date();
     const year = today.getFullYear();
@@ -312,10 +380,6 @@ function ensureAttemptAvailability() {
         lockGameForAttempts();
         showToast('Daily attempt limit reached. Come back tomorrow.');
         return false;
-    }
-    if (!state.attemptRecorded) {
-        recordAttemptStart();
-        state.attemptRecorded = true;
     }
     return true;
 }
@@ -571,6 +635,53 @@ function areAdjacent(a, b) {
     return Math.abs(a.row - b.row) + Math.abs(a.col - b.col) === 1;
 }
 
+function findGridPath(start, target) {
+    if (!start || !target) return null;
+    const startKey = coordKey(start.row, start.col);
+    const targetKey = coordKey(target.row, target.col);
+    if (startKey === targetKey) {
+        return [{ row: start.row, col: start.col }];
+    }
+
+    const queue = [{ row: start.row, col: start.col }];
+    const parents = new Map();
+    const visited = new Set([startKey]);
+
+    while (queue.length) {
+        const current = queue.shift();
+        for (const dir of DIRECTIONS) {
+            const nr = current.row + dir.row;
+            const nc = current.col + dir.col;
+            if (nr < 0 || nr >= CONFIG.GRID_SIZE || nc < 0 || nc >= CONFIG.GRID_SIZE) {
+                continue;
+            }
+            const key = coordKey(nr, nc);
+            if (visited.has(key)) continue;
+            visited.add(key);
+            parents.set(key, coordKey(current.row, current.col));
+            if (key === targetKey) {
+                return reconstructPath(parents, startKey, targetKey);
+            }
+            queue.push({ row: nr, col: nc });
+        }
+    }
+
+    return null;
+}
+
+function reconstructPath(parents, startKey, endKey) {
+    const path = [];
+    let currentKey = endKey;
+    while (currentKey) {
+        const [row, col] = currentKey.split('-').map(Number);
+        path.push({ row, col });
+        if (currentKey === startKey) break;
+        currentKey = parents.get(currentKey);
+        if (!currentKey) break;
+    }
+    return path.reverse();
+}
+
 // ========================================
 // PROGRESS & VALIDATION
 // ========================================
@@ -616,7 +727,7 @@ function handleCompletion() {
     state.mouseDown = false;
     state.touchActive = false;
     stopTimer();
-    clearHintOverlay();
+    cancelHintOverlayAnimation();
     applyCompletionStreak();
     animateCompletionPath().then(() => {
         showCompletionModal();
@@ -741,20 +852,21 @@ function applyHint() {
     }
 
     const lastStep = state.path[state.path.length - 1];
-    let fromIndex = SOLUTION_INDEX_LOOKUP.get(coordKey(lastStep.row, lastStep.col));
-    const targetIndex = CONFIG.LETTER_PATH_INDICES[progress];
+    const currentIndex = HINT_PATH_SEQUENCE.findIndex(step => step.row === lastStep.row && step.col === lastStep.col);
 
-    if (typeof fromIndex !== 'number') {
-        fromIndex = CONFIG.LETTER_PATH_INDICES[Math.max(progress - 1, 0)];
-    }
-
-    if (targetIndex <= fromIndex) {
-        showToast('Move forward to reach the next letter.');
+    if (currentIndex === -1) {
+        showToast('Hint unavailable from the current path.');
         return;
     }
 
-    const segment = SOLUTION_PATH.slice(fromIndex, targetIndex + 1);
-    drawHintOverlay(segment);
+    if (currentIndex >= HINT_PATH_SEQUENCE.length - 1) {
+        showToast('The word is already complete!');
+        return;
+    }
+
+    const sequence = HINT_PATH_SEQUENCE.slice(currentIndex, currentIndex + 2);
+    cancelHintOverlayAnimation();
+    drawHintOverlay(sequence);
 }
 
 function getLetterProgress() {
@@ -769,34 +881,68 @@ function getLetterProgress() {
     return progress;
 }
 
-function drawHintOverlay(segment) {
-    if (!state.ctx) return;
-    clearHintOverlay();
+async function drawHintOverlay(sequence) {
+    if (!state.ctx || !sequence || sequence.length < 2) return;
+    const animationToken = ++state.hintAnimationToken;
     const ctx = state.ctx;
-    const points = segment.map(({ row, col }) => getTileCenter(row, col));
+    const startPoint = getTileCenter(sequence[0].row, sequence[0].col);
+    const endPoint = getTileCenter(sequence[1].row, sequence[1].col);
+    const duration = 450;
+    const startTime = performance.now();
 
-    ctx.save();
-    ctx.strokeStyle = 'rgba(129, 212, 250, 0.9)';
-    ctx.lineWidth = 6;
-    ctx.setLineDash([10, 10]);
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
+    function frame(now) {
+        if (animationToken !== state.hintAnimationToken) return;
 
-    ctx.beginPath();
-    ctx.moveTo(points[0].x, points[0].y);
-    for (let i = 1; i < points.length; i++) {
-        ctx.lineTo(points[i].x, points[i].y);
-    }
-    ctx.stroke();
-    ctx.restore();
+        const progress = Math.min((now - startTime) / duration, 1);
+        const x = startPoint.x + (endPoint.x - startPoint.x) * progress;
+        const y = startPoint.y + (endPoint.y - startPoint.y) * progress;
 
-    state.hintOverlayTimeout = setTimeout(() => {
         drawLivePath();
-        state.hintOverlayTimeout = null;
-    }, 2000);
+
+        ctx.save();
+        ctx.strokeStyle = 'rgba(129, 212, 250, 0.95)';
+        ctx.lineWidth = 6;
+        ctx.setLineDash([10, 10]);
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+
+        ctx.beginPath();
+        ctx.moveTo(startPoint.x, startPoint.y);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+
+        ctx.setLineDash([]);
+        ctx.fillStyle = 'rgba(129, 212, 250, 0.98)';
+        ctx.beginPath();
+        ctx.arc(x, y, 8, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+
+        if (progress < 1) {
+            requestAnimationFrame(frame);
+            return;
+        }
+
+        state.hintOverlayTimeout = setTimeout(() => {
+            drawLivePath();
+            state.hintOverlayTimeout = null;
+        }, 2000);
+    }
+
+    requestAnimationFrame(frame);
 }
 
 function clearHintOverlay() {
+    if (state.hintOverlayTimeout) {
+        clearTimeout(state.hintOverlayTimeout);
+        state.hintOverlayTimeout = null;
+    }
+    drawLivePath();
+}
+
+function cancelHintOverlayAnimation() {
+    state.hintAnimationToken += 1;
     if (state.hintOverlayTimeout) {
         clearTimeout(state.hintOverlayTimeout);
         state.hintOverlayTimeout = null;
@@ -1243,6 +1389,7 @@ async function submitScore() {
         const success = await saveScore(trimmedName, state.elapsedSeconds);
 
         if (success) {
+            recordAttemptStart();
             showToast('Score submitted!');
             localStorage.setItem('dailyPathLastName', trimmedName);
             nameInput.value = '';
@@ -1317,6 +1464,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('hintCancelBtn').addEventListener('click', cancelHintUsage);
     document.getElementById('submitScoreBtn').addEventListener('click', submitScore);
     document.getElementById('playAgainBtn').addEventListener('click', () => {
+        const nameInput = document.getElementById('playerName');
+        const nameSection = document.getElementById('nameInputSection');
+        const needsName = nameSection && nameSection.style.display !== 'none' && !nameInput.value.trim();
+        if (needsName) {
+            showToast('Please enter your name before continuing.');
+            return;
+        }
         hideCompletionModal();
         resetGame();
     });
