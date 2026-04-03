@@ -1449,7 +1449,7 @@ function getCompletionRankValue() {
 function shareScore(name, score, rank) {
     const text = `🔥 LearnSkart Daily Puzzle
 
-🙋 ${name}
+👋 Hey, I'm ${name}!
 
 ⏱ I solved it in: ${score} seconds  
 🏆 My Rank: #${rank}
