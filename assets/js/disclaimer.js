@@ -4,44 +4,47 @@
     paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
 })();
 
-        // Disclaimer acceptance
-        const checkbox = document.getElementById('agreeCheck');
-        const button = document.getElementById('agreeBtn');
-        const status = document.getElementById('acceptanceStatus');
-        const yearSpan = document.getElementById('year');
+document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('agreeCheck');
+    var button = document.getElementById('agreeBtn');
+    var status = document.getElementById('acceptanceStatus');
+    var yearSpan = document.getElementById('year');
 
+    if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
+    }
 
-        // Check if already accepted
-        const isAccepted = localStorage.getItem('disclaimerAccepted');
+    if (checkbox && button && status) {
+        var isAccepted = localStorage.getItem('disclaimerAccepted');
         if (isAccepted) {
             checkbox.checked = true;
             button.disabled = false;
             status.classList.add('show');
         }
 
-        checkbox.addEventListener('change', () => {
+        checkbox.addEventListener('change', function () {
             button.disabled = !checkbox.checked;
         });
 
-        button.addEventListener('click', () => {
+        button.addEventListener('click', function () {
             localStorage.setItem('disclaimerAccepted', 'true');
             status.classList.add('show');
             button.disabled = true;
-            setTimeout(() => {
+            setTimeout(function () {
                 checkbox.disabled = true;
             }, 500);
         });
+    }
 
-        // Smooth anchor navigation for TOC
-        document.querySelectorAll('.toc a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    history.pushState(null, null, targetId);
-                    targetElement.focus();
-                }
-            });
+    document.querySelectorAll('.toc a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            var targetId = link.getAttribute('href');
+            var targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                history.pushState(null, null, targetId);
+                targetElement.focus();
+            }
         });
+    });
+});
     
