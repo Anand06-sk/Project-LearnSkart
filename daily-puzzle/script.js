@@ -1395,6 +1395,14 @@ async function submitScore() {
             nameInput.value = '';
             await refreshAllLeaderboards();
             await updateRankBanner(true);
+            const rankValue = await ensureCompletionRank();
+            if (rankValue) {
+                try {
+                    await shareScore(trimmedName, state.elapsedSeconds, rankValue);
+                } catch (error) {
+                    console.error('shareScore error:', error);
+                }
+            }
             hideCompletionModal();
             openLeaderboardOverlay({ refresh: false });
         } else {
@@ -1412,6 +1420,86 @@ async function submitScore() {
 // ========================================
 // COMPLETION MODAL
 // ========================================
+
+async function ensureCompletionRank() {
+    const completionRankEl = document.getElementById('completionRank');
+    if (!completionRankEl) return null;
+
+    completionRankEl.textContent = '-';
+    try {
+        const rank = await estimatePlayerRank(state.elapsedSeconds, true);
+        if (rank) {
+            completionRankEl.textContent = `#${rank.position}`;
+            return String(rank.position);
+        }
+    } catch (error) {
+        console.error('ensureCompletionRank error:', error);
+    }
+    return null;
+}
+
+function getCompletionRankValue() {
+    const completionRankEl = document.getElementById('completionRank');
+    if (!completionRankEl) return '';
+    const text = completionRankEl.textContent.trim();
+    if (!text || text === '-') return '';
+    return text.replace('#', '');
+}
+
+function shareScore(name, score, rank) {
+    const text = `🔥 LearnSkart Daily Puzzle
+
+🙋 ${name}
+
+⏱ I solved it in: ${score} seconds  
+🏆 My Rank: #${rank}
+
+😎 Think you can beat me?
+🧠 Try now and prove it!
+
+👉 https://yourwebsite.com/daily-puzzle`;
+
+    if (navigator.share) {
+        return navigator.share({
+            title: 'LearnSkart Puzzle Challenge',
+            text: text,
+        });
+    }
+
+    return navigator.clipboard.writeText(text).then(() => {
+        alert('Copied! Share it with your friends 🔥');
+    });
+}
+
+async function handleShareScore() {
+    if (!state.completed) {
+        showToast('Finish the puzzle to share your score.');
+        return;
+    }
+    const nameInput = document.getElementById('playerName');
+    const playerName = nameInput ? nameInput.value.trim() : '';
+    if (!playerName) {
+        showToast('Please enter your name before sharing.');
+        return;
+    }
+
+    let rankValue = getCompletionRankValue();
+    if (!rankValue) {
+        rankValue = await ensureCompletionRank();
+    }
+
+    if (!rankValue) {
+        showToast('Rank unavailable right now. Please try again.');
+        return;
+    }
+
+    try {
+        await shareScore(playerName, state.elapsedSeconds, rankValue);
+    } catch (error) {
+        console.error('shareScore error:', error);
+        showToast('Share cancelled.');
+    }
+}
 
 function showCompletionModal() {
     const modal = document.getElementById('completionModal');
@@ -1432,6 +1520,7 @@ function showCompletionModal() {
 
     loadLeaderboard();
     updateRankBanner(false);
+    ensureCompletionRank();
     checkAndCelebrateTopRank();
 }
 
@@ -1463,6 +1552,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('hintConfirmBtn').addEventListener('click', confirmHintUsage);
     document.getElementById('hintCancelBtn').addEventListener('click', cancelHintUsage);
     document.getElementById('submitScoreBtn').addEventListener('click', submitScore);
+    document.getElementById('shareScoreBtn').addEventListener('click', handleShareScore);
     document.getElementById('playAgainBtn').addEventListener('click', () => {
         const nameInput = document.getElementById('playerName');
         const nameSection = document.getElementById('nameInputSection');
@@ -1558,8 +1648,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ========================================
-// DEBUG HELPERS
 // ========================================
 
 window.DEBUG = {
