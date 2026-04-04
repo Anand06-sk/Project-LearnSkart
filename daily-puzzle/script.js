@@ -1457,7 +1457,7 @@ function shareScore(name, score, rank) {
 😎 Think you can beat me?
 🧠 Try now and prove it!
 
-👉 https://yourwebsite.com/daily-puzzle`;
+👉 https://learnskart.in/daily-puzzle/`;
 
     if (navigator.share) {
         return navigator.share({

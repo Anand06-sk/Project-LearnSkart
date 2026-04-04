@@ -36,6 +36,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://learnskart.in/daily-puzzle/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnskart.in/gate-syllabus/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://learnskart.in/anna-university-notes/civil/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
