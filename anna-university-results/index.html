@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -507,6 +507,27 @@
       line-height: 1.6;
     }
 
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--primary);
+    }
+
     .logo-img {
       width: 48px;
       height: 48px;
@@ -540,6 +561,54 @@
       border-color: var(--primary);
       transform: translateY(-3px) scale(1.1);
       box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    .footer-social {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-social .social-links-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-social .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      width: fit-content;
+      border-radius: 999px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      background: rgba(59, 130, 246, 0.08);
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .footer-social .social-link i {
+      font-size: 18px;
+    }
+
+    .footer-social .fa-instagram {
+      color: #e1306c;
+    }
+
+    .footer-social .fa-youtube {
+      color: #ff0000;
+    }
+
+    .footer-social .social-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+      background: rgba(59, 130, 246, 0.15);
     }
 
     .footer-bottom {
@@ -746,12 +815,12 @@
           <a href="/syllabus/">Syllabus</a>
           <a href="/previous-year-questions/">PYQs</a>
           <a href="/cgpa-calculator/">CGPA Calculator</a>
-          <a href="https://learnskart.in/">Home</a>
+          <a href="/index.html">Home</a>
         </nav>
       </div>
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol>
-          <li><a href="/">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li aria-hidden="true">/</li>
           <li aria-current="page">Anna University Results</li>
         </ol>
@@ -905,13 +974,31 @@
         <p>For educational guidance only. LearnSkart does not host Anna University result data. Always verify final status on official university portals.</p>
       </div>
       <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        </div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/syllabus/">Syllabus</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="footer-bottom">
+        <div class="footer-section footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+                <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@LearnSkart</span>
+                </a>
+                <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+</div>
+<div class="footer-bottom">
       <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
     </div>
   </footer>
@@ -936,3 +1023,6 @@
   <script src="../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+

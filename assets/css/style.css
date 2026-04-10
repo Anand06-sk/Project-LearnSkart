@@ -257,6 +257,16 @@ body.dark-mode .social-links a:hover {
 body.dark-mode .social-links a i:hover{
    color:white !important;
 }
+body.dark-mode .footer-social .social-link {
+    background: rgba(96, 165, 250, 0.12);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #60a5fa;
+}
+
+body.dark-mode .footer-social .social-link:hover {
+    background: rgba(96, 165, 250, 0.18);
+    box-shadow: 0 8px 16px rgba(96, 165, 250, 0.2);
+}
 
 .anna-highlight {
     font-family: 'Poppins', sans-serif;
@@ -1061,6 +1071,53 @@ footer {
     box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
 }
 
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-social .social-links-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-social .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    width: fit-content;
+    border-radius: 999px;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.footer-social .social-link i {
+    font-size: 18px;
+}
+
+.footer-social .fa-instagram {
+    color: #e1306c;
+}
+
+.footer-social .fa-youtube {
+    color: #ff0000;
+}
+
+.footer-social .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+    background: rgba(59, 130, 246, 0.15);
+}
+
 .footer-bottom {
     text-align: center;
     padding: 20px 40px;
@@ -1652,6 +1709,19 @@ footer {
     .social-links a {
         width: 36px;
         height: 36px;
+        font-size: 16px;
+    }
+
+    .footer-social {
+        gap: 10px;
+    }
+
+    .footer-social .social-link {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .footer-social .social-link i {
         font-size: 16px;
     }
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="assets/icons/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Main Game Container -->
@@ -24,7 +25,7 @@
                         <span class="logo-text">LearnSkart</span>
                     </a>
                     <div class="streak-badge">
-                        <span class="streak-icon">🔥</span>
+                        <span class="streak-icon">ðŸ”¥</span>
                         <div class="streak-info">
                             <span class="streak-label">Daily streak</span>
                             <span class="streak-count" id="streakCount">0</span>
@@ -74,10 +75,10 @@
         <!-- Controls -->
         <div class="controls">
             <button class="btn btn-secondary" id="resetBtn" title="Reset the puzzle">
-                🔄 Reset
+                ðŸ”„ Reset
             </button>
             <button class="btn btn-secondary" id="hintBtn" title="Get a hint (adds 5 seconds)">
-                💡 Hint
+                ðŸ’¡ Hint
             </button>
         </div>
     </div>
@@ -98,7 +99,7 @@
         <div class="modal-content completion-modal">
             <div class="completion-celebration">
                 <div class="confetti" id="confetti"></div>
-                <h2 id="completionTitle">Puzzle Complete! 🎉</h2>
+                <h2 id="completionTitle">Puzzle Complete! ðŸŽ‰</h2>
                 <div class="completion-stats">
                     <div class="stat-row">
                         <span class="label">Time Taken:</span>
@@ -148,7 +149,7 @@
                 <!-- Action Buttons -->
                 <div class="modal-buttons">
                     <button class="btn btn-primary" id="submitScoreBtn">Submit Score</button>
-                    <button class="btn btn-secondary" id="shareScoreBtn">🔗 Challenge Friends</button>
+                    <button class="btn btn-secondary" id="shareScoreBtn">ðŸ”— Challenge Friends</button>
                     <button class="btn btn-secondary" id="playAgainBtn">Play Again Tomorrow</button>
                 </div>
             </div>
@@ -210,9 +211,9 @@
     <!-- Attempt Limit Overlay -->
     <div class="attempt-limit-overlay" id="attemptLimitOverlay" style="display: none;">
         <div class="attempt-card">
-            <h3>🎮 Daily Attempts Used</h3>
+            <h3>ðŸŽ® Daily Attempts Used</h3>
             <p>You have already completed your two chances today.</p>
-            <p class="attempt-note">✨ The puzzle resets every 24 hours at midnight. Come back tomorrow to play again!</p>
+            <p class="attempt-note">âœ¨ The puzzle resets every 24 hours at midnight. Come back tomorrow to play again!</p>
             <button class="btn btn-primary" id="attemptHomeBtn">Got It</button>
         </div>
     </div>
@@ -236,18 +237,23 @@
                     <li><a href="/privacy/index.html">Privacy Policy</a></li>
                     <li><a href="/disclaimer/index.html">Disclaimer</a></li>
                 </ul>
-            </div>
-            <div class="footer-section footer-social">
-                <h4>Follow Us</h4>
+</div>
+</div>
+        <div class="footer-section footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
                 <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                    <svg class="social-icon" width="28" height="28" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm9 1a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" fill="currentColor" />
-                    </svg>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
                     <span>@LearnSkart</span>
+                </a>
+                <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>YouTube</span>
                 </a>
             </div>
         </div>
-        <div class="footer-bottom">
+</div>
+<div class="footer-bottom">
             <p class="footer-copy">&copy; 2026 LearnSkart. All rights reserved.</p>
         </div>
     </footer>
@@ -256,3 +262,8 @@
     <script type="module" src="script.js"></script>
 </body>
 </html>
+
+
+
+
+

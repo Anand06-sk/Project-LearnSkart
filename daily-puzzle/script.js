@@ -16,8 +16,9 @@ import {
    ======================================== */
 
 // Custom loop pattern applied (do not modify logic)
+// Updated pattern + optimized line rendering (no logic changes)
 const LETTER_LAYOUTS = [
-    [0, 5, 25, 14, 10, 7, 28, 29, 35, 21],
+    [0, 35, 25, 10, 14, 20, 3, 7, 28, 5],
 ];
 
 const CONFIG = {
@@ -61,41 +62,41 @@ const LETTER_COORD_KEY_LOOKUP = new Map(
 );
 const HINT_PATH_SEQUENCE = [
     { row: 0, col: 0 },
+    { row: 1, col: 0 },
+    { row: 2, col: 0 },
+    { row: 3, col: 0 },
+    { row: 4, col: 0 },
+    { row: 5, col: 0 },
+    { row: 5, col: 1 },
+    { row: 4, col: 1 },
+    { row: 3, col: 1 },
+    { row: 2, col: 1 },
+    { row: 1, col: 1 },
     { row: 0, col: 1 },
     { row: 0, col: 2 },
+    { row: 1, col: 2 },
+    { row: 2, col: 2 },
+    { row: 3, col: 2 },
+    { row: 4, col: 2 },
+    { row: 5, col: 2 },
+    { row: 5, col: 3 },
+    { row: 4, col: 3 },
+    { row: 3, col: 3 },
+    { row: 2, col: 3 },
+    { row: 1, col: 3 },
     { row: 0, col: 3 },
     { row: 0, col: 4 },
-    { row: 0, col: 5 },
-    { row: 1, col: 5 },
-    { row: 2, col: 5 },
-    { row: 3, col: 5 },
-    { row: 4, col: 5 },
-    { row: 5, col: 5 },
-    { row: 5, col: 4 },
-    { row: 5, col: 3 },
-    { row: 5, col: 2 },
-    { row: 5, col: 1 },
-    { row: 5, col: 0 },
-    { row: 4, col: 0 },
-    { row: 3, col: 0 },
-    { row: 2, col: 0 },
-    { row: 1, col: 0 },
-    { row: 1, col: 1 },
-    { row: 1, col: 2 },
-    { row: 1, col: 3 },
     { row: 1, col: 4 },
     { row: 2, col: 4 },
     { row: 3, col: 4 },
     { row: 4, col: 4 },
-    { row: 4, col: 3 },
-    { row: 4, col: 2 },
-    { row: 4, col: 1 },
-    { row: 3, col: 1 },
-    { row: 2, col: 1 },
-    { row: 2, col: 2 },
-    { row: 2, col: 3 },
-    { row: 3, col: 3 },
-    { row: 3, col: 2 },
+    { row: 5, col: 4 },
+    { row: 5, col: 5 },
+    { row: 4, col: 5 },
+    { row: 3, col: 5 },
+    { row: 2, col: 5 },
+    { row: 1, col: 5 },
+    { row: 0, col: 5 },
 ];
 const GRID_TEMPLATE = buildGridTemplate();
 
@@ -121,6 +122,10 @@ const state = {
     hintAcknowledged: false,
     attemptRecorded: false,
     attemptsLocked: false,
+    tileCenters: [],
+    drawQueued: false,
+    moveQueueTile: null,
+    moveQueueRaf: null,
 };
 
 let popperCleanupTimeout = null;
@@ -461,9 +466,34 @@ function syncCanvasSize() {
     state.wrapperRect = state.wrapperEl.getBoundingClientRect();
     state.canvas.width = state.wrapperRect.width;
     state.canvas.height = state.wrapperRect.height;
+    updateTileCenters();
     if (!state.isAnimatingPath) {
-        drawLivePath();
+        requestDrawLivePath();
     }
+}
+
+function updateTileCenters() {
+    if (!state.wrapperEl || !state.tileMatrix.length) return;
+    const wrapperRect = state.wrapperRect || state.wrapperEl.getBoundingClientRect();
+    state.tileCenters = state.tileMatrix.map(row =>
+        row.map(tile => {
+            if (!tile) return null;
+            const rect = tile.getBoundingClientRect();
+            return {
+                x: rect.left - wrapperRect.left + rect.width / 2,
+                y: rect.top - wrapperRect.top + rect.height / 2,
+            };
+        })
+    );
+}
+
+function requestDrawLivePath() {
+    if (state.drawQueued) return;
+    state.drawQueued = true;
+    requestAnimationFrame(() => {
+        state.drawQueued = false;
+        drawLivePath();
+    });
 }
 
 function handleTouchStart(event) {
@@ -480,7 +510,7 @@ function handleTouchMove(event) {
     if (!touch) return;
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
     if (element && element.classList.contains('grid-tile')) {
-        processTile(element);
+        queueMoveTile(element);
     }
 }
 
@@ -499,12 +529,25 @@ function handleMouseMove(event) {
     if (!state.mouseDown || state.completed) return;
     const element = document.elementFromPoint(event.clientX, event.clientY);
     if (element && element.classList.contains('grid-tile')) {
-        processTile(element);
+        queueMoveTile(element);
     }
 }
 
 function handleMouseUp() {
     state.mouseDown = false;
+}
+
+function queueMoveTile(tile) {
+    state.moveQueueTile = tile;
+    if (state.moveQueueRaf) return;
+    state.moveQueueRaf = requestAnimationFrame(() => {
+        state.moveQueueRaf = null;
+        const nextTile = state.moveQueueTile;
+        state.moveQueueTile = null;
+        if (nextTile) {
+            processTile(nextTile);
+        }
+    });
 }
 
 function processTile(tile) {
@@ -544,7 +587,7 @@ function addTileToPath(row, col, tile) {
     state.path.push({ row, col, element: tile });
     state.visitedKeys.add(key);
     updateTileClasses();
-    drawLivePath();
+    requestDrawLivePath();
     evaluateProgress();
 }
 
@@ -556,7 +599,7 @@ function trimPath(targetLength) {
         removed.element.classList.remove('visited', 'current');
     }
     updateTileClasses();
-    drawLivePath();
+    requestDrawLivePath();
     evaluateProgress();
 }
 
@@ -621,6 +664,8 @@ function drawPathDots(points, ctx) {
 }
 
 function getTileCenter(row, col) {
+    const cached = state.tileCenters?.[row]?.[col];
+    if (cached) return cached;
     const tile = state.tileMatrix[row][col];
     if (!tile) return { x: 0, y: 0 };
     const tileRect = tile.getBoundingClientRect();
@@ -938,7 +983,7 @@ function clearHintOverlay() {
         clearTimeout(state.hintOverlayTimeout);
         state.hintOverlayTimeout = null;
     }
-    drawLivePath();
+    requestDrawLivePath();
 }
 
 function cancelHintOverlayAnimation() {
@@ -947,7 +992,7 @@ function cancelHintOverlayAnimation() {
         clearTimeout(state.hintOverlayTimeout);
         state.hintOverlayTimeout = null;
     }
-    drawLivePath();
+    requestDrawLivePath();
 }
 
 // ========================================
