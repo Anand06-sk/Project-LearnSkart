@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -15,6 +15,33 @@
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
@@ -180,7 +207,7 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3251 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
             <h2 style="margin-bottom: 0.75rem;">CS3251 PROGRAMMING IN C</h2>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
 
@@ -194,19 +221,19 @@
                 <li>To do input/output and file handling in C</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I BASICS OF C PROGRAMMING 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT I BASICS OF C PROGRAMMING 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction to programming paradigms - Applications of C Language - Structure of C program - C programming: Data Types - Constants - Enumeration Constants - Keywords - Operators: Precedence and Associativity - Expressions - Input/Output statements, Assignment statements - Decision making statements - Switch statement - Looping statements - Preprocessor directives - Compilation process</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II ARRAYS AND STRINGS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT II ARRAYS AND STRINGS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction to Arrays: Declaration, Initialization - One dimensional array - Two dimensional arrays - String operations: length, compare, concatenate, copy - Selection sort, linear and binary search.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III FUNCTIONS AND POINTERS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III FUNCTIONS AND POINTERS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Modular programming - Function prototype, function definition, function call, Built-in functions (string functions, math functions) - Recursion, Binary Search using recursive functions - Pointers - Pointer operators - Pointer arithmetic - Arrays and pointers - Array of pointers - Parameter passing: Pass by value, Pass by reference.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV STRUCTURES AND UNION 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV STRUCTURES AND UNION 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Structure - Nested structures - Pointer and Structures - Array of structures - Self referential structures - Dynamic memory allocation - Singly linked list - typedef - Union - Storage classes and Visibility.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V FILE PROCESSING 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V FILE PROCESSING 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Files - Types of file processing: Sequential access, Random access - Sequential access file - Random access file - Command line arguments.</p>
 
             <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
@@ -222,13 +249,13 @@
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL : 45 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOKS:</h2>
+            <h2 class="syllabus-blue-heading">TEXT BOOKS:</h2>
             <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>ReemaThareja, "Programming in C", Oxford University Press, Second Edition, 2016.</li>
                 <li>Kernighan, B.W and Ritchie,D.M, "The C Programming language", Second Edition, Pearson Education, 2015.</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES:</h2>
+            <h2 class="syllabus-blue-heading">REFERENCES:</h2>
             <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
                 <li>Paul Deitel and Harvey Deitel, "C How to Program with an Introduction to C++", Eighth edition, Pearson Education, 2018.</li>
                 <li>Yashwant Kanetkar, Let us C, 17th Edition, BPB Publications, 2020.</li>

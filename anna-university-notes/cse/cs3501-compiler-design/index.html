@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -15,6 +15,33 @@
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
@@ -167,11 +194,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3501 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
             <h2 style="margin-bottom: 0.75rem;">CS3501 COMPILER DESIGN</h2>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 2 4</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>To learn the various phases of compiler.</li>
                 <li>To learn the various parsing techniques.</li>
@@ -181,24 +208,24 @@
                 <li>To learn to implement code optimization.</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I INTRODUCTION TO COMPILERS &amp; LEXICAL ANALYSIS 8</h2>
+            <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION TO COMPILERS &amp; LEXICAL ANALYSIS 8</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction- Translators- Compilation and Interpretation- Language processors -The Phases of Compiler - Lexical Analysis - Role of Lexical Analyzer - Input Buffering - Specification of Tokens - Recognition of Tokens - Finite Automata - Regular Expressions to Automata NFA, DFA - Minimizing DFA - Language for Specifying Lexical Analyzers - Lex tool.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II SYNTAX ANALYSIS 11</h2>
+            <h2 class="syllabus-blue-heading">UNIT II SYNTAX ANALYSIS 11</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Role of Parser - Grammars - Context-free grammars - Writing a grammar Top Down Parsing - General Strategies - Recursive Descent Parser Predictive Parser-LL(1) - Parser-Shift Reduce Parser-LR Parser- LR (0)Item Construction of SLR Parsing Table - Introduction to LALR Parser - Error Handling and Recovery in Syntax Analyzer-YACC tool - Design of a syntax Analyzer for a Sample Language</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III SYNTAX DIRECTED TRANSLATION &amp; INTERMEDIATE CODE GENERATION 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III SYNTAX DIRECTED TRANSLATION &amp; INTERMEDIATE CODE GENERATION 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Syntax directed Definitions-Construction of Syntax Tree-Bottom-up Evaluation of S-Attribute Definitions- Design of predictive translator - Type Systems-Specification of a simple type Checker- Equivalence of Type Expressions-Type Conversions. Intermediate Languages: Syntax Tree, Three Address Code, Types and Declarations, Translation of Expressions, Type Checking, Back patching.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV RUN-TIME ENVIRONMENT AND CODE GENERATION 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV RUN-TIME ENVIRONMENT AND CODE GENERATION 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Runtime Environments - source language issues - Storage organization - Storage Allocation Strategies: Static, Stack and Heap allocation - Parameter Passing-Symbol Tables - Dynamic Storage Allocation - Issues in the Design of a code generator - Basic Blocks and Flow graphs - Design of a simple Code Generator - Optimal Code Generation for Expressions- Dynamic Programming Code Generation.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V CODE OPTIMIZATION 8</h2>
+            <h2 class="syllabus-blue-heading">UNIT V CODE OPTIMIZATION 8</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Principal Sources of Optimization - Peep-hole optimization - DAG- Optimization of Basic Blocks - Global Data Flow Analysis - Efficient Data Flow Algorithm - Recent trends in Compiler Design.</p>
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>45 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">LIST OF EXPERIMENTS:</h2>
+            <h2 class="syllabus-blue-heading">LIST OF EXPERIMENTS:</h2>
             <ol style="line-height:1.8; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Using the LEX tool, Develop a lexical analyzer to recognize a few patterns in C. (Ex. identifiers, constants, comments, operators etc.). Create a symbol table, while recognizing identifiers.</li>
                 <li>Implement a Lexical Analyzer using LEX Tool</li>
@@ -217,7 +244,7 @@
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>30 PERIODS</strong></p>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL: 75 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
             <p style="line-height:1.7; margin-bottom:0.5rem;">On Completion of the course, the students should be able to:</p>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>CO1:Understand the techniques in different phases of a compiler.</li>
@@ -227,12 +254,12 @@
                 <li>CO5:Implement code generation and apply code optimization techniques.</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOK:</h2>
+            <h2 class="syllabus-blue-heading">TEXT BOOK:</h2>
             <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman, "Compilers: Principles, Techniques and Tools", Second Edition, Pearson Education, 2009.</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES</h2>
+            <h2 class="syllabus-blue-heading">REFERENCES</h2>
             <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
                 <li>Randy Allen, Ken Kennedy, Optimizing Compilers for Modern Architectures: A Dependence based Approach, Morgan Kaufmann Publishers, 2002.</li>
                 <li>Steven S. Muchnick, Advanced Compiler Design and Implementation, Morgan Kaufmann Publishers - Elsevier Science, India, Indian Reprint 2003.</li>

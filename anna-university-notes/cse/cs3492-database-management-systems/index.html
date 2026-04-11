@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -15,6 +15,33 @@
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
@@ -163,11 +190,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3492 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
             <h2 style="margin-bottom: 0.75rem;">CS3492 DATABASE MANAGEMENT SYSTEMS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>To learn the fundamentals of data models, relational algebra and SQL</li>
                 <li>To represent a database system using ER diagrams and to learn normalization techniques</li>
@@ -176,22 +203,22 @@
                 <li>To have an introductory knowledge about the Distributed databases, NOSQL and database security</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I RELATIONAL DATABASES 10</h2>
+            <h2 class="syllabus-blue-heading">UNIT I RELATIONAL DATABASES 10</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Purpose of Database System - Views of data - Data Models - Database System Architecture - Introduction to relational databases - Relational Model - Keys - Relational Algebra - SQL fundamentals - Advanced SQL features - Embedded SQL- Dynamic SQL</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II DATABASE DESIGN 8</h2>
+            <h2 class="syllabus-blue-heading">UNIT II DATABASE DESIGN 8</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Entity-Relationship model - E-R Diagrams - Enhanced-ER Model - ER-to-Relational Mapping - Functional Dependencies - Non-loss Decomposition - First, Second, Third Normal Forms, Dependency Preservation - Boyce/Codd Normal Form - Multi-valued Dependencies and Fourth Normal Form - Join Dependencies and Fifth Normal Form</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III TRANSACTIONS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III TRANSACTIONS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Transaction Concepts - ACID Properties - Schedules - Serializability - Transaction support in SQL - Need for Concurrency - Concurrency control -Two Phase Locking- Timestamp - Multiversion - Validation and Snapshot isolation- Multiple Granularity locking - Deadlock Handling - Recovery Concepts - Recovery based on deferred and immediate update - Shadow paging - ARIES Algorithm</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV IMPLEMENTATION TECHNIQUES 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV IMPLEMENTATION TECHNIQUES 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">RAID - File Organization - Organization of Records in Files - Data dictionary Storage - Column Oriented Storage- Indexing and Hashing -Ordered Indices - B+ tree Index Files - B tree Index Files - Static Hashing - Dynamic Hashing - Query Processing Overview - Algorithms for Selection, Sorting and join operations - Query optimization using Heuristics - Cost Estimation.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V ADVANCED TOPICS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V ADVANCED TOPICS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Distributed Databases: Architecture, Data Storage, Transaction Processing, Query processing and optimization - NOSQL Databases: Introduction - CAP Theorem - Document Based systems - Key value Stores - Column Based Systems - Graph Databases. Database Security: Security issues - Access control based on privileges - Role Based access control - SQL Injection - Statistical Database security - Flow control - Encryption and Public Key infrastructures - Challenges</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
             <p style="line-height:1.7; margin-bottom:0.5rem;">Upon completion of this course, the students will be able to</p>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>CO1: Construct SQL Queries using relational algebra</li>
@@ -203,13 +230,13 @@
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOKS:</h2>
+            <h2 class="syllabus-blue-heading">TEXT BOOKS:</h2>
             <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Abraham Silberschatz, Henry F. Korth, S. Sudharshan, "Database System Concepts", Seventh Edition, McGraw Hill, 2020.</li>
                 <li>Ramez Elmasri, Shamkant B. Navathe, "Fundamentals of Database Systems", Seventh Edition, Pearson Education, 2017</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES:</h2>
+            <h2 class="syllabus-blue-heading">REFERENCES:</h2>
             <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
                 <li>C.J.Date, A.Kannan, S.Swamynathan, "An Introduction to Database Systems", Eighth Edition, Pearson Education, 2006.</li>
             </ol>

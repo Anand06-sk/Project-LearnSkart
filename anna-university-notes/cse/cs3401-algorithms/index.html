@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -15,6 +15,33 @@
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
@@ -86,11 +113,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3401 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
             <h2 style="margin-bottom: 0.75rem;">CS3401 ALGORITHMS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 2 4</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>To understand and apply the algorithm analysis techniques on searching and sorting algorithms</li>
                 <li>To critically analyze the efficiency of graph algorithms</li>
@@ -99,24 +126,24 @@
                 <li>To understand the concepts behind NP Completeness, Approximation algorithms and randomized algorithms.</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I INTRODUCTION 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Algorithm analysis: Time and space complexity - Asymptotic Notations and its properties Best case, Worst case and average case analysis - Recurrence relation: substitution method - Lower bounds - searching: linear search, binary search and Interpolation Search, Pattern search: The naive string-matching algorithm - Rabin-Karp algorithm - Knuth-Morris-Pratt algorithm. Sorting: Insertion sort - heap sort</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II GRAPH ALGORITHMS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT II GRAPH ALGORITHMS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Graph algorithms: Representations of graphs - Graph traversal: DFS - BFS - applications - Connectivity, strong connectivity, bi-connectivity - Minimum spanning tree: Kruskal's and Prim's algorithm- Shortest path: Bellman-Ford algorithm - Dijkstra's algorithm - Floyd-Warshall algorithm Network flow: Flow networks - Ford-Fulkerson method - Matching: Maximum bipartite matching</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III ALGORITHM DESIGN TECHNIQUES 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III ALGORITHM DESIGN TECHNIQUES 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Divide and Conquer methodology: Finding maximum and minimum - Merge sort - Quick sort Dynamic programming: Elements of dynamic programming - Matrix-chain multiplication - Multi stage graph - Optimal Binary Search Trees. Greedy Technique: Elements of the greedy strategy - Activity-selection problem - Optimal Merge pattern - Huffman Trees.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV STATE SPACE SEARCH ALGORITHMS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV STATE SPACE SEARCH ALGORITHMS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Backtracking: n-Queens problem - Hamiltonian Circuit Problem - Subset Sum Problem - Graph colouring problem Branch and Bound: Solving 15-Puzzle problem - Assignment problem - Knapsack Problem - Travelling Salesman Problem</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V NP-COMPLETE AND APPROXIMATION ALGORITHM 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V NP-COMPLETE AND APPROXIMATION ALGORITHM 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Tractable and intractable problems: Polynomial time algorithms - Venn diagram representation - NP-algorithms - NP-hardness and NP-completeness - Bin Packing problem - Problem reduction: TSP - 3-CNF problem. Approximation Algorithms: TSP - Randomized Algorithms: concept and application - primality testing - randomized quick sort - Finding kth smallest number</p>
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>45 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">PRACTICAL EXERCISES: 30 PERIODS</h2>
+            <h2 class="syllabus-blue-heading">PRACTICAL EXERCISES: 30 PERIODS</h2>
             <p style="line-height:1.7; margin-bottom:0.5rem;"><strong>Searching and Sorting Algorithms</strong></p>
             <ol style="line-height:1.8; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Implement Linear Search. Determine the time required to search for an element. Repeat the experiment for different values of n, the number of elements in the list to be searched and plot a graph of the time taken versus n.</li>
@@ -156,7 +183,7 @@
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:75 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
             <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of this course, the students will be able to:</p>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>CO1: Analyze the efficiency of algorithms using various frameworks</li>
@@ -166,13 +193,13 @@
                 <li>CO5: Solve problems using approximation algorithms and randomized algorithms</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOKS:</h2>
+            <h2 class="syllabus-blue-heading">TEXT BOOKS:</h2>
             <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein, "Introduction to Algorithms", 3rd Edition, Prentice Hall of India, 2009.</li>
                 <li>Ellis Horowitz, Sartaj Sahni, Sanguthevar Rajasekaran "Computer Algorithms/C++" Orient Blackswan, 2nd Edition, 2019.</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES:</h2>
+            <h2 class="syllabus-blue-heading">REFERENCES:</h2>
             <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
                 <li>Anany Levitin, "Introduction to the Design and Analysis of Algorithms", 3rd Edition, Pearson Education, 2012.</li>
                 <li>Alfred V. Aho, John E. Hopcroft and Jeffrey D. Ullman, "Data Structures and Algorithms", Reprint Edition, Pearson Education, 2006.</li>
