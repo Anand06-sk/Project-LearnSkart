@@ -813,6 +813,18 @@
             list-style: none;
         }
 
+        .footer-links-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .footer-links-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
         .footer-section li {
             margin-bottom: 12px;
         }

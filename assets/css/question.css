@@ -212,8 +212,45 @@
         .modal-footer { padding: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 0.75rem; }
 
         /* Footer */
-        .footer { border-top: 1px solid var(--border); background: white; padding: 3rem 0; margin-top: auto; text-align: center; }
-        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem; }
+        .footer { border-top: 1px solid var(--border); background: white; padding: 3rem 0; margin-top: auto; }
+        .footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: start; }
+        .footer-logo { display: flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem; }
+        .footer-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.6; margin: 0; }
+        .footer-col h4 { margin: 0 0 0.75rem; font-size: 0.95rem; font-weight: 700; color: var(--foreground); }
+        .footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+        .footer-links a { text-decoration: none; color: var(--muted); font-size: 0.875rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-social .social-links-row { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+        .footer-social .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 12px;
+            width: fit-content;
+            border-radius: 999px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: rgba(59, 130, 246, 0.08);
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+        .footer-social .social-link i { font-size: 18px; }
+        .footer-social .fa-instagram { color: #e1306c; }
+        .footer-social .fa-youtube { color: #ff0000; }
+        .footer-social .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+            background: rgba(59, 130, 246, 0.15);
+        }
+        .footer-bottom { margin-top: 2rem; font-size: 0.75rem; color: #94a3b8; text-align: center; }
+
+        @media (max-width: 767px) {
+            .footer-grid { text-align: center; }
+            .footer-logo { justify-content: center; }
+            .footer-links { align-items: center; }
+            .footer-social .social-links-row { align-items: center; }
+        }
 
         /* States */
         .loader { text-align: center; padding: 5rem 0; }
