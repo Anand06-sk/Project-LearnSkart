@@ -16,6 +16,33 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -135,11 +162,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>MA3151 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
           <h2 style="margin-bottom: 0.75rem;">MA3151 MATRICES AND CALCULUS</h2>
           <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 1 0 4</strong></p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+          <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
           <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
             <li>To develop the use of matrix algebra techniques that are needed by engineers for practical applications.</li>
             <li>To familiarize the students with differential calculus.</li>
@@ -148,24 +175,24 @@
             <li>To acquaint the student with mathematical tools needed in evaluating multiple integrals and their applications.</li>
           </ul>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I MATRICES 9 + 3</h2>
+          <h2 class="syllabus-blue-heading">UNIT I MATRICES 9 + 3</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Eigenvalues and Eigenvectors of a real matrix - Characteristic equation - Properties of Eigenvalues and Eigenvectors - Cayley - Hamilton theorem - Diagonalization of matrices by orthogonal transformation - Reduction of a quadratic form to canonical form by orthogonal transformation - Nature of quadratic forms - Applications: Stretching of an elastic membrane.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II DIFFERENTIAL CALCULUS 9 + 3</h2>
+          <h2 class="syllabus-blue-heading">UNIT II DIFFERENTIAL CALCULUS 9 + 3</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Representation of functions - Limit of a function - Continuity - Derivatives - Differentiation rules (sum, product, quotient, chain rules) - Implicit differentiation - Logarithmic differentiation - Applications: Maxima and Minima of functions of one variable.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III FUNCTIONS OF SEVERAL VARIABLES 9 + 3</h2>
+          <h2 class="syllabus-blue-heading">UNIT III FUNCTIONS OF SEVERAL VARIABLES 9 + 3</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Partial differentiation - Homogeneous functions and Euler’s theorem - Total derivative - Change of variables - Jacobians - Partial differentiation of implicit functions - Taylor’s series for functions of two variables - Applications: Maxima and minima of functions of two variables and Lagrange’s method of undetermined multipliers.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV INTEGRAL CALCULUS 9 + 3</h2>
+          <h2 class="syllabus-blue-heading">UNIT IV INTEGRAL CALCULUS 9 + 3</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Definite and Indefinite integrals - Substitution rule - Techniques of Integration: Integration by parts, Trigonometric integrals, Trigonometric substitutions, Integration of rational functions by partial fraction, Integration of irrational functions - Improper integrals - Applications: Hydrostatic force and pressure, moments and centres of mass.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V MULTIPLE INTEGRALS 9 + 3</h2>
+          <h2 class="syllabus-blue-heading">UNIT V MULTIPLE INTEGRALS 9 + 3</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Double integrals - Change of order of integration - Double integrals in polar coordinates - Area enclosed by plane curves - Triple integrals - Volume of solids - Change of variables in double and triple integrals - Applications: Moments and centres of mass, moment of inertia.</p>
 
           <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL: 60 PERIODS</strong></p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+          <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
           <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of the course the students will be able to</p>
           <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
             <li>CO1:Use the matrix algebra methods for solving practical problems.</li>
@@ -175,14 +202,14 @@
             <li>CO5:Apply multiple integral ideas in solving areas, volumes and other practical problems.</li>
           </ul>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOKS :</h2>
+          <h2 class="syllabus-blue-heading">TEXT BOOKS :</h2>
           <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
             <li>Kreyszig.E, "Advanced Engineering Mathematics", John Wiley and Sons, 10th Edition, New Delhi, 2016.</li>
             <li>Grewal.B.S., “Higher Engineering Mathematics”, Khanna Publishers, New Delhi, 44th Edition , 2018.</li>
             <li>James Stewart, " Calculus: Early Transcendentals", Cengage Learning, 8th Edition, New Delhi, 2015. [For Units II &amp; IV - Sections 1.1, 2.2, 2.3, 2.5, 2.7 (Tangents problems only), 2.8, 3.1 to 3.6, 3.11, 4.1, 4.3, 5.1 (Area problems only), 5.2, 5.3, 5.4 (excluding net change theorem), 5.5, 7.1 - 7.4 and 7.8 ].</li>
           </ol>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES:</h2>
+          <h2 class="syllabus-blue-heading">REFERENCES:</h2>
           <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
             <li>Anton. H, Bivens. I and Davis. S, "Calculus", Wiley, 10th Edition, 2016</li>
             <li>Bali. N., Goyal. M. and Watkins. C., “Advanced Engineering Mathematics”, Firewall Media (An imprint of Lakshmi Publications Pvt., Ltd.,), New Delhi, 7th Edition, 2009.</li>

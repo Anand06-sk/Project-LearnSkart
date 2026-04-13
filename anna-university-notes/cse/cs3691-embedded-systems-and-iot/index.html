@@ -15,6 +15,33 @@
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
     <link rel="stylesheet" href="../../../assets/css/nav.css">
 </head>
 <body>
@@ -253,11 +280,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3691 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
             <h2 style="margin-bottom: 0.75rem;">CS3691 - EMBEDDED SYSTEMS AND IOT</h2>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 2 4</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>To learn the internal architecture and programming of an embedded processor.</li>
                 <li>To introduce interfacing I/O devices to the processor.</li>
@@ -266,24 +293,24 @@
                 <li>To apply the concept of Internet of Things in real world scenario.</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I 8-BIT EMBEDDED PROCESSOR 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT I 8-BIT EMBEDDED PROCESSOR 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">8-Bit Microcontroller - Architecture - Instruction Set and Programming - Programming Parallel Ports - Timers and Serial Port - Interrupt Handling.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II EMBEDDED C PROGRAMMING 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT II EMBEDDED C PROGRAMMING 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Memory And I/O Devices Interfacing - Programming Embedded Systems in C - Need For RTOS - Multiple Tasks and Processes - Context Switching - Priority Based Scheduling Policies.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III IOT AND ARDUINO PROGRAMMING 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III IOT AND ARDUINO PROGRAMMING 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction to the Concept of IoT Devices - IoT Devices Versus Computers - IoT Configurations - Basic Components - Introduction to Arduino - Types of Arduino - Arduino Toolchain - Arduino Programming Structure - Sketches - Pins - Input/Output From Pins Using Sketches - Introduction to Arduino Shields - Integration of Sensors and Actuators with Arduino.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV IOT COMMUNICATION AND OPEN PLATFORMS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV IOT COMMUNICATION AND OPEN PLATFORMS 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">IoT Communication Models and APIs - IoT Communication Protocols - Bluetooth - WiFi - ZigBee - GPS - GSM modules - Open Platform (like Raspberry Pi) - Architecture - Programming - Interfacing - Accessing GPIO Pins - Sending and Receiving Signals Using GPIO Pins - Connecting to the Cloud.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V APPLICATIONS DEVELOPMENT 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V APPLICATIONS DEVELOPMENT 9</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Complete Design of Embedded Systems - Development of IoT Applications - Home Automation - Smart Agriculture - Smart Cities - Smart Healthcare.</p>
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>45 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">PRACTICAL EXERCISES: 30 PERIODS</h2>
+            <h2 class="syllabus-blue-heading">PRACTICAL EXERCISES: 30 PERIODS</h2>
             <ol style="line-height:1.8; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Write 8051 Assembly Language experiments using simulator.</li>
                 <li>Test data transfer between registers and memory.</li>
@@ -299,7 +326,7 @@
                 <li>Design an IOT based system</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>CO1: Explain the architecture of embedded processors.</li>
                 <li>CO2: Write embedded C programs.</li>
@@ -310,13 +337,13 @@
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL: 75 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXTBOOKS</h2>
+            <h2 class="syllabus-blue-heading">TEXTBOOKS</h2>
             <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Muhammed Ali Mazidi, Janice Gillispie Mazidi, Rolin D. McKinlay, "The 8051 Microcontroller and Embedded Systems", Pearson Education, Second Edition, 2014</li>
                 <li>Robert Barton, Patrick Grossetete, David Hanes, Jerome Henry, Gonzalo Salgueiro, "IoT Fundamentals: Networking Technologies, Protocols, and Use Cases for the Internet of Things", CISCO Press, 2017.</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES</h2>
+            <h2 class="syllabus-blue-heading">REFERENCES</h2>
             <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
                 <li>Michael J. Pont, "Embedded C", Pearson Education, 2007.</li>
                 <li>Wayne Wolf, "Computers as Components: Principles of Embedded Computer System Design", Elsevier, 2006.</li>

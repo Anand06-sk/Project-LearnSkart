@@ -16,6 +16,33 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -210,11 +237,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3451 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
             <h2 style="margin-bottom: 0.75rem;">CS3451 INTRODUCTION TO OPERATING SYSTEMS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>To understand the basics and functions of operating systems.</li>
                 <li>To understand processes and threads</li>
@@ -225,24 +252,24 @@
                 <li>To be familiar with the basics of virtual machines and Mobile OS like iOS and Android.</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I INTRODUCTION 7</h2>
+            <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION 7</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Computer System - Elements and organization; Operating System Overview - Objectives and Functions - Evolution of Operating System; Operating System Structures - Operating System Services - User Operating System Interface - System Calls - System Programs - Design and Implementation - Structuring methods.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II PROCESS MANAGEMENT 11</h2>
+            <h2 class="syllabus-blue-heading">UNIT II PROCESS MANAGEMENT 11</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Processes - Process Concept - Process Scheduling - Operations on Processes - Inter-process Communication; CPU Scheduling - Scheduling criteria - Scheduling algorithms: Threads - Multithread Models - Threading issues; Process Synchronization - The Critical-Section problem - Synchronization hardware - Semaphores - Mutex - Classical problems of synchronization - Monitors; Deadlock - Methods for handling deadlocks, Deadlock prevention, Deadlock avoidance, Deadlock detection, Recovery from deadlock.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III MEMORY MANAGEMENT 10</h2>
+            <h2 class="syllabus-blue-heading">UNIT III MEMORY MANAGEMENT 10</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Main Memory - Swapping - Contiguous Memory Allocation - Paging - Structure of the Page Table - Segmentation, Segmentation with paging; Virtual Memory - Demand Paging - Copy on Write - Page Replacement - Allocation of Frames -Thrashing.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV STORAGE MANAGEMENT 10</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV STORAGE MANAGEMENT 10</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Mass Storage system - Disk Structure - Disk Scheduling and Management; File-System Interface - File concept - Access methods - Directory Structure - Directory organization - File system mounting - File Sharing and Protection; File System Implementation - File System Structure - Directory implementation - Allocation Methods - Free Space Management; I/O Systems - I/O Hardware, Application I/O interface, Kernel I/O subsystem.</p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V VIRTUAL MACHINES AND MOBILE OS 7</h2>
+            <h2 class="syllabus-blue-heading">UNIT V VIRTUAL MACHINES AND MOBILE OS 7</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Virtual Machines - History, Benefits and Features, Building Blocks, Types of Virtual Machines and their Implementations, Virtualization and Operating-System Components; Mobile OS - iOS and Android.</p>
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
             <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of this course, the students will be able to:</p>
             <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>CO1 : Analyze various scheduling algorithms and process synchronization.</li>
@@ -252,13 +279,13 @@
                 <li>CO5 : Compare iOS and Android Operating Systems.</li>
             </ul>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOKS:</h2>
+            <h2 class="syllabus-blue-heading">TEXT BOOKS:</h2>
             <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
                 <li>Abraham Silberschatz, Peter Baer Galvin and Greg Gagne, "Operating System Concepts", 10th Edition, John Wiley and Sons Inc., 2018.</li>
                 <li>Andrew S Tanenbaum, "Modern Operating Systems", Pearson, 5th Edition, 2022 New Delhi.</li>
             </ol>
 
-            <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES:</h2>
+            <h2 class="syllabus-blue-heading">REFERENCES:</h2>
             <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
                 <li>Ramaz Elmasri, A. Gil Carrick, David Levine, " Operating Systems - A Spiral Approach", Tata McGraw Hill Edition, 2010.</li>
                 <li>William Stallings, "Operating Systems: Internals and Design Principles", 7th Edition, Prentice Hall, 2018.</li>

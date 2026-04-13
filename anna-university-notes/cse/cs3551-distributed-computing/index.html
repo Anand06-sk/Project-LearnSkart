@@ -16,6 +16,33 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -225,11 +252,11 @@
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3551 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
-        <section style="margin: 2rem 0; border: 1px solid #cbd5e1; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); background: #ffffff; overflow-wrap: anywhere;">
+        <section class="syllabus-card">
           <h2 style="margin-bottom: 0.75rem;">S3551 DISTRIBUTED COMPUTING</h2>
           <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+          <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
           <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
             <li>To introduce the computation and communication models of distributed systems</li>
             <li>To illustrate the issues of synchronization and collection of information in distributed systems</li>
@@ -238,22 +265,22 @@
             <li>To explain the cloud computing models and the underlying concepts</li>
           </ul>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT I INTRODUCTION 8</h2>
+          <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION 8</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Introduction: Definition-Relation to Computer System Components - Motivation - Message -Passing Systems versus Shared Memory Systems - Primitives for Distributed Communication - Synchronous versus Asynchronous Executions - Design Issues and Challenges; A Model of Distributed Computations: A Distributed Program - A Model of Distributed Executions - Models of Communication Networks - Global State of a Distributed System.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT II LOGICAL TIME AND GLOBAL STATE 10</h2>
+          <h2 class="syllabus-blue-heading">UNIT II LOGICAL TIME AND GLOBAL STATE 10</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Logical Time: Physical Clock Synchronization: NTP - A Framework for a System of Logical Clocks - Scalar Time - Vector Time; Message Ordering and Group Communication: Message Ordering Paradigms - Asynchronous Execution with Synchronous Communication - Synchronous Program Order on Asynchronous System - Group Communication - Causal Order - Total Order; Global State and Snapshot Recording Algorithms: Introduction - System Model and Definitions - Snapshot Algorithms for FIFO Channels.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT III DISTRIBUTED MUTEX AND DEADLOCK 10</h2>
+          <h2 class="syllabus-blue-heading">UNIT III DISTRIBUTED MUTEX AND DEADLOCK 10</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Distributed Mutual exclusion Algorithms: Introduction - Preliminaries - Lamport's algorithm - Ricart-Agrawala's Algorithm - Token-Based Algorithms - Suzuki-Kasami's Broadcast Algorithm; Deadlock Detection in Distributed Systems: Introduction - System Model - Preliminaries - Models of Deadlocks - Chandy-Misra-Haas Algorithm for the AND model and OR Model.</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT IV CONSENSUS AND RECOVERY 10</h2>
+          <h2 class="syllabus-blue-heading">UNIT IV CONSENSUS AND RECOVERY 10</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Consensus and Agreement Algorithms: Problem Definition - Overview of Results - Agreement in a Failure-Free System(Synchronous and Asynchronous) - Agreement in Synchronous Systems with Failures; Checkpointing and Rollback Recovery: Introduction - Background and Definitions - Issues in Failure Recovery - Checkpoint-based Recovery - Coordinated Checkpointing Algorithm - Algorithm for Asynchronous Checkpointing and Recovery</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">UNIT V CLOUD COMPUTING 7</h2>
+          <h2 class="syllabus-blue-heading">UNIT V CLOUD COMPUTING 7</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Definition of Cloud Computing - Characteristics of Cloud - Cloud Deployment Models - Cloud Service Models - Driving Factors and Challenges of Cloud - Virtualization - Load Balancing - Scalability and Elasticity - Replication - Monitoring - Cloud Services and Platforms: Compute Services - Storage Services - Application Services</p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+          <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
           <p style="line-height:1.7; margin-bottom:0.5rem;">Upon the completion of this course, the student will be able to</p>
           <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
             <li>CO1: Explain the foundations of distributed systems (K2)</li>
@@ -265,13 +292,13 @@
 
           <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">TEXT BOOKS</h2>
+          <h2 class="syllabus-blue-heading">TEXT BOOKS</h2>
           <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
             <li>Kshemkalyani Ajay D, Mukesh Singhal, "Distributed Computing: Principles, Algorithms and Systems", Cambridge Press, 2011.</li>
             <li>Mukesh Singhal, Niranjan G Shivaratri, "Advanced Concepts in Operating systems", Mc-Graw Hill Publishers, 1994.</li>
           </ol>
 
-          <h2 style="color:#1d4ed8; font-weight:700; font-size:1.1rem; margin-bottom:0.5rem;">REFERENCES</h2>
+          <h2 class="syllabus-blue-heading">REFERENCES</h2>
           <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
             <li>George Coulouris, Jean Dollimore, Time Kindberg, "Distributed Systems Concepts and Design", Fifth Edition, Pearson Education, 2012.</li>
             <li>Pradeep L Sinha, "Distributed Operating Systems: Concepts and Design", Prentice Hall of India, 2007.</li>

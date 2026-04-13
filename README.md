@@ -19,9 +19,11 @@ The site is built as a pure static project (HTML/CSS/JavaScript) and is designed
 - Subject-wise resource discovery
 - Previous-year question paper pages under `pyq/`
 - GATE stream pages under `gate/`
+- GATE previous-year question paper pages under `gate-pyqs/`
 - GATE syllabus pages under `gate-syllabus/`
 - Anna University results hub page under `anna-university-results/`
 - Daily Puzzle page under `daily-puzzle/`
+- Regulation-based syllabus pages under `syllabus/2021/` and `syllabus/2025/`
 - CGPA calculator
 - Dark mode support
 - Mobile-first responsive UI
@@ -157,6 +159,7 @@ These scripts help generate and maintain static pages from JSON/template data.
 - The sitemap should mirror the exact `pyq/` folder names used in the repository.
 - Syllabus department landing pages are regulation-based under `syllabus/2021/` and `syllabus/2025/`.
 - Subject syllabus pages continue under department routes like `syllabus/cse/...` and `syllabus/ece/...`.
+- GATE PYQ pages are available under `gate-pyqs/`.
 - Current PYQ route examples include `pyq/CE3351-surveying-and-levelling/`, `pyq/CE3701-estimation-coasting-and-valuation-engineering/`, `pyq/CS3501-compiler-design/`, `pyq/IT3501-full-stack-web-development/`, and `pyq/PH3201-physics-for-civil-engineering/`.
 - Informational routes include `about/`, `privacy/`, `disclaimer/`, `terms-and-conditions/`, and `contact/`.
 - Keep subject slugs in links consistent with real folder names.
