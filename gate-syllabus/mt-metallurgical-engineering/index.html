@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -28,7 +28,7 @@
         display: flex;
         align-items: center;
         gap: 0.65rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .custom-nav .back-btn {
@@ -152,8 +152,8 @@
 
     .gate-footer .quick-links {
         display: flex;
-        flex-direction: row !important;
-        flex-wrap: wrap;
+        flex-direction: column !important;
+        flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 0.5rem 0.8rem;
         font-size: 0.92rem;
@@ -232,7 +232,7 @@
         }
 
         .gate-footer .quick-links {
-            flex-direction: row !important;
+            flex-direction: column !important;
             align-items: center;
             justify-content: center;
         }
@@ -259,12 +259,39 @@
         }
 
         .gate-footer .quick-links {
-            flex-direction: row !important;
+            flex-direction: column !important;
             gap: 0.45rem 0.65rem;
             font-size: 0.88rem;
         }
     }
-</style>
+    .gate-footer .footer-brand {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .gate-footer .footer-brand img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+    }
+
+    .gate-footer .footer-brand p {
+        margin: 0;
+        color: #dbeafe !important;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+        .gate-footer .footer-brand {
+            justify-content: center;
+            text-align: center;
+        }
+    }</style>
 </head>
 <body>
     <nav class="custom-nav">
@@ -310,7 +337,7 @@
                 <p><strong>Subject Code:</strong> MT</p>
                 <p><strong>Total Marks:</strong> 100 | <strong>Duration:</strong> 3 Hours</p>
                 <p><strong>Question Pattern:</strong> MCQ, MSQ, and NAT are used across the paper; the exact count can vary by year.</p>
-                <p><span style="display: inline-flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;"><a href="https://drive.google.com/file/d/1cTbYMOGG43XSJyMx0vBKTxnLyhIhcWI8/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-eye"></i> View Syllabus</a><a href="https://drive.google.com/uc?export=download&id=1cTbYMOGG43XSJyMx0vBKTxnLyhIhcWI8" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-download"></i> Download PDF</a></span></p>
+                <p><span style="display: inline-flex; gap: 0.75rem; flex-wrap: nowrap; align-items: center;"><a href="https://drive.google.com/file/d/1cTbYMOGG43XSJyMx0vBKTxnLyhIhcWI8/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-eye"></i> View Syllabus</a><a href="https://drive.google.com/uc?export=download&id=1cTbYMOGG43XSJyMx0vBKTxnLyhIhcWI8" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-download"></i> Download PDF</a></span></p>
             </section>
 
             <p>The Graduate Aptitude Test in Engineering GATE 2026 is a national examination that evaluates core concepts and analytical ability at the undergraduate level. The organizing institute for GATE 2026 is the Indian Institute of Technology Guwahati. GATE scores are used for admission to postgraduate programs such as MTech and PhD and are also considered by public sector and research organizations for recruitment.</p>
@@ -383,22 +410,46 @@
             <p>Stay aligned with the official syllabus, practice PYQs regularly, and use mock tests to evaluate progress. A systematic approach yields reliable results.</p>
         </article>
     </main>
-    <footer class="gate-footer">
-        <div class="footer-section footer-social">
-            <h4>Follow Us</h4>
-            <div class="social-links-row">
-                <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                    <span>@LearnSkart</span>
-                </a>
-                <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                    <i class="fab fa-youtube" aria-hidden="true"></i>
-                    <span>YouTube</span>
-                </a>
+        <footer class="gate-footer">
+        <div class="footer-wrap">
+            <div class="footer-brand">
+                <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart">
+                <p>LearnSkart is your hub for GATE syllabus and PYQs.</p>
             </div>
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="quick-links">
+                        <a href="../../index.html">Home</a>
+                        <a href="../../gate-pyqs/">GATE PYQs</a>
+                        <a href="../../gate-syllabus/">GATE Syllabus</a>
+                        <a href="../../about/">About</a>
+                        <a href="../../contact/">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <div class="quick-links">
+                        <a href="../../privacy/">Privacy Policy</a>
+                        <a href="../../terms-and-conditions/">Terms and Conditions</a>
+                        <a href="../../disclaimer/">Disclaimer</a>
+                    </div>
+                </div>
+                <div class="footer-section footer-social">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i></div>
         </div>
-<p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i>
-</footer>
+    </footer>
     <script id="custom-nav-script">
     document.addEventListener('DOMContentLoaded', () => {
         const toggleBtn = document.querySelector('.mobile-menu-toggle');
@@ -431,6 +482,12 @@
 <script src="../../assets/js/theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

@@ -29,7 +29,8 @@ body.dark-mode {
   color: #e2e8f0;
 }
 
-body.dark-mode header {
+body.dark-mode header,
+body.dark-mode nav {
   background: rgba(15, 23, 42, 0.95) !important;
   border-bottom-color: rgba(255, 255, 255, 0.1) !important;
 }

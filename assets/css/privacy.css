@@ -58,7 +58,7 @@
 
         /* Navbar */
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
             z-index: 50;
             width: 100%;
@@ -66,6 +66,10 @@
             background-color: rgba(248, 251, 253, 0.8);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+        }
+
+        body {
+            padding-top: 64px;
         }
 
         html.dark nav {
