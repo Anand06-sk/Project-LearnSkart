@@ -16,6 +16,48 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -186,7 +228,7 @@
                 </ul>
             </section>
 
-            <footer style="margin-top: 1.5rem; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background: #f8fafc;">
+            <footer class="important-questions-footer">
                 <p style="margin: 0; color: #334155; line-height: 1.6;"><strong>Exam Preparation Tips:</strong> Practice C programs daily with dry-run steps, trace pointer values on paper, and revise syntax rules for loops, arrays, functions, and file handling. For university exams, prepare one short-answer set and one complete program from each unit every revision cycle.</p>
             </footer>
         </section>
@@ -225,19 +267,19 @@
                 <li>To do input/output and file handling in C</li>
             </ul>
 
-            <h2 class="syllabus-blue-heading">UNIT I BASICS OF C PROGRAMMING 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT I BASICS OF C PROGRAMMING</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction to programming paradigms - Applications of C Language - Structure of C program - C programming: Data Types - Constants - Enumeration Constants - Keywords - Operators: Precedence and Associativity - Expressions - Input/Output statements, Assignment statements - Decision making statements - Switch statement - Looping statements - Preprocessor directives - Compilation process</p>
 
-            <h2 class="syllabus-blue-heading">UNIT II ARRAYS AND STRINGS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT II ARRAYS AND STRINGS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction to Arrays: Declaration, Initialization - One dimensional array - Two dimensional arrays - String operations: length, compare, concatenate, copy - Selection sort, linear and binary search.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT III FUNCTIONS AND POINTERS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III FUNCTIONS AND POINTERS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Modular programming - Function prototype, function definition, function call, Built-in functions (string functions, math functions) - Recursion, Binary Search using recursive functions - Pointers - Pointer operators - Pointer arithmetic - Arrays and pointers - Array of pointers - Parameter passing: Pass by value, Pass by reference.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT IV STRUCTURES AND UNION 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV STRUCTURES AND UNION</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Structure - Nested structures - Pointer and Structures - Array of structures - Self referential structures - Dynamic memory allocation - Singly linked list - typedef - Union - Storage classes and Visibility.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT V FILE PROCESSING 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V FILE PROCESSING</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Files - Types of file processing: Sequential access, Random access - Sequential access file - Random access file - Command line arguments.</p>
 
             <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>

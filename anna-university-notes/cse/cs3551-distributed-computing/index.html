@@ -34,12 +34,14 @@
             margin-bottom: 0.5rem;
         }
 
-        html.dark .syllabus-card {
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
             border-color: #334155;
             background: #0f172a;
         }
 
-        html.dark .syllabus-card .syllabus-blue-heading {
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
             color: #93c5fd !important;
         }
     </style>
@@ -188,7 +190,7 @@
         <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT II</h2>
         <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit focuses on event ordering and consistent state capture in distributed environments. These concepts are useful for understanding synchronization behavior and message coordination.</p>
         <ul>
-          <li>CO (Causal Order) – full topic **</li>
+          <li>CO (Causal Order) Ã¢â‚¬â€œ full topic **</li>
           <li>Message ordering paradigms</li>
           <li>Snapshot algorithms for FIFO channels **</li>
         </ul>
@@ -198,9 +200,9 @@
         <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT III</h2>
         <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit introduces synchronization algorithms for mutual exclusion in distributed systems. Learning these algorithms improves clarity in algorithm-based exam questions and system-level reasoning.</p>
         <ul>
-          <li>Ricart–Agrawala algorithm, Maekawa’s algorithm</li>
-          <li>Lamport’s algorithm</li>
-          <li>Knapp’s classification (may be Part C)</li>
+          <li>RicartÃ¢â‚¬â€œAgrawala algorithm, MaekawaÃ¢â‚¬â„¢s algorithm</li>
+          <li>LamportÃ¢â‚¬â„¢s algorithm</li>
+          <li>KnappÃ¢â‚¬â„¢s classification (may be Part C)</li>
         </ul>
       </section>
 
@@ -265,19 +267,19 @@
             <li>To explain the cloud computing models and the underlying concepts</li>
           </ul>
 
-          <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION 8</h2>
+          <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Introduction: Definition-Relation to Computer System Components - Motivation - Message -Passing Systems versus Shared Memory Systems - Primitives for Distributed Communication - Synchronous versus Asynchronous Executions - Design Issues and Challenges; A Model of Distributed Computations: A Distributed Program - A Model of Distributed Executions - Models of Communication Networks - Global State of a Distributed System.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT II LOGICAL TIME AND GLOBAL STATE 10</h2>
+          <h2 class="syllabus-blue-heading">UNIT II LOGICAL TIME AND GLOBAL STATE</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Logical Time: Physical Clock Synchronization: NTP - A Framework for a System of Logical Clocks - Scalar Time - Vector Time; Message Ordering and Group Communication: Message Ordering Paradigms - Asynchronous Execution with Synchronous Communication - Synchronous Program Order on Asynchronous System - Group Communication - Causal Order - Total Order; Global State and Snapshot Recording Algorithms: Introduction - System Model and Definitions - Snapshot Algorithms for FIFO Channels.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT III DISTRIBUTED MUTEX AND DEADLOCK 10</h2>
+          <h2 class="syllabus-blue-heading">UNIT III DISTRIBUTED MUTEX AND DEADLOCK</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Distributed Mutual exclusion Algorithms: Introduction - Preliminaries - Lamport's algorithm - Ricart-Agrawala's Algorithm - Token-Based Algorithms - Suzuki-Kasami's Broadcast Algorithm; Deadlock Detection in Distributed Systems: Introduction - System Model - Preliminaries - Models of Deadlocks - Chandy-Misra-Haas Algorithm for the AND model and OR Model.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT IV CONSENSUS AND RECOVERY 10</h2>
+          <h2 class="syllabus-blue-heading">UNIT IV CONSENSUS AND RECOVERY</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Consensus and Agreement Algorithms: Problem Definition - Overview of Results - Agreement in a Failure-Free System(Synchronous and Asynchronous) - Agreement in Synchronous Systems with Failures; Checkpointing and Rollback Recovery: Introduction - Background and Definitions - Issues in Failure Recovery - Checkpoint-based Recovery - Coordinated Checkpointing Algorithm - Algorithm for Asynchronous Checkpointing and Recovery</p>
 
-          <h2 class="syllabus-blue-heading">UNIT V CLOUD COMPUTING 7</h2>
+          <h2 class="syllabus-blue-heading">UNIT V CLOUD COMPUTING</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Definition of Cloud Computing - Characteristics of Cloud - Cloud Deployment Models - Cloud Service Models - Driving Factors and Challenges of Cloud - Virtualization - Load Balancing - Scalability and Elasticity - Replication - Monitoring - Cloud Services and Platforms: Compute Services - Storage Services - Application Services</p>
 
           <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>

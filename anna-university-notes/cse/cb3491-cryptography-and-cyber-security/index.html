@@ -16,6 +16,48 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -228,7 +270,7 @@
         </ul>
       </section>
 
-      <footer style="margin-top: 1rem; color: var(--muted);">
+      <footer class="important-questions-footer">
         Practice regularly, revise each unit step by step, and focus on concepts as well as problem-solving for better exam results.
       </footer>
     </section>
@@ -263,19 +305,19 @@
             <li>Understand cyber crimes and cyber security.</li>
           </ul>
 
-          <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION TO SECURITY 9</h2>
+          <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION TO SECURITY</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Computer Security Concepts - The OSI Security Architecture - Security Attacks - Security Services and Mechanisms - A Model for Network Security - Classical encryption techniques: Substitution techniques, Transposition techniques, Steganography - Foundations of modern cryptography: Perfect security - Information Theory - Product Cryptosystem - Cryptanalysis.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT II SYMMETRIC CIPHERS 9</h2>
+          <h2 class="syllabus-blue-heading">UNIT II SYMMETRIC CIPHERS</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Number theory - Algebraic Structures - Modular Arithmetic - Euclid's algorithm - Congruence and matrices - Group, Rings, Fields, Finite Fields SYMMETRIC KEY CIPHERS: SDES - Block Ciphers - DES, Strength of DES - Differential and linear cryptanalysis - Block cipher design principles - Block cipher mode of operation - Evaluation criteria for AES - Pseudorandom Number Generators - RC4 - Key distribution.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT III ASYMMETRIC CRYPTOGRAPHY 9</h2>
+          <h2 class="syllabus-blue-heading">UNIT III ASYMMETRIC CRYPTOGRAPHY</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">MATHEMATICS OF ASYMMETRIC KEY CRYPTOGRAPHY: Primes - Primality Testing - Factorization - Euler's totient function, Fermat's and Euler's Theorem - Chinese Remainder Theorem - Exponentiation and logarithm ASYMMETRIC KEY CIPHERS: RSA cryptosystem - Key distribution - Key management - Diffie Hellman key exchange -- Elliptic curve arithmetic - Elliptic curve cryptography.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT IV INTEGRITY AND AUTHENTICATION ALGORITHMS 9</h2>
+          <h2 class="syllabus-blue-heading">UNIT IV INTEGRITY AND AUTHENTICATION ALGORITHMS</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Authentication requirement - Authentication function - MAC - Hash function - Security of hash function: HMAC, CMAC - SHA - Digital signature and authentication protocols - DSS - Schnorr Digital Signature Scheme - ElGamal cryptosystem - Entity Authentication: Biometrics, Passwords, Challenge Response protocols - Authentication applications - Kerberos MUTUAL TRUST: Key management and distribution - Symmetric key distribution using symmetric and asymmetric encryption - Distribution of public keys - X.509 Certificates.</p>
 
-          <h2 class="syllabus-blue-heading">UNIT V CYBER CRIMES AND CYBER SECURITY 9</h2>
+          <h2 class="syllabus-blue-heading">UNIT V CYBER CRIMES AND CYBER SECURITY</h2>
           <p style="line-height:1.7; margin-bottom:1rem;">Cyber Crime and Information Security - classifications of Cyber Crimes - Tools and Methods - Password Cracking, Keyloggers, Spywares, SQL Injection - Network Access Control - Cloud Security - Web Security - Wireless Security</p>
 
           <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>

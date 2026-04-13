@@ -16,6 +16,48 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -168,7 +210,7 @@
                 </ul>
             </section>
 
-            <footer style="margin-top: 1.5rem; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background: #f8fafc;">
+            <footer class="important-questions-footer">
                 <p style="margin: 0; color: #334155; line-height: 1.6;"><strong>Exam Preparation Tips:</strong> Revise logic diagrams, timing concepts, and numerical or design-based problems unit by unit. Practice K-map simplification, flip-flop tables, pipeline hazards, and cache mapping examples regularly to improve speed and accuracy in exams.</p>
             </footer>
         </section>
@@ -204,19 +246,19 @@
                 <li>To understand the concept of various memories and I/O interfacing.</li>
             </ul>
 
-            <h2 class="syllabus-blue-heading">UNIT I COMBINATIONAL LOGIC 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT I COMBINATIONAL LOGIC</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Combinational Circuits - Karnaugh Map - Analysis and Design Procedures - Binary Adder - Subtractor - Decimal Adder - Magnitude Comparator - Decoder - Encoder - Multiplexers - Demultiplexers</p>
 
-            <h2 class="syllabus-blue-heading">UNIT II SYNCHRONOUS SEQUENTIAL LOGIC 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT II SYNCHRONOUS SEQUENTIAL LOGIC</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Introduction to Sequential Circuits - Flip-Flops - operation and excitation tables, Triggering of FF, Analysis and design of clocked sequential circuits - Design - Moore/Mealy models, state minimization, state assignment, circuit implementation - Registers - Counters.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT III COMPUTER FUNDAMENTALS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III COMPUTER FUNDAMENTALS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Functional Units of a Digital Computer: Von Neumann Architecture - Operation and Operands of Computer Hardware Instruction - Instruction Set Architecture (ISA): Memory Location, Address and Operation - Instruction and Instruction Sequencing - Addressing Modes, Encoding of Machine Instruction - Interaction between Assembly and High Level Language.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT IV PROCESSOR 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV PROCESSOR</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Instruction Execution - Building a Data Path - Designing a Control Unit - Hardwired Control, Microprogrammed Control - Pipelining - Data Hazard - Control Hazards.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT V MEMORY AND I/O 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V MEMORY AND I/O</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Memory Concepts and Hierarchy - Memory Management - Cache Memories: Mapping and Replacement Techniques - Virtual Memory - DMA - I/O - Accessing I/O: Parallel and Serial Interface - Interrupt I/O - Interconnection Standards: USB, SATA</p>
 
             <p style="line-height:1.7; margin-bottom:1rem;"><strong>45 PERIODS</strong></p>
