@@ -14,29 +14,61 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/it/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
 
+
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/it/index.html">Information Technology</a> &gt; <span>Matrices and Calculus</span>
-</nav>
+        
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -106,13 +138,56 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/it/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 

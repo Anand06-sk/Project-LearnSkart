@@ -14,29 +14,90 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Professional English-II</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -103,17 +164,122 @@
             </div>
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>HS3252 Anna University notes PDF</strong> and start your exam preparation today.</p>
+
+        <section class="syllabus-card">
+          <h2 style="margin-bottom: 0.75rem;">HS3252 PROFESSIONAL ENGLISH - II</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 2 0 0 2</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE OBJECTIVES :</h2>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>To engage learners in meaningful language activities to improve their reading and writing skills</li>
+            <li>To learn various reading strategies and apply in comprehending documents in professional context.</li>
+            <li>To help learners understand the purpose, audience, contexts of different types of writing</li>
+            <li>To develop analytical thinking skills for problem solving in communicative contexts</li>
+            <li>To demonstrate an understanding of job applications and interviews for internship and placements</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">UNIT I MAKING COMPARISONS</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Reading - Reading advertisements, user manuals, brochures; Writing Ã¢â‚¬â€œ Professional emails, Email etiquette - Compare and Contrast Essay; Grammar Ã¢â‚¬â€œ Mixed Tenses, Prepositional phrases</p>
+
+          <h2 class="syllabus-blue-heading">UNIT II EXPRESSING CAUSAL RELATIONS IN SPEAKING AND WRITING</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Reading - Reading longer technical textsÃ¢â‚¬â€œ Cause and Effect Essays, and Letters / emails of complaint, Writing - Writing responses to complaints. Grammar - Active Passive Voice transformations, Infinitive and Gerunds</p>
+
+          <h2 class="syllabus-blue-heading">UNIT III PROBLEM SOLVING</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Reading - Case Studies, excerpts from literary texts, news reports etc. Writing Ã¢â‚¬â€œ Letter to the Editor, Checklists, Problem solution essay / Argumentative Essay. Grammar Ã¢â‚¬â€œ Error correction; If conditional sentences</p>
+
+          <h2 class="syllabus-blue-heading">UNIT IV REPORTING OF EVENTS AND RESEARCH</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Reading Ã¢â‚¬â€œNewspaper articles; Writing Ã¢â‚¬â€œ Recommendations, Transcoding, Accident Report, Survey Report Grammar Ã¢â‚¬â€œ Reported Speech, Modals Vocabulary Ã¢â‚¬â€œ Conjunctions- use of prepositions</p>
+
+          <h2 class="syllabus-blue-heading">UNIT V THE ABILITY TO PUT IDEAS OR INFORMATION COGENTLY</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Reading Ã¢â‚¬â€œ Company profiles, Statement of Purpose, (SOP), an excerpt of interview with professionals; Writing Ã¢â‚¬â€œ Job / Internship application Ã¢â‚¬â€œ Cover letter &amp; Resume; Grammar Ã¢â‚¬â€œ Numerical adjectives, Relative Clauses.</p>
+
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL : 30 PERIODS</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE OUTCOMES :</h2>
+          <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of the course, learners will be able</p>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>CO1:To compare and contrast products and ideas in technical texts.</li>
+            <li>CO2:To identify and report cause and effects in events, industrial processes through technical texts</li>
+            <li>CO3:To analyse problems in order to arrive at feasible solutions and communicate them in the written format.</li>
+            <li>CO4:To present their ideas and opinions in a planned and logical manner</li>
+            <li>CO5:To draft effective resumes in the context of job search.</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">TEXT BOOKS :</h2>
+          <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>English for Engineers &amp; Technologists (2020 edition) Orient Blackswan Private Ltd. Department of English, Anna University.</li>
+            <li>English for Science &amp; Technology Cambridge University Press 2021.</li>
+            <li>Authored by Dr. Veena Selvam, Dr. Sujatha Priyadarshini, Dr. Deepa Mary Francis, Dr. KN. Shoba, and Dr. Lourdes Joevani, Department of English, Anna University.</li>
+          </ol>
+
+          <h2 class="syllabus-blue-heading">REFERENCES:</h2>
+          <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>Raman. Meenakshi, Sharma. Sangeeta (2019). Professional English. Oxford university press. New Delhi.</li>
+            <li>Improve Your Writing ed. V.N. Arora and Laxmi Chandra, Oxford Univ. Press, 2001, NewDelhi.</li>
+            <li>Learning to Communicate Ã¢â‚¬â€œ Dr. V. Chellammal. Allied Publishers, New Delhi, 2003</li>
+            <li>Business Correspondence and Report Writing by Prof. R.C. Sharma &amp; Krishna Mohan, Tata McGraw Hill &amp; Co. Ltd., 2001, New Delhi.</li>
+            <li>Developing Communication Skills by Krishna Mohan, Meera Bannerji- Macmillan India Ltd. 1990, Delhi.</li>
+          </ol>
+
+          <h2 class="syllabus-blue-heading">ASSESSMENT PATTERN</h2>
+          <p style="line-height:1.7; margin-bottom:0;">Two internal assessments and an end semester examination to test studentsÃ¢â‚¬â„¢ reading and writing skills along with their grammatical and lexical competence.</p>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

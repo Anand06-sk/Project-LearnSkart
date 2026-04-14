@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -34,20 +34,59 @@
         LearnSkart
     </div>
     <nav class="nav-menu" id="primary-nav">
-        
-        <a href="syllabus/" class="nav-link">Syllabus</a>
-        <a href="gate-pyqs/" class="nav-link"> GATE Qns</a>
-        <a href="daily-puzzle/" class="nav-link">Daily Puzzle</a>
-        <a href="disclaimer/" class="nav-link">Disclaimer</a>
-        <a href="terms-and-conditions/" class="nav-link">Terms &amp; Conditions</a>
-        <a href="privacy/" class="nav-link">Privacy Policy</a>
-        <a href="about/" class="nav-link">About</a>
-        <a href="contact/" class="nav-link">Contact</a>
-            <!-- Mobile/Tablet only: dark mode inside menu -->
-            <button type="button" class="nav-link theme-toggle nav-theme-item" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-                Dark Mode
-            </button>
+        <div class="nav-desktop">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="syllabus/" class="nav-link">Syllabus</a>
+            <a href="previous-year-questions/" class="nav-link">PYQs</a>
+            <div class="nav-dropdown">
+                <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    GATE <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="nav-dropdown-menu" aria-label="GATE">
+                    <a href="gate-pyqs/" class="nav-link">GATE Previous Year Questions</a>
+                    <a href="gate-syllabus/" class="nav-link">GATE Syllabus</a>
+                </div>
+            </div>
+            <a href="daily-puzzle/" class="nav-link">Daily Puzzle</a>
+            <a href="about/" class="nav-link">About</a>
+            <a href="contact/" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-mobile-groups" aria-label="Mobile navigation">
+            <div class="nav-group">
+                <div class="nav-group-title">Main (Academics)</div>
+                <a href="syllabus/" class="nav-link">Syllabus</a>
+                <a href="previous-year-questions/" class="nav-link">Previous Year Question Papers</a>
+                <a href="gate-pyqs/" class="nav-link">GATE Previous Year Questions</a>
+                <a href="gate-syllabus/" class="nav-link">GATE Syllabus</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Games</div>
+                <a href="daily-puzzle/" class="nav-link">Daily Puzzle</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Tools / Utilities</div>
+                <a href="cgpa-calculator/" class="nav-link">CGPA Calculator</a>
+                <a href="anna-university-results/" class="nav-link">Result Portal</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Support</div>
+                <a href="about/" class="nav-link">About</a>
+                <a href="contact/" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Legal</div>
+                <a href="privacy/" class="nav-link">Privacy Policy</a>
+                <a href="terms-and-conditions/" class="nav-link">Terms and Conditions</a>
+                <a href="disclaimer/" class="nav-link">Disclaimer</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Settings</div>
+                <button type="button" class="nav-link theme-toggle nav-theme-item" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                    Dark Mode
+                </button>
+            </div>
+        </div>
     </nav>
     <button class="nav-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
         <i class="fas fa-bars"></i>
@@ -141,6 +180,186 @@
     </div>
 </section>
 
+<!-- -------------------- CONTENT SECTION (SEO BOOST) -------------------- -->
+<section class="section content-section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Welcome to LearnSkart - Your Academic Companion</h2>
+        </div>
+        <p>
+            LearnSkart is a dedicated platform created to simplify the academic journey of Anna University students. Finding reliable notes, updated syllabus, and previous year question papers can often be time-consuming and frustrating. Many students depend on scattered resources across multiple websites, which makes preparation inefficient. LearnSkart solves this problem by bringing everything together in one organized and easy-to-use platform.
+        </p>
+        <p>
+            Whether you are preparing for semester exams, internal assessments, or competitive exams like GATE, LearnSkart helps you stay focused on learning instead of searching. The platform is designed with a modern interface, fast performance, and mobile-friendly layout, ensuring that students can access study materials anytime and anywhere.
+        </p>
+
+        <div class="section-header">
+            <h2>Anna University Notes for All Departments</h2>
+        </div>
+        <p>
+            LearnSkart provides high-quality Anna University notes for all major engineering departments including Computer Science Engineering (CSE), Electronics and Communication Engineering (ECE), Electrical and Electronics Engineering (EEE), Mechanical Engineering, Civil Engineering, and Information Technology (IT). Each department is carefully structured semester-wise, making it easier for students to find subject-specific materials without confusion.
+        </p>
+        <div class="dept-notes-spotlight" role="navigation" aria-label="Anna University department notes links">
+            <a href="anna-university-notes/cse/" class="dept-notes-chip cse-chip" title="Browse Computer Science Engineering notes">
+                <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                <span>CSE Notes</span>
+            </a>
+            <a href="anna-university-notes/ece/" class="dept-notes-chip ece-chip" title="Browse Electronics and Communication Engineering notes">
+                <i class="fas fa-microchip" aria-hidden="true"></i>
+                <span>ECE Notes</span>
+            </a>
+            <a href="anna-university-notes/eee/" class="dept-notes-chip eee-chip" title="Browse Electrical and Electronics Engineering notes">
+                <i class="fas fa-bolt" aria-hidden="true"></i>
+                <span>EEE Notes</span>
+            </a>
+            <a href="anna-university-notes/mech/" class="dept-notes-chip mech-chip" title="Browse Mechanical Engineering notes">
+                <i class="fas fa-cogs" aria-hidden="true"></i>
+                <span>Mechanical Notes</span>
+            </a>
+            <a href="anna-university-notes/civil/" class="dept-notes-chip civil-chip" title="Browse Civil Engineering notes">
+                <i class="fas fa-building" aria-hidden="true"></i>
+                <span>Civil Notes</span>
+            </a>
+            <a href="anna-university-notes/it/" class="dept-notes-chip it-chip" title="Browse Information Technology notes">
+                <i class="fas fa-server" aria-hidden="true"></i>
+                <span>B.Tech IT Notes</span>
+            </a>
+        </div>
+        <p>
+            The notes available on LearnSkart are curated from reliable sources and verified to maintain quality and accuracy. These materials are useful for understanding concepts clearly, revising important topics before exams, and improving overall academic performance. Students can use these notes as a primary resource or as a quick revision guide during exams.
+        </p>
+        <p>
+            With increasing competition and academic pressure, having access to structured and well-organized notes gives students a significant advantage. LearnSkart aims to provide exactly that by focusing on clarity, simplicity, and usefulness.
+        </p>
+
+        <div class="section-header">
+            <h2>Previous Year Question Papers (PYQs)</h2>
+        </div>
+        <p>
+            Previous year question papers are one of the most effective tools for exam preparation. They help students understand the exam pattern, identify important topics, and get familiar with frequently asked questions. LearnSkart offers a well-organized collection of Anna University previous year question papers (PYQs) for various subjects and departments.
+        </p>
+        <div class="pyq-spotlight" role="navigation" aria-label="Previous year question papers link">
+            <div class="pyq-spotlight-copy">
+                <span class="pyq-eyebrow">Quick Access</span>
+                <h3>Explore Anna University PYQs</h3>
+                <p>Open the full previous year question paper collection to practice smarter and revise faster.</p>
+            </div>
+            <a href="previous-year-questions/" class="pyq-cta" title="Browse Anna University previous year question papers">
+                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                <span>Open PYQ Page</span>
+            </a>
+        </div>
+        <p>
+            Practicing PYQs regularly helps students improve their confidence and time management skills. It also allows them to focus on important areas that have a higher probability of appearing in exams. By combining PYQs with notes, students can create a strong preparation strategy and perform better in their exams.
+        </p>
+
+        <div class="section-header">
+            <h2>GATE Preparation Made Easier</h2>
+        </div>
+        <p>
+            For students planning to pursue higher studies or secure jobs in top companies, the Graduate Aptitude Test in Engineering (GATE) is an important milestone. LearnSkart supports GATE aspirants by providing useful resources such as GATE questions and syllabus references.
+        </p>
+        <div class="gate-spotlight" role="navigation" aria-label="GATE resources links">
+            <a href="gate-syllabus/" class="gate-link gate-syllabus-link" title="Browse GATE syllabus">
+                <i class="fas fa-list-check" aria-hidden="true"></i>
+                <span>GATE Syllabus</span>
+            </a>
+            <a href="gate-pyqs/" class="gate-link gate-pyq-link" title="Browse GATE previous year questions">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>GATE PYQs</span>
+            </a>
+        </div>
+        <p>
+            These resources help students build a strong conceptual foundation in core subjects. By practicing regularly and understanding key concepts, students can improve their chances of scoring well in competitive exams. LearnSkart acts as a supplementary platform that supports consistent preparation and learning.
+        </p>
+
+        <div class="section-header">
+            <h2>CGPA Calculator and Academic Tools</h2>
+        </div>
+        <p>
+            Calculating CGPA manually can sometimes be confusing for students. LearnSkart offers a simple and user-friendly CGPA calculator that helps students quickly calculate their academic performance. By entering grades and credits, students can instantly know their CGPA without any errors.
+        </p>
+        <div class="cgpa-spotlight" role="navigation" aria-label="CGPA calculator link">
+            <div class="cgpa-spotlight-copy">
+                <span class="cgpa-eyebrow">Quick Access</span>
+                <h3>Open the CGPA Calculator</h3>
+                <p>Calculate your semester performance in a clean, fast, and student-friendly tool.</p>
+            </div>
+            <a href="cgpa-calculator/" class="cgpa-cta" title="Open the CGPA calculator">
+                <i class="fas fa-calculator" aria-hidden="true"></i>
+                <span>Go to Calculator</span>
+            </a>
+        </div>
+        <p>
+            In addition to the CGPA calculator, LearnSkart also provides access to syllabus details, results updates, and interactive features like daily puzzles. These tools are designed to make learning more engaging while also helping students stay updated with their academic progress.
+        </p>
+
+        <div class="section-header">
+            <h2>Simple and User-Friendly Experience</h2>
+        </div>
+        <p>
+            One of the key highlights of LearnSkart is its clean and modern user interface. Unlike many cluttered educational websites, LearnSkart focuses on simplicity and ease of use. Students can quickly navigate through departments, semesters, and subjects without confusion.
+        </p>
+        <p>
+            The search functionality allows users to find specific topics, notes, or question papers instantly. This saves valuable time and makes the study process more efficient. The platform is also optimized for mobile devices, ensuring a smooth experience across all screen sizes.
+        </p>
+
+        <div class="section-header">
+            <h2>How to Use LearnSkart</h2>
+        </div>
+        <p>
+            Getting started with LearnSkart is easy. Students can begin by selecting their department from the homepage. After that, they can choose their semester and explore subject-wise notes, syllabus, and question papers. Each section is clearly organized, making it easy to find the required materials.
+        </p>
+        <p>
+            The platform also includes quick access links for syllabus, GATE questions, CGPA calculator, and results. With everything available in one place, LearnSkart ensures a smooth and hassle-free experience for students.
+        </p>
+
+        <div class="section-header">
+            <h2>Why Choose LearnSkart?</h2>
+        </div>
+        <p>
+            LearnSkart stands out because of its focus on quality, simplicity, and accessibility. All resources on the platform are provided free of cost, making it accessible to every student. The content is regularly updated to match the latest Anna University curriculum, ensuring relevance and accuracy.
+        </p>
+        <p>
+            The platform is built with students in mind. From easy navigation to clean design, every aspect of LearnSkart is optimized to improve the learning experience. Students can rely on LearnSkart as a trusted source for their academic needs.
+        </p>
+
+        <div class="section-header">
+            <h2>Benefits of Using LearnSkart</h2>
+        </div>
+        <p>
+            LearnSkart helps students save time, stay organized, and improve their exam preparation. Instead of searching multiple websites for notes and question papers, students can find everything in one place. This not only reduces stress but also increases productivity.
+        </p>
+        <p>
+            By using LearnSkart regularly, students can build a consistent study routine, revise effectively, and perform better in exams. The platform is designed to support students at every stage of their academic journey.
+        </p>
+
+        <div class="section-header">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+        </div>
+
+        <p><strong>1. What is LearnSkart?</strong><br>
+        LearnSkart is an online platform that provides Anna University notes, syllabus, previous year question papers, and academic tools for students.</p>
+
+        <p><strong>2. Is LearnSkart free to use?</strong><br>
+        Yes, all the resources available on LearnSkart are completely free for students.</p>
+
+        <p><strong>3. Which departments are covered?</strong><br>
+        LearnSkart covers CSE, ECE, EEE, Mechanical, Civil, and IT departments.</p>
+
+        <p><strong>4. Are the notes updated regularly?</strong><br>
+        Yes, the notes and materials are updated regularly based on the latest Anna University syllabus.</p>
+
+        <p><strong>5. Can I download the notes?</strong><br>
+        Yes, students can easily download notes and study materials for offline use.</p>
+
+        <p><strong>6. Does LearnSkart help in GATE preparation?</strong><br>
+        Yes, LearnSkart provides GATE questions and important topics to support preparation.</p>
+
+    </div>
+</section>
+
 <!-- -------------------- STATS SECTION -------------------- -->
 <section class="section stats-section">
     <div class="container">
@@ -216,23 +435,39 @@
         <div class="footer-section">
             <h4>Quick Links</h4>
             <ul>
-               
+                <li><a href="index.html">Home</a></li>
+                <li><a href="anna-university-notes/">Notes</a></li>
                 <li><a href="syllabus/">Syllabus</a></li>
-                <li><a href="disclaimer/">Disclaimer</a></li>
-                <li><a href="terms-and-conditions/">Terms &amp; Conditions</a></li>
-                <li><a href="privacy/">Privacy Policy</a></li>
-                 <li><a href="about/">About</a></li>
+                <li><a href="previous-year-questions/">Previous Year Question Papers</a></li>
+                <li><a href="gate-syllabus/">GATE Syllabus</a></li>
+                <li><a href="gate-pyqs/">GATE PYQs</a></li>
+                <li><a href="about/">About</a></li>
                 <li><a href="contact/">Contact</a></li>
             </ul>
         </div>
         <div class="footer-section">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="privacy/">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions/">Terms and Conditions</a></li>
+                <li><a href="disclaimer/">Disclaimer</a></li>
+            </ul>
+        </div>
+        <div class="footer-section footer-social">
             <h4>Follow Us</h4>
-            <div class="social-links">
-                <a href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="social-links-row">
+                <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@LearnSkart</span>
+                </a>
+                <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>YouTube</span>
+                </a>
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
+<div class="footer-bottom">
         <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
     </div>
 </footer>
@@ -241,3 +476,6 @@
 <script src="assets/js/script.js" defer></script>
 </body>
 </html>
+
+
+

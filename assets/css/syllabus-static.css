@@ -306,3 +306,65 @@ body.dark-mode .hero-meta {
     padding: 0.24rem 0.52rem;
   }
 }
+
+footer {
+  margin-top: 52px;
+  background: #0f1f46;
+  color: #dfe9ff;
+  padding: 40px 20px 16px;
+}
+
+.footer-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.footer-section h4 {
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+.footer-section p {
+  color: #c5d4ff;
+  line-height: 1.6;
+}
+
+.logo-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #d8e4ff;
+  transition: color 0.2s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  max-width: 1120px;
+  margin: 30px auto 0;
+  border-top: 1px solid rgba(189, 209, 255, 0.25);
+  padding-top: 14px;
+  text-align: center;
+  color: #c5d4ff;
+  font-size: 0.9rem;
+}
+
+.footer-bottom .fa-heart {
+  color: #ff7a98;
+}

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap">
     <link rel="stylesheet" href="../../assets/css/theme.css">
     <link rel="stylesheet" href="../../assets/css/gate.css">
+  <link rel="stylesheet" href="../../assets/css/nav.css">
 <style id="custom-nav-style">
     .custom-nav {
         position: sticky;
@@ -28,7 +29,7 @@
         display: flex;
         align-items: center;
         gap: 0.65rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .custom-nav .back-btn {
@@ -152,8 +153,8 @@
 
     .gate-footer .quick-links {
         display: flex;
-        flex-direction: row !important;
-        flex-wrap: wrap;
+        flex-direction: column !important;
+        flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 0.5rem 0.8rem;
         font-size: 0.92rem;
@@ -232,7 +233,7 @@
         }
 
         .gate-footer .quick-links {
-            flex-direction: row !important;
+            flex-direction: column !important;
             align-items: center;
             justify-content: center;
         }
@@ -259,81 +260,210 @@
         }
 
         .gate-footer .quick-links {
-            flex-direction: row !important;
+            flex-direction: column !important;
             gap: 0.45rem 0.65rem;
             font-size: 0.88rem;
         }
     }
-</style>
+    .gate-footer .footer-brand {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .gate-footer .footer-brand img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+    }
+
+    .gate-footer .footer-brand p {
+        margin: 0;
+        color: #dbeafe !important;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+        .gate-footer .footer-brand {
+            justify-content: center;
+            text-align: center;
+        }
+    }</style>
 </head>
 <body>
-    <nav class="custom-nav">
-    <div class="nav-container">
-        <a href="../../" class="logo" aria-label="LearnSkart Home">
-            <div class="logo-icon">
-                <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart" style="width: 100%; height: 100%; border-radius: 50%;">
-            </div>
-            <div class="logo-text">
-                <span class="logo-title">LearnSkart</span>
-            </div>
-        </a>
-
-        <div class="nav-links-desktop" aria-label="Primary">
-            <a href="../../gate-syllabus/" class="back-btn">GATE Syllabus</a>
-            <a href="../../gate-pyqs/" class="back-btn">GATE PYQ</a>
-            <a href="../../" class="back-btn">Home</a>
-            <a href="../../about/" class="back-btn">About</a>
-            <a href="../../contact/" class="back-btn">Contact</a>
+      <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-logo">
+        <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+        <span>LearnSkart</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="nav-right" id="navMenu">
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/gate/ar-architecture-and-planning/">GATE Previous Year Question Papers</a>
+          <a href="/gate-syllabus/ar-architecture-and-planning/" aria-current="page">GATE Syllabus</a>
+          <a href="/daily-puzzle/">Daily Puzzle</a>
+          <a href="/contact/">Contact</a>
         </div>
-
-        <div class="nav-primary-mobile" aria-label="Primary mobile quick links">
-            <a href="../../gate-syllabus/" class="back-btn">GATE Syllabus</a>
-            <a href="../../gate-pyqs/" class="back-btn">GATE PYQ</a>
-            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <div class="nav-group">
+          <div class="nav-group-title">Main</div>
+          <a href="/">Home</a>
+          <a href="/gate/ar-architecture-and-planning/">GATE Previous Year Question Papers</a>
+          <a href="/gate-syllabus/ar-architecture-and-planning/" aria-current="page">GATE Syllabus</a>
+          <a href="/daily-puzzle/">Daily Puzzle</a>
         </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Support</div>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Legal</div>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms-and-conditions/">Terms and Conditions</a>
+          <a href="/disclaimer/">Disclaimer</a>
+        </div>
+      </div>
     </div>
-    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile menu">
-        <a href="../../">Home</a>
-        <a href="../../about/">About</a>
-        <a href="../../contact/">Contact</a>
-    </div>
-</nav>
+  </nav>
     <header class="hero"><div class="hero-content"><h1>GATE <span style="color: #3b82f6;">AR</span> Syllabus 2026</h1></div></header>
-    <main class="container" style="padding: 2rem;"><article><section style="background: #f0f9ff; border-left: 4px solid #3b82f6; padding: 1.5rem; margin: 2rem 0;"><h2 style="color: #1e3a8a;">Architecture & Planning</h2><p><span style="display: inline-flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;"><a href="https://drive.google.com/file/d/18iSDJC0dB6aTLFM1bkSmZ-nJIi7JnxwA/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-eye"></i> View Syllabus</a><a href="https://drive.google.com/uc?export=download&id=18iSDJC0dB6aTLFM1bkSmZ-nJIi7JnxwA" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-download"></i> Download PDF</a></span></p></section><section style="margin: 2rem 0;"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;"><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">🏛️ Architecture</h3><ul style="font-size: 0.9rem;"><li>Design principles</li><li>History of architecture</li><li>Building design</li></ul></div><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">🏙️ Urban Planning</h3><ul style="font-size: 0.9rem;"><li>City planning</li><li>Urban design</li><li>Infrastructure</li></ul></div><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">📐 Building Technology</h3><ul style="font-size: 0.9rem;"><li>Construction materials</li><li>Building services</li><li>Sustainability</li></ul></div><div style="background: #f9fafb; padding: 1rem;"><h3 style="color: #3b82f6;">🌍 Planning Theory</h3><ul style="font-size: 0.9rem;"><li>Planning processes</li><li>Policy & governance</li><li>Development</li></ul></div></div></section></article></main>
-    <footer class="gate-footer">
-    <div class="footer-wrap">
-        <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-            <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" style="width: 30px; height: 30px; border-radius: 50%;">
-            <span style="font-weight: 700; font-size: 1.05rem;">LearnSkart</span>
-        </div>
+    <main class="container" style="padding: 2rem;">
+        <article>
+            <h1>GATE 2026 Architecture and Planning Syllabus and Complete Preparation Guide</h1>
 
-        <div class="footer-main">
-            <div class="footer-section" aria-label="Footer quick links">
-                <h3 class="footer-title">Quick Links</h3>
-                <div class="quick-links">
-                    <a href="../../">Home</a>
-                    <a href="../../about/">About</a>
-                    <a href="../../terms-and-conditions/">Terms &amp; Conditions</a>
-                    <a href="../../contact/">Contact</a>
-                    <a href="../../privacy/">Privacy Policy</a>
+            <section style="background: #f0f9ff; border-left: 4px solid #3b82f6; padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                <h2 style="margin-top: 0; color: #1e3a8a;">GATE Architecture and Planning (AR) Syllabus 2026 PDF</h2>
+                <p><strong>Subject Code:</strong> AR</p>
+                <p><strong>Total Marks:</strong> 100 | <strong>Duration:</strong> 3 Hours</p>
+                <p><strong>Question Pattern:</strong> MCQ, MSQ, and NAT are used across the paper; the exact count can vary by year.</p>
+                <p style="margin-bottom: 0; margin-top: 1.5rem;">
+                    <span style="display: inline-flex; gap: 0.75rem; flex-wrap: nowrap; align-items: center;"><a href="https://drive.google.com/file/d/18iSDJC0dB6aTLFM1bkSmZ-nJIi7JnxwA/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-eye"></i> View Syllabus</a><a href="https://drive.google.com/uc?export=download&id=18iSDJC0dB6aTLFM1bkSmZ-nJIi7JnxwA" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.55rem; padding: 12px 20px; background: #ffffff; color: #1d4ed8; border: 2px solid #1d4ed8; border-radius: 10px; text-decoration: none; font-weight: 700;"><i class="fas fa-download"></i> Download PDF</a></span>
+                </p>
+            </section>
+
+            <p>The Graduate Aptitude Test in Engineering GATE 2026 evaluates core concepts and analytical skills at the undergraduate level. The organizing institute for GATE 2026 is the Indian Institute of Technology Guwahati. A valid score is used for admission to postgraduate programs such as MArch, MPlan, and PhD at leading institutes and is also considered by several public sector organizations for recruitment.</p>
+
+            <p>The AR paper blends design understanding with technical knowledge. It focuses on conceptual clarity, spatial reasoning, and the ability to apply principles from architecture, planning, and building technology to structured problem statements. A balanced approach to preparation is essential because the paper covers both qualitative concepts and quantitative reasoning.</p>
+
+            <h2>About the Architecture and Planning Paper</h2>
+
+            <p>The Architecture and Planning paper, code AR, is designed to assess the knowledge base of students in architectural design, building materials, construction methods, urban planning concepts, and environmental considerations. It is suitable for candidates who aim to pursue higher studies or professional roles in architecture, urban development, housing, and related interdisciplinary areas.</p>
+
+            <p>The syllabus typically includes architectural design fundamentals, building services, history of architecture, urban planning principles, and sustainability considerations. The AR paper expects candidates to demonstrate strong conceptual understanding along with the ability to interpret and solve application oriented problems.</p>
+
+            <h2>GATE 2026 Exam Pattern</h2>
+
+            <p>GATE 2026 is conducted online with a duration of three hours and a total of 100 marks. The paper consists of objective questions, including multiple choice, multiple select, and numerical answer types. General Aptitude carries 15 marks and the core AR section carries 85 marks.</p>
+
+            <ul>
+                <li>General Aptitude tests language and reasoning ability</li>
+                <li>Core AR questions assess architecture and planning fundamentals</li>
+                <li>Negative marking applies only to MCQ type questions</li>
+                <li>MSQ and NAT questions do not carry negative marking</li>
+            </ul>
+
+            <h2>Eligibility</h2>
+
+            <p>Candidates in the third year or higher of an undergraduate degree in architecture or related disciplines are eligible to apply. Graduates and candidates in relevant integrated or masters programs can also appear. There is no age limit, and eligibility depends on the qualifying degree and year of study.</p>
+
+            <p>Applicants from architecture, planning, and allied design disciplines typically take this paper. Candidates from related fields can also apply if they have covered core topics and are prepared for design and planning fundamentals.</p>
+
+            <h2>Importance of Previous Year Questions</h2>
+
+            <p>Previous year questions are critical for understanding the structure of the AR paper. They help candidates recognize recurring concepts such as building materials, climate responsive design, planning terminology, and basic calculations related to structures or services. PYQs also reflect the balance between theory and application based questions.</p>
+
+            <p>Working through PYQs improves confidence and time management. It reveals common mistakes such as misinterpreting definitions or mixing up planning concepts. Consistent practice builds the ability to solve questions quickly and accurately.</p>
+
+            <h2>Subject Analysis</h2>
+
+            <p>The AR syllabus spans architectural history, design principles, building technology, services, and urban planning. Architecture fundamentals include spatial organization, form, and design vocabulary, while building technology covers materials, structural systems, and construction methods. Environmental design topics focus on climate responsive planning and sustainability strategies.</p>
+
+            <p>Planning topics address concepts like land use, housing, infrastructure, and development processes. The paper can include questions that require interpreting data or applying concepts to practical scenarios. A well prepared candidate should be comfortable with both descriptive knowledge and basic quantitative reasoning.</p>
+
+            <p>Common challenges include incomplete coverage of theory based topics and insufficient revision of terminology. A steady revision schedule and a concise glossary of key terms can significantly improve recall during the exam.</p>
+
+            <h2>Preparation Strategy</h2>
+
+            <p>Begin by organizing the syllabus into modules such as architectural history, building materials, services, and planning. Study one module at a time and create summary notes that capture definitions, key concepts, and standard practices. Use visual diagrams and short bullet notes to improve memory without relying on heavy memorization.</p>
+
+            <p>After completing each topic, solve related PYQs and practice questions to test retention and application. For planning concepts, focus on clear definitions and examples. For building technology, reinforce understanding through typical use cases and standard terminology. Periodic mock tests help you calibrate time and accuracy.</p>
+
+            <p>In the final phase, focus on revision and error analysis. Keep a list of common mistakes, revise definitions regularly, and take full length tests to simulate the exam environment.</p>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Is the AR paper theory heavy</h3>
+            <p>It includes significant conceptual content, but many questions are application oriented. A balance of theory and problem solving is the best approach.</p>
+
+            <h3>Which topics are most important in AR</h3>
+            <p>Design principles, building materials, services, and planning concepts are core areas that need consistent revision and practice.</p>
+
+            <h3>How should I prepare if I come from a planning background</h3>
+            <p>Strengthen architectural fundamentals and building technology through focused study and solve PYQs to bridge gaps.</p>
+
+            <h3>Are PYQs enough for AR preparation</h3>
+            <p>PYQs are essential, but they should be supported with concept learning from standard texts and class notes to build a strong base.</p>
+
+            <h2>Conclusion</h2>
+
+            <p>The GATE 2026 Architecture and Planning syllabus provides a structured roadmap for preparation. A consistent study routine, clear conceptual understanding, and repeated practice of PYQs can lead to strong performance in the AR paper.</p>
+
+            <p>Stay aligned with the official syllabus and maintain concise revision notes. With focused effort and disciplined practice, the AR paper becomes a strong opportunity to achieve a competitive GATE score.</p>
+        </article>
+    </main>
+        <footer class="gate-footer">
+        <div class="footer-wrap">
+            <div class="footer-brand">
+                <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart">
+                <p>LearnSkart is your hub for GATE syllabus and PYQs.</p>
+            </div>
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="quick-links">
+                        <a href="../../index.html">Home</a>
+                        <a href="../../gate-pyqs/">GATE PYQs</a>
+                        <a href="../../gate-syllabus/">GATE Syllabus</a>
+                        <a href="../../about/">About</a>
+                        <a href="../../contact/">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <div class="quick-links">
+                        <a href="../../privacy/">Privacy Policy</a>
+                        <a href="../../terms-and-conditions/">Terms and Conditions</a>
+                        <a href="../../disclaimer/">Disclaimer</a>
+                    </div>
+                </div>
+                <div class="footer-section footer-social">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <div class="footer-section" aria-label="Footer social links">
-                <h3 class="footer-title">Follow Us</h3>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i></div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
     <script id="custom-nav-script">
     document.addEventListener('DOMContentLoaded', () => {
         const toggleBtn = document.querySelector('.mobile-menu-toggle');
@@ -364,6 +494,16 @@
     });
 </script>
 <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 

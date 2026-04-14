@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="/assets/js/analytics.js"></script>
@@ -14,23 +14,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="../assets/css/question.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
 </head>
 <body>
 <script src="../assets/js/theme.js" defer></script>
 
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Question Papers</p>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="nav-logo">
+                <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/syllabus/">Syllabus</a>
+                    <a href="/previous-year-questions/" aria-current="page">Previous Year Question Papers</a>
+                    <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+                    <a href="/gate-syllabus/">GATE Syllabus</a>
+                    <a href="/daily-puzzle/">Daily Puzzle</a>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
                 </div>
             </div>
-            <div class="nav-links">
-                <a href="../">Home</a>
-                <a href="../contact/">Contact</a>
-                <a href="../about/">About</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="/">Home</a>
+                    <a href="/syllabus/">Syllabus</a>
+                    <a href="/previous-year-questions/" aria-current="page">Previous Year Question Papers</a>
+                    <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+                    <a href="/gate-syllabus/">GATE Syllabus</a>
+                    <a href="/daily-puzzle/">Daily Puzzle</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms-and-conditions/">Terms and Conditions</a>
+                    <a href="/disclaimer/">Disclaimer</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -92,7 +126,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-1-Engineering Chemistry" data-dept="CIVIL" data-sem="1" data-name="Engineering Chemistry" data-name-normalized="engineeringchemistry" data-code="CY3151" data-href="../pyq/CY3151-engineering-chemistry/" onclick="toggleCard('CIVIL-1-Engineering Chemistry')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 1</span>
+                        <span class="sem-tag">CIVIL - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Chemistry</h3>
@@ -111,7 +145,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-1-Engineering Physics" data-dept="CIVIL" data-sem="1" data-name="Engineering Physics" data-name-normalized="engineeringphysics" data-code="PH3151" data-href="../pyq/PH3151-engineering-physics/" onclick="toggleCard('CIVIL-1-Engineering Physics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 1</span>
+                        <span class="sem-tag">CIVIL - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Physics</h3>
@@ -130,7 +164,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-1-Heritage of Tamils" data-dept="CIVIL" data-sem="1" data-name="Heritage of Tamils" data-name-normalized="heritageoftamils" data-code="GE3152" data-href="../pyq/GE3152-heritage-of-tamils/" onclick="toggleCard('CIVIL-1-Heritage of Tamils')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 1</span>
+                        <span class="sem-tag">CIVIL - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heritage of Tamils</h3>
@@ -149,7 +183,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-1-Matrices and Calculus" data-dept="CIVIL" data-sem="1" data-name="Matrices and Calculus" data-name-normalized="matricesandcalculus" data-code="MA3151" data-href="../pyq/MA3151-matrices-and-calculus/" onclick="toggleCard('CIVIL-1-Matrices and Calculus')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 1</span>
+                        <span class="sem-tag">CIVIL - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Matrices and Calculus</h3>
@@ -168,7 +202,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-1-Problem Solving and Python Programming" data-dept="CIVIL" data-sem="1" data-name="Problem Solving and Python Programming" data-name-normalized="problemsolvingandpythonprogramming" data-code="GE3151" data-href="../pyq/GE3151-problem-solving-and-python-programming/" onclick="toggleCard('CIVIL-1-Problem Solving and Python Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 1</span>
+                        <span class="sem-tag">CIVIL - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Problem Solving and Python Programming</h3>
@@ -184,10 +218,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card qp-card hidden" data-subject-id="CIVIL-1-Professional English - I" data-dept="CIVIL" data-sem="1" data-name="Professional English — I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('CIVIL-1-Professional English — I')">
+            <div class="card qp-card hidden" data-subject-id="CIVIL-1-Professional English - I" data-dept="CIVIL" data-sem="1" data-name="Professional English - I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('CIVIL-1-Professional English - I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 1</span>
+                        <span class="sem-tag">CIVIL - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - I</h3>
@@ -206,7 +240,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-2-Basic Electrical, Electronics and Instrumentation Engineering" data-dept="CIVIL" data-sem="2" data-name="Basic Electrical, Electronics and Instrumentation Engineering" data-name-normalized="basicelectricalelectronicsandinstrumentationengineering" data-code="BE3252" data-href="../pyq/BE3252-basic-electrical-electronics-and-instrumentation-engineering/" onclick="toggleCard('CIVIL-2-Basic Electrical, Electronics and Instrumentation Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 2</span>
+                        <span class="sem-tag">CIVIL - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Basic Electrical, Electronics and Instrumentation Engineering</h3>
@@ -225,7 +259,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-2-Engineering Graphics" data-dept="CIVIL" data-sem="2" data-name="Engineering Graphics" data-name-normalized="engineeringgraphics" data-code="GE3251" data-href="../pyq/GE3251-engineering-graphics/" onclick="toggleCard('CIVIL-2-Engineering Graphics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 2</span>
+                        <span class="sem-tag">CIVIL - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Graphics</h3>
@@ -244,7 +278,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-2-Physics for Civil Engineering" data-dept="CIVIL" data-sem="2" data-name="Physics for Civil Engineering" data-name-normalized="physicsforcivilengineering" data-code="PH3201" data-href="../pyq/PH3201-physics-for-civil-engineering/" onclick="toggleCard('CIVIL-2-Physics for Civil Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 2</span>
+                        <span class="sem-tag">CIVIL - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Physics for Civil Engineering</h3>
@@ -263,7 +297,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-2-Professional English - II" data-dept="CIVIL" data-sem="2" data-name="Professional English - II" data-name-normalized="professionalenglish2" data-code="HS3252" data-href="../pyq/HS3252-professional-english-ii/" onclick="toggleCard('CIVIL-2-Professional English - II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 2</span>
+                        <span class="sem-tag">CIVIL - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - II</h3>
@@ -282,7 +316,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-2-Statistics and Numerical Methods" data-dept="CIVIL" data-sem="2" data-name="Statistics and Numerical Methods" data-name-normalized="statisticsandnumericalmethods" data-code="MA3251" data-href="../pyq/MA3251-statistics-and-numerical-methods/" onclick="toggleCard('CIVIL-2-Statistics and Numerical Methods')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 2</span>
+                        <span class="sem-tag">CIVIL - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Statistics and Numerical Methods</h3>
@@ -301,7 +335,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-2-Tamils and Technology" data-dept="CIVIL" data-sem="2" data-name="Tamils and Technology" data-name-normalized="tamilsandtechnology" data-code="GE3252" data-href="../pyq/GE3252-tamils-and-technology/" onclick="toggleCard('CIVIL-2-Tamils and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 2</span>
+                        <span class="sem-tag">CIVIL - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Tamils and Technology</h3>
@@ -320,7 +354,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-3-Construction Materials and Technology" data-dept="CIVIL" data-sem="3" data-name="Construction Materials and Technology" data-name-normalized="constructionmaterialsandtechnology" data-code="CE3302" data-href="../pyq/CE3302-construction-materials-and-technology/" onclick="toggleCard('CIVIL-3-Construction Materials and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 3</span>
+                        <span class="sem-tag">CIVIL - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Construction Materials and Technology</h3>
@@ -339,7 +373,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-3-Engineering Mechanics" data-dept="CIVIL" data-sem="3" data-name="Engineering Mechanics" data-name-normalized="engineeringmechanics" data-code="ME3351" data-href="../pyq/ME3351-engineering-mechanics/" onclick="toggleCard('CIVIL-3-Engineering Mechanics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 3</span>
+                        <span class="sem-tag">CIVIL - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Mechanics</h3>
@@ -358,7 +392,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-3-Fluid Mechanics" data-dept="CIVIL" data-sem="3" data-name="Fluid Mechanics" data-name-normalized="fluidmechanics" data-code="CE3301" data-href="../pyq/CE3301-fluid-mechanics/" onclick="toggleCard('CIVIL-3-Fluid Mechanics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 3</span>
+                        <span class="sem-tag">CIVIL - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Fluid Mechanics</h3>
@@ -377,7 +411,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-3-Surveying and Levelling" data-dept="CIVIL" data-sem="3" data-name="Surveying and Levelling" data-name-normalized="surveyingandlevelling" data-code="CE3351" data-href="../pyq/CE3351-surveying-and-levelling/" onclick="toggleCard('CIVIL-3-Surveying and Levelling')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 3</span>
+                        <span class="sem-tag">CIVIL - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Surveying and Levelling</h3>
@@ -396,7 +430,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-3-Transforms and Partial Differential Equations" data-dept="CIVIL" data-sem="3" data-name="Transforms and Partial Differential Equations" data-name-normalized="transformsandpartialdifferentialequations" data-code="MA3351" data-href="../pyq/MA3351-transforms-and-partial-differential-equations/" onclick="toggleCard('CIVIL-3-Transforms and Partial Differential Equations')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 3</span>
+                        <span class="sem-tag">CIVIL - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Transforms and Partial Differential Equations</h3>
@@ -415,7 +449,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-3-Water Supply and Wastewater Engineering" data-dept="CIVIL" data-sem="3" data-name="Water Supply and Wastewater Engineering" data-name-normalized="watersupplyandwastewaterengineering" data-code="CE3303" data-href="../pyq/CE3303-water-supply-and-wastewater-engineering/" onclick="toggleCard('CIVIL-3-Water Supply and Wastewater Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 3</span>
+                        <span class="sem-tag">CIVIL - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Water Supply and Wastewater Engineering</h3>
@@ -434,7 +468,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-4-Applied Hydraulics Engineering" data-dept="CIVIL" data-sem="4" data-name="Applied Hydraulics Engineering" data-name-normalized="appliedhydraulicsengineering" data-code="CE3401" data-href="../pyq/CE3401-applied-hydraulics-engineering/" onclick="toggleCard('CIVIL-4-Applied Hydraulics Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 4</span>
+                        <span class="sem-tag">CIVIL - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Applied Hydraulics Engineering</h3>
@@ -453,7 +487,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-4-Concrete Technology" data-dept="CIVIL" data-sem="4" data-name="Concrete Technology" data-name-normalized="concretetechnology" data-code="CE3403" data-href="../pyq/CE3403-concrete-technology/" onclick="toggleCard('CIVIL-4-Concrete Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 4</span>
+                        <span class="sem-tag">CIVIL - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Concrete Technology</h3>
@@ -472,7 +506,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-4-Environmental Sciences and Sustainability" data-dept="CIVIL" data-sem="4" data-name="Environmental Sciences and Sustainability" data-name-normalized="environmentalsciencesandsustainability" data-code="GE3451" data-href="../pyq/GE3451-environmental-sciences-and-sustainability/" onclick="toggleCard('CIVIL-4-Environmental Sciences and Sustainability')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 4</span>
+                        <span class="sem-tag">CIVIL - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Environmental Sciences and Sustainability</h3>
@@ -491,7 +525,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-4-Highway and Railway Engineering" data-dept="CIVIL" data-sem="4" data-name="Highway and Railway Engineering" data-name-normalized="highwayandrailwayengineering" data-code="CE3405" data-href="../pyq/CE3405-highway-and-railway-engineering/" onclick="toggleCard('CIVIL-4-Highway and Railway Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 4</span>
+                        <span class="sem-tag">CIVIL - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Highway and Railway Engineering</h3>
@@ -510,7 +544,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-4-Soil Mechanics" data-dept="CIVIL" data-sem="4" data-name="Soil Mechanics" data-name-normalized="soilmechanics" data-code="CE3404" data-href="../pyq/CE3404-soil-mechanics/" onclick="toggleCard('CIVIL-4-Soil Mechanics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 4</span>
+                        <span class="sem-tag">CIVIL - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Soil Mechanics</h3>
@@ -529,7 +563,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-4-Strength of Materials" data-dept="CIVIL" data-sem="4" data-name="Strength of Materials" data-name-normalized="strengthofmaterials" data-code="CE3402" data-href="../pyq/CE3402-strength-of-materials/" onclick="toggleCard('CIVIL-4-Strength of Materials')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 4</span>
+                        <span class="sem-tag">CIVIL - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Strength of Materials</h3>
@@ -548,7 +582,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-5-Design of Reinforced Concrete Structural Elements" data-dept="CIVIL" data-sem="5" data-name="Design of Reinforced Concrete Structural Elements" data-name-normalized="designofreinforcedconcretestructuralelements" data-code="CE3501" data-href="../pyq/CE3501-design-of-reinforced-concrete-structural-elements/" onclick="toggleCard('CIVIL-5-Design of Reinforced Concrete Structural Elements')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 5</span>
+                        <span class="sem-tag">CIVIL - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Design of Reinforced Concrete Structural Elements</h3>
@@ -567,7 +601,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-5-Foundation Engineering" data-dept="CIVIL" data-sem="5" data-name="Foundation Engineering" data-name-normalized="foundationengineering" data-code="CE3503" data-href="../pyq/CE3503-foundation-engineering/" onclick="toggleCard('CIVIL-5-Foundation Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 5</span>
+                        <span class="sem-tag">CIVIL - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Foundation Engineering</h3>
@@ -586,7 +620,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-5-Structural Analysis I" data-dept="CIVIL" data-sem="5" data-name="Structural Analysis I" data-name-normalized="structuralanalysis1" data-code="CE3502" data-href="../pyq/CE3502-structural-analysis-i/" onclick="toggleCard('CIVIL-5-Structural Analysis I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 5</span>
+                        <span class="sem-tag">CIVIL - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Structural Analysis I</h3>
@@ -605,7 +639,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-6-Design of Steel Structural Elements" data-dept="CIVIL" data-sem="6" data-name="Design of Steel Structural Elements" data-name-normalized="designofsteelstructuralelements" data-code="CE3601" data-href="../pyq/CE3601-design-of-steel-structural-elements/" onclick="toggleCard('CIVIL-6-Design of Steel Structural Elements')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 6</span>
+                        <span class="sem-tag">CIVIL - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Design of Steel Structural Elements</h3>
@@ -624,7 +658,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-6-Engineering Geology" data-dept="CIVIL" data-sem="6" data-name="Engineering Geology" data-name-normalized="engineeringgeology" data-code="AG3601" data-href="../pyq/AG3601-engineering-geology/" onclick="toggleCard('CIVIL-6-Engineering Geology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 6</span>
+                        <span class="sem-tag">CIVIL - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Geology</h3>
@@ -643,7 +677,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-6-Structural Analysis II" data-dept="CIVIL" data-sem="6" data-name="Structural Analysis II" data-name-normalized="structuralanalysis2" data-code="CE3602" data-href="../pyq/CE3602-structural-analysis-ii/" onclick="toggleCard('CIVIL-6-Structural Analysis II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 6</span>
+                        <span class="sem-tag">CIVIL - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Structural Analysis II</h3>
@@ -662,7 +696,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-7-Estimation,Coasting and Valuation Engineering" data-dept="CIVIL" data-sem="7" data-name="Estimation,Coasting and Valuation Engineering" data-name-normalized="estimationcoastingandvaluationengineering" data-code="CE3701" data-href="../pyq/CE3701-estimation-coasting-and-valuation-engineering/" onclick="toggleCard('CIVIL-7-Estimation,Coasting and Valuation Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 7</span>
+                        <span class="sem-tag">CIVIL - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Estimation,Coasting and Valuation Engineering</h3>
@@ -681,7 +715,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-7-Human Values and Ethics" data-dept="CIVIL" data-sem="7" data-name="Human Values and Ethics" data-name-normalized="humanvaluesandethics" data-code="GE3791" data-href="../pyq/GE3791-human-values-and-ethics/" onclick="toggleCard('CIVIL-7-Human Values and Ethics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 7</span>
+                        <span class="sem-tag">CIVIL - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Human Values and Ethics</h3>
@@ -700,7 +734,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-7-Hydrology and Water Resources Engineering" data-dept="CIVIL" data-sem="7" data-name="Hydrology and Water Resources Engineering" data-name-normalized="hydrologyandwaterresourcesengineering" data-code="AI3404" data-href="../pyq/AI3404-hydrology-and-water-resources-engineering/" onclick="toggleCard('CIVIL-7-Hydrology and Water Resources Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 7</span>
+                        <span class="sem-tag">CIVIL - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Hydrology and Water Resources Engineering</h3>
@@ -719,7 +753,7 @@
             <div class="card qp-card hidden" data-subject-id="CIVIL-7-Total Quality Management" data-dept="CIVIL" data-sem="7" data-name="Total Quality Management" data-name-normalized="totalqualitymanagement" data-code="GE3752" data-href="../pyq/GE3752-total-quality-management/" onclick="toggleCard('CIVIL-7-Total Quality Management')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CIVIL · SEM 7</span>
+                        <span class="sem-tag">CIVIL - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Total Quality Management</h3>
@@ -738,7 +772,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-1-Engineering Chemistry" data-dept="CSE" data-sem="1" data-name="Engineering Chemistry" data-name-normalized="engineeringchemistry" data-code="CY3151" data-href="../pyq/CY3151-engineering-chemistry/" onclick="toggleCard('CSE-1-Engineering Chemistry')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 1</span>
+                        <span class="sem-tag">CSE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Chemistry</h3>
@@ -757,7 +791,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-1-Engineering Physics" data-dept="CSE" data-sem="1" data-name="Engineering Physics" data-name-normalized="engineeringphysics" data-code="PH3151" data-href="../pyq/PH3151-engineering-physics/" onclick="toggleCard('CSE-1-Engineering Physics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 1</span>
+                        <span class="sem-tag">CSE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Physics</h3>
@@ -776,7 +810,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-1-Heritage of Tamils" data-dept="CSE" data-sem="1" data-name="Heritage of Tamils" data-name-normalized="heritageoftamils" data-code="GE3152" data-href="../pyq/GE3152-heritage-of-tamils/" onclick="toggleCard('CSE-1-Heritage of Tamils')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 1</span>
+                        <span class="sem-tag">CSE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heritage of Tamils</h3>
@@ -795,7 +829,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-1-Matrices and Calculus" data-dept="CSE" data-sem="1" data-name="Matrices and Calculus" data-name-normalized="matricesandcalculus" data-code="MA3151" data-href="../pyq/MA3151-matrices-and-calculus/" onclick="toggleCard('CSE-1-Matrices and Calculus')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 1</span>
+                        <span class="sem-tag">CSE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Matrices and Calculus</h3>
@@ -814,7 +848,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-1-Problem Solving and Python Programming" data-dept="CSE" data-sem="1" data-name="Problem Solving and Python Programming" data-name-normalized="problemsolvingandpythonprogramming" data-code="GE3151" data-href="../pyq/GE3151-problem-solving-and-python-programming/" onclick="toggleCard('CSE-1-Problem Solving and Python Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 1</span>
+                        <span class="sem-tag">CSE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Problem Solving and Python Programming</h3>
@@ -833,7 +867,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-1-Professional English-I" data-dept="CSE" data-sem="1" data-name="Professional English-I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('CSE-1-Professional English-I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 1</span>
+                        <span class="sem-tag">CSE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English-I</h3>
@@ -852,7 +886,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Basic Electrical and Electronics Engineering" data-dept="CSE" data-sem="2" data-name="Basic Electrical and Electronics Engineering" data-name-normalized="basicelectricalandelectronicsengineering" data-code="BE3251" data-href="../pyq/BE3251-basic-electrical-and-electronics-engineering/" onclick="toggleCard('CSE-2-Basic Electrical and Electronics Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Basic Electrical and Electronics Engineering</h3>
@@ -871,7 +905,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Engineering Graphics" data-dept="CSE" data-sem="2" data-name="Engineering Graphics" data-name-normalized="engineeringgraphics" data-code="GE3251" data-href="../pyq/GE3251-engineering-graphics/" onclick="toggleCard('CSE-2-Engineering Graphics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Graphics</h3>
@@ -890,7 +924,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Physics for Information Science" data-dept="CSE" data-sem="2" data-name="Physics for Information Science" data-name-normalized="physicsforinformationscience" data-code="PH3256" data-href="../pyq/PH3256-physics-for-information-science/" onclick="toggleCard('CSE-2-Physics for Information Science')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Physics for Information Science</h3>
@@ -909,7 +943,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Professional English-II" data-dept="CSE" data-sem="2" data-name="Professional English-II" data-name-normalized="professionalenglish2" data-code="HS3252" data-href="../pyq/HS3252-professional-english-ii/" onclick="toggleCard('CSE-2-Professional English-II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English-II</h3>
@@ -928,7 +962,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Programming in C" data-dept="CSE" data-sem="2" data-name="Programming in C" data-name-normalized="programminginc" data-code="CS3251" data-href="../pyq/CS3251-programming-in-c/" onclick="toggleCard('CSE-2-Programming in C')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Programming in C</h3>
@@ -947,7 +981,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Statistics and Numerical Methods" data-dept="CSE" data-sem="2" data-name="Statistics and Numerical Methods" data-name-normalized="statisticsandnumericalmethods" data-code="MA3251" data-href="../pyq/MA3251-statistics-and-numerical-methods/" onclick="toggleCard('CSE-2-Statistics and Numerical Methods')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Statistics and Numerical Methods</h3>
@@ -966,7 +1000,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-2-Tamils and Technology" data-dept="CSE" data-sem="2" data-name="Tamils and Technology" data-name-normalized="tamilsandtechnology" data-code="GE3252" data-href="../pyq/GE3252-tamils-and-technology/" onclick="toggleCard('CSE-2-Tamils and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 2</span>
+                        <span class="sem-tag">CSE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Tamils and Technology</h3>
@@ -985,7 +1019,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-3-Data Structures" data-dept="CSE" data-sem="3" data-name="Data Structures" data-name-normalized="datastructures" data-code="CS3301" data-href="../pyq/CS3301-data-structures/" onclick="toggleCard('CSE-3-Data Structures')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 3</span>
+                        <span class="sem-tag">CSE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Data Structures</h3>
@@ -1004,7 +1038,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-3-Digital Principles and Computer Organization" data-dept="CSE" data-sem="3" data-name="Digital Principles and Computer Organization" data-name-normalized="digitalprinciplesandcomputerorganization" data-code="CS3351" data-href="../pyq/CS3351-digital-principles-and-computer-organization/" onclick="toggleCard('CSE-3-Digital Principles and Computer Organization')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 3</span>
+                        <span class="sem-tag">CSE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Digital Principles and Computer Organization</h3>
@@ -1023,7 +1057,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-3-Discrete Mathematics" data-dept="CSE" data-sem="3" data-name="Discrete Mathematics" data-name-normalized="discretemathematics" data-code="MA3354" data-href="../pyq/MA3354-discrete-mathematics/" onclick="toggleCard('CSE-3-Discrete Mathematics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 3</span>
+                        <span class="sem-tag">CSE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Discrete Mathematics</h3>
@@ -1042,7 +1076,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-3-Foundations of Data Science" data-dept="CSE" data-sem="3" data-name="Foundations of Data Science" data-name-normalized="foundationsofdatascience" data-code="CS3352" data-href="../pyq/CS3352-foundation-of-data-science/" onclick="toggleCard('CSE-3-Foundations of Data Science')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 3</span>
+                        <span class="sem-tag">CSE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Foundations of Data Science</h3>
@@ -1061,7 +1095,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-3-Object Oriented Programming" data-dept="CSE" data-sem="3" data-name="Object Oriented Programming" data-name-normalized="objectorientedprogramming" data-code="CS3391" data-href="../pyq/CS3391-object-oriented-programming/" onclick="toggleCard('CSE-3-Object Oriented Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 3</span>
+                        <span class="sem-tag">CSE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Object Oriented Programming</h3>
@@ -1080,7 +1114,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-4-Algorithms" data-dept="CSE" data-sem="4" data-name="Algorithms" data-name-normalized="algorithms" data-code="CS3401" data-href="../pyq/CS3401-algorithms/" onclick="toggleCard('CSE-4-Algorithms')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 4</span>
+                        <span class="sem-tag">CSE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Algorithms</h3>
@@ -1099,7 +1133,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-4-Artificial Intelligence and Machine Learning" data-dept="CSE" data-sem="4" data-name="Artificial Intelligence and Machine Learning" data-name-normalized="artificialintelligenceandmachinelearning" data-code="CS3491" data-href="../pyq/CS3491-artificial-intelligence-and-machine-learning/" onclick="toggleCard('CSE-4-Artificial Intelligence and Machine Learning')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 4</span>
+                        <span class="sem-tag">CSE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Artificial Intelligence and Machine Learning</h3>
@@ -1118,7 +1152,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-4-Database Management Systems" data-dept="CSE" data-sem="4" data-name="Database Management Systems" data-name-normalized="databasemanagementsystems" data-code="CS3492" data-href="../pyq/CS3492-database-management-systems/" onclick="toggleCard('CSE-4-Database Management Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 4</span>
+                        <span class="sem-tag">CSE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Database Management Systems</h3>
@@ -1137,7 +1171,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-4-Environmental Sciences and Sustainability" data-dept="CSE" data-sem="4" data-name="Environmental Sciences and Sustainability" data-name-normalized="environmentalsciencesandsustainability" data-code="GE3451" data-href="../pyq/GE3451-environmental-science-and-sustainability/" onclick="toggleCard('CSE-4-Environmental Sciences and Sustainability')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 4</span>
+                        <span class="sem-tag">CSE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Environmental Sciences and Sustainability</h3>
@@ -1156,7 +1190,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-4-Introduction to Operating Systems" data-dept="CSE" data-sem="4" data-name="Introduction to Operating Systems" data-name-normalized="introductiontooperatingsystems" data-code="CS3451" data-href="../pyq/CS3451-introduction-to-operating-systems/" onclick="toggleCard('CSE-4-Introduction to Operating Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 4</span>
+                        <span class="sem-tag">CSE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Introduction to Operating Systems</h3>
@@ -1175,7 +1209,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-4-Theory of Computation" data-dept="CSE" data-sem="4" data-name="Theory of Computation" data-name-normalized="theoryofcomputation" data-code="CS3452" data-href="../pyq/CS3452-theory-of-computation/" onclick="toggleCard('CSE-4-Theory of Computation')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 4</span>
+                        <span class="sem-tag">CSE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Theory of Computation</h3>
@@ -1194,7 +1228,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-5-Complier Design" data-dept="CSE" data-sem="5" data-name="Complier Design" data-name-normalized="complierdesign" data-code="CS3501" data-href="../pyq/CS3501-compiler-design/" onclick="toggleCard('CSE-5-Complier Design')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 5</span>
+                        <span class="sem-tag">CSE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Compiler Design</h3>
@@ -1213,7 +1247,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-5-Computer Networks" data-dept="CSE" data-sem="5" data-name="Computer Networks" data-name-normalized="computernetworks" data-code="CS3591" data-href="../pyq/CS3591-computer-networks/" onclick="toggleCard('CSE-5-Computer Networks')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 5</span>
+                        <span class="sem-tag">CSE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Computer Networks</h3>
@@ -1232,7 +1266,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-5-Cryptography and Cyber Security" data-dept="CSE" data-sem="5" data-name="Cryptography and Cyber Security" data-name-normalized="cryptographyandcybersecurity" data-code="CB3491" data-href="../pyq/CB3491-cryptography-and-cyber-security/" onclick="toggleCard('CSE-5-Cryptography and Cyber Security')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 5</span>
+                        <span class="sem-tag">CSE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Cryptography and Cyber Security</h3>
@@ -1251,7 +1285,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-5-Distributed Computing" data-dept="CSE" data-sem="5" data-name="Distributed Computing" data-name-normalized="distributedcomputing" data-code="CS3551" data-href="../pyq/CS3551-distributed-computing/" onclick="toggleCard('CSE-5-Distributed Computing')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 5</span>
+                        <span class="sem-tag">CSE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Distributed Computing</h3>
@@ -1270,7 +1304,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-6-Embedded Systems and IoT" data-dept="CSE" data-sem="6" data-name="Embedded Systems and IoT" data-name-normalized="embeddedsystemsandiot" data-code="CS3691" data-href="../pyq/CS3691-embedded-systems-and-iot/" onclick="toggleCard('CSE-6-Embedded Systems and IoT')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 6</span>
+                        <span class="sem-tag">CSE - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Embedded Systems and IoT</h3>
@@ -1289,7 +1323,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-6-Object Oriented Software Engineering" data-dept="CSE" data-sem="6" data-name="Object Oriented Software Engineering" data-name-normalized="objectorientedsoftwareengineering" data-code="CCS356" data-href="../pyq/CCS356-object-oriented-software-engineering/" onclick="toggleCard('CSE-6-Object Oriented Software Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 6</span>
+                        <span class="sem-tag">CSE - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Object Oriented Software Engineering</h3>
@@ -1308,7 +1342,7 @@
             <div class="card qp-card hidden" data-subject-id="CSE-7-Human Values and Ethics" data-dept="CSE" data-sem="7" data-name="Human Values and Ethics" data-name-normalized="humanvaluesandethics" data-code="GE3791" data-href="../pyq/GE3791-human-values-and-ethics/" onclick="toggleCard('CSE-7-Human Values and Ethics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">CSE · SEM 7</span>
+                        <span class="sem-tag">CSE - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Human Values and Ethics</h3>
@@ -1327,7 +1361,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-1-Engineering Chemistry" data-dept="ECE" data-sem="1" data-name="Engineering Chemistry" data-name-normalized="engineeringchemistry" data-code="CY3151" data-href="../pyq/CY3151-engineering-chemistry/" onclick="toggleCard('ECE-1-Engineering Chemistry')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 1</span>
+                        <span class="sem-tag">ECE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Chemistry</h3>
@@ -1346,7 +1380,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-1-Engineering Physics" data-dept="ECE" data-sem="1" data-name="Engineering Physics" data-name-normalized="engineeringphysics" data-code="PH3151" data-href="../pyq/PH3151-engineering-physics/" onclick="toggleCard('ECE-1-Engineering Physics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 1</span>
+                        <span class="sem-tag">ECE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Physics</h3>
@@ -1365,7 +1399,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-1-Heritage of Tamils" data-dept="ECE" data-sem="1" data-name="Heritage of Tamils" data-name-normalized="heritageoftamils" data-code="GE3152" data-href="../pyq/GE3152-heritage-of-tamils/" onclick="toggleCard('ECE-1-Heritage of Tamils')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 1</span>
+                        <span class="sem-tag">ECE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heritage of Tamils</h3>
@@ -1384,7 +1418,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-1-Matrices and Calculus" data-dept="ECE" data-sem="1" data-name="Matrices and Calculus" data-name-normalized="matricesandcalculus" data-code="MA3151" data-href="../pyq/MA3151-matrices-and-calculus/" onclick="toggleCard('ECE-1-Matrices and Calculus')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 1</span>
+                        <span class="sem-tag">ECE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Matrices and Calculus</h3>
@@ -1403,7 +1437,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-1-Problem Solving and Python Programming" data-dept="ECE" data-sem="1" data-name="Problem Solving and Python Programming" data-name-normalized="problemsolvingandpythonprogramming" data-code="GE3151" data-href="../pyq/GE3151-problem-solving-and-python-programming/" onclick="toggleCard('ECE-1-Problem Solving and Python Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 1</span>
+                        <span class="sem-tag">ECE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Problem Solving and Python Programming</h3>
@@ -1422,7 +1456,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-1-Professional English - I" data-dept="ECE" data-sem="1" data-name="Professional English - I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('ECE-1-Professional English - I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 1</span>
+                        <span class="sem-tag">ECE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - I</h3>
@@ -1441,7 +1475,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-2-Circuit Analysis" data-dept="ECE" data-sem="2" data-name="Circuit Analysis" data-name-normalized="circuitanalysis" data-code="EC3251" data-href="../pyq/EC3251-circuit-theory/" onclick="toggleCard('ECE-2-Circuit Analysis')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 2</span>
+                        <span class="sem-tag">ECE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Circuit Analysis</h3>
@@ -1460,7 +1494,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-2-Engineering Graphics" data-dept="ECE" data-sem="2" data-name="Engineering Graphics" data-name-normalized="engineeringgraphics" data-code="GE3251" data-href="../pyq/GE3251-engineering-graphics/" onclick="toggleCard('ECE-2-Engineering Graphics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 2</span>
+                        <span class="sem-tag">ECE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Graphics</h3>
@@ -1479,7 +1513,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-2-Physics for Electronics Engineering" data-dept="ECE" data-sem="2" data-name="Physics for Electronics Engineering" data-name-normalized="physicsforelectronicsengineering" data-code="PH3254" data-href="../pyq/PH3254-physics-for-electronics-engineering/" onclick="toggleCard('ECE-2-Physics for Electronics Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 2</span>
+                        <span class="sem-tag">ECE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Physics for Electronics Engineering</h3>
@@ -1498,7 +1532,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-2-Professional English - II" data-dept="ECE" data-sem="2" data-name="Professional English - II" data-name-normalized="professionalenglish2" data-code="HS3252" data-href="../pyq/HS3252-professional-english-ii/" onclick="toggleCard('ECE-2-Professional English - II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 2</span>
+                        <span class="sem-tag">ECE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - II</h3>
@@ -1517,7 +1551,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-2-Statistics and Numerical Methods" data-dept="ECE" data-sem="2" data-name="Statistics and Numerical Methods" data-name-normalized="statisticsandnumericalmethods" data-code="MA3251" data-href="../pyq/MA3251-statistics-and-numerical-methods/" onclick="toggleCard('ECE-2-Statistics and Numerical Methods')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 2</span>
+                        <span class="sem-tag">ECE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Statistics and Numerical Methods</h3>
@@ -1536,7 +1570,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-2-Tamils and Technology" data-dept="ECE" data-sem="2" data-name="Tamils and Technology" data-name-normalized="tamilsandtechnology" data-code="GE3252" data-href="../pyq/GE3252-tamils-and-technology/" onclick="toggleCard('ECE-2-Tamils and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 2</span>
+                        <span class="sem-tag">ECE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Tamils and Technology</h3>
@@ -1555,7 +1589,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-3-C Programming and Data Structures" data-dept="ECE" data-sem="3" data-name="C Programming and Data Structures" data-name-normalized="cprogramminganddatastructures" data-code="CS3353" data-href="../pyq/CS3353-c-programming-and-data-structures/" onclick="toggleCard('ECE-3-C Programming and Data Structures')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 3</span>
+                        <span class="sem-tag">ECE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">C Programming and Data Structures</h3>
@@ -1574,7 +1608,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-3-Control Systems" data-dept="ECE" data-sem="3" data-name="Control Systems" data-name-normalized="controlsystems" data-code="EC3351" data-href="../pyq/EC3351-control-systems/" onclick="toggleCard('ECE-3-Control Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 3</span>
+                        <span class="sem-tag">ECE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Control Systems</h3>
@@ -1593,7 +1627,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-3-Digital Systems Design" data-dept="ECE" data-sem="3" data-name="Digital Systems Design" data-name-normalized="digitalsystemsdesign" data-code="EC3352" data-href="../pyq/EC3352-digital-systems-design/" onclick="toggleCard('ECE-3-Digital Systems Design')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 3</span>
+                        <span class="sem-tag">ECE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Digital Systems Design</h3>
@@ -1612,7 +1646,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-3-Electronic Devices and Circuits" data-dept="ECE" data-sem="3" data-name="Electronic Devices and Circuits" data-name-normalized="electronicdevicesandcircuits" data-code="EC3353" data-href="../pyq/EC3353-electronic-devices-and-circuits/" onclick="toggleCard('ECE-3-Electronic Devices and Circuits')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 3</span>
+                        <span class="sem-tag">ECE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electronic Devices and Circuits</h3>
@@ -1631,7 +1665,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-3-Random Processes and Linear Algebra" data-dept="ECE" data-sem="3" data-name="Random Processes and Linear Algebra" data-name-normalized="randomprocessesandlinearalgebra" data-code="MA3355" data-href="../pyq/MA3355-random-processes-and-linear-algebra/" onclick="toggleCard('ECE-3-Random Processes and Linear Algebra')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 3</span>
+                        <span class="sem-tag">ECE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Random Processes and Linear Algebra</h3>
@@ -1650,7 +1684,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-3-Signals and Systems" data-dept="ECE" data-sem="3" data-name="Signals and Systems" data-name-normalized="signalsandsystems" data-code="EC3354" data-href="../pyq/EC3354-signals-and-systems/" onclick="toggleCard('ECE-3-Signals and Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 3</span>
+                        <span class="sem-tag">ECE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Signals and Systems</h3>
@@ -1669,7 +1703,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-4-Communication Systems" data-dept="ECE" data-sem="4" data-name="Communication Systems" data-name-normalized="communicationsystems" data-code="EC3491" data-href="../pyq/EC3491-communication-systems/" onclick="toggleCard('ECE-4-Communication Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 4</span>
+                        <span class="sem-tag">ECE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Communication Systems</h3>
@@ -1688,7 +1722,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-4-Digital Signal Processing" data-dept="ECE" data-sem="4" data-name="Digital Signal Processing" data-name-normalized="digitalsignalprocessing" data-code="EC3492" data-href="../pyq/EC3492-digital-signal-processing/" onclick="toggleCard('ECE-4-Digital Signal Processing')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 4</span>
+                        <span class="sem-tag">ECE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Digital Signal Processing</h3>
@@ -1707,7 +1741,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-4-Electromagnetic Fields" data-dept="ECE" data-sem="4" data-name="Electromagnetic Fields" data-name-normalized="electromagneticfields" data-code="EC3452" data-href="../pyq/EC3452-electromagnetic-fields/" onclick="toggleCard('ECE-4-Electromagnetic Fields')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 4</span>
+                        <span class="sem-tag">ECE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electromagnetic Fields</h3>
@@ -1726,7 +1760,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-4-Environmental Sciences and Sustainability" data-dept="ECE" data-sem="4" data-name="Environmental Sciences and Sustainability" data-name-normalized="environmentalsciencesandsustainability" data-code="GE3451" data-href="../pyq/GE3451-environmental-sciences-and-sustainability/" onclick="toggleCard('ECE-4-Environmental Sciences and Sustainability')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 4</span>
+                        <span class="sem-tag">ECE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Environmental Sciences and Sustainability</h3>
@@ -1745,7 +1779,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-4-Linear Integrated Circuits" data-dept="ECE" data-sem="4" data-name="Linear Integrated Circuits" data-name-normalized="linearintegratedcircuits" data-code="EC3451" data-href="../pyq/EC3451-linear-integrated-circuits/" onclick="toggleCard('ECE-4-Linear Integrated Circuits')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 4</span>
+                        <span class="sem-tag">ECE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Linear Integrated Circuits</h3>
@@ -1764,7 +1798,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-4-Networks and Security" data-dept="ECE" data-sem="4" data-name="Networks and Security" data-name-normalized="networksandsecurity" data-code="EC3401" data-href="../pyq/EC3401-networks-and-security/" onclick="toggleCard('ECE-4-Networks and Security')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 4</span>
+                        <span class="sem-tag">ECE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Networks and Security</h3>
@@ -1783,7 +1817,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-5-Transmission Lines and RF Systems" data-dept="ECE" data-sem="5" data-name="Transmission Lines and RF Systems" data-name-normalized="transmissionlinesandrfsystems" data-code="EC3551" data-href="../pyq/EC3551-transmission-lines-and-rf-systems/" onclick="toggleCard('ECE-5-Transmission Lines and RF Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 5</span>
+                        <span class="sem-tag">ECE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Transmission Lines and RF Systems</h3>
@@ -1802,7 +1836,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-5-VLSI and Chip Design" data-dept="ECE" data-sem="5" data-name="VLSI and Chip Design" data-name-normalized="vlsiandchipdesign" data-code="EC3552" data-href="../pyq/EC3552-vlsi-and-chip-design/" onclick="toggleCard('ECE-5-VLSI and Chip Design')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 5</span>
+                        <span class="sem-tag">ECE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">VLSI and Chip Design</h3>
@@ -1821,7 +1855,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-5-Wireless Communication" data-dept="ECE" data-sem="5" data-name="Wireless Communication" data-name-normalized="wirelesscommunication" data-code="EC3501" data-href="../pyq/EC3501-wireless-communication/" onclick="toggleCard('ECE-5-Wireless Communication')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 5</span>
+                        <span class="sem-tag">ECE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Wireless Communication</h3>
@@ -1840,7 +1874,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-6-Artificial Intelligence and Machine Learning" data-dept="ECE" data-sem="6" data-name="Artificial Intelligence and Machine Learning" data-name-normalized="artificialintelligenceandmachinelearning" data-code="CS3491" data-href="../pyq/CS3491-artificial-intelligence-and-machine-learning/" onclick="toggleCard('ECE-6-Artificial Intelligence and Machine Learning')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 6</span>
+                        <span class="sem-tag">ECE - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Artificial Intelligence and Machine Learning</h3>
@@ -1859,7 +1893,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-6-Embedded Systems and IoT Design" data-dept="ECE" data-sem="6" data-name="Embedded Systems and IoT Design" data-name-normalized="embeddedsystemsandiotdesign" data-code="ET3491" data-href="../pyq/ET3491-embedded-systems-and-iot-design/" onclick="toggleCard('ECE-6-Embedded Systems and IoT Design')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 6</span>
+                        <span class="sem-tag">ECE - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Embedded Systems and IoT Design</h3>
@@ -1878,7 +1912,7 @@
             <div class="card qp-card hidden" data-subject-id="ECE-7-Human Values and Ethics" data-dept="ECE" data-sem="7" data-name="Human Values and Ethics" data-name-normalized="humanvaluesandethics" data-code="GE3791" data-href="../pyq/GE3791-human-values-and-ethics/" onclick="toggleCard('ECE-7-Human Values and Ethics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">ECE · SEM 7</span>
+                        <span class="sem-tag">ECE - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Human Values and Ethics</h3>
@@ -1897,7 +1931,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-1-Engineering Chemistry" data-dept="EEE" data-sem="1" data-name="Engineering Chemistry" data-name-normalized="engineeringchemistry" data-code="CY3151" data-href="../pyq/CY3151-engineering-chemistry/" onclick="toggleCard('EEE-1-Engineering Chemistry')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 1</span>
+                        <span class="sem-tag">EEE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Chemistry</h3>
@@ -1916,7 +1950,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-1-Engineering Physics" data-dept="EEE" data-sem="1" data-name="Engineering Physics" data-name-normalized="engineeringphysics" data-code="PH3151" data-href="../pyq/PH3151-engineering-physics/" onclick="toggleCard('EEE-1-Engineering Physics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 1</span>
+                        <span class="sem-tag">EEE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Physics</h3>
@@ -1935,7 +1969,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-1-Heritage of Tamils" data-dept="EEE" data-sem="1" data-name="Heritage of Tamils" data-name-normalized="heritageoftamils" data-code="GE3152" data-href="../pyq/GE3152-heritage-of-tamils/" onclick="toggleCard('EEE-1-Heritage of Tamils')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 1</span>
+                        <span class="sem-tag">EEE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heritage of Tamils</h3>
@@ -1954,7 +1988,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-1-Matrices and Calculus" data-dept="EEE" data-sem="1" data-name="Matrices and Calculus" data-name-normalized="matricesandcalculus" data-code="MA3151" data-href="../pyq/MA3151-matrices-and-calculus/" onclick="toggleCard('EEE-1-Matrices and Calculus')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 1</span>
+                        <span class="sem-tag">EEE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Matrices and Calculus</h3>
@@ -1973,7 +2007,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-1-Problem Solving and Python Programming" data-dept="EEE" data-sem="1" data-name="Problem Solving and Python Programming" data-name-normalized="problemsolvingandpythonprogramming" data-code="GE3151" data-href="../pyq/GE3151-problem-solving-and-python-programming/" onclick="toggleCard('EEE-1-Problem Solving and Python Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 1</span>
+                        <span class="sem-tag">EEE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Problem Solving and Python Programming</h3>
@@ -1992,7 +2026,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-1-Professional English-I" data-dept="EEE" data-sem="1" data-name="Professional English-I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('EEE-1-Professional English-I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 1</span>
+                        <span class="sem-tag">EEE - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English-I</h3>
@@ -2011,7 +2045,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Basic Civil and Mechanical Engineering" data-dept="EEE" data-sem="2" data-name="Basic Civil and Mechanical Engineering" data-name-normalized="basiccivilandmechanicalengineering" data-code="BE3255" data-href="../pyq/BE3255-basic-civil-and-mechanical-engineering/" onclick="toggleCard('EEE-2-Basic Civil and Mechanical Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Basic Civil and Mechanical Engineering</h3>
@@ -2030,7 +2064,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Electric Circuit Analysis" data-dept="EEE" data-sem="2" data-name="Electric Circuit Analysis" data-name-normalized="electriccircuitanalysis" data-code="EE3251" data-href="../pyq/EE3251-electric-circuit-analysis/" onclick="toggleCard('EEE-2-Electric Circuit Analysis')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electric Circuit Analysis</h3>
@@ -2049,7 +2083,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Engineering Graphics" data-dept="EEE" data-sem="2" data-name="Engineering Graphics" data-name-normalized="engineeringgraphics" data-code="GE3251" data-href="../pyq/GE3251-engineering-graphics/" onclick="toggleCard('EEE-2-Engineering Graphics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Graphics</h3>
@@ -2068,7 +2102,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Physics for Electrical Engineering" data-dept="EEE" data-sem="2" data-name="Physics for Electrical Engineering" data-name-normalized="physicsforelectricalengineering" data-code="PH3202" data-href="../pyq/PH3202-physics-for-electrical-engineering/" onclick="toggleCard('EEE-2-Physics for Electrical Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Physics for Electrical Engineering</h3>
@@ -2087,7 +2121,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Professional English II" data-dept="EEE" data-sem="2" data-name="Professional English II" data-name-normalized="professionalenglish2" data-code="HS3252" data-href="../pyq/HS3252-professional-english-ii/" onclick="toggleCard('EEE-2-Professional English II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English II</h3>
@@ -2106,7 +2140,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Statistics and Numerical Methods" data-dept="EEE" data-sem="2" data-name="Statistics and Numerical Methods" data-name-normalized="statisticsandnumericalmethods" data-code="MA3251" data-href="../pyq/MA3251-statistics-and-numerical-methods/" onclick="toggleCard('EEE-2-Statistics and Numerical Methods')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Statistics and Numerical Methods</h3>
@@ -2125,7 +2159,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-2-Tamils and Technology" data-dept="EEE" data-sem="2" data-name="Tamils and Technology" data-name-normalized="tamilsandtechnology" data-code="GE3252" data-href="../pyq/GE3252-tamils-and-technology/" onclick="toggleCard('EEE-2-Tamils and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 2</span>
+                        <span class="sem-tag">EEE - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Tamils and Technology</h3>
@@ -2144,7 +2178,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-3-C Programming and Data Structures" data-dept="EEE" data-sem="3" data-name="C Programming and Data Structures" data-name-normalized="cprogramminganddatastructures" data-code="CS3353" data-href="../pyq/CS3353-c-programming-and-data-structures/" onclick="toggleCard('EEE-3-C Programming and Data Structures')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 3</span>
+                        <span class="sem-tag">EEE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">C Programming and Data Structures</h3>
@@ -2163,7 +2197,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-3-Digital Logic Circuits" data-dept="EEE" data-sem="3" data-name="Digital Logic Circuits" data-name-normalized="digitallogiccircuits" data-code="EE3302" data-href="../pyq/EE3302-digital-logic-circuits/" onclick="toggleCard('EEE-3-Digital Logic Circuits')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 3</span>
+                        <span class="sem-tag">EEE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Digital Logic Circuits</h3>
@@ -2182,7 +2216,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-3-Electrical Machines I" data-dept="EEE" data-sem="3" data-name="Electrical Machines I" data-name-normalized="electricalmachines1" data-code="EE3303" data-href="../pyq/EE3303-electrical-machines-i/" onclick="toggleCard('EEE-3-Electrical Machines I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 3</span>
+                        <span class="sem-tag">EEE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electrical Machines I</h3>
@@ -2201,7 +2235,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-3-Electromagnetic Fields" data-dept="EEE" data-sem="3" data-name="Electromagnetic Fields" data-name-normalized="electromagneticfields" data-code="EE3301" data-href="../pyq/EE3301-electromagnetic-fields/" onclick="toggleCard('EEE-3-Electromagnetic Fields')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 3</span>
+                        <span class="sem-tag">EEE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electromagnetic Fields</h3>
@@ -2220,7 +2254,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-3-Electron Devices and Circuits" data-dept="EEE" data-sem="3" data-name="Electron Devices and Circuits" data-name-normalized="electrondevicesandcircuits" data-code="EC3301" data-href="../pyq/EC3301-electron-devices-and-circuits/" onclick="toggleCard('EEE-3-Electron Devices and Circuits')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 3</span>
+                        <span class="sem-tag">EEE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electron Devices and Circuits</h3>
@@ -2239,7 +2273,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-3-Probability and Complex Functions" data-dept="EEE" data-sem="3" data-name="Probability and Complex Functions" data-name-normalized="probabilityandcomplexfunctions" data-code="MA3303" data-href="../pyq/MA3303-probability-and-complex-functions/" onclick="toggleCard('EEE-3-Probability and Complex Functions')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 3</span>
+                        <span class="sem-tag">EEE - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Probability and Complex Functions</h3>
@@ -2258,7 +2292,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-4-Electrical Machines II" data-dept="EEE" data-sem="4" data-name="Electrical Machines II" data-name-normalized="electricalmachines2" data-code="EE3405" data-href="../pyq/EE3405-electrical-machines-ii/" onclick="toggleCard('EEE-4-Electrical Machines II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 4</span>
+                        <span class="sem-tag">EEE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Electrical Machines II</h3>
@@ -2277,7 +2311,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-4-Linear Integrated Circuits" data-dept="EEE" data-sem="4" data-name="Linear Integrated Circuits" data-name-normalized="linearintegratedcircuits" data-code="EE3402" data-href="../pyq/EE3402-linear-integrated-circuits/" onclick="toggleCard('EEE-4-Linear Integrated Circuits')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 4</span>
+                        <span class="sem-tag">EEE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Linear Integrated Circuits</h3>
@@ -2296,7 +2330,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-4-Measurements and Instrumentation" data-dept="EEE" data-sem="4" data-name="Measurements and Instrumentation" data-name-normalized="measurementsandinstrumentation" data-code="EE3403" data-href="../pyq/EE3403-measurements-and-instrumentation/" onclick="toggleCard('EEE-4-Measurements and Instrumentation')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 4</span>
+                        <span class="sem-tag">EEE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Measurements and Instrumentation</h3>
@@ -2315,7 +2349,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-4-Microprocessor and Microcontroller" data-dept="EEE" data-sem="4" data-name="Microprocessor and Microcontroller" data-name-normalized="microprocessorandmicrocontroller" data-code="EE3404" data-href="../pyq/EE3404-microprocessor-and-microcontroller/" onclick="toggleCard('EEE-4-Microprocessor and Microcontroller')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 4</span>
+                        <span class="sem-tag">EEE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Microprocessor and Microcontroller</h3>
@@ -2334,7 +2368,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-4-Transmission and Distribution" data-dept="EEE" data-sem="4" data-name="Transmission and Distribution" data-name-normalized="transmissionanddistribution" data-code="EE3401" data-href="../pyq/EE3401-transmission-and-distribution/" onclick="toggleCard('EEE-4-Transmission and Distribution')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 4</span>
+                        <span class="sem-tag">EEE - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Transmission and Distribution</h3>
@@ -2353,7 +2387,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-5-Control Systems" data-dept="EEE" data-sem="5" data-name="Control Systems" data-name-normalized="controlsystems" data-code="EE3503" data-href="../pyq/EE3503-control-systems/" onclick="toggleCard('EEE-5-Control Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 5</span>
+                        <span class="sem-tag">EEE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Control Systems</h3>
@@ -2372,7 +2406,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-5-Power Electronics" data-dept="EEE" data-sem="5" data-name="Power Electronics" data-name-normalized="powerelectronics" data-code="EE3591" data-href="../pyq/EE3591-power-electronics/" onclick="toggleCard('EEE-5-Power Electronics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 5</span>
+                        <span class="sem-tag">EEE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Power Electronics</h3>
@@ -2391,7 +2425,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-5-Power System Analysis" data-dept="EEE" data-sem="5" data-name="Power System Analysis" data-name-normalized="powersystemanalysis" data-code="EE3501" data-href="../pyq/EE3501-power-system-analysis/" onclick="toggleCard('EEE-5-Power System Analysis')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 5</span>
+                        <span class="sem-tag">EEE - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Power System Analysis</h3>
@@ -2410,7 +2444,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-6-Power System Operation and Control" data-dept="EEE" data-sem="6" data-name="Power System Operation and Control" data-name-normalized="powersystemoperationandcontrol" data-code="EE3602" data-href="../pyq/EE3602-power-system-operation-and-control/" onclick="toggleCard('EEE-6-Power System Operation and Control')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 6</span>
+                        <span class="sem-tag">EEE - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Power System Operation and Control</h3>
@@ -2429,7 +2463,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-6-Protection and Switchgear" data-dept="EEE" data-sem="6" data-name="Protection and Switchgear" data-name-normalized="protectionandswitchgear" data-code="EE3601" data-href="../pyq/EE3601-protection-and-switchgear/" onclick="toggleCard('EEE-6-Protection and Switchgear')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 6</span>
+                        <span class="sem-tag">EEE - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Protection and Switchgear</h3>
@@ -2448,7 +2482,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-7-High Voltage Engineering" data-dept="EEE" data-sem="7" data-name="High Voltage Engineering" data-name-normalized="highvoltageengineering" data-code="EE3701" data-href="../pyq/EE3701-high-voltage-engineering/" onclick="toggleCard('EEE-7-High Voltage Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 7</span>
+                        <span class="sem-tag">EEE - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">High Voltage Engineering</h3>
@@ -2467,7 +2501,7 @@
             <div class="card qp-card hidden" data-subject-id="EEE-7-Human Values and Ethics" data-dept="EEE" data-sem="7" data-name="Human Values and Ethics" data-name-normalized="humanvaluesandethics" data-code="GE3791" data-href="../pyq/GE3791-human-values-and-ethics/" onclick="toggleCard('EEE-7-Human Values and Ethics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">EEE · SEM 7</span>
+                        <span class="sem-tag">EEE - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Human Values and Ethics</h3>
@@ -2486,7 +2520,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-1-Engineering Chemistry" data-dept="IT" data-sem="1" data-name="Engineering Chemistry" data-name-normalized="engineeringchemistry" data-code="CY3151" data-href="../pyq/CY3151-engineering-chemistry/" onclick="toggleCard('IT-1-Engineering Chemistry')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 1</span>
+                        <span class="sem-tag">IT - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Chemistry</h3>
@@ -2505,7 +2539,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-1-Engineering Physics" data-dept="IT" data-sem="1" data-name="Engineering Physics" data-name-normalized="engineeringphysics" data-code="PH3151" data-href="../pyq/PH3151-engineering-physics/" onclick="toggleCard('IT-1-Engineering Physics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 1</span>
+                        <span class="sem-tag">IT - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Physics</h3>
@@ -2524,7 +2558,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-1-Heritage of Tamils" data-dept="IT" data-sem="1" data-name="Heritage of Tamils" data-name-normalized="heritageoftamils" data-code="GE3152" data-href="../pyq/GE3152-heritage-of-tamils/" onclick="toggleCard('IT-1-Heritage of Tamils')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 1</span>
+                        <span class="sem-tag">IT - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heritage of Tamils</h3>
@@ -2543,7 +2577,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-1-Matrices and Calculus" data-dept="IT" data-sem="1" data-name="Matrices and Calculus" data-name-normalized="matricesandcalculus" data-code="MA3151" data-href="../pyq/MA3151-matrices-and-calculus/" onclick="toggleCard('IT-1-Matrices and Calculus')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 1</span>
+                        <span class="sem-tag">IT - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Matrices and Calculus</h3>
@@ -2562,7 +2596,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-1-Problem Solving and Python Programming" data-dept="IT" data-sem="1" data-name="Problem Solving and Python Programming" data-name-normalized="problemsolvingandpythonprogramming" data-code="GE3151" data-href="../pyq/GE3151-problem-solving-and-python-programming/" onclick="toggleCard('IT-1-Problem Solving and Python Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 1</span>
+                        <span class="sem-tag">IT - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Problem Solving and Python Programming</h3>
@@ -2581,7 +2615,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-1-Professional English - I" data-dept="IT" data-sem="1" data-name="Professional English - I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('IT-1-Professional English - I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 1</span>
+                        <span class="sem-tag">IT - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - I</h3>
@@ -2600,7 +2634,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Basic Electrical and Electronics Engineering" data-dept="IT" data-sem="2" data-name="Basic Electrical and Electronics Engineering" data-name-normalized="basicelectricalandelectronicsengineering" data-code="BE3251" data-href="../pyq/BE3251-basic-electrical-and-electronics-engineering/" onclick="toggleCard('IT-2-Basic Electrical and Electronics Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Basic Electrical and Electronics Engineering</h3>
@@ -2619,7 +2653,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Engineering Graphics" data-dept="IT" data-sem="2" data-name="Engineering Graphics" data-name-normalized="engineeringgraphics" data-code="GE3251" data-href="../pyq/GE3251-engineering-graphics/" onclick="toggleCard('IT-2-Engineering Graphics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Graphics</h3>
@@ -2638,7 +2672,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Physics for Information Science" data-dept="IT" data-sem="2" data-name="Physics for Information Science" data-name-normalized="physicsforinformationscience" data-code="PH3256" data-href="../pyq/PH3256-physics-for-information-science/" onclick="toggleCard('IT-2-Physics for Information Science')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Physics for Information Science</h3>
@@ -2657,7 +2691,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Professional English - II" data-dept="IT" data-sem="2" data-name="Professional English - II" data-name-normalized="professionalenglish2" data-code="HS3252" data-href="../pyq/HS3252-professional-english-ii/" onclick="toggleCard('IT-2-Professional English - II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - II</h3>
@@ -2676,7 +2710,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Programming in C" data-dept="IT" data-sem="2" data-name="Programming in C" data-name-normalized="programminginc" data-code="CS3251" data-href="../pyq/CS3251-programming-in-c/" onclick="toggleCard('IT-2-Programming in C')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Programming in C</h3>
@@ -2695,7 +2729,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Statistics and Numerical Methods" data-dept="IT" data-sem="2" data-name="Statistics and Numerical Methods" data-name-normalized="statisticsandnumericalmethods" data-code="MA3251" data-href="../pyq/MA3251-statistics-and-numerical-methods/" onclick="toggleCard('IT-2-Statistics and Numerical Methods')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Statistics and Numerical Methods</h3>
@@ -2714,7 +2748,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-2-Tamils and Technology" data-dept="IT" data-sem="2" data-name="Tamils and Technology" data-name-normalized="tamilsandtechnology" data-code="GE3252" data-href="../pyq/GE3252-tamils-and-technology/" onclick="toggleCard('IT-2-Tamils and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 2</span>
+                        <span class="sem-tag">IT - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Tamils and Technology</h3>
@@ -2733,7 +2767,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-3-Data Structures and Algorithms" data-dept="IT" data-sem="3" data-name="Data Structures and Algorithms" data-name-normalized="datastructuresandalgorithms" data-code="CD3291" data-href="../pyq/CD3291-data-structures-and-algorithms/" onclick="toggleCard('IT-3-Data Structures and Algorithms')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 3</span>
+                        <span class="sem-tag">IT - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Data Structures and Algorithms</h3>
@@ -2752,7 +2786,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-3-Digital Principles and Computer Organization" data-dept="IT" data-sem="3" data-name="Digital Principles and Computer Organization" data-name-normalized="digitalprinciplesandcomputerorganization" data-code="CS3351" data-href="../pyq/CS3351-digital-principles-and-computer-organization/" onclick="toggleCard('IT-3-Digital Principles and Computer Organization')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 3</span>
+                        <span class="sem-tag">IT - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Digital Principles and Computer Organization</h3>
@@ -2771,7 +2805,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-3-Discrete Mathematics" data-dept="IT" data-sem="3" data-name="Discrete Mathematics" data-name-normalized="discretemathematics" data-code="MA3354" data-href="../pyq/MA3354-discrete-mathematics/" onclick="toggleCard('IT-3-Discrete Mathematics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 3</span>
+                        <span class="sem-tag">IT - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Discrete Mathematics</h3>
@@ -2790,7 +2824,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-3-Foundations of Data Science" data-dept="IT" data-sem="3" data-name="Foundations of Data Science" data-name-normalized="foundationsofdatascience" data-code="CS3352" data-href="../pyq/CS3352-foundations-of-data-science/" onclick="toggleCard('IT-3-Foundations of Data Science')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 3</span>
+                        <span class="sem-tag">IT - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Foundations of Data Science</h3>
@@ -2809,7 +2843,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-3-Object Oriented Programming" data-dept="IT" data-sem="3" data-name="Object Oriented Programming" data-name-normalized="objectorientedprogramming" data-code="CS3391" data-href="../pyq/CS3391-object-oriented-programming/" onclick="toggleCard('IT-3-Object Oriented Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 3</span>
+                        <span class="sem-tag">IT - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Object Oriented Programming</h3>
@@ -2828,7 +2862,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-4-Artificial Intelligence and Machine Learning" data-dept="IT" data-sem="4" data-name="Artificial Intelligence and Machine Learning" data-name-normalized="artificialintelligenceandmachinelearning" data-code="CS3491" data-href="../pyq/CS3491-artificial-intelligence-and-machine-learning/" onclick="toggleCard('IT-4-Artificial Intelligence and Machine Learning')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 4</span>
+                        <span class="sem-tag">IT - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Artificial Intelligence and Machine Learning</h3>
@@ -2847,7 +2881,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-4-Database Management Systems" data-dept="IT" data-sem="4" data-name="Database Management Systems" data-name-normalized="databasemanagementsystems" data-code="CS3492" data-href="../pyq/CS3492-database-management-systems/" onclick="toggleCard('IT-4-Database Management Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 4</span>
+                        <span class="sem-tag">IT - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Database Management Systems</h3>
@@ -2866,7 +2900,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-4-Introduction to Operating Systems" data-dept="IT" data-sem="4" data-name="Introduction to Operating Systems" data-name-normalized="introductiontooperatingsystems" data-code="CS3451" data-href="../pyq/CS3451-introduction-to-operating-systems/" onclick="toggleCard('IT-4-Introduction to Operating Systems')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 4</span>
+                        <span class="sem-tag">IT - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Introduction to Operating Systems</h3>
@@ -2885,7 +2919,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-4-Theory of Computation" data-dept="IT" data-sem="4" data-name="Theory of Computation" data-name-normalized="theoryofcomputation" data-code="CS3452" data-href="../pyq/CS3452-theory-of-computation/" onclick="toggleCard('IT-4-Theory of Computation')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 4</span>
+                        <span class="sem-tag">IT - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Theory of Computation</h3>
@@ -2904,7 +2938,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-4-Web Essentials" data-dept="IT" data-sem="4" data-name="Web Essentials" data-name-normalized="webessentials" data-code="IT3401" data-href="../pyq/IT3401-web-essentials/" onclick="toggleCard('IT-4-Web Essentials')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 4</span>
+                        <span class="sem-tag">IT - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Web Essentials</h3>
@@ -2923,7 +2957,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-5-Computer Networks" data-dept="IT" data-sem="5" data-name="Computer Networks" data-name-normalized="computernetworks" data-code="CS3591" data-href="../pyq/CS3591-computer-networks/" onclick="toggleCard('IT-5-Computer Networks')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 5</span>
+                        <span class="sem-tag">IT - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Computer Networks</h3>
@@ -2942,7 +2976,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-5-Distributed Computing" data-dept="IT" data-sem="5" data-name="Distributed Computing" data-name-normalized="distributedcomputing" data-code="CS3551" data-href="../pyq/CS3551-distributed-computing/" onclick="toggleCard('IT-5-Distributed Computing')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 5</span>
+                        <span class="sem-tag">IT - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Distributed Computing</h3>
@@ -2961,7 +2995,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-5-Embedded Systems and IoT" data-dept="IT" data-sem="5" data-name="Embedded Systems and IoT" data-name-normalized="embeddedsystemsandiot" data-code="CS3691" data-href="../pyq/CS3691-embedded-systems-and-iot/" onclick="toggleCard('IT-5-Embedded Systems and IoT')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 5</span>
+                        <span class="sem-tag">IT - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Embedded Systems and IoT</h3>
@@ -2980,7 +3014,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-5-Full Stack Web Development" data-dept="IT" data-sem="5" data-name="Full Stack Web Development" data-name-normalized="fullstackwebdevelopment" data-code="IT3501" data-href="../pyq/IT3501-full-stack-web-development/" onclick="toggleCard('IT-5-Full Stack Web Development')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 5</span>
+                        <span class="sem-tag">IT - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Full Stack Web Development</h3>
@@ -2999,7 +3033,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-6-Object Oriented Software Engineering" data-dept="IT" data-sem="6" data-name="Object Oriented Software Engineering" data-name-normalized="objectorientedsoftwareengineering" data-code="CCS356" data-href="../pyq/CCS356-object-oriented-software-engineering/" onclick="toggleCard('IT-6-Object Oriented Software Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 6</span>
+                        <span class="sem-tag">IT - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Object Oriented Software Engineering</h3>
@@ -3018,7 +3052,7 @@
             <div class="card qp-card hidden" data-subject-id="IT-7-Human Values and Ethics" data-dept="IT" data-sem="7" data-name="Human Values and Ethics" data-name-normalized="humanvaluesandethics" data-code="GE3791" data-href="../pyq/GE3791-human-values-and-ethics/" onclick="toggleCard('IT-7-Human Values and Ethics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">IT · SEM 7</span>
+                        <span class="sem-tag">IT - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Human Values and Ethics</h3>
@@ -3037,7 +3071,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-1-Engineering Chemistry" data-dept="MECH" data-sem="1" data-name="Engineering Chemistry" data-name-normalized="engineeringchemistry" data-code="CY3151" data-href="../pyq/CY3151-engineering-chemistry/" onclick="toggleCard('MECH-1-Engineering Chemistry')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 1</span>
+                        <span class="sem-tag">MECH - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Chemistry</h3>
@@ -3056,7 +3090,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-1-Engineering Physics" data-dept="MECH" data-sem="1" data-name="Engineering Physics" data-name-normalized="engineeringphysics" data-code="PH3151" data-href="../pyq/PH3151-engineering-physics/" onclick="toggleCard('MECH-1-Engineering Physics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 1</span>
+                        <span class="sem-tag">MECH - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Physics</h3>
@@ -3075,7 +3109,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-1-Heritage of Tamils" data-dept="MECH" data-sem="1" data-name="Heritage of Tamils" data-name-normalized="heritageoftamils" data-code="GE3152" data-href="../pyq/GE3152-heritage-of-tamils/" onclick="toggleCard('MECH-1-Heritage of Tamils')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 1</span>
+                        <span class="sem-tag">MECH - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heritage of Tamils</h3>
@@ -3094,7 +3128,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-1-Matrices and Calculus" data-dept="MECH" data-sem="1" data-name="Matrices and Calculus" data-name-normalized="matricesandcalculus" data-code="MA3151" data-href="../pyq/MA3151-matrices-and-calculus/" onclick="toggleCard('MECH-1-Matrices and Calculus')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 1</span>
+                        <span class="sem-tag">MECH - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Matrices and Calculus</h3>
@@ -3113,7 +3147,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-1-Problem Solving and Python Programming" data-dept="MECH" data-sem="1" data-name="Problem Solving and Python Programming" data-name-normalized="problemsolvingandpythonprogramming" data-code="GE3151" data-href="../pyq/GE3151-problem-solving-and-python-programming/" onclick="toggleCard('MECH-1-Problem Solving and Python Programming')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 1</span>
+                        <span class="sem-tag">MECH - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Problem Solving and Python Programming</h3>
@@ -3132,7 +3166,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-1-Professional English - I" data-dept="MECH" data-sem="1" data-name="Professional English - I" data-name-normalized="professionalenglish1" data-code="HS3152" data-href="../pyq/HS3152-professional-english-1/" onclick="toggleCard('MECH-1-Professional English - I')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 1</span>
+                        <span class="sem-tag">MECH - SEM 1</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - I</h3>
@@ -3151,7 +3185,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-2-Basic Electrical and Electronics Engineering" data-dept="MECH" data-sem="2" data-name="Basic Electrical and Electronics Engineering" data-name-normalized="basicelectricalandelectronicsengineering" data-code="BE3251" data-href="../pyq/BE3251-basic-electrical-and-electronics-engineering/" onclick="toggleCard('MECH-2-Basic Electrical and Electronics Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 2</span>
+                        <span class="sem-tag">MECH - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Basic Electrical and Electronics Engineering</h3>
@@ -3170,7 +3204,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-2-Engineering Graphics" data-dept="MECH" data-sem="2" data-name="Engineering Graphics" data-name-normalized="engineeringgraphics" data-code="GE3251" data-href="../pyq/GE3251-engineering-graphics/" onclick="toggleCard('MECH-2-Engineering Graphics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 2</span>
+                        <span class="sem-tag">MECH - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Graphics</h3>
@@ -3189,7 +3223,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-2-Materials Science" data-dept="MECH" data-sem="2" data-name="Materials Science" data-name-normalized="materialsscience" data-code="PH3251" data-href="../pyq/PH3251-materials-science/" onclick="toggleCard('MECH-2-Materials Science')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 2</span>
+                        <span class="sem-tag">MECH - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Materials Science</h3>
@@ -3208,7 +3242,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-2-Professional English - II" data-dept="MECH" data-sem="2" data-name="Professional English - II" data-name-normalized="professionalenglish2" data-code="HS3252" data-href="../pyq/HS3252-professional-english-ii/" onclick="toggleCard('MECH-2-Professional English - II')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 2</span>
+                        <span class="sem-tag">MECH - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Professional English - II</h3>
@@ -3227,7 +3261,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-2-Statistics and Numerical Methods" data-dept="MECH" data-sem="2" data-name="Statistics and Numerical Methods" data-name-normalized="statisticsandnumericalmethods" data-code="MA3251" data-href="../pyq/MA3251-statistics-and-numerical-methods/" onclick="toggleCard('MECH-2-Statistics and Numerical Methods')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 2</span>
+                        <span class="sem-tag">MECH - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Statistics and Numerical Methods</h3>
@@ -3246,7 +3280,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-2-Tamils and Technology" data-dept="MECH" data-sem="2" data-name="Tamils and Technology" data-name-normalized="tamilsandtechnology" data-code="GE3252" data-href="../pyq/GE3252-tamils-and-technology/" onclick="toggleCard('MECH-2-Tamils and Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 2</span>
+                        <span class="sem-tag">MECH - SEM 2</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Tamils and Technology</h3>
@@ -3265,7 +3299,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-3-Engineering Materials and Metallurgy" data-dept="MECH" data-sem="3" data-name="Engineering Materials and Metallurgy" data-name-normalized="engineeringmaterialsandmetallurgy" data-code="ME3392" data-href="../pyq/ME3392-engineering-materials-and-metallurgy/" onclick="toggleCard('MECH-3-Engineering Materials and Metallurgy')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 3</span>
+                        <span class="sem-tag">MECH - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Materials and Metallurgy</h3>
@@ -3284,7 +3318,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-3-Engineering Mechanics" data-dept="MECH" data-sem="3" data-name="Engineering Mechanics" data-name-normalized="engineeringmechanics" data-code="ME3351" data-href="../pyq/ME3351-engineering-mechanics/" onclick="toggleCard('MECH-3-Engineering Mechanics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 3</span>
+                        <span class="sem-tag">MECH - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Mechanics</h3>
@@ -3303,7 +3337,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-3-Engineering Thermodynamics" data-dept="MECH" data-sem="3" data-name="Engineering Thermodynamics" data-name-normalized="engineeringthermodynamics" data-code="ME3391" data-href="../pyq/ME3391-engineering-thermodynamics/" onclick="toggleCard('MECH-3-Engineering Thermodynamics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 3</span>
+                        <span class="sem-tag">MECH - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Engineering Thermodynamics</h3>
@@ -3322,7 +3356,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-3-Fluid Mechanics and Machinery" data-dept="MECH" data-sem="3" data-name="Fluid Mechanics and Machinery" data-name-normalized="fluidmechanicsandmachinery" data-code="CE3391" data-href="../pyq/CE3391-fluid-mechanics-and-machinery/" onclick="toggleCard('MECH-3-Fluid Mechanics and Machinery')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 3</span>
+                        <span class="sem-tag">MECH - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Fluid Mechanics and Machinery</h3>
@@ -3341,7 +3375,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-3-Manufacturing Processes" data-dept="MECH" data-sem="3" data-name="Manufacturing Processes" data-name-normalized="manufacturingprocesses" data-code="ME3393" data-href="../pyq/ME3393-manufacturing-processes/" onclick="toggleCard('MECH-3-Manufacturing Processes')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 3</span>
+                        <span class="sem-tag">MECH - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Manufacturing Processes</h3>
@@ -3360,7 +3394,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-3-Transforms and Partial Differential Equations" data-dept="MECH" data-sem="3" data-name="Transforms and Partial Differential Equations" data-name-normalized="transformsandpartialdifferentialequations" data-code="MA3351" data-href="../pyq/MA3351-transforms-and-partial-differential-equations/" onclick="toggleCard('MECH-3-Transforms and Partial Differential Equations')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 3</span>
+                        <span class="sem-tag">MECH - SEM 3</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Transforms and Partial Differential Equations</h3>
@@ -3379,7 +3413,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-4-Environmental Sciences and Sustainability" data-dept="MECH" data-sem="4" data-name="Environmental Sciences and Sustainability" data-name-normalized="environmentalsciencesandsustainability" data-code="GE3451" data-href="../pyq/GE3451-environmental-sciences-and-sustainability/" onclick="toggleCard('MECH-4-Environmental Sciences and Sustainability')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 4</span>
+                        <span class="sem-tag">MECH - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Environmental Sciences and Sustainability</h3>
@@ -3398,7 +3432,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-4-Hydraulics and Pneumatics" data-dept="MECH" data-sem="4" data-name="Hydraulics and Pneumatics" data-name-normalized="hydraulicsandpneumatics" data-code="ME3492" data-href="../pyq/ME3492-hydraulics-and-pneumatics/" onclick="toggleCard('MECH-4-Hydraulics and Pneumatics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 4</span>
+                        <span class="sem-tag">MECH - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Hydraulics and Pneumatics</h3>
@@ -3417,7 +3451,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-4-Manufacturing Technology" data-dept="MECH" data-sem="4" data-name="Manufacturing Technology" data-name-normalized="manufacturingtechnology" data-code="ME3493" data-href="../pyq/ME3493-manufacturing-technology/" onclick="toggleCard('MECH-4-Manufacturing Technology')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 4</span>
+                        <span class="sem-tag">MECH - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Manufacturing Technology</h3>
@@ -3436,7 +3470,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-4-Strength of Materials" data-dept="MECH" data-sem="4" data-name="Strength of Materials" data-name-normalized="strengthofmaterials" data-code="CE3491" data-href="../pyq/CE3491-strength-of-materials/" onclick="toggleCard('MECH-4-Strength of Materials')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 4</span>
+                        <span class="sem-tag">MECH - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Strength of Materials</h3>
@@ -3455,7 +3489,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-4-Theory of Machines" data-dept="MECH" data-sem="4" data-name="Theory of Machines" data-name-normalized="theoryofmachines" data-code="ME3491" data-href="../pyq/ME3491-theory-of-machines/" onclick="toggleCard('MECH-4-Theory of Machines')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 4</span>
+                        <span class="sem-tag">MECH - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Theory of Machines</h3>
@@ -3474,7 +3508,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-4-Thermal Engineering" data-dept="MECH" data-sem="4" data-name="Thermal Engineering" data-name-normalized="thermalengineering" data-code="ME3451" data-href="../pyq/ME3451-thermal-engineering/" onclick="toggleCard('MECH-4-Thermal Engineering')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 4</span>
+                        <span class="sem-tag">MECH - SEM 4</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Thermal Engineering</h3>
@@ -3493,7 +3527,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-5-Design of Machine Elements" data-dept="MECH" data-sem="5" data-name="Design of Machine Elements" data-name-normalized="designofmachineelements" data-code="ME3591" data-href="../pyq/ME3591-design-of-machine-elements/" onclick="toggleCard('MECH-5-Design of Machine Elements')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 5</span>
+                        <span class="sem-tag">MECH - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Design of Machine Elements</h3>
@@ -3512,7 +3546,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-5-Metrology and Measurements" data-dept="MECH" data-sem="5" data-name="Metrology and Measurements" data-name-normalized="metrologyandmeasurements" data-code="ME3592" data-href="../pyq/ME3592-metrology-and-measurements/" onclick="toggleCard('MECH-5-Metrology and Measurements')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 5</span>
+                        <span class="sem-tag">MECH - SEM 5</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Metrology and Measurements</h3>
@@ -3531,7 +3565,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-6-Heat and Mass Transfer" data-dept="MECH" data-sem="6" data-name="Heat and Mass Transfer" data-name-normalized="heatandmasstransfer" data-code="ME3691" data-href="../pyq/ME3691-heat-and-mass-transfer/" onclick="toggleCard('MECH-6-Heat and Mass Transfer')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 6</span>
+                        <span class="sem-tag">MECH - SEM 6</span>
                         <span class="reg-tag even">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Heat and Mass Transfer</h3>
@@ -3550,7 +3584,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-7-Computer Integrated Manufacturing" data-dept="MECH" data-sem="7" data-name="Computer Integrated Manufacturing" data-name-normalized="computerintegratedmanufacturing" data-code="ME3792" data-href="../pyq/ME3792-computer-integrated-manufacturing/" onclick="toggleCard('MECH-7-Computer Integrated Manufacturing')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 7</span>
+                        <span class="sem-tag">MECH - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Computer Integrated Manufacturing</h3>
@@ -3569,7 +3603,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-7-Human Values and Ethics" data-dept="MECH" data-sem="7" data-name="Human Values and Ethics" data-name-normalized="humanvaluesandethics" data-code="GE3791" data-href="../pyq/GE3791-human-values-and-ethics/" onclick="toggleCard('MECH-7-Human Values and Ethics')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 7</span>
+                        <span class="sem-tag">MECH - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Human Values and Ethics</h3>
@@ -3588,7 +3622,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-7-Industrial Management" data-dept="MECH" data-sem="7" data-name="Industrial Management" data-name-normalized="industrialmanagement" data-code="GE3792" data-href="../pyq/GE3792-industrial-management/" onclick="toggleCard('MECH-7-Industrial Management')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 7</span>
+                        <span class="sem-tag">MECH - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Industrial Management</h3>
@@ -3607,7 +3641,7 @@
             <div class="card qp-card hidden" data-subject-id="MECH-7-Mechatronics and IoT" data-dept="MECH" data-sem="7" data-name="Mechatronics and IoT" data-name-normalized="mechatronicsandiot" data-code="ME3791" data-href="../pyq/ME3791-mechatronics-and-iot/" onclick="toggleCard('MECH-7-Mechatronics and IoT')">
                 <div class="card-body">
                     <div class="card-header">
-                        <span class="sem-tag">MECH · SEM 7</span>
+                        <span class="sem-tag">MECH - SEM 7</span>
                         <span class="reg-tag odd">Reg 2021</span>
                     </div>
                     <h3 style="font-size:1.125rem; line-height:1.3; font-weight:700;">Mechatronics and IoT</h3>
@@ -3636,9 +3670,44 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Designed to help students excel by providing easy access to academic resources.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; <span id="year"></span> LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p class="footer-desc">Designed to help students excel by providing easy access to academic resources.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/syllabus/">Syllabus</a></li>
+                        <li><a href="/">Notes</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/disclaimer/">Disclaimer</a></li>
+                        <li><a href="/terms-and-conditions/">Terms and conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; <span id="year"></span> LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</div>
         </div>
     </footer>
 
@@ -3656,7 +3725,14 @@
         </div>
     </div>
 
+    <script src="../assets/js/nav.js" defer></script>
     <script src="../assets/js/question.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

@@ -1,0 +1,8 @@
+D:\Project-OpenNotes\pyq\CE3391-fluid-mechanics-and-machinery\index.html
+D:\Project-OpenNotes\pyq\CE3491-strength-of-materials\index.html
+D:\Project-OpenNotes\pyq\CE3701-estimation-coasting-and-valuation-engineering\index.html
+D:\Project-OpenNotes\pyq\CS3451-introduction-to-operating-systems\index.html
+D:\Project-OpenNotes\pyq\EC3251-circuit-theory\index.html
+D:\Project-OpenNotes\pyq\EC3301-electron-devices-and-circuits\index.html
+D:\Project-OpenNotes\pyq\EC3492-digital-signal-processing\index.html
+D:\Project-OpenNotes\pyq\EE3303-electrical-machines-i\index.html

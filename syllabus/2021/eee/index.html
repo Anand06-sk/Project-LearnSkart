@@ -16,33 +16,75 @@
   <link rel="stylesheet" href="../../../assets/css/question.css">
   <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
   <link rel="stylesheet" href="../../../assets/css/syllabus-static.css">
+  <link rel="stylesheet" href="../../../assets/css/nav.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="logo-wrap">
-        <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-        <div class="logo-text">
-          <h1>LearnSkart - Anna University </h1>
-          <p>Syllabus</p>
+    <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-logo">
+        <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+        <span>LearnSkart</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="nav-right" id="navMenu">
+        <div class="nav-links">
+          <a href="/index.html">Home</a>
+          <a href="/syllabus/index.html" aria-current="page">Syllabus</a>
+          <a href="/previous-year-questions/">Previous Year Question Papers</a>
+          <a href="/">Notes</a>
+          <div class="nav-dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+              GATE
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-menu" aria-label="GATE submenu">
+              <a href="/gate-syllabus/">GATE Syllabus</a>
+              <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+            </div>
+          </div>
+          <a href="/anna-university-results/">Result Portal</a>
+          <a href="/contact/">Contact</a>
         </div>
       </div>
-      <div class="mobile-top-links">
-        <a href="../../../index.html">Home</a>
-        <a href="../../index.html">Dept Syllabus</a>
-      </div>
-      <div class="nav-links">
-        <a href="../../../index.html">Home</a>
-        <a href="../../">Syllabus Home</a>
-        <a href="../../../anna-university-notes/eee/index.html">Electrical and Electronics Engineering</a>
+    </div>
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <div class="nav-group">
+          <div class="nav-group-title">Main</div>
+          <a href="/index.html">Home</a>
+          <a href="/syllabus/index.html">Syllabus</a>
+          <a href="/previous-year-questions/">Previous Year Question Papers</a>
+          <a href="/">Notes</a>
+          <a href="/anna-university-results/">Result Portal</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">GATE</div>
+          <a href="/gate-syllabus/">GATE Syllabus</a>
+          <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Support</div>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Legal</div>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/disclaimer/">Disclaimer</a>
+          <a href="/terms-and-conditions/">Terms and Conditions</a>
+        </div>
       </div>
     </div>
   </nav>
 
   <main class="main container">
-    <nav aria-label="Breadcrumb">
+    <div role="navigation" aria-label="Breadcrumb">
       <a href="../../../index.html">Home</a> &gt; <a href="../../">Syllabus</a> &gt; <span>Electrical and Electronics Engineering</span>
-    </nav>
+    </div>
 
     <header class="syllabus-hero">
       <div>
@@ -178,7 +220,7 @@
 </a>
 <a class="subject-card" href="../../../syllabus/eee/be3255-basic-civil-and-mechanical-engineering/">
   <div class="subject-title">Basic Civil and Mechanical Engineering</div>
-  <span class="subject-code">BE3201</span>
+  <span class="subject-code">BE3255</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ge3251-engineering-graphics/">
   <div class="subject-title">Engineering Graphics</div>
@@ -197,7 +239,7 @@
   <h3>Semester 3 Subjects</h3>
   <div class="subject-grid"><a class="subject-card" href="../../../syllabus/eee/ma3303-probability-and-complex-functions/">
   <div class="subject-title">Probability and Complex Functions</div>
-  <span class="subject-code">MA3391</span>
+  <span class="subject-code">MA3303</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3301-electromagnetic-fields/">
   <div class="subject-title">Electromagnetic Fields</div>
@@ -205,19 +247,19 @@
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3302-digital-logic-circuits/">
   <div class="subject-title">Digital Logic Circuits</div>
-  <span class="subject-code">EE3351</span>
+  <span class="subject-code">EE3302</span>
 </a>
-<a class="subject-card" href="../../../syllabus/eee/ee3352-electron-devices-and-circuits/">
+<a class="subject-card" href="../../../syllabus/eee/ec3301-electron-devices-and-circuits/">
   <div class="subject-title">Electron Devices and Circuits</div>
-  <span class="subject-code">EE3352</span>
+  <span class="subject-code">EC3301</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3303-electrical-machines/">
   <div class="subject-title">Electrical Machines I</div>
-  <span class="subject-code">EE3353</span>
+  <span class="subject-code">EE3303</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/cs3353-c-programming-and-data-structures/">
   <div class="subject-title">C Programming and Data Structures</div>
-  <span class="subject-code">CS3251</span>
+  <span class="subject-code">CS3353</span>
 </a></div>
 </section>
 <section class="syllabus-section">
@@ -232,19 +274,19 @@
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3402-linear-integrated-circuits/">
   <div class="subject-title">Linear Integrated Circuits</div>
-  <span class="subject-code">EE3451</span>
+  <span class="subject-code">EE3402</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3403-measurements-and-instrumentation/">
   <div class="subject-title">Measurements and Instrumentation</div>
-  <span class="subject-code">EE3452</span>
+  <span class="subject-code">EE3403</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3404-microprocessor-and-microcontroller/">
   <div class="subject-title">Microprocessor and Microcontroller</div>
-  <span class="subject-code">EE3453</span>
+  <span class="subject-code">EE3404</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3405-electrical-machines-ii/">
   <div class="subject-title">Electrical Machines II</div>
-  <span class="subject-code">EE3454</span>
+  <span class="subject-code">EE3405</span>
 </a></div>
 </section>
 <section class="syllabus-section">
@@ -255,11 +297,11 @@
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3591-power-electronics/">
   <div class="subject-title">Power Electronics</div>
-  <span class="subject-code">EE3551</span>
+  <span class="subject-code">EE3591</span>
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3503-control-systems/">
   <div class="subject-title">Control Systems</div>
-  <span class="subject-code">EE3552</span>
+  <span class="subject-code">EE3503</span>
 </a></div>
 </section>
 <section class="syllabus-section">
@@ -270,7 +312,7 @@
 </a>
 <a class="subject-card" href="../../../syllabus/eee/ee3602-power-system-operation-and-control/">
   <div class="subject-title">Power System Operation and Control</div>
-  <span class="subject-code">EE3651</span>
+  <span class="subject-code">EE3602</span>
 </a></div>
 </section>
 <section class="syllabus-section">
@@ -287,13 +329,57 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-      <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University syllabus PDFs arranged by department and semester.</p>
-      <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4 class="logo-brand"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</h4>
+            <p>Download Anna University syllabus PDF &ndash; All Departments & Semesters.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../../anna-university-notes/eee/">Notes</a></li>
+                <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                <li><a href="../../../previous-year-questions/">PYQs</a></li>
+                <li><a href="../../../about/">About</a></li>
+                <li><a href="../../../contact/">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="../../../privacy/">Privacy Policy</a></li>
+                <li><a href="../../../terms-and-conditions/">Terms and Conditions</a></li>
+                <li><a href="../../../disclaimer/">Disclaimer</a></li>
+            </ul>
+        </div>
+        <div class="footer-section footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+                <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@LearnSkart</span>
+                </a>
+                <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
     </div>
-  </footer>
+
+<div class="footer-bottom">
+        <p>&copy; 2026 LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+    </div>
+</footer>
   <script src="../../../assets/js/theme.js" defer></script>
+  <script src="../../../assets/js/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+

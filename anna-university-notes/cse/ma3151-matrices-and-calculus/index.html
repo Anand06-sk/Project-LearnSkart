@@ -14,29 +14,90 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Matrices and Calculus</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -102,17 +163,121 @@
             </div>
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>MA3151 Anna University notes PDF</strong> and start your exam preparation today.</p>
+
+        <section class="syllabus-card">
+          <h2 style="margin-bottom: 0.75rem;">MA3151 MATRICES AND CALCULUS</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 1 0 4</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>To develop the use of matrix algebra techniques that are needed by engineers for practical applications.</li>
+            <li>To familiarize the students with differential calculus.</li>
+            <li>To familiarize the student with functions of several variables. This is needed in many branches of engineering.</li>
+            <li>To make the students understand various techniques of integration.</li>
+            <li>To acquaint the student with mathematical tools needed in evaluating multiple integrals and their applications.</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">UNIT I MATRICES 9 +</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Eigenvalues and Eigenvectors of a real matrix - Characteristic equation - Properties of Eigenvalues and Eigenvectors - Cayley - Hamilton theorem - Diagonalization of matrices by orthogonal transformation - Reduction of a quadratic form to canonical form by orthogonal transformation - Nature of quadratic forms - Applications: Stretching of an elastic membrane.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT II DIFFERENTIAL CALCULUS 9 +</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Representation of functions - Limit of a function - Continuity - Derivatives - Differentiation rules (sum, product, quotient, chain rules) - Implicit differentiation - Logarithmic differentiation - Applications: Maxima and Minima of functions of one variable.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT III FUNCTIONS OF SEVERAL VARIABLES 9 +</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Partial differentiation - Homogeneous functions and EulerÃ¢â‚¬â„¢s theorem - Total derivative - Change of variables - Jacobians - Partial differentiation of implicit functions - TaylorÃ¢â‚¬â„¢s series for functions of two variables - Applications: Maxima and minima of functions of two variables and LagrangeÃ¢â‚¬â„¢s method of undetermined multipliers.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT IV INTEGRAL CALCULUS 9 +</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Definite and Indefinite integrals - Substitution rule - Techniques of Integration: Integration by parts, Trigonometric integrals, Trigonometric substitutions, Integration of rational functions by partial fraction, Integration of irrational functions - Improper integrals - Applications: Hydrostatic force and pressure, moments and centres of mass.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT V MULTIPLE INTEGRALS 9 +</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Double integrals - Change of order of integration - Double integrals in polar coordinates - Area enclosed by plane curves - Triple integrals - Volume of solids - Change of variables in double and triple integrals - Applications: Moments and centres of mass, moment of inertia.</p>
+
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL: 60 PERIODS</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
+          <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of the course the students will be able to</p>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>CO1:Use the matrix algebra methods for solving practical problems.</li>
+            <li>CO2:Apply differential calculus tools in solving various application problems.</li>
+            <li>CO3:Able to use differential calculus ideas on several variable functions.</li>
+            <li>CO4:Apply different methods of integration in solving practical problems.</li>
+            <li>CO5:Apply multiple integral ideas in solving areas, volumes and other practical problems.</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">TEXT BOOKS :</h2>
+          <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>Kreyszig.E, "Advanced Engineering Mathematics", John Wiley and Sons, 10th Edition, New Delhi, 2016.</li>
+            <li>Grewal.B.S., Ã¢â‚¬Å“Higher Engineering MathematicsÃ¢â‚¬Â, Khanna Publishers, New Delhi, 44th Edition , 2018.</li>
+            <li>James Stewart, " Calculus: Early Transcendentals", Cengage Learning, 8th Edition, New Delhi, 2015. [For Units II &amp; IV - Sections 1.1, 2.2, 2.3, 2.5, 2.7 (Tangents problems only), 2.8, 3.1 to 3.6, 3.11, 4.1, 4.3, 5.1 (Area problems only), 5.2, 5.3, 5.4 (excluding net change theorem), 5.5, 7.1 - 7.4 and 7.8 ].</li>
+          </ol>
+
+          <h2 class="syllabus-blue-heading">REFERENCES:</h2>
+          <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
+            <li>Anton. H, Bivens. I and Davis. S, "Calculus", Wiley, 10th Edition, 2016</li>
+            <li>Bali. N., Goyal. M. and Watkins. C., Ã¢â‚¬Å“Advanced Engineering MathematicsÃ¢â‚¬Â, Firewall Media (An imprint of Lakshmi Publications Pvt., Ltd.,), New Delhi, 7th Edition, 2009.</li>
+            <li>Jain . R.K. and Iyengar. S.R.K., Ã¢â‚¬Å“Advanced Engineering MathematicsÃ¢â‚¬Â, Narosa Publications, New Delhi, 5th Edition, 2016.</li>
+            <li>Narayanan. S. and Manicavachagom Pillai. T. K., Ã¢â‚¬Å“Calculus" Volume I and II, S. Viswanathan Publishers Pvt. Ltd., Chennai, 2009.</li>
+            <li>Ramana. B.V., "Higher Engineering Mathematics", McGraw Hill Education Pvt. Ltd, New Delhi, 2016.</li>
+            <li>Srimantha Pal and Bhunia. S.C, Ã¢â‚¬Å“Engineering Mathematics" Oxford University Press, 2015.</li>
+            <li>Thomas. G. B., Hass. J, and Weir. M.D, "Thomas Calculus", 14th Edition, Pearson India, 2018.</li>
+          </ol>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

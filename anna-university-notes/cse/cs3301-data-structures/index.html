@@ -14,29 +14,103 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Data Structures</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -75,6 +149,71 @@
 </section>
         </section>
 
+        <section style="margin: 2rem 0;">
+            <h2 style="margin-bottom: 0.75rem;">CS3301 - Data Structures Important Questions (Unit-wise)</h2>
+            <p style="color: var(--muted); max-width: 900px; line-height: 1.6; margin-bottom: 1.25rem;">Data structures are essential for writing efficient programs and solving problems in a systematic way. A strong understanding of linked lists, stacks, trees, graphs, and hashing helps students improve algorithm design, reduce time complexity, and perform better in university exams.</p>
+
+            <section style="margin-bottom: 1rem;">
+                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit I - Linked Lists and Polynomial ADT</h2>
+                <p style="color: var(--muted); line-height: 1.6;">This unit introduces linear data structures and their practical use in memory-efficient programming. Focus on pointer-based implementation, node creation, and common linked list operations.</p>
+                <ul>
+                    <li>Singly linked list</li>
+                    <li>Doubly linked list</li>
+                    <li>Circularly linked list</li>
+                    <li>Polynomial ADT</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1rem;">
+                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit II - Stack and Queue ADT</h2>
+                <p style="color: var(--muted); line-height: 1.6;">This unit covers stack and queue-based problem solving, which is widely used in recursion, expression evaluation, and scheduling algorithms. Learn the operations, conditions, and standard applications carefully.</p>
+                <ul>
+                    <li>Applications of stack</li>
+                    <li>Stack ADT</li>
+                    <li>Deque</li>
+                    <li>Circular queue</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1rem;">
+                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit III - Trees and Heaps</h2>
+                <p style="color: var(--muted); line-height: 1.6;">This unit explains hierarchical data representation and priority-based processing. Practice tree operations and understand how heaps support efficient selection and arrangement of data.</p>
+                <ul>
+                    <li>Tree traversal</li>
+                    <li>Binary search tree</li>
+                    <li>Binary heap</li>
+                    <li>AVL tree</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1rem;">
+                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit IV - Graphs and Advanced Trees</h2>
+                <p style="color: var(--muted); line-height: 1.6;">This unit focuses on graph traversal and advanced tree structures used in indexing, routing, and shortest path problems. Understand algorithm logic and compare different graph techniques clearly.</p>
+                <ul>
+                    <li>B-tree and B+ tree</li>
+                    <li>BFS and DFS</li>
+                    <li>Dijkstra's algorithm</li>
+                    <li>Prim's algorithm and Kruskal's algorithm</li>
+                    <li>Euler circuit</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1rem;">
+                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit V - Searching, Sorting and Hashing</h2>
+                <p style="color: var(--muted); line-height: 1.6;">This unit is important for algorithm analysis and fast data retrieval. Revise searching, sorting, and hashing carefully because these topics often appear in both theory and problem-solving questions.</p>
+                <ul>
+                    <li>Binary search</li>
+                    <li>Insertion sort, selection sort, and merge sort</li>
+                    <li>Closed hashing with open addressing</li>
+                    <li>Extendible hashing</li>
+                </ul>
+            </section>
+
+            <footer class="important-questions-footer">
+                <p style="margin: 0; color: #334155; line-height: 1.6;"><strong>Exam Preparation Tips:</strong> Revise each unit with diagrams, algorithm steps, and dry-run examples. Practice linked list, tree, and sorting programs regularly, and compare time complexity, space complexity, and use cases before the exam.</p>
+            </footer>
+        </section>
+
         <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
             <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -92,17 +231,117 @@
             </div>
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3301 Anna University notes PDF</strong> and start your exam preparation today.</p>
+
+        <section class="syllabus-card">
+            <h2 style="margin-bottom: 0.75rem;">CS3301 DATA STRUCTURES</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
+
+            <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>To understand the concepts of ADTs.</li>
+                <li>To Learn linear data structures - lists, stacks, and queues.</li>
+                <li>To understand non-linear data structures - trees and graphs.</li>
+                <li>To understand sorting, searching and hashing algorithms.</li>
+                <li>To apply Tree and Graph structures.</li>
+            </ul>
+
+            <h2 class="syllabus-blue-heading">UNIT I LISTS</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Abstract Data Types (ADTs) - List ADT - Array-based implementation - Linked list implementation - Singly linked lists - Circularly linked lists - Doubly-linked lists - Applications of lists - Polynomial ADT - Radix Sort - Multilists.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT II STACKS AND QUEUES</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Stack ADT - Operations - Applications - Balancing Symbols - Evaluating arithmetic expressions- Infix to Postfix conversion - Function Calls - Queue ADT - Operations - Circular Queue - DeQueue - Applications of Queues.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT III TREES</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Tree ADT - Tree Traversals - Binary Tree ADT - Expression trees - Binary Search Tree ADT - AVL Trees - Priority Queue (Heaps) - Binary Heap.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT IV MULTIWAY SEARCH TREES AND GRAPHS</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">B-Tree - B+ Tree - Graph Definition - Representation of Graphs - Types of Graph - Breadth-first traversal - Depth-first traversal - Bi-connectivity - Euler circuits - Topological Sort - Dijkstra's algorithm - Minimum Spanning Tree - Prim's algorithm - Kruskal's algorithm</p>
+
+            <h2 class="syllabus-blue-heading">UNIT V SEARCHING, SORTING AND HASHING TECHNIQUES</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Searching - Linear Search - Binary Search. Sorting - Bubble sort - Selection sort - Insertion sort - Shell sort -. Merge Sort - Hashing - Hash Functions - Separate Chaining - Open Addressing -Rehashing - Extendible Hashing.</p>
+
+            <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of this course, the students will be able to:</p>
+            <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>CO1: Define linear and non-linear data structures.</li>
+                <li>CO2: Implement linear and non-linear data structure operations.</li>
+                <li>CO3: Use appropriate linear/non-linear data structure operations for solving a given problem.</li>
+                <li>CO4: Apply appropriate graph algorithms for graph applications.</li>
+                <li>CO5: Analyze the various searching and sorting algorithms.</li>
+            </ul>
+
+            <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>
+
+            <h2 class="syllabus-blue-heading">TEXT BOOKS</h2>
+            <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>Mark Allen Weiss, Data Structures and Algorithm Analysis in C, 2nd Edition, Pearson Education, 2005.</li>
+                <li>Kamthane, Introduction to Data Structures in C, 1st Edition, Pearson Education, 2007</li>
+            </ol>
+
+            <h2 class="syllabus-blue-heading">REFERENCES</h2>
+            <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
+                <li>Langsam, Augenstein and Tanenbaum, Data Structures Using C and C++, 2nd Edition, Pearson Education, 2015.</li>
+                <li>Thomas H. Cormen, Charles E. Leiserson, Ronald L.Rivest, Clifford Stein, Introduction to Algorithms", Fourth Edition, Mcgraw Hill/ MIT Press, 2022.</li>
+                <li>Alfred V. Aho, Jeffrey D. Ullman,John E. Hopcroft ,Data Structures and Algorithms, 1st edition, Pearson, 2002.</li>
+                <li>Kruse, Data Structures and Program Design in C, 2nd Edition, Pearson Education, 2006.</li>
+            </ol>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

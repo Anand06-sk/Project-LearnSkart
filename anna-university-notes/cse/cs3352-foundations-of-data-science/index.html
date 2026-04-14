@@ -14,29 +14,103 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Foundations of Data Science</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -66,6 +140,59 @@
 </section>
         </section>
 
+        <section class="syllabus-card">
+            <h2 style="margin-bottom: 0.75rem;">CS3352 FOUNDATIONS OF DATA SCIENCE</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
+
+            <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">COURSE OBJECTIVES:</h2>
+            <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>To understand the data science fundamentals and process.</li>
+                <li>To learn to describe the data for the data science process.</li>
+                <li>To learn to describe the relationship between data.</li>
+                <li>To utilize the Python libraries for Data Wrangling.</li>
+                <li>To present and interpret data using visualization libraries in Python</li>
+            </ul>
+
+            <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Data Science: Benefits and uses - facets of data - Data Science Process: Overview - Defining research goals - Retrieving data - Data preparation - Exploratory Data analysis - build the model - presenting findings and building applications - Data Mining - Data Warehousing - Basic Statistical descriptions of Data</p>
+
+            <h2 class="syllabus-blue-heading">UNIT II DESCRIBING DATA</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Types of Data - Types of Variables - Describing Data with Tables and Graphs - Describing Data with Averages - Describing Variability - Normal Distributions and Standard (z) Scores</p>
+
+            <h2 class="syllabus-blue-heading">UNIT III DESCRIBING RELATIONSHIPS</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Correlation - Scatter plots - correlation coefficient for quantitative data - computational formula for correlation coefficient - Regression - regression line - least squares regression line - Standard error of estimate - interpretation of r2 - multiple regression equations - regression towards the mean</p>
+
+            <h2 class="syllabus-blue-heading">UNIT IV PYTHON LIBRARIES FOR DATA WRANGLING</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Basics of Numpy arrays - aggregations - computations on arrays - comparisons, masks, boolean logic - fancy indexing - structured arrays - Data manipulation with Pandas - data indexing and selection - operating on data - missing data - Hierarchical indexing - combining datasets - aggregation and grouping - pivot tables</p>
+
+            <h2 class="syllabus-blue-heading">UNIT V DATA VISUALIZATION</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Importing Matplotlib - Line plots - Scatter plots - visualizing errors - density and contour plots - Histograms - legends - colors - subplots - text and annotation - customization - three dimensional plotting - Geographic Data with Basemap - Visualization with Seaborn.</p>
+
+            <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">COURSE OUTCOMES:</h2>
+            <p style="line-height:1.7; margin-bottom:0.5rem;">At the end of this course, the students will be able to:</p>
+            <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>CO1: Define the data science process</li>
+                <li>CO2: Understand different types of data description for data science process</li>
+                <li>CO3: Gain knowledge on relationships between data</li>
+                <li>CO4: Use the Python Libraries for Data Wrangling</li>
+                <li>CO5: Apply visualization Libraries in Python to interpret and explore data</li>
+            </ul>
+
+            <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>
+
+            <h2 class="syllabus-blue-heading">TEXT BOOKS</h2>
+            <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>David Cielen, Arno D. B. Meysman, and Mohamed Ali, "Introducing Data Science", Manning Publications, 2016. (Unit I)</li>
+                <li>Robert S. Witte and John S. Witte, "Statistics", Eleventh Edition, Wiley Publications, 2017. (Units II and III)</li>
+                <li>Jake VanderPlas, "Python Data Science Handbook", O'Reilly, 2016. (Units IV and V)</li>
+            </ol>
+
+            <h2 class="syllabus-blue-heading">REFERENCES:</h2>
+            <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
+                <li>Allen B. Downey, "Think Stats: Exploratory Data Analysis in Python", Green Tea Press,2014.</li>
+            </ol>
+        </section>
+
         <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
             <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -87,13 +214,58 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

@@ -14,29 +14,90 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Distributed Computing</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -111,6 +172,71 @@
 </section>
         </section>
 
+    <section style="margin: 2rem 0;">
+      <h2 style="margin-bottom:0.75rem;">CS3551 - Distributed Computing Important Questions (Unit-wise)</h2>
+      <p style="color: var(--muted); line-height: 1.7; max-width: 900px; margin-bottom: 1.25rem;">Distributed systems and cloud computing are important for building modern applications that are scalable, reliable, and available across multiple machines. Studying important questions unit-wise helps students understand both core theory and algorithm-based concepts clearly for university exams.</p>
+
+      <section style="margin-bottom: 1.25rem;">
+        <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT I</h2>
+        <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit covers the basics of distributed models and computation structure. It helps students learn system models, shared memory ideas, and common design challenges in distributed systems.</p>
+        <ul>
+          <li>Passing S/M vs Shared Memory S/M **</li>
+          <li>Model of distributed computations, global state</li>
+          <li>Designing issues, challenges and examples of DS **</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 1.25rem;">
+        <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT II</h2>
+        <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit focuses on event ordering and consistent state capture in distributed environments. These concepts are useful for understanding synchronization behavior and message coordination.</p>
+        <ul>
+          <li>CO (Causal Order) Ã¢â‚¬â€œ full topic **</li>
+          <li>Message ordering paradigms</li>
+          <li>Snapshot algorithms for FIFO channels **</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 1.25rem;">
+        <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT III</h2>
+        <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit introduces synchronization algorithms for mutual exclusion in distributed systems. Learning these algorithms improves clarity in algorithm-based exam questions and system-level reasoning.</p>
+        <ul>
+          <li>RicartÃ¢â‚¬â€œAgrawala algorithm, MaekawaÃ¢â‚¬â„¢s algorithm</li>
+          <li>LamportÃ¢â‚¬â„¢s algorithm</li>
+          <li>KnappÃ¢â‚¬â„¢s classification (may be Part C)</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 1.25rem;">
+        <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT IV</h2>
+        <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit explains recovery mechanisms in fault-prone distributed environments. Topics include checkpointing and rollback methods that are critical for reliable failure recovery.</p>
+        <ul>
+          <li>Issues in failure recovery, Checkpoint-based recovery</li>
+          <li>Algorithm for asynchronous checkpointing and recovery</li>
+          <li>Log-based rollback recovery</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 1.25rem;">
+        <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT V</h2>
+        <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit connects distributed computing with cloud platforms and services. It highlights cloud deployment models, virtualization, and service components used in practical cloud environments.</p>
+        <ul>
+          <li>Characteristics of CC deployment models **</li>
+          <li>Virtualization, monitoring and cloud service platform</li>
+          <li>Remote storage, app services</li>
+        </ul>
+      </section>
+
+      <footer style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+        <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">Exam Preparation Tips</h2>
+        <ul>
+          <li>Prepare one unit per session and revise definitions before algorithms.</li>
+          <li>Practice algorithm flow for Lamport, Ricart-Agrawala, and recovery methods on paper.</li>
+          <li>Give special attention to distributed models, synchronization algorithms, recovery mechanisms, and cloud platforms.</li>
+          <li>Write short comparison notes for better recall in Part B and Part C answers.</li>
+        </ul>
+      </footer>
+    </section>
+
         <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
             <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -127,17 +253,119 @@
             </div>
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3551 Anna University notes PDF</strong> and start your exam preparation today.</p>
+
+        <section class="syllabus-card">
+          <h2 style="margin-bottom: 0.75rem;">S3551 DISTRIBUTED COMPUTING</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 3 0 0 3</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>To introduce the computation and communication models of distributed systems</li>
+            <li>To illustrate the issues of synchronization and collection of information in distributed systems</li>
+            <li>To describe distributed mutual exclusion and distributed deadlock detection techniques</li>
+            <li>To elucidate agreement protocols and fault tolerance mechanisms in distributed systems</li>
+            <li>To explain the cloud computing models and the underlying concepts</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">UNIT I INTRODUCTION</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Introduction: Definition-Relation to Computer System Components - Motivation - Message -Passing Systems versus Shared Memory Systems - Primitives for Distributed Communication - Synchronous versus Asynchronous Executions - Design Issues and Challenges; A Model of Distributed Computations: A Distributed Program - A Model of Distributed Executions - Models of Communication Networks - Global State of a Distributed System.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT II LOGICAL TIME AND GLOBAL STATE</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Logical Time: Physical Clock Synchronization: NTP - A Framework for a System of Logical Clocks - Scalar Time - Vector Time; Message Ordering and Group Communication: Message Ordering Paradigms - Asynchronous Execution with Synchronous Communication - Synchronous Program Order on Asynchronous System - Group Communication - Causal Order - Total Order; Global State and Snapshot Recording Algorithms: Introduction - System Model and Definitions - Snapshot Algorithms for FIFO Channels.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT III DISTRIBUTED MUTEX AND DEADLOCK</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Distributed Mutual exclusion Algorithms: Introduction - Preliminaries - Lamport's algorithm - Ricart-Agrawala's Algorithm - Token-Based Algorithms - Suzuki-Kasami's Broadcast Algorithm; Deadlock Detection in Distributed Systems: Introduction - System Model - Preliminaries - Models of Deadlocks - Chandy-Misra-Haas Algorithm for the AND model and OR Model.</p>
+
+          <h2 class="syllabus-blue-heading">UNIT IV CONSENSUS AND RECOVERY</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Consensus and Agreement Algorithms: Problem Definition - Overview of Results - Agreement in a Failure-Free System(Synchronous and Asynchronous) - Agreement in Synchronous Systems with Failures; Checkpointing and Rollback Recovery: Introduction - Background and Definitions - Issues in Failure Recovery - Checkpoint-based Recovery - Coordinated Checkpointing Algorithm - Algorithm for Asynchronous Checkpointing and Recovery</p>
+
+          <h2 class="syllabus-blue-heading">UNIT V CLOUD COMPUTING</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Definition of Cloud Computing - Characteristics of Cloud - Cloud Deployment Models - Cloud Service Models - Driving Factors and Challenges of Cloud - Virtualization - Load Balancing - Scalability and Elasticity - Replication - Monitoring - Cloud Services and Platforms: Compute Services - Storage Services - Application Services</p>
+
+          <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
+          <p style="line-height:1.7; margin-bottom:0.5rem;">Upon the completion of this course, the student will be able to</p>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>CO1: Explain the foundations of distributed systems (K2)</li>
+            <li>CO2: Solve synchronization and state consistency problems (K3)</li>
+            <li>CO3 Use resource sharing techniques in distributed systems (K3)</li>
+            <li>CO4: Apply working model of consensus and reliability of distributed systems (K3)</li>
+            <li>CO5: Explain the fundamentals of cloud computing (K2)</li>
+          </ul>
+
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL:45 PERIODS</strong></p>
+
+          <h2 class="syllabus-blue-heading">TEXT BOOKS</h2>
+          <ol style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>Kshemkalyani Ajay D, Mukesh Singhal, "Distributed Computing: Principles, Algorithms and Systems", Cambridge Press, 2011.</li>
+            <li>Mukesh Singhal, Niranjan G Shivaratri, "Advanced Concepts in Operating systems", Mc-Graw Hill Publishers, 1994.</li>
+          </ol>
+
+          <h2 class="syllabus-blue-heading">REFERENCES</h2>
+          <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
+            <li>George Coulouris, Jean Dollimore, Time Kindberg, "Distributed Systems Concepts and Design", Fifth Edition, Pearson Education, 2012.</li>
+            <li>Pradeep L Sinha, "Distributed Operating Systems: Concepts and Design", Prentice Hall of India, 2007.</li>
+            <li>Tanenbaum A S, Van Steen M, "Distributed Systems: Principles and Paradigms", Pearson Education, 2007.</li>
+            <li>Liu M L, "Distributed Computing: Principles and Applications", Pearson Education, 2004.</li>
+            <li>Nancy A Lynch, "Distributed Algorithms", Morgan Kaufman Publishers, 2003.</li>
+            <li>Arshdeep Bagga, Vijay Madisetti, " Cloud Computing: A Hands-On Approach", Universities Press, 2014.</li>
+          </ol>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

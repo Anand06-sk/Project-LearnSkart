@@ -14,29 +14,91 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+            color: var(--text);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Problem Solving and Python Programming</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -75,6 +137,76 @@
 </section>
         </section>
 
+        <section style="margin: 2rem 0;">
+            <h2 style="margin-bottom:0.75rem;">GE3151 - Problem Solving and Python Programming Important Questions (Unit-wise)</h2>
+            <p style="color: var(--muted); line-height: 1.7; max-width: 900px; margin-bottom: 1.25rem;">Problem solving and Python programming are essential for building logical thinking and coding skills required in every engineering domain. Unit-wise important questions help students prepare both theory and program-based answers with better clarity and confidence.</p>
+
+            <section style="margin-bottom: 1.25rem;">
+                <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT I</h2>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit introduces algorithm fundamentals and problem-solving representation methods. It gives a strong base for understanding computational logic and designing clear solutions.</p>
+                <ul>
+                    <li>1. Building block of algorithm</li>
+                    <li>2. Tower of Hanoi</li>
+                    <li>3. Flowchart detail</li>
+                    <li>4. Algorithm pseudo code detail</li>
+                    <li>5. Illustrative program</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1.25rem;">
+                <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT II</h2>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit covers Python basics such as data types, interpreter usage, and operators. It helps students build a strong foundation for writing correct Python programs.</p>
+                <ul>
+                    <li>1. Value and data types</li>
+                    <li>2. Interpreter</li>
+                    <li>3. Operators</li>
+                    <li>4. Illustrative program</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1.25rem;">
+                <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT III</h2>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit focuses on control structures and string handling in Python. It is important for writing decision-based and loop-based programs in exams.</p>
+                <ul>
+                    <li>1.Decision making &amp; Condition</li>
+                    <li>2. Iteration-looping</li>
+                    <li>3. Strings</li>
+                    <li>4.Illustrative program</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1.25rem;">
+                <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT IV</h2>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit explains core data structures like list and tuple, along with sorting techniques. It combines theory and coding practice for common data handling problems.</p>
+                <ul>
+                    <li>1.List</li>
+                    <li>2.Tuple</li>
+                    <li>3.Selection and insertion sort</li>
+                    <li>4.Illustrative program</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 1.25rem;">
+                <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">UNIT V</h2>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit introduces file handling and exception handling for real-world Python applications. These topics are important for robust program development and practical exam questions.</p>
+                <ul>
+                    <li>1. Files</li>
+                    <li>2. Handling exception</li>
+                    <li>3. Illustrative program</li>
+                </ul>
+            </section>
+
+            <footer style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">Exam Preparation Tips</h2>
+                <ul>
+                    <li>Revise one unit at a time and write short notes for quick final revision.</li>
+                    <li>Practice both theory and program-based questions regularly to improve confidence.</li>
+                    <li>Focus on key concepts like algorithms, control structures, data structures, and file handling.</li>
+                    <li>Dry-run Python programs step by step to avoid logic mistakes in exams.</li>
+                </ul>
+            </footer>
+        </section>
+
         <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
             <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -93,17 +225,99 @@
             </div>
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>GE3151 Anna University notes PDF</strong> and start your exam preparation today.</p>
+
+        <section class="syllabus-card">
+            <h2 style="margin-bottom: 0.75rem;">GE3151 - PROBLEM SOLVING AND PYTHON PROGRAMMING</h2>
+            <h2 style="margin-bottom: 1rem;">SYLLABUS</h2>
+
+            <h2 class="syllabus-blue-heading">UNIT I COMPUTATIONAL THINKING AND PROBLEM SOLVING</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Fundamentals of Computing - Identification of Computational Problems -Algorithms, building blocks of algorithms ( statements, state, control flow, functions), notation (pseudo code, flow chart, programming language), algorithmic problem solving, simple strategies for developing algorithms (iteration, recursion). Illustrative problems: find minimum in a list, insert a card in a list of sorted cards, guess an integer number in a range, Towers of Hanoi.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT II DATA TYPES, EXPRESSIONS, STATEMENTS</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Python interpreter and interactive mode, debugging; values and types: int, float, boolean, string and list; variables, expressions, statements, tuple assignment, precedence of operators, comments; Illustrative programs: exchange the values of two variables, circulate the values of n variables, distance between two points.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT III CONTROL FLOW, FUNCTIONS, STRINGS</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Conditionals: Boolean values and operators, conditional (if), alternative (if-else), chained conditional (if-elif-else); Iteration: state, while, for, break, continue, pass; Fruitful functions: return values, parameters, local and global scope, function composition, recursion; Strings:string slices, immutability, string functions and methods, string module; Lists as arrays. Illustrative programs: square root, gcd, exponentiation, sum an array of numbers, linear search, binary search.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT IV LISTS, TUPLES, DICTIONARIES</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Lists: list operations, list slices, list methods, list loop, mutability, aliasing, cloning lists, list parameters; Tuples: tuple assignment, tuple as return value; Dictionaries: operations and methods;advanced list processing - list comprehension; Illustrative programs: simple sorting, histogram, Students marks statement, Retail bill preparation.</p>
+
+            <h2 class="syllabus-blue-heading">UNIT V FILES, MODULES, PACKAGES</h2>
+            <p style="line-height:1.7; margin-bottom:1rem;">Files and exceptions: text files, reading and writing files, format operator; command line arguments, errors and exceptions, handling exceptions, modules, packages; Illustrative programs: word count, copy file, Voter's age validation, Marks range validation (0-100).</p>
+
+            <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL : 45 PERIODS</strong></p>
+
+            <h2 class="syllabus-blue-heading">TEXT BOOKS:</h2>
+            <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+                <li>1. 1. Allen B. Downey, "Think Python: How to Think like a Computer Scientist", 2nd Edition, O'Reilly Publishers, 2016.</li>
+                <li>2. Karl Beecher, "Computational Thinking: A Beginner's Guide to Problem Solving and Programming", 1st Edition, BCS Learning &amp; Development Limited, 2017.</li>
+            </ul>
+
+            <h2 class="syllabus-blue-heading">REFERENCES:</h2>
+            <ul style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
+                <li>1. Paul Deitel and Harvey Deitel, "Python for Programmers", Pearson Education, 1st Edition, 2021.</li>
+                <li>2. G Venkatesh and Madhavan Mukund, "Computational Thinking: A Primer for Programmers and Data Scientists", 1st Edition, Notion Press, 2021.</li>
+                <li>3. John V Guttag, "Introduction to Computation and Programming Using Python: With Applications to Computational Modeling and Understanding Data", Third Edition, MIT Press, 2021.</li>
+                <li>4. Eric Matthes, "Python Crash Course, A Hands - on Project Based Introduction to Programming", 2nd Edition, No Starch Press, 2019.</li>
+                <li>5. Martin C. Brown, "Python: The Complete Reference", 4th Edition, Mc-Graw Hill, 2018.</li>
+            </ul>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

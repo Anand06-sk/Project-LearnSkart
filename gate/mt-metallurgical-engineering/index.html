@@ -15,25 +15,58 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../../assets/css/question.css">
   <link rel="stylesheet" href="../../assets/css/gate-static.css">
+  <link rel="stylesheet" href="../../assets/css/nav.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="logo-wrap">
-        <div class="logo-icon"><img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-        <div class="logo-text"><h1>LearnSkart</h1><p>GATE Papers</p></div>
+        <nav>
+    <div class="nav-content">
+      <a href="/" class="nav-logo">
+        <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+        <span>LearnSkart</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="nav-right" id="navMenu">
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/gate-pyqs/" aria-current="page">GATE Previous Year Question Papers</a>
+          <a href="/gate-syllabus/mt-metallurgical-engineering/">GATE Syllabus</a>
+          <a href="/daily-puzzle/">Daily Puzzle</a>
+          <a href="/contact/">Contact</a>
+        </div>
       </div>
-      <div class="nav-links">
-        <a href="../../index.html">Home</a>
-        <a href="../../gate-pyqs/">GATE</a>
+    </div>
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <div class="nav-group">
+          <div class="nav-group-title">Main</div>
+          <a href="/">Home</a>
+          <a href="/gate-pyqs/">GATE Previous Year Question Papers</a>
+          <a href="/gate-syllabus/mt-metallurgical-engineering/">GATE Syllabus</a>
+          <a href="/daily-puzzle/">Daily Puzzle</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Support</div>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">Legal</div>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms-and-conditions/">Terms and Conditions</a>
+          <a href="/disclaimer/">Disclaimer</a>
+        </div>
       </div>
     </div>
   </nav>
 
   <main class="main container gate-main">
-    <nav aria-label="Breadcrumb" class="breadcrumb">
+    <div role="navigation" aria-label="Breadcrumb">
       <a href="../../index.html">Home</a> &gt; <a href="../../gate-pyqs/">GATE</a> &gt; <span>Metallurgical Engineering (MT)</span>
-    </nav>
+    </div>
 
     <header class="content-header" style="align-items:flex-start;">
       <div>
@@ -151,46 +184,124 @@
         </ul>
       </section>
     </section>
-  
-    <div class="gate-info">
-      <center>
-        <h2>What is GATE Exam?</h2>
-      </center>
-      <p style="margin-top: 1rem;">GATE (Graduate Aptitude Test in Engineering) is a national-level exam for engineering students who want higher studies or PSU jobs.</p>
+ 
+    <section>
+      <h2>GATE 2026 Metallurgical Engineering PYQ Guide</h2>
 
-      <div class="gate-info-grid">
-        <div class="info-item">
-          <h3><i class="fas fa-clipboard-list" aria-hidden="true"></i> GATE Exam Pattern</h3>
-          <p><strong>Mode:</strong> Computer-Based Test (CBT)<br><strong>Duration:</strong> 3 hours (180 minutes)<br><strong>Total Marks:</strong> 100<br><strong>Question Types:</strong> MCQs, MSQs, NAT<br><strong>Sections:</strong> General Aptitude (15 marks) + Core Subject (85 marks)<br><strong>Negative Marking:</strong> Applicable for MCQs only</p>
-        </div>
-        <div class="info-item">
-          <h3><i class="fas fa-user-graduate" aria-hidden="true"></i> GATE Eligibility Criteria</h3>
-          <p><strong>Final year or completed:</strong> Bachelor's in Engineering, Technology, Architecture, or Science<br><strong>Master's degree:</strong> Pursuing or completed in relevant disciplines<br><strong>Undergraduate:</strong> 3rd year or higher<br><strong>&bull; No age limit <br>&bull; Unlimited attempts allowed</strong></p>
-        </div>
-        <div class="info-item">
-          <h3><i class="fas fa-trophy" aria-hidden="true"></i> GATE Benefits</h3>
-          <p><strong>M.Tech/M.E/PhD Admissions</strong> at IITs, IISc, NITs, and top universities<br><strong>PSU Recruitment</strong> across India<br><strong>Score Validity:</strong> 3 years<br><strong>Career Growth:</strong> Higher salary prospects and opportunities</p>
-        </div>
-        <div class="info-item">
-          <h3><i class="fas fa-book-open" aria-hidden="true"></i> 30+ Subjects</h3>
-          <p><strong>Engineering:</strong> CSE, ECE, EEE, Mechanical, Civil, Chemical, and more<br><strong>Sciences:</strong> Mathematics, Physics, Chemistry<br>&bull; Humanities & Social Sciences <br>&bull; Life Sciences <br>&bull; Data Science & AI<br>&bull; Architecture & Planning</p>
-        </div>
-        <div class="info-item">
-          <h3><i class="fas fa-circle-question" aria-hidden="true"></i> Why Practice GATE PYQs?</h3>
-          <p>&bull; Understand real exam-level questions<br>&bull; Identify important topics<br>&bull; Improve time management<br>&bull; Strengthen conceptual clarity<br>&bull; Build confidence for the actual exam</p>
-        </div>
-      </div>
-    </div>
+      <h3>Introduction to GATE 2026</h3>
+      <p>GATE 2026 is a national level examination conducted by the Indian Institute of Technology Guwahati. The score is used for admission to postgraduate programs and is accepted by several public sector organizations. For Metallurgical Engineering candidates, the exam evaluates understanding of materials, phase transformations, extraction processes, and mechanical behavior of metals.</p>
+      <p>The MT paper combines materials science with process engineering. Previous Year Question Papers help you understand how these topics are tested and how the exam balances conceptual questions with numerical problems.</p>
+
+      <h3>About Metallurgical Engineering</h3>
+      <p>Metallurgical Engineering focuses on the extraction, processing, and performance of metals and alloys. It covers physical metallurgy, mechanical metallurgy, and extractive metallurgy. The field connects chemistry and physics with manufacturing and material design.</p>
+      <p>Professionals in this field work in steel plants, mining and extraction industries, materials research, and manufacturing. They design alloys, optimize heat treatment processes, and ensure material reliability. The real world impact includes infrastructure, transportation, and advanced manufacturing.</p>
+
+      <h3>Importance of This Subject in GATE</h3>
+      <p>The GATE MT paper emphasizes core topics like phase diagrams, thermodynamics, kinetics, mechanical behavior, and extraction processes. The exam expects clear conceptual understanding and accuracy in calculations, especially in thermodynamics and phase transformations.</p>
+      <p>A balanced preparation across physical, mechanical, and extractive metallurgy is essential for strong performance.</p>
+
+      <h3>Role of Previous Year Questions</h3>
+      <p>Previous Year Questions show how metallurgical concepts are applied in the exam. You will see recurring patterns in phase diagram interpretation, diffusion problems, and strengthening mechanisms. Solving PYQs helps you recognize these patterns and answer faster.</p>
+      <p>PYQs also reveal which topics are tested through direct facts and which require numerical reasoning. Reviewing mistakes helps you focus on weak concepts early.</p>
+
+      <h3>How to Use This Page Effectively</h3>
+      <p>This page provides GATE previous year question papers for Metallurgical Engineering in a clear year wise list. LearnSkart helps you navigate and access PYQs without confusion, so you can start practice quickly. Use the papers above for timed practice and detailed review.</p>
+      <p>Start with recent papers to understand current trends. Then attempt older papers to build speed and cover a wider range of question styles.</p>
+
+      <h3>Subject Wise Preparation Strategy</h3>
+      <p>Metallurgical preparation should begin with materials science fundamentals, then move to phase diagrams and extractive processes. Combine theory with numerical practice to handle both conceptual and calculation based questions.</p>
+      <ul>
+        <li>Start with crystallography, defects, and diffusion fundamentals.</li>
+        <li>Cover phase diagrams and phase transformations with practice problems.</li>
+        <li>Move to mechanical metallurgy and strengthening mechanisms.</li>
+        <li>Include extractive metallurgy and thermodynamics in weekly cycles.</li>
+      </ul>
+
+      <h3>Important Topics Insight</h3>
+      <p>Some topics appear frequently in GATE MT and should be prioritized for steady scoring.</p>
+      <ul>
+        <li>Phase Diagrams: binary systems, lever rule, and microstructure evolution.</li>
+        <li>Thermodynamics and Kinetics: free energy, diffusion, and reaction rates.</li>
+        <li>Mechanical Metallurgy: stress strain behavior, fracture, and fatigue.</li>
+        <li>Physical Metallurgy: crystal structure, defects, and strengthening.</li>
+        <li>Extractive Metallurgy: ore processing, roasting, and reduction processes.</li>
+        <li>Heat Treatment: annealing, quenching, and tempering basics.</li>
+      </ul>
+
+      <h3>Common Mistakes Students Make</h3>
+      <p>Many students focus on extraction processes and ignore physical metallurgy, which leads to gaps in phase diagram questions. Another common mistake is memorizing diagrams without understanding transformations. Some students also avoid numerical thermodynamics problems.</p>
+      <ul>
+        <li>Neglecting physical metallurgy and phase transformation concepts.</li>
+        <li>Memorizing phase diagrams without understanding microstructures.</li>
+        <li>Skipping numerical practice for thermodynamics and kinetics.</li>
+        <li>Not reviewing mistakes from PYQ attempts.</li>
+      </ul>
+
+      <h3>Preparation Tips</h3>
+      <p>Consistent preparation is essential for GATE MT. Create concise notes for phase diagrams, formulas, and key definitions. Use PYQs as checkpoints and revise weak areas immediately after practice.</p>
+      <ul>
+        <li>Practice phase diagram problems regularly to build confidence.</li>
+        <li>Revise thermodynamics and diffusion concepts weekly.</li>
+        <li>Use microstructure sketches to improve understanding of transformations.</li>
+        <li>Attempt a full paper every two weeks and analyze it thoroughly.</li>
+        <li>Use PYQs to identify high frequency topics and focus extra time there.</li>
+      </ul>
+
+      <h3>Conclusion</h3>
+      <p>GATE 2026 Metallurgical Engineering preparation becomes effective when you combine strong fundamentals with regular PYQ practice. The exam rewards conceptual clarity, accurate calculations, and applied understanding. This page provides direct access to MT previous year papers and helps you navigate quickly without confusion. Stay consistent, analyze every attempt, and you will see steady improvement in confidence and performance.</p>
+    </section>
+  
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo"><img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-      <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">GATE previous year papers organized subject-wise for quick preparation.</p>
-      <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo"><img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">GATE previous year papers organized subject-wise for quick preparation.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../gate-pyqs/index.html">GATE Previous Year Questions</a></li>
+                    <li><a href="../../gate-syllabus/index.html">GATE Syllabus</a></li>
+                    <li><a href="../../about/index.html">About</a></li>
+                    <li><a href="../../contact/index.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="../../privacy/index.html">Privacy Policy</a></li>
+                    <li><a href="../../disclaimer/index.html">Disclaimer</a></li>
+                    <li><a href="../../terms-and-conditions/index.html">Terms and Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-links-row">
+                    <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span>@LearnSkart</span>
+                    </a>
+                    <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
     </div>
-  </footer>
+</footer>
   <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
 

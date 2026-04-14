@@ -14,29 +14,90 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/cse/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
+                
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> &gt; <span>Human Values and Ethics</span>
-</nav>
+                
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -93,6 +154,46 @@
 </section>
         </section>
 
+    <section class="syllabus-card">
+      <h2 style="margin-bottom: 0.75rem;">GE3791 - Human Values and Ethics Important Questions (Unit-wise)</h2>
+      <p style="line-height:1.7; margin-bottom:1rem;">Human values and ethics help students understand responsible citizenship, democratic thinking, and fair social behavior. This section supports exam preparation by focusing on practical and concept-based questions related to democracy, equality, justice, secularism, and social responsibility.</p>
+
+      <section style="margin-bottom:1.25rem;">
+        <h2 style="font-size:1.1rem; color:#1d4ed8; margin-bottom:0.5rem;">Unit I</h2>
+        <p style="line-height:1.7; margin-bottom:0.75rem;">Unit I focuses on democratic values and how they work in real life. These questions help you think about liberty, participation, minority rights, and the role of citizens in building a just democracy.</p>
+        <ul style="line-height:1.7; padding-left:1.25rem; margin:0;">
+          <li>1. How can we ensure equality and justice for all citizens in a democracy?</li>
+          <li>2. What are the limits of individual liberty in a democratic society?</li>
+          <li>3. How can we balance the needs of the majority with the rights of minorities?</li>
+          <li>4. What role does freedom of expression play in a healthy democracy?</li>
+          <li>5. How can citizens effectively participate in shaping their government?</li>
+          <li>6. How do historical events like revolutions and independence movements
+contribute to the development of democratic values?</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom:1.25rem;">
+        <h2 style="font-size:1.1rem; color:#1d4ed8; margin-bottom:0.5rem;">Unit II</h2>
+        <p style="line-height:1.7; margin-bottom:0.75rem;">Unit II introduces secular values and ethical public life. These questions improve your understanding of constitutional fairness, equal respect for religions, and inclusive social conduct.</p>
+        <ul style="line-height:1.7; padding-left:1.25rem; margin:0;">
+          <li>1. What are the key principles of secular values? Discuss in detail.</li>
+          <li>2. Explain in detail about disassociation of state from religion.</li>
+          <li>3. How is secularism understood and applied in India?</li>
+          <li>4. What can be done to promote fair treatment of all people?</li>
+          <li>5. How can we encourage acceptance of all religions?</li>
+        </ul>
+      </section>
+
+      <footer style="margin-top:1rem; padding-top:1rem; border-top:1px dashed #cbd5e1;">
+        <h2 style="font-size:1.05rem; margin-bottom:0.5rem;">Exam Preparation Tips</h2>
+        <ul style="line-height:1.7; padding-left:1.25rem; margin:0;">
+          <li>Revise one theme at a time: democracy, justice, liberty, secularism, and ethics.</li>
+          <li>Use short real-life examples in answers to improve clarity and marks.</li>
+          <li>Practice writing balanced points for rights, duties, and social responsibility.</li>
+        </ul>
+      </footer>
+    </section>
+
         <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
             <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -101,17 +202,118 @@
             </div>
         </section>
             <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>GE3791 Anna University notes PDF</strong> and start your exam preparation today.</p>
+
+        <section class="syllabus-card">
+          <h2 style="margin-bottom: 0.75rem;">GE3791 HUMAN VALUES AND ETHICS</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>L T P C: 2 0 0 2</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE DESCRIPTION</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">This course aims to provide a broad understanding about the modern values and ethical principles that have evolved and are enshrined in the Constitution of India with regard to the democratic, secular and scientific aspects. The course is designed for undergraduate students so that they could study, understand and apply these values in their day to day life.</p>
+
+          <h2 class="syllabus-blue-heading">COURSE OBJECTIVES:</h2>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>To create awareness about values and ethics enshrined in the Constitution of India</li>
+            <li>To sensitize students about the democratic values to be upheld in the modern society.</li>
+            <li>To inculcate respect for all people irrespective of their religion or other affiliations.</li>
+            <li>To instill the scientific temper in the studentsÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ minds and develop their critical thinking.</li>
+            <li>To promote sense of responsibility and understanding of the duties of citizen.</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">UNIT I - DEMOCRATIC VALUES</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Understanding Democratic values: Equality, Liberty, Fraternity, Freedom, Justice, Pluralism, Tolerance, Respect for All, Freedom of Expression, Citizen Participation in Governance - World Democracies: French Revolution, American Independence, Indian Freedom Movement. Reading Text: Excerpts from John Stuart MillsÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ On Liberty</p>
+
+          <h2 class="syllabus-blue-heading">UNIT II - SECULAR VALUES</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Understanding Secular values - Interpretation of secularism in Indian context - Disassociation of state from religion - Acceptance of all faiths - Encouraging non-discriminatory practices. Reading Text: Excerpt from Secularism in India: Concept and Practice by Ram Puniyani</p>
+
+          <h2 class="syllabus-blue-heading">UNIT III - SCIENTIFIC VALUES</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Scientific thinking and method: Inductive and Deductive thinking, Proposing and testing Hypothesis, Validating facts using evidence based approach - Skepticism and Empiricism - Rationalism and Scientific Temper. Reading Text: Excerpt from The Scientific Temper by Antony Michaelis R</p>
+
+          <h2 class="syllabus-blue-heading">UNIT IV - SOCIAL ETHICS</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Application of ethical reasoning to social problems - Gender bias and issues - Gender violence - Social discrimination - Constitutional protection and policies - Inclusive practices. Reading Text: Excerpt from 21 Lessons for the 21st Century by Yuval Noah Harari</p>
+
+          <h2 class="syllabus-blue-heading">UNIT V - SCIENTIFIC ETHICS</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">Transparency and Fairness in scientific pursuits - Scientific inventions for the betterment of society - Unfair application of scientific inventions - Role and Responsibility of Scientist in the modern society. Reading Text: Excerpt from American Prometheus: The Triumph and Tragedy of J.Robert Oppenheimer by Kai Bird and Martin J. Sherwin.</p>
+
+          <p style="line-height:1.7; margin-bottom:1rem;"><strong>TOTAL: 30 PERIODS</strong></p>
+
+          <h2 class="syllabus-blue-heading">COURSE OUTCOMES</h2>
+          <p style="line-height:1.7; margin-bottom:0.5rem;">Students will be able to</p>
+          <ul style="line-height:1.7; margin-bottom:1rem; padding-left:1.25rem;">
+            <li>CO1 : Identify the importance of democratic, secular and scientific values in harmonious functioning of social life</li>
+            <li>CO2 : Practice democratic and scientific values in both their personal and professional life.</li>
+            <li>CO3 : Find rational solutions to social problems.</li>
+            <li>CO4 : Behave in an ethical manner in society</li>
+            <li>CO5 : Practice critical thinking and the pursuit of truth.</li>
+          </ul>
+
+          <h2 class="syllabus-blue-heading">TEXTBOOKS</h2>
+          <p style="line-height:1.7; margin-bottom:1rem;">No separate textbooks were listed in the provided syllabus.</p>
+
+          <h2 class="syllabus-blue-heading">REFERENCES:</h2>
+          <ol style="line-height:1.7; margin-bottom:0; padding-left:1.25rem;">
+            <li>The Nonreligious: Understanding Secular People and Societies, Luke W. Galen Oxford University Press, 2016.</li>
+            <li>Secularism: A Dictionary of Atheism, Bullivant, Stephen; Lee, Lois, Oxford University Press, 2016.</li>
+            <li>The Oxford Handbook of Secularism, John R. Shook, Oxford University Press, 2017.</li>
+            <li>The Civic Culture: Political Attitudes and Democracy in Five Nations by Gabriel A. Almond and Sidney Verba, Princeton University Press.</li>
+            <li>Research Methodology for Natural Sciences by Soumitro Banerjee, IISc Press, January 2022</li>
+          </ol>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

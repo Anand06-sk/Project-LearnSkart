@@ -14,29 +14,61 @@
 
 <link rel="stylesheet" href="../../../assets/css/question.css">
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/css/nav.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Study Notes</p>
+<script src="../../../assets/js/nav.js" defer></script>
+    <nav>
+        <div class="nav-content">
+            <a href="../../../" class="nav-logo">
+                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                    <a href="../../../contact/">Contact</a>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="../../../index.html">Home</a>
-                <a href="../../../anna-university-notes/mech/index.html">Back</a>
-                <a href="../../../syllabus/index.html">Syllabus</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="../../../">Home</a>
+                    <a href="../">Department</a>
+                    <a href="../../../syllabus/">Syllabus</a>
+                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
+                    <a href="../../../anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="../../../about/">About</a>
+                    <a href="../../../contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="../../../privacy/">Privacy Policy</a>
+                    <a href="../../../disclaimer/">Disclaimer</a>
+                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
 
+
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
-  <a href="../../../index.html">Home</a> &gt; <a href="../../../anna-university-notes/mech/index.html">Mechanical Engineering</a> &gt; <span>Basic Electrical and Electronics Engineering</span>
-</nav>
+        
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -66,6 +98,77 @@
 </section>
         </section>
 
+        <section class="imp-questions" style="margin: 2rem 0; line-height: 1.7;">
+            <h2 style="margin-bottom: 0.75rem;">BE3251 Important Questions (Unit-wise)</h2>
+            <p style="color: var(--muted); max-width: 900px;">
+                These are the most important unit-wise questions for BE3251 (Basic Electrical and Electronics Engineering - R2021).
+                Practice these topics regularly to strengthen core concepts and improve exam performance.
+            </p>
+
+            <section style="margin-top: 1.25rem;">
+                <h2>Unit I - Electrical Circuits</h2>
+                <ul>
+                    <li>Apply Kirchhoff's Current Law (KCL).</li>
+                    <li>Apply Kirchhoff's Voltage Law (KVL).</li>
+                    <li>Solve mesh analysis problems.</li>
+                    <li>Solve nodal analysis problems.</li>
+                    <li>Solve RL, RC, and RLC circuit problems.</li>
+                </ul>
+            </section>
+
+            <section style="margin-top: 1rem;">
+                <h2>Unit II - Electrical Machines</h2>
+                <ul>
+                    <li>DC generator: construction, working, types, and EMF equation.</li>
+                    <li>DC motor: construction, working, types, and torque equation.</li>
+                    <li>Single-phase transformer: construction, working, types, and EMF equation.</li>
+                    <li>Three-phase alternator: construction, working, and torque equation.</li>
+                    <li>Three-phase synchronous motor: construction, working, and torque equation.</li>
+                    <li>Three-phase induction motor: construction, working, and torque equation.</li>
+                </ul>
+            </section>
+
+            <section style="margin-top: 1rem;">
+                <h2>Unit III - Analog Electronics</h2>
+                <ul>
+                    <li>PN junction diode: construction, working, V-I characteristics, and applications.</li>
+                    <li>Zener diode: working, characteristics, and applications.</li>
+                    <li>BJT (CB and CE): construction, working, characteristics, and applications.</li>
+                    <li>JFET: construction, working, characteristics, and applications.</li>
+                    <li>MOSFET (depletion and enhancement type): construction, working, characteristics, and applications.</li>
+                    <li>IGBT: construction, working, characteristics, and applications.</li>
+                    <li>Rectifier and inverter: construction, working, and output waveforms.</li>
+                </ul>
+            </section>
+
+            <section style="margin-top: 1rem;">
+                <h2>Unit IV - Digital Electronics</h2>
+                <ul>
+                    <li>Number system conversions (binary, decimal, octal, and hexadecimal).</li>
+                    <li>Half adder and full adder.</li>
+                    <li>Half subtractor and full subtractor.</li>
+                    <li>Solve 3-variable K-map problems.</li>
+                    <li>Solve 4-variable K-map problems.</li>
+                </ul>
+            </section>
+
+            <section style="margin-top: 1rem;">
+                <h2>Unit V - Measurements and Instrumentation</h2>
+                <ul>
+                    <li>PMMC and MI instruments.</li>
+                    <li>Block diagram of DSO.</li>
+                    <li>Energy meter: construction and working.</li>
+                    <li>Data acquisition system.</li>
+                    <li>Three-phase power measurement methods.</li>
+                    <li>CT and PT (instrument transformers).</li>
+                </ul>
+            </section>
+
+            <footer style="margin-top: 1rem; color: var(--muted);">
+                Practice these questions regularly and revise unit by unit to build confidence for university exams.
+            </footer>
+        </section>
+
         <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
             <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -88,13 +191,56 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-            <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-            <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
+                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../../../anna-university-notes/mech/index.html">Notes</a></li>
+                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
+                        <li><a href="../../../about/index.html">About</a></li>
+                        <li><a href="../../../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links-row">
+                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>@LearnSkart</span>
+                        </a>
+                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
