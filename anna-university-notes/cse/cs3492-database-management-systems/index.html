@@ -16,6 +16,48 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -164,7 +206,7 @@
                 </ul>
             </section>
 
-            <footer style="border-top: 1px solid #e2e8f0; padding-top: 1rem;">
+            <footer class="important-questions-footer">
                 <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">Exam Preparation Tips</h2>
                 <ul>
                     <li>Revise one unit at a time and write short notes for each topic.</li>
@@ -207,19 +249,19 @@
                 <li>To have an introductory knowledge about the Distributed databases, NOSQL and database security</li>
             </ul>
 
-            <h2 class="syllabus-blue-heading">UNIT I RELATIONAL DATABASES 10</h2>
+            <h2 class="syllabus-blue-heading">UNIT I RELATIONAL DATABASES</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Purpose of Database System - Views of data - Data Models - Database System Architecture - Introduction to relational databases - Relational Model - Keys - Relational Algebra - SQL fundamentals - Advanced SQL features - Embedded SQL- Dynamic SQL</p>
 
-            <h2 class="syllabus-blue-heading">UNIT II DATABASE DESIGN 8</h2>
+            <h2 class="syllabus-blue-heading">UNIT II DATABASE DESIGN</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Entity-Relationship model - E-R Diagrams - Enhanced-ER Model - ER-to-Relational Mapping - Functional Dependencies - Non-loss Decomposition - First, Second, Third Normal Forms, Dependency Preservation - Boyce/Codd Normal Form - Multi-valued Dependencies and Fourth Normal Form - Join Dependencies and Fifth Normal Form</p>
 
-            <h2 class="syllabus-blue-heading">UNIT III TRANSACTIONS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III TRANSACTIONS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Transaction Concepts - ACID Properties - Schedules - Serializability - Transaction support in SQL - Need for Concurrency - Concurrency control -Two Phase Locking- Timestamp - Multiversion - Validation and Snapshot isolation- Multiple Granularity locking - Deadlock Handling - Recovery Concepts - Recovery based on deferred and immediate update - Shadow paging - ARIES Algorithm</p>
 
-            <h2 class="syllabus-blue-heading">UNIT IV IMPLEMENTATION TECHNIQUES 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV IMPLEMENTATION TECHNIQUES</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">RAID - File Organization - Organization of Records in Files - Data dictionary Storage - Column Oriented Storage- Indexing and Hashing -Ordered Indices - B+ tree Index Files - B tree Index Files - Static Hashing - Dynamic Hashing - Query Processing Overview - Algorithms for Selection, Sorting and join operations - Query optimization using Heuristics - Cost Estimation.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT V ADVANCED TOPICS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V ADVANCED TOPICS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Distributed Databases: Architecture, Data Storage, Transaction Processing, Query processing and optimization - NOSQL Databases: Introduction - CAP Theorem - Document Based systems - Key value Stores - Column Based Systems - Graph Databases. Database Security: Security issues - Access control based on privileges - Role Based access control - SQL Injection - Statistical Database security - Flow control - Encryption and Public Key infrastructures - Challenges</p>
 
             <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>

@@ -16,6 +16,48 @@
     <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <style>
+        .syllabus-card {
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: var(--surface);
+            overflow-wrap: anywhere;
+            box-shadow: var(--shadow);
+        }
+
+        .syllabus-card .syllabus-blue-heading {
+            color: #1d4ed8 !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        html.dark .syllabus-card,
+        body.dark-mode .syllabus-card {
+            border-color: #334155;
+            background: #0f172a;
+        }
+
+        html.dark .syllabus-card .syllabus-blue-heading,
+        body.dark-mode .syllabus-card .syllabus-blue-heading {
+            color: #93c5fd !important;
+        }
+
+        .important-questions-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .important-questions-footer-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
 <script src="../../../assets/js/nav.js" defer></script>
@@ -115,8 +157,8 @@
                 <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Unit I - Automata Basics and Equivalence</h2>
                 <p style="color: var(--muted); line-height: 1.6;">This unit focuses on finite automata and equivalence concepts. It is important for conversion-based problems and proof-oriented understanding of automata models.</p>
                 <ul>
-                    <li>Equivalence of NFA with ε to NFA without ε</li>
-                    <li>Equivalence of NFA with ε to DFA</li>
+                    <li>Equivalence of NFA with ÃƒÅ½Ã‚Âµ to NFA without ÃƒÅ½Ã‚Âµ</li>
+                    <li>Equivalence of NFA with ÃƒÅ½Ã‚Âµ to DFA</li>
                     <li>Minimization of DFA</li>
                     <li>Equivalence of NFA and DFA</li>
                 </ul>
@@ -164,8 +206,7 @@
                 </ul>
             </section>
 
-            <footer style="border-top: 1px solid #e2e8f0; padding-top: 1rem; color: var(--muted); line-height: 1.6;">
-                <h2 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: #0f172a;">Exam Preparation Tips</h2>
+            <footer class="important-questions-footer">                <h2 class="important-questions-footer-title">Exam Preparation Tips</h2>
                 <ul>
                     <li>Practice one conversion or proof question daily from Units I to IV.</li>
                     <li>Revise key definitions of automata, regular expressions, CFG, and Turing machines regularly.</li>
@@ -208,19 +249,19 @@
                 <li>To understand Undecidability and NP class problems</li>
             </ul>
 
-            <h2 class="syllabus-blue-heading">UNIT I AUTOMATA AND REGULAR EXPRESSIONS 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT I AUTOMATA AND REGULAR EXPRESSIONS</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Need for automata theory - Introduction to formal proof - Finite Automata (FA) - Deterministic Finite Automata (DFA) - Non-deterministic Finite Automata (NFA) - Equivalence between NFA and DFA - Finite Automata with Epsilon transitions - Equivalence of NFA and DFA- Equivalence of NFAs with and without epsilon-moves- Conversion of NFA into DFA - Minimization of DFAs.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT II REGULAR EXPRESSIONS AND LANGUAGES 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT II REGULAR EXPRESSIONS AND LANGUAGES</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Regular expression - Regular Languages- Equivalence of Finite Automata and regular expressions - Proving languages to be not regular (Pumping Lemma) - Closure properties of regular languages.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT III CONTEXT FREE GRAMMAR AND PUSH DOWN AUTOMATA 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT III CONTEXT FREE GRAMMAR AND PUSH DOWN AUTOMATA</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Types of Grammar - Chomsky's hierarchy of languages -Context-Free Grammar (CFG) and Languages - Derivations and Parse trees - Ambiguity in grammars and languages - Push Down Automata (PDA): Definition - Moves - Instantaneous descriptions -Languages of pushdown automata - Equivalence of pushdown automata and CFG-CFG to PDA-PDA to CFG - Deterministic Pushdown Automata.</p>
 
-            <h2 class="syllabus-blue-heading">UNIT IV NORMAL FORMS AND TURING MACHINES 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT IV NORMAL FORMS AND TURING MACHINES</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Normal forms for CFG - Simplification of CFG- Chomsky Normal Form (CNF) and Greibach Normal Form (GNF) - Pumping lemma for CFL - Closure properties of Context Free Languages -Turing Machine : Basic model - definition and representation - Instantaneous Description - Language acceptance by TM - TM as Computer of Integer functions - Programming techniques for Turing machines (subroutines).</p>
 
-            <h2 class="syllabus-blue-heading">UNIT V UNDECIDABILITY 9</h2>
+            <h2 class="syllabus-blue-heading">UNIT V UNDECIDABILITY</h2>
             <p style="line-height:1.7; margin-bottom:1rem;">Unsolvable Problems and Computable Functions -PCP-MPCP- Recursive and recursively enumerable languages - Properties - Universal Turing machine -Tractable and Intractable problems - P and NP completeness - Kruskal's algorithm - Travelling Salesman Problem- 3-CNF SAT problems.</p>
 
             <h2 class="syllabus-blue-heading">COURSE OUTCOMES:</h2>
