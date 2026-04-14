@@ -34,20 +34,59 @@
         LearnSkart
     </div>
     <nav class="nav-menu" id="primary-nav">
-        
-        <a href="syllabus/" class="nav-link">Syllabus</a>
-        <a href="gate-pyqs/" class="nav-link"> GATE Qns</a>
-        <a href="daily-puzzle/" class="nav-link">Daily Puzzle</a>
-        <a href="disclaimer/" class="nav-link">Disclaimer</a>
-        <a href="terms-and-conditions/" class="nav-link">Terms &amp; Conditions</a>
-        <a href="privacy/" class="nav-link">Privacy Policy</a>
-        <a href="about/" class="nav-link">About</a>
-        <a href="contact/" class="nav-link">Contact</a>
-            <!-- Mobile/Tablet only: dark mode inside menu -->
-            <button type="button" class="nav-link theme-toggle nav-theme-item" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-                Dark Mode
-            </button>
+        <div class="nav-desktop">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="syllabus/" class="nav-link">Syllabus</a>
+            <a href="previous-year-questions/" class="nav-link">PYQs</a>
+            <div class="nav-dropdown">
+                <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    GATE <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="nav-dropdown-menu" aria-label="GATE">
+                    <a href="gate-pyqs/" class="nav-link">GATE Previous Year Questions</a>
+                    <a href="gate-syllabus/" class="nav-link">GATE Syllabus</a>
+                </div>
+            </div>
+            <a href="daily-puzzle/" class="nav-link">Daily Puzzle</a>
+            <a href="about/" class="nav-link">About</a>
+            <a href="contact/" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-mobile-groups" aria-label="Mobile navigation">
+            <div class="nav-group">
+                <div class="nav-group-title">Main (Academics)</div>
+                <a href="syllabus/" class="nav-link">Syllabus</a>
+                <a href="previous-year-questions/" class="nav-link">Previous Year Question Papers</a>
+                <a href="gate-pyqs/" class="nav-link">GATE Previous Year Questions</a>
+                <a href="gate-syllabus/" class="nav-link">GATE Syllabus</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Games</div>
+                <a href="daily-puzzle/" class="nav-link">Daily Puzzle</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Tools / Utilities</div>
+                <a href="cgpa-calculator/" class="nav-link">CGPA Calculator</a>
+                <a href="anna-university-results/" class="nav-link">Result Portal</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Support</div>
+                <a href="about/" class="nav-link">About</a>
+                <a href="contact/" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Legal</div>
+                <a href="privacy/" class="nav-link">Privacy Policy</a>
+                <a href="terms-and-conditions/" class="nav-link">Terms and Conditions</a>
+                <a href="disclaimer/" class="nav-link">Disclaimer</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-title">Settings</div>
+                <button type="button" class="nav-link theme-toggle nav-theme-item" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                    Dark Mode
+                </button>
+            </div>
+        </div>
     </nav>
     <button class="nav-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
         <i class="fas fa-bars"></i>

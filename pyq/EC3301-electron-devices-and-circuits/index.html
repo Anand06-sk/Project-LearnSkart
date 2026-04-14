@@ -13,30 +13,76 @@
     <link rel="canonical" href="https://learnskart.in/pyq/EC3301-electron-devices-and-circuits/">
 
 <link rel="stylesheet" href="../../assets/css/question.css">
-<link rel="stylesheet" href="../../assets/css/pyq-static.css">
+<link rel="stylesheet" href="../../assets/css/pyq-static.css">    <link rel="stylesheet" href="../../assets/css/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <div class="logo-wrap">
-                <div class="logo-icon"><img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"></div>
-                <div class="logo-text">
-                    <h1>LearnSkart</h1>
-                    <p>Question Papers</p>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="nav-logo">
+                <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
+                <span>LearnSkart</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="nav-right" id="navMenu">
+                <div class="nav-links">
+                    <a href="/index.html">Home</a>
+                    <a href="/">Notes</a>
+                    <a href="/syllabus/">Syllabus</a>
+                    <a href="/previous-year-questions/" class="is-active" aria-current="page">Previous Year Question Papers</a>
+                    <a href="/anna-university-results/">Result Portal</a>
+                    <div class="nav-dropdown">
+                        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+                            GATE
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-label="GATE submenu">
+                            <a href="/gate-syllabus/">GATE Syllabus</a>
+                            <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+                        </div>
+                    </div>
+                    <a href="/contact/">Contact</a>
                 </div>
             </div>
-            <div class="nav-links">
-                <a href="../../index.html">Home</a>
-                <a href="../../previous-year-questions/index.html">All PYQs</a>
+        </div>
+        <div class="nav-mobile" id="navMobile" aria-hidden="true">
+            <div class="nav-mobile-inner">
+                <div class="nav-group">
+                    <div class="nav-group-title">Main</div>
+                    <a href="/index.html">Home</a>
+                    <a href="/">Notes</a>
+                    <a href="/syllabus/">Syllabus</a>
+                    <a href="/previous-year-questions/" class="is-active" aria-current="page">Previous Year Question Papers</a>
+                    <a href="/anna-university-results/">Result Portal</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">GATE</div>
+                    <a href="/gate-syllabus/">GATE Syllabus</a>
+                    <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Support</div>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Legal</div>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/disclaimer/">Disclaimer</a>
+                    <a href="/terms-and-conditions/">Terms and Conditions</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="main container">
-        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
+        <div role="navigation" aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
             <a href="../../index.html">Home</a> &gt; <a href="../../anna-university-notes/eee/index.html">Electrical and Electronics Engineering</a> &gt; <span>Electron Devices and Circuits</span>
-        </nav>
+        </div>
 
         <header class="content-header" style="align-items:flex-start;">
             <div>
@@ -171,9 +217,11 @@
             <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
         </div>
     </footer>
+    <script src="../../assets/js/nav.js" defer></script>
     <script src="../../assets/js/theme.js" defer></script>
 </body>
 </html>
+
 
 
 

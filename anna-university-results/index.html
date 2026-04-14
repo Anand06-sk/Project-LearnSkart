@@ -122,9 +122,15 @@
       border-bottom: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(6px);
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 12;
+    }
+
+    body {
+      padding-top: 96px;
     }
 
     html.dark header {
@@ -154,7 +160,7 @@
     .topnav {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.6rem;
       flex-wrap: wrap;
     }
 
@@ -195,7 +201,8 @@
       border: 0;
     }
 
-    .topnav a {
+    .topnav a,
+    .topnav button {
       position: relative;
       display: inline-flex;
       align-items: center;
@@ -210,9 +217,11 @@
       background: linear-gradient(180deg, #ffffff, #f3f9ff);
       box-shadow: 0 2px 9px rgba(16, 60, 102, 0.08);
       transition: color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
 
-    .topnav a::after {
+    .topnav a::after,
+    .topnav button::after {
       content: "";
       position: absolute;
       left: 14px;
@@ -226,7 +235,8 @@
       transition: transform 0.22s ease;
     }
 
-    .topnav a:hover {
+    .topnav a:hover,
+    .topnav button:hover {
       color: #0d3f71;
       border-color: #9cc4ea;
       box-shadow: 0 7px 16px rgba(11, 107, 203, 0.16);
@@ -234,20 +244,171 @@
     }
 
     .topnav a:hover::after,
-    .topnav a:focus-visible::after {
+    .topnav a:focus-visible::after,
+    .topnav button:hover::after,
+    .topnav button:focus-visible::after {
       transform: scaleX(1);
     }
 
-    .topnav a:focus-visible {
+    .topnav a:focus-visible,
+    .topnav button:focus-visible {
       outline: 2px solid #73acf0;
       outline-offset: 2px;
       color: #0d3f71;
       border-color: #8fbce7;
     }
 
-    .topnav a:active {
+    .topnav a:active,
+    .topnav button:active {
       transform: translateY(0);
     }
+
+    .topnav .is-active {
+      background: linear-gradient(140deg, var(--brand), #1f86e7);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 10px 22px rgba(11, 107, 203, 0.28);
+    }
+
+    .topnav .is-active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      min-width: 220px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      box-shadow: var(--shadow);
+      padding: 0.6rem;
+      display: none;
+      z-index: 20;
+    }
+
+    .nav-item:hover .nav-dropdown,
+    .nav-item:focus-within .nav-dropdown {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .nav-dropdown a {
+      border-radius: 0.6rem;
+      width: 100%;
+      justify-content: flex-start;
+      padding: 0.45rem 0.7rem;
+      box-shadow: none;
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    .nav-dropdown a:hover,
+    .nav-dropdown a:focus-visible {
+      border-color: #b8d4f2;
+      background: #eef6ff;
+      color: #0d3f71;
+      box-shadow: none;
+    }
+
+    .topnav button.nav-gate-toggle {
+      gap: 0.4rem;
+    }
+
+    .topnav button.nav-gate-toggle i {
+      font-size: 0.75rem;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 86px;
+      right: min(4vw, 20px);
+      width: min(320px, 92vw);
+      max-height: calc(100vh - 110px);
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 0.8rem;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transform: translateX(120%);
+      opacity: 0;
+      pointer-events: none;
+      display: grid;
+      gap: 0.9rem;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .mobile-nav.is-open {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-overlay {
+      position: fixed;
+      top: 86px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(6, 18, 32, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 11;
+    }
+
+    .nav-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-group h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .mobile-group a {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.6rem;
+      text-decoration: none;
+      color: #184368;
+      font-weight: 700;
+      border: 1px solid #d7e7f7;
+      background: linear-gradient(180deg, #ffffff, #f3f9ff);
+    }
+
+    html.dark .mobile-group a {
+      color: #dbe9ff;
+      background: linear-gradient(180deg, #15223a, #1b2a44);
+      border-color: #2e4465;
+    }
+
+    .mobile-group a:hover,
+    .mobile-group a:focus-visible {
+      border-color: #9cc4ea;
+      box-shadow: 0 6px 14px rgba(11, 107, 203, 0.16);
+      outline: none;
+    }
+
+    .mobile-group .is-active {
+      background: linear-gradient(140deg, var(--brand), #1f86e7);
+      color: #fff;
+      border-color: transparent;
+    }
+
+
 
     nav.breadcrumb {
       margin-top: 0.5rem;
@@ -687,22 +848,16 @@
         display: inline-flex;
       }
 
+      body {
+        padding-top: 118px;
+      }
+
+      .nav-overlay {
+        top: 104px;
+      }
+
       .topnav {
         display: none;
-        width: 100%;
-        margin-top: 0.5rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.55rem;
-      }
-
-      .topnav.is-open {
-        display: grid;
-      }
-
-      .topnav a {
-        justify-content: center;
-        padding: 0.48rem 0.58rem;
-        font-size: 0.86rem;
       }
 
       .img-note {
@@ -716,17 +871,24 @@
     }
 
     @media (max-width: 480px) {
-      .topnav {
-        grid-template-columns: 1fr;
+      body {
+        padding-top: 126px;
       }
 
-      .topnav a {
-        font-size: 0.84rem;
+      .nav-overlay {
+        top: 112px;
       }
 
       .logo-img {
         width: 28px;
         height: 28px;
+      }
+    }
+
+    @media (min-width: 761px) {
+      .mobile-nav,
+      .nav-overlay {
+        display: none !important;
       }
     }
   </style>
@@ -806,17 +968,54 @@
     <div class="container">
       <div class="topbar">
         <a class="brand" href="/"><img src="/assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">LearnSkart</a>
-        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="topnav">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
           <i class="fa-solid fa-bars" aria-hidden="true"></i>
           <span class="sr-only">Toggle menu</span>
         </button>
         <nav class="topnav" id="topnav" aria-label="Primary">
-          <a href="https://learnskart.in/">Notes</a>
-          <a href="/syllabus/">Syllabus</a>
-          <a href="/previous-year-questions/">PYQs</a>
-          <a href="/cgpa-calculator/">CGPA Calculator</a>
           <a href="/index.html">Home</a>
+          <a href="/">Department</a>
+          <a href="/syllabus/">Syllabus</a>
+          <a href="/previous-year-questions/">Previous Year Question Papers</a>
+          <div class="nav-item">
+            <button class="nav-gate-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              GATE <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="nav-dropdown" role="menu" aria-label="GATE">
+              <a href="/gate-syllabus/" role="menuitem">GATE Syllabus</a>
+              <a href="/gate-pyqs/" role="menuitem">GATE Previous Year Questions</a>
+            </div>
+          </div>
+          <a href="/anna-university-results/" class="is-active" aria-current="page">Result Portal</a>
+          <a href="/contact/">Contact</a>
         </nav>
+        <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+          <div class="mobile-group">
+            <h4>Main</h4>
+            <a href="/index.html">Home</a>
+            <a href="/">Department</a>
+            <a href="/syllabus/">Syllabus</a>
+            <a href="/previous-year-questions/">Previous Year Question Papers</a>
+            <a href="/anna-university-results/" class="is-active" aria-current="page">Result Portal</a>
+          </div>
+          <div class="mobile-group">
+            <h4>GATE</h4>
+            <a href="/gate-syllabus/">GATE Syllabus</a>
+            <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+          </div>
+          <div class="mobile-group">
+            <h4>Support</h4>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </div>
+          <div class="mobile-group">
+            <h4>Legal</h4>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/disclaimer/">Disclaimer</a>
+            <a href="/terms-and-conditions/">Terms and Conditions</a>
+          </div>
+        </div>
+        <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
       </div>
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol>
@@ -1012,19 +1211,59 @@
   </footer>
   <script>
     const menuToggle = document.getElementById('menu-toggle');
-    const topnav = document.getElementById('topnav');
+    const mobileNav = document.getElementById('mobile-nav');
+    const navOverlay = document.getElementById('nav-overlay');
+    const gateToggle = document.querySelector('.nav-gate-toggle');
 
-    if (menuToggle && topnav) {
+    function closeMobileNav() {
+      if (!mobileNav || !menuToggle || !navOverlay) {
+        return;
+      }
+      mobileNav.classList.remove('is-open');
+      navOverlay.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (menuToggle && mobileNav && navOverlay) {
       menuToggle.addEventListener('click', function () {
-        const isOpen = topnav.classList.toggle('is-open');
+        const isOpen = mobileNav.classList.toggle('is-open');
+        navOverlay.classList.toggle('is-open', isOpen);
         menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      navOverlay.addEventListener('click', function () {
+        closeMobileNav();
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!mobileNav.classList.contains('is-open')) {
+          return;
+        }
+        const target = event.target;
+        if (mobileNav.contains(target) || menuToggle.contains(target)) {
+          return;
+        }
+        closeMobileNav();
+      });
+
+      mobileNav.addEventListener('click', function (event) {
+        const target = event.target;
+        if (target && target.tagName === 'A') {
+          closeMobileNav();
+        }
       });
 
       window.addEventListener('resize', function () {
         if (window.innerWidth > 760) {
-          topnav.classList.remove('is-open');
-          menuToggle.setAttribute('aria-expanded', 'false');
+          closeMobileNav();
         }
+      });
+    }
+
+    if (gateToggle) {
+      gateToggle.addEventListener('click', function () {
+        const isExpanded = gateToggle.getAttribute('aria-expanded') === 'true';
+        gateToggle.setAttribute('aria-expanded', String(!isExpanded));
       });
     }
   </script>
