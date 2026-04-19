@@ -2864,9 +2864,20 @@ body.dark-mode .nav-toggle:hover {
         flex-direction: column;
         gap: 12px;
         z-index: 999;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
     }
     .nav-desktop { display: none; }
     .nav-menu.open .nav-mobile-groups { display: flex; }
+    .nav-menu.open .nav-mobile-groups {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        max-height: calc(100vh - 120px);
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
     .nav-menu.open .nav-link,
     .nav-menu.open .nav-theme-item {
         padding: 10px 12px;

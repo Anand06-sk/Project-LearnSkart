@@ -1057,6 +1057,10 @@ function initNavToggle(){
     function openMenu(){
         navMenu.classList.add('open');
         toggleBtn.setAttribute('aria-expanded','true');
+        navMenu.scrollTop = 0;
+        requestAnimationFrame(() => {
+            navMenu.scrollTop = 0;
+        });
     }
     function closeMenu(){
         navMenu.classList.remove('open');
