@@ -6,6 +6,11 @@
       "permanent": true
     },
     {
+      "source": "/anna-university-notes/cse/hs3152-professional-english-1",
+      "destination": "/anna-university-notes/hs3152-professional-english-1",
+      "permanent": true
+    },
+    {
       "source": "/anna-university-notes/cse/hs3152-professional-english-1/:path*",
       "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
       "permanent": true
