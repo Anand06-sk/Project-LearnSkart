@@ -28,7 +28,9 @@
     {
       "source": "/anna-university-notes/it/hs3152-professional-english-1/:path*",
       "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
-      "source": "/anna-university-notes/cse/ph3151-engineering-physics/:path*",
+      "permanent": true}
+      {
+        "source": "/anna-university-notes/cse/ph3151-engineering-physics/:path*",
       "destination": "/anna-university-notes/ph3151-engineering-physics/:path*",
       "permanent": true
     },
