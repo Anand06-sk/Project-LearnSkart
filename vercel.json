@@ -1,5 +1,5 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/anna-university-notes/cse/hs3152-professional-english-1/:path*",
       "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
