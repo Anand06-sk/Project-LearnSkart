@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/anna-university-notes/cse/hs3152-professional-english-1/:path*",
+      "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/ece/hs3152-professional-english-1/:path*",
+      "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/eee/hs3152-professional-english-1/:path*",
+      "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/mech/hs3152-professional-english-1/:path*",
+      "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/civil/hs3152-professional-english-1/:path*",
+      "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/it/hs3152-professional-english-1/:path*",
+      "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
+      "permanent": true
+    }
+  ]
+}
