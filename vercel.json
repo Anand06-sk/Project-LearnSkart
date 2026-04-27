@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/anna-university-notes/cse/hs3152-professional-english-1",
+      "source": "/anna-university-notes/cse/hs3152-professional-english-1/",
       "destination": "/anna-university-notes/hs3152-professional-english-1/",
       "permanent": true
     },
@@ -12,7 +12,7 @@
     },
 
     {
-      "source": "/anna-university-notes/cse/ph3151-engineering-physics",
+      "source": "/anna-university-notes/cse/ph3151-engineering-physics/",
       "destination": "/anna-university-notes/ph3151-engineering-physics/",
       "permanent": true
     },
