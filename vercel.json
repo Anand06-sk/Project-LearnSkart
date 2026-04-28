@@ -70,6 +70,26 @@
       "source": "/anna-university-notes/:dept/cy3151-engineering-chemistry/:path*",
       "destination": "/anna-university-notes/cy3151-engineering-chemistry/:path*",
       "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3791-human-values-and-ethics/",
+      "destination": "/anna-university-notes/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3791-human-values-and-ethics/:path*",
+      "destination": "/anna-university-notes/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/hs3252-professional-english-ii/",
+      "destination": "/anna-university-notes/hs3252-professional-english-ii/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/hs3252-professional-english-ii/:path*",
+      "destination": "/anna-university-notes/hs3252-professional-english-ii/:path*",
+      "permanent": true
     }
     
   ],
