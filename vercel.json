@@ -1,23 +1,23 @@
 {
   "redirects": [
     {
-      "source": "/anna-university-notes/cse/hs3152-professional-english-1/",
+      "source": "/anna-university-notes/:dept/hs3152-professional-english-1/",
       "destination": "/anna-university-notes/hs3152-professional-english-1/",
       "permanent": true
     },
     {
-      "source": "/anna-university-notes/cse/hs3152-professional-english-1/:path*",
+      "source": "/anna-university-notes/:dept/hs3152-professional-english-1/:path*",
       "destination": "/anna-university-notes/hs3152-professional-english-1/:path*",
       "permanent": true
     },
 
     {
-      "source": "/anna-university-notes/cse/ph3151-engineering-physics/",
+      "source": "/anna-university-notes/:dept/ph3151-engineering-physics/",
       "destination": "/anna-university-notes/ph3151-engineering-physics/",
       "permanent": true
     },
     {
-      "source": "/anna-university-notes/cse/ph3151-engineering-physics/:path*",
+      "source": "/anna-university-notes/:dept/ph3151-engineering-physics/:path*",
       "destination": "/anna-university-notes/ph3151-engineering-physics/:path*",
       "permanent": true
     }
