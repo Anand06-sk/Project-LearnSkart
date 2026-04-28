@@ -90,6 +90,16 @@
       "source": "/anna-university-notes/:dept/hs3252-professional-english-ii/:path*",
       "destination": "/anna-university-notes/hs3252-professional-english-ii/:path*",
       "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ma3251-statistics-and-numerical-methods/",
+      "destination": "/anna-university-notes/ma3251-statistics-and-numerical-methods/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/anna-university-notes/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
     }
     
   ],
