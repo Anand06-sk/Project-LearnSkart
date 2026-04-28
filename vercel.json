@@ -40,6 +40,16 @@
       "source": "/anna-university-notes/:dept/ge3152-heritage-of-tamils/:path*",
       "destination": "/anna-university-notes/ge3152-heritage-of-tamils/:path*",
       "permanent": true
+    },
+     {
+      "source": "/anna-university-notes/:dept/cy3151-engineering-chemistry/",
+      "destination": "/anna-university-notes/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cy3151-engineering-chemistry/:path*",
+      "destination": "/anna-university-notes/cy3151-engineering-chemistry/:path*",
+      "permanent": true
     }
   ],
   "trailingSlash" : true
