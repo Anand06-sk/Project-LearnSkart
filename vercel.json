@@ -20,6 +20,16 @@
       "source": "/anna-university-notes/:dept/ph3151-engineering-physics/:path*",
       "destination": "/anna-university-notes/ph3151-engineering-physics/:path*",
       "permanent": true
+    },
+     {
+      "source": "/anna-university-notes/:dept/ma3151-matrices-and-calculus/",
+      "destination": "/anna-university-notes/ma3151-matrices-and-calculus/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ma3151-matrices-and-calculus/:path*",
+      "destination": "/anna-university-notes/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
     }
   ],
   "trailingSlash" : true
