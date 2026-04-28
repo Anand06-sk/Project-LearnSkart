@@ -110,6 +110,16 @@
       "source": "/anna-university-notes/:dept/ge3251-engineering-graphics/:path*",
       "destination": "/anna-university-notes/ge3251-engineering-graphics/:path*",
       "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/ge3252-tamils-and-technology/",
+      "destination": "/anna-university-notes/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3252-tamils-and-technology/:path*",
+      "destination": "/anna-university-notes/ge3252-tamils-and-technology/:path*",
+      "permanent": true
     }
     
   ],
