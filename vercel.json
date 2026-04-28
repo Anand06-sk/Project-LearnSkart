@@ -120,8 +120,47 @@
       "source": "/anna-university-notes/:dept/ge3252-tamils-and-technology/:path*",
       "destination": "/anna-university-notes/ge3252-tamils-and-technology/:path*",
       "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3251-programming-in-c/",
+      "destination": "/anna-university-notes/cs3251-programming-in-c/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3251-programming-in-c/:path*",
+      "destination": "/anna-university-notes/cs3251-programming-in-c/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/be3251-basic-electrical-and-electronics-engineering/",
+      "destination": "/anna-university-notes/be3251-basic-electrical-and-electronics-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "destination": "/anna-university-notes/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/ph3256-physics-for-information-science/",
+      "destination": "/anna-university-notes/ph3256-physics-for-information-science/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ph3256-physics-for-information-science/:path*",
+      "destination": "/anna-university-notes/ph3256-physics-for-information-science/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3391-object-oriented-programming/",
+      "destination": "/anna-university-notes/cs3391-object-oriented-programming/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3391-object-oriented-programming/:path*",
+      "destination": "/anna-university-notes/cs3391-object-oriented-programming/:path*",
+      "permanent": true
     }
-    
   ],
   "trailingSlash" : true
 }
