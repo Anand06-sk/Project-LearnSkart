@@ -161,6 +161,107 @@
       "destination": "/anna-university-notes/cs3391-object-oriented-programming/:path*",
       "permanent": true
     }
+    ,
+      {
+      "source": "/anna-university-notes/:dept/cs3352-foundations-of-data-science/",
+      "destination": "/anna-university-notes/cs3352-foundations-of-data-science/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3352-foundations-of-data-science/:path*",
+      "destination": "/anna-university-notes/cs3352-foundations-of-data-science/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/ma3354-discrete-mathematics/",
+      "destination": "/anna-university-notes/ma3354-discrete-mathematics/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ma3354-discrete-mathematics/:path*",
+      "destination": "/anna-university-notes/ma3354-discrete-mathematics/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3351-digital-principles-and-computer-organization/",
+      "destination": "/anna-university-notes/cs3351-digital-principles-and-computer-organization/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3351-digital-principles-and-computer-organization/:path*",
+      "destination": "/anna-university-notes/cs3351-digital-principles-and-computer-organization/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3492-database-management-systems/",
+      "destination": "/anna-university-notes/cs3492-database-management-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3492-database-management-systems/:path*",
+      "destination": "/anna-university-notes/cs3492-database-management-systems/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3452-theory-of-computation/",
+      "destination": "/anna-university-notes/cs3452-theory-of-computation/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3452-theory-of-computation/:path*",
+      "destination": "/anna-university-notes/cs3452-theory-of-computation/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3451-introduction-to-operation-systems/",
+      "destination": "/anna-university-notes/cs3451-introduction-to-operation-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3451-introduction-to-operation-systems/:path*",
+      "destination": "/anna-university-notes/cs3451-introduction-to-operation-systems/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3591-computer-networks/",
+      "destination": "/anna-university-notes/cs3591-computer-networks/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3591-computer-networks/:path*",
+      "destination": "/anna-university-notes/cs3591-computer-networks/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3551-distributed-computing/",
+      "destination": "/anna-university-notes/cs3551-distributed-computing/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3551-distributed-computing/:path*",
+      "destination": "/anna-university-notes/cs3551-distributed-computing/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/cs3691-embedded-systems-and-iot/",
+      "destination": "/anna-university-notes/cs3691-embedded-systems-and-iot/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cs3691-embedded-systems-and-iot/:path*",
+      "destination": "/anna-university-notes/cs3691-embedded-systems-and-iot/:path*",
+      "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/ccs356-object-oriented-software-engineering/",
+      "destination": "/anna-university-notes/ccs356-object-oriented-software-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ccs356-object-oriented-software-engineering/:path*",
+      "destination": "/anna-university-notes/ccs356-object-oriented-software-engineering/:path*",
+      "permanent": true
+    }
   ],
   "trailingSlash" : true
 }
