@@ -31,6 +31,7 @@
       "destination": "/anna-university-notes/ma3151-matrices-and-calculus/:path*",
       "permanent": true
     },
+<<<<<<< Updated upstream
      {
       "source": "/anna-university-notes/:dept/ge3152-heritage-of-tamils/",
       "destination": "/anna-university-notes/ge3152-heritage-of-tamils/",
@@ -39,8 +40,29 @@
     {
       "source": "/anna-university-notes/:dept/ge3152-heritage-of-tamils/:path*",
       "destination": "/anna-university-notes/ge3152-heritage-of-tamils/:path*",
+=======
+    {
+      "source": "/anna-university-notes/:dept/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/anna-university-notes/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/anna-university-notes/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3151-problem-solving-and-python-programming/",
+      "destination": "/anna-university-notes/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/anna-university-notes/ge3151-problem-solving-and-python-programming/:path*",
+>>>>>>> Stashed changes
       "permanent": true
     }
+    
   ],
   "trailingSlash" : true
 }
