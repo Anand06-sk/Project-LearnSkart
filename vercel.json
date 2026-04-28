@@ -121,7 +121,6 @@
       "destination": "/anna-university-notes/ge3252-tamils-and-technology/:path*",
       "permanent": true
     },
-<<<<<<< Updated upstream
       {
       "source": "/anna-university-notes/:dept/cs3251-programming-in-c/",
       "destination": "/anna-university-notes/cs3251-programming-in-c/",
@@ -160,7 +159,8 @@
     {
       "source": "/anna-university-notes/:dept/cs3391-object-oriented-programming/:path*",
       "destination": "/anna-university-notes/cs3391-object-oriented-programming/:path*",
-=======
+      "permanent": true
+    },
     {
       "source": "/anna-university-notes/:dept/cs3353-c-programming-and-data-structures/",
       "destination": "/anna-university-notes/cs3353-c-programming-and-data-structures/",
@@ -189,7 +189,6 @@
     {
       "source": "/anna-university-notes/:dept/ma3351-transforms-and-partial-differential-equations/:path*",
       "destination": "/anna-university-notes/ma3351-transforms-and-partial-differential-equations/:path*",
->>>>>>> Stashed changes
       "permanent": true
     }
   ],
