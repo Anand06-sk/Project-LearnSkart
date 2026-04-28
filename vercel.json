@@ -100,6 +100,16 @@
       "source": "/anna-university-notes/:dept/ma3251-statistics-and-numerical-methods/:path*",
       "destination": "/anna-university-notes/ma3251-statistics-and-numerical-methods/:path*",
       "permanent": true
+    },
+      {
+      "source": "/anna-university-notes/:dept/ge3251-engineering-graphics/",
+      "destination": "/anna-university-notes/ge3251-engineering-graphics/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3251-engineering-graphics/:path*",
+      "destination": "/anna-university-notes/ge3251-engineering-graphics/:path*",
+      "permanent": true
     }
     
   ],
