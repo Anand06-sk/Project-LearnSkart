@@ -71,26 +71,27 @@
       "destination": "/anna-university-notes/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
-     {
-      "source": "/anna-university-notes/:dept/ge3252-tamils-and-technology/",
-      "destination": "/anna-university-notes/ge3252-tamils-and-technology/",
+    {
+      "source": "/anna-university-notes/:dept/ge3791-human-values-and-ethics/",
+      "destination": "/anna-university-notes/ge3791-human-values-and-ethics/",
       "permanent": true
     },
     {
-      "source": "/anna-university-notes/:dept/ge3252-tamils-and-technology/:path*",
-      "destination": "/anna-university-notes/ge3252-tamils-and-technology/:path*",
+      "source": "/anna-university-notes/:dept/ge3791-human-values-and-ethics/:path*",
+      "destination": "/anna-university-notes/ge3791-human-values-and-ethics/:path*",
       "permanent": true
     },
     {
-      "source": "/anna-university-notes/:dept/ge3251-engineering-graphics/",
-      "destination": "/anna-university-notes/ge3251-engineering-graphics/",
+      "source": "/anna-university-notes/:dept/hs3252-professional-english-ii/",
+      "destination": "/anna-university-notes/hs3252-professional-english-ii/",
       "permanent": true
     },
     {
-      "source": "/anna-university-notes/:dept/ge3251-engineering-graphics/:path*",
-      "destination": "/anna-university-notes/ge3251-engineering-graphics/:path*",
+      "source": "/anna-university-notes/:dept/hs3252-professional-english-ii/:path*",
+      "destination": "/anna-university-notes/hs3252-professional-english-ii/:path*",
       "permanent": true
     }
+    
   ],
   "trailingSlash" : true
 }
