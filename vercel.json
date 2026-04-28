@@ -61,6 +61,16 @@
       "destination": "/anna-university-notes/ge3151-problem-solving-and-python-programming/:path*",
 >>>>>>> Stashed changes
       "permanent": true
+    },
+     {
+      "source": "/anna-university-notes/:dept/cy3151-engineering-chemistry/",
+      "destination": "/anna-university-notes/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/cy3151-engineering-chemistry/:path*",
+      "destination": "/anna-university-notes/cy3151-engineering-chemistry/:path*",
+      "permanent": true
     }
     
   ],
