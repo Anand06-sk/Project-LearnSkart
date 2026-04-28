@@ -190,7 +190,17 @@
       "source": "/anna-university-notes/:dept/ma3351-transforms-and-partial-differential-equations/:path*",
       "destination": "/anna-university-notes/ma3351-transforms-and-partial-differential-equations/:path*",
       "permanent": true
-    }
+    },
+      {
+        "source": "/anna-university-notes/:dept/cs3491-artificial-intelligence-and-machine-learning/",
+        "destination": "/anna-university-notes/cs3491-artificial-intelligence-and-machine-learning/",
+        "permanent": true
+      },
+      {
+        "source": "/anna-university-notes/:dept/cs3491-artificial-intelligence-and-machine-learning/:path*",
+        "destination": "/anna-university-notes/cs3491-artificial-intelligence-and-machine-learning/:path*",
+        "permanent": true
+      }
   ],
   "trailingSlash" : true
 }
