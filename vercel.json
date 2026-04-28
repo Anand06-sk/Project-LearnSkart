@@ -30,6 +30,16 @@
       "source": "/anna-university-notes/:dept/ma3151-matrices-and-calculus/:path*",
       "destination": "/anna-university-notes/ma3151-matrices-and-calculus/:path*",
       "permanent": true
+    },
+     {
+      "source": "/anna-university-notes/:dept/ge3152-heritage-of-tamils/",
+      "destination": "/anna-university-notes/ge3152-heritage-of-tamils/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-university-notes/:dept/ge3152-heritage-of-tamils/:path*",
+      "destination": "/anna-university-notes/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
     }
   ],
   "trailingSlash" : true
