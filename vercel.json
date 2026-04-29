@@ -1206,7 +1206,129 @@
       "source": "/syllabus/it/cs3351-digital-principles-and-computer-organization/:path*",
       "destination": "/syllabus/2021/cs3351-digital-principles-and-computer-organization/:path*",
       "permanent": true
-    }  
+    }  ,
+    {
+      "source": "/syllabus/cse/cs3352-foundations-of-data-science/",
+      "destination": "/syllabus/2021/cs3352-foundations-of-data-science/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3352-foundations-of-data-science/:path*",
+      "destination": "/syllabus/2021/cs3352-foundations-of-data-science/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3352-foundations-of-data-science/",
+      "destination": "/syllabus/2021/cs3352-foundations-of-data-science/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3352-foundations-of-data-science/:path*",
+      "destination": "/syllabus/2021/cs3352-foundations-of-data-science/:path*",
+      "permanent": true
+    }    ,
+    {
+      "source": "/syllabus/cse/cs3452-theory-of-computation/",
+      "destination": "/syllabus/2021/cs3452-theory-of-computation/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3452-theory-of-computation/:path*",
+      "destination": "/syllabus/2021/cs3452-theory-of-computation/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3452-theory-of-computation/",
+      "destination": "/syllabus/2021/cs3452-theory-of-computation/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3452-theory-of-computation/:path*",
+      "destination": "/syllabus/2021/cs3452-theory-of-computation/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/cse/cs3451-introduction-to-operation-systems/",
+      "destination": "/syllabus/2021/cs3451-introduction-to-operation-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3451-introduction-to-operation-systems/:path*",
+      "destination": "/syllabus/2021/cs3451-introduction-to-operation-systems/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3451-introduction-to-operation-systems/",
+      "destination": "/syllabus/2021/cs3451-introduction-to-operation-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3451-introduction-to-operation-systems/:path*",
+      "destination": "/syllabus/2021/cs3451-introduction-to-operation-systems/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/cse/cs3492-database-management-systems/",
+      "destination": "/syllabus/2021/cs3492-database-management-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3492-database-management-systems/:path*",
+      "destination": "/syllabus/2021/cs3492-database-management-systems/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3492-database-management-systems/",
+      "destination": "/syllabus/2021/cs3492-database-management-systems/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3492-database-management-systems/:path*",
+      "destination": "/syllabus/2021/cs3492-database-management-systems/:path*",
+      "permanent": true
+    }  ,
+    {
+      "source": "/syllabus/cse/cs3591-computer-networks/",
+      "destination": "/syllabus/2021/cs3591-computer-networks/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3591-computer-networks/:path*",
+      "destination": "/syllabus/2021/cs3591-computer-networks/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3591-computer-networks/",
+      "destination": "/syllabus/2021/cs3591-computer-networks/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3591-computer-networks/:path*",
+      "destination": "/syllabus/2021/cs3591-computer-networks/:path*",
+      "permanent": true
+    }  ,
+    {
+      "source": "/syllabus/cse/cs3551-distributed-computing/",
+      "destination": "/syllabus/2021/cs3551-distributed-computing/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3551-distributed-computing/:path*",
+      "destination": "/syllabus/2021/cs3551-distributed-computing/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3551-distributed-computing/",
+      "destination": "/syllabus/2021/cs3551-distributed-computing/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3551-distributed-computing/:path*",
+      "destination": "/syllabus/2021/cs3551-distributed-computing/:path*",
+      "permanent": true
+    }    
+      
+     
     
     
     
