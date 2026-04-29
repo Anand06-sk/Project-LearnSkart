@@ -302,6 +302,22 @@
       "source": "/anna-university-notes/:dept/ccs356-object-oriented-software-engineering/:path*",
       "destination": "/anna-university-notes/ccs356-object-oriented-software-engineering/:path*",
       "permanent": true
+    },
+    
+
+
+
+
+
+    {
+      "source": "/syllabus/2021/:dept/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/2021/:dept/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
     }
   ],
   "trailingSlash" : true
