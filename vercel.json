@@ -541,6 +541,76 @@
       "source": "/syllabus/civil/ma3151-matrices-and-calculus/:path*",
       "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
       "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3251-engineering-graphics/:path*",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ge3251-engineering-graphics/:path*",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ge3251-engineering-graphics/:path*",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ge3251-engineering-graphics/:path*",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ge3251-engineering-graphics/:path*",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ge3251-engineering-graphics/:path*",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ma3251-statistics-and-numerical-methods/:path*",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
     }
     
     
