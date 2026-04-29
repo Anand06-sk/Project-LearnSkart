@@ -377,9 +377,73 @@
       "source": "/syllabus/civil/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
+<<<<<<< Updated upstream
     }
     
     
+=======
+    },
+     {
+      "source": "/syllabus/cse/hs3252-professional-english-ii/:path*",
+      "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
+      "permanent": true
+    } ,
+     {
+      "source": "/syllabus/civil/hs3252-professional-english-ii/:path*",
+      "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
+      "permanent": true
+    } ,
+      {
+        "source": "/syllabus/it/hs3252-professional-english-ii/:path*",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/mech/hs3252-professional-english-ii/:path*",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/ece/hs3252-professional-english-ii/:path*",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/eee/hs3252-professional-english-ii/:path*",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
+        "permanent": true
+      },
+       {
+      "source": "/syllabus/cse/ph3151-engineering-physics/:path*",
+      "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
+      "permanent": true
+    } ,
+      {
+        "source": "/syllabus/ece/ph3151-engineering-physics/:path*",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/eee/ph3151-engineering-physics/:path*",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/civil/ph3151-engineering-physics/:path*",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/it/ph3151-engineering-physics/:path*",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
+        "permanent": true
+      } ,
+      {
+        "source": "/syllabus/mech/ph3151-engineering-physics/:path*",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
+        "permanent": true
+      }
+>>>>>>> Stashed changes
   ],
   "trailingSlash" : true
 }
