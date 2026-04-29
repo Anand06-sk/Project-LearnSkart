@@ -946,7 +946,187 @@
       "source": "/syllabus/civil/ge3252-tamils-and-technology/:path*",
       "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
       "permanent": true
-    }
+    },
+    {
+      "source": "/syllabus/cse/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/ece/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/eee/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ge3451-environmental-sciences-and-sustainability/",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/ge3451-environmental-sciences-and-sustainability/:path*",
+      "destination": "/syllabus/2021/ge3451-environmental-sciences-and-sustainability/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3791-human-values-and-ethics/",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3791-human-values-and-ethics/:path*",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ge3791-human-values-and-ethics/",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/ece/ge3791-human-values-and-ethics/:path*",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ge3791-human-values-and-ethics/",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/eee/ge3791-human-values-and-ethics/:path*",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ge3791-human-values-and-ethics/",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/ge3791-human-values-and-ethics/:path*",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ge3791-human-values-and-ethics/",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/ge3791-human-values-and-ethics/:path*",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ge3791-human-values-and-ethics/",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/ge3791-human-values-and-ethics/:path*",
+      "destination": "/syllabus/2021/ge3791-human-values-and-ethics/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/be3251-basic-electrical-and-electronics-engineering/",
+      "destination": "/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "destination": "/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/be3251-basic-electrical-and-electronics-engineering/",
+      "destination": "/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "destination": "/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/mech/be3251-basic-electrical-and-electronics-engineering/",
+      "destination": "/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "destination": "/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/mech/ma3351-transforms-and-partial-differential-equations/",
+      "destination": "/syllabus/2021/ma3351-transforms-and-partial-differential-equations/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/ma3351-transforms-and-partial-differential-equations/:path*",
+      "destination": "/syllabus/2021/ma3351-transforms-and-partial-differential-equations/:path*",
+      "permanent": true
+    }  ,
+    {
+      "source": "/syllabus/civil/ma3351-transforms-and-partial-differential-equations/",
+      "destination": "/syllabus/2021/ma3351-transforms-and-partial-differential-equations/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/ma3351-transforms-and-partial-differential-equations/:path*",
+      "destination": "/syllabus/2021/ma3351-transforms-and-partial-differential-equations/:path*",
+      "permanent": true
+    } 
     
     
   ],
