@@ -1406,7 +1406,28 @@
       "source": "/syllabus/it/cs3251-programming-in-c/:path*",
       "destination": "/syllabus/2021/cs3251-programming-in-c/:path*",
       "permanent": true
-    }            
+    }  
+    ,
+    {
+      "source": "/syllabus/cse/cs3353-c-programming-and-data-structures/",
+      "destination": "/syllabus/2021/cs3353-c-programming-and-data-structures/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3353-c-programming-and-data-structures/:path*",
+      "destination": "/syllabus/2021/cs3353-c-programming-and-data-structures/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3353-c-programming-and-data-structures/",
+      "destination": "/syllabus/2021/cs3353-c-programming-and-data-structures/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3353-c-programming-and-data-structures/:path*",
+      "destination": "/syllabus/2021/cs3353-c-programming-and-data-structures/:path*",
+      "permanent": true
+    }              
       
      
     
