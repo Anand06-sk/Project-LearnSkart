@@ -377,6 +377,111 @@
       "source": "/syllabus/civil/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ge3151-problem-solving-and-python-programming/:path*",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3152-heritage-of-tamils/:path*",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ge3152-heritage-of-tamils/:path*",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ge3152-heritage-of-tamils/:path*",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ge3152-heritage-of-tamils/:path*",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ge3152-heritage-of-tamils/:path*",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ge3152-heritage-of-tamils/:path*",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ma3151-matrices-and-calculus/:path*",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ma3151-matrices-and-calculus/:path*",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ma3151-matrices-and-calculus/:path*",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ma3151-matrices-and-calculus/:path*",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ma3151-matrices-and-calculus/:path*",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ma3151-matrices-and-calculus/:path*",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
     }
     
     
