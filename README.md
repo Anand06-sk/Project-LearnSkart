@@ -49,6 +49,36 @@ Project-OpenNotes/
 ├── about/
 ├── anna-university-results/
 ├── anna-university-notes/
+│   ├── be3251-basic-electrical-and-electronics-engineering/
+│   ├── ccs356-object-oriented-software-engineering/
+│   ├── cs3251-programming-in-c/
+│   ├── cs3351-digital-principles-and-computer-organization/
+│   ├── cs3352-foundations-of-data-science/
+│   ├── cs3353-c-programming-and-data-structures/
+│   ├── cs3391-object-oriented-programming/
+│   ├── cs3451-introduction-to-operation-systems/
+│   ├── cs3452-theory-of-computation/
+│   ├── cs3491-artificial-intelligence-and-machine-learning/
+│   ├── cs3492-database-management-systems/
+│   ├── cs3551-distributed-computing/
+│   ├── cs3591-computer-networks/
+│   ├── cs3691-embedded-systems-and-iot/
+│   ├── cy3151-engineering-chemistry/
+│   ├── ge3151-problem-solving-and-python-programming/
+│   ├── ge3152-heritage-of-tamils/
+│   ├── ge3251-engineering-graphics/
+│   ├── ge3252-tamils-and-technology/
+│   ├── ge3451-environmental-sciences-and-sustainability/
+│   ├── ge3791-human-values-and-ethics/
+│   ├── hs3152-professional-english-1/
+│   ├── hs3252-professional-english-ii/
+│   ├── ma3151-matrices-and-calculus/
+│   ├── ma3251-statistics-and-numerical-methods/
+│   ├── ma3351-transforms-and-partial-differential-equations/
+│   ├── ma3354-discrete-mathematics/
+│   ├── me3351-engineering-mechanics/
+│   ├── ph3151-engineering-physics/
+│   ├── ph3256-physics-for-information-science/
 │   ├── civil/
 │   ├── cse/
 │   ├── ece/
