@@ -1126,7 +1126,88 @@
       "source": "/syllabus/civil/ma3351-transforms-and-partial-differential-equations/:path*",
       "destination": "/syllabus/2021/ma3351-transforms-and-partial-differential-equations/:path*",
       "permanent": true
-    } 
+    } ,
+    {
+      "source": "/syllabus/mech/me3351-engineering-mechanics/",
+      "destination": "/syllabus/2021/me3351-engineering-mechanics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/me3351-engineering-mechanics/:path*",
+      "destination": "/syllabus/2021/me3351-engineering-mechanics/:path*",
+      "permanent": true
+    }  ,
+    {
+      "source": "/syllabus/civil/me3351-engineering-mechanics/",
+      "destination": "/syllabus/2021/me3351-engineering-mechanics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/me3351-engineering-mechanics/:path*",
+      "destination": "/syllabus/2021/me3351-engineering-mechanics/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/cse/ma3354-discrete-mathematics/",
+      "destination": "/syllabus/2021/ma3354-discrete-mathematics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ma3354-discrete-mathematics/:path*",
+      "destination": "/syllabus/2021/ma3354-discrete-mathematics/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/ma3354-discrete-mathematics/",
+      "destination": "/syllabus/2021/ma3354-discrete-mathematics/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/ma3354-discrete-mathematics/:path*",
+      "destination": "/syllabus/2021/ma3354-discrete-mathematics/:path*",
+      "permanent": true
+    }  ,
+    {
+      "source": "/syllabus/cse/cs3391-object-oriented-programming/",
+      "destination": "/syllabus/2021/cs3391-object-oriented-programming/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3391-object-oriented-programming/:path*",
+      "destination": "/syllabus/2021/cs3391-object-oriented-programming/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3391-object-oriented-programming/",
+      "destination": "/syllabus/2021/cs3391-object-oriented-programming/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3391-object-oriented-programming/:path*",
+      "destination": "/syllabus/2021/cs3391-object-oriented-programming/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/cse/cs3351-digital-principles-and-computer-organization/",
+      "destination": "/syllabus/2021/cs3351-digital-principles-and-computer-organization/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3351-digital-principles-and-computer-organization/:path*",
+      "destination": "/syllabus/2021/cs3351-digital-principles-and-computer-organization/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3351-digital-principles-and-computer-organization/",
+      "destination": "/syllabus/2021/cs3351-digital-principles-and-computer-organization/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3351-digital-principles-and-computer-organization/:path*",
+      "destination": "/syllabus/2021/cs3351-digital-principles-and-computer-organization/:path*",
+      "permanent": true
+    }  
+    
     
     
   ],
