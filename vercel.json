@@ -1326,7 +1326,47 @@
       "source": "/syllabus/it/cs3551-distributed-computing/:path*",
       "destination": "/syllabus/2021/cs3551-distributed-computing/:path*",
       "permanent": true
-    }    
+    } ,
+    {
+      "source": "/syllabus/cse/cs3691-embedded-systems-and-iot/",
+      "destination": "/syllabus/2021/cs3691-embedded-systems-and-iot/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3691-embedded-systems-and-iot/:path*",
+      "destination": "/syllabus/2021/cs3691-embedded-systems-and-iot/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3691-embedded-systems-and-iot/",
+      "destination": "/syllabus/2021/cs3691-embedded-systems-and-iot/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3691-embedded-systems-and-iot/:path*",
+      "destination": "/syllabus/2021/cs3691-embedded-systems-and-iot/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ccs356-object-oriented-software-engineering/",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ccs356-object-oriented-software-engineering/:path*",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/ccs356-object-oriented-software-engineering/",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/ccs356-object-oriented-software-engineering/:path*",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/:path*",
+      "permanent": true
+    }         
       
      
     
