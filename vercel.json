@@ -308,11 +308,21 @@
 
     
     {
+      "source": "/syllabus/cse/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/cse/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     } ,
 
+    {
+      "source": "/syllabus/ece/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/ece/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
@@ -320,11 +330,21 @@
     },
 
     {
+      "source": "/syllabus/eee/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/eee/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/it/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/it/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
@@ -332,14 +352,29 @@
     },
 
     {
+      "source": "/syllabus/mech/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/mech/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     },
 
     {
+      "source": "/syllabus/civil/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cy3151-engineering-chemistry/",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/",
       "permanent": true
     },
     {
@@ -349,11 +384,21 @@
     } ,
 
     {
+      "source": "/syllabus/ece/cy3151-engineering-chemistry/",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/ece/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/eee/cy3151-engineering-chemistry/",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/eee/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
@@ -361,11 +406,21 @@
     },
 
     {
+      "source": "/syllabus/it/cy3151-engineering-chemistry/",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/it/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/mech/cy3151-engineering-chemistry/",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/mech/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
@@ -373,70 +428,140 @@
     },
 
     {
+      "source": "/syllabus/civil/cy3151-engineering-chemistry/",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/cy3151-engineering-chemistry/:path*",
       "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
-     {
+    {
+      "source": "/syllabus/cse/hs3252-professional-english-ii/",
+      "destination": "/syllabus/2021/hs3252-professional-english-ii/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/cse/hs3252-professional-english-ii/:path*",
       "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
       "permanent": true
     } ,
-     {
+    {
+      "source": "/syllabus/civil/hs3252-professional-english-ii/",
+      "destination": "/syllabus/2021/hs3252-professional-english-ii/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/hs3252-professional-english-ii/:path*",
       "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
       "permanent": true
     } ,
+      {
+        "source": "/syllabus/it/hs3252-professional-english-ii/",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/",
+        "permanent": true
+      },
       {
         "source": "/syllabus/it/hs3252-professional-english-ii/:path*",
         "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
         "permanent": true
       } ,
       {
+        "source": "/syllabus/mech/hs3252-professional-english-ii/",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/",
+        "permanent": true
+      },
+      {
         "source": "/syllabus/mech/hs3252-professional-english-ii/:path*",
         "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
         "permanent": true
       } ,
+      {
+        "source": "/syllabus/ece/hs3252-professional-english-ii/",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/",
+        "permanent": true
+      },
       {
         "source": "/syllabus/ece/hs3252-professional-english-ii/:path*",
         "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
         "permanent": true
       } ,
       {
+        "source": "/syllabus/eee/hs3252-professional-english-ii/",
+        "destination": "/syllabus/2021/hs3252-professional-english-ii/",
+        "permanent": true
+      },
+      {
         "source": "/syllabus/eee/hs3252-professional-english-ii/:path*",
         "destination": "/syllabus/2021/hs3252-professional-english-ii/:path*",
         "permanent": true
       },
       {
+      "source": "/syllabus/cse/ph3151-engineering-physics/",
+      "destination": "/syllabus/2021/ph3151-engineering-physics/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/cse/ph3151-engineering-physics/:path*",
       "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
       "permanent": true
     } ,
+      {
+        "source": "/syllabus/ece/ph3151-engineering-physics/",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/",
+        "permanent": true
+      },
       {
         "source": "/syllabus/ece/ph3151-engineering-physics/:path*",
         "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
         "permanent": true
       } ,
       {
+        "source": "/syllabus/eee/ph3151-engineering-physics/",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/",
+        "permanent": true
+      },
+      {
         "source": "/syllabus/eee/ph3151-engineering-physics/:path*",
         "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
         "permanent": true
       } ,
+      {
+        "source": "/syllabus/civil/ph3151-engineering-physics/",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/",
+        "permanent": true
+      },
       {
         "source": "/syllabus/civil/ph3151-engineering-physics/:path*",
         "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
         "permanent": true
       } ,
       {
+        "source": "/syllabus/it/ph3151-engineering-physics/",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/",
+        "permanent": true
+      },
+      {
         "source": "/syllabus/it/ph3151-engineering-physics/:path*",
         "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
         "permanent": true
       } ,
       {
+        "source": "/syllabus/mech/ph3151-engineering-physics/",
+        "destination": "/syllabus/2021/ph3151-engineering-physics/",
+        "permanent": true
+      },
+      {
         "source": "/syllabus/mech/ph3151-engineering-physics/:path*",
         "destination": "/syllabus/2021/ph3151-engineering-physics/:path*",
         "permanent": true
       },
+    {
+      "source": "/syllabus/cse/ge3151-problem-solving-and-python-programming/",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/cse/ge3151-problem-solving-and-python-programming/:path*",
       "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
@@ -444,11 +569,21 @@
     } ,
 
     {
+      "source": "/syllabus/ece/ge3151-problem-solving-and-python-programming/",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/ece/ge3151-problem-solving-and-python-programming/:path*",
       "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/eee/ge3151-problem-solving-and-python-programming/",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/eee/ge3151-problem-solving-and-python-programming/:path*",
       "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
@@ -456,11 +591,21 @@
     },
 
     {
+      "source": "/syllabus/it/ge3151-problem-solving-and-python-programming/",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/it/ge3151-problem-solving-and-python-programming/:path*",
       "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/mech/ge3151-problem-solving-and-python-programming/",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/mech/ge3151-problem-solving-and-python-programming/:path*",
       "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
@@ -468,8 +613,18 @@
     },
 
     {
+      "source": "/syllabus/civil/ge3151-problem-solving-and-python-programming/",
+      "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/ge3151-problem-solving-and-python-programming/:path*",
       "destination": "/syllabus/2021/ge3151-problem-solving-and-python-programming/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3152-heritage-of-tamils/",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/",
       "permanent": true
     },
     {
@@ -479,11 +634,21 @@
     } ,
 
     {
+      "source": "/syllabus/ece/ge3152-heritage-of-tamils/",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/ece/ge3152-heritage-of-tamils/:path*",
       "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/eee/ge3152-heritage-of-tamils/",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/eee/ge3152-heritage-of-tamils/:path*",
       "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
@@ -491,11 +656,21 @@
     },
 
     {
+      "source": "/syllabus/it/ge3152-heritage-of-tamils/",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/it/ge3152-heritage-of-tamils/:path*",
       "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/mech/ge3152-heritage-of-tamils/",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/mech/ge3152-heritage-of-tamils/:path*",
       "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
@@ -503,8 +678,18 @@
     },
 
     {
+      "source": "/syllabus/civil/ge3152-heritage-of-tamils/",
+      "destination": "/syllabus/2021/ge3152-heritage-of-tamils/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/ge3152-heritage-of-tamils/:path*",
       "destination": "/syllabus/2021/ge3152-heritage-of-tamils/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ma3151-matrices-and-calculus/",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/",
       "permanent": true
     },
     {
@@ -514,11 +699,21 @@
     } ,
 
     {
+      "source": "/syllabus/ece/ma3151-matrices-and-calculus/",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/ece/ma3151-matrices-and-calculus/:path*",
       "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/eee/ma3151-matrices-and-calculus/",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/eee/ma3151-matrices-and-calculus/:path*",
       "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
@@ -526,11 +721,21 @@
     },
 
     {
+      "source": "/syllabus/it/ma3151-matrices-and-calculus/",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/it/ma3151-matrices-and-calculus/:path*",
       "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/mech/ma3151-matrices-and-calculus/",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/mech/ma3151-matrices-and-calculus/:path*",
       "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
@@ -538,8 +743,18 @@
     },
 
     {
+      "source": "/syllabus/civil/ma3151-matrices-and-calculus/",
+      "destination": "/syllabus/2021/ma3151-matrices-and-calculus/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/ma3151-matrices-and-calculus/:path*",
       "destination": "/syllabus/2021/ma3151-matrices-and-calculus/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3251-engineering-graphics/",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/",
       "permanent": true
     },
     {
@@ -549,11 +764,21 @@
     } ,
 
     {
+      "source": "/syllabus/ece/ge3251-engineering-graphics/",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/ece/ge3251-engineering-graphics/:path*",
       "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/eee/ge3251-engineering-graphics/",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/eee/ge3251-engineering-graphics/:path*",
       "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
@@ -561,11 +786,21 @@
     },
 
     {
+      "source": "/syllabus/it/ge3251-engineering-graphics/",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/it/ge3251-engineering-graphics/:path*",
       "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/mech/ge3251-engineering-graphics/",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/mech/ge3251-engineering-graphics/:path*",
       "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
@@ -573,8 +808,18 @@
     },
 
     {
+      "source": "/syllabus/civil/ge3251-engineering-graphics/",
+      "destination": "/syllabus/2021/ge3251-engineering-graphics/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/ge3251-engineering-graphics/:path*",
       "destination": "/syllabus/2021/ge3251-engineering-graphics/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ma3251-statistics-and-numerical-methods/",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/",
       "permanent": true
     },
     {
@@ -584,11 +829,21 @@
     } ,
 
     {
+      "source": "/syllabus/ece/ma3251-statistics-and-numerical-methods/",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/ece/ma3251-statistics-and-numerical-methods/:path*",
       "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/eee/ma3251-statistics-and-numerical-methods/",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/eee/ma3251-statistics-and-numerical-methods/:path*",
       "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
@@ -596,11 +851,21 @@
     },
 
     {
+      "source": "/syllabus/it/ma3251-statistics-and-numerical-methods/",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/it/ma3251-statistics-and-numerical-methods/:path*",
       "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
       "permanent": true
     },
 
+    {
+      "source": "/syllabus/mech/ma3251-statistics-and-numerical-methods/",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/",
+      "permanent": true
+    },
     {
       "source": "/syllabus/mech/ma3251-statistics-and-numerical-methods/:path*",
       "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
@@ -608,8 +873,78 @@
     },
 
     {
+      "source": "/syllabus/civil/ma3251-statistics-and-numerical-methods/",
+      "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/",
+      "permanent": true
+    },
+    {
       "source": "/syllabus/civil/ma3251-statistics-and-numerical-methods/:path*",
       "destination": "/syllabus/2021/ma3251-statistics-and-numerical-methods/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3252-tamils-and-technology/",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ge3252-tamils-and-technology/:path*",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/ge3252-tamils-and-technology/",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/ece/ge3252-tamils-and-technology/:path*",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/eee/ge3252-tamils-and-technology/",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/eee/ge3252-tamils-and-technology/:path*",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/ge3252-tamils-and-technology/",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/ge3252-tamils-and-technology/:path*",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/ge3252-tamils-and-technology/",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/ge3252-tamils-and-technology/:path*",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/ge3252-tamils-and-technology/",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/ge3252-tamils-and-technology/:path*",
+      "destination": "/syllabus/2021/ge3252-tamils-and-technology/:path*",
       "permanent": true
     }
     
