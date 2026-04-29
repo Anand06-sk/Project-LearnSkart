@@ -310,8 +310,13 @@
 
 
     {
-      "source": "/syllabus/:dept/hs3152-professional-english-1/",
+      "source": "/syllabus/:dept(cse|ece|eee|mech|civil|it)/hs3152-professional-english-1/",
       "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/:dept(cse|ece|eee|mech|civil|it)/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     }
   ],
