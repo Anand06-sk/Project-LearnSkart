@@ -313,11 +313,6 @@
       "source": "/syllabus/:dept/hs3152-professional-english-1/",
       "destination": "/syllabus/2021/hs3152-professional-english-1/",
       "permanent": true
-    },
-    {
-      "source": "/syllabus/:dept/hs3152-professional-english-1/:path*",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
-      "permanent": true
     }
   ],
   "trailingSlash" : true
