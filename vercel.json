@@ -307,16 +307,64 @@
 
 
 
-
-
     {
-      "source": "/syllabus/:dept(cse|ece|eee|mech|civil|it)/hs3152-professional-english-1/",
+      "source": "/syllabus/cse/hs3152-professional-english-1/",
       "destination": "/syllabus/2021/hs3152-professional-english-1/",
       "permanent": true
     },
     {
-      "source": "/syllabus/:dept(cse|ece|eee|mech|civil|it)/hs3152-professional-english-1/:path*",
+      "source": "/syllabus/cse/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/ece/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/ece/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/eee/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/eee/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/civil/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/mech/hs3152-professional-english-1/",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/",
       "permanent": true
     }
   ],
