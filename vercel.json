@@ -307,66 +307,79 @@
 
 
 
-    {
-      "source": "/syllabus/cse/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
-      "permanent": true
-    },
+   
     {
       "source": "/syllabus/cse/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     } ,
-    {
-      "source": "/syllabus/ece/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
-      "permanent": true
-    },
+
     {
       "source": "/syllabus/ece/hs3152-professional-english-1/:path*",
       "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     },
+
     {
-      "source": "/syllabus/eee/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "source": "/syllabus/eee/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/it/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/mech/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
+      "permanent": true
+    },
+
+    {
+      "source": "/syllabus/civil/hs3152-professional-english-1/:path*",
+      "destination": "/syllabus/2021/hs3152-professional-english-1/:path*",
       "permanent": true
     },
     {
-      "source": "/syllabus/eee/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "source": "/syllabus/cse/cy3151-engineering-chemistry/:path*",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
+      "permanent": true
+    } ,
+
+    {
+      "source": "/syllabus/ece/cy3151-engineering-chemistry/:path*",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
+
     {
-      "source": "/syllabus/civil/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "source": "/syllabus/eee/cy3151-engineering-chemistry/:path*",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
+
     {
-      "source": "/syllabus/civil/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "source": "/syllabus/it/cy3151-engineering-chemistry/:path*",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
+
     {
-      "source": "/syllabus/it/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "source": "/syllabus/mech/cy3151-engineering-chemistry/:path*",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     },
+
     {
-      "source": "/syllabus/it/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
-      "permanent": true
-    },
-    {
-      "source": "/syllabus/mech/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
-      "permanent": true
-    },
-    {
-      "source": "/syllabus/mech/hs3152-professional-english-1/",
-      "destination": "/syllabus/2021/hs3152-professional-english-1/",
+      "source": "/syllabus/civil/cy3151-engineering-chemistry/:path*",
+      "destination": "/syllabus/2021/cy3151-engineering-chemistry/:path*",
       "permanent": true
     }
+    
+    
   ],
   "trailingSlash" : true
 }
