@@ -1366,7 +1366,47 @@
       "source": "/syllabus/it/ccs356-object-oriented-software-engineering/:path*",
       "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/:path*",
       "permanent": true
-    }         
+    } ,
+    {
+      "source": "/syllabus/cse/ccs356-object-oriented-software-engineering/",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/ccs356-object-oriented-software-engineering/:path*",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/ccs356-object-oriented-software-engineering/",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/ccs356-object-oriented-software-engineering/:path*",
+      "destination": "/syllabus/2021/ccs356-object-oriented-software-engineering/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/cse/cs3251-programming-in-c/",
+      "destination": "/syllabus/2021/cs3251-programming-in-c/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/cse/cs3251-programming-in-c/:path*",
+      "destination": "/syllabus/2021/cs3251-programming-in-c/:path*",
+      "permanent": true
+    } ,
+    {
+      "source": "/syllabus/it/cs3251-programming-in-c/",
+      "destination": "/syllabus/2021/cs3251-programming-in-c/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3251-programming-in-c/:path*",
+      "destination": "/syllabus/2021/cs3251-programming-in-c/:path*",
+      "permanent": true
+    }            
       
      
     
