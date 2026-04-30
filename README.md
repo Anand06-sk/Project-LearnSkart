@@ -102,8 +102,8 @@ Project-OpenNotes/
 ├── terms-and-conditions/
 ├── pyq/
 │   ├── CE3351-surveying-and-levelling/
-│   ├── CE3401-applied-hydraulics-engineering/
-│   ├── CE3701-estimation-coasting-and-valuation-engineering/
+│   ├── ee3303-electrical-machines-1/
+│   ├── ee3701-high-voltage-engineering/
 │   ├── CS3501-compiler-design/
 │   ├── EE3404-microprocessor-and-microcontroller/
 │   ├── IT3501-full-stack-web-development/
