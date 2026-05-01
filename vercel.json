@@ -1438,7 +1438,18 @@
       "source": "/syllabus/it/cs3353-c-programming-and-data-structures/:path*",
       "destination": "/syllabus/2021/cs3353-c-programming-and-data-structures/:path*",
       "permanent": true
-    }              
+    }  ,
+    {
+      "source": "/syllabus/eee/ee3303-electrical-machines/:path*",
+      "destination": "/syllabus/2021/ee3303-electrical-machines-1/:path*",
+      "permanent": true
+    }  ,
+    {
+      "source": "/syllabus/eee/ee3303-electrical-machines/",
+      "destination": "/syllabus/2021/ee3303-electrical-machines-1/",
+      "permanent": true
+    }
+            
       
      
     
