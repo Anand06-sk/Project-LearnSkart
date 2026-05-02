@@ -1446,7 +1446,7 @@
     }  ,
     {
       "source": "/syllabus/eee/ee3303-electrical-machines/",
-      "destination": "/syllabus/2021/ee3303-electrical-machines-1/",
+      "destination": "/syllabus/eee/ee3303-electrical-machines-1/",
       "permanent": true
     }
             
