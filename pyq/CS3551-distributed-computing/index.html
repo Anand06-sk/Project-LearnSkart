@@ -13,7 +13,8 @@
     <link rel="canonical" href="https://learnskart.in/pyq/CS3551-distributed-computing/">
 
 <link rel="stylesheet" href="../../assets/css/question.css">
-<link rel="stylesheet" href="../../assets/css/pyq-static.css">    <link rel="stylesheet" href="../../assets/css/nav.css">
+<link rel="stylesheet" href="../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -130,24 +131,138 @@
             </ul>
         </section>
         </section>
+        <section style="margin: 2.5rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;">
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1rem;">Important Questions - CS3551 Distributed Computing</h2>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT I: Introduction</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Define a Distributed System and its features.</li>
+            <li>Differentiate between Message Passing and Shared Memory systems.</li>
+            <li>What are the various types of Transparency in distributed systems?.</li>
+            <li>Define Synchronous and Asynchronous execution.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Design Issues and Challenges: Detailed discussion of factors like heterogeneity, openness, security, and scalability.</li>
+            <li>Model of Distributed Computations: Explain distributed programs, execution models, and communication network models.</li>
+            <li>Communication Primitives: Explain blocking, non-blocking, synchronous, and asynchronous primitives in detail.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT II: Logical Time and Global State</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>What is Clock Skew and Clock Drift?.</li>
+            <li>Define the "Happen-Before" relation.</li>
+            <li>What is the significance of Scalar Time and Vector Time?.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Clock Synchronization: Detailed explanation of the NTP framework and physical clock synchronization.</li>
+            <li>Message Ordering: Discuss message ordering paradigms such as Causal Order and Total Order.</li>
+            <li>Snapshot Recording: Explain the Chandy-Lamport Algorithm for global state detection in FIFO channels.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT III: Distributed Mutex and Deadlock</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Name the requirements of a Distributed Mutual Exclusion algorithm.</li>
+            <li>What is a Phantom Deadlock and a False Deadlock?.</li>
+            <li>Contrast the AND model and the OR model of deadlocks.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Mutual Exclusion Algorithms: Detailed study of Lamport's, Ricart-Agrawala's, and Suzuki-Kasami's Broadcast algorithms.</li>
+            <li>Deadlock Detection: Explain the Chandy-Misra-Haas Algorithm for AND and OR models.</li>
+            <li>Deadlock Handling: Strategies for prevention, avoidance, and resolution in distributed systems.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT IV: Consensus and Recovery</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Define the Consensus Problem and Byzantine Agreement.</li>
+            <li>What is a Checkpoint and a Recovery Line?.</li>
+            <li>Define the "Domino Effect" in failure recovery.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Consensus Algorithms: Discuss agreement in failure-free and failure-prone synchronous/asynchronous systems.</li>
+            <li>Checkpoint-Based Recovery: Detailed explanation of Coordinated (e.g., Koo-Toueg) and Asynchronous checkpointing algorithms.</li>
+            <li>Log-Based Recovery: Concepts and definitions related to failure recovery.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT V: Cloud Computing</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Define Cloud Computing and its core characteristics.</li>
+            <li>Differentiate between Scalability and Elasticity in cloud contexts.</li>
+            <li>What is a Hypervisor and its role in Virtualization?.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Service and Deployment Models: Comparative study of IaaS, PaaS, SaaS, and public/private/hybrid cloud models.</li>
+            <li>Virtualization and Load Balancing: Role of virtualization in scalability and various load-balancing algorithms.</li>
+            <li>Cloud Services: Detailed look at compute (e.g., EC2), storage (e.g., S3), and application services (e.g., Azure/AWS).</li>
+        </ul>
+    </div>
+    
+    <div style="background: var(--bg-accent); padding: 1rem; border-radius: 6px; margin-top: 1.5rem;">
+        <p style="font-weight:600; margin-bottom:0.5rem;">Most Repeated / High-Weight Questions</p>
+        <p style="color: var(--text-primary); font-size:0.9rem; line-height:1.6;">Mutual exclusion algorithms, deadlock detection and prevention, clock synchronization, Chandy-Lamport snapshot algorithm, checkpointing and recovery mechanisms, cloud service models.</p>
+    </div>
+</section>
+        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a class="pyq-btn" href="/syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
+                <a class="pyq-btn primary" href="/index.html" target="_blank" rel="noopener">View Notes</a>
+            </div>
+        </section>
+        <section style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;">
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1rem;">How to Use These Question Papers</h2>
+    <ul style="color: var(--muted); line-height: 1.8; font-size: 0.95rem;">
+        <li><strong>Mutual Exclusion Focus:</strong> Complete Units 1-3 emphasizing mutual exclusion (Lamport, Ricart-Agrawala, Suzuki-Kasami) and deadlock algorithms. These appear with 13-16 marks regularly.</li>
+        <li><strong>Clock Synchronization Mastery:</strong> Understand NTP, clock skew/drift, scalar and vector time. Practice implementing causal and total ordering using timestamps.</li>
+        <li><strong>Algorithm Implementation:</strong> Trace Chandy-Lamport snapshot and Chandy-Misra-Haas deadlock detection algorithms step-by-step. Draw message sequence diagrams.</li>
+        <li><strong>Recovery and Consensus:</strong> Study checkpoint-based recovery, consistency models, and Byzantine agreement problems. Understand failure scenarios and recovery strategies.</li>
+        <li><strong>Time Management:</strong> Allocate 60-90 minutes per algorithm problem; practice detailed message traces and state diagrams under timed conditions combining multiple distributed concepts.</li>
+    </ul>
+</section>
         <section class="faq-section" style="margin-top: 2.5rem;">
-            <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Frequently Asked Questions about LearnSkart Question Papers</h2>
+            <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Frequently Asked Questions about CS3551 Distributed Computing</h2>
             <div style="display:grid; gap:1rem;">
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">What is LearnSkart?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">LearnSkart is an academic platform that provides Anna University previous year question papers, notes, and study resources to help engineering students prepare effectively for semester examinations.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">Which topics are most tested in CS3551 exams?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Mutual exclusion algorithms (Unit III), clock synchronization and message ordering (Unit II), deadlock detection (Unit III), and recovery mechanisms (Unit IV) together account for 70% of exam marks. Understand global state consistency and failure recovery thoroughly.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">Are the question papers on LearnSkart free to download?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">Yes. All previous year question papers on LearnSkart can be viewed online or downloaded as PDF for free to support student exam preparation.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How should I approach mutual exclusion algorithm questions in CS3551?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Study Lamport's algorithm (logical clocks), Ricart-Agrawala (request-based), and Suzuki-Kasami (token-based). Compare time complexity, message complexity, and fairness. Trace each algorithm step-by-step with 4-5 node examples.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">Which Anna University regulations are covered?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">LearnSkart mainly provides study materials and question papers aligned with the latest Anna University Regulation 2021 syllabus.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">What is the best strategy for clock synchronization in CS3551?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Understand clock skew and drift. Master NTP framework and physical clock synchronization. Learn scalar time (for causality) and vector time (for happened-before relation). Practice implementing causal ordering using timestamps.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How do previous year question papers help in exam preparation?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">Practicing PYQs helps students understand exam patterns, frequently asked questions, important topics, and improves confidence before university exams.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How can I master the Chandy-Lamport algorithm in CS3551?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Understand global state snapshot recording in FIFO channels. Learn marker-based algorithm, consistent state detection, and recovery line concepts. Trace algorithm with specific channel states and process events. Practice with 4-6 process networks.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">What should I prioritize in deadlock detection questions?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Understand AND vs OR models of deadlock. Study Chandy-Misra-Haas algorithm for deadlock detection. Know phantom and false deadlock concepts. Trace detection with wait-for graphs. These appear as 13-16 mark algorithm trace questions.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How should I handle cloud and consensus questions in CS3551?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Understand IaaS, PaaS, SaaS service models and deployment types. Learn Byzantine agreement and consensus in synchronous/asynchronous systems. Study checkpointing strategies and recovery line selection. Focus on practical cloud service architectures and scalability patterns.</p>
                 </div>
             </div>
         </section>

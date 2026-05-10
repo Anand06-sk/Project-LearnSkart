@@ -13,7 +13,8 @@
     <link rel="canonical" href="https://learnskart.in/pyq/CS3501-complier-design/">
 
 <link rel="stylesheet" href="../../assets/css/question.css">
-<link rel="stylesheet" href="../../assets/css/pyq-static.css">    <link rel="stylesheet" href="../../assets/css/nav.css">
+<link rel="stylesheet" href="../../assets/css/pyq-static.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -130,24 +131,145 @@
             </ul>
         </section>
         </section>
+        <section style="margin: 2.5rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;">
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1rem;">Important Questions - CS3501 Compiler Design</h2>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT 1: Introduction to Compilers & Lexical Analysis</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Define Lexeme, Token, and Pattern.</li>
+            <li>What are the two parts of compilation? (Analysis and Synthesis).</li>
+            <li>State the role of Input Buffering and the use of the sentinel character.</li>
+            <li>Differentiate between NFA and DFA.</li>
+            <li>What is a Cross-compiler?.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Explain the Phases of a Compiler with a neat diagram and trace the statement a = b + c * 60.</li>
+            <li>Describe the Role of the Lexical Analyzer and its interaction with the parser.</li>
+            <li>Explain the algorithm for Minimizing DFA with an example.</li>
+            <li>Explain the construction of NFA from a Regular Expression using Thompson's construction.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT 2: Syntax Analysis</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Define Left Factoring and Left Recursion.</li>
+            <li>What is Handle Pruning?.</li>
+            <li>Differentiate between Top-down and Bottom-up parsing.</li>
+            <li>What are the conflicts in Shift-Reduce parsing?.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Construct an LL(1) Parsing Table for a given grammar and check string validity.</li>
+            <li>Explain LR Parsing and construct an SLR Parsing Table for a grammar.</li>
+            <li>Discuss the Error Recovery Strategies in parsing.</li>
+            <li>Write a short note on YACC tool and its structure.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT 3: Intermediate Code Generation</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Differentiate between Synthesized and Inherited attributes.</li>
+            <li>What are Three-Address Codes? Mention its types (Quadruples, Triples, Indirect Triples).</li>
+            <li>Define Backpatching.</li>
+            <li>What is an Annotated Parse Tree?.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Explain Syntax Directed Definition (SDD) and types of attributes in detail.</li>
+            <li>Discuss the Specification of a Simple Type Checker.</li>
+            <li>Explain how Boolean Expressions and Control Flow Statements are translated using backpatching.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT 4: Run-Time Environment & Code Generation</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>What is an Activation Record? List its components.</li>
+            <li>Define Heap Management.</li>
+            <li>List the issues in the design of a Code Generator.</li>
+            <li>What is Name Binding?.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Discuss different Storage Allocation Strategies (Static, Stack, and Heap).</li>
+            <li>Explain the algorithm for identifying Basic Blocks and Flow Graphs.</li>
+            <li>Describe the design of a Simple Code Generator.</li>
+        </ul>
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT 5: Code Optimization</h3>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem;">Part A (2 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>What is Peephole Optimization?.</li>
+            <li>Define DAG (Directed Acyclic Graph) and its uses.</li>
+            <li>What is Dead Code Elimination?.</li>
+            <li>State the principal sources of optimization.</li>
+        </ul>
+        <p style="color: var(--muted); font-weight:600; margin-bottom:0.5rem; margin-top: 0.75rem;">Part B (13/16 Marks)</p>
+        <ul style="color: var(--muted); line-height: 1.8; list-style-position: inside; font-size:0.9rem;">
+            <li>Explain the Principal Sources of Optimization with examples (Loop, Data Flow, etc.).</li>
+            <li>Discuss the algorithm for DAG Construction for a basic block.</li>
+            <li>Explain Global Data Flow Analysis and Efficient Data Flow Algorithms.</li>
+        </ul>
+    </div>
+    
+    <div style="background: var(--bg-accent); padding: 1rem; border-radius: 6px; margin-top: 1.5rem;">
+        <p style="font-weight:600; margin-bottom:0.5rem;">Most Repeated / High-Weight Questions</p>
+        <p style="color: var(--text-primary); font-size:0.9rem; line-height:1.6;">Compiler phases with tracing, DFA minimization and NFA conversion, LL(1) and SLR parsing tables, code generation and optimization techniques, data flow analysis.</p>
+    </div>
+</section>
+        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a class="pyq-btn" href="/syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
+                <a class="pyq-btn primary" href="/index.html" target="_blank" rel="noopener">View Notes</a>
+            </div>
+        </section>
+        <section style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;">
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1rem;">How to Use These Question Papers</h2>
+    <ul style="color: var(--muted); line-height: 1.8; font-size: 0.95rem;">
+        <li><strong>Unit-Wise Preparation:</strong> Complete Units 1-2 for foundation, dedicate 40% of time to Units 3-4 (most frequent). Unit 5 focuses on optimization techniques.</li>
+        <li><strong>Parsing Table Construction:</strong> Master LL(1) and SLR parsing table construction. These appear frequently with 13-16 marks in Part B.</li>
+        <li><strong>Algorithm & Tracing:</strong> Trace compiler phases manually for given statements. Practice NFA to DFA conversion and DFA minimization algorithms.</li>
+        <li><strong>Code Generation:</strong> Understand three-address codes (quadruples, triples) and optimization techniques. Practice with simple expressions.</li>
+        <li><strong>Time Management:</strong> Allocate 60-90 minutes per major algorithm problem; practice Part B solutions under timed conditions combining parsing and code generation.</li>
+    </ul>
+</section>
         <section class="faq-section" style="margin-top: 2.5rem;">
-            <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Frequently Asked Questions about LearnSkart Question Papers</h2>
+            <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Frequently Asked Questions about CS3501 Compiler Design</h2>
             <div style="display:grid; gap:1rem;">
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">What is LearnSkart?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">LearnSkart is an academic platform that provides Anna University previous year question papers, notes, and study resources to help engineering students prepare effectively for semester examinations.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">Which topics appear most frequently in CS3501 exams?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Compiler phases and lexical analysis (Unit 1), syntax analysis with parsing tables (Unit 2), and code generation with optimization (Units 4-5) together account for 70% of exam marks. DFA minimization, LL(1)/SLR parsing, and three-address code generation are critical concepts.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">Are the question papers on LearnSkart free to download?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">Yes. All previous year question papers on LearnSkart can be viewed online or downloaded as PDF for free to support student exam preparation.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How should I approach parsing table construction in CS3501?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">For LL(1): Eliminate left recursion and left factoring, compute FIRST and FOLLOW sets, then fill the table. For SLR: Build LR(0) items, compute GOTO states, and resolve conflicts. Practice at least 5-10 table construction problems manually.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">Which Anna University regulations are covered?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">LearnSkart mainly provides study materials and question papers aligned with the latest Anna University Regulation 2021 syllabus.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">What is the best strategy for DFA minimization in CS3501?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Use the partition refinement algorithm: partition states into accepting and non-accepting sets. Refine partitions based on transition symbols until no further refinement is possible. Practice with 5-state and 6-state DFAs for speed and accuracy.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How do previous year question papers help in exam preparation?</h3>
-                    <p style="color: var(--muted); line-height: 1.6;">Practicing PYQs helps students understand exam patterns, frequently asked questions, important topics, and improves confidence before university exams.</p>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How can I score well on code generation questions in CS3501?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Understand three-address code types (quadruples, triples, indirect triples). Know activation record components and storage allocation strategies. Master backpatching for Boolean and control flow statement translation. Practice with real arithmetic and logical expressions.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">What should I prioritize when studying compiler optimization in CS3501?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Understand DAG construction for basic blocks, peephole optimization techniques, and data flow analysis. Focus on local optimizations (within a basic block) and global optimizations (across blocks). These appear as 13-16 mark questions.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.05rem; font-weight:600; margin-bottom:0.35rem;">How should I handle error recovery and YACC topics in CS3501?</h3>
+                    <p style="color: var(--muted); line-height: 1.6;">Study error recovery strategies: panic mode, phrase level, error productions. Understand YACC structure and its role in parser generation. These theoretical topics appear in Part B with 13-16 marks, focusing on practical application in compiler design.</p>
                 </div>
             </div>
         </section>
