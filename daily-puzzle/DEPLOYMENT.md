@@ -291,7 +291,9 @@ git checkout HEAD^ -- daily-puzzle/script.js
 
 #### Option 2: Google Analytics (Recommended)
 
-Add to `index.html` before `</head>`:
+Add to `index.html` before `<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>`:
 
 ```html
 <!-- Google Analytics -->

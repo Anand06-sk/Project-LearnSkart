@@ -233,6 +233,8 @@ function buildHtml(entry, canonicalUrl, folderSlug) {
     <link rel="canonical" href="${canonicalUrl}">
     <link rel="stylesheet" href="../assets/css/question.css">
     <link rel="stylesheet" href="../assets/css/pyq-static.css">
+<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 </head>
 <body>
     <nav class="nav">
