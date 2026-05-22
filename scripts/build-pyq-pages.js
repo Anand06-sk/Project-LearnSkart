@@ -63,6 +63,7 @@ function buildMetaDescription(entry) {
 
 function ensureTag(html, regex, replacement, insertBefore = '<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
+    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </head>') {
   if (regex.test(html)) {
     return html.replace(regex, replacement);
@@ -116,6 +117,7 @@ function buildFallbackHtml(entry, canonicalUrl) {
 
   return `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>${title}</title>\n    <meta name="description" content="${description}">\n    <meta name="keywords" content="${keywords}">\n    <meta name="robots" content="index, follow">\n    <link rel="canonical" href="${canonicalUrl}">\n    <link rel="stylesheet" href="../assets/css/question.css">\n<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
+    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </head>\n<body>\n    <main class="main container">\n        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">\n            <a href="../index.html">Home</a> &gt; <span>${entry.department || 'Departments'}</span> &gt; <span>${name}</span>\n        </nav>\n        <h1>${code} ${name} Previous Year Question Papers</h1>\n        <p>${intro}</p>\n    </main>\n    <script src="../assets/js/theme.js" defer></script>\n</body>\n</html>`;
 }
 
