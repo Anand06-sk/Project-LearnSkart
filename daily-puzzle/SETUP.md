@@ -3,6 +3,7 @@
 ## Project Overview
 
 A production-ready, mobile-first web-based game with:
+
 - **Swipe-based letter path puzzle** requiring full grid traversal
 - **Daily unique puzzle** system
 - **Firebase Firestore leaderboard** with top 20 scores
@@ -52,12 +53,12 @@ daily-puzzle/
 
 ```javascript
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "your-project.firebaseapp.com",
-    projectId: "your-project-id",
-    storageBucket: "your-project.appspot.com",
-    messagingSenderId: "123456789",
-    appId: "1:123456789:web:abcdef123456",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123456789:web:abcdef123456",
 };
 ```
 
@@ -67,12 +68,12 @@ Replace the `FIREBASE_CONFIG` object in `script.js` (lines 15-22) with your actu
 
 ```javascript
 const FIREBASE_CONFIG = {
-    apiKey: 'YOUR_FIREBASE_API_KEY',
-    authDomain: 'YOUR_PROJECT.firebaseapp.com',
-    projectId: 'YOUR_FIREBASE_PROJECT_ID',
-    storageBucket: 'YOUR_PROJECT.appspot.com',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    appId: 'YOUR_APP_ID',
+  apiKey: "YOUR_FIREBASE_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_FIREBASE_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 ```
 
@@ -112,11 +113,12 @@ Click **"Publish"**
 2. Navigate to **Settings** > **Pages**
 3. Select **"Deploy from a branch"**
 4. Choose branch (usually `main`)
-5. Select folder: `/root` (if files are in root) or `/docs` 
+5. Select folder: `/root` (if files are in root) or `/docs`
 6. If files are in `/daily-puzzle` folder, configure accordingly
 7. Click **Save**
 
 Your game will be live at:
+
 ```
 https://yourusername.github.io/Project-OpenNotes/daily-puzzle/
 ```
@@ -130,19 +132,19 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./daily-puzzle/
-        cname: yourdomain.com  # Optional: custom domain
+      - uses: actions/checkout@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./daily-puzzle/
+          cname: yourdomain.com # Optional: custom domain
 ```
 
 ---
@@ -196,6 +198,7 @@ Access at: `http://localhost:8000/daily-puzzle/`
 ### Game Rules
 
 ✅ **Must achieve all of these**:
+
 1. Start with letter 'L'
 2. Form complete word 'LEARNSKART'
 3. Move only to adjacent tiles (up, down, left, right)
@@ -203,6 +206,7 @@ Access at: `http://localhost:8000/daily-puzzle/`
 5. End on final letter 'T' AFTER full traversal
 
 ❌ **Game state checks**:
+
 - Reaching 'T' early → Show warning + pulse animation
 - Word complete but incomplete grid → Show warning
 - Invalid move → Red flash + shake animation
@@ -216,11 +220,13 @@ Access at: `http://localhost:8000/daily-puzzle/`
 ### Hint System
 
 **First hint** (uses modal):
+
 ```
 "Using a hint will add +5 seconds to your time"
 ```
 
 **All hints**:
+
 - +5 seconds penalty (automatic after first)
 - Show light blue path to next letter
 - Fade out after 2 seconds
@@ -270,12 +276,12 @@ leaderboard/
 
 ```javascript
 // Fetches top 20 scores, sorted by time ascending
-db.collection('leaderboard')
-    .doc('puzzle_2024_03_22')
-    .collection('scores')
-    .orderBy('time', 'asc')
-    .limit(20)
-    .get()
+db.collection("leaderboard")
+  .doc("puzzle_2024_03_22")
+  .collection("scores")
+  .orderBy("time", "asc")
+  .limit(20)
+  .get();
 ```
 
 ---
@@ -285,25 +291,29 @@ db.collection('leaderboard')
 ### Change Word
 
 In `script.js`, line 11:
+
 ```javascript
-WORD: 'LEARNSKART'  // Change to any word (max 10 letters)
+WORD: "LEARNSKART"; // Change to any word (max 10 letters)
 ```
 
 ### Change Grid Size
 
 In `script.js`, line 10:
+
 ```javascript
-GRID_SIZE: 5  // Change to 6, 7, etc.
+GRID_SIZE: 5; // Change to 6, 7, etc.
 ```
 
 ### Change Theme Color
 
 In `style.css`, line 9:
+
 ```css
---color-primary: #2563eb;  /* Blue - change this */
+--color-primary: #2563eb; /* Blue - change this */
 ```
 
 Example alternatives:
+
 ```css
 #dc2626  /* Red */
 #059669  /* Green */
@@ -314,6 +324,7 @@ Example alternatives:
 ### Change Timer Penalty for Hint
 
 In `script.js`, line 13:
+
 ```javascript
 HINT_TIME_PENALTY: 5,  // Change to 10 for 10 seconds
 ```
@@ -377,7 +388,7 @@ HINT_TIME_PENALTY: 5,  // Change to 10 for 10 seconds
 ```javascript
 // This should never happen with Hamiltonian path
 // If it does: Check DEBUG.generateDailyPuzzle()
-window.DEBUG.generateDailyPuzzle()  // In console
+window.DEBUG.generateDailyPuzzle(); // In console
 ```
 
 ### Swipe Not Working
@@ -402,13 +413,13 @@ window.DEBUG.generateDailyPuzzle()  // In console
 
 ## BROWSER COMPATIBILITY
 
-| Browser | Support | Notes |
-|---------|---------|-------|
-| Chrome 90+ | ✅ Full | Recommended |
-| Firefox 88+ | ✅ Full | Full support |
-| Safari 14+ | ✅ Full | iOS & macOS |
-| Edge 90+ | ✅ Full | Chromium-based |
-| IE 11 | ❌ No | No support |
+| Browser     | Support | Notes          |
+| ----------- | ------- | -------------- |
+| Chrome 90+  | ✅ Full | Recommended    |
+| Firefox 88+ | ✅ Full | Full support   |
+| Safari 14+  | ✅ Full | iOS & macOS    |
+| Edge 90+    | ✅ Full | Chromium-based |
+| IE 11       | ❌ No   | No support     |
 
 ---
 
@@ -417,10 +428,12 @@ window.DEBUG.generateDailyPuzzle()  // In console
 ### Data Validation
 
 ✅ **Client-side**:
+
 - Name: 3-16 chars, letters & spaces only
 - Time: Positive number, < 300 seconds
 
 ✅ **Server-side** (Firestore Rules):
+
 - Validates all submitted data
 - Rejects invalid entries
 - No SQL injection possible (Firestore)
@@ -439,18 +452,20 @@ window.DEBUG.generateDailyPuzzle()  // In console
 ### Add Google Analytics (Optional)
 
 ```html
-<!-- Add to index.html before closing <script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+<!-- Add to index.html before closing    <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
    
 </head> -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_MEASUREMENT_ID");
 </script>
 ```
 
@@ -494,6 +509,7 @@ Potential features to add:
 ## SUPPORT & CONTACT
 
 For issues or questions:
+
 1. Check **Console errors** (DevTools)
 2. Verify **Firebase config**
 3. Test with **sample puzzle** (check `window.DEBUG`)

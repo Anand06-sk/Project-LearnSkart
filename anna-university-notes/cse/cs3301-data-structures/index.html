@@ -1,340 +1,598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS3301 Notes - Data Structures | LearnSkart</title>
-    <meta name="description" content="CS3301 Data Structures notes for Anna University Computer Science and Engineering. Semester 3 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Data Structures, CS3301, Computer Science and Engineering, semester 3, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/cse/cs3301-data-structures/">
+    <meta
+      name="description"
+      content="CS3301 Data Structures notes for Anna University Computer Science and Engineering. Semester 3 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Data Structures, CS3301, Computer Science and Engineering, semester 3, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/cse/cs3301-data-structures/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
     <style>
-        .syllabus-card {
-            margin: 2rem 0;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(1rem, 2vw, 1.5rem);
-            background: var(--surface);
-            overflow-wrap: anywhere;
-            box-shadow: var(--shadow);
-        }
+      .syllabus-card {
+        margin: 2rem 0;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        background: var(--surface);
+        overflow-wrap: anywhere;
+        box-shadow: var(--shadow);
+      }
 
-        .syllabus-card .syllabus-blue-heading {
-            color: #1d4ed8 !important;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
+      .syllabus-card .syllabus-blue-heading {
+        color: #1d4ed8 !important;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
 
-        html.dark .syllabus-card,
-        body.dark-mode .syllabus-card {
-            border-color: #334155;
-            background: #0f172a;
-        }
+      html.dark .syllabus-card,
+      body.dark-mode .syllabus-card {
+        border-color: #334155;
+        background: #0f172a;
+      }
 
-        html.dark .syllabus-card .syllabus-blue-heading,
-        body.dark-mode .syllabus-card .syllabus-blue-heading {
-            color: #93c5fd !important;
-        }
+      html.dark .syllabus-card .syllabus-blue-heading,
+      body.dark-mode .syllabus-card .syllabus-blue-heading {
+        color: #93c5fd !important;
+      }
 
-        .important-questions-footer {
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-            color: var(--muted);
-            line-height: 1.6;
-        }
+      .important-questions-footer {
+        border-top: 1px solid var(--border);
+        padding-top: 1rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
 
-        .important-questions-footer-title {
-            font-size: 1.05rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
+      .important-questions-footer-title {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+      }
     </style>
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
-                
 
     <main class="main container">
-                
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            CS3301 Data Structures Notes - Anna University Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>CS3301 Data Structures</strong> Notes for Anna
+            University Regulation 2021 students. This page provides high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for <strong>Computer Science and Engineering Semester 3</strong>.
+            Students can easily access
+            <strong>Data Structures notes PDF download</strong>, important
+            questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">CS3301 Data Structures Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>CS3301 Data Structures</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Computer Science and Engineering Semester 3</strong>. Students can easily access <strong>Data Structures notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
+            <ul>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    CS3301- Data Structure-notes2.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1c88O8_HeNbUtuy-6ksTVQZ2jGo8Fkt8Q/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1c88O8_HeNbUtuy-6ksTVQZ2jGo8Fkt8Q"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    CS3301-Data Structures-Notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1WyOVYTamjxUoyJ2Op0-j6x7QEvUb39o3/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1WyOVYTamjxUoyJ2Op0-j6x7QEvUb39o3"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
+          <!-- CS3301 Notes - Anna University (Regulation 2021) | Value Content Section -->
+          <section
+            class="notes-value-section"
+            style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+          >
+            <h2>About CS3301 Data Structures</h2>
+            <p>
+              CS3301 is a core subject for Anna University Semester 3 students,
+              focusing on the design and implementation of data structures like
+              lists, stacks, queues, trees, and graphs. These
+              <strong>CS3301 notes</strong> help you understand how to organize
+              and process data efficiently, with simple explanations and
+              practical examples. With our
+              <strong>Anna University study materials</strong> and
+              <strong>CS3301 important questions</strong>, you can prepare for
+              both theory and practical exams with confidence.
+            </p>
+            <p>
+              Our <strong>CS3301 notes Anna University</strong> resources are
+              organized for easy revision, concept clarity, and hands-on
+              practice. They are perfect for last-minute study and for building
+              a strong foundation in <strong>Data Structures</strong>.
+            </p>
 
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">CS3301- Data Structure-notes2.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1c88O8_HeNbUtuy-6ksTVQZ2jGo8Fkt8Q/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1c88O8_HeNbUtuy-6ksTVQZ2jGo8Fkt8Q" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">CS3301-Data Structures-Notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1WyOVYTamjxUoyJ2Op0-j6x7QEvUb39o3/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1WyOVYTamjxUoyJ2Op0-j6x7QEvUb39o3" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-<!-- CS3301 Notes - Anna University (Regulation 2021) | Value Content Section -->
-<section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-    <h2>About CS3301 Data Structures</h2>
-    <p>
-        CS3301 is a core subject for Anna University Semester 3 students, focusing on the design and implementation of data structures like lists, stacks, queues, trees, and graphs. These <strong>CS3301 notes</strong> help you understand how to organize and process data efficiently, with simple explanations and practical examples. With our <strong>Anna University study materials</strong> and <strong>CS3301 important questions</strong>, you can prepare for both theory and practical exams with confidence.
-    </p>
-    <p>
-        Our <strong>CS3301 notes Anna University</strong> resources are organized for easy revision, concept clarity, and hands-on practice. They are perfect for last-minute study and for building a strong foundation in <strong>Data Structures</strong>.
-    </p>
+            <h2>What You Get on This Page</h2>
+            <ul>
+              <li>
+                Unit-wise lecture notes with clear explanations and sample
+                programs
+              </li>
+              <li>Frequently repeated important topics for exams</li>
+              <li>
+                Quick access to previous year question papers and extra
+                resources
+              </li>
+            </ul>
+            <p>
+              These materials are ideal for semester exam preparation, internal
+              tests, and quick revision. All content is updated for
+              <strong>Regulation 2021</strong> and suitable for CSE and related
+              branches.
+            </p>
+          </section>
+        </section>
+      </section>
 
-    <h2>What You Get on This Page</h2>
-    <ul>
-        <li>Unit-wise lecture notes with clear explanations and sample programs</li>
-        <li>Frequently repeated important topics for exams</li>
-        <li>Quick access to previous year question papers and extra resources</li>
-    </ul>
-    <p>
-        These materials are ideal for semester exam preparation, internal tests, and quick revision. All content is updated for <strong>Regulation 2021</strong> and suitable for CSE and related branches.
-    </p>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 0.75rem">
+          CS3301 - Data Structures Important Topics (Unit-wise)
+        </h2>
+        <p
+          style="
+            color: var(--muted);
+            max-width: 900px;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+          "
+        >
+          Data structures are essential for writing efficient programs and
+          solving problems in a systematic way. A strong understanding of linked
+          lists, stacks, trees, graphs, and hashing helps students improve
+          algorithm design, reduce time complexity, and perform better in
+          university exams.
+        </p>
 
-</section>
-</section>
+        <section style="margin-bottom: 1rem">
+          <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem">
+            Unit I - Linked Lists and Polynomial ADT
+          </h2>
+          <p style="color: var(--muted); line-height: 1.6">
+            This unit introduces linear data structures and their practical use
+            in memory-efficient programming. Focus on pointer-based
+            implementation, node creation, and common linked list operations.
+          </p>
+          <ul>
+            <li>Singly linked list</li>
+            <li>Doubly linked list</li>
+            <li>Circularly linked list</li>
+            <li>Polynomial ADT</li>
+          </ul>
         </section>
 
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom: 0.75rem;">CS3301 - Data Structures Important Topics (Unit-wise)</h2>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6; margin-bottom: 1.25rem;">Data structures are essential for writing efficient programs and solving problems in a systematic way. A strong understanding of linked lists, stacks, trees, graphs, and hashing helps students improve algorithm design, reduce time complexity, and perform better in university exams.</p>
-
-            <section style="margin-bottom: 1rem;">
-                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit I - Linked Lists and Polynomial ADT</h2>
-                <p style="color: var(--muted); line-height: 1.6;">This unit introduces linear data structures and their practical use in memory-efficient programming. Focus on pointer-based implementation, node creation, and common linked list operations.</p>
-                <ul>
-                    <li>Singly linked list</li>
-                    <li>Doubly linked list</li>
-                    <li>Circularly linked list</li>
-                    <li>Polynomial ADT</li>
-                </ul>
-            </section>
-
-            <section style="margin-bottom: 1rem;">
-                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit II - Stack and Queue ADT</h2>
-                <p style="color: var(--muted); line-height: 1.6;">This unit covers stack and queue-based problem solving, which is widely used in recursion, expression evaluation, and scheduling algorithms. Learn the operations, conditions, and standard applications carefully.</p>
-                <ul>
-                    <li>Applications of stack</li>
-                    <li>Stack ADT</li>
-                    <li>Deque</li>
-                    <li>Circular queue</li>
-                </ul>
-            </section>
-
-            <section style="margin-bottom: 1rem;">
-                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit III - Trees and Heaps</h2>
-                <p style="color: var(--muted); line-height: 1.6;">This unit explains hierarchical data representation and priority-based processing. Practice tree operations and understand how heaps support efficient selection and arrangement of data.</p>
-                <ul>
-                    <li>Tree traversal</li>
-                    <li>Binary search tree</li>
-                    <li>Binary heap</li>
-                    <li>AVL tree</li>
-                </ul>
-            </section>
-
-            <section style="margin-bottom: 1rem;">
-                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit IV - Graphs and Advanced Trees</h2>
-                <p style="color: var(--muted); line-height: 1.6;">This unit focuses on graph traversal and advanced tree structures used in indexing, routing, and shortest path problems. Understand algorithm logic and compare different graph techniques clearly.</p>
-                <ul>
-                    <li>B-tree and B+ tree</li>
-                    <li>BFS and DFS</li>
-                    <li>Dijkstra's algorithm</li>
-                    <li>Prim's algorithm and Kruskal's algorithm</li>
-                    <li>Euler circuit</li>
-                </ul>
-            </section>
-
-            <section style="margin-bottom: 1rem;">
-                <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Unit V - Searching, Sorting and Hashing</h2>
-                <p style="color: var(--muted); line-height: 1.6;">This unit is important for algorithm analysis and fast data retrieval. Revise searching, sorting, and hashing carefully because these topics often appear in both theory and problem-solving questions.</p>
-                <ul>
-                    <li>Binary search</li>
-                    <li>Insertion sort, selection sort, and merge sort</li>
-                    <li>Closed hashing with open addressing</li>
-                    <li>Extendible hashing</li>
-                </ul>
-            </section>
-
-            <footer class="important-questions-footer">
-                <p style="margin: 0; color: #334155; line-height: 1.6;"><strong>Exam Preparation Tips:</strong> Revise each unit with diagrams, algorithm steps, and dry-run examples. Practice linked list, tree, and sorting programs regularly, and compare time complexity, space complexity, and use cases before the exam.</p>
-            </footer>
+        <section style="margin-bottom: 1rem">
+          <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem">
+            Unit II - Stack and Queue ADT
+          </h2>
+          <p style="color: var(--muted); line-height: 1.6">
+            This unit covers stack and queue-based problem solving, which is
+            widely used in recursion, expression evaluation, and scheduling
+            algorithms. Learn the operations, conditions, and standard
+            applications carefully.
+          </p>
+          <ul>
+            <li>Applications of stack</li>
+            <li>Stack ADT</li>
+            <li>Deque</li>
+            <li>Circular queue</li>
+          </ul>
         </section>
 
-        <section class="faq-section" style="margin: 2rem 0; line-height: 1.7;">
-            <h2 style="margin-bottom: 0.75rem;">Frequently Asked Questions (FAQ)</h2>
-            <div class="faq-list">
-                <p><strong>What is CS3301 subject about?</strong><br>
-                CS3301 covers the theory and implementation of data structures such as arrays, linked lists, stacks, queues, trees, and graphs. It is essential for efficient programming and algorithm design.</p>
-
-                <p><strong>Are these CS3301 notes enough for exam preparation?</strong><br>
-                Yes, these notes are designed to cover the full Anna University syllabus and include important topics. For best results, combine them with classroom learning and practice previous year questions.</p>
-
-                <p><strong>How should I use these CS3301 notes effectively?</strong><br>
-                Read each unit's summary, practice the sample programs, and focus on the important topics. Create diagrams and practice tree/graph traversals and algorithm implementation regularly.</p>
-
-                <p><strong>Where can I find the official Anna University syllabus?</strong><br>
-                You can access the official Anna University syllabus for CS3301 through the "View Syllabus" button in the Additional Resources section above.</p>
-
-                <p><strong>Are the important topics here repeated in Anna University exams?</strong><br>
-                Many topics are based on previous exam trends and are likely to be repeated. Practicing these will help you score better in both internals and semester exams.</p>
-            </div>
+        <section style="margin-bottom: 1rem">
+          <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem">
+            Unit III - Trees and Heaps
+          </h2>
+          <p style="color: var(--muted); line-height: 1.6">
+            This unit explains hierarchical data representation and
+            priority-based processing. Practice tree operations and understand
+            how heaps support efficient selection and arrangement of data.
+          </p>
+          <ul>
+            <li>Tree traversal</li>
+            <li>Binary search tree</li>
+            <li>Binary heap</li>
+            <li>AVL tree</li>
+          </ul>
         </section>
 
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/CS3301-data-structures/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
+        <section style="margin-bottom: 1rem">
+          <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem">
+            Unit IV - Graphs and Advanced Trees
+          </h2>
+          <p style="color: var(--muted); line-height: 1.6">
+            This unit focuses on graph traversal and advanced tree structures
+            used in indexing, routing, and shortest path problems. Understand
+            algorithm logic and compare different graph techniques clearly.
+          </p>
+          <ul>
+            <li>B-tree and B+ tree</li>
+            <li>BFS and DFS</li>
+            <li>Dijkstra's algorithm</li>
+            <li>Prim's algorithm and Kruskal's algorithm</li>
+            <li>Euler circuit</li>
+          </ul>
         </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 3</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../cs3351-digital-principles-and-computer-organization/index.html">CS3351 Digital Principles and Computer Organization</a>
-                <a class="pyq-btn" href="../cs3352-foundations-of-data-science/index.html">CS3352 Foundations of Data Science</a>
-                <a class="pyq-btn" href="../cs3391-object-oriented-programming/index.html">CS3391 Object Oriented Programming</a>
-                <a class="pyq-btn" href="../ma3354-discrete-mathematics/index.html">MA3354 Discrete Mathematics</a>
-            </div>
+
+        <section style="margin-bottom: 1rem">
+          <h2 style="font-size: 1.2rem; margin-bottom: 0.35rem">
+            Unit V - Searching, Sorting and Hashing
+          </h2>
+          <p style="color: var(--muted); line-height: 1.6">
+            This unit is important for algorithm analysis and fast data
+            retrieval. Revise searching, sorting, and hashing carefully because
+            these topics often appear in both theory and problem-solving
+            questions.
+          </p>
+          <ul>
+            <li>Binary search</li>
+            <li>Insertion sort, selection sort, and merge sort</li>
+            <li>Closed hashing with open addressing</li>
+            <li>Extendible hashing</li>
+          </ul>
         </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3301 Anna University notes PDF</strong> and start your exam preparation today.</p>
 
+        <footer class="important-questions-footer">
+          <p style="margin: 0; color: #334155; line-height: 1.6">
+            <strong>Exam Preparation Tips:</strong> Revise each unit with
+            diagrams, algorithm steps, and dry-run examples. Practice linked
+            list, tree, and sorting programs regularly, and compare time
+            complexity, space complexity, and use cases before the exam.
+          </p>
+        </footer>
+      </section>
 
+      <section class="faq-section" style="margin: 2rem 0; line-height: 1.7">
+        <h2 style="margin-bottom: 0.75rem">Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-list">
+          <p>
+            <strong>What is CS3301 subject about?</strong><br />
+            CS3301 covers the theory and implementation of data structures such
+            as arrays, linked lists, stacks, queues, trees, and graphs. It is
+            essential for efficient programming and algorithm design.
+          </p>
+
+          <p>
+            <strong>Are these CS3301 notes enough for exam preparation?</strong
+            ><br />
+            Yes, these notes are designed to cover the full Anna University
+            syllabus and include important topics. For best results, combine
+            them with classroom learning and practice previous year questions.
+          </p>
+
+          <p>
+            <strong>How should I use these CS3301 notes effectively?</strong
+            ><br />
+            Read each unit's summary, practice the sample programs, and focus on
+            the important topics. Create diagrams and practice tree/graph
+            traversals and algorithm implementation regularly.
+          </p>
+
+          <p>
+            <strong
+              >Where can I find the official Anna University syllabus?</strong
+            ><br />
+            You can access the official Anna University syllabus for CS3301
+            through the "View Syllabus" button in the Additional Resources
+            section above.
+          </p>
+
+          <p>
+            <strong
+              >Are the important topics here repeated in Anna University
+              exams?</strong
+            ><br />
+            Many topics are based on previous exam trends and are likely to be
+            repeated. Practicing these will help you score better in both
+            internals and semester exams.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/CS3301-data-structures/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 3
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../cs3351-digital-principles-and-computer-organization/index.html"
+            >CS3351 Digital Principles and Computer Organization</a
+          >
+          <a
+            class="pyq-btn"
+            href="../cs3352-foundations-of-data-science/index.html"
+            >CS3352 Foundations of Data Science</a
+          >
+          <a
+            class="pyq-btn"
+            href="../cs3391-object-oriented-programming/index.html"
+            >CS3391 Object Oriented Programming</a
+          >
+          <a class="pyq-btn" href="../ma3354-discrete-mathematics/index.html"
+            >MA3354 Discrete Mathematics</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>CS3301 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/cse/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

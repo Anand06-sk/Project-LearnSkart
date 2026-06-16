@@ -1,29 +1,34 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const SYDATA_PATH = path.join(__dirname, '..', 'assets', 'data', 'sydata.json');
-const ACADEMICS_ROOT = path.join(__dirname, '..', 'anna-university-notes');
-const OUTPUT_ROOT = path.join(__dirname, '..', 'syllabus');
-const BASE_URL = (process.env.BASE_URL || 'https://learnskart.in').replace(/\/+$/, '');
-const DEFAULT_REG = String(process.env.SYLLABUS_REG || '2021');
+const SYDATA_PATH = path.join(__dirname, "..", "assets", "data", "sydata.json");
+const ACADEMICS_ROOT = path.join(__dirname, "..", "anna-university-notes");
+const OUTPUT_ROOT = path.join(__dirname, "..", "syllabus");
+const BASE_URL = (process.env.BASE_URL || "https://learnskart.in").replace(
+  /\/+$/,
+  "",
+);
+const DEFAULT_REG = String(process.env.SYLLABUS_REG || "2021");
 
 const DEPT_NAMES = {
-  CSE: 'Computer Science and Engineering',
-  ECE: 'Electronics and Communication Engineering',
-  EEE: 'Electrical and Electronics Engineering',
-  MECH: 'Mechanical Engineering',
-  CIVIL: 'Civil Engineering',
-  IT: 'Information Technology'
+  CSE: "Computer Science and Engineering",
+  ECE: "Electronics and Communication Engineering",
+  EEE: "Electrical and Electronics Engineering",
+  MECH: "Mechanical Engineering",
+  CIVIL: "Civil Engineering",
+  IT: "Information Technology",
 };
 
 function readJson(filePath) {
-  const raw = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');
+  const raw = fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
   return JSON.parse(raw);
 }
 
 function toDrivePreview(url) {
-  if (!url) return '';
-  const match = String(url).match(/drive\.google\.com\/(?:uc\?id=|file\/d\/)([a-zA-Z0-9_-]+)/);
+  if (!url) return "";
+  const match = String(url).match(
+    /drive\.google\.com\/(?:uc\?id=|file\/d\/)([a-zA-Z0-9_-]+)/,
+  );
   if (match && match[1]) {
     return `https://drive.google.com/file/d/${match[1]}/preview`;
   }
@@ -31,49 +36,52 @@ function toDrivePreview(url) {
 }
 
 function normalizeText(input) {
-  if (!input) return '';
+  if (!input) return "";
   let s = String(input);
-  s = s.replace(/\u2013|\u2014|\u2212/g, '-');
-  s = s.replace(/&amp;/g, '&');
-  s = s.replace(/\s+/g, ' ').trim();
+  s = s.replace(/\u2013|\u2014|\u2212/g, "-");
+  s = s.replace(/&amp;/g, "&");
+  s = s.replace(/\s+/g, " ").trim();
   return s;
 }
 
 function extractCodeFromText(text) {
   const match = String(text).match(/\(([A-Za-z]{2,4}\d{3,4})\)/);
-  return match ? match[1].toUpperCase() : '';
+  return match ? match[1].toUpperCase() : "";
 }
 
 function extractCodeFromSlug(slug) {
   const match = String(slug).match(/^([a-z]{2,4}\d{3,4})/i);
-  return match ? match[1].toUpperCase() : '';
+  return match ? match[1].toUpperCase() : "";
 }
 
 function sanitizeName(text, code) {
   let s = normalizeText(text);
   if (code) {
-    const codePattern = new RegExp(`\\(${code}\\)`, 'i');
-    s = s.replace(codePattern, '').trim();
+    const codePattern = new RegExp(`\\(${code}\\)`, "i");
+    s = s.replace(codePattern, "").trim();
   }
-  s = s.replace(/\([^)]*\)/g, '').trim();
+  s = s.replace(/\([^)]*\)/g, "").trim();
   return s;
 }
 
 function slugFromHref(href) {
-  if (!href) return '';
-  let cleaned = String(href).split('?')[0].split('#')[0];
-  cleaned = cleaned.replace(/index\.html$/i, '');
-  cleaned = cleaned.replace(/^\.+\//, '');
-  cleaned = cleaned.replace(/\/+$/, '');
-  const parts = cleaned.split('../index.html').filter(Boolean);
-  return parts[parts.length - 1] || '';
+  if (!href) return "";
+  let cleaned = String(href).split("?")[0].split("#")[0];
+  cleaned = cleaned.replace(/index\.html$/i, "");
+  cleaned = cleaned.replace(/^\.+\//, "");
+  cleaned = cleaned.replace(/\/+$/, "");
+  const parts = cleaned.split("../index.html").filter(Boolean);
+  return parts[parts.length - 1] || "";
 }
 
 function parseAcademicsSubjects(html) {
-  const reg2021BlockMatch = String(html).match(/<div class="content-area" id="content-2021">([\s\S]*?)<div class="content-area" id="content-2025"../i);
+  const reg2021BlockMatch = String(html).match(
+    /<div class="content-area" id="content-2021">([\s\S]*?)<div class="content-area" id="content-2025"../i,
+  );
   const sourceHtml = reg2021BlockMatch ? reg2021BlockMatch[1] : String(html);
   const semesters = {};
-  const sectionRegex = /<div class="section"[^>]*id="semester-(\d+)"[\s\S]*?<div class="cards-row">([\s\S]*?)<\/div>/gi;
+  const sectionRegex =
+    /<div class="section"[^>]*id="semester-(\d+)"[\s\S]*?<div class="cards-row">([\s\S]*?)<\/div>/gi;
   let sectionMatch;
 
   while ((sectionMatch = sectionRegex.exec(sourceHtml)) !== null) {
@@ -101,7 +109,7 @@ function parseAcademicsSubjects(html) {
         semester: sem,
         slug,
         code,
-        name
+        name,
       });
     }
 
@@ -115,37 +123,33 @@ function parseAcademicsSubjects(html) {
 
 function buildButton(label, href, isPrimary) {
   if (!href) {
-    return `<span class="pyq-btn${isPrimary ? ' primary' : ''} disabled">${label}</span>`;
+    return `<span class="pyq-btn${isPrimary ? " primary" : ""} disabled">${label}</span>`;
   }
-  return `<a class="pyq-btn${isPrimary ? ' primary' : ''}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
+  return `<a class="pyq-btn${isPrimary ? " primary" : ""}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
 }
 
 function buildDeptPage(options) {
-  const {
-    deptCode,
-    deptName,
-    deptLower,
-    reg,
-    regData,
-    subjectsBySem
-  } = options;
+  const { deptCode, deptName, deptLower, reg, regData, subjectsBySem } =
+    options;
 
   const canonicalUrl = `${BASE_URL}/syllabus/${deptLower}/`;
   const title = `${deptName} Syllabus | Anna University`;
   const description = `${deptName} syllabus PDFs for Anna University. Browse semester-wise syllabus and subject pages with direct PDF access.`;
   const keywords = `${deptName}, Anna University syllabus, ${deptCode}, semester syllabus, PDF`;
 
-  const wholePdf = regData && regData.whole ? regData.whole.pdf : '';
+  const wholePdf = regData && regData.whole ? regData.whole.pdf : "";
   const wholeView = toDrivePreview(wholePdf);
 
   const semesterCards = Object.keys((regData && regData.semesters) || {})
     .sort((a, b) => Number(a) - Number(b))
-    .map(sem => {
-      const entry = Array.isArray(regData.semesters[sem]) ? regData.semesters[sem][0] : null;
-      const pdf = entry ? entry.pdf : '';
+    .map((sem) => {
+      const entry = Array.isArray(regData.semesters[sem])
+        ? regData.semesters[sem][0]
+        : null;
+      const pdf = entry ? entry.pdf : "";
       const view = toDrivePreview(pdf);
-      const viewBtn = buildButton('View', view, false);
-      const dlBtn = buildButton('Download', pdf, true);
+      const viewBtn = buildButton("View", view, false);
+      const dlBtn = buildButton("Download", pdf, true);
       return [
         '<article class="syllabus-card">',
         `  <div class="card-meta">Semester ${sem}</div>`,
@@ -154,37 +158,37 @@ function buildDeptPage(options) {
         '  <div class="syllabus-actions">',
         `    ${viewBtn}`,
         `    ${dlBtn}`,
-        '  </div>',
-        '</article>'
-      ].join('\n');
+        "  </div>",
+        "</article>",
+      ].join("\n");
     })
-    .join('\n');
+    .join("\n");
 
   const subjectSections = Object.keys(subjectsBySem || {})
     .sort((a, b) => Number(a) - Number(b))
-    .map(sem => {
+    .map((sem) => {
       const subjectLinks = subjectsBySem[sem]
-        .map(subject => {
+        .map((subject) => {
           const codeBadge = subject.code
             ? `<span class="subject-code">${subject.code}</span>`
-            : '';
+            : "";
           return [
             `<a class="subject-card" href="../syllabus/${deptLower}/${subject.slug}/">`,
             `  <div class="subject-title">${subject.name}</div>`,
             `  ${codeBadge}`,
-            '</a>'
-          ].join('\n');
+            "</a>",
+          ].join("\n");
         })
-        .join('\n');
+        .join("\n");
 
       return [
         '<section class="syllabus-section">',
         `  <h3>Semester ${sem} Subjects</h3>`,
         `  <div class="subject-grid">${subjectLinks}</div>`,
-        '</section>'
-      ].join('\n');
+        "</section>",
+      ].join("\n");
     })
-    .join('\n');
+    .join("\n");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -201,10 +205,7 @@ function buildDeptPage(options) {
   <link rel="stylesheet" href="../assets/css/question.css">
   <link rel="stylesheet" href="../assets/css/pyq-static.css">
   <link rel="stylesheet" href="../assets/css/syllabus-static.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
    
 </head>
 <body>
@@ -244,8 +245,8 @@ function buildDeptPage(options) {
         <div class="hero-card-title"><i class="fas fa-book"></i> Whole Syllabus PDF</div>
         <div class="hero-card-sub">Complete regulation ${reg} syllabus</div>
         <div class="syllabus-actions">
-          ${buildButton('View', wholeView, false)}
-          ${buildButton('Download', wholePdf, true)}
+          ${buildButton("View", wholeView, false)}
+          ${buildButton("Download", wholePdf, true)}
         </div>
       </div>
     </header>
@@ -276,27 +277,27 @@ function buildDeptPage(options) {
 }
 
 function buildSubjectPage(options) {
-  const {
-    deptCode,
-    deptName,
-    deptLower,
-    reg,
-    semester,
-    subject
-  } = options;
+  const { deptCode, deptName, deptLower, reg, semester, subject } = options;
 
-  const codeLabel = subject.code ? `${subject.code} ` : '';
+  const codeLabel = subject.code ? `${subject.code} ` : "";
   const pageTitle = `${codeLabel}${subject.name} Syllabus | ${deptName} | Anna University`;
   const canonicalUrl = `${BASE_URL}/syllabus/${deptLower}/${subject.slug}/`;
-  const description = `${codeLabel}${subject.name} syllabus for Anna University ${deptName}. Semester ${semester}, Regulation ${reg}. View and download the syllabus PDF.`.replace(/\s+/g, ' ');
-  const keywords = `${subject.name}, ${subject.code || ''}, ${deptName}, semester ${semester}, regulation ${reg}, Anna University syllabus`.replace(/\s+/g, ' ').trim();
+  const description =
+    `${codeLabel}${subject.name} syllabus for Anna University ${deptName}. Semester ${semester}, Regulation ${reg}. View and download the syllabus PDF.`.replace(
+      /\s+/g,
+      " ",
+    );
+  const keywords =
+    `${subject.name}, ${subject.code || ""}, ${deptName}, semester ${semester}, regulation ${reg}, Anna University syllabus`
+      .replace(/\s+/g, " ")
+      .trim();
 
-  const pdf = subject.semesterPdf || '';
+  const pdf = subject.semesterPdf || "";
   const view = toDrivePreview(pdf);
-  const viewBtn = buildButton('View Syllabus', view, false);
-  const dlBtn = buildButton('Download Syllabus', pdf, true);
+  const viewBtn = buildButton("View Syllabus", view, false);
+  const dlBtn = buildButton("Download Syllabus", pdf, true);
 
-  const wholePdf = subject.wholePdf || '';
+  const wholePdf = subject.wholePdf || "";
   const wholeView = toDrivePreview(wholePdf);
 
   const wholeCard = wholePdf
@@ -306,12 +307,12 @@ function buildSubjectPage(options) {
         '  <div class="card-title"><i class="fas fa-book"></i> Whole Syllabus PDF</div>',
         `  <div class="card-sub">${deptCode} - Regulation ${reg}</div>`,
         '  <div class="syllabus-actions">',
-        `    ${buildButton('View', wholeView, false)}`,
-        `    ${buildButton('Download', wholePdf, true)}`,
-        '  </div>',
-        '</article>'
-      ].join('\n')
-    : '';
+        `    ${buildButton("View", wholeView, false)}`,
+        `    ${buildButton("Download", wholePdf, true)}`,
+        "  </div>",
+        "</article>",
+      ].join("\n")
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -328,10 +329,7 @@ function buildSubjectPage(options) {
   <link rel="stylesheet" href="../assets/css/question.css">
   <link rel="stylesheet" href="../assets/css/pyq-static.css">
   <link rel="stylesheet" href="../assets/css/syllabus-static.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
    
 </head>
 <body>
@@ -405,16 +403,16 @@ function build() {
   const deptCodes = Object.keys(sydata || {});
   let written = 0;
 
-  deptCodes.forEach(deptCode => {
+  deptCodes.forEach((deptCode) => {
     const deptLower = deptCode.toLowerCase();
     const deptName = DEPT_NAMES[deptCode] || deptCode;
     const regData = sydata[deptCode] && sydata[deptCode][DEFAULT_REG];
     if (!regData) return;
 
-    const academicsPath = path.join(ACADEMICS_ROOT, deptLower, 'index.html');
+    const academicsPath = path.join(ACADEMICS_ROOT, deptLower, "index.html");
     if (!fs.existsSync(academicsPath)) return;
 
-    const academicsHtml = fs.readFileSync(academicsPath, 'utf8');
+    const academicsHtml = fs.readFileSync(academicsPath, "utf8");
     const subjectsBySem = parseAcademicsSubjects(academicsHtml);
 
     const deptHtml = buildDeptPage({
@@ -423,23 +421,25 @@ function build() {
       deptLower,
       reg: DEFAULT_REG,
       regData,
-      subjectsBySem
+      subjectsBySem,
     });
 
     const deptDir = path.join(OUTPUT_ROOT, deptLower);
     ensureDir(deptDir);
-    fs.writeFileSync(path.join(deptDir, 'index.html'), `${deptHtml}\n`, 'utf8');
+    fs.writeFileSync(path.join(deptDir, "index.html"), `${deptHtml}\n`, "utf8");
     written += 1;
 
-    Object.keys(subjectsBySem).forEach(sem => {
-      subjectsBySem[sem].forEach(subject => {
+    Object.keys(subjectsBySem).forEach((sem) => {
+      subjectsBySem[sem].forEach((subject) => {
         const outputDir = path.join(deptDir, subject.slug);
         ensureDir(outputDir);
-        const semesterEntry = Array.isArray(regData.semesters && regData.semesters[sem])
+        const semesterEntry = Array.isArray(
+          regData.semesters && regData.semesters[sem],
+        )
           ? regData.semesters[sem][0]
           : null;
-        const semesterPdf = semesterEntry ? semesterEntry.pdf : '';
-        const wholePdf = regData.whole ? regData.whole.pdf : '';
+        const semesterPdf = semesterEntry ? semesterEntry.pdf : "";
+        const wholePdf = regData.whole ? regData.whole.pdf : "";
 
         const subjectHtml = buildSubjectPage({
           deptCode,
@@ -450,11 +450,15 @@ function build() {
           subject: {
             ...subject,
             semesterPdf,
-            wholePdf
-          }
+            wholePdf,
+          },
         });
 
-        fs.writeFileSync(path.join(outputDir, 'index.html'), `${subjectHtml}\n`, 'utf8');
+        fs.writeFileSync(
+          path.join(outputDir, "index.html"),
+          `${subjectHtml}\n`,
+          "utf8",
+        );
         written += 1;
       });
     });

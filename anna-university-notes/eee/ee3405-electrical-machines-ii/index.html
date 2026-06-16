@@ -1,297 +1,560 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EE3405 Notes - Electrical Machines II | LearnSkart</title>
-    <meta name="description" content="EE3405 Electrical Machines II notes for Anna University Electrical and Electronics Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Electrical Machines II, EE3405, Electrical and Electronics Engineering, semester 4, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/eee/ee3405-electrical-machines-ii/">
+    <meta
+      name="description"
+      content="EE3405 Electrical Machines II notes for Anna University Electrical and Electronics Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Electrical Machines II, EE3405, Electrical and Electronics Engineering, semester 4, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/eee/ee3405-electrical-machines-ii/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            EE3405 Electrical Machines II Notes - Anna University Regulation
+            2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>EE3405 Electrical Machines II</strong> Notes for
+            Anna University Regulation 2021 students. This page provides
+            high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for
+            <strong>Electrical and Electronics Engineering Semester 4</strong>.
+            Students can easily access
+            <strong>Electrical Machines II notes PDF download</strong>,
+            important questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">EE3405 Electrical Machines II Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>EE3405 Electrical Machines II</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Electrical and Electronics Engineering Semester 4</strong>. Students can easily access <strong>Electrical Machines II notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
+            <ul>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3405-Electrical Machines II-Unit1.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1ruzsLkHD15_xGm6pP0dovzTaCZ-Iv_EL/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1ruzsLkHD15_xGm6pP0dovzTaCZ-Iv_EL"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3405-Electrical Machines II-Unit2.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1A9Q6X59rWpaJ34qP5wntbGTAoz-lXn6Q/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1A9Q6X59rWpaJ34qP5wntbGTAoz-lXn6Q"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3405-Electrical Machines II-Unit3.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1pGaez1Yk0TdMr_MvblxrmdbDtdBpsMmx/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1pGaez1Yk0TdMr_MvblxrmdbDtdBpsMmx"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3405-Electrical Machines II-Unit4.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1yIXH_X4m6e1L09Ugly9aNgacjmDgwE44/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1yIXH_X4m6e1L09Ugly9aNgacjmDgwE44"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3405-Electrical Machines II-Unit5.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1vBTNsuI4NAX19MUcea_CnxwKeyYxIZ_t/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1vBTNsuI4NAX19MUcea_CnxwKeyYxIZ_t"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
 
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3405-Electrical Machines II-Unit1.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1ruzsLkHD15_xGm6pP0dovzTaCZ-Iv_EL/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1ruzsLkHD15_xGm6pP0dovzTaCZ-Iv_EL" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3405-Electrical Machines II-Unit2.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1A9Q6X59rWpaJ34qP5wntbGTAoz-lXn6Q/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1A9Q6X59rWpaJ34qP5wntbGTAoz-lXn6Q" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3405-Electrical Machines II-Unit3.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1pGaez1Yk0TdMr_MvblxrmdbDtdBpsMmx/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1pGaez1Yk0TdMr_MvblxrmdbDtdBpsMmx" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3405-Electrical Machines II-Unit4.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1yIXH_X4m6e1L09Ugly9aNgacjmDgwE44/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1yIXH_X4m6e1L09Ugly9aNgacjmDgwE44" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3405-Electrical Machines II-Unit5.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1vBTNsuI4NAX19MUcea_CnxwKeyYxIZ_t/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1vBTNsuI4NAX19MUcea_CnxwKeyYxIZ_t" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
+      <!-- EE3405 Notes - Anna University (Regulation 2021) | Value Content Section -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About EE3405 Electrical Machines II</h2>
+        <p>
+          EE3405 Electrical Machines II is a core Semester 4 subject for Anna
+          University Electrical and Electronics Engineering students. This
+          course focuses on the construction, operation, and analysis of
+          synchronous machines and induction motors. These
+          <strong>EE3405 notes</strong> provide a comprehensive understanding of
+          alternators, synchronous motors, three-phase and single-phase
+          induction motors, and their industrial applications.
+        </p>
+        <p>
+          With our <strong>Anna University study materials</strong> and
+          <strong>EE3405 important topics</strong>, you will master phasor
+          diagrams, voltage regulation, parallel operation, torque-slip
+          characteristics, and advanced starting methods. The content is
+          designed for both theoretical clarity and practical problem-solving.
+        </p>
+        <p>
+          These <strong>EE3405 Electrical Machines II notes</strong> help you
+          analyze machine performance, solve numerical problems, and prepare
+          confidently for university exams and interviews.
+        </p>
+
+        <h2>What You Will Get On This Page</h2>
+        <ul>
+          <li>Downloadable PDF notes for all units</li>
+          <li>
+            Comprehensive study materials for alternators, synchronous and
+            induction motors
+          </li>
+          <li>Unit-wise important topics for focused revision</li>
+          <li>Exam-oriented questions and solved examples</li>
+          <li>
+            Quick reference guides for phasor diagrams and machine analysis
+          </li>
+        </ul>
+
+        <section class="important-topics-section">
+          <h2>Important Topics</h2>
+          <div style="margin-bottom: 1.5rem">
+            <strong>EE3405 Electrical Machines II – Important Topics</strong
+            ><br />
+            <strong>UNIT 1</strong>
+            <ul>
+              <li>Construction & working of alternator</li>
+              <li>EMF equation of alternator</li>
+              <li>Voltage regulation (EMF method)</li>
+              <li>Parallel operation of alternators</li>
+              <li>Phasor diagrams of alternator</li>
+            </ul>
+            <strong>UNIT 2</strong>
+            <ul>
+              <li>Synchronous motor construction & working</li>
+              <li>Equivalent circuit of synchronous motor</li>
+              <li>Power factor control & phasor diagrams</li>
+              <li>Starting methods of synchronous motor</li>
+              <li>V and inverted V curves</li>
+            </ul>
+            <strong>UNIT 3</strong>
+            <ul>
+              <li>Three phase induction motor construction & working</li>
+              <li>Torque-slip characteristics</li>
+              <li>Maximum torque condition</li>
+              <li>Circle diagram of induction motor</li>
+              <li>Power stages & losses in induction motor</li>
+            </ul>
+            <strong>UNIT 4</strong>
+            <ul>
+              <li>Starting methods of induction motor</li>
+              <li>Rotor resistance starter</li>
+              <li>Slip power recovery methods (Kramer & Scherbius)</li>
+              <li>Cascade operation of induction motor</li>
+              <li>Static drives (Kramer & Scherbius systems)</li>
+            </ul>
+            <strong>UNIT 5</strong>
+            <ul>
+              <li>Single phase induction motor basics</li>
+              <li>Double revolving field theory</li>
+              <li>Types of single phase motors</li>
+              <li>Hysteresis motor & AC series motor</li>
+              <li>Repulsion motor & servo motor</li>
+              <li>Linear induction motor</li>
+            </ul>
+          </div>
         </section>
 
-                <!-- EE3405 Notes - Anna University (Regulation 2021) | Value Content Section -->
-                <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-                        <h2>About EE3405 Electrical Machines II</h2>
-                        <p>
-                                EE3405 Electrical Machines II is a core Semester 4 subject for Anna University Electrical and Electronics Engineering students. This course focuses on the construction, operation, and analysis of synchronous machines and induction motors. These <strong>EE3405 notes</strong> provide a comprehensive understanding of alternators, synchronous motors, three-phase and single-phase induction motors, and their industrial applications.
-                        </p>
-                        <p>
-                                With our <strong>Anna University study materials</strong> and <strong>EE3405 important topics</strong>, you will master phasor diagrams, voltage regulation, parallel operation, torque-slip characteristics, and advanced starting methods. The content is designed for both theoretical clarity and practical problem-solving.
-                        </p>
-                        <p>
-                                These <strong>EE3405 Electrical Machines II notes</strong> help you analyze machine performance, solve numerical problems, and prepare confidently for university exams and interviews.
-                        </p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <p>
+            <strong>What does EE3405 Electrical Machines II cover?</strong
+            ><br />It covers alternators, synchronous motors, three-phase and
+            single-phase induction motors, and their analysis for EEE students.
+          </p>
+          <p>
+            <strong
+              >Are Anna University EE3405 notes available as PDF
+              downloads?</strong
+            ><br />Yes, you can download detailed PDF notes for all units from
+            this page.
+          </p>
+          <p>
+            <strong>What are the most important topics for EE3405 exams?</strong
+            ><br />Key topics include voltage regulation, phasor diagrams,
+            torque-slip characteristics, and starting methods.
+          </p>
+          <p>
+            <strong>How do these notes help with exam preparation?</strong
+            ><br />They provide unit-wise important topics, solved examples, and
+            revision guides for Anna University exams.
+          </p>
+          <p>
+            <strong
+              >Are practical applications and machine analysis included?</strong
+            ><br />Yes, the notes include practical examples, phasor diagrams,
+            and real-world machine analysis scenarios.
+          </p>
+          <p>
+            <strong>Can these materials help with competitive exams?</strong
+            ><br />These notes are useful for university exams and as a base for
+            GATE and other competitive tests involving electrical machines.
+          </p>
+        </div>
+      </section>
 
-                        <h2>What You Will Get On This Page</h2>
-                        <ul>
-                                <li>Downloadable PDF notes for all units</li>
-                                <li>Comprehensive study materials for alternators, synchronous and induction motors</li>
-                                <li>Unit-wise important topics for focused revision</li>
-                                <li>Exam-oriented questions and solved examples</li>
-                                <li>Quick reference guides for phasor diagrams and machine analysis</li>
-                        </ul>
-
-                        <section class="important-topics-section">
-                                <h2>Important Topics</h2>
-                                <div style="margin-bottom:1.5rem">
-<strong>EE3405 Electrical Machines II – Important Topics</strong><br>
-<strong>UNIT 1</strong>
-<ul>
-    <li>Construction & working of alternator</li>
-    <li>EMF equation of alternator</li>
-    <li>Voltage regulation (EMF method)</li>
-    <li>Parallel operation of alternators</li>
-    <li>Phasor diagrams of alternator</li>
-</ul>
-<strong>UNIT 2</strong>
-<ul>
-    <li>Synchronous motor construction & working</li>
-    <li>Equivalent circuit of synchronous motor</li>
-    <li>Power factor control & phasor diagrams</li>
-    <li>Starting methods of synchronous motor</li>
-    <li>V and inverted V curves</li>
-</ul>
-<strong>UNIT 3</strong>
-<ul>
-    <li>Three phase induction motor construction & working</li>
-    <li>Torque-slip characteristics</li>
-    <li>Maximum torque condition</li>
-    <li>Circle diagram of induction motor</li>
-    <li>Power stages & losses in induction motor</li>
-</ul>
-<strong>UNIT 4</strong>
-<ul>
-    <li>Starting methods of induction motor</li>
-    <li>Rotor resistance starter</li>
-    <li>Slip power recovery methods (Kramer & Scherbius)</li>
-    <li>Cascade operation of induction motor</li>
-    <li>Static drives (Kramer & Scherbius systems)</li>
-</ul>
-<strong>UNIT 5</strong>
-<ul>
-    <li>Single phase induction motor basics</li>
-    <li>Double revolving field theory</li>
-    <li>Types of single phase motors</li>
-    <li>Hysteresis motor & AC series motor</li>
-    <li>Repulsion motor & servo motor</li>
-    <li>Linear induction motor</li>
-</ul>
-                                </div>
-                        </section>
-
-                        <h2>Frequently Asked Questions</h2>
-                        <div class="faq-list">
-                                <p><strong>What does EE3405 Electrical Machines II cover?</strong><br>It covers alternators, synchronous motors, three-phase and single-phase induction motors, and their analysis for EEE students.</p>
-                                <p><strong>Are Anna University EE3405 notes available as PDF downloads?</strong><br>Yes, you can download detailed PDF notes for all units from this page.</p>
-                                <p><strong>What are the most important topics for EE3405 exams?</strong><br>Key topics include voltage regulation, phasor diagrams, torque-slip characteristics, and starting methods.</p>
-                                <p><strong>How do these notes help with exam preparation?</strong><br>They provide unit-wise important topics, solved examples, and revision guides for Anna University exams.</p>
-                                <p><strong>Are practical applications and machine analysis included?</strong><br>Yes, the notes include practical examples, phasor diagrams, and real-world machine analysis scenarios.</p>
-                                <p><strong>Can these materials help with competitive exams?</strong><br>These notes are useful for university exams and as a base for GATE and other competitive tests involving electrical machines.</p>
-                        </div>
-                </section>
-
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/EE3405-electrical-machines-ii/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 4</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../ee3401-transmission-and-distribution/index.html">EE3401 Transmission and Distribution</a>
-                <a class="pyq-btn" href="../ee3402-linear-integrated-circuits/index.html">EE3402 Linear Integrated Circuits</a>
-                <a class="pyq-btn" href="../ee3403-measurements-and-instrumentation/index.html">EE3403 Measurements and Instrumentation</a>
-                <a class="pyq-btn" href="../ee3404-microprocessor-and-microcontroller/index.html">EE3404 Microprocessor and Microcontroller</a>
-                <a class="pyq-btn" href="../ge3451-environmental-sciences-and-sustainability/index.html">GE3451 Environmental Sciences and Sustainability</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>EE3405 Anna University notes PDF</strong> and start your exam preparation today.</p>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/EE3405-electrical-machines-ii/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 4
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../ee3401-transmission-and-distribution/index.html"
+            >EE3401 Transmission and Distribution</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ee3402-linear-integrated-circuits/index.html"
+            >EE3402 Linear Integrated Circuits</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ee3403-measurements-and-instrumentation/index.html"
+            >EE3403 Measurements and Instrumentation</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ee3404-microprocessor-and-microcontroller/index.html"
+            >EE3404 Microprocessor and Microcontroller</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ge3451-environmental-sciences-and-sustainability/index.html"
+            >GE3451 Environmental Sciences and Sustainability</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>EE3405 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/eee/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/eee/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

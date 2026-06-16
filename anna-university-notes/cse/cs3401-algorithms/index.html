@@ -1,423 +1,666 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS3401 Notes - Algorithms | LearnSkart</title>
-    <meta name="description" content="CS3401 Algorithms notes for Anna University Computer Science and Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Algorithms, CS3401, Computer Science and Engineering, semester 4, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/cse/cs3401-algorithms/">
+    <meta
+      name="description"
+      content="CS3401 Algorithms notes for Anna University Computer Science and Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Algorithms, CS3401, Computer Science and Engineering, semester 4, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/cse/cs3401-algorithms/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
     <style>
-        .syllabus-card {
-            margin: 2rem 0;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(1rem, 2vw, 1.5rem);
-            background: var(--surface);
-            overflow-wrap: anywhere;
-            box-shadow: var(--shadow);
-        }
+      .syllabus-card {
+        margin: 2rem 0;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        background: var(--surface);
+        overflow-wrap: anywhere;
+        box-shadow: var(--shadow);
+      }
 
-        .syllabus-card .syllabus-blue-heading {
-            color: #1d4ed8 !important;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
+      .syllabus-card .syllabus-blue-heading {
+        color: #1d4ed8 !important;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
 
-        html.dark .syllabus-card,
-        body.dark-mode .syllabus-card {
-            border-color: #334155;
-            background: #0f172a;
-        }
+      html.dark .syllabus-card,
+      body.dark-mode .syllabus-card {
+        border-color: #334155;
+        background: #0f172a;
+      }
 
-        html.dark .syllabus-card .syllabus-blue-heading,
-        body.dark-mode .syllabus-card .syllabus-blue-heading {
-            color: #93c5fd !important;
-        }
+      html.dark .syllabus-card .syllabus-blue-heading,
+      body.dark-mode .syllabus-card .syllabus-blue-heading {
+        color: #93c5fd !important;
+      }
     </style>
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
-                
 
     <main class="main container">
-                
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            CS3401 Algorithms Notes - Anna University Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>CS3401 Algorithms</strong> Notes for Anna
+            University Regulation 2021 students. This page provides high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for <strong>Computer Science and Engineering Semester 4</strong>.
+            Students can easily access
+            <strong>Algorithms notes PDF download</strong>, important questions,
+            and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">CS3401 Algorithms Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>CS3401 Algorithms</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Computer Science and Engineering Semester 4</strong>. Students can easily access <strong>Algorithms notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
+            <ul>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">CS3401-Algorithms.pdf</div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1mg4nkazihpQujKD0L3t74gcGr23s_POc/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1mg4nkazihpQujKD0L3t74gcGr23s_POc"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section
+            class="notes-value-section"
+            style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+          >
+            <h2>About CS3401 Algorithms</h2>
+            <p>
+              CS3401 is a core subject for Anna University Semester 4 students,
+              introducing the fundamentals of algorithm design, analysis, and
+              optimization techniques. These <strong>CS3401 notes</strong> are
+              designed to help you understand key concepts in a simple,
+              step-by-step manner. Whether you are preparing for internal
+              assessments or university exams, our
+              <strong>Anna University study materials</strong> and
+              <strong>CS3401 important questions</strong> make revision faster
+              and more effective. With clear explanations and practical
+              examples, you can build a strong foundation in
+              <strong>Algorithms</strong> and improve your exam scores.
+            </p>
+            <p>
+              Using these
+              <strong>CS3401 notes Anna University</strong> resources, you can
+              quickly revise all units, clarify doubts, and practice with
+              repeated exam questions. The content is tailored for easy learning
+              and better retention, making your exam preparation stress-free and
+              productive.
+            </p>
+
+            <h2>What You Get on This Page</h2>
+            <ul>
+              <li>Easy-to-understand lecture notes for all units</li>
+              <li>Handpicked important topics frequently asked in exams</li>
+              <li>
+                Quick links to previous year question papers and additional
+                resources
+              </li>
+            </ul>
+            <p>
+              These resources are perfect for last-minute revision, semester
+              exam preparation, and internal tests. All materials are organized
+              for CSE and other engineering branches following
+              <strong>Regulation 2021</strong>.
+            </p>
+
+            <!-- Important Topics Section Start -->
+            <section style="margin: 2rem 0">
+              <h2 style="margin-bottom: 0.75rem">
+                CS3401 - Algorithms Important Topics (Unit-wise)
+              </h2>
+              <section style="margin-bottom: 1.5rem">
+                <h3>UNIT 1 – INTRODUCTION & ASYMPTOTIC ANALYSIS</h3>
+                <ul>
+                  <li>
+                    <strong>Asymptotic Analysis</strong>
+                    <ul>
+                      <li>Big-O, Big-Ω, Big-Θ definitions</li>
+                      <li>Growth rate comparison of functions</li>
+                      <li>Properties of asymptotic notations</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Recurrences</strong>
+                    <ul>
+                      <li>Substitution method (very important)</li>
+                      <li>Recurrence solving basics like T(n)=2T(n/2)+n</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Searching Algorithms</strong>
+                    <ul>
+                      <li>Linear search (complexity in all cases)</li>
+                      <li>Binary search (time + space complexity)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>String Matching</strong>
+                    <ul>
+                      <li>
+                        Naïve string matching (very important trace-based
+                        question)
+                      </li>
+                      <li>Pattern shifting concept</li>
+                      <li>Rabin-Karp algorithm (basic idea + steps)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Complexity Analysis</strong>
+                    <ul>
+                      <li>Best, worst, average case definitions</li>
+                      <li>
+                        Complexity of simple algorithms (like max element in
+                        array)
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+              <section style="margin-bottom: 1.5rem">
+                <h3>UNIT 2 – GRAPHS & ALGORITHMS</h3>
+                <ul>
+                  <li>
+                    <strong>Graph Traversals</strong>
+                    <ul>
+                      <li>BFS (level order traversal idea)</li>
+                      <li>DFS (recursive/stack approach)</li>
+                      <li>BFS vs DFS comparison</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Shortest Path Algorithms</strong>
+                    <ul>
+                      <li>Dijkstra’s algorithm (very important numericals)</li>
+                      <li>
+                        Floyd Warshall algorithm (all-pairs shortest path)
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Minimum Spanning Tree</strong>
+                    <ul>
+                      <li>Kruskal’s algorithm (sorting + union-find idea)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Network Flow</strong>
+                    <ul>
+                      <li>Ford-Fulkerson method (max flow concept)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Core Graph Concepts</strong>
+                    <ul>
+                      <li>Weighted graphs</li>
+                      <li>Directed vs undirected graphs</li>
+                      <li>Adjacency matrix vs list (basic understanding)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+              <section style="margin-bottom: 1.5rem">
+                <h3>UNIT 3 – DIVIDE & CONQUER / GREEDY / DP</h3>
+                <ul>
+                  <li>
+                    <strong>Divide & Conquer</strong>
+                    <ul>
+                      <li>Merge sort (full algorithm + analysis)</li>
+                      <li>Quick sort (partitioning logic + complexity)</li>
+                      <li>Recurrence relation solving in sorting</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Greedy Algorithms</strong>
+                    <ul>
+                      <li>Activity selection problem (very important)</li>
+                      <li>Huffman coding / Huffman tree construction</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Dynamic Programming</strong>
+                    <ul>
+                      <li>
+                        Matrix chain multiplication (very important table
+                        method)
+                      </li>
+                      <li>DP idea vs recursion</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Algorithm Analysis</strong>
+                    <ul>
+                      <li>Time complexity of sorting algorithms</li>
+                      <li>Best vs worst case behavior</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+              <section style="margin-bottom: 1.5rem">
+                <h3>UNIT 4 – BACKTRACKING & BRANCH AND BOUND</h3>
+                <ul>
+                  <li>
+                    <strong>Backtracking</strong>
+                    <ul>
+                      <li>N-Queens problem (standard exam question)</li>
+                      <li>Subset sum problem (tree method)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Branch and Bound</strong>
+                    <ul>
+                      <li>TSP (Travelling Salesperson Problem)</li>
+                      <li>Knapsack problem (0/1 knapsack using bounding)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Graph-based Problems</strong>
+                    <ul>
+                      <li>Hamiltonian cycle problem</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Conceptual Comparison</strong>
+                    <ul>
+                      <li>
+                        Backtracking vs Branch and Bound (very important theory
+                        question)
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+              <section style="margin-bottom: 1.5rem">
+                <h3>UNIT 5 – COMPLEXITY THEORY & NP PROBLEMS</h3>
+                <ul>
+                  <li>
+                    <strong>Complexity Classes</strong>
+                    <ul>
+                      <li>P, NP, NP-Hard, NP-Complete</li>
+                      <li>Differences and relationships</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>NP-Completeness</strong>
+                    <ul>
+                      <li>3-CNF SAT problem (very important)</li>
+                      <li>Proof idea of NP-complete problems</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Randomized Algorithms</strong>
+                    <ul>
+                      <li>Randomized quicksort</li>
+                      <li>Miller-Rabin primality test</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Approximation Concepts</strong>
+                    <ul>
+                      <li>Subset sum approximation idea</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Key Theory Ideas</strong>
+                    <ul>
+                      <li>Polynomial time reduction</li>
+                      <li>Verifying vs solving problems</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+            </section>
+            <!-- Important Topics Section End -->
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-list">
+              <p>
+                <strong>What is CS3401 subject about?</strong><br />
+                CS3401 covers algorithm design, complexity analysis, and
+                optimization strategies. It helps students develop
+                problem-solving skills and understand how to create efficient
+                solutions for computational problems.
+              </p>
+
+              <p>
+                <strong
+                  >Are these CS3401 notes enough for exam preparation?</strong
+                ><br />
+                Yes, these notes are prepared to cover the full Anna University
+                syllabus and include important topics. For best results, use
+                them along with your classroom materials and practice solving
+                previous year questions.
+              </p>
+
+              <p>
+                <strong>How should I use these CS3401 notes effectively?</strong
+                ><br />
+                Start by reading each unit summary, then practice the important
+                topics provided. Revise regularly and use the 'View Syllabus'
+                link in the Additional Resources section to track your progress
+                before exams.
+              </p>
+
+              <p>
+                <strong
+                  >Does this page include the official Anna University
+                  syllabus?</strong
+                ><br />
+                No, but you can use the 'View Syllabus' link in the Additional
+                Resources section below to access the official Anna University
+                syllabus for CS3401.
+              </p>
+
+              <p>
+                <strong
+                  >Are the important topics here repeated in Anna University
+                  exams?</strong
+                ><br />
+                Many topics listed are based on previous exam trends and are
+                likely to be repeated. Practicing these will help you score
+                higher in both internals and semester exams.
+              </p>
             </div>
-        </header>
+          </section>
 
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">CS3401-Algorithms.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1mg4nkazihpQujKD0L3t74gcGr23s_POc/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1mg4nkazihpQujKD0L3t74gcGr23s_POc" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-
-<section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-    <h2>About CS3401 Algorithms</h2>
-    <p>
-        CS3401 is a core subject for Anna University Semester 4 students, introducing the fundamentals of algorithm design, analysis, and optimization techniques. These <strong>CS3401 notes</strong> are designed to help you understand key concepts in a simple, step-by-step manner. Whether you are preparing for internal assessments or university exams, our <strong>Anna University study materials</strong> and <strong>CS3401 important questions</strong> make revision faster and more effective. With clear explanations and practical examples, you can build a strong foundation in <strong>Algorithms</strong> and improve your exam scores.
-    </p>
-    <p>
-        Using these <strong>CS3401 notes Anna University</strong> resources, you can quickly revise all units, clarify doubts, and practice with repeated exam questions. The content is tailored for easy learning and better retention, making your exam preparation stress-free and productive.
-    </p>
-
-    <h2>What You Get on This Page</h2>
-    <ul>
-        <li>Easy-to-understand lecture notes for all units</li>
-        <li>Handpicked important topics frequently asked in exams</li>
-        <li>Quick links to previous year question papers and additional resources</li>
-    </ul>
-    <p>
-        These resources are perfect for last-minute revision, semester exam preparation, and internal tests. All materials are organized for CSE and other engineering branches following <strong>Regulation 2021</strong>.
-    </p>
-
-    <!-- Important Topics Section Start -->
-    <section style="margin: 2rem 0;">
-        <h2 style="margin-bottom: 0.75rem;">CS3401 - Algorithms Important Topics (Unit-wise)</h2>
-        <section style="margin-bottom: 1.5rem;">
-            <h3>UNIT 1 – INTRODUCTION & ASYMPTOTIC ANALYSIS</h3>
-            <ul>
-                <li><strong>Asymptotic Analysis</strong>
-                    <ul>
-                        <li>Big-O, Big-Ω, Big-Θ definitions</li>
-                        <li>Growth rate comparison of functions</li>
-                        <li>Properties of asymptotic notations</li>
-                    </ul>
-                </li>
-                <li><strong>Recurrences</strong>
-                    <ul>
-                        <li>Substitution method (very important)</li>
-                        <li>Recurrence solving basics like T(n)=2T(n/2)+n</li>
-                    </ul>
-                </li>
-                <li><strong>Searching Algorithms</strong>
-                    <ul>
-                        <li>Linear search (complexity in all cases)</li>
-                        <li>Binary search (time + space complexity)</li>
-                    </ul>
-                </li>
-                <li><strong>String Matching</strong>
-                    <ul>
-                        <li>Naïve string matching (very important trace-based question)</li>
-                        <li>Pattern shifting concept</li>
-                        <li>Rabin-Karp algorithm (basic idea + steps)</li>
-                    </ul>
-                </li>
-                <li><strong>Complexity Analysis</strong>
-                    <ul>
-                        <li>Best, worst, average case definitions</li>
-                        <li>Complexity of simple algorithms (like max element in array)</li>
-                    </ul>
-                </li>
-            </ul>
+          <section
+            class="notes-value-section"
+            style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+          >
+            <!-- Duplicate About/FAQ section removed -->
+          </section>
         </section>
-        <section style="margin-bottom: 1.5rem;">
-            <h3>UNIT 2 – GRAPHS & ALGORITHMS</h3>
-            <ul>
-                <li><strong>Graph Traversals</strong>
-                    <ul>
-                        <li>BFS (level order traversal idea)</li>
-                        <li>DFS (recursive/stack approach)</li>
-                        <li>BFS vs DFS comparison</li>
-                    </ul>
-                </li>
-                <li><strong>Shortest Path Algorithms</strong>
-                    <ul>
-                        <li>Dijkstra’s algorithm (very important numericals)</li>
-                        <li>Floyd Warshall algorithm (all-pairs shortest path)</li>
-                    </ul>
-                </li>
-                <li><strong>Minimum Spanning Tree</strong>
-                    <ul>
-                        <li>Kruskal’s algorithm (sorting + union-find idea)</li>
-                    </ul>
-                </li>
-                <li><strong>Network Flow</strong>
-                    <ul>
-                        <li>Ford-Fulkerson method (max flow concept)</li>
-                    </ul>
-                </li>
-                <li><strong>Core Graph Concepts</strong>
-                    <ul>
-                        <li>Weighted graphs</li>
-                        <li>Directed vs undirected graphs</li>
-                        <li>Adjacency matrix vs list (basic understanding)</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section style="margin-bottom: 1.5rem;">
-            <h3>UNIT 3 – DIVIDE & CONQUER / GREEDY / DP</h3>
-            <ul>
-                <li><strong>Divide & Conquer</strong>
-                    <ul>
-                        <li>Merge sort (full algorithm + analysis)</li>
-                        <li>Quick sort (partitioning logic + complexity)</li>
-                        <li>Recurrence relation solving in sorting</li>
-                    </ul>
-                </li>
-                <li><strong>Greedy Algorithms</strong>
-                    <ul>
-                        <li>Activity selection problem (very important)</li>
-                        <li>Huffman coding / Huffman tree construction</li>
-                    </ul>
-                </li>
-                <li><strong>Dynamic Programming</strong>
-                    <ul>
-                        <li>Matrix chain multiplication (very important table method)</li>
-                        <li>DP idea vs recursion</li>
-                    </ul>
-                </li>
-                <li><strong>Algorithm Analysis</strong>
-                    <ul>
-                        <li>Time complexity of sorting algorithms</li>
-                        <li>Best vs worst case behavior</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section style="margin-bottom: 1.5rem;">
-            <h3>UNIT 4 – BACKTRACKING & BRANCH AND BOUND</h3>
-            <ul>
-                <li><strong>Backtracking</strong>
-                    <ul>
-                        <li>N-Queens problem (standard exam question)</li>
-                        <li>Subset sum problem (tree method)</li>
-                    </ul>
-                </li>
-                <li><strong>Branch and Bound</strong>
-                    <ul>
-                        <li>TSP (Travelling Salesperson Problem)</li>
-                        <li>Knapsack problem (0/1 knapsack using bounding)</li>
-                    </ul>
-                </li>
-                <li><strong>Graph-based Problems</strong>
-                    <ul>
-                        <li>Hamiltonian cycle problem</li>
-                    </ul>
-                </li>
-                <li><strong>Conceptual Comparison</strong>
-                    <ul>
-                        <li>Backtracking vs Branch and Bound (very important theory question)</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section style="margin-bottom: 1.5rem;">
-            <h3>UNIT 5 – COMPLEXITY THEORY & NP PROBLEMS</h3>
-            <ul>
-                <li><strong>Complexity Classes</strong>
-                    <ul>
-                        <li>P, NP, NP-Hard, NP-Complete</li>
-                        <li>Differences and relationships</li>
-                    </ul>
-                </li>
-                <li><strong>NP-Completeness</strong>
-                    <ul>
-                        <li>3-CNF SAT problem (very important)</li>
-                        <li>Proof idea of NP-complete problems</li>
-                    </ul>
-                </li>
-                <li><strong>Randomized Algorithms</strong>
-                    <ul>
-                        <li>Randomized quicksort</li>
-                        <li>Miller-Rabin primality test</li>
-                    </ul>
-                </li>
-                <li><strong>Approximation Concepts</strong>
-                    <ul>
-                        <li>Subset sum approximation idea</li>
-                    </ul>
-                </li>
-                <li><strong>Key Theory Ideas</strong>
-                    <ul>
-                        <li>Polynomial time reduction</li>
-                        <li>Verifying vs solving problems</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-    </section>
-    <!-- Important Topics Section End -->
+      </section>
 
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    <div class="faq-list">
-        <p><strong>What is CS3401 subject about?</strong><br>
-        CS3401 covers algorithm design, complexity analysis, and optimization strategies. It helps students develop problem-solving skills and understand how to create efficient solutions for computational problems.</p>
-
-        <p><strong>Are these CS3401 notes enough for exam preparation?</strong><br>
-        Yes, these notes are prepared to cover the full Anna University syllabus and include important topics. For best results, use them along with your classroom materials and practice solving previous year questions.</p>
-
-        <p><strong>How should I use these CS3401 notes effectively?</strong><br>
-        Start by reading each unit summary, then practice the important topics provided. Revise regularly and use the 'View Syllabus' link in the Additional Resources section to track your progress before exams.</p>
-
-        <p><strong>Does this page include the official Anna University syllabus?</strong><br>
-        No, but you can use the 'View Syllabus' link in the Additional Resources section below to access the official Anna University syllabus for CS3401.</p>
-
-        <p><strong>Are the important topics here repeated in Anna University exams?</strong><br>
-        Many topics listed are based on previous exam trends and are likely to be repeated. Practicing these will help you score higher in both internals and semester exams.</p>
-    </div>
-</section>
-
-<section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-    <!-- Duplicate About/FAQ section removed -->
-</section>
-</section>
-        </section>
-
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/CS3401-algorithms/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 4</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../cs3451-introduction-to-operation-systems/index.html">CS3451 Introduction to Operation Systems</a>
-                <a class="pyq-btn" href="../cs3452-theory-of-computation/index.html">CS3452 Theory of Computation</a>
-                <a class="pyq-btn" href="../cs3491-artificial-intelligence-and-machine-learning/index.html">CS3491 Artificial Intelligence and Machine Learning</a>
-                <a class="pyq-btn" href="../cs3492-database-management-systems/index.html">CS3492 Database Management Systems</a>
-                <a class="pyq-btn" href="../ge3451-environmental-sciences-and-sustainability/index.html">GE3451 Environmental Sciences and Sustainability</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3401 Anna University notes PDF</strong> and start your exam preparation today.</p>
-
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/CS3401-algorithms/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 4
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../cs3451-introduction-to-operation-systems/index.html"
+            >CS3451 Introduction to Operation Systems</a
+          >
+          <a class="pyq-btn" href="../cs3452-theory-of-computation/index.html"
+            >CS3452 Theory of Computation</a
+          >
+          <a
+            class="pyq-btn"
+            href="../cs3491-artificial-intelligence-and-machine-learning/index.html"
+            >CS3491 Artificial Intelligence and Machine Learning</a
+          >
+          <a
+            class="pyq-btn"
+            href="../cs3492-database-management-systems/index.html"
+            >CS3492 Database Management Systems</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ge3451-environmental-sciences-and-sustainability/index.html"
+            >GE3451 Environmental Sciences and Sustainability</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>CS3401 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/cse/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

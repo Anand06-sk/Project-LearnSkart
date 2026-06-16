@@ -1,49 +1,51 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // Define department mapping
 const deptMap = {
-  'civil': {
-    label: 'Civil Engineering',
-    icon: 'Building2',
-    prefixes: ['AG', 'CE', 'GE', 'MA', 'PH', 'HS', 'CY']
+  civil: {
+    label: "Civil Engineering",
+    icon: "Building2",
+    prefixes: ["AG", "CE", "GE", "MA", "PH", "HS", "CY"],
   },
-  'cse': {
-    label: 'Computer Science and Engineering',
-    icon: 'Code',
-    prefixes: ['CS', 'CD', 'CCS', 'GE', 'MA', 'IT3401']
+  cse: {
+    label: "Computer Science and Engineering",
+    icon: "Code",
+    prefixes: ["CS", "CD", "CCS", "GE", "MA", "IT3401"],
   },
-  'ece': {
-    label: 'Electronics and Communication Engineering',
-    icon: 'Radio',
-    prefixes: ['EC', 'EE', 'GE', 'MA', 'PH', 'HS']
+  ece: {
+    label: "Electronics and Communication Engineering",
+    icon: "Radio",
+    prefixes: ["EC", "EE", "GE", "MA", "PH", "HS"],
   },
-  'eee': {
-    label: 'Electrical and Electronics Engineering',
-    icon: 'Zap',
-    prefixes: ['EE', 'GE', 'MA', 'PH', 'HS']
+  eee: {
+    label: "Electrical and Electronics Engineering",
+    icon: "Zap",
+    prefixes: ["EE", "GE", "MA", "PH", "HS"],
   },
-  'it': {
-    label: 'Information Technology',
-    icon: 'Cpu',
-    prefixes: ['IT', 'CS', 'CD', 'GE', 'MA']
+  it: {
+    label: "Information Technology",
+    icon: "Cpu",
+    prefixes: ["IT", "CS", "CD", "GE", "MA"],
   },
-  'mech': {
-    label: 'Mechanical Engineering',
-    icon: 'Wrench',
-    prefixes: ['ME', 'GE', 'MA', 'PH', 'HS']
-  }
+  mech: {
+    label: "Mechanical Engineering",
+    icon: "Wrench",
+    prefixes: ["ME", "GE", "MA", "PH", "HS"],
+  },
 };
 
 // Get all subject folders
 function getSubjects() {
-  const pyqDir = path.join(__dirname, '../pyq');
-  const dirs = fs.readdirSync(pyqDir).filter(name => {
+  const pyqDir = path.join(__dirname, "../pyq");
+  const dirs = fs.readdirSync(pyqDir).filter((name) => {
     const fullPath = path.join(pyqDir, name);
-    return fs.statSync(fullPath).isDirectory() && 
-           !['civil', 'cse', 'ece', 'eee', 'it', 'mech'].includes(name);
+    return (
+      fs.statSync(fullPath).isDirectory() &&
+      !["civil", "cse", "ece", "eee", "it", "mech"].includes(name)
+    );
   });
-  
+
   return dirs.sort();
 }
 
@@ -56,21 +58,21 @@ function categorizeSubjects(subjects) {
     eee: [],
     it: [],
     mech: [],
-    other: []
+    other: [],
   };
 
-  subjects.forEach(subject => {
-    const code = subject.match(/^[A-Z]+/)?.[0] || '';
+  subjects.forEach((subject) => {
+    const code = subject.match(/^[A-Z]+/)?.[0] || "";
     let placed = false;
-    
+
     for (const [dept, config] of Object.entries(deptMap)) {
-      if (config.prefixes.some(prefix => code.startsWith(prefix))) {
+      if (config.prefixes.some((prefix) => code.startsWith(prefix))) {
         grouped[dept].push(subject);
         placed = true;
         break;
       }
     }
-    
+
     if (!placed) grouped.other.push(subject);
   });
 
@@ -109,10 +111,7 @@ function generateHTML(grouped) {
         .subject-card .arrow { color: var(--primary); margin-left: 0.5rem; }
         .empty-dept { color: var(--muted); padding: 2rem 1rem; text-align: center; border-radius: 8px; background: var(--bg-secondary); }
     </style>
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
    
 </head>
 <body>
@@ -149,32 +148,41 @@ function generateHTML(grouped) {
             <h2 style="margin: 0;">Browse by Department</h2>
         </div>
 
-${Object.entries(deptMap).map(([key, dept]) => {
-  const subjects = grouped[key] || [];
-  return `
+${Object.entries(deptMap)
+  .map(([key, dept]) => {
+    const subjects = grouped[key] || [];
+    return `
         <div class="section-container">
             <div class="section-header">
                 <div class="icon"><i data-lucide="${dept.icon}"></i></div>
                 <h2>${dept.label}</h2>
                 <span style="margin-left: auto; color: var(--muted); font-size: 0.875rem;">${subjects.length} subjects</span>
             </div>
-            ${subjects.length > 0 ? `
+            ${
+              subjects.length > 0
+                ? `
             <div class="subjects-grid">
-${subjects.map(subject => {
-  const [code, ...nameParts] = subject.split('-');
-  const name = nameParts.join(' ');
-  return `                <a href="../pyq/${subject}/" class="subject-card">
+${subjects
+  .map((subject) => {
+    const [code, ...nameParts] = subject.split("-");
+    const name = nameParts.join(" ");
+    return `                <a href="../pyq/${subject}/" class="subject-card">
                     <div class="code">${code}</div>
                     <div class="name">${name}</div>
                     <div style="margin-top: auto; color: var(--primary); display: flex; align-items: center;">
                         View Papers <span class="arrow">→</span>
                     </div>
                 </a>`;
-}).join('\n')}
+  })
+  .join("\n")}
             </div>
-            ` : `<div class="empty-dept">No subjects available</div>`}
+            `
+                : `<div class="empty-dept">No subjects available</div>`
+            }
         </div>
-`}).join('')}
+`;
+  })
+  .join("")}
 
     </main>
 
@@ -201,8 +209,11 @@ const subjects = getSubjects();
 const grouped = categorizeSubjects(subjects);
 const html = generateHTML(grouped);
 
-const outputPath = path.join(__dirname, '../previous-year-questions/index.html');
-fs.writeFileSync(outputPath, html, 'utf8');
+const outputPath = path.join(
+  __dirname,
+  "../previous-year-questions/index.html",
+);
+fs.writeFileSync(outputPath, html, "utf8");
 console.log(`✓ Generated ${outputPath}`);
 console.log(`  - Total subjects: ${subjects.length}`);
 Object.entries(grouped).forEach(([dept, subs]) => {

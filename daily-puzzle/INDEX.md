@@ -7,31 +7,41 @@ Welcome! This document guides you through all resources for the game.
 ## 🎮 Quick Start (Choose Your Path)
 
 ### I Want to Play Right Now
+
 → Open **[index.html](index.html)** in your browser
+
 - Works offline (without leaderboard)
 - Test all game features
 - No setup required
 
 ### I Want to Set Up Firebase & Leaderboard
+
 → Follow **[FIREBASE_SETUP.md](FIREBASE_SETUP.md)** (5 minutes)
+
 - Create Firebase project
 - Configure Firestore
 - Add credentials to code
 
 ### I Want to Deploy to GitHub Pages
+
 → Follow **[DEPLOYMENT.md](DEPLOYMENT.md)** (10 minutes)
+
 - Push to GitHub
 - Enable Pages
 - Share live link
 
 ### I Want Full Technical Details
+
 → Read **[SETUP.md](SETUP.md)** (comprehensive guide)
+
 - All features explained
 - Firebase architecture
 - Troubleshooting guide
 
 ### I Just Want to Understand the Game
+
 → Read **[README.md](README.md)** (player guide)
+
 - How to play
 - Game mechanics
 - Features explained
@@ -42,21 +52,21 @@ Welcome! This document guides you through all resources for the game.
 
 ### Core Game Files
 
-| File | Purpose | Size | Type |
-|------|---------|------|------|
-| **index.html** | Main game page | 5 KB | HTML |
-| **style.css** | All styling & animations | 18 KB | CSS |
-| **script.js** | Game engine & Firebase | 35 KB | JavaScript |
+| File           | Purpose                  | Size  | Type       |
+| -------------- | ------------------------ | ----- | ---------- |
+| **index.html** | Main game page           | 5 KB  | HTML       |
+| **style.css**  | All styling & animations | 18 KB | CSS        |
+| **script.js**  | Game engine & Firebase   | 35 KB | JavaScript |
 
 ### Documentation Files
 
-| File | Purpose | Read Time |
-|------|---------|-----------|
-| **README.md** | Player guide & game rules | 10 min |
-| **SETUP.md** | Complete technical setup | 15 min |
-| **FIREBASE_SETUP.md** | Firebase 5-min quickstart | 5 min |
-| **DEPLOYMENT.md** | GitHub Pages deployment | 10 min |
-| **INDEX.md** | This file (navigation) | 5 min |
+| File                  | Purpose                   | Read Time |
+| --------------------- | ------------------------- | --------- |
+| **README.md**         | Player guide & game rules | 10 min    |
+| **SETUP.md**          | Complete technical setup  | 15 min    |
+| **FIREBASE_SETUP.md** | Firebase 5-min quickstart | 5 min     |
+| **DEPLOYMENT.md**     | GitHub Pages deployment   | 10 min    |
+| **INDEX.md**          | This file (navigation)    | 5 min     |
 
 ---
 
@@ -68,14 +78,27 @@ Welcome! This document guides you through all resources for the game.
 <!DOCTYPE html>
 <html>
   <head>
-    <meta viewport...>
-    <link rel="stylesheet" href="style.css">
-  <script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <meta viewport... />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
   <body>
     <div class="game-container">
       <!-- Game UI -->
@@ -89,6 +112,7 @@ Welcome! This document guides you through all resources for the game.
 ```
 
 **Contains**:
+
 - Semantic HTML5 structure
 - Responsive layout
 - All game UI elements
@@ -98,14 +122,25 @@ Welcome! This document guides you through all resources for the game.
 ### 2. **style.css** - Visual Design
 
 ```css
-:root { --color-primary: #2563eb; }
-.game-container { /* layout */ }
-.grid-tile { /* tile styling */ }
-.btn { /* buttons */ }
-@keyframes pulse { /* animations */ }
+:root {
+  --color-primary: #2563eb;
+}
+.game-container {
+  /* layout */
+}
+.grid-tile {
+  /* tile styling */
+}
+.btn {
+  /* buttons */
+}
+@keyframes pulse {
+  /* animations */
+}
 ```
 
 **Features**:
+
 - Mobile-first responsive design
 - CSS Grid & Flexbox layouts
 - Smooth animations (60 FPS)
@@ -136,6 +171,7 @@ function completeGame() { /* finish */ }
 ```
 
 **Features**:
+
 - Complete game engine (no dependencies!)
 - Hamiltonian path algorithm
 - Firebase integration
@@ -148,30 +184,36 @@ function completeGame() { /* finish */ }
 ## 🚀 Deployment Paths
 
 ### Path 1: Local Testing Only
+
 ```
 1. Open index.html in browser
 2. Play game
 3. Firebase not required
 ```
+
 **Time**: < 1 minute
 **Result**: Works fully offline
 
 ### Path 2: Firebase + Local
+
 ```
 1. Create Firebase project (FIREBASE_SETUP.md)
 2. Add config to script.js
 3. Open index.html
 ```
+
 **Time**: 10 minutes
 **Result**: Leaderboard works locally
 
 ### Path 3: Firebase + GitHub Pages (Recommended)
+
 ```
 1. Set up Firebase (FIREBASE_SETUP.md)
 2. Push to GitHub (DEPLOYMENT.md)
 3. Enable GitHub Pages
 4. Share live link
 ```
+
 **Time**: 20 minutes
 **Result**: Live public game!
 
@@ -183,12 +225,12 @@ function completeGame() { /* finish */ }
 
 ```javascript
 // Hamiltonian Path Algorithm
-const path = generateHamiltonianPath()
+const path = generateHamiltonianPath();
 // Result: [0,0] → [0,1] → [1,1] → ... → [4,4]
 // Covers all 25 tiles exactly once
 
 // Place Letters
-const word = 'LEARNSKART'
+const word = "LEARNSKART";
 // Letter positions: Index 0, 5, 10, 15, 20, 25...
 // Creates non-sequentially visible path
 ```
@@ -197,13 +239,13 @@ const word = 'LEARNSKART'
 
 ```javascript
 // On touch/mouse move
-const tile = getTileUnderFinger()
-const isAdjacent = checkAdjacentToLastTile()
-const isNewTile = !isAlreadyInPath()
+const tile = getTileUnderFinger();
+const isAdjacent = checkAdjacentToLastTile();
+const isNewTile = !isAlreadyInPath();
 
 if (isAdjacent && isNewTile) {
-    currentPath.push(tile)
-    updateUI()
+  currentPath.push(tile);
+  updateUI();
 }
 ```
 
@@ -211,23 +253,23 @@ if (isAdjacent && isNewTile) {
 
 ```javascript
 // After each move
-const formedWord = currentPath.map(getLetterValue).join('')
-const allTilesVisited = currentPath.length === 25
+const formedWord = currentPath.map(getLetterValue).join("");
+const allTilesVisited = currentPath.length === 25;
 
-if (formedWord === 'LEARNSKART' && allTilesVisited) {
-    completeGame()
+if (formedWord === "LEARNSKART" && allTilesVisited) {
+  completeGame();
 }
 ```
 
 ### 4. Completion
 
 ```javascript
-stopTimer()
-recordStreak()
-showCompletionModal()
-loadLeaderboard()
-promptNameEntry()
-submitToFirebase()
+stopTimer();
+recordStreak();
+showCompletionModal();
+loadLeaderboard();
+promptNameEntry();
+submitToFirebase();
 ```
 
 ---
@@ -237,29 +279,28 @@ submitToFirebase()
 ### Game Settings (script.js, lines 10-13)
 
 ```javascript
-GRID_SIZE: 5              // Grid size (5×5 = 25 tiles)
-WORD: 'LEARNSKART'       // Word to form (10 letters)
-TILE_SIZE: 80            // Pixel size per tile
-HINT_TIME_PENALTY: 5     // Extra seconds per hint
+GRID_SIZE: 5; // Grid size (5×5 = 25 tiles)
+WORD: "LEARNSKART"; // Word to form (10 letters)
+TILE_SIZE: 80; // Pixel size per tile
+HINT_TIME_PENALTY: 5; // Extra seconds per hint
 ```
 
 ### Firebase Config (script.js, lines 15-22)
 
 ```javascript
 // Get from: Firebase Console → Project Settings → Your apps
-apiKey: 'YOUR_KEY'       // Public Firebase key
-projectId: 'YOUR_PROJECT'  // Unique project ID
-authDomain: 'xxx.firebaseapp.com'
-storageBucket: 'xxx.appspot.com'
+apiKey: "YOUR_KEY"; // Public Firebase key
+projectId: "YOUR_PROJECT"; // Unique project ID
+authDomain: "xxx.firebaseapp.com";
+storageBucket: "xxx.appspot.com";
 ```
 
 ### Color Scheme (style.css, lines 9-26)
 
 ```css
---color-primary: #2563eb         /* Blue - main */
---color-primary-light: #3b82f6   /* Light blue */
---color-success: #10b981         /* Green */
---color-danger: #ef4444          /* Red */
+--color-primary: #2563eb /* Blue - main */ --color-primary-light: #3b82f6
+  /* Light blue */ --color-success: #10b981 /* Green */ --color-danger: #ef4444
+  /* Red */;
 ```
 
 ---
@@ -289,22 +330,22 @@ leaderboard/ (collection)
 
 ```javascript
 // Fetch top 20 scores for today
-db.collection('leaderboard')
-    .doc('puzzle_' + todayString)
-    .collection('scores')
-    .orderBy('time', 'asc')
-    .limit(20)
-    .get()
+db.collection("leaderboard")
+  .doc("puzzle_" + todayString)
+  .collection("scores")
+  .orderBy("time", "asc")
+  .limit(20)
+  .get();
 
 // Save new score
-db.collection('leaderboard')
-    .doc('puzzle_' + todayString)
-    .collection('scores')
-    .add({
-        name: 'Player Name',
-        time: 45,
-        timestamp: firebase.firestore.Timestamp.now()
-    })
+db.collection("leaderboard")
+  .doc("puzzle_" + todayString)
+  .collection("scores")
+  .add({
+    name: "Player Name",
+    time: 45,
+    timestamp: firebase.firestore.Timestamp.now(),
+  });
 ```
 
 ---
@@ -312,12 +353,14 @@ db.collection('leaderboard')
 ## 🎨 UI Components Reference
 
 ### Header
+
 - Game title
 - Timer (MM:SS)
 - Target word to form
 - Streak counter with animation
 
 ### Game Grid
+
 - 5×5 responsive grid
 - Letter tiles (visible)
 - Empty tiles (clickable)
@@ -325,16 +368,19 @@ db.collection('leaderboard')
 - Animated tile selection
 
 ### Controls
+
 - Reset button (restart puzzle)
 - Hint button (show next path)
 - Submission form (name entry)
 
 ### Modals
+
 - Hint confirmation (first use)
 - Completion screen (with leaderboard)
 - Name validation
 
 ### Animations
+
 - Smooth tile scale (1.05-1.1)
 - Path drawing (canvas stroke)
 - Wrong move shake & flash
@@ -351,15 +397,15 @@ db.collection('leaderboard')
 ```javascript
 // Name validation
 const validatePlayerName = (name) => {
-    if (name.length < 3) return false  // Minimum 3
-    if (name.length > 16) return false // Maximum 16
-    if (!/^[a-zA-Z\s]+$/.test(name)) return false // Letters only
-    return true
-}
+  if (name.length < 3) return false; // Minimum 3
+  if (name.length > 16) return false; // Maximum 16
+  if (!/^[a-zA-Z\s]+$/.test(name)) return false; // Letters only
+  return true;
+};
 
 // Time validation
-if (time > 300) return false  // Max 5 minutes
-if (time < 0) return false    // Positive only
+if (time > 300) return false; // Max 5 minutes
+if (time < 0) return false; // Positive only
 ```
 
 ### Firestore Security Rules
@@ -387,26 +433,30 @@ allow create: if
 ## 📈 Performance Metrics
 
 ### File Sizes
-| File | Size | Minified |
-|------|------|----------|
-| index.html | 5 KB | 4 KB |
-| style.css | 18 KB | 12 KB |
-| script.js | 35 KB | 22 KB |
-| **Total** | **58 KB** | **38 KB** |
+
+| File       | Size      | Minified  |
+| ---------- | --------- | --------- |
+| index.html | 5 KB      | 4 KB      |
+| style.css  | 18 KB     | 12 KB     |
+| script.js  | 35 KB     | 22 KB     |
+| **Total**  | **58 KB** | **38 KB** |
 
 ### Load Time
+
 - Initial page: < 1 second
 - Game start: Instant
 - Leaderboard fetch: 1-2 seconds
 - Firebase init: < 500ms
 
 ### Runtime Performance
+
 - Frame rate: 60 FPS
 - Tile rendering: < 1ms
 - Path drawing: < 2ms
 - No memory leaks observed
 
 ### Browser Support
+
 - Chrome 90+ (✅ Recommended)
 - Firefox 88+ (✅ Full support)
 - Safari 14+ (✅ Full support)
@@ -436,21 +486,21 @@ window.DEBUG.generateDailyPuzzle()
 
 ### Common Issues & Solutions
 
-| Issue | Solution |
-|-------|----------|
-| Game won't load | Check console (F12), clear cache |
-| Firebase error | Verify config in script.js |
-| Swipe not working | Check touch events enabled |
-| Score won't save | Validate name, check time |
-| Leaderboard blank | Refresh, check Firebase rules |
+| Issue             | Solution                         |
+| ----------------- | -------------------------------- |
+| Game won't load   | Check console (F12), clear cache |
+| Firebase error    | Verify config in script.js       |
+| Swipe not working | Check touch events enabled       |
+| Score won't save  | Validate name, check time        |
+| Leaderboard blank | Refresh, check Firebase rules    |
 
 ### View Logs
 
 ```javascript
 // Browser Console (F12)
-console.log(gameState)           // Current game state
-console.log(gameState.validPath) // The hidden path
-console.log(gameState.grid)      // Letter positions
+console.log(gameState); // Current game state
+console.log(gameState.validPath); // The hidden path
+console.log(gameState.grid); // Letter positions
 ```
 
 ---
@@ -458,16 +508,19 @@ console.log(gameState.grid)      // Letter positions
 ## 📚 Learning Resources
 
 ### Algorithms
+
 - **Hamiltonian Path**: https://en.wikipedia.org/wiki/Hamiltonian_path
 - **DFS Algorithm**: https://en.wikipedia.org/wiki/Depth-first_search
 - **Canvas API**: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 
 ### Frameworks & Services
+
 - **Firebase Docs**: https://firebase.google.com/docs
 - **Firestore Guide**: https://firebase.google.com/docs/firestore
 - **GitHub Pages**: https://pages.github.com
 
 ### Web Technologies
+
 - **HTML5 Semantics**: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
 - **CSS Grid**: https://css-tricks.com/snippets/css/complete-guide-grid/
 - **Touch Events**: https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
@@ -497,6 +550,7 @@ console.log(gameState.grid)      // Letter positions
 ```
 
 Benefits:
+
 - ✅ Easy to understand
 - ✅ Simple to modify
 - ✅ Clear comments throughout
@@ -508,6 +562,7 @@ Benefits:
 ## 🚀 Next Steps
 
 ### To Play
+
 ```
 1. Open index.html in browser
 2. Swipe to connect letters
@@ -516,6 +571,7 @@ Benefits:
 ```
 
 ### To Deploy
+
 ```
 1. Follow FIREBASE_SETUP.md
 2. Follow DEPLOYMENT.md
@@ -523,6 +579,7 @@ Benefits:
 ```
 
 ### To Customize
+
 ```
 1. Edit GAME_CONFIG in script.js
 2. Change colors in style.css
@@ -531,6 +588,7 @@ Benefits:
 ```
 
 ### To Extend
+
 ```
 1. Add new features in script.js
 2. Style in style.css
@@ -546,50 +604,50 @@ Benefits:
 ### Key Functions
 
 ```javascript
-generateHamiltonianPath()     // Creates valid path
-generateDailyPuzzle()         // Places letters
-initializeFirebase()          // Setup backend
-saveScoreToFirebase()         // Submit score
-fetchTopScores()              // Get leaderboard
-getTilePosition()             // Get tile location
-isAdjacent()                  // Check proximity
-showHint()                    // Show help
-completeGame()                // Win event
-resetGame()                   // Restart
+generateHamiltonianPath(); // Creates valid path
+generateDailyPuzzle(); // Places letters
+initializeFirebase(); // Setup backend
+saveScoreToFirebase(); // Submit score
+fetchTopScores(); // Get leaderboard
+getTilePosition(); // Get tile location
+isAdjacent(); // Check proximity
+showHint(); // Show help
+completeGame(); // Win event
+resetGame(); // Restart
 ```
 
 ### Key Variables
 
 ```javascript
-gameState.grid                // Letter positions
-gameState.validPath           // Hidden path
-gameState.currentPath         // Player path
-gameState.elapsedTime         // Timer value
-gameState.gridTiles           // DOM tiles
-gameState.isGameOver          // Status
+gameState.grid; // Letter positions
+gameState.validPath; // Hidden path
+gameState.currentPath; // Player path
+gameState.elapsedTime; // Timer value
+gameState.gridTiles; // DOM tiles
+gameState.isGameOver; // Status
 ```
 
 ### Key Events
 
 ```javascript
-touchstart/touchmove/touchend // Swipe input
-DOMContentLoaded              // Page load
-click                         // Button clicks
-resize                        // Screen change
+touchstart / touchmove / touchend; // Swipe input
+DOMContentLoaded; // Page load
+click; // Button clicks
+resize; // Screen change
 ```
 
 ---
 
 ## 📝 Version & Status
 
-| Aspect | Details |
-|--------|---------|
-| **Version** | 1.0.0 |
-| **Status** | Production Ready ✓ |
-| **Last Updated** | March 2024 |
+| Aspect              | Details                       |
+| ------------------- | ----------------------------- |
+| **Version**         | 1.0.0                         |
+| **Status**          | Production Ready ✓            |
+| **Last Updated**    | March 2024                    |
 | **Browser Support** | Chrome, Firefox, Safari, Edge |
-| **Mobile Support** | iOS 14+, Android 8+ |
-| **API Support** | Firebase Firestore v10.7 |
+| **Mobile Support**  | iOS 14+, Android 8+           |
+| **API Support**     | Firebase Firestore v10.7      |
 
 ---
 

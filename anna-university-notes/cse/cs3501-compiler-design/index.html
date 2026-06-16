@@ -1,328 +1,620 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS3501 Notes - Compiler Design | LearnSkart</title>
-    <meta name="description" content="CS3501 Compiler Design notes for Anna University Computer Science and Engineering. Semester 5 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Compiler Design, CS3501, Computer Science and Engineering, semester 5, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/cse/cs3501-compiler-design/">
+    <meta
+      name="description"
+      content="CS3501 Compiler Design notes for Anna University Computer Science and Engineering. Semester 5 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Compiler Design, CS3501, Computer Science and Engineering, semester 5, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/cse/cs3501-compiler-design/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
     <style>
-        .syllabus-card {
-            margin: 2rem 0;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(1rem, 2vw, 1.5rem);
-            background: var(--surface);
-            overflow-wrap: anywhere;
-            box-shadow: var(--shadow);
-        }
+      .syllabus-card {
+        margin: 2rem 0;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        background: var(--surface);
+        overflow-wrap: anywhere;
+        box-shadow: var(--shadow);
+      }
 
-        .syllabus-card .syllabus-blue-heading {
-            color: #1d4ed8 !important;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
+      .syllabus-card .syllabus-blue-heading {
+        color: #1d4ed8 !important;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
 
-        html.dark .syllabus-card,
-        body.dark-mode .syllabus-card {
-            border-color: #334155;
-            background: #0f172a;
-        }
+      html.dark .syllabus-card,
+      body.dark-mode .syllabus-card {
+        border-color: #334155;
+        background: #0f172a;
+      }
 
-        html.dark .syllabus-card .syllabus-blue-heading,
-        body.dark-mode .syllabus-card .syllabus-blue-heading {
-        }
+      html.dark .syllabus-card .syllabus-blue-heading,
+      body.dark-mode .syllabus-card .syllabus-blue-heading {
+      }
     </style>
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
-                
 
     <main class="main container">
-                
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            CS3501 Compiler Design Notes - Anna University Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>CS3501 Compiler Design</strong> Notes for Anna
+            University Regulation 2021 students. This page provides high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for <strong>Computer Science and Engineering Semester 5</strong>.
+            Students can easily access
+            <strong>Compiler Design notes PDF download</strong>, important
+            questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">CS3501 Compiler Design Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>CS3501 Compiler Design</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Computer Science and Engineering Semester 5</strong>. Students can easily access <strong>Compiler Design notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
-
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">CS3501-Compiler Design-handwritten notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/12FgiSOdFv1Rkz1CMwMzwVbKV1c-4eOCG/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=12FgiSOdFv1Rkz1CMwMzwVbKV1c-4eOCG" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">CS3501-Compiler Design-notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1SBJxkCuAzmd50BMEDC60BtqjSepBANN4/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1SBJxkCuAzmd50BMEDC60BtqjSepBANN4" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-
-<section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-        <h2>About CS3501 Compiler Design</h2>
-        <p>
-                CS3501 is a core subject for Anna University Semester 5 students, focusing on the principles of compiler construction, lexical analysis, parsing, and code generation. These <strong>CS3501 notes</strong> are designed to help you understand key concepts in a simple, step-by-step manner. Whether you are preparing for internal assessments or university exams, our <strong>Anna University study materials</strong> and <strong>CS3501 important topics</strong> make revision faster and more effective. With clear explanations and practical examples, you can build a strong foundation in <strong>Compiler Design</strong> and improve your exam scores.
-        </p>
-        <p>
-                Using these <strong>CS3501 notes Anna University</strong> resources, you can quickly revise all units, clarify doubts, and practice with repeated exam questions. The content is tailored for easy learning and better retention, making your exam preparation stress-free and productive.
-        </p>
-
-        <h2>What You Get on This Page</h2>
-        <ul>
-                <li>Easy-to-understand lecture notes for all units</li>
-                <li>Handpicked important topics frequently asked in exams</li>
-                <li>Quick links to previous year question papers and additional resources</li>
-        </ul>
-        <p>
-                These resources are perfect for last-minute revision, semester exam preparation, and internal tests. All materials are organized for CSE and other engineering branches following <strong>Regulation 2021</strong>.
-        </p>
-
-        <h2>Important Topics (Unit-wise)</h2>
-        <p style="color: var(--muted); line-height: 1.7; max-width: 900px; margin-bottom: 1.25rem;">Compiler Design is an important subject for understanding how high-level programs are converted into machine-level instructions. A clear unit-wise preparation strategy helps students handle theory, conversion, and problem-based questions with better confidence in exams.</p>
-
-        <section style="margin-bottom: 1.25rem;">
-            <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">Unit I - Lexical Analysis and Automata Foundations</h2>
-            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit introduces compiler phases and lexical analysis basics using automata concepts. Focus on conversions and token recognition, as these are core ideas for later parsing topics.</p>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
             <ul>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    CS3501-Compiler Design-handwritten notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/12FgiSOdFv1Rkz1CMwMzwVbKV1c-4eOCG/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=12FgiSOdFv1Rkz1CMwMzwVbKV1c-4eOCG"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    CS3501-Compiler Design-notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1SBJxkCuAzmd50BMEDC60BtqjSepBANN4/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1SBJxkCuAzmd50BMEDC60BtqjSepBANN4"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section
+            class="notes-value-section"
+            style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+          >
+            <h2>About CS3501 Compiler Design</h2>
+            <p>
+              CS3501 is a core subject for Anna University Semester 5 students,
+              focusing on the principles of compiler construction, lexical
+              analysis, parsing, and code generation. These
+              <strong>CS3501 notes</strong> are designed to help you understand
+              key concepts in a simple, step-by-step manner. Whether you are
+              preparing for internal assessments or university exams, our
+              <strong>Anna University study materials</strong> and
+              <strong>CS3501 important topics</strong> make revision faster and
+              more effective. With clear explanations and practical examples,
+              you can build a strong foundation in
+              <strong>Compiler Design</strong> and improve your exam scores.
+            </p>
+            <p>
+              Using these
+              <strong>CS3501 notes Anna University</strong> resources, you can
+              quickly revise all units, clarify doubts, and practice with
+              repeated exam questions. The content is tailored for easy learning
+              and better retention, making your exam preparation stress-free and
+              productive.
+            </p>
+
+            <h2>What You Get on This Page</h2>
+            <ul>
+              <li>Easy-to-understand lecture notes for all units</li>
+              <li>Handpicked important topics frequently asked in exams</li>
+              <li>
+                Quick links to previous year question papers and additional
+                resources
+              </li>
+            </ul>
+            <p>
+              These resources are perfect for last-minute revision, semester
+              exam preparation, and internal tests. All materials are organized
+              for CSE and other engineering branches following
+              <strong>Regulation 2021</strong>.
+            </p>
+
+            <h2>Important Topics (Unit-wise)</h2>
+            <p
+              style="
+                color: var(--muted);
+                line-height: 1.7;
+                max-width: 900px;
+                margin-bottom: 1.25rem;
+              "
+            >
+              Compiler Design is an important subject for understanding how
+              high-level programs are converted into machine-level instructions.
+              A clear unit-wise preparation strategy helps students handle
+              theory, conversion, and problem-based questions with better
+              confidence in exams.
+            </p>
+
+            <section style="margin-bottom: 1.25rem">
+              <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem">
+                Unit I - Lexical Analysis and Automata Foundations
+              </h2>
+              <p
+                style="
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                This unit introduces compiler phases and lexical analysis basics
+                using automata concepts. Focus on conversions and token
+                recognition, as these are core ideas for later parsing topics.
+              </p>
+              <ul>
                 <li>Phases of compiler</li>
                 <li>Finite Automata- Regular expression to NFA &amp; DFA</li>
                 <li>Minimizing DFA</li>
                 <li>Recognition of Tokens</li>
                 <li>Input Buffering</li>
-            </ul>
-        </section>
+              </ul>
+            </section>
 
-        <section style="margin-bottom: 1.25rem;">
-            <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">Unit II - Parsing Techniques and Syntax Analysis</h2>
-            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit covers major parsing techniques used in compiler construction. Practice table construction and parser comparisons to perform well in both concept and procedural questions.</p>
-            <ul>
+            <section style="margin-bottom: 1.25rem">
+              <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem">
+                Unit II - Parsing Techniques and Syntax Analysis
+              </h2>
+              <p
+                style="
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                This unit covers major parsing techniques used in compiler
+                construction. Practice table construction and parser comparisons
+                to perform well in both concept and procedural questions.
+              </p>
+              <ul>
                 <li>Predictive Parser- LL(1)</li>
                 <li>Shift parser- LR parser- LR(0)</li>
                 <li>Construction of SLR Parsing Table</li>
                 <li>Error Handling and Recovery in syntax analyzer</li>
                 <li>Top down and Bottom up</li>
-            </ul>
-        </section>
+              </ul>
+            </section>
 
-        <section style="margin-bottom: 1.25rem;">
-            <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">Unit III - Intermediate Code and Syntax-Directed Translation</h2>
-            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit is important for intermediate code generation and semantic processing. Learn syntax tree construction and translation methods clearly to solve structured compiler problems.</p>
-            <ul>
+            <section style="margin-bottom: 1.25rem">
+              <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem">
+                Unit III - Intermediate Code and Syntax-Directed Translation
+              </h2>
+              <p
+                style="
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                This unit is important for intermediate code generation and
+                semantic processing. Learn syntax tree construction and
+                translation methods clearly to solve structured compiler
+                problems.
+              </p>
+              <ul>
                 <li>Three Address Code</li>
                 <li>Type Checking, Back Patching</li>
                 <li>Construction of Syntax tree</li>
                 <li>Arrays and Boolean Expression</li>
                 <li>Design of Predictive translator</li>
-            </ul>
-        </section>
+              </ul>
+            </section>
 
-        <section style="margin-bottom: 1.25rem;">
-            <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">Unit IV - Code Generation and Storage Management</h2>
-            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit focuses on runtime storage decisions and machine code generation. Understanding storage organization and design issues helps in answering implementation-based questions.</p>
-            <ul>
+            <section style="margin-bottom: 1.25rem">
+              <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem">
+                Unit IV - Code Generation and Storage Management
+              </h2>
+              <p
+                style="
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                This unit focuses on runtime storage decisions and machine code
+                generation. Understanding storage organization and design issues
+                helps in answering implementation-based questions.
+              </p>
+              <ul>
                 <li>Storage Allocation</li>
                 <li>Issues in design of code generation</li>
                 <li>Storage Organisation</li>
                 <li>Dynamic Programming Code Generation</li>
-            </ul>
-        </section>
+              </ul>
+            </section>
 
-        <section style="margin-bottom: 1.25rem;">
-            <h2 style="font-size:1.2rem; margin-bottom:0.5rem;">Unit V - Code Optimization Techniques</h2>
-            <p style="color: var(--muted); line-height: 1.7; margin-bottom: 0.5rem;">This unit highlights optimization methods used to improve generated code. Revise basic blocks, flow graphs, DAG, and local optimization methods for exam-oriented answers.</p>
-            <ul>
+            <section style="margin-bottom: 1.25rem">
+              <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem">
+                Unit V - Code Optimization Techniques
+              </h2>
+              <p
+                style="
+                  color: var(--muted);
+                  line-height: 1.7;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                This unit highlights optimization methods used to improve
+                generated code. Revise basic blocks, flow graphs, DAG, and local
+                optimization methods for exam-oriented answers.
+              </p>
+              <ul>
                 <li>Principal Sources of Optimization</li>
                 <li>Peep-hole optimization</li>
                 <li>DAG</li>
                 <li>Basic blocks and flow graphs</li>
-            </ul>
+              </ul>
+            </section>
+
+            <footer class="important-questions-footer">
+              <h2 style="font-size: 1.1rem; margin-bottom: 0.5rem">
+                Exam Preparation Tips
+              </h2>
+              <ul>
+                <li>
+                  Revise one unit at a time and keep a short
+                  formula-and-definition sheet.
+                </li>
+                <li>
+                  Practice conversion and parsing table questions regularly for
+                  better speed.
+                </li>
+                <li>
+                  Draw clean automata and syntax trees to improve clarity in
+                  written answers.
+                </li>
+                <li>
+                  Prepare short notes for intermediate code generation and
+                  optimization methods.
+                </li>
+                <li>
+                  Solve previous year compiler design questions to identify
+                  repeated patterns.
+                </li>
+              </ul>
+            </footer>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-list">
+              <p>
+                <strong>What is CS3501 subject about?</strong><br />
+                CS3501 covers compiler phases, lexical analysis, parsing,
+                syntax-directed translation, and code optimization. It helps
+                students understand how programming languages are translated and
+                executed by computers.
+              </p>
+
+              <p>
+                <strong
+                  >Are these CS3501 notes enough for exam preparation?</strong
+                ><br />
+                Yes, these notes are prepared to cover the full Anna University
+                syllabus and include important topics. For best results, use
+                them along with your classroom materials and practice solving
+                previous year questions.
+              </p>
+
+              <p>
+                <strong>How should I use these CS3501 notes effectively?</strong
+                ><br />
+                Start by reading each unit summary, then practice the important
+                topics provided. Revise regularly to track your progress before
+                exams.
+              </p>
+
+              <p>
+                <strong
+                  >Are the important topics here repeated in Anna University
+                  exams?</strong
+                ><br />
+                Many topics listed are based on previous exam trends and are
+                likely to be repeated. Practicing these will help you score
+                higher in both internals and semester exams.
+              </p>
+            </div>
+          </section>
         </section>
+      </section>
 
-        <footer class="important-questions-footer">
-            <h2 style="font-size:1.1rem; margin-bottom:0.5rem;">Exam Preparation Tips</h2>
-            <ul>
-                <li>Revise one unit at a time and keep a short formula-and-definition sheet.</li>
-                <li>Practice conversion and parsing table questions regularly for better speed.</li>
-                <li>Draw clean automata and syntax trees to improve clarity in written answers.</li>
-                <li>Prepare short notes for intermediate code generation and optimization methods.</li>
-                <li>Solve previous year compiler design questions to identify repeated patterns.</li>
-            </ul>
-        </footer>
+      <!-- The Important Topics section has been moved above What You Get and after FAQ, and all references updated. -->
 
-        <h2>Frequently Asked Questions (FAQ)</h2>
-        <div class="faq-list">
-                <p><strong>What is CS3501 subject about?</strong><br>
-                CS3501 covers compiler phases, lexical analysis, parsing, syntax-directed translation, and code optimization. It helps students understand how programming languages are translated and executed by computers.</p>
-
-                <p><strong>Are these CS3501 notes enough for exam preparation?</strong><br>
-                Yes, these notes are prepared to cover the full Anna University syllabus and include important topics. For best results, use them along with your classroom materials and practice solving previous year questions.</p>
-
-                <p><strong>How should I use these CS3501 notes effectively?</strong><br>
-                Start by reading each unit summary, then practice the important topics provided. Revise regularly to track your progress before exams.</p>
-
-                <p><strong>Are the important topics here repeated in Anna University exams?</strong><br>
-                Many topics listed are based on previous exam trends and are likely to be repeated. Practicing these will help you score higher in both internals and semester exams.</p>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/CS3501-compiler-design/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
         </div>
-</section>
-</section>
-        </section>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 5
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../cb3491-cryptography-and-cyber-security/index.html"
+            >CB3491 Cryptography and Cyber Security</a
+          >
+          <a class="pyq-btn" href="../cs3551-distributed-computing/index.html"
+            >CS3551 Distributed Computing</a
+          >
+          <a class="pyq-btn" href="../cs3591-computer-networks/index.html"
+            >CS3591 Computer Networks</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>CS3501 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
 
-        <!-- The Important Topics section has been moved above What You Get and after FAQ, and all references updated. -->
-
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/CS3501-compiler-design/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 5</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../cb3491-cryptography-and-cyber-security/index.html">CB3491 Cryptography and Cyber Security</a>
-                <a class="pyq-btn" href="../cs3551-distributed-computing/index.html">CS3551 Distributed Computing</a>
-                <a class="pyq-btn" href="../cs3591-computer-networks/index.html">CS3591 Computer Networks</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CS3501 Anna University notes PDF</strong> and start your exam preparation today.</p>
-
-        <!-- Syllabus card and related content removed as per instructions. -->
+      <!-- Syllabus card and related content removed as per instructions. -->
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/cse/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/cse/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

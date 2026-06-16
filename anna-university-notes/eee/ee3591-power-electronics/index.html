@@ -1,263 +1,462 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EE3591 Notes - Power Electronics | LearnSkart</title>
-    <meta name="description" content="EE3591 Power Electronics notes for Anna University Electrical and Electronics Engineering. Semester 5 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Power Electronics, EE3591, Electrical and Electronics Engineering, semester 5, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/eee/ee3591-power-electronics/">
+    <meta
+      name="description"
+      content="EE3591 Power Electronics notes for Anna University Electrical and Electronics Engineering. Semester 5 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Power Electronics, EE3591, Electrical and Electronics Engineering, semester 5, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/eee/ee3591-power-electronics/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            EE3591 Power Electronics Notes - Anna University Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>EE3591 Power Electronics</strong> Notes for Anna
+            University Regulation 2021 students. This page provides high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for
+            <strong>Electrical and Electronics Engineering Semester 5</strong>.
+            Students can easily access
+            <strong>Power Electronics notes PDF download</strong>, important
+            questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">EE3591 Power Electronics Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>EE3591 Power Electronics</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Electrical and Electronics Engineering Semester 5</strong>. Students can easily access <strong>Power Electronics notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
+            <ul>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3591-Power Electronics-Notes1.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1nxHiKsrLnoGDltnFx-U48XhwyzqRvbIu/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1nxHiKsrLnoGDltnFx-U48XhwyzqRvbIu"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3591-Power Electronics-Notes2.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1Q8VjMuiYfiBvw58zdBjURCrvJxzUL2dE/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1Q8VjMuiYfiBvw58zdBjURCrvJxzUL2dE"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
 
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3591-Power Electronics-Notes1.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1nxHiKsrLnoGDltnFx-U48XhwyzqRvbIu/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1nxHiKsrLnoGDltnFx-U48XhwyzqRvbIu" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3591-Power Electronics-Notes2.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1Q8VjMuiYfiBvw58zdBjURCrvJxzUL2dE/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1Q8VjMuiYfiBvw58zdBjURCrvJxzUL2dE" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
+      <!-- EE3591 Notes - Anna University (Regulation 2021) | Value Content Section -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About EE3591 Power Electronics</h2>
+        <p>
+          EE3591 Power Electronics is a key Semester 5 subject for Anna
+          University Electrical and Electronics Engineering students. This
+          course covers the operation, characteristics, and applications of
+          power semiconductor devices, converters, inverters, and controllers.
+          These <strong>EE3591 notes</strong> provide a strong foundation in
+          switching devices, rectifiers, inverters, and AC/DC control
+          techniques.
+        </p>
+        <p>
+          With our <strong>Anna University study materials</strong> and
+          <strong>EE3591 important topics</strong>, you will master MOSFET and
+          IGBT switching, PWM techniques, rectifier and inverter analysis, and
+          AC controller operation. The content is designed for both theoretical
+          clarity and practical application.
+        </p>
+        <p>
+          These <strong>EE3591 Power Electronics notes</strong> help you analyze
+          converter circuits, solve numerical problems, and prepare thoroughly
+          for university exams and interviews.
+        </p>
+
+        <h2>What You Will Get On This Page</h2>
+        <ul>
+          <li>Downloadable PDF notes for all units</li>
+          <li>
+            Comprehensive study materials for power devices, converters, and
+            controllers
+          </li>
+          <li>Unit-wise important topics for focused revision</li>
+          <li>Exam-oriented questions and solved examples</li>
+          <li>
+            Quick reference guides for switching techniques and circuit analysis
+          </li>
+        </ul>
+
+        <section class="important-topics-section">
+          <h2>Important Topics</h2>
+          <div style="margin-bottom: 1.5rem">
+            <strong>EE3591 Power Electronics – Important Topics</strong><br />
+            <strong>UNIT 1</strong>
+            <ul>
+              <li>MOSFET switching characteristics (dynamic behavior)</li>
+              <li>Driver & snubber circuits</li>
+              <li>DC-DC converters: Buck, Boost, Buck-Boost</li>
+              <li>Switching losses & basic thermal considerations</li>
+            </ul>
+            <strong>UNIT 2</strong>
+            <ul>
+              <li>IGBT characteristics (static & switching)</li>
+              <li>Single phase & three phase VSI</li>
+              <li>PWM techniques (Sinusoidal, Space Vector)</li>
+              <li>Voltage control of inverters</li>
+              <li>Harmonics in inverters & reduction methods</li>
+            </ul>
+            <strong>UNIT 3</strong>
+            <ul>
+              <li>Single phase rectifiers (half wave, full wave, bridge)</li>
+              <li>Three phase diode bridge rectifier</li>
+              <li>Filters (capacitor, LC)</li>
+              <li>Performance factors (ripple, distortion)</li>
+            </ul>
+            <strong>UNIT 4</strong>
+            <ul>
+              <li>SCR operation & characteristics</li>
+              <li>Controlled rectifiers (1-phase & 3-phase)</li>
+              <li>Firing angle control</li>
+              <li>Effect of source inductance</li>
+              <li>Power factor & harmonics in converters</li>
+            </ul>
+            <strong>UNIT 5</strong>
+            <ul>
+              <li>TRIAC operation & triggering</li>
+              <li>AC phase control methods</li>
+              <li>Single phase & three phase AC controllers</li>
+              <li>Output voltage control techniques</li>
+            </ul>
+          </div>
         </section>
 
-                <!-- EE3591 Notes - Anna University (Regulation 2021) | Value Content Section -->
-                <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-                        <h2>About EE3591 Power Electronics</h2>
-                        <p>
-                                EE3591 Power Electronics is a key Semester 5 subject for Anna University Electrical and Electronics Engineering students. This course covers the operation, characteristics, and applications of power semiconductor devices, converters, inverters, and controllers. These <strong>EE3591 notes</strong> provide a strong foundation in switching devices, rectifiers, inverters, and AC/DC control techniques.
-                        </p>
-                        <p>
-                                With our <strong>Anna University study materials</strong> and <strong>EE3591 important topics</strong>, you will master MOSFET and IGBT switching, PWM techniques, rectifier and inverter analysis, and AC controller operation. The content is designed for both theoretical clarity and practical application.
-                        </p>
-                        <p>
-                                These <strong>EE3591 Power Electronics notes</strong> help you analyze converter circuits, solve numerical problems, and prepare thoroughly for university exams and interviews.
-                        </p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <p>
+            <strong>What does EE3591 Power Electronics cover?</strong><br />It
+            covers power semiconductor devices, converters, inverters, and AC/DC
+            controllers for EEE students.
+          </p>
+          <p>
+            <strong
+              >Are Anna University EE3591 notes available as PDF
+              downloads?</strong
+            ><br />Yes, you can download detailed PDF notes for all units from
+            this page.
+          </p>
+          <p>
+            <strong>What are the most important topics for EE3591 exams?</strong
+            ><br />Key topics include MOSFET/IGBT switching, PWM, rectifiers,
+            inverters, and AC controllers.
+          </p>
+          <p>
+            <strong>How do these notes help with exam preparation?</strong
+            ><br />They provide unit-wise important topics, solved examples, and
+            revision guides for Anna University exams.
+          </p>
+          <p>
+            <strong
+              >Are practical applications and circuit analysis included?</strong
+            ><br />Yes, the notes include practical examples, circuit analysis,
+            and real-world power electronics scenarios.
+          </p>
+          <p>
+            <strong>Can these materials help with competitive exams?</strong
+            ><br />These notes are useful for university exams and as a base for
+            GATE and other competitive tests involving power electronics.
+          </p>
+        </div>
+      </section>
 
-                        <h2>What You Will Get On This Page</h2>
-                        <ul>
-                                <li>Downloadable PDF notes for all units</li>
-                                <li>Comprehensive study materials for power devices, converters, and controllers</li>
-                                <li>Unit-wise important topics for focused revision</li>
-                                <li>Exam-oriented questions and solved examples</li>
-                                <li>Quick reference guides for switching techniques and circuit analysis</li>
-                        </ul>
-
-                        <section class="important-topics-section">
-                                <h2>Important Topics</h2>
-                                <div style="margin-bottom:1.5rem">
-<strong>EE3591 Power Electronics – Important Topics</strong><br>
-<strong>UNIT 1</strong>
-<ul>
-    <li>MOSFET switching characteristics (dynamic behavior)</li>
-    <li>Driver & snubber circuits</li>
-    <li>DC-DC converters: Buck, Boost, Buck-Boost</li>
-    <li>Switching losses & basic thermal considerations</li>
-</ul>
-<strong>UNIT 2</strong>
-<ul>
-    <li>IGBT characteristics (static & switching)</li>
-    <li>Single phase & three phase VSI</li>
-    <li>PWM techniques (Sinusoidal, Space Vector)</li>
-    <li>Voltage control of inverters</li>
-    <li>Harmonics in inverters & reduction methods</li>
-</ul>
-<strong>UNIT 3</strong>
-<ul>
-    <li>Single phase rectifiers (half wave, full wave, bridge)</li>
-    <li>Three phase diode bridge rectifier</li>
-    <li>Filters (capacitor, LC)</li>
-    <li>Performance factors (ripple, distortion)</li>
-</ul>
-<strong>UNIT 4</strong>
-<ul>
-    <li>SCR operation & characteristics</li>
-    <li>Controlled rectifiers (1-phase & 3-phase)</li>
-    <li>Firing angle control</li>
-    <li>Effect of source inductance</li>
-    <li>Power factor & harmonics in converters</li>
-</ul>
-<strong>UNIT 5</strong>
-<ul>
-    <li>TRIAC operation & triggering</li>
-    <li>AC phase control methods</li>
-    <li>Single phase & three phase AC controllers</li>
-    <li>Output voltage control techniques</li>
-</ul>
-                                </div>
-                        </section>
-
-                        <h2>Frequently Asked Questions</h2>
-                        <div class="faq-list">
-                                <p><strong>What does EE3591 Power Electronics cover?</strong><br>It covers power semiconductor devices, converters, inverters, and AC/DC controllers for EEE students.</p>
-                                <p><strong>Are Anna University EE3591 notes available as PDF downloads?</strong><br>Yes, you can download detailed PDF notes for all units from this page.</p>
-                                <p><strong>What are the most important topics for EE3591 exams?</strong><br>Key topics include MOSFET/IGBT switching, PWM, rectifiers, inverters, and AC controllers.</p>
-                                <p><strong>How do these notes help with exam preparation?</strong><br>They provide unit-wise important topics, solved examples, and revision guides for Anna University exams.</p>
-                                <p><strong>Are practical applications and circuit analysis included?</strong><br>Yes, the notes include practical examples, circuit analysis, and real-world power electronics scenarios.</p>
-                                <p><strong>Can these materials help with competitive exams?</strong><br>These notes are useful for university exams and as a base for GATE and other competitive tests involving power electronics.</p>
-                        </div>
-                </section>
-
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/EE3591-power-electronics/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 5</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../ee3501-power-system-analysis/index.html">EE3501 Power System Analysis</a>
-                <a class="pyq-btn" href="../ee3503-control-systems/index.html">EE3503 Control Systems</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>EE3591 Anna University notes PDF</strong> and start your exam preparation today.</p>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/EE3591-power-electronics/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 5
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a class="pyq-btn" href="../ee3501-power-system-analysis/index.html"
+            >EE3501 Power System Analysis</a
+          >
+          <a class="pyq-btn" href="../ee3503-control-systems/index.html"
+            >EE3503 Control Systems</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>EE3591 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/eee/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/eee/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

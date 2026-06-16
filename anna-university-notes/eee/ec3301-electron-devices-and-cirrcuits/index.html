@@ -1,267 +1,493 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EC3301 Notes - Electron Devices and Circuits | LearnSkart</title>
-    <meta name="description" content="EC3301 Electron Devices and Cirrcuits notes for Anna University Electrical and Electronics Engineering. Semester 3 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Electron Devices and Cirrcuits, EC3301, Electrical and Electronics Engineering, semester 3, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/eee/ec3301-electron-devices-and-cirrcuits/">
+    <meta
+      name="description"
+      content="EC3301 Electron Devices and Cirrcuits notes for Anna University Electrical and Electronics Engineering. Semester 3 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Electron Devices and Cirrcuits, EC3301, Electrical and Electronics Engineering, semester 3, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/eee/ec3301-electron-devices-and-cirrcuits/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            EC3301 Electron Devices and Circuits Notes - Anna University
+            Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>EC3301 Electron Devices and Circuits</strong> Notes
+            for Anna University Regulation 2021 students. This page provides
+            high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for
+            <strong>Electrical and Electronics Engineering Semester 3</strong>.
+            Students can easily access
+            <strong>Electron Devices and Circuits notes PDF download</strong>,
+            important questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">EC3301 Electron Devices and Circuits Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>EC3301 Electron Devices and Circuits</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Electrical and Electronics Engineering Semester 3</strong>. Students can easily access <strong>Electron Devices and Circuits notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
-
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EC3301-Electron Devices and Circuits-handwritten notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1sOPxrcNi9ki0E7ePJOzr585mOJ9OBtYS/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1sOPxrcNi9ki0E7ePJOzr585mOJ9OBtYS" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
-        </section>
-
-        <!-- EC3301 Notes - Anna University (Regulation 2021) | Value Content Section -->
-        <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-            <h2>About EC3301 Electron Devices and Circuits</h2>
-            <p>
-                EC3301 Electron Devices and Circuits is a specialized Semester 3 course for Anna University Electrical and Electronics Engineering students, focusing on semiconductor devices and their practical circuit applications. These <strong>EC3301 notes</strong> comprehensively cover diodes, transistors, and integrated circuit fundamentals essential for analog and digital electronics. With our <strong>Anna University study materials</strong> and <strong>EC3301 important topics</strong>, you master rectification circuits, transistor biasing, amplifier design, and feedback oscillators. These <strong>Electron Devices and Circuits notes</strong> provide practical knowledge for designing real-world circuits used in power supplies, signal amplification, and frequency generation.
-            </p>
-            <p>
-                Using these <strong>EC3301 notes Anna University</strong> resources, you can understand device characteristics, analyze circuit performance, design amplifiers with specific gain requirements, and build stable oscillators. The content includes V-I characteristics, circuit analysis, and design methodologies with practical examples.
-            </p>
-
-            <h2>What You Get on This Page</h2>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
             <ul>
-                <li>Semiconductor diode theory including PN junction and rectifier circuits</li>
-                <li>BJT characteristics and configurations for amplification applications</li>
-                <li>MOSFET operation and comparison with bipolar transistors</li>
-                <li>Rectifier design with ripple factor and efficiency calculations</li>
-                <li>Amplifier analysis using load line and frequency response</li>
-                <li>Feedback mechanisms and oscillator circuit design</li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EC3301-Electron Devices and Circuits-handwritten notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1sOPxrcNi9ki0E7ePJOzr585mOJ9OBtYS/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1sOPxrcNi9ki0E7ePJOzr585mOJ9OBtYS"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
             </ul>
-            <p>
-                These materials help you develop circuit design skills essential for electronic engineering. All resources are designed for Semester 3 following <strong>Regulation 2021</strong>.
-            </p>
+          </section>
+        </section>
+      </section>
 
-                <section class="important-topics-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-                    <h2>Important Topics</h2>
-                    <h3>EC3301 – Electron Devices and Circuits</h3>
-                    <h3>UNIT 1 – Diodes and Rectifiers</h3>
-                    <ul>
-                        <li>PN junction diode (forward & reverse bias, V-I characteristics)</li>
-                        <li>Diode equation & resistance</li>
-                        <li>Half wave rectifier (working, waveform, efficiency, ripple factor)</li>
-                        <li>Full wave rectifier (center tap & bridge, comparison)</li>
-                        <li>Rectifier parameters (PIV, ripple factor, efficiency)</li>
-                        <li>Zener diode (breakdown, characteristics)</li>
-                        <li>Zener as voltage regulator</li>
-                    </ul>
-                    <h3>UNIT 2 & 3 – Bipolar and Field Effect Transistors</h3>
-                    <ul>
-                        <li>BJT (NPN, PNP) characteristics</li>
-                        <li>Regions of operation (cut-off, active, saturation)</li>
-                        <li>CE, CB, CC configurations (comparison very important)</li>
-                        <li>Current gain (α, β relations)</li>
-                        <li>Load line analysis</li>
-                        <li>MOSFET (enhancement & depletion, characteristics)</li>
-                        <li>MOSFET vs BJT</li>
-                        <li>SCR (working, triggering methods)</li>
-                        <li>UJT (relaxation oscillator concept)</li>
-                    </ul>
-                    <h3>UNIT 4 – Amplifier Characteristics</h3>
-                    <ul>
-                        <li>CMRR (definition, formula, importance)</li>
-                        <li>Single tuned amplifier (working, frequency response)</li>
-                        <li>Neutralization (concept & need)</li>
-                    </ul>
-                    <h3>UNIT 5 – Feedback and Oscillators</h3>
-                    <ul>
-                        <li>Positive & negative feedback</li>
-                        <li>Voltage series feedback amplifier</li>
-                        <li>Barkhausen criterion</li>
-                        <li>Wein bridge oscillator</li>
-                        <li>Hartley oscillator</li>
-                        <li>RC phase shift oscillator</li>
-                    </ul>
-                </section>
+      <!-- EC3301 Notes - Anna University (Regulation 2021) | Value Content Section -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About EC3301 Electron Devices and Circuits</h2>
+        <p>
+          EC3301 Electron Devices and Circuits is a specialized Semester 3
+          course for Anna University Electrical and Electronics Engineering
+          students, focusing on semiconductor devices and their practical
+          circuit applications. These
+          <strong>EC3301 notes</strong> comprehensively cover diodes,
+          transistors, and integrated circuit fundamentals essential for analog
+          and digital electronics. With our
+          <strong>Anna University study materials</strong> and
+          <strong>EC3301 important topics</strong>, you master rectification
+          circuits, transistor biasing, amplifier design, and feedback
+          oscillators. These
+          <strong>Electron Devices and Circuits notes</strong> provide practical
+          knowledge for designing real-world circuits used in power supplies,
+          signal amplification, and frequency generation.
+        </p>
+        <p>
+          Using these <strong>EC3301 notes Anna University</strong> resources,
+          you can understand device characteristics, analyze circuit
+          performance, design amplifiers with specific gain requirements, and
+          build stable oscillators. The content includes V-I characteristics,
+          circuit analysis, and design methodologies with practical examples.
+        </p>
 
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <div class="faq-list">
-                <p><strong>What is the difference between forward and reverse bias in a diode?</strong><br>
-                Forward bias reduces barrier potential and allows current flow, while reverse bias increases barrier potential, stopping current flow until breakdown voltage is reached. Forward bias is used in rectifiers; reverse bias in Zener regulators.</p>
+        <h2>What You Get on This Page</h2>
+        <ul>
+          <li>
+            Semiconductor diode theory including PN junction and rectifier
+            circuits
+          </li>
+          <li>
+            BJT characteristics and configurations for amplification
+            applications
+          </li>
+          <li>MOSFET operation and comparison with bipolar transistors</li>
+          <li>
+            Rectifier design with ripple factor and efficiency calculations
+          </li>
+          <li>Amplifier analysis using load line and frequency response</li>
+          <li>Feedback mechanisms and oscillator circuit design</li>
+        </ul>
+        <p>
+          These materials help you develop circuit design skills essential for
+          electronic engineering. All resources are designed for Semester 3
+          following <strong>Regulation 2021</strong>.
+        </p>
 
-                <p><strong>Why is ripple factor important in rectifier design?</strong><br>
-                Ripple factor indicates output voltage smoothness, affecting device performance. Lower ripple factor means cleaner DC output, requiring less filtering. It's calculated using peak and average values of rectified waveform.</p>
-
-                <p><strong>What are the advantages of MOSFET over BJT?</strong><br>
-                MOSFETs offer higher input impedance, better voltage gain, faster switching speeds, lower power consumption, and thermal stability compared to BJTs, making them suitable for high-frequency and power applications.</p>
-
-                <p><strong>How does negative feedback improve amplifier performance?</strong><br>
-                Negative feedback reduces gain instability, flattens frequency response, decreases distortion, and improves input/output impedance characteristics, making amplifiers more stable and predictable across operating conditions.</p>
-
-                <p><strong>What is the Barkhausen criterion in oscillators?</strong><br>
-                The Barkhausen criterion states loop gain must equal unity and phase shift must be 0° (or 360°) for sustained oscillations. This ensures feedback reinforces the signal and maintains oscillation at resonant frequency.</p>
-
-                <p><strong>Why are different oscillator circuits used for different frequency ranges?</strong><br>
-                Different circuits (RC, LC-based) have frequency-dependent component values. RC phase shift works at audio frequencies; Hartley/Colpitts at RF; Wien bridge at low frequencies. Component availability and circuit stability determine circuit choice.</p>
-            </div>
+        <section
+          class="important-topics-section"
+          style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+        >
+          <h2>Important Topics</h2>
+          <h3>EC3301 – Electron Devices and Circuits</h3>
+          <h3>UNIT 1 – Diodes and Rectifiers</h3>
+          <ul>
+            <li>
+              PN junction diode (forward & reverse bias, V-I characteristics)
+            </li>
+            <li>Diode equation & resistance</li>
+            <li>
+              Half wave rectifier (working, waveform, efficiency, ripple factor)
+            </li>
+            <li>Full wave rectifier (center tap & bridge, comparison)</li>
+            <li>Rectifier parameters (PIV, ripple factor, efficiency)</li>
+            <li>Zener diode (breakdown, characteristics)</li>
+            <li>Zener as voltage regulator</li>
+          </ul>
+          <h3>UNIT 2 & 3 – Bipolar and Field Effect Transistors</h3>
+          <ul>
+            <li>BJT (NPN, PNP) characteristics</li>
+            <li>Regions of operation (cut-off, active, saturation)</li>
+            <li>CE, CB, CC configurations (comparison very important)</li>
+            <li>Current gain (α, β relations)</li>
+            <li>Load line analysis</li>
+            <li>MOSFET (enhancement & depletion, characteristics)</li>
+            <li>MOSFET vs BJT</li>
+            <li>SCR (working, triggering methods)</li>
+            <li>UJT (relaxation oscillator concept)</li>
+          </ul>
+          <h3>UNIT 4 – Amplifier Characteristics</h3>
+          <ul>
+            <li>CMRR (definition, formula, importance)</li>
+            <li>Single tuned amplifier (working, frequency response)</li>
+            <li>Neutralization (concept & need)</li>
+          </ul>
+          <h3>UNIT 5 – Feedback and Oscillators</h3>
+          <ul>
+            <li>Positive & negative feedback</li>
+            <li>Voltage series feedback amplifier</li>
+            <li>Barkhausen criterion</li>
+            <li>Wein bridge oscillator</li>
+            <li>Hartley oscillator</li>
+            <li>RC phase shift oscillator</li>
+          </ul>
         </section>
 
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/EC3301-electron-devices-and-circuits/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 3</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../cs3353-c-programming-and-data-structures/index.html">CS3353 C Programming and Data Structures</a>
-                <a class="pyq-btn" href="../ee3301-electromagnetic-fields/index.html">EE3301 Electromagnetic Fields</a>
-                <a class="pyq-btn" href="../ee3302-digital-logic-circuits/index.html">EE3302 Digital Logic Circuits</a>
-                <a class="pyq-btn" href="../ee3303-electrical-machines/index.html">EE3303 Electrical Machines</a>
-                <a class="pyq-btn" href="../ma3303-probability-and-complex-functions/index.html">MA3303 Probability and Complex Functions</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>EC3301 Anna University notes PDF</strong> and start your exam preparation today.</p>
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-list">
+          <p>
+            <strong
+              >What is the difference between forward and reverse bias in a
+              diode?</strong
+            ><br />
+            Forward bias reduces barrier potential and allows current flow,
+            while reverse bias increases barrier potential, stopping current
+            flow until breakdown voltage is reached. Forward bias is used in
+            rectifiers; reverse bias in Zener regulators.
+          </p>
+
+          <p>
+            <strong>Why is ripple factor important in rectifier design?</strong
+            ><br />
+            Ripple factor indicates output voltage smoothness, affecting device
+            performance. Lower ripple factor means cleaner DC output, requiring
+            less filtering. It's calculated using peak and average values of
+            rectified waveform.
+          </p>
+
+          <p>
+            <strong>What are the advantages of MOSFET over BJT?</strong><br />
+            MOSFETs offer higher input impedance, better voltage gain, faster
+            switching speeds, lower power consumption, and thermal stability
+            compared to BJTs, making them suitable for high-frequency and power
+            applications.
+          </p>
+
+          <p>
+            <strong
+              >How does negative feedback improve amplifier performance?</strong
+            ><br />
+            Negative feedback reduces gain instability, flattens frequency
+            response, decreases distortion, and improves input/output impedance
+            characteristics, making amplifiers more stable and predictable
+            across operating conditions.
+          </p>
+
+          <p>
+            <strong>What is the Barkhausen criterion in oscillators?</strong
+            ><br />
+            The Barkhausen criterion states loop gain must equal unity and phase
+            shift must be 0° (or 360°) for sustained oscillations. This ensures
+            feedback reinforces the signal and maintains oscillation at resonant
+            frequency.
+          </p>
+
+          <p>
+            <strong
+              >Why are different oscillator circuits used for different
+              frequency ranges?</strong
+            ><br />
+            Different circuits (RC, LC-based) have frequency-dependent component
+            values. RC phase shift works at audio frequencies; Hartley/Colpitts
+            at RF; Wien bridge at low frequencies. Component availability and
+            circuit stability determine circuit choice.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/EC3301-electron-devices-and-circuits/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 3
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../cs3353-c-programming-and-data-structures/index.html"
+            >CS3353 C Programming and Data Structures</a
+          >
+          <a class="pyq-btn" href="../ee3301-electromagnetic-fields/index.html"
+            >EE3301 Electromagnetic Fields</a
+          >
+          <a class="pyq-btn" href="../ee3302-digital-logic-circuits/index.html"
+            >EE3302 Digital Logic Circuits</a
+          >
+          <a class="pyq-btn" href="../ee3303-electrical-machines/index.html"
+            >EE3303 Electrical Machines</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ma3303-probability-and-complex-functions/index.html"
+            >MA3303 Probability and Complex Functions</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>EC3301 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/eee/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/eee/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

@@ -1,277 +1,548 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anna University Grade to Cgpa Calculator | LearnSkart</title>
 
-    <meta name="description" content="Calculate Anna University GPA, CGPA, and percentage online for all regulations and departments. Free, fast, and accurate calculator for CSE, IT, ECE, EEE, MECH, Civil, and more.">
-    <meta property="og:title" content="Anna University GPA & CGPA Calculator (All Regulations) | LearnSkart">
-    <meta property="og:description" content="Free Anna University GPA, CGPA, and percentage calculator for all regulations and departments.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://learnskart.in/cgpa-calculator/">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Anna University GPA & CGPA Calculator (All Regulations)">
-    <meta property="twitter:description" content="Calculate GPA, CGPA, and percentage instantly for all Anna University regulations.">
+    <meta
+      name="description"
+      content="Calculate Anna University GPA, CGPA, and percentage online for all regulations and departments. Free, fast, and accurate calculator for CSE, IT, ECE, EEE, MECH, Civil, and more."
+    />
+    <meta
+      property="og:title"
+      content="Anna University GPA & CGPA Calculator (All Regulations) | LearnSkart"
+    />
+    <meta
+      property="og:description"
+      content="Free Anna University GPA, CGPA, and percentage calculator for all regulations and departments."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://learnskart.in/cgpa-calculator/" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Anna University GPA & CGPA Calculator (All Regulations)"
+    />
+    <meta
+      property="twitter:description"
+      content="Calculate GPA, CGPA, and percentage instantly for all Anna University regulations."
+    />
 
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/cgpa-calculator/">
-    <link rel="icon" href="/favicon.ico">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://learnskart.in/cgpa-calculator/" />
+    <link rel="icon" href="/favicon.ico" />
 
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/calculator.css" />
+    <link rel="stylesheet" href="../assets/css/theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/calculator.css">
-    <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
     <header>
-        <a href="../" class="logo">
-            <img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-            LearnSkart
+      <a href="../" class="logo">
+        <img
+          src="../assets/icons/favicon-96x96.png"
+          alt="LearnSkart Logo"
+          class="logo-img"
+        />
+        LearnSkart
+      </a>
+      <div class="back-link">
+        <a class="btn btn-outline" href="../">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="m12 19-7-7 7-7" .. />
+            <path d="M19 12H5" .. />
+          </svg>
+          Back to Home
         </a>
-        <div class="back-link">
-            <a class="btn btn-outline" href="../">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 19-7-7 7-7"../><path d="M19 12H5"../></svg>
-                Back to Home
-            </a>
-        </div>
+      </div>
     </header>
 
     <div class="page-header">
-        <h1>Anna University GPA Calculator</h1>
-        <p>GPA and CGPA calculator for Anna University students</p>
+      <h1>Anna University GPA Calculator</h1>
+      <p>GPA and CGPA calculator for Anna University students</p>
     </div>
 
-    <main class="container" style="padding: 2rem 1rem;">
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="gpa">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"../><path d="M6 12v5c3 3 9 3 12 0v-5"../></svg>
-                GPA Calculator
+    <main class="container" style="padding: 2rem 1rem">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="gpa">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" .. />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" .. />
+          </svg>
+          GPA Calculator
+        </button>
+        <button class="tab-btn" data-tab="cgpa">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M12 20h9" .. />
+            <path
+              d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"
+              ..
+            />
+          </svg>
+          CGPA Calculator
+        </button>
+        <button class="tab-btn" data-tab="percentage">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <line x1="19" x2="5" y1="5" y2="19" .. />
+            <circle cx="6.5" cy="6.5" r="2.5" .. />
+            <circle cx="17.5" cy="17.5" r="2.5" .. />
+          </svg>
+          Percentage
+        </button>
+      </div>
+
+      <!-- GPA Calculator Panel -->
+      <section id="gpa-panel" class="tab-panel active">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Calculate Your Semester GPA</h2>
+            <p class="card-description">
+              Select regulation, department, and semester to auto-load subjects
+              and credits
+            </p>
+          </div>
+
+          <div class="filter-grid" id="gpa-filters">
+            <div class="form-group">
+              <label for="regulation-filter">Regulation</label>
+              <select id="regulation-filter"></select>
+            </div>
+            <div class="form-group">
+              <label for="department-filter">Department</label>
+              <select id="department-filter"></select>
+            </div>
+            <div class="form-group">
+              <label for="semester-filter">Semester</label>
+              <select id="semester-filter"></select>
+            </div>
+          </div>
+
+          <p id="gpa-filter-note" class="filter-note">
+            Choose filters to load your semester subjects.
+          </p>
+
+          <div id="gpa-subjects"></div>
+
+          <div class="btn-group">
+            <button class="btn btn-outline" onclick="addManualSubject()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                width="18"
+                height="18"
+              >
+                <path d="M5 12h14" .. />
+                <path d="M12 5v14" .. />
+              </svg>
+              Add Subject
             </button>
-            <button class="tab-btn" data-tab="cgpa">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20h9"../><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"../></svg>
-                CGPA Calculator
+            <button class="btn btn-primary" onclick="calculateGPA()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                width="18"
+                height="18"
+              >
+                <circle cx="12" cy="12" r="1" .. />
+                <path d="M19 13v2H5v-2" .. />
+                <path
+                  d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"
+                  ..
+                />
+              </svg>
+              Calculate GPA
             </button>
-            <button class="tab-btn" data-tab="percentage">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="19" x2="5" y1="5" y2="19"../><circle cx="6.5" cy="6.5" r="2.5"../><circle cx="17.5" cy="17.5" r="2.5"../></svg>
-                Percentage
-            </button>
+            <button class="btn btn-outline" onclick="resetGPA()">Reset</button>
+          </div>
+
+          <div id="gpa-result" class="result hidden">
+            <p class="result-label">Your Semester GPA</p>
+            <p class="result-value" id="gpa-value">0.00</p>
+            <p class="result-grade" id="gpa-grade"></p>
+          </div>
+
+          <div class="grade-info">
+            <h3>Anna University Grading System</h3>
+            <div class="grade-table">
+              <div class="grade-item">
+                <span class="grade">O</span><span class="points">10</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">A+</span><span class="points">9</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">A</span><span class="points">8</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">B+</span><span class="points">7</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">B</span><span class="points">6</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">C</span><span class="points">5</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">U</span><span class="points">0</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- GPA Calculator Panel -->
-        <section id="gpa-panel" class="tab-panel active">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Calculate Your Semester GPA</h2>
-                    <p class="card-description">Select regulation, department, and semester to auto-load subjects and credits</p>
-                </div>
+      <!-- CGPA Calculator Panel -->
+      <section id="cgpa-panel" class="tab-panel">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Calculate Your Overall CGPA</h2>
+            <p class="card-description">
+              Enter GPA and credits for each semester
+            </p>
+          </div>
 
-                <div class="filter-grid" id="gpa-filters">
-                    <div class="form-group">
-                        <label for="regulation-filter">Regulation</label>
-                        <select id="regulation-filter"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="department-filter">Department</label>
-                        <select id="department-filter"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="semester-filter">Semester</label>
-                        <select id="semester-filter"></select>
-                    </div>
-                </div>
+          <div id="cgpa-semesters"></div>
 
-                <p id="gpa-filter-note" class="filter-note">Choose filters to load your semester subjects.</p>
+          <div class="btn-group">
+            <button class="btn btn-outline" onclick="addCGPASemester()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                width="18"
+                height="18"
+              >
+                <path d="M5 12h14" .. />
+                <path d="M12 5v14" .. />
+              </svg>
+              Add Semester
+            </button>
+            <button class="btn btn-primary" onclick="calculateCGPA()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                width="18"
+                height="18"
+              >
+                <circle cx="12" cy="12" r="1" .. />
+                <path d="M19 13v2H5v-2" .. />
+                <path
+                  d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"
+                  ..
+                />
+              </svg>
+              Calculate CGPA
+            </button>
+            <button class="btn btn-outline" onclick="resetCGPA()">Reset</button>
+          </div>
 
-                <div id="gpa-subjects"></div>
+          <div id="cgpa-result" class="result hidden">
+            <p class="result-label">Your Overall CGPA</p>
+            <p class="result-value" id="cgpa-value">0.00</p>
+            <p class="result-grade" id="cgpa-grade"></p>
+          </div>
+        </div>
+      </section>
 
-                <div class="btn-group">
-                    <button class="btn btn-outline" onclick="addManualSubject()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="M5 12h14"../><path d="M12 5v14"../></svg>
-                        Add Subject
-                    </button>
-                    <button class="btn btn-primary" onclick="calculateGPA()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><circle cx="12" cy="12" r="1"../><path d="M19 13v2H5v-2"../><path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"../></svg>
-                        Calculate GPA
-                    </button>
-                    <button class="btn btn-outline" onclick="resetGPA()">Reset</button>
-                </div>
+      <!-- Percentage Calculator Panel -->
+      <section id="percentage-panel" class="tab-panel">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Convert CGPA to Percentage</h2>
+            <p class="card-description">
+              Using Anna University formula: CGPA &times; 10
+            </p>
+          </div>
 
-                <div id="gpa-result" class="result hidden">
-                    <p class="result-label">Your Semester GPA</p>
-                    <p class="result-value" id="gpa-value">0.00</p>
-                    <p class="result-grade" id="gpa-grade"></p>
-                </div>
+          <div class="form-group">
+            <label for="cgpa-input">Enter Your CGPA</label>
+            <input
+              type="number"
+              id="cgpa-input"
+              placeholder="e.g., 8.5"
+              min="0"
+              max="10"
+              step="0.01"
+            />
+          </div>
 
-                <div class="grade-info">
-                    <h3>Anna University Grading System</h3>
-                    <div class="grade-table">
-                        <div class="grade-item"><span class="grade">O</span><span class="points">10</span></div>
-                        <div class="grade-item"><span class="grade">A+</span><span class="points">9</span></div>
-                        <div class="grade-item"><span class="grade">A</span><span class="points">8</span></div>
-                        <div class="grade-item"><span class="grade">B+</span><span class="points">7</span></div>
-                        <div class="grade-item"><span class="grade">B</span><span class="points">6</span></div>
-                        <div class="grade-item"><span class="grade">C</span><span class="points">5</span></div>
-                        <div class="grade-item"><span class="grade">U</span><span class="points">0</span></div>
-                    </div>
-                </div>
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="calculatePercentage()">
+              Calculate Percentage
+            </button>
+            <button class="btn btn-outline" onclick="resetPercentage()">
+              Reset
+            </button>
+          </div>
+
+          <div id="percentage-result" class="result hidden">
+            <p class="result-label">Your Percentage</p>
+            <p class="result-value" id="percentage-value">0.00%</p>
+            <p class="result-grade" id="percentage-class"></p>
+          </div>
+
+          <div class="grade-info">
+            <h3>Classification</h3>
+            <div class="grade-table">
+              <div class="grade-item">
+                <span class="grade">&ge;75%</span
+                ><span class="points">First Class with Distinction</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">&ge;60%</span
+                ><span class="points">First Class</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">&ge;50%</span
+                ><span class="points">Second Class</span>
+              </div>
+              <div class="grade-item">
+                <span class="grade">&lt;50%</span
+                ><span class="points">Third Class</span>
+              </div>
             </div>
-        </section>
-
-        <!-- CGPA Calculator Panel -->
-        <section id="cgpa-panel" class="tab-panel">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Calculate Your Overall CGPA</h2>
-                    <p class="card-description">Enter GPA and credits for each semester</p>
-                </div>
-
-                <div id="cgpa-semesters"></div>
-
-                <div class="btn-group">
-                    <button class="btn btn-outline" onclick="addCGPASemester()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><path d="M5 12h14"../><path d="M12 5v14"../></svg>
-                        Add Semester
-                    </button>
-                    <button class="btn btn-primary" onclick="calculateCGPA()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18"><circle cx="12" cy="12" r="1"../><path d="M19 13v2H5v-2"../><path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"../></svg>
-                        Calculate CGPA
-                    </button>
-                    <button class="btn btn-outline" onclick="resetCGPA()">Reset</button>
-                </div>
-
-                <div id="cgpa-result" class="result hidden">
-                    <p class="result-label">Your Overall CGPA</p>
-                    <p class="result-value" id="cgpa-value">0.00</p>
-                    <p class="result-grade" id="cgpa-grade"></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Percentage Calculator Panel -->
-        <section id="percentage-panel" class="tab-panel">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Convert CGPA to Percentage</h2>
-                    <p class="card-description">Using Anna University formula: CGPA &times; 10</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="cgpa-input">Enter Your CGPA</label>
-                    <input type="number" id="cgpa-input" placeholder="e.g., 8.5" min="0" max="10" step="0.01">
-                </div>
-
-                <div class="btn-group">
-                    <button class="btn btn-primary" onclick="calculatePercentage()">
-                        Calculate Percentage
-                    </button>
-                    <button class="btn btn-outline" onclick="resetPercentage()">Reset</button>
-                </div>
-
-                <div id="percentage-result" class="result hidden">
-                    <p class="result-label">Your Percentage</p>
-                    <p class="result-value" id="percentage-value">0.00%</p>
-                    <p class="result-grade" id="percentage-class"></p>
-                </div>
-
-                <div class="grade-info">
-                    <h3>Classification</h3>
-                    <div class="grade-table">
-                        <div class="grade-item"><span class="grade">&ge;75%</span><span class="points">First Class with Distinction</span></div>
-                        <div class="grade-item"><span class="grade">&ge;60%</span><span class="points">First Class</span></div>
-                        <div class="grade-item"><span class="grade">&ge;50%</span><span class="points">Second Class</span></div>
-                        <div class="grade-item"><span class="grade">&lt;50%</span><span class="points">Third Class</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <section class="container" style="padding: 0 1rem 2rem;">
-        <p><strong style="color: #3b82f6 !important;">The Most Accurate Credit-Based GPA & CGPA Calculator for Anna University (All Regulations)</strong></p>
-        <p>LearnSkart's advanced Anna University GPA calculator is the industry-leading tool that accurately computes your semester GPA, cumulative CGPA, and percentage conversion using the official credit-based calculation method. Supporting all regulations including Regulation 2021 and the latest Regulation 2025, our calculator delivers precise results for all departments-CSE, ECE, EEE, Mechanical, Civil, IT, and more. Unlike basic online calculators, LearnSkart integrates your department's exact subject credits and official grade point values to eliminate calculation errors.</p>
+    <section class="container" style="padding: 0 1rem 2rem">
+      <p>
+        <strong style="color: #3b82f6 !important"
+          >The Most Accurate Credit-Based GPA & CGPA Calculator for Anna
+          University (All Regulations)</strong
+        >
+      </p>
+      <p>
+        LearnSkart's advanced Anna University GPA calculator is the
+        industry-leading tool that accurately computes your semester GPA,
+        cumulative CGPA, and percentage conversion using the official
+        credit-based calculation method. Supporting all regulations including
+        Regulation 2021 and the latest Regulation 2025, our calculator delivers
+        precise results for all departments-CSE, ECE, EEE, Mechanical, Civil,
+        IT, and more. Unlike basic online calculators, LearnSkart integrates
+        your department's exact subject credits and official grade point values
+        to eliminate calculation errors.
+      </p>
 
-        <p><strong style="color: #3b82f6 !important;">How to Use LearnSkart GPA Calculator in 3 Simple Steps</strong></p>
-        <p><strong>Step 1: Select Your Regulation & Department</strong> - Choose your Anna University regulation (2021 or 2025) and your department from the dropdown menu.</p>
-        <p><strong>Step 2: Pick Your Semester</strong> - Select the semester you want to calculate; the calculator automatically loads all subjects with their correct credit values for that semester.</p>
-        <p><strong>Step 3: Enter Your Grades</strong> - Input your grades (O, A+, A, B+, B, C, U) for each subject, and hit Calculate. Instant results show your semester GPA with automatic letter grade classification.</p>
+      <p>
+        <strong style="color: #3b82f6 !important"
+          >How to Use LearnSkart GPA Calculator in 3 Simple Steps</strong
+        >
+      </p>
+      <p>
+        <strong>Step 1: Select Your Regulation & Department</strong> - Choose
+        your Anna University regulation (2021 or 2025) and your department from
+        the dropdown menu.
+      </p>
+      <p>
+        <strong>Step 2: Pick Your Semester</strong> - Select the semester you
+        want to calculate; the calculator automatically loads all subjects with
+        their correct credit values for that semester.
+      </p>
+      <p>
+        <strong>Step 3: Enter Your Grades</strong> - Input your grades (O, A+,
+        A, B+, B, C, U) for each subject, and hit Calculate. Instant results
+        show your semester GPA with automatic letter grade classification.
+      </p>
 
-        <p><strong style="color: #3b82f6 !important;">Complete Feature Set for Every Student Need</strong></p>
-        <p>&#10003; <strong>Smart Credit-Based Calculation</strong> - Automatically fetches correct subject credits for your department and semester, ensuring 100% accuracy in GPA computation</p>
-        <p>&#10003; <strong>Multi-Regulation Support</strong> - Full compatibility with Anna University Regulation 2021 and Regulation 2025 syllabi and credit structures</p>
-        <p>&#10003; <strong>All Department Coverage</strong> - Pre-loaded data for CSE, ECE, EEE, Mechanical, Civil, IT, and all other Anna University departments</p>
-        <p>&#10003; <strong>Three-in-One Calculator</strong> - Semester GPA calculator, cumulative CGPA calculator, and instant CGPA to percentage converter all in one tool</p>
-        <p>&#10003; <strong>Manual Entry Option</strong> - Add custom subjects with your own credit values for courses outside standard curriculum</p>
-        <p>&#10003; <strong>Instant Percentage Conversion</strong> - Anna University formula: CGPA &times; 10 applied instantly for placement and higher studies applications</p>
-        <p>&#10003; <strong>Mobile-Optimized & Lightning-Fast</strong> - Responsive design works seamlessly on all devices with zero lag processing</p>
-        <p>&#10003; <strong>Grade Classification Included</strong> - Automatic grade display from First Class with Distinction down to Third Class based on your percentage</p>
+      <p>
+        <strong style="color: #3b82f6 !important"
+          >Complete Feature Set for Every Student Need</strong
+        >
+      </p>
+      <p>
+        &#10003; <strong>Smart Credit-Based Calculation</strong> - Automatically
+        fetches correct subject credits for your department and semester,
+        ensuring 100% accuracy in GPA computation
+      </p>
+      <p>
+        &#10003; <strong>Multi-Regulation Support</strong> - Full compatibility
+        with Anna University Regulation 2021 and Regulation 2025 syllabi and
+        credit structures
+      </p>
+      <p>
+        &#10003; <strong>All Department Coverage</strong> - Pre-loaded data for
+        CSE, ECE, EEE, Mechanical, Civil, IT, and all other Anna University
+        departments
+      </p>
+      <p>
+        &#10003; <strong>Three-in-One Calculator</strong> - Semester GPA
+        calculator, cumulative CGPA calculator, and instant CGPA to percentage
+        converter all in one tool
+      </p>
+      <p>
+        &#10003; <strong>Manual Entry Option</strong> - Add custom subjects with
+        your own credit values for courses outside standard curriculum
+      </p>
+      <p>
+        &#10003; <strong>Instant Percentage Conversion</strong> - Anna
+        University formula: CGPA &times; 10 applied instantly for placement and
+        higher studies applications
+      </p>
+      <p>
+        &#10003; <strong>Mobile-Optimized & Lightning-Fast</strong> - Responsive
+        design works seamlessly on all devices with zero lag processing
+      </p>
+      <p>
+        &#10003; <strong>Grade Classification Included</strong> - Automatic
+        grade display from First Class with Distinction down to Third Class
+        based on your percentage
+      </p>
 
-        <p><strong style="color: #3b82f6 !important;">Perfect for Every Academic Scenario</strong></p>
-        <p>Whether you're tracking monthly semester performance, calculating final CGPA for placement applications, converting scores for scholarship eligibility, or planning your academic improvement strategy, LearnSkart delivers precise results instantly. Students across Anna University trust our calculator for its accuracy, speed, and comprehensive feature set that covers all regulations and departments in one platform.</p>
+      <p>
+        <strong style="color: #3b82f6 !important"
+          >Perfect for Every Academic Scenario</strong
+        >
+      </p>
+      <p>
+        Whether you're tracking monthly semester performance, calculating final
+        CGPA for placement applications, converting scores for scholarship
+        eligibility, or planning your academic improvement strategy, LearnSkart
+        delivers precise results instantly. Students across Anna University
+        trust our calculator for its accuracy, speed, and comprehensive feature
+        set that covers all regulations and departments in one platform.
+      </p>
 
-        <p>Search no more for "Anna University GPA calculator," "CGPA calculator Anna University," or "Anna University percentage calculator 2025"-LearnSkart is the complete, accurate, and trusted solution for all your grade calculation needs.</p>
+      <p>
+        Search no more for "Anna University GPA calculator," "CGPA calculator
+        Anna University," or "Anna University percentage calculator
+        2025"-LearnSkart is the complete, accurate, and trusted solution for all
+        your grade calculation needs.
+      </p>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4 class="logo-brand"><img src="../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</h4>
-                <p>Calculate Anna University GPA, CGPA, and percentage with accurate credit-based formulas.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../">Home</a></li>
-                    <li><a href="../syllabus/">Syllabus</a></li>
-                    <li><a href="../previous-year-questions/">Previous Year Question Papers</a></li>
-                    <li><a href="../anna-university-notes/">Notes</a></li>
-                    <li><a href="../about/">About</a></li>
-                    <li><a href="../contact/">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="../privacy/">Privacy Policy</a></li>
-                    <li><a href="../disclaimer/">Disclaimer</a></li>
-                    <li><a href="../terms-and-conditions/">Terms &amp; Conditions</a></li>
-                </ul>
-            </div>
-            <div class="footer-section footer-social">
-                <h4>Follow Us</h4>
-                <div class="social-links-row">
-                    <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                        <span>@LearnSkart</span>
-                    </a>
-                    <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                        <i class="fab fa-youtube" aria-hidden="true"></i>
-                        <span>YouTube</span>
-                    </a>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4 class="logo-brand">
+            <img
+              src="../assets/icons/favicon-96x96.png"
+              alt="LearnSkart Logo"
+              class="logo-img"
+            />
+            LearnSkart
+          </h4>
+          <p>
+            Calculate Anna University GPA, CGPA, and percentage with accurate
+            credit-based formulas.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> LearnSkart. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../syllabus/">Syllabus</a></li>
+            <li>
+              <a href="../previous-year-questions/"
+                >Previous Year Question Papers</a
+              >
+            </li>
+            <li><a href="../anna-university-notes/">Notes</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../privacy/">Privacy Policy</a></li>
+            <li><a href="../disclaimer/">Disclaimer</a></li>
+            <li>
+              <a href="../terms-and-conditions/">Terms &amp; Conditions</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links-row">
+            <a
+              class="social-link"
+              href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow LearnSkart on Instagram"
+            >
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+              <span>@LearnSkart</span>
+            </a>
+            <a
+              class="social-link"
+              href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit LearnSkart on YouTube"
+            >
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> LearnSkart. All rights reserved. Made
+          with <i class="fas fa-heart"></i> for students.
+        </p>
+      </div>
     </footer>
-        <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/calculator.js"></script>
-</body>
+  </body>
 </html>
-
-
-
-

@@ -1,264 +1,473 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EE3403 Notes - Measurements and Instrumentation | LearnSkart</title>
-    <meta name="description" content="EE3403 Measurements and Instrumentation notes for Anna University Electrical and Electronics Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Measurements and Instrumentation, EE3403, Electrical and Electronics Engineering, semester 4, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/eee/ee3403-measurements-and-instrumentation/">
+    <meta
+      name="description"
+      content="EE3403 Measurements and Instrumentation notes for Anna University Electrical and Electronics Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Measurements and Instrumentation, EE3403, Electrical and Electronics Engineering, semester 4, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/eee/ee3403-measurements-and-instrumentation/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            EE3403 Measurements and Instrumentation Notes - Anna University
+            Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download
+            <strong>EE3403 Measurements and Instrumentation</strong> Notes for
+            Anna University Regulation 2021 students. This page provides
+            high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for
+            <strong>Electrical and Electronics Engineering Semester 4</strong>.
+            Students can easily access
+            <strong>Measurements and Instrumentation notes PDF download</strong
+            >, important questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">EE3403 Measurements and Instrumentation Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>EE3403 Measurements and Instrumentation</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Electrical and Electronics Engineering Semester 4</strong>. Students can easily access <strong>Measurements and Instrumentation notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
-
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">EE3403-Measurements and Instrumentation-handwritten notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1Ot21adDdrxHz3heV3CrGEtrUrJhSo1Vo/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1Ot21adDdrxHz3heV3CrGEtrUrJhSo1Vo" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
-        </section>
-
-        <!-- EE3403 Notes - Anna University (Regulation 2021) | Value Content Section -->
-        <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-            <h2>About EE3403 Measurements and Instrumentation</h2>
-            <p>
-                EE3403 Measurements and Instrumentation is a vital Semester 4 subject for Anna University Electrical and Electronics Engineering students. This course introduces the principles of measurement systems, error analysis, and the operation of electrical and electronic instruments. These <strong>EE3403 notes</strong> help you understand the fundamentals of instrumentation, bridge circuits, transducers, and digital measurement techniques.
-            </p>
-            <p>
-                With our <strong>Anna University study materials</strong> and <strong>EE3403 important topics</strong>, you will learn about analog and digital instruments, error minimization, sensor technologies, and the use of oscilloscopes and virtual instrumentation. The content is designed for both theoretical understanding and practical application in engineering labs and industry.
-            </p>
-            <p>
-                These <strong>EE3403 Measurements and Instrumentation notes</strong> are structured to help you analyze measurement errors, select appropriate instruments, and prepare effectively for university exams.
-            </p>
-
-            <h2>What You Will Get On This Page</h2>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
             <ul>
-                <li>Downloadable PDF notes for all units</li>
-                <li>Comprehensive study materials for measurement systems and instrumentation</li>
-                <li>Unit-wise important topics for targeted revision</li>
-                <li>Exam-focused questions and solved examples</li>
-                <li>Quick reference for bridge circuits, sensors, and digital instruments</li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    EE3403-Measurements and Instrumentation-handwritten
+                    notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1Ot21adDdrxHz3heV3CrGEtrUrJhSo1Vo/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1Ot21adDdrxHz3heV3CrGEtrUrJhSo1Vo"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
             </ul>
+          </section>
+        </section>
+      </section>
 
-            <section class="important-topics-section">
-                <h2>Important Topics</h2>
-                                            <div style="margin-bottom:1.5rem">
-            <strong>EE3403 Measurements and Instrumentation – Important Topics</strong><br>
+      <!-- EE3403 Notes - Anna University (Regulation 2021) | Value Content Section -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About EE3403 Measurements and Instrumentation</h2>
+        <p>
+          EE3403 Measurements and Instrumentation is a vital Semester 4 subject
+          for Anna University Electrical and Electronics Engineering students.
+          This course introduces the principles of measurement systems, error
+          analysis, and the operation of electrical and electronic instruments.
+          These <strong>EE3403 notes</strong> help you understand the
+          fundamentals of instrumentation, bridge circuits, transducers, and
+          digital measurement techniques.
+        </p>
+        <p>
+          With our <strong>Anna University study materials</strong> and
+          <strong>EE3403 important topics</strong>, you will learn about analog
+          and digital instruments, error minimization, sensor technologies, and
+          the use of oscilloscopes and virtual instrumentation. The content is
+          designed for both theoretical understanding and practical application
+          in engineering labs and industry.
+        </p>
+        <p>
+          These
+          <strong>EE3403 Measurements and Instrumentation notes</strong> are
+          structured to help you analyze measurement errors, select appropriate
+          instruments, and prepare effectively for university exams.
+        </p>
+
+        <h2>What You Will Get On This Page</h2>
+        <ul>
+          <li>Downloadable PDF notes for all units</li>
+          <li>
+            Comprehensive study materials for measurement systems and
+            instrumentation
+          </li>
+          <li>Unit-wise important topics for targeted revision</li>
+          <li>Exam-focused questions and solved examples</li>
+          <li>
+            Quick reference for bridge circuits, sensors, and digital
+            instruments
+          </li>
+        </ul>
+
+        <section class="important-topics-section">
+          <h2>Important Topics</h2>
+          <div style="margin-bottom: 1.5rem">
+            <strong
+              >EE3403 Measurements and Instrumentation – Important
+              Topics</strong
+            ><br />
             <strong>UNIT 1</strong>
             <ul>
-                <li>Functional elements of instrumentation system</li>
-                <li>Block diagram of measurement system</li>
-                <li>Static & dynamic characteristics</li>
-                <li>Dynamic errors (types)</li>
-                <li>Instrumental errors & classification</li>
-                <li>Error reduction methods</li>
+              <li>Functional elements of instrumentation system</li>
+              <li>Block diagram of measurement system</li>
+              <li>Static & dynamic characteristics</li>
+              <li>Dynamic errors (types)</li>
+              <li>Instrumental errors & classification</li>
+              <li>Error reduction methods</li>
             </ul>
             <strong>UNIT 2</strong>
             <ul>
-                <li>Moving iron instruments (repulsion type)</li>
-                <li>Induction type energy meter</li>
-                <li>Dynamometer wattmeter</li>
-                <li>Induction type wattmeter</li>
-                <li>Torque equation (AC measurements)</li>
-                <li>Merits & demerits of instruments</li>
+              <li>Moving iron instruments (repulsion type)</li>
+              <li>Induction type energy meter</li>
+              <li>Dynamometer wattmeter</li>
+              <li>Induction type wattmeter</li>
+              <li>Torque equation (AC measurements)</li>
+              <li>Merits & demerits of instruments</li>
             </ul>
             <strong>UNIT 3</strong>
             <ul>
-                <li>Wheatstone bridge</li>
-                <li>Wien bridge</li>
-                <li>Maxwell’s bridge (inductance measurement)</li>
-                <li>Schering bridge</li>
-                <li>AC bridge balance conditions</li>
-                <li>Instrumentation amplifier</li>
+              <li>Wheatstone bridge</li>
+              <li>Wien bridge</li>
+              <li>Maxwell’s bridge (inductance measurement)</li>
+              <li>Schering bridge</li>
+              <li>AC bridge balance conditions</li>
+              <li>Instrumentation amplifier</li>
             </ul>
             <strong>UNIT 4</strong>
             <ul>
-                <li>LVDT (displacement measurement)</li>
-                <li>Smart sensors (concept & blocks)</li>
-                <li>Pressure & temperature measurement (transducers)</li>
-                <li>AC tachometer characteristics</li>
-                <li>Thermistor</li>
+              <li>LVDT (displacement measurement)</li>
+              <li>Smart sensors (concept & blocks)</li>
+              <li>Pressure & temperature measurement (transducers)</li>
+              <li>AC tachometer characteristics</li>
+              <li>Thermistor</li>
             </ul>
             <strong>UNIT 5</strong>
             <ul>
-                <li>Digital frequency measurement</li>
-                <li>Digital Storage Oscilloscope (DSO)</li>
-                <li>ADC (Successive approximation)</li>
-                <li>DAC (Weighted resistor)</li>
-                <li>CRO vs DSO</li>
-                <li>Virtual instrumentation features</li>
+              <li>Digital frequency measurement</li>
+              <li>Digital Storage Oscilloscope (DSO)</li>
+              <li>ADC (Successive approximation)</li>
+              <li>DAC (Weighted resistor)</li>
+              <li>CRO vs DSO</li>
+              <li>Virtual instrumentation features</li>
             </ul>
-                                            </div>
-            </section>
-
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <p><strong>What does EE3403 Measurements and Instrumentation cover?</strong><br>It covers measurement systems, error analysis, analog/digital instruments, sensors, and virtual instrumentation for EEE students.</p>
-                <p><strong>Are Anna University EE3403 notes available as PDF downloads?</strong><br>Yes, you can download detailed PDF notes for all units from this page.</p>
-                <p><strong>What are the most important topics for EE3403 exams?</strong><br>Key topics include bridge circuits, error reduction, sensors, digital oscilloscopes, and instrumentation amplifiers.</p>
-                <p><strong>How do these notes help with exam preparation?</strong><br>They provide unit-wise important topics, solved examples, and quick revision guides for Anna University exams.</p>
-                <p><strong>Are practical applications and lab experiments included?</strong><br>Yes, the notes include practical examples, lab-oriented explanations, and real-world measurement scenarios.</p>
-                <p><strong>Can these materials help with competitive exams?</strong><br>These notes are useful for university exams and as a base for GATE and other competitive tests involving instrumentation.</p>
-            </div>
+          </div>
         </section>
 
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/EE3403-measurements-and-instrumentation/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 4</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../ee3401-transmission-and-distribution/index.html">EE3401 Transmission and Distribution</a>
-                <a class="pyq-btn" href="../ee3402-linear-integrated-circuits/index.html">EE3402 Linear Integrated Circuits</a>
-                <a class="pyq-btn" href="../ee3404-microprocessor-and-microcontroller/index.html">EE3404 Microprocessor and Microcontroller</a>
-                <a class="pyq-btn" href="../ee3405-electrical-machines-ii/index.html">EE3405 Electrical Machines II</a>
-                <a class="pyq-btn" href="../ge3451-environmental-sciences-and-sustainability/index.html">GE3451 Environmental Sciences and Sustainability</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>EE3403 Anna University notes PDF</strong> and start your exam preparation today.</p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <p>
+            <strong
+              >What does EE3403 Measurements and Instrumentation cover?</strong
+            ><br />It covers measurement systems, error analysis, analog/digital
+            instruments, sensors, and virtual instrumentation for EEE students.
+          </p>
+          <p>
+            <strong
+              >Are Anna University EE3403 notes available as PDF
+              downloads?</strong
+            ><br />Yes, you can download detailed PDF notes for all units from
+            this page.
+          </p>
+          <p>
+            <strong>What are the most important topics for EE3403 exams?</strong
+            ><br />Key topics include bridge circuits, error reduction, sensors,
+            digital oscilloscopes, and instrumentation amplifiers.
+          </p>
+          <p>
+            <strong>How do these notes help with exam preparation?</strong
+            ><br />They provide unit-wise important topics, solved examples, and
+            quick revision guides for Anna University exams.
+          </p>
+          <p>
+            <strong
+              >Are practical applications and lab experiments included?</strong
+            ><br />Yes, the notes include practical examples, lab-oriented
+            explanations, and real-world measurement scenarios.
+          </p>
+          <p>
+            <strong>Can these materials help with competitive exams?</strong
+            ><br />These notes are useful for university exams and as a base for
+            GATE and other competitive tests involving instrumentation.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/EE3403-measurements-and-instrumentation/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 4
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../ee3401-transmission-and-distribution/index.html"
+            >EE3401 Transmission and Distribution</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ee3402-linear-integrated-circuits/index.html"
+            >EE3402 Linear Integrated Circuits</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ee3404-microprocessor-and-microcontroller/index.html"
+            >EE3404 Microprocessor and Microcontroller</a
+          >
+          <a class="pyq-btn" href="../ee3405-electrical-machines-ii/index.html"
+            >EE3405 Electrical Machines II</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ge3451-environmental-sciences-and-sustainability/index.html"
+            >GE3451 Environmental Sciences and Sustainability</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>EE3403 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/eee/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/eee/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

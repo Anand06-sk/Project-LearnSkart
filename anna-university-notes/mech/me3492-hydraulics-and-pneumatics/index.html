@@ -1,265 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ME3492 Notes - Hydraulics and Pneumatics | LearnSkart</title>
-    <meta name="description" content="ME3492 Hydraulics and Pneumatics notes for Anna University Mechanical Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Hydraulics and Pneumatics, ME3492, Mechanical Engineering, semester 4, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/mech/me3492-hydraulics-and-pneumatics/">
+    <meta
+      name="description"
+      content="ME3492 Hydraulics and Pneumatics notes for Anna University Mechanical Engineering. Semester 4 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Hydraulics and Pneumatics, ME3492, Mechanical Engineering, semester 4, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/mech/me3492-hydraulics-and-pneumatics/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            ME3492 Hydraulics and Pneumatics Notes - Anna University Regulation
+            2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>ME3492 Hydraulics and Pneumatics</strong> Notes for
+            Anna University Regulation 2021 students. This page provides
+            high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for <strong>Mechanical Engineering Semester 4</strong>. Students can
+            easily access
+            <strong>Hydraulics and Pneumatics notes PDF download</strong>,
+            important questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">ME3492 Hydraulics and Pneumatics Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>ME3492 Hydraulics and Pneumatics</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Mechanical Engineering Semester 4</strong>. Students can easily access <strong>Hydraulics and Pneumatics notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
-
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">ME3492-Hydraulics and Pneumatics-notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/15Jh6hVJxlH0ziLym0K4mk5zeYlFxenix/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=15Jh6hVJxlH0ziLym0K4mk5zeYlFxenix" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
-        </section>
-
-        <!-- ME3492 Value Content Section | Inserted as per SEO/Frontend rules -->
-        <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-            <h2>About ME3492 Hydraulics and Pneumatics</h2>
-            <p>
-                ME3492 Hydraulics and Pneumatics introduces students to the principles and applications of fluid power systems in modern industry. The subject covers hydraulic and pneumatic components, circuits, and control strategies essential for automation and machinery.
-            </p>
-            <p>
-                Students learn about pumps, valves, actuators, accumulators, compressors, and circuit design for both hydraulic and pneumatic systems. The course emphasizes practical troubleshooting, maintenance, and the integration of electro-hydraulic and electro-pneumatic controls.
-            </p>
-            <p>
-                This knowledge is vital for careers in manufacturing, automation, and process industries, enabling students to design, analyze, and maintain efficient fluid power systems.
-            </p>
-
-            <h2>What You Will Get On This Page</h2>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
             <ul>
-                <li>Downloadable ME3492 Hydraulics and Pneumatics PDF notes</li>
-                <li>Handwritten and printed study materials for exam preparation</li>
-                <li>Unit-wise important topics and key concepts</li>
-                <li>Guidance on hydraulic and pneumatic circuits, valves, and actuators</li>
-                <li>Support for troubleshooting and industrial automation</li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    ME3492-Hydraulics and Pneumatics-notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/15Jh6hVJxlH0ziLym0K4mk5zeYlFxenix/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=15Jh6hVJxlH0ziLym0K4mk5zeYlFxenix"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
             </ul>
+          </section>
+        </section>
+      </section>
 
-            <section class="important-topics-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-                <h2>Important Topics</h2>
-                <h3>ME3492 Hydraulics and Pneumatics, unit-wise:</h3>
-                <strong>Unit 1</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Hydraulic system basics (Pascal’s Law & applications)</li>
-                    <li>Hydraulic pumps (vane pump – construction & working)</li>
-                    <li>Hydraulic oil properties & selection criteria</li>
-                    <li>Hydraulic system calculations (pressure, flow rate, efficiency, power)</li>
-                </ul>
-                <br>
-                <strong>Unit 2</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Direction control valves (4/2, 4/3 valves – working & applications)</li>
-                    <li>Pressure control valves & flow control valves (classification & uses)</li>
-                    <li>Hydraulic actuators (cylinders & motors – performance, torque, efficiency)</li>
-                    <li>Hydraulic circuits for industrial applications (e.g., punching machine)</li>
-                </ul>
-                <br>
-                <strong>Unit 3</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Hydraulic accumulators (types & applications)</li>
-                    <li>Hydraulic circuit design (regenerative, synchronous, fail-safe circuits)</li>
-                    <li>Open-loop vs closed-loop hydraulic systems</li>
-                    <li>Electro-hydraulic systems (servo valves & proportional valves)</li>
-                </ul>
-                <br>
-                <strong>Unit 4</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Pneumatic systems vs electro-pneumatic systems</li>
-                    <li>FRL unit (filter, regulator, lubricator – working)</li>
-                    <li>Cascade method for pneumatic circuit design</li>
-                    <li>Pneumatic sequential circuits (design & applications)</li>
-                </ul>
-                <br>
-                <strong>Unit 5</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Hydraulic power pack (components & working)</li>
-                    <li>Compressors & air treatment methods</li>
-                    <li>Maintenance & troubleshooting of hydraulic and pneumatic systems</li>
-                    <li>Industrial automation circuits (hydraulic drilling, safety systems)</li>
-                </ul>
-            </section>
+      <!-- ME3492 Value Content Section | Inserted as per SEO/Frontend rules -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About ME3492 Hydraulics and Pneumatics</h2>
+        <p>
+          ME3492 Hydraulics and Pneumatics introduces students to the principles
+          and applications of fluid power systems in modern industry. The
+          subject covers hydraulic and pneumatic components, circuits, and
+          control strategies essential for automation and machinery.
+        </p>
+        <p>
+          Students learn about pumps, valves, actuators, accumulators,
+          compressors, and circuit design for both hydraulic and pneumatic
+          systems. The course emphasizes practical troubleshooting, maintenance,
+          and the integration of electro-hydraulic and electro-pneumatic
+          controls.
+        </p>
+        <p>
+          This knowledge is vital for careers in manufacturing, automation, and
+          process industries, enabling students to design, analyze, and maintain
+          efficient fluid power systems.
+        </p>
 
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <p><strong>What is the focus of ME3492 Hydraulics and Pneumatics?</strong><br>
-                The subject focuses on fluid power systems, including hydraulic and pneumatic components, circuits, and industrial automation.</p>
+        <h2>What You Will Get On This Page</h2>
+        <ul>
+          <li>Downloadable ME3492 Hydraulics and Pneumatics PDF notes</li>
+          <li>Handwritten and printed study materials for exam preparation</li>
+          <li>Unit-wise important topics and key concepts</li>
+          <li>
+            Guidance on hydraulic and pneumatic circuits, valves, and actuators
+          </li>
+          <li>Support for troubleshooting and industrial automation</li>
+        </ul>
 
-                <p><strong>Are these ME3492 notes suitable for Anna University exams?</strong><br>
-                Yes, the notes are tailored for Anna University syllabus and help you prepare for both internals and semester exams.</p>
-
-                <p><strong>Which topics are most important for quick revision?</strong><br>
-                Focus on hydraulic pumps, valves, actuators, circuit design, and troubleshooting for maximum exam benefit.</p>
-
-                <p><strong>Do the notes include handwritten materials?</strong><br>
-                Yes, you can access both handwritten and printed notes for better understanding and revision.</p>
-
-                <p><strong>How can I use these materials for last-minute study?</strong><br>
-                Use the unit-wise important topics and bullet points to target your revision efficiently before exams.</p>
-            </div>
+        <section
+          class="important-topics-section"
+          style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+        >
+          <h2>Important Topics</h2>
+          <h3>ME3492 Hydraulics and Pneumatics, unit-wise:</h3>
+          <strong>Unit 1</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Hydraulic system basics (Pascal’s Law & applications)</li>
+            <li>Hydraulic pumps (vane pump – construction & working)</li>
+            <li>Hydraulic oil properties & selection criteria</li>
+            <li>
+              Hydraulic system calculations (pressure, flow rate, efficiency,
+              power)
+            </li>
+          </ul>
+          <br />
+          <strong>Unit 2</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>
+              Direction control valves (4/2, 4/3 valves – working &
+              applications)
+            </li>
+            <li>
+              Pressure control valves & flow control valves (classification &
+              uses)
+            </li>
+            <li>
+              Hydraulic actuators (cylinders & motors – performance, torque,
+              efficiency)
+            </li>
+            <li>
+              Hydraulic circuits for industrial applications (e.g., punching
+              machine)
+            </li>
+          </ul>
+          <br />
+          <strong>Unit 3</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Hydraulic accumulators (types & applications)</li>
+            <li>
+              Hydraulic circuit design (regenerative, synchronous, fail-safe
+              circuits)
+            </li>
+            <li>Open-loop vs closed-loop hydraulic systems</li>
+            <li>
+              Electro-hydraulic systems (servo valves & proportional valves)
+            </li>
+          </ul>
+          <br />
+          <strong>Unit 4</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Pneumatic systems vs electro-pneumatic systems</li>
+            <li>FRL unit (filter, regulator, lubricator – working)</li>
+            <li>Cascade method for pneumatic circuit design</li>
+            <li>Pneumatic sequential circuits (design & applications)</li>
+          </ul>
+          <br />
+          <strong>Unit 5</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Hydraulic power pack (components & working)</li>
+            <li>Compressors & air treatment methods</li>
+            <li>
+              Maintenance & troubleshooting of hydraulic and pneumatic systems
+            </li>
+            <li>
+              Industrial automation circuits (hydraulic drilling, safety
+              systems)
+            </li>
+          </ul>
         </section>
 
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/ME3492-hydraulics-and-pneumatics/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 4</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../ce3491-strength-of-materials/index.html">CE3491 Strength of Materials</a>
-                <a class="pyq-btn" href="../ge3451-environmental-sciences-and-sustainability/index.html">GE3451 Environmental Sciences and Sustainability</a>
-                <a class="pyq-btn" href="../me3451-thermal-engineering/index.html">ME3451 Thermal Engineering</a>
-                <a class="pyq-btn" href="../me3491-theory-of-machines/index.html">ME3491 Theory of Machines</a>
-                <a class="pyq-btn" href="../me3493-manufacturing-technology/index.html">ME3493 Manufacturing Technology</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>ME3492 Anna University notes PDF</strong> and start your exam preparation today.</p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <p>
+            <strong
+              >What is the focus of ME3492 Hydraulics and Pneumatics?</strong
+            ><br />
+            The subject focuses on fluid power systems, including hydraulic and
+            pneumatic components, circuits, and industrial automation.
+          </p>
+
+          <p>
+            <strong
+              >Are these ME3492 notes suitable for Anna University
+              exams?</strong
+            ><br />
+            Yes, the notes are tailored for Anna University syllabus and help
+            you prepare for both internals and semester exams.
+          </p>
+
+          <p>
+            <strong>Which topics are most important for quick revision?</strong
+            ><br />
+            Focus on hydraulic pumps, valves, actuators, circuit design, and
+            troubleshooting for maximum exam benefit.
+          </p>
+
+          <p>
+            <strong>Do the notes include handwritten materials?</strong><br />
+            Yes, you can access both handwritten and printed notes for better
+            understanding and revision.
+          </p>
+
+          <p>
+            <strong>How can I use these materials for last-minute study?</strong
+            ><br />
+            Use the unit-wise important topics and bullet points to target your
+            revision efficiently before exams.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/ME3492-hydraulics-and-pneumatics/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 4
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a class="pyq-btn" href="../ce3491-strength-of-materials/index.html"
+            >CE3491 Strength of Materials</a
+          >
+          <a
+            class="pyq-btn"
+            href="../ge3451-environmental-sciences-and-sustainability/index.html"
+            >GE3451 Environmental Sciences and Sustainability</a
+          >
+          <a class="pyq-btn" href="../me3451-thermal-engineering/index.html"
+            >ME3451 Thermal Engineering</a
+          >
+          <a class="pyq-btn" href="../me3491-theory-of-machines/index.html"
+            >ME3491 Theory of Machines</a
+          >
+          <a
+            class="pyq-btn"
+            href="../me3493-manufacturing-technology/index.html"
+            >ME3493 Manufacturing Technology</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>ME3492 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/mech/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/mech/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

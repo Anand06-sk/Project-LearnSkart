@@ -1,268 +1,479 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CE3502 Notes - Structural Analysis I | LearnSkart</title>
-    <meta name="description" content="CE3502 Structural Analysis I notes for Anna University Civil Engineering. Semester 5 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Structural Analysis I, CE3502, Civil Engineering, semester 5, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/civil/ce3502-structural-analysis-i/">
+    <meta
+      name="description"
+      content="CE3502 Structural Analysis I notes for Anna University Civil Engineering. Semester 5 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Structural Analysis I, CE3502, Civil Engineering, semester 5, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/civil/ce3502-structural-analysis-i/"
+    />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "11012996"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <script
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="239807"
+      async
+      data-cfasync="false"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            CE3502 Structural Analysis I Notes - Anna University Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>CE3502 Structural Analysis I</strong> Notes for
+            Anna University Regulation 2021 students. This page provides
+            high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for <strong>Civil Engineering Semester 5</strong>. Students can
+            easily access
+            <strong>Structural Analysis I notes PDF download</strong>, important
+            questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">CE3502 Structural Analysis I Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>CE3502 Structural Analysis I</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Civil Engineering Semester 5</strong>. Students can easily access <strong>Structural Analysis I notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
-
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">CE3502-Structural Analysis I-Handwritten.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/1k4mOqclO0qrXI8OAhyRheVhe_-P-N-ya/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=1k4mOqclO0qrXI8OAhyRheVhe_-P-N-ya" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
-        </section>
-
-        <!-- CE3502 Value Content Section | Inserted as per SEO/Frontend rules -->
-        <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-            <h2>About CE3502 Structural Analysis I</h2>
-            <p>
-                CE3502 Structural Analysis I covers methods for analyzing determinate and indeterminate structures subjected to various loading conditions. This subject is fundamental for civil engineers designing safe and economical structures, providing essential analytical tools for bridge design, building frames, and complex structural systems.
-            </p>
-            <p>
-                These <strong>CE3502 notes</strong> comprehensively cover determinate trusses, slope-deflection method, moment distribution method, flexibility method, and stiffness method. Students master both classical manual analysis techniques and modern matrix methods, essential for understanding structure behavior and preparing for advanced structural design courses. The content focuses on practical problem-solving with emphasis on continuous beams, rigid frames, and indeterminate structures.
-            </p>
-            <p>
-                Master structural analysis principles and computational methods, preparing you for specialized roles in structural design, bridge engineering, and building design essential for safe infrastructure development.
-            </p>
-
-            <h2>What You Will Get On This Page</h2>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
             <ul>
-                <li>Downloadable CE3502 Structural Analysis I PDF notes with complete method coverage</li>
-                <li>Unit-wise study materials on truss analysis and classical methods</li>
-                <li>Important topics on slope-deflection, moment distribution, and matrix methods</li>
-                <li>Comprehensive guidance on indeterminate structure analysis with sway and settlement</li>
-                <li>Exam-focused materials with solved numerical problems and step-by-step solutions</li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    CE3502-Structural Analysis I-Handwritten.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/1k4mOqclO0qrXI8OAhyRheVhe_-P-N-ya/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=1k4mOqclO0qrXI8OAhyRheVhe_-P-N-ya"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
             </ul>
+          </section>
+        </section>
+      </section>
 
-            <section class="important-topics-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-                <h2>Important Topics</h2>
-                <h3>CE3502 Structural Analysis I, unit-wise:</h3>
-                <strong>Unit 1 – Determinate Trusses</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Method of joints</li>
-                    <li>Method of sections</li>
-                    <li>Deflection of trusses</li>
-                    <li>Temperature effects in trusses</li>
-                    <li>Lack of fit (basic concept)</li>
-                    <li>Tension coefficient method</li>
-                    <li>Space trusses (basic idea)</li>
-                </ul>
-                <br>
-                <strong>Unit 2 – Slope Deflection Method</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Slope deflection equations</li>
-                    <li>Analysis of continuous beams</li>
-                    <li>Rigid frames</li>
-                    <li>Support settlement</li>
-                    <li>Inclined members</li>
-                    <li>Symmetric & skew-symmetric loading</li>
-                </ul>
-                <br>
-                <strong>Unit 3 – Moment Distribution Method</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Stiffness & carry over factor</li>
-                    <li>Distribution factor</li>
-                    <li>Continuous beams</li>
-                    <li>Frames with sway</li>
-                    <li>Support settlement</li>
-                </ul>
-                <br>
-                <strong>Unit 4 – Flexibility Method</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Primary structure</li>
-                    <li>Compatibility conditions</li>
-                    <li>Flexibility matrix</li>
-                    <li>Analysis of indeterminate structures (Beams, trusses, frames)</li>
-                </ul>
-                <br>
-                <strong>Unit 5 – Stiffness Method</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Stiffness matrix</li>
-                    <li>Equilibrium conditions</li>
-                    <li>Direct stiffness method</li>
-                    <li>Analysis of beams, trusses & frames</li>
-                </ul>
-            </section>
+      <!-- CE3502 Value Content Section | Inserted as per SEO/Frontend rules -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About CE3502 Structural Analysis I</h2>
+        <p>
+          CE3502 Structural Analysis I covers methods for analyzing determinate
+          and indeterminate structures subjected to various loading conditions.
+          This subject is fundamental for civil engineers designing safe and
+          economical structures, providing essential analytical tools for bridge
+          design, building frames, and complex structural systems.
+        </p>
+        <p>
+          These <strong>CE3502 notes</strong> comprehensively cover determinate
+          trusses, slope-deflection method, moment distribution method,
+          flexibility method, and stiffness method. Students master both
+          classical manual analysis techniques and modern matrix methods,
+          essential for understanding structure behavior and preparing for
+          advanced structural design courses. The content focuses on practical
+          problem-solving with emphasis on continuous beams, rigid frames, and
+          indeterminate structures.
+        </p>
+        <p>
+          Master structural analysis principles and computational methods,
+          preparing you for specialized roles in structural design, bridge
+          engineering, and building design essential for safe infrastructure
+          development.
+        </p>
 
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <p><strong>What is the difference between method of joints and method of sections?</strong><br>
-                Method of joints analyzes forces at each joint by considering equilibrium of individual joint, suitable for finding all member forces. Method of sections cuts through members to find specific forces, more efficient for finding particular member forces.</p>
+        <h2>What You Will Get On This Page</h2>
+        <ul>
+          <li>
+            Downloadable CE3502 Structural Analysis I PDF notes with complete
+            method coverage
+          </li>
+          <li>
+            Unit-wise study materials on truss analysis and classical methods
+          </li>
+          <li>
+            Important topics on slope-deflection, moment distribution, and
+            matrix methods
+          </li>
+          <li>
+            Comprehensive guidance on indeterminate structure analysis with sway
+            and settlement
+          </li>
+          <li>
+            Exam-focused materials with solved numerical problems and
+            step-by-step solutions
+          </li>
+        </ul>
 
-                <p><strong>When should I use slope-deflection method vs moment distribution method?</strong><br>
-                Both methods analyze indeterminate structures, but moment distribution is faster for manual calculations of continuous beams and frames without settlement. Slope-deflection is systematic for all cases including support settlement and inclined members.</p>
-
-                <p><strong>How do flexibility and stiffness methods differ?</strong><br>
-                Flexibility method (force method) treats unknown reactions as unknowns and satisfies compatibility; stiffness method (displacement method) treats nodal displacements as unknowns and satisfies equilibrium. Stiffness method is preferred for computer analysis.</p>
-
-                <p><strong>What is support settlement and how does it affect analysis?</strong><br>
-                Support settlement is vertical or horizontal movement of supports due to soil consolidation. It induces additional bending moments in indeterminate structures, calculated using slope-deflection or flexibility methods as an imposed displacement.</p>
-
-                <p><strong>How should I prepare for CE3502 exams?</strong><br>
-                Focus on moment distribution method and matrix methods with numerical problems; practice truss analysis using both joint and section methods; understand indeterminate analysis with sway and settlement conditions; solve previous year question papers systematically.</p>
-            </div>
+        <section
+          class="important-topics-section"
+          style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+        >
+          <h2>Important Topics</h2>
+          <h3>CE3502 Structural Analysis I, unit-wise:</h3>
+          <strong>Unit 1 – Determinate Trusses</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Method of joints</li>
+            <li>Method of sections</li>
+            <li>Deflection of trusses</li>
+            <li>Temperature effects in trusses</li>
+            <li>Lack of fit (basic concept)</li>
+            <li>Tension coefficient method</li>
+            <li>Space trusses (basic idea)</li>
+          </ul>
+          <br />
+          <strong>Unit 2 – Slope Deflection Method</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Slope deflection equations</li>
+            <li>Analysis of continuous beams</li>
+            <li>Rigid frames</li>
+            <li>Support settlement</li>
+            <li>Inclined members</li>
+            <li>Symmetric & skew-symmetric loading</li>
+          </ul>
+          <br />
+          <strong>Unit 3 – Moment Distribution Method</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Stiffness & carry over factor</li>
+            <li>Distribution factor</li>
+            <li>Continuous beams</li>
+            <li>Frames with sway</li>
+            <li>Support settlement</li>
+          </ul>
+          <br />
+          <strong>Unit 4 – Flexibility Method</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Primary structure</li>
+            <li>Compatibility conditions</li>
+            <li>Flexibility matrix</li>
+            <li>
+              Analysis of indeterminate structures (Beams, trusses, frames)
+            </li>
+          </ul>
+          <br />
+          <strong>Unit 5 – Stiffness Method</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Stiffness matrix</li>
+            <li>Equilibrium conditions</li>
+            <li>Direct stiffness method</li>
+            <li>Analysis of beams, trusses & frames</li>
+          </ul>
         </section>
 
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/CE3502-structural-analysis-i/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 5</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../ce3501-design-of-reinforced-concrete-structural-elements/index.html">CE3501 Design of Reinforced Concrete Structural Elements</a>
-                <a class="pyq-btn" href="../ce3503-foundation-engineering/index.html">CE3503 Foundation Engineering</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>CE3502 Anna University notes PDF</strong> and start your exam preparation today.</p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <p>
+            <strong
+              >What is the difference between method of joints and method of
+              sections?</strong
+            ><br />
+            Method of joints analyzes forces at each joint by considering
+            equilibrium of individual joint, suitable for finding all member
+            forces. Method of sections cuts through members to find specific
+            forces, more efficient for finding particular member forces.
+          </p>
+
+          <p>
+            <strong
+              >When should I use slope-deflection method vs moment distribution
+              method?</strong
+            ><br />
+            Both methods analyze indeterminate structures, but moment
+            distribution is faster for manual calculations of continuous beams
+            and frames without settlement. Slope-deflection is systematic for
+            all cases including support settlement and inclined members.
+          </p>
+
+          <p>
+            <strong>How do flexibility and stiffness methods differ?</strong
+            ><br />
+            Flexibility method (force method) treats unknown reactions as
+            unknowns and satisfies compatibility; stiffness method (displacement
+            method) treats nodal displacements as unknowns and satisfies
+            equilibrium. Stiffness method is preferred for computer analysis.
+          </p>
+
+          <p>
+            <strong
+              >What is support settlement and how does it affect
+              analysis?</strong
+            ><br />
+            Support settlement is vertical or horizontal movement of supports
+            due to soil consolidation. It induces additional bending moments in
+            indeterminate structures, calculated using slope-deflection or
+            flexibility methods as an imposed displacement.
+          </p>
+
+          <p>
+            <strong>How should I prepare for CE3502 exams?</strong><br />
+            Focus on moment distribution method and matrix methods with
+            numerical problems; practice truss analysis using both joint and
+            section methods; understand indeterminate analysis with sway and
+            settlement conditions; solve previous year question papers
+            systematically.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/CE3502-structural-analysis-i/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 5
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../ce3501-design-of-reinforced-concrete-structural-elements/index.html"
+            >CE3501 Design of Reinforced Concrete Structural Elements</a
+          >
+          <a class="pyq-btn" href="../ce3503-foundation-engineering/index.html"
+            >CE3503 Foundation Engineering</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>CE3502 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/civil/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/civil/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

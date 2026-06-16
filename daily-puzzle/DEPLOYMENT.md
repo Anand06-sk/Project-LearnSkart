@@ -17,6 +17,7 @@ Deploy "LearnSkart Daily Path Puzzle" to the world in minutes!
 ### Step 1: Prepare Your Files
 
 Ensure you have in `/daily-puzzle/` folder:
+
 ```
 daily-puzzle/
 ├── index.html
@@ -62,6 +63,7 @@ git push -u origin main
 5. Click **Save**
 
 GitHub will show:
+
 ```
 ✓ Your site is published at https://USERNAME.github.io/Project-OpenNotes/
 ```
@@ -69,6 +71,7 @@ GitHub will show:
 ### Step 4: Access Your Game
 
 Your game is live at:
+
 ```
 https://USERNAME.github.io/Project-OpenNotes/daily-puzzle/
 ```
@@ -135,6 +138,7 @@ GitHub Pages auto-updates within 1-2 minutes. Refresh your browser!
 ### "Page not found" (404)
 
 **Issue**: Browsing to wrong URL
+
 ```
 ❌ https://USERNAME.github.io/daily-puzzle/    (WRONG)
 ✅ https://USERNAME.github.io/Project-OpenNotes/daily-puzzle/  (RIGHT)
@@ -143,6 +147,7 @@ GitHub Pages auto-updates within 1-2 minutes. Refresh your browser!
 ### "Repository not found"
 
 **Issue**: Remote URL incorrect
+
 ```bash
 # Check current remote
 git remote -v
@@ -155,6 +160,7 @@ git push -u origin main
 ### Changes not appearing
 
 **Issue**: GitHub Pages cache
+
 ```
 Solution:
 1. Hard refresh (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac)
@@ -165,6 +171,7 @@ Solution:
 ### Firebase not working on GitHub Pages
 
 **Issue**: CORS or config error
+
 ```
 Solution:
 1. Check FIREBASE_CONFIG in script.js
@@ -178,13 +185,16 @@ Solution:
 ## 🔒 Security Notes
 
 ### Public Repository
+
 Your code is visible to everyone - this is fine because:
+
 - ✅ Firebase keys are limited in scope (Firestore only)
 - ✅ No sensitive credentials in client code
 - ✅ API keys restricted via Firebase Rules
 - ✅ Server-side validation prevents abuse
 
 ### If Uploading to Private Repo
+
 ```bash
 # Add .env file (not pushed to GitHub)
 FIREBASE_API_KEY=xxxxx
@@ -206,6 +216,7 @@ But for this project, public is recommended for community feedback.
 ### View Logs
 
 Click on a deployment to see:
+
 - Build process
 - Deployment time
 - Any warnings/errors
@@ -240,6 +251,7 @@ jobs:
 ```
 
 Benefits:
+
 - ✅ Auto-deploy on push
 - ✅ Build logs visible
 - ✅ Rollback if error
@@ -286,6 +298,7 @@ git checkout HEAD^ -- daily-puzzle/script.js
 ### Add Website Analytics
 
 #### Option 1: GitHub Insights (Built-in)
+
 - Go to **Insights** tab in repository
 - See traffic, clones, visitors
 
@@ -293,19 +306,23 @@ git checkout HEAD^ -- daily-puzzle/script.js
 
 Add to `index.html` before `<script>(function(s){s.dataset.zone='11012996',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
-    <script>(function(s){s.dataset.zone='11018721',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
- <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
-   
+   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+
 </head>`:
 
 ```html
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_MEASUREMENT_ID");
 </script>
 ```
 
@@ -318,13 +335,19 @@ Replace `GA_MEASUREMENT_ID` with your Google Analytics ID.
 ### Add Meta Tags to index.html
 
 ```html
-<meta name="description" content="Daily path puzzle game - Connect letters by swiping through all grid tiles">
-<meta name="keywords" content="puzzle, game, learning, daily, path">
-<meta name="author" content="LearnSkart">
-<meta property="og:title" content="LearnSkart Daily Path Puzzle">
-<meta property="og:description" content="Connect letters by visiting every grid tile">
-<meta property="og:image" content="https://yoursite.com/preview.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta
+  name="description"
+  content="Daily path puzzle game - Connect letters by swiping through all grid tiles"
+/>
+<meta name="keywords" content="puzzle, game, learning, daily, path" />
+<meta name="author" content="LearnSkart" />
+<meta property="og:title" content="LearnSkart Daily Path Puzzle" />
+<meta
+  property="og:description"
+  content="Connect letters by visiting every grid tile"
+/>
+<meta property="og:image" content="https://yoursite.com/preview.png" />
+<meta name="twitter:card" content="summary_large_image" />
 ```
 
 ### robots.txt
@@ -359,20 +382,23 @@ Play now: https://username.github.io/Project-OpenNotes/daily-puzzle/
 If you have another website, embed the game:
 
 ```html
-<iframe 
-  src="https://username.github.io/Project-OpenNotes/daily-puzzle/" 
-  width="100%" 
-  height="800" 
-  frameborder="0">
+<iframe
+  src="https://username.github.io/Project-OpenNotes/daily-puzzle/"
+  width="100%"
+  height="800"
+  frameborder="0"
+>
 </iframe>
 ```
 
 ### Share Button Code
 
 ```html
-<a href="https://username.github.io/Project-OpenNotes/daily-puzzle/" 
-   target="_blank" 
-   class="play-button">
+<a
+  href="https://username.github.io/Project-OpenNotes/daily-puzzle/"
+  target="_blank"
+  class="play-button"
+>
   🎮 Play Daily Puzzle
 </a>
 ```
@@ -388,9 +414,9 @@ Convert your web game to mobile app:
 Add to `index.html`:
 
 ```html
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="apple-touch-icon" href="icon-192.png" />
 ```
 
 Users can "Add to Home Screen" → Opens like native app
@@ -398,6 +424,7 @@ Users can "Add to Home Screen" → Opens like native app
 ### Option 2: Wrap in Cordova/Electron
 
 Convert to true native app (advanced):
+
 - Cordova: Android + iOS
 - Electron: Desktop app
 - React Native: If rebuild needed
@@ -407,18 +434,21 @@ Convert to true native app (advanced):
 ## 🔧 Maintenance Checklist
 
 ### Weekly
+
 - [ ] Test game functionality
 - [ ] Check leaderboard loads
 - [ ] Verify Firebase writes
 - [ ] Monitor error logs
 
 ### Monthly
+
 - [ ] Review GitHub Analytics
 - [ ] Check for security updates
 - [ ] Optimize Firebase indexes
 - [ ] Clean old leaderboard data
 
 ### Quarterly
+
 - [ ] Add new features
 - [ ] Update Firebase rules if needed
 - [ ] Review player feedback
@@ -441,18 +471,19 @@ Convert to true native app (advanced):
 
 ### Common Errors
 
-| Error | Cause | Fix |
-|-------|-------|-----|
-| 404 Not Found | Wrong path | Use `/Project-OpenNotes/daily-puzzle/` |
-| Firebase error | Config wrong | Check FIREBASE_CONFIG in script.js |
-| Can't swipe | Browser issue | Try Chrome, Firefox, Safari |
-| Slow loading | Large files | Compress images (none in this project) |
+| Error          | Cause         | Fix                                    |
+| -------------- | ------------- | -------------------------------------- |
+| 404 Not Found  | Wrong path    | Use `/Project-OpenNotes/daily-puzzle/` |
+| Firebase error | Config wrong  | Check FIREBASE_CONFIG in script.js     |
+| Can't swipe    | Browser issue | Try Chrome, Firefox, Safari            |
+| Slow loading   | Large files   | Compress images (none in this project) |
 
 ---
 
 ## 🎉 You're Live!
 
 Your game is now accessible worldwide at:
+
 ```
 https://USERNAME.github.io/Project-OpenNotes/daily-puzzle/
 ```
