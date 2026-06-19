@@ -3449,7 +3449,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  </url>
+  
     <!-- BEGIN syllabus/2021 subject-level links -->
     <url>
       <loc>https://learnskart.in/syllabus/2021/be3251-basic-electrical-and-electronics-engineering/</loc>
@@ -3633,5 +3633,5 @@
     </url>
     <!-- END syllabus/2021 subject-level links -->
   </urlset>
-</urlset>
+<!-- </urlset> -->
 
