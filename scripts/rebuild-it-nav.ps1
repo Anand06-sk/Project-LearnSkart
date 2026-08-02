@@ -62,9 +62,9 @@ foreach ($file in $files) {
     $content = [regex]::Replace($content, '(?s)<nav[^>]*>.*?</nav>', '', 'Singleline')
 
     if ($content -notmatch 'assets/css/nav\.css') {
-        $content = $content -replace '(?i)   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+        $content = $content -replace '(?i)   
    
-</head>', ('    <link rel="stylesheet" href="../../../assets/css/nav.css">' + $nl + '   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+</head>', ('    <link rel="stylesheet" href="../../../assets/css/nav.css">' + $nl + '   
    
 </head>')
     }

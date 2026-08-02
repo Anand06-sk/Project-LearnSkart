@@ -92,12 +92,7 @@ Welcome! This document guides you through all resources for the game.
       );
     </script>
 
-    <script
-      src="https://quge5.com/88/tag.min.js"
-      data-zone="239807"
-      async
-      data-cfasync="false"
-    ></script>
+    
   </head>
   <body>
     <div class="game-container">

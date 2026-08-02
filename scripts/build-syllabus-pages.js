@@ -205,7 +205,7 @@ function buildDeptPage(options) {
   <link rel="stylesheet" href="../assets/css/question.css">
   <link rel="stylesheet" href="../assets/css/pyq-static.css">
   <link rel="stylesheet" href="../assets/css/syllabus-static.css">
-   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   
    
 </head>
 <body>
@@ -329,7 +329,7 @@ function buildSubjectPage(options) {
   <link rel="stylesheet" href="../assets/css/question.css">
   <link rel="stylesheet" href="../assets/css/pyq-static.css">
   <link rel="stylesheet" href="../assets/css/syllabus-static.css">
-   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   
    
 </head>
 <body>

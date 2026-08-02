@@ -302,9 +302,9 @@ foreach ($file in $files) {
     if ($content -match '<style id="custom-nav-style">[\s\S]*?</style>') {
         $content = [regex]::Replace($content, '<style id="custom-nav-style">[\s\S]*?</style>', $styleBlock, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
     } else {
-        $content = $content -replace '   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+        $content = $content -replace '   
    
-</head>', "$styleBlock`r`n   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+</head>', "$styleBlock`r`n   
    
 </head>"
     }

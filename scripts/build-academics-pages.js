@@ -293,7 +293,7 @@ function buildHtml(entry, canonicalUrl, folderSlug) {
     <link rel="canonical" href="${canonicalUrl}">
     <link rel="stylesheet" href="../assets/css/question.css">
     <link rel="stylesheet" href="../assets/css/pyq-static.css">
-   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   
    
 </head>
 <body>

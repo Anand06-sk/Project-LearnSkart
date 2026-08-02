@@ -241,7 +241,7 @@ function buildSubjectPage(subject, subjectIcons, papers) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/question.css">
   <link rel="stylesheet" href="../assets/css/gate-static.css">
-   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   
    
 </head>
 <body>

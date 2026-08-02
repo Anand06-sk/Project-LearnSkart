@@ -111,7 +111,7 @@ function generateHTML(grouped) {
         .subject-card .arrow { color: var(--primary); margin-left: 0.5rem; }
         .empty-dept { color: var(--muted); padding: 2rem 1rem; text-align: center; border-radius: 8px; background: var(--bg-secondary); }
     </style>
-   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+   
    
 </head>
 <body>

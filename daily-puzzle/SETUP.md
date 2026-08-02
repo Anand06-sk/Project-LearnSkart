@@ -452,7 +452,7 @@ window.DEBUG.generateDailyPuzzle(); // In console
 ### Add Google Analytics (Optional)
 
 ```html
-<!-- Add to index.html before closing    <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+<!-- Add to index.html before closing    
    
 </head> -->
 <script

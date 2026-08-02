@@ -72,10 +72,10 @@ Get-ChildItem -Path $root -Directory | ForEach-Object {
       $subject = 'Subject'
     }
 
-    if ($content -notmatch '(?i)   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+    if ($content -notmatch '(?i)   
    
 </head>') {
-      $content = $content -replace '(?i)<body>', "   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+      $content = $content -replace '(?i)<body>', "   
    
 </head>`r`n<body>"
     }
@@ -117,7 +117,7 @@ Get-ChildItem -Path $root -Directory | ForEach-Object {
 
 
     if ($content -notmatch 'assets/css/nav\.css') {
-      $content = $content -replace '(?i)(   <script src="https://quge5.com/88/tag.min.js" data-zone="239807" async data-cfasync="false"></script>
+      $content = $content -replace '(?i)(   
    
 </head>)', "  <link rel=`"stylesheet`" href=`"../../../assets/css/nav.css`">`r`n$1"
     }
