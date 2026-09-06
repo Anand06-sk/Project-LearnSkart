@@ -454,6 +454,8 @@ window.DEBUG.generateDailyPuzzle(); // In console
 ```html
 <!-- Add to index.html before closing    
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head> -->
 <script
   async

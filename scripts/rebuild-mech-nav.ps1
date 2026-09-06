@@ -64,8 +64,12 @@ foreach ($file in $files) {
     if ($content -notmatch 'assets/css/nav\.css') {
         $content = $content -replace '(?i)   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>', ('    <link rel="stylesheet" href="../../../assets/css/nav.css">' + $nl + '   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>')
     }
 

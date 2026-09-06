@@ -243,6 +243,8 @@ function buildSubjectPage(subject, subjectIcons, papers) {
   <link rel="stylesheet" href="../assets/css/gate-static.css">
    
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>
 <body>
   <nav class="nav">

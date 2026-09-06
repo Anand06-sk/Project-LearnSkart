@@ -1,266 +1,457 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script src="/assets/js/analytics.js"></script>
-    <link rel="icon" href="/favicon.ico">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ME3791 Notes - Mechatronics and IOT | LearnSkart</title>
-    <meta name="description" content="ME3791 Mechatronics and IOT notes for Anna University Mechanical Engineering. Semester 7 Regulation 2021. Download PDFs, study notes, and revision materials.">
-    <meta name="keywords" content="Mechatronics and IOT, ME3791, Mechanical Engineering, semester 7, 2021, Anna University, notes, study materials, PDF">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://learnskart.in/anna-university-notes/mech/me3791-mechatronics-and-iot/">
+    <link rel="icon" href="/favicon.ico" />
 
-<link rel="stylesheet" href="../../../assets/css/question.css">
-    <link rel="stylesheet" href="../../../assets/css/pyq-static.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-   
-   
-</head>
-<body>
-<script src="../../../assets/js/nav.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ME3791 Notes - Mechatronics and IOT | LearnSkart</title>
+    <meta
+      name="description"
+      content="ME3791 Mechatronics and IOT notes for Anna University Mechanical Engineering. Semester 7 Regulation 2021. Download PDFs, study notes, and revision materials."
+    />
+    <meta
+      name="keywords"
+      content="Mechatronics and IOT, ME3791, Mechanical Engineering, semester 7, 2021, Anna University, notes, study materials, PDF"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://learnskart.in/anna-university-notes/mech/me3791-mechatronics-and-iot/"
+    />
+
+    <link rel="stylesheet" href="../../../assets/css/question.css" />
+    <link rel="stylesheet" href="../../../assets/css/pyq-static.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script src="../../../assets/js/nav.js" defer></script>
     <nav>
-        <div class="nav-content">
-            <a href="../../../" class="nav-logo">
-                <img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
-            </a>
-            <div class="nav-right" id="navMenu">
-                <div class="nav-links">
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
+      <div class="nav-content">
+        <a href="../../../" class="nav-logo">
+          <img
+            src="../../../assets/icons/favicon-96x96.png"
+            alt="LearnSkart Logo"
+            class="logo-img"
+          />
+          <span>LearnSkart</span>
+        </a>
+        <div class="nav-right" id="navMenu">
+          <div class="nav-links">
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMobile"
+            aria-label="Toggle navigation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="nav-mobile" id="navMobile" aria-hidden="true">
-            <div class="nav-mobile-inner">
-                <div class="nav-group">
-                    <div class="nav-group-title">Main</div>
-                    <a href="../../../">Home</a>
-                    <a href="../">Department</a>
-                    <a href="../../../syllabus/">Syllabus</a>
-                    <a href="../../../previous-year-questions/">Previous Year Question Papers</a>
-                    <a href="../../../anna-university-results/">Result Portal</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Support</div>
-                    <a href="../../../about/">About</a>
-                    <a href="../../../contact/">Contact</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Legal</div>
-                    <a href="../../../privacy/">Privacy Policy</a>
-                    <a href="../../../disclaimer/">Disclaimer</a>
-                    <a href="../../../terms-and-conditions/">Terms and Conditions</a>
-                </div>
-            </div>
+      </div>
+      <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <div class="nav-mobile-inner">
+          <div class="nav-group">
+            <div class="nav-group-title">Main</div>
+            <a href="../../../">Home</a>
+            <a href="../">Department</a>
+            <a href="../../../syllabus/">Syllabus</a>
+            <a href="../../../previous-year-questions/"
+              >Previous Year Question Papers</a
+            >
+            <a href="../../../anna-university-results/">Result Portal</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Support</div>
+            <a href="../../../about/">About</a>
+            <a href="../../../contact/">Contact</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-group-title">Legal</div>
+            <a href="../../../privacy/">Privacy Policy</a>
+            <a href="../../../disclaimer/">Disclaimer</a>
+            <a href="../../../terms-and-conditions/">Terms and Conditions</a>
+          </div>
         </div>
+      </div>
     </nav>
 
-
     <main class="main container">
-        
+      <header class="content-header" style="align-items: flex-start">
+        <div>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+            ME3791 Mechatronics and IOT Notes - Anna University Regulation 2021
+          </h1>
+          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+            Download <strong>ME3791 Mechatronics and IOT</strong> Notes for Anna
+            University Regulation 2021 students. This page provides high-quality
+            <strong
+              >Anna University study materials, lecture notes, and handwritten
+              notes</strong
+            >
+            for <strong>Mechanical Engineering Semester 7</strong>. Students can
+            easily access
+            <strong>Mechatronics and IOT notes PDF download</strong>, important
+            questions, and previous year
+            <strong>Anna University question papers</strong> to prepare
+            effectively for internal assessments and university exams.
+          </p>
+        </div>
+      </header>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">ME3791 Mechatronics and IOT Notes - Anna University Regulation 2021</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Download <strong>ME3791 Mechatronics and IOT</strong> Notes for Anna University Regulation 2021 students. This page provides high-quality <strong>Anna University study materials, lecture notes, and handwritten notes</strong> for <strong>Mechanical Engineering Semester 7</strong>. Students can easily access <strong>Mechatronics and IOT notes PDF download</strong>, important questions, and previous year <strong>Anna University question papers</strong> to prepare effectively for internal assessments and university exams.</p>
-                
-            </div>
-        </header>
-
-        <section style="margin: 2rem 0;">
-            <h2 style="margin-bottom:1rem;">Notes PDFs</h2>
-            <section class="pyq-list">
-<section class="pyq-year">
-<h2>Study Materials</h2>
-<ul>
-<li class="pyq-paper">
-  <div class="pyq-paper-info">
-    <div class="pyq-paper-title">ME3791-Mechatronics and IOT-notes.pdf</div>
-  </div>
-  <div class="pyq-actions">
-    <a class="pyq-btn" href="https://drive.google.com/file/d/190Ss1Z_F-qDH3BK1eKFyOHvNg1IDb9lR/preview" target="_blank" rel="noopener">View</a>
-    <a class="pyq-btn primary" href="https://drive.google.com/uc?id=190Ss1Z_F-qDH3BK1eKFyOHvNg1IDb9lR" target="_blank" rel="noopener" download>Download</a>
-  </div>
-</li>
-</ul>
-</section>
-</section>
-        </section>
-
-        <!-- ME3791 Value Content Section | Inserted as per SEO/Frontend rules -->
-        <section class="notes-value-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-            <h2>About ME3791 Mechatronics and IOT</h2>
-            <p>
-                ME3791 Mechatronics and IOT integrates mechanical systems with electronics, control systems, and digital technologies. This subject prepares mechanical engineers to design and implement smart systems, IoT devices, and automated solutions that are critical in modern industries.
-            </p>
-            <p>
-                These <strong>ME3791 notes</strong> cover sensors, actuators, microcontrollers, embedded systems, Arduino, Raspberry Pi, and IoT architecture. With our comprehensive study materials, you gain practical skills in interfacing hardware with software and building real-time IoT applications for industrial and consumer applications.
-            </p>
-            <p>
-                Master the blend of mechanical engineering with electronics and embedded systems, enabling you to develop innovative mechatronic solutions and IoT projects that drive automation and smart manufacturing.
-            </p>
-
-            <h2>What You Will Get On This Page</h2>
+      <section style="margin: 2rem 0">
+        <h2 style="margin-bottom: 1rem">Notes PDFs</h2>
+        <section class="pyq-list">
+          <section class="pyq-year">
+            <h2>Study Materials</h2>
             <ul>
-                <li>Downloadable ME3791 Mechatronics and IOT PDF notes with sensor and actuator details</li>
-                <li>Comprehensive coverage of microcontrollers, Arduino, and Raspberry Pi programming</li>
-                <li>Unit-wise important topics on sensors, control systems, and IoT applications</li>
-                <li>Practical examples of embedded systems and real-time IoT integration</li>
-                <li>Exam-focused revision materials for quick preparation</li>
+              <li class="pyq-paper">
+                <div class="pyq-paper-info">
+                  <div class="pyq-paper-title">
+                    ME3791-Mechatronics and IOT-notes.pdf
+                  </div>
+                </div>
+                <div class="pyq-actions">
+                  <a
+                    class="pyq-btn"
+                    href="https://drive.google.com/file/d/190Ss1Z_F-qDH3BK1eKFyOHvNg1IDb9lR/preview"
+                    target="_blank"
+                    rel="noopener"
+                    >View</a
+                  >
+                  <a
+                    class="pyq-btn primary"
+                    href="https://drive.google.com/uc?id=190Ss1Z_F-qDH3BK1eKFyOHvNg1IDb9lR"
+                    target="_blank"
+                    rel="noopener"
+                    download
+                    >Download</a
+                  >
+                </div>
+              </li>
             </ul>
+          </section>
+        </section>
+      </section>
 
-            <section class="important-topics-section" style="margin:2rem 0;line-height:1.7;max-width:900px;">
-                <h2>Important Topics</h2>
-                <h3>ME3791 Mechatronics and IOT, unit-wise:</h3>
-                <strong>Unit 1</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Mechatronics concept and modular approach</li>
-                    <li>Static and dynamic characteristics of sensors</li>
-                    <li>Resistive, capacitive and inductive sensors (working & applications)</li>
-                    <li>Optical, piezoelectric and ultrasonic sensors</li>
-                    <li>Stepper motors (PM, VR, hybrid) and servo motors (DC & AC)</li>
-                </ul>
-                <br>
-                <strong>Unit 2</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Op-amp circuits (inverting, non-inverting, instrumentation amplifier)</li>
-                    <li>Wheatstone bridge and signal conditioning</li>
-                    <li>PID controller (working and applications)</li>
-                    <li>Switching using power devices (MOSFET, TRIAC, relays)</li>
-                    <li>PLC architecture and I/O processing</li>
-                    <li>Ladder logic programming with timers and counters</li>
-                </ul>
-                <br>
-                <strong>Unit 3</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>IoT fundamentals and architecture</li>
-                    <li>IoT enabling technologies</li>
-                    <li>Embedded systems basics and types</li>
-                    <li>Microcontroller vs microprocessor systems</li>
-                    <li>Embedded system peripherals and applications</li>
-                </ul>
-                <br>
-                <strong>Unit 4</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Arduino and Raspberry Pi (features and comparison)</li>
-                    <li>Interfacing sensors (temperature, ultrasonic, light)</li>
-                    <li>Basic programming concepts (C++ / Python usage)</li>
-                    <li>ESP8266 Wi-Fi module basics</li>
-                    <li>Sensor–actuator interfacing and control</li>
-                </ul>
-                <br>
-                <strong>Unit 5</strong>
-                <ul style="margin-top:0; margin-bottom:0;">
-                    <li>Mechatronics applications (robotics, drone control)</li>
-                    <li>Automotive systems (ABS, EBD, cruise control)</li>
-                    <li>IoT system design (remote monitoring systems)</li>
-                    <li>Smart agriculture and water management systems</li>
-                    <li>Real-time IoT applications and integration</li>
-                </ul>
-            </section>
+      <!-- ME3791 Value Content Section | Inserted as per SEO/Frontend rules -->
+      <section
+        class="notes-value-section"
+        style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+      >
+        <h2>About ME3791 Mechatronics and IOT</h2>
+        <p>
+          ME3791 Mechatronics and IOT integrates mechanical systems with
+          electronics, control systems, and digital technologies. This subject
+          prepares mechanical engineers to design and implement smart systems,
+          IoT devices, and automated solutions that are critical in modern
+          industries.
+        </p>
+        <p>
+          These <strong>ME3791 notes</strong> cover sensors, actuators,
+          microcontrollers, embedded systems, Arduino, Raspberry Pi, and IoT
+          architecture. With our comprehensive study materials, you gain
+          practical skills in interfacing hardware with software and building
+          real-time IoT applications for industrial and consumer applications.
+        </p>
+        <p>
+          Master the blend of mechanical engineering with electronics and
+          embedded systems, enabling you to develop innovative mechatronic
+          solutions and IoT projects that drive automation and smart
+          manufacturing.
+        </p>
 
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <p><strong>What is the main focus of ME3791 Mechatronics and IOT?</strong><br>
-                The subject integrates mechanical systems with electronics, embedded systems, and IoT technologies to create smart, automated solutions for modern industries.</p>
+        <h2>What You Will Get On This Page</h2>
+        <ul>
+          <li>
+            Downloadable ME3791 Mechatronics and IOT PDF notes with sensor and
+            actuator details
+          </li>
+          <li>
+            Comprehensive coverage of microcontrollers, Arduino, and Raspberry
+            Pi programming
+          </li>
+          <li>
+            Unit-wise important topics on sensors, control systems, and IoT
+            applications
+          </li>
+          <li>
+            Practical examples of embedded systems and real-time IoT integration
+          </li>
+          <li>Exam-focused revision materials for quick preparation</li>
+        </ul>
 
-                <p><strong>Which sensors and actuators are most important?</strong><br>
-                Focus on resistive, capacitive, inductive, optical sensors, stepper motors, and servo motors as they form the foundation of mechatronic systems.</p>
-
-                <p><strong>How do I program Arduino for IoT applications?</strong><br>
-                Our notes provide step-by-step Arduino programming examples using C++ for sensor interfacing and Wi-Fi connectivity with ESP8266 modules.</p>
-
-                <p><strong>What is the difference between Arduino and Raspberry Pi?</strong><br>
-                Arduino is a microcontroller board for real-time control, while Raspberry Pi is a microcomputer suitable for complex IoT applications requiring OS and networking capabilities.</p>
-
-                <p><strong>How should I prepare for ME3791 exams?</strong><br>
-                Study sensor characteristics, PLC ladder logic programming, Arduino interfacing, and practical IoT applications with emphasis on problem-solving and project-based understanding.</p>
-            </div>
+        <section
+          class="important-topics-section"
+          style="margin: 2rem 0; line-height: 1.7; max-width: 900px"
+        >
+          <h2>Important Topics</h2>
+          <h3>ME3791 Mechatronics and IOT, unit-wise:</h3>
+          <strong>Unit 1</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Mechatronics concept and modular approach</li>
+            <li>Static and dynamic characteristics of sensors</li>
+            <li>
+              Resistive, capacitive and inductive sensors (working &
+              applications)
+            </li>
+            <li>Optical, piezoelectric and ultrasonic sensors</li>
+            <li>Stepper motors (PM, VR, hybrid) and servo motors (DC & AC)</li>
+          </ul>
+          <br />
+          <strong>Unit 2</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>
+              Op-amp circuits (inverting, non-inverting, instrumentation
+              amplifier)
+            </li>
+            <li>Wheatstone bridge and signal conditioning</li>
+            <li>PID controller (working and applications)</li>
+            <li>Switching using power devices (MOSFET, TRIAC, relays)</li>
+            <li>PLC architecture and I/O processing</li>
+            <li>Ladder logic programming with timers and counters</li>
+          </ul>
+          <br />
+          <strong>Unit 3</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>IoT fundamentals and architecture</li>
+            <li>IoT enabling technologies</li>
+            <li>Embedded systems basics and types</li>
+            <li>Microcontroller vs microprocessor systems</li>
+            <li>Embedded system peripherals and applications</li>
+          </ul>
+          <br />
+          <strong>Unit 4</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Arduino and Raspberry Pi (features and comparison)</li>
+            <li>Interfacing sensors (temperature, ultrasonic, light)</li>
+            <li>Basic programming concepts (C++ / Python usage)</li>
+            <li>ESP8266 Wi-Fi module basics</li>
+            <li>Sensor–actuator interfacing and control</li>
+          </ul>
+          <br />
+          <strong>Unit 5</strong>
+          <ul style="margin-top: 0; margin-bottom: 0">
+            <li>Mechatronics applications (robotics, drone control)</li>
+            <li>Automotive systems (ABS, EBD, cruise control)</li>
+            <li>IoT system design (remote monitoring systems)</li>
+            <li>Smart agriculture and water management systems</li>
+            <li>Real-time IoT applications and integration</li>
+          </ul>
         </section>
 
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a class="pyq-btn" href="../../../syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-    <a class="pyq-btn primary" href="../../../pyq/ME3791-mechatronics-and-iot/" target="_blank" rel="noopener">View Question Papers</a>
-            </div>
-        </section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Other Subjects in Semester 7</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="../ge3791-human-values-and-ethics/index.html">GE3791 Human Values and Ethics</a>
-                <a class="pyq-btn" href="../ge3792-industrial-management/index.html">GE3792 Industrial Management</a>
-                <a class="pyq-btn" href="../me3792-computer-integrated-manufacturing/index.html">ME3792 Computer Integrated Manufacturing</a>
-            </div>
-        </section>
-            <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">LearnSkart offers well-organized <strong>Anna University notes, study materials, and exam preparation resources</strong> for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT. These materials help students understand key concepts quickly and score better in exams. Download the latest <strong>ME3791 Anna University notes PDF</strong> and start your exam preparation today.</p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <p>
+            <strong
+              >What is the main focus of ME3791 Mechatronics and IOT?</strong
+            ><br />
+            The subject integrates mechanical systems with electronics, embedded
+            systems, and IoT technologies to create smart, automated solutions
+            for modern industries.
+          </p>
+
+          <p>
+            <strong>Which sensors and actuators are most important?</strong
+            ><br />
+            Focus on resistive, capacitive, inductive, optical sensors, stepper
+            motors, and servo motors as they form the foundation of mechatronic
+            systems.
+          </p>
+
+          <p>
+            <strong>How do I program Arduino for IoT applications?</strong
+            ><br />
+            Our notes provide step-by-step Arduino programming examples using
+            C++ for sensor interfacing and Wi-Fi connectivity with ESP8266
+            modules.
+          </p>
+
+          <p>
+            <strong
+              >What is the difference between Arduino and Raspberry Pi?</strong
+            ><br />
+            Arduino is a microcontroller board for real-time control, while
+            Raspberry Pi is a microcomputer suitable for complex IoT
+            applications requiring OS and networking capabilities.
+          </p>
+
+          <p>
+            <strong>How should I prepare for ME3791 exams?</strong><br />
+            Study sensor characteristics, PLC ladder logic programming, Arduino
+            interfacing, and practical IoT applications with emphasis on
+            problem-solving and project-based understanding.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a
+            class="pyq-btn"
+            href="../../../syllabus/index.html"
+            target="_blank"
+            rel="noopener"
+            >View Syllabus</a
+          >
+          <a
+            class="pyq-btn primary"
+            href="../../../pyq/ME3791-mechatronics-and-iot/"
+            target="_blank"
+            rel="noopener"
+            >View Question Papers</a
+          >
+        </div>
+      </section>
+      <section
+        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
+      >
+        <h2 style="width: 100%; margin-bottom: 1rem">
+          Other Subjects in Semester 7
+        </h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a class="pyq-btn" href="../ge3791-human-values-and-ethics/index.html"
+            >GE3791 Human Values and Ethics</a
+          >
+          <a class="pyq-btn" href="../ge3792-industrial-management/index.html"
+            >GE3792 Industrial Management</a
+          >
+          <a
+            class="pyq-btn"
+            href="../me3792-computer-integrated-manufacturing/index.html"
+            >ME3792 Computer Integrated Manufacturing</a
+          >
+        </div>
+      </section>
+      <p style="color: var(--muted); max-width: 900px; line-height: 1.6">
+        LearnSkart offers well-organized
+        <strong
+          >Anna University notes, study materials, and exam preparation
+          resources</strong
+        >
+        for all departments including CSE, ECE, EEE, Mechanical, Civil, and IT.
+        These materials help students understand key concepts quickly and score
+        better in exams. Download the latest
+        <strong>ME3791 Anna University notes PDF</strong> and start your exam
+        preparation today.
+      </p>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><img src="../../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img"> LearnSkart</div>
-                    <p style="color:var(--muted); font-size:0.875rem; margin-bottom:2rem;">Anna University study notes and materials, arranged for quick revision.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="../../../anna-university-notes/mech/index.html">Notes</a></li>
-                        <li><a href="../../../syllabus/index.html">Syllabus</a></li>
-                        <li><a href="../../../previous-year-questions/index.html">Previous Year Question Papers</a></li>
-                        <li><a href="../../../about/index.html">About</a></li>
-                        <li><a href="../../../contact/index.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
-                        <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
-                        <li><a href="../../../terms-and-conditions/index.html">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links-row">
-                        <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span>@LearnSkart</span>
-                        </a>
-                        <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="../../../assets/icons/favicon-96x96.png"
+                alt="LearnSkart Logo"
+                class="logo-img"
+              />
+              LearnSkart
             </div>
-            <div class="footer-bottom">&copy; 2026 LearnSkart. All rights reserved.</div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.875rem;
+                margin-bottom: 2rem;
+              "
+            >
+              Anna University study notes and materials, arranged for quick
+              revision.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li>
+                <a href="../../../anna-university-notes/mech/index.html"
+                  >Notes</a
+                >
+              </li>
+              <li><a href="../../../syllabus/index.html">Syllabus</a></li>
+              <li>
+                <a href="../../../previous-year-questions/index.html"
+                  >Previous Year Question Papers</a
+                >
+              </li>
+              <li><a href="../../../about/index.html">About</a></li>
+              <li><a href="../../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="../../../privacy/index.html">Privacy Policy</a></li>
+              <li><a href="../../../disclaimer/index.html">Disclaimer</a></li>
+              <li>
+                <a href="../../../terms-and-conditions/index.html"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links-row">
+              <a
+                class="social-link"
+                href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow LearnSkart on Instagram"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@LearnSkart</span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LearnSkart on YouTube"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          &copy; 2026 LearnSkart. All rights reserved.
+        </div>
+      </div>
     </footer>
     <script src="../../../assets/js/theme.js" defer></script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

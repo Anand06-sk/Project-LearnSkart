@@ -74,9 +74,13 @@ Get-ChildItem -Path $root -Directory | ForEach-Object {
 
     if ($content -notmatch '(?i)   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>') {
       $content = $content -replace '(?i)<body>', "   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>`r`n<body>"
     }
 
@@ -119,6 +123,8 @@ Get-ChildItem -Path $root -Directory | ForEach-Object {
     if ($content -notmatch 'assets/css/nav\.css') {
       $content = $content -replace '(?i)(   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>)', "  <link rel=`"stylesheet`" href=`"../../../assets/css/nav.css`">`r`n$1"
     }
 

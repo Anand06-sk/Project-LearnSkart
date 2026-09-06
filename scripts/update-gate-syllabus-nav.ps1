@@ -304,8 +304,12 @@ foreach ($file in $files) {
     } else {
         $content = $content -replace '   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>', "$styleBlock`r`n   
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>"
     }
 

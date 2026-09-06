@@ -113,6 +113,8 @@ function generateHTML(grouped) {
     </style>
    
    
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 <script src="../assets/js/theme.js" defer></script>

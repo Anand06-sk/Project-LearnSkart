@@ -306,8 +306,8 @@ git checkout HEAD^ -- daily-puzzle/script.js
 
 Add to `index.html` before `
 
-   
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
+     crossorigin="anonymous"></script>
 </head>`:
 
 ```html
