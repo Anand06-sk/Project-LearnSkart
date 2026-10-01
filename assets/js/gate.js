@@ -1,15 +1,3 @@
-// Theme init for early dark mode state on this page.
-(function () {
-    try {
-        var theme = localStorage.getItem('site-theme') || 'light';
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark-mode');
-        }
-    } catch (e) {
-    }
-})();
-
 // Complete GATE Subjects Data
 const subjects = [
     {

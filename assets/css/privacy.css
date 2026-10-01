@@ -170,28 +170,6 @@
             color: var(--primary);
         }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            color: var(--foreground);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            border-radius: 50%;
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--secondary);
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-        }
-
         /* Hero Section */
         .hero {
             position: relative;
@@ -385,7 +363,6 @@
             .nav-right { gap: 10px; }
             .nav-links { gap: 12px; font-size: 12px; }
             .nav-links a { padding: 4px 0; }
-            .theme-toggle { padding: 8px; }
 
             .hero { padding: 30px 16px; text-align: center; min-height: 300px; }
             .hero h1 { font-size: 26px; margin-bottom: 12px; }

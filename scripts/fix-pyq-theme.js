@@ -20,13 +20,13 @@ folders.forEach(folder => {
   
   let html = fs.readFileSync(indexPath, 'utf8');
   
-  // Check if theme.js is already present
-  if (html.includes('theme.js')) {
+  // Check if academic-links.js is already present
+  if (html.includes('academic-links.js')) {
     alreadyHad++;
     return;
   }
   
-  // Add theme.js before closing body tag
+  // Add academic-links.js before closing body tag
   const bodyCloseIdx = html.lastIndexOf('</body>');
   if (bodyCloseIdx === -1) {
     console.log(`Warning: No </body> tag found in ${folder}/index.html`);
@@ -35,7 +35,7 @@ folders.forEach(folder => {
   
   const before = html.slice(0, bodyCloseIdx);
   const after = html.slice(bodyCloseIdx);
-  const updatedHtml = before + '    <script src="../assets/js/theme.js" defer></script>\n' + after;
+  const updatedHtml = before + '    <script src="../assets/js/academic-links.js" defer></script>\n' + after;
   
   fs.writeFileSync(indexPath, updatedHtml, 'utf8');
   fixed++;
@@ -44,5 +44,5 @@ folders.forEach(folder => {
 
 console.log(`\n=== Summary ===`);
 console.log(`Fixed: ${fixed} files`);
-console.log(`Already had theme.js: ${alreadyHad} files`);
+console.log(`Already had academic-links.js: ${alreadyHad} files`);
 console.log(`Total folders processed: ${folders.length}`);

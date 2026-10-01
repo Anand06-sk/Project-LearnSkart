@@ -1,19 +1,4 @@
 
-(function() {
-    try {
-        var theme = localStorage.getItem('site-theme') || 'light';
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark-mode');
-        }
-    } catch (e) {}
-})();
-
-(function(){
-    var paths = ['Home/theme.js','./theme.js','../theme.js','../../theme.js'];
-    paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
-})();
-
 const GRADE_POINTS = { 'O': 10, 'A+': 9, 'A': 8, 'B+': 7, 'B': 6, 'C': 5, 'U': 0 };
 let cgpaSemesterCount = 0;
 let creditData = {};

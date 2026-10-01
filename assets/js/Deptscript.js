@@ -177,14 +177,6 @@ function searchNotes() {
   window.addEventListener('load', addClickHandlers);
 })();
 
-// Apply saved dark mode preference
-(function applySavedTheme() {
-  try {
-    const isDark = localStorage.getItem('darkMode') === 'true';
-    if (isDark) document.body.classList.add('dark-mode');
-  } catch (e) {}
-})();
-
 // Toast helper, placeholder removal, persistence and UI flash
 (function() {
   const reg = document.getElementById('reg');

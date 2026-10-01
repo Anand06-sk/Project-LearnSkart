@@ -120,7 +120,7 @@ function buildFallbackHtml(entry, canonicalUrl) {
    
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
      crossorigin="anonymous"></script>
-</head>\n<body>\n    <main class="main container">\n        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">\n            <a href="../index.html">Home</a> &gt; <span>${entry.department || 'Departments'}</span> &gt; <span>${name}</span>\n        </nav>\n        <h1>${code} ${name} Previous Year Question Papers</h1>\n        <p>${intro}</p>\n    </main>\n    <script src="../assets/js/theme.js" defer></script>\n</body>\n</html>`;
+</head>\n<body>\n    <main class="main container">\n        <nav aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">\n            <a href="../index.html">Home</a> &gt; <span>${entry.department || 'Departments'}</span> &gt; <span>${name}</span>\n        </nav>\n        <h1>${code} ${name} Previous Year Question Papers</h1>\n        <p>${intro}</p>\n    </main>\n    <script src="../assets/js/academic-links.js" defer></script>\n</body>\n</html>`;
 }
 
 function enhancePdfList(html) {
@@ -152,11 +152,11 @@ function enhancePdfList(html) {
 }
 
 function ensureThemeScript(html) {
-  // Add theme.js script before closing body tag if not already present
-  if (html.includes('theme.js')) return html;
+  // Add academic-links.js script before closing body tag if not already present
+  if (html.includes('academic-links.js')) return html;
   const bodyCloseIdx = html.lastIndexOf('</body>');
   if (bodyCloseIdx === -1) return html;
-  return html.slice(0, bodyCloseIdx) + '    <script src="../assets/js/theme.js" defer></script>\n' + html.slice(bodyCloseIdx);
+  return html.slice(0, bodyCloseIdx) + '    <script src="../assets/js/academic-links.js" defer></script>\n' + html.slice(bodyCloseIdx);
 }
 
 function mergeEntry(target, incoming) {

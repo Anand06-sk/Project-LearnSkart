@@ -275,13 +275,5 @@
       document.getElementById('countBadge').textContent = 0;
     }
 
-    // Apply saved dark mode preference
-    (function applySavedTheme() {
-      try {
-        const isDark = localStorage.getItem('darkMode') === 'true';
-        if (isDark) document.body.classList.add('dark-mode');
-      } catch (e) {}
-    })();
-
     window.addEventListener('load', loadPDFs);
   

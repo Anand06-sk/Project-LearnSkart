@@ -117,7 +117,7 @@ function generateHTML(grouped) {
      crossorigin="anonymous"></script>
 </head>
 <body>
-<script src="../assets/js/theme.js" defer></script>
+<script src="../assets/js/academic-links.js" defer></script>
 
     <nav class="nav">
         <div class="container nav-inner">

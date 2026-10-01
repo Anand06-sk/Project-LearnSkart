@@ -160,28 +160,6 @@ html.dark .logo-brand {
     color: var(--primary);
 }
 
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    color: var(--foreground);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    border-radius: 50%;
-}
-
-.theme-toggle:hover {
-    background-color: var(--secondary);
-}
-
-.theme-toggle svg {
-    width: 20px;
-    height: 20px;
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -1919,15 +1897,6 @@ html::selection {
     .nav-links {
         gap: 10px;
         font-size: 11px;
-    }
-
-    .theme-toggle {
-        padding: 6px;
-    }
-
-    .theme-toggle svg {
-        width: 18px;
-        height: 18px;
     }
 
     .hero {

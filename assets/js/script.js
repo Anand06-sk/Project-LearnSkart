@@ -1,27 +1,4 @@
-// Early theme setup to match stored preference.
-(function() {
-    try {
-        var theme = localStorage.getItem('site-theme') || 'light';
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark-mode');
-        }
-    } catch (e) {}
-})();
-
-function toggleDarkMode() {
-    // Use shared theme system
-    if(window.theme && window.theme.toggle){
-        window.theme.toggle();
-    }
-}
-
-// Apply saved theme preference on page load
 window.addEventListener('load', function() {
-    // Initialize theme from shared system
-    if(window.theme && window.theme.init){
-        window.theme.init();
-    }
     initNavToggle();
 });
 
@@ -1047,7 +1024,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function initNavToggle(){
     const navMenu = document.getElementById('primary-nav') || document.querySelector('.nav-menu');
     const toggleBtn = document.querySelector('.nav-toggle');
-    const themeItem = navMenu ? navMenu.querySelector('.nav-theme-item') : null;
     if(!navMenu || !toggleBtn) return;
 
     function isMobileOrTablet(){
@@ -1092,17 +1068,8 @@ function initNavToggle(){
         }
     });
 
-    // Dark mode inside menu - let theme.js handle the toggle, we just close menu
-    if(themeItem){
-        // Don't preventDefault - let the theme.js listener work
-        themeItem.addEventListener('click', (e)=>{
-            // Close menu after a tiny delay to let theme.js toggle first
-            setTimeout(()=> closeMenu(), 50);
-        }, true); // use capture phase to run before theme.js listener
-    }
-
     // Close when a nav link is clicked (but not the theme item)
-    navMenu.querySelectorAll('.nav-link:not(.nav-theme-item)').forEach(link => {
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', ()=>{
             closeMenu();
         });

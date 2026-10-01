@@ -72,18 +72,6 @@ body.dark-mode .nav-link::after {
 }
 
 
-body.dark-mode .theme-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: #cbd5e1;
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-mode .theme-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #60a5fa;
-    color: #60a5fa;
-}
-
 body.dark-mode .hero-left h1 {
     color: #f1f5f9;
 }
@@ -607,31 +595,6 @@ body.dark-mode .nav-group {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-
-.theme-btn {
-    background: white;
-    color: var(--primary);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-
-.theme-btn i,
-.nav-theme-item i {
-    font-size: 18px;
-    line-height: 1;
-}
-
-.theme-btn:hover {
-    background: var(--primary-light);
-    border-color: var(--primary);
-    transform: scale(1.05);
-}
 
 /* -------------------- HERO SECTION -------------------- */
 .hero {
@@ -2394,11 +2357,6 @@ footer {
         font-size: 16px;
     }
 
-    .theme-btn {
-        font-size: 11px;
-        padding: 5px 10px;
-    }
-
     .hero {
         padding: 24px 12px;
     }
@@ -2639,7 +2597,6 @@ footer {
 /* Print styles */
 @media print {
     header,
-    .theme-btn,
     .filter-tags,
     footer {
         display: none;
@@ -2832,8 +2789,6 @@ body.dark-mode .nav-toggle:hover {
     .nav-menu { display: flex; }
     .nav-desktop { display: flex; }
     .nav-mobile-groups { display: none; }
-    .nav-theme-item { display: none !important; }
-    .theme-btn { display: inline-flex; align-items: center; }
 }
 
 /* Tablet/Mobile: hamburger visible, dropdown nav */
@@ -2843,12 +2798,6 @@ body.dark-mode .nav-toggle:hover {
     /* Hide inline nav, show hamburger */
     .nav-menu { display: none; }
     .nav-toggle { display: inline-flex; }
-    /* Hide header theme button; dark mode lives in menu */
-    .theme-btn { display: none; }
-    
-    /* Ensure nav-theme-item is visible in mobile menu */
-    .nav-theme-item { display: inline-flex; }
-
     /* Dropdown panel */
     header { position: sticky; }
     .nav-menu.open {
@@ -2878,8 +2827,7 @@ body.dark-mode .nav-toggle:hover {
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
     }
-    .nav-menu.open .nav-link,
-    .nav-menu.open .nav-theme-item {
+    .nav-menu.open .nav-link {
         padding: 10px 12px;
         border-radius: 8px;
         background: transparent;
@@ -2887,8 +2835,7 @@ body.dark-mode .nav-toggle:hover {
         align-items: center;
         gap: 10px;
     }
-    .nav-menu.open .nav-link:hover,
-    .nav-menu.open .nav-theme-item:hover {
+    .nav-menu.open .nav-link:hover {
         background: var(--primary-light);
     }
 
@@ -2898,8 +2845,7 @@ body.dark-mode .nav-toggle:hover {
         border-color: rgba(255,255,255,0.1);
         box-shadow: 0 10px 20px rgba(0,0,0,0.35);
     }
-    body.dark-mode .nav-menu.open .nav-link:hover,
-    body.dark-mode .nav-menu.open .nav-theme-item:hover {
+    body.dark-mode .nav-menu.open .nav-link:hover {
         background: rgba(96,165,250,0.15);
     }
 

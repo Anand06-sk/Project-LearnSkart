@@ -273,7 +273,7 @@ function buildDeptPage(options) {
       <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
     </div>
   </footer>
-  <script src="../assets/js/theme.js" defer></script>
+  <script src="../assets/js/academic-links.js" defer></script>
 </body>
 </html>`;
 }
@@ -391,7 +391,7 @@ function buildSubjectPage(options) {
       <div style="font-size:0.75rem; color:#94a3b8; text-align: center;">&copy; 2026 LearnSkart. All rights reserved.</div>
     </div>
   </footer>
-  <script src="../assets/js/theme.js" defer></script>
+  <script src="../assets/js/academic-links.js" defer></script>
 </body>
 </html>`;
 }

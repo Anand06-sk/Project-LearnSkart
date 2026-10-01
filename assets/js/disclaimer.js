@@ -1,9 +1,4 @@
 
-(function(){
-    var paths = ['Home/theme.js','./theme.js','../theme.js','../../theme.js'];
-    paths.forEach(function(p){ var s=document.createElement('script'); s.src=p; s.defer=true; s.onerror=function(){}; document.head.appendChild(s); });
-})();
-
 document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.getElementById('agreeCheck');
     var button = document.getElementById('agreeBtn');
