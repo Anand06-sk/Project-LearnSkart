@@ -86,7 +86,6 @@ Welcome! This document guides you through all resources for the game.
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
       crossorigin="anonymous"
     ></script>
-    <script src="/assets/js/daily-easy-answer-banner.js" defer></script>
   </head>
   <body>
     <div class="game-container">
