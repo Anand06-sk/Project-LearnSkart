@@ -72,20 +72,31 @@
     gap: 1rem;
 }
 
+.pyq-paper-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
 .pyq-paper-title {
     color: var(--foreground);
     font-weight: 600;
     font-size: 0.95rem;
     line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 .pyq-actions {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .pyq-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     border: 1px solid var(--pyq-card-border);
     background: white;
     color: var(--foreground);
@@ -119,6 +130,10 @@
 
     .pyq-actions {
         width: 100%;
+    }
+
+    .pyq-actions .pyq-btn {
+        flex: 1 1 auto;
     }
 }
 
@@ -155,4 +170,55 @@ body.dark-mode .main nav[aria-label="Breadcrumb"] a {
 body.dark-mode .main nav[aria-label="Breadcrumb"] a:hover {
     color: #93c5fd;
     background: #111827;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) body :is(h1, h2, h3, .nav-logo, .logo-text h1, .sem-tag) {
+    font-family: inherit;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) body :is(button, input, select, textarea) {
+    font: inherit;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main {
+    min-width: 0;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main :is(h1, h2, h3, p, li, a) {
+    overflow-wrap: anywhere;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main :is(.content-header > div, .pyq-year, .pyq-paper, .pyq-paper-info, .subject-card, .notes-value-section, .related-subjects) {
+    min-width: 0;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main .content-header h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main .content-header {
+    align-items: flex-start;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main .content-header p {
+    color: var(--muted);
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main :is(.subject-card, .notes-value-section, .important-topics-section) {
+    margin: 2rem 0;
+    max-width: 900px;
+    line-height: 1.7;
+}
+
+html:has(link[rel="canonical"][href*="/anna-university-notes/"]) .main :is(img, iframe, video) {
+    max-width: 100%;
 }
