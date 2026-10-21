@@ -15,7 +15,93 @@
 <link rel="stylesheet" href="../../assets/css/question.css">
 <link rel="stylesheet" href="../../assets/css/pyq-static.css">
     <link rel="stylesheet" href="../../assets/css/nav.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .cs3491-page { --subject-ink: #1e2d52; --subject-muted: #657493; --subject-line: #e5eaf7; --subject-violet: #6549f5; color: var(--subject-ink); }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) { --nav-height: 68px; border-bottom: 1px solid #e7eaf4; background: rgba(255, 255, 255, 0.97); box-shadow: 0 4px 18px rgba(30, 45, 82, 0.06); }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-content { max-width: 1240px; gap: 2rem; padding: 0 1.5rem; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-logo { gap: 0.65rem; color: #29375e; font-size: 1.2rem; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-logo span { line-height: 1.05; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-logo small { display: block; margin-top: 0.22rem; color: #73809c; font-family: inherit; font-size: 0.62rem; font-weight: 500; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .logo-img { width: 38px; height: 38px; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-right { flex: 0 1 auto; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links { gap: clamp(0.75rem, 1.6vw, 1.45rem); font-size: 0.82rem; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links > a, body:has(.cs3491-page) > nav:not(.nav-mobile) .dropdown-toggle { padding: 0.55rem 0; color: #354364; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links > a.is-active { color: #5944e8; font-weight: 700; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links > a:hover, body:has(.cs3491-page) > nav:not(.nav-mobile) .dropdown-toggle:hover { color: #5944e8; }
+        body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-toggle { width: 40px; height: 40px; margin-left: 0; border-color: #e6e9f4; background: #f5f6fc; color: #344365; }
+        html.dark body:has(.cs3491-page) > nav:not(.nav-mobile) { border-color: #303954; background: rgba(17, 23, 41, 0.97); }
+        html.dark body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-logo, html.dark body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links > a, html.dark body:has(.cs3491-page) > nav:not(.nav-mobile) .dropdown-toggle { color: #e7eaff; }
+        html.dark body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-logo small { color: #aab4d2; }
+        html.dark body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links > a.is-active { color: #a79aff; }
+        .cs3491-page > div[role="navigation"] { margin: 1rem 0 !important; gap: 0.35rem; color: #7c879f !important; font-size: 0.78rem !important; }
+        .cs3491-page > div[role="navigation"] a { padding: 0.25rem 0.55rem; border: 1px solid #e8eaf3; border-radius: 5px; background: #fff; color: #53617f; text-decoration: none; }
+        .cs3491-page > div[role="navigation"] a:hover { border-color: #c9c1ff; color: #5944e8; }
+        .cs3491-page > div[role="navigation"] span { color: #354364; font-weight: 600; }
+        html.dark .cs3491-page > div[role="navigation"] a { border-color: #303954; background: #141a2d; color: #c4cbe0; }
+        html.dark .cs3491-page > div[role="navigation"] span { color: #e7eaff; }
+        @media (min-width: 768px) and (max-width: 960px) {
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-content { gap: 0.7rem; padding: 0 1rem; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links { display: flex !important; gap: 0.65rem; font-size: 0.72rem; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-links > a:nth-of-type(n + 5), body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-dropdown { display: none; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-toggle { display: inline-flex !important; margin-left: 0; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-right { flex: 0 1 auto; margin-left: auto; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-logo { font-size: 1.05rem; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .logo-img { width: 34px; height: 34px; }
+        }
+        @media (max-width: 960px) {
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-content { gap: 1rem; }
+            body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-toggle { margin-left: auto; }
+        }
+        .cs3491-page .page-hero { display: grid; grid-template-columns: 1fr; align-items: center; gap: 0; margin: 0 calc((100vw - min(100vw, 1200px)) / -2) 1.4rem; padding: 2.25rem max(1.5rem, calc((100vw - 1200px) / 2)); background: linear-gradient(110deg, #f0f2ff 0%, #f8f9ff 55%, #e8edff 100%); }
+        .cs3491-page .hero-copy { max-width: 690px; }
+        .cs3491-page .hero-kicker { display: inline-flex; margin: 0 0 0.8rem; padding: 0.35rem 0.65rem; border-radius: 5px; background: #e2ddff; color: #513bd4; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; }
+        .cs3491-page .page-hero h1 { margin: 0 0 0.7rem; color: var(--subject-ink); font-size: clamp(1.8rem, 4vw, 2.55rem); line-height: 1.16; }
+        .cs3491-page .page-hero p { max-width: 620px; margin: 0; color: var(--subject-muted); line-height: 1.7; }
+        .cs3491-page .shortcut-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; margin: 1.4rem 0; }
+        .cs3491-page .shortcut { display: flex; min-height: 68px; align-items: center; justify-content: center; padding: 0.9rem; border: 1px solid var(--subject-line); border-radius: 9px; background: #f8f9ff; color: var(--subject-ink); text-align: center; text-decoration: none; transition: transform 160ms ease, border-color 160ms ease; }
+        .cs3491-page .shortcut:hover { transform: translateY(-2px); border-color: #c3baff; }
+        .cs3491-page .shortcut strong { display: block; }
+        .cs3491-page .shortcut strong { font-size: 0.88rem; }
+        .cs3491-page .papers-heading { margin: 1.8rem 0 0.8rem; font-size: 1.35rem; }
+        .cs3491-page .pyq-list { gap: 0.8rem; }
+        .cs3491-page .pyq-year { padding: 1rem 1.2rem; border-radius: 10px; }
+        .cs3491-page .pyq-year h2 { color: var(--subject-ink); }
+        .cs3491-page .pyq-year ul { gap: 0; }
+        .cs3491-page .pyq-year li { padding: 0.8rem 0; border: 0; border-top: 1px solid var(--subject-line); border-radius: 0; background: transparent; }
+        .cs3491-page .pyq-paper-title { font-size: 0.86rem; }
+        .cs3491-page .related-links { margin: 1.25rem 0; padding: 1.2rem; border: 1px solid var(--subject-line); border-radius: 10px; background: linear-gradient(120deg, #f5f6ff, #fbfcff); }
+        .cs3491-page .related-links h2 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+        .cs3491-page .related-links > p { margin: 0 0 0.9rem; color: var(--subject-muted); font-size: 0.86rem; line-height: 1.6; }
+        .cs3491-page .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+        .cs3491-page .related-grid div + div { padding-left: 1rem; border-left: 1px solid var(--subject-line); }
+        .cs3491-page .related-grid a { display: block; width: fit-content; margin: 0.45rem 0; color: #5545e8; font-size: 0.82rem; text-decoration: none; }
+        .cs3491-page .related-grid a::after { content: " →"; }
+        .cs3491-page .related-grid a:hover { text-decoration: underline; }
+        .cs3491-page .dropdown-toggle::after { content: "⌄"; }
+        .footer-social .social-link svg { display: block; width: 18px; height: 18px; flex: 0 0 18px; }
+        .cs3491-page .footer-social .social-link svg { width: 18px; height: 18px; flex: 0 0 18px; }
+        .cs3491-page .important-questions { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid var(--subject-line); border-radius: 10px; background: #fff; }
+        .cs3491-page .important-questions > summary { color: var(--subject-ink); font-size: 1.1rem; font-weight: 700; cursor: pointer; }
+        .cs3491-page .important-questions[open] > summary { margin-bottom: 1rem; }
+        body.dark-mode .cs3491-page { --subject-ink: #e7eaff; --subject-muted: #aab4d2; --subject-line: #303954; }
+        body.dark-mode .cs3491-page .page-hero, body.dark-mode .cs3491-page .related-links { background: linear-gradient(110deg, #171d35, #202744); }
+        body.dark-mode .cs3491-page .shortcut, body.dark-mode .cs3491-page .important-questions { background: #141a2d; }
+        body.dark-mode .cs3491-page .pyq-year li { background: transparent; }
+        @media (max-width: 760px) {
+            .cs3491-page .page-hero { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.6rem 1.25rem; }
+            .cs3491-page .shortcut-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .cs3491-page .related-grid { grid-template-columns: 1fr; gap: 0.3rem; }
+            .cs3491-page .related-grid div + div { padding: 0.5rem 0 0; border: 0; border-top: 1px solid var(--subject-line); }
+            .cs3491-page .pyq-paper { flex-direction: row; align-items: center; }
+            .cs3491-page .pyq-actions { width: auto; }
+        }
+        @media (max-width: 460px) {
+            .cs3491-page .shortcut { padding: 0.7rem; }
+            .cs3491-page .shortcut strong { font-size: 0.78rem; }
+            .cs3491-page .pyq-paper { align-items: flex-start; flex-direction: column; }
+            .cs3491-page .pyq-actions { width: 100%; }
+        }
+    </style>
    
    
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
@@ -26,7 +112,7 @@
         <div class="nav-content">
             <a href="/" class="nav-logo">
                 <img src="../../assets/icons/favicon-96x96.png" alt="LearnSkart Logo" class="logo-img">
-                <span>LearnSkart</span>
+                <span>LearnSkart<small>Notes · Syllabus · PYQs</small></span>
             </a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -43,7 +129,6 @@
                     <div class="nav-dropdown">
                         <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
                             GATE
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu" aria-label="GATE submenu">
                             <a href="/gate-syllabus/">GATE Syllabus</a>
@@ -84,17 +169,31 @@
         </div>
     </nav>
 
-    <main class="main container">
+    <main class="main container cs3491-page">
         <div role="navigation" aria-label="Breadcrumb" style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted);">
             <a href="../../index.html">Home</a> &gt; <a href="../../anna-university-notes/cse/index.html">Computer Science and Engineering</a> / <a href="../../anna-university-notes/ece/index.html">Electronics and Communication Engineering</a> / <a href="../../anna-university-notes/it/index.html">Information Technology</a> &gt; <span>Artificial Intelligence and Machine Learning</span>
         </div>
 
-        <header class="content-header" style="align-items:flex-start;">
-            <div>
-                <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">CS3491 Artificial Intelligence and Machine Learning Previous Year Question Papers - Anna University</h1>
-                <p style="color: var(--muted); max-width: 900px; line-height: 1.6;">Explore the Previous Year Anna University Question Papers of CS3491 Artificial Intelligence and Machine Learning.</p>
+        <header class="page-hero">
+            <div class="hero-copy">
+                <span class="hero-kicker">Anna University &nbsp;·&nbsp; Regulation 2021</span>
+                <h1>CS3491 - Artificial Intelligence and Machine Learning</h1>
+                <p>Get previous year question papers, study materials and other useful resources to prepare for your Anna University exams.</p>
             </div>
         </header>
+
+        <section class="shortcut-grid" aria-label="Subject resources">
+            <a class="shortcut" href="/anna-university-notes/cse/cs3491-artificial-intelligence-and-machine-learning/"><strong>Notes</strong></a>
+            <a class="shortcut" href="/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/"><strong>Syllabus</strong></a>
+            <a class="shortcut" href="#important-questions"><strong>Important Questions</strong></a>
+            <a class="shortcut" href="/pyq/CS3492-database-management-systems/"><strong>Related Subject PYQs</strong></a>
+            <a class="shortcut" href="/anna-university-notes/cse/"><strong>CSE Resources</strong></a>
+            <a class="shortcut" href="/gate-pyqs/"><strong>GATE PYQs</strong></a>
+            <a class="shortcut" href="/cgpa-calculator/"><strong>CGPA Calculator</strong></a>
+            <a class="shortcut" href="/anna-university-results/"><strong>Anna University Results</strong></a>
+        </section>
+
+        <h2 class="papers-heading">Previous Year Question Papers</h2>
 
         <section class="pyq-list">
         <section class="pyq-year">
@@ -144,8 +243,8 @@
             </ul>
         </section>
         </section>
-        <section style="margin: 2.5rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;">
-    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1rem;">Important Questions - CS3491 Artificial Intelligence and Machine Learning</h2>
+        <details id="important-questions" class="important-questions" style="margin: 2.5rem 0;">
+    <summary>Important Questions - CS3491 Artificial Intelligence and Machine Learning</summary>
     
     <div style="margin-bottom: 1.5rem;">
         <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.75rem;">UNIT I: PROBLEM SOLVING</h3>
@@ -241,26 +340,32 @@
         <p style="font-weight:600; margin-bottom:0.5rem;">Most Repeated / High-Weight Questions</p>
         <p style="color: var(--text-primary); font-size:0.9rem; line-height:1.6;">A* search and problem solving, knowledge representation and reasoning, decision trees with entropy calculation, support vector machines, neural networks and backpropagation, K-means clustering, PCA for dimensionality reduction.</p>
     </div>
-</section>
-        <section style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <h2 style="width: 100%; margin-bottom:1rem;">Additional Resources</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a class="pyq-btn" href="/syllabus/index.html" target="_blank" rel="noopener">View Syllabus</a>
-                <a class="pyq-btn primary" href="/index.html" target="_blank" rel="noopener">View Notes</a>
+</details>
+        <section class="related-links" aria-labelledby="related-links-title">
+            <h2 id="related-links-title">Related Links</h2>
+            <p>Quick access to other useful pages on LearnSkart.</p>
+            <div class="related-grid">
+                <div>
+                    <a href="/anna-university-notes/cse/cs3491-artificial-intelligence-and-machine-learning/">CS3491 Notes</a>
+                    <a href="/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/">CS3491 Syllabus</a>
+                    <a href="#important-questions">CS3491 Important Questions</a>
+                    <a href="/previous-year-questions/">All Anna University PYQs</a>
+                </div>
+                <div>
+                    <a href="/pyq/CS3492-database-management-systems/">CS3492 Database Management Systems PYQs</a>
+                    <a href="/pyq/CS3551-distributed-computing/">CS3551 Distributed Computing PYQs</a>
+                    <a href="/pyq/CS3391-object-oriented-programming/">CS3391 Object-Oriented Programming PYQs</a>
+                    <a href="/anna-university-notes/cse/">CSE Notes (All Subjects)</a>
+                </div>
+                <div>
+                    <a href="/gate-pyqs/">GATE PYQs (CSE)</a>
+                    <a href="/anna-university-results/">Anna University Result Portal</a>
+                    <a href="/cgpa-calculator/">CGPA to Percentage Calculator</a>
+                    <a href="/">LearnSkart Home</a>
+                </div>
             </div>
         </section>
-        <section style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px;">
-    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1rem;">How to Use These Question Papers</h2>
-    <ul style="color: var(--muted); line-height: 1.8; font-size: 0.95rem;">
-        <li><strong>Problem Solving First:</strong> Master search algorithms (Unit I) with heuristic design and problem formulation. These are foundation concepts for understanding AI approaches throughout the course.</li>
-        <li><strong>Knowledge Representation Deep Dive:</strong> Practice FOL, unification, and resolution proofs (Unit II). Understand Bayesian networks and probabilistic reasoning for reasoning under uncertainty.</li>
-        <li><strong>ML Theory and Practice:</strong> Study supervised learning algorithms (Unit IV) with mathematical foundations. Practice decision tree construction using information gain, SVM kernel selection, and neural network backpropagation calculations.</li>
-        <li><strong>Clustering and Dimensionality Reduction:</strong> Implement K-means with manual centroid calculations and trace through iterations. Understand PCA transformation and its applications for feature reduction.</li>
-        <li><strong>Time Management:</strong> Allocate 60-90 minutes per algorithm explanation; practice Part B solutions combining concepts from multiple units under timed conditions.</li>
-    </ul>
-</section>
-
-        </section>
+        
     </main>
 <footer class="footer">
         <div class="container">
@@ -274,7 +379,7 @@
                     <ul class="footer-links">
                         <li><a href="../../index.html">Home</a></li>
                         <li><a href="../../previous-year-questions/index.html">Previous Year Questions</a></li>
-                        <li><a href="../../syllabus\cse\cs3491-artificial-intelligence-and-machine-learning\index.html">Syllabus</a></li>
+                        <li><a href="/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/">Syllabus</a></li>
                         <li><a href="../../about/index.html">About</a></li>
                         <li><a href="../../contact/index.html">Contact</a></li>
                     </ul>
@@ -291,11 +396,11 @@
                     <h4>Follow Us</h4>
                     <div class="social-links-row">
                         <a class="social-link" href="https://www.instagram.com/learnskart?igsh=MWswMjdicWJ5dTQ3" target="_blank" rel="noopener noreferrer" aria-label="Follow LearnSkart on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg>
                             <span>@LearnSkart</span>
                         </a>
                         <a class="social-link" href="https://youtube.com/@learnskart?si=FnWsRKzRe_5hWqLr" target="_blank" rel="noopener noreferrer" aria-label="Visit LearnSkart on YouTube">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8Z" fill="currentColor"/><path d="m9.5 15.5 6-3.5-6-3.5v7Z" fill="#fff"/></svg>
                             <span>YouTube</span>
                         </a>
                     </div>
