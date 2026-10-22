@@ -24,6 +24,64 @@
     <link rel="stylesheet" href="../../assets/css/question.css" />
     <link rel="stylesheet" href="../../assets/css/pyq-static.css" />
     <link rel="stylesheet" href="../../assets/css/nav.css" />
+    <style>
+      .cs3492-page { --subject-ink: #1e2d52; --subject-muted: #657493; --subject-line: #e5eaf7; color: var(--subject-ink); }
+      body:has(.cs3492-page) > nav:not(.nav-mobile) { --nav-height: 68px; border-bottom: 1px solid #e7eaf4; background: rgba(255, 255, 255, 0.97); box-shadow: 0 4px 18px rgba(30, 45, 82, 0.06); }
+      body:has(.cs3492-page) > nav:not(.nav-mobile) .nav-content { max-width: 1240px; gap: 2rem; padding: 0 1.5rem; }
+      body:has(.cs3492-page) > nav:not(.nav-mobile) .nav-logo { gap: 0.65rem; color: #29375e; font-size: 1.2rem; }
+      body:has(.cs3492-page) > nav:not(.nav-mobile) .nav-logo small { display: block; margin-top: 0.22rem; color: #73809c; font-size: 0.62rem; font-weight: 500; }
+      body:has(.cs3492-page) > nav:not(.nav-mobile) .nav-links { gap: clamp(0.75rem, 1.6vw, 1.45rem); font-size: 0.82rem; }
+      body:has(.cs3492-page) > nav:not(.nav-mobile) .nav-links > a.is-active { color: #5944e8; font-weight: 700; }
+      .cs3492-page > div[role="navigation"] { margin: 1rem 0 !important; color: #7c879f !important; font-size: 0.75rem !important; line-height: 1.6; }
+      .cs3492-page > div[role="navigation"] a { padding: 0; border: 0; background: transparent; color: #53617f; }
+      .cs3492-page .page-hero { margin: 0 calc((100vw - min(100vw, 1200px)) / -2) 1.4rem; padding: 2.25rem max(1.5rem, calc((100vw - 1200px) / 2)); background: linear-gradient(110deg, #f0f2ff, #f8f9ff 55%, #e8edff); }
+      .cs3492-page .hero-copy { max-width: none; }
+      .cs3492-page .hero-kicker { display: inline-flex; margin-bottom: 0.8rem; padding: 0.35rem 0.65rem; border-radius: 5px; background: #e2ddff; color: #513bd4; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; }
+      .cs3492-page .page-hero h1 { margin: 0 0 0.7rem; color: var(--subject-ink); font-size: 1.8rem; line-height: 1.16; white-space: nowrap; }
+      .cs3492-page .page-hero p { max-width: 620px; margin: 0; color: var(--subject-muted); line-height: 1.7; }
+      .cs3492-page .shortcut-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; margin: 1.4rem 0; }
+      .cs3492-page .shortcut { display: flex; min-height: 68px; align-items: center; justify-content: center; padding: 0.9rem; border: 1px solid var(--subject-line); border-radius: 9px; background: #f8f9ff; color: var(--subject-ink); text-align: center; text-decoration: none; transition: transform 160ms ease, border-color 160ms ease; }
+      .cs3492-page .shortcut:hover { transform: translateY(-2px); border-color: #c3baff; }
+      .cs3492-page .shortcut strong { font-size: 0.88rem; }
+      .cs3492-page .papers-heading { margin: 1.8rem 0 0.8rem; font-size: 1.35rem; }
+      .cs3492-page .pyq-list { gap: 0.8rem; }
+      .cs3492-page .pyq-year { padding: 1rem 1.2rem; border-radius: 10px; }
+      .cs3492-page .pyq-year h2 { color: var(--subject-ink); }
+      .cs3492-page .pyq-year ul { gap: 0; }
+      .cs3492-page .pyq-year li { padding: 0.8rem 0; border: 0; border-top: 1px solid var(--subject-line); border-radius: 0; background: transparent; }
+      .cs3492-page .pyq-paper-title { font-size: 0.86rem; }
+      .cs3492-page .important-questions { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid var(--subject-line); border-radius: 10px; background: #fff; }
+      .cs3492-page .important-questions > summary { color: var(--subject-ink); font-size: 1.1rem; font-weight: 700; cursor: pointer; }
+      .cs3492-page .important-questions[open] > summary { margin-bottom: 1rem; }
+      .cs3492-page .related-links { margin: 1.25rem 0; padding: 1.2rem; border: 1px solid var(--subject-line); border-radius: 10px; background: linear-gradient(120deg, #f5f6ff, #fbfcff); }
+      .cs3492-page .related-links h2 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+      .cs3492-page .related-links > p { margin: 0 0 0.9rem; color: var(--subject-muted); font-size: 0.86rem; line-height: 1.6; }
+      .cs3492-page .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+      .cs3492-page .related-grid div + div { padding-left: 1rem; border-left: 1px solid var(--subject-line); }
+      .cs3492-page .related-grid a { display: block; width: fit-content; margin: 0.45rem 0; color: #5545e8; font-size: 0.82rem; text-decoration: none; }
+      .cs3492-page .related-grid a::after { content: " →"; }
+      .cs3492-page .related-grid a:hover { text-decoration: underline; }
+      .cs3492-page .dropdown-toggle::after { content: "⌄"; }
+      body.dark-mode .cs3492-page { --subject-ink: #e7eaff; --subject-muted: #aab4d2; --subject-line: #303954; }
+      body.dark-mode .cs3492-page .page-hero, body.dark-mode .cs3492-page .related-links { background: linear-gradient(110deg, #171d35, #202744); }
+      body.dark-mode .cs3492-page .shortcut, body.dark-mode .cs3492-page .important-questions { background: #141a2d; }
+      @media (max-width: 1099px) { .cs3492-page .page-hero h1 { white-space: normal; } }
+      @media (max-width: 960px) { body:has(.cs3492-page) > nav:not(.nav-mobile) .nav-content { gap: 1rem; } }
+      @media (max-width: 760px) {
+        .cs3492-page .page-hero { padding: 1.6rem 1.25rem; }
+        .cs3492-page .shortcut-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .cs3492-page .related-grid { grid-template-columns: 1fr; gap: 0.3rem; }
+        .cs3492-page .related-grid div + div { padding: 0.5rem 0 0; border: 0; border-top: 1px solid var(--subject-line); }
+        .cs3492-page .pyq-paper { flex-direction: row; align-items: center; }
+        .cs3492-page .pyq-actions { width: auto; }
+      }
+      @media (max-width: 460px) {
+        .cs3492-page .shortcut { padding: 0.7rem; }
+        .cs3492-page .shortcut strong { font-size: 0.78rem; }
+        .cs3492-page .pyq-paper { align-items: flex-start; flex-direction: column; }
+        .cs3492-page .pyq-actions { width: 100%; }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -44,7 +102,7 @@
             alt="LearnSkart Logo"
             class="logo-img"
           />
-          <span>LearnSkart</span>
+          <span>LearnSkart<small>Notes · Syllabus · PYQs</small></span>
         </a>
         <button
           class="nav-toggle"
@@ -82,7 +140,6 @@
                 aria-haspopup="true"
               >
                 GATE
-                <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </button>
               <div class="dropdown-menu" aria-label="GATE submenu">
                 <a href="/gate-syllabus/">GATE Syllabus</a>
@@ -128,7 +185,7 @@
       </div>
     </nav>
 
-    <main class="main container">
+    <main class="main container cs3492-page">
       <div
         role="navigation"
         aria-label="Breadcrumb"
@@ -145,26 +202,33 @@
         &gt; <span>Database Management Systems</span>
       </div>
 
-      <header class="content-header" style="align-items: flex-start">
-        <div>
-          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
-            CS3492 Database Management Systems Previous Year Question Papers -
-            Anna University
-          </h1>
-          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">Explore the Previous Year Anna University Question Papers of CS3492 Database Management Systems.</p>
+      <header class="page-hero">
+        <div class="hero-copy">
+          <span class="hero-kicker">Anna University &nbsp;·&nbsp; Regulation 2021</span>
+          <h1>CS3492 - Database Management Systems - Anna University Previous Year Question Paper</h1>
+          <p>Get previous year question papers, study materials and other useful resources to prepare for your Anna University exams.</p>
         </div>
       </header>
 
+      <section class="shortcut-grid" aria-label="Subject resources">
+        <a class="shortcut" href="/anna-university-notes/cse/cs3492-database-management-systems/"><strong>Notes</strong></a>
+        <a class="shortcut" href="/syllabus/2021/cs3492-database-management-systems/"><strong>Syllabus</strong></a>
+        <a class="shortcut" href="#important-questions"><strong>Important Questions</strong></a>
+        <a class="shortcut" href="/pyq/CS3452-theory-of-computation/"><strong>Related Subject PYQs</strong></a>
+        <a class="shortcut" href="/anna-university-notes/cse/"><strong>CSE Resources</strong></a>
+        <a class="shortcut" href="/gate-pyqs/"><strong>GATE PYQs</strong></a>
+        <a class="shortcut" href="/cgpa-calculator/"><strong>CGPA Calculator</strong></a>
+        <a class="shortcut" href="/anna-university-results/"><strong>Anna University Results</strong></a>
+      </section>
+
+      <h2 class="papers-heading">Previous Year Question Papers</h2>
       <section class="pyq-list">
         <section class="pyq-year">
           <h2>2024</h2>
           <ul>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">
-                  2024 - CSE-AM-2024-CS 3492-Database Management
-                  Systems-919407668-50905.pdf
-                </div>
+                <div class="pyq-paper-title">cs3492-database-management-systems-pyq-2024</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -186,10 +250,7 @@
             </li>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">
-                  2024 - CSE-ND-2024-CS 3492-Database Management
-                  systems-102315940-20250604161745 (3).pdf
-                </div>
+                <div class="pyq-paper-title">cs3492-database-management-systems-pyq-2024</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -216,10 +277,7 @@
           <ul>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">
-                  2023 - CSE-AM-2023-CS 3492-Database Management
-                  Systems-75695110-AM23C (7).pdf
-                </div>
+                <div class="pyq-paper-title">cs3492-database-management-systems-pyq-2023</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -241,10 +299,7 @@
             </li>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">
-                  2023 - CSE-ND-2023-CS 3492-Database Management
-                  Systems-659602190-20872.pdf
-                </div>
+                <div class="pyq-paper-title">cs3492-database-management-systems-pyq-2023</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -267,17 +322,8 @@
           </ul>
         </section>
       </section>
-      <section
-        style="
-          margin: 2.5rem 0;
-          padding: 1.5rem;
-          background: var(--bg-secondary);
-          border-radius: 8px;
-        "
-      >
-        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem">
-          Important Questions - CS3492 Database Management Systems
-        </h2>
+      <details id="important-questions" class="important-questions">
+        <summary>Important Questions - CS3492 Database Management Systems</summary>
 
         <div style="margin-bottom: 1.5rem">
           <h3
@@ -600,67 +646,32 @@
             IV), deadlock detection and recovery algorithms.
           </p>
         </div>
-      </section>
-      <section
-        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
-      >
-        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-          <a
-            class="pyq-btn"
-            href="/syllabus/index.html"
-            target="_blank"
-            rel="noopener"
-            >View Syllabus</a
-          >
-          <a
-            class="pyq-btn primary"
-            href="/index.html"
-            target="_blank"
-            rel="noopener"
-            >View Notes</a
-          >
+      </details>
+      <section class="related-links" aria-labelledby="related-links-title">
+        <h2 id="related-links-title">Related Links</h2>
+        <p>Quick access to other useful pages on LearnSkart.</p>
+        <div class="related-grid">
+          <div>
+            <a href="/anna-university-notes/cse/cs3492-database-management-systems/">CS3492 Notes</a>
+            <a href="/syllabus/2021/cs3492-database-management-systems/">CS3492 Syllabus</a>
+            <a href="#important-questions">CS3492 Important Questions</a>
+            <a href="/previous-year-questions/">All Anna University PYQs</a>
+          </div>
+          <div>
+            <a href="/pyq/CS3452-theory-of-computation/">CS3452 Theory of Computation PYQs</a>
+            <a href="/pyq/CS3491-artificial-intelligence-and-machine-learning/">CS3491 Artificial Intelligence and Machine Learning PYQs</a>
+            <a href="/pyq/CS3401-algorithms/">CS3401 Algorithms PYQs</a>
+            <a href="/pyq/CS3451-introduction-to-operating-systems/">CS3451 Introduction to Operating Systems PYQs</a>
+            <a href="/pyq/GE3451-environmental-sciences-and-sustainability/">GE3451 Environmental Sciences and Sustainability PYQs</a>
+          </div>
+          <div>
+            <a href="/anna-university-notes/cse/">CSE Notes (All Subjects)</a>
+            <a href="/gate-pyqs/">GATE PYQs (CSE)</a>
+            <a href="/anna-university-results/">Anna University Result Portal</a>
+            <a href="/cgpa-calculator/">CGPA to Percentage Calculator</a>
+            <a href="/">LearnSkart Home</a>
+          </div>
         </div>
-      </section>
-      <section
-        style="
-          margin: 2rem 0;
-          padding: 1.5rem;
-          background: var(--bg-secondary);
-          border-radius: 8px;
-        "
-      >
-        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem">
-          How to Use These Question Papers
-        </h2>
-        <ul style="color: var(--muted); line-height: 1.8; font-size: 0.95rem">
-          <li>
-            <strong>Unit-Wise Preparation:</strong> Complete Unit I-II for
-            fundamentals, dedicate 40% of time to Unit III (transactions and
-            recovery appear most frequently). Unit IV-V focus on advanced
-            implementations.
-          </li>
-          <li>
-            <strong>ER Diagram Practice:</strong> Design ER diagrams for various
-            scenarios and convert them to relational tables. These diagram
-            questions appear regularly with 13-15 marks in Part B.
-          </li>
-          <li>
-            <strong>Normalization Mastery:</strong> Master 1NF, 2NF, and 3NF
-            with comprehensive decomposition examples. Understand functional
-            dependencies and anomalies thoroughly.
-          </li>
-          <li>
-            <strong>Transaction Management:</strong> Study ACID properties,
-            serializability, deadlock detection, and recovery algorithms (ARIES)
-            with manual examples and trace-through exercises.
-          </li>
-          <li>
-            <strong>Time Management:</strong> Allocate 60-90 minutes per
-            conceptual problem; practice Part B solutions under timed conditions
-            combining ER design and normalization.
-          </li>
-        </ul>
       </section>
 
     </main>
@@ -698,7 +709,7 @@
               </li>
               <li>
                 <a
-                  href="../../syllabus\cse\cs3492-database-management-systems\index.html"
+                  href="/syllabus/2021/cs3492-database-management-systems/"
                   >Syllabus</a
                 >
               </li>
