@@ -52,10 +52,10 @@
             body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-content { gap: 1rem; }
             body:has(.cs3491-page) > nav:not(.nav-mobile) .nav-toggle { margin-left: auto; }
         }
-        .cs3491-page .page-hero { display: grid; grid-template-columns: 1fr; align-items: center; gap: 0; margin: 0 calc((100vw - min(100vw, 1200px)) / -2) 1.4rem; padding: 2.25rem max(1.5rem, calc((100vw - 1200px) / 2)); background: linear-gradient(110deg, #f0f2ff 0%, #f8f9ff 55%, #e8edff 100%); }
-        .cs3491-page .hero-copy { max-width: none; }
+        .cs3491-page .page-hero { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 0; margin: 0 0 1.4rem; padding: 2rem 1.5rem; background: linear-gradient(110deg, #f0f2ff 0%, #f8f9ff 55%, #e8edff 100%); }
+        .cs3491-page .hero-copy { width: 100%; max-width: 690px; min-width: 0; }
         .cs3491-page .hero-kicker { display: inline-flex; margin: 0 0 0.8rem; padding: 0.35rem 0.65rem; border-radius: 5px; background: #e2ddff; color: #513bd4; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; }
-        .cs3491-page .page-hero h1 { margin: 0 0 0.7rem; color: var(--subject-ink); font-size: 1.8rem; line-height: 1.16; white-space: nowrap; }
+        .cs3491-page .page-hero h1 { max-width: 100%; margin: 0 0 0.7rem; color: var(--subject-ink); font-size: 1.8rem; line-height: 1.25; white-space: normal; overflow-wrap: anywhere; }
         .cs3491-page .page-hero p { max-width: 620px; margin: 0; color: var(--subject-muted); line-height: 1.7; }
         .cs3491-page .shortcut-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; margin: 1.4rem 0; }
         .cs3491-page .shortcut { display: flex; min-height: 68px; align-items: center; justify-content: center; padding: 0.9rem; border: 1px solid var(--subject-line); border-radius: 9px; background: #f8f9ff; color: var(--subject-ink); text-align: center; text-decoration: none; transition: transform 160ms ease, border-color 160ms ease; }
@@ -91,9 +91,6 @@
             .cs3491-page .page-hero { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.6rem 1.25rem; }
             .cs3491-page .shortcut-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .cs3491-page .related-grid { grid-template-columns: 1fr; gap: 0.3rem; }
-        @media (max-width: 1099px) {
-            .cs3491-page .page-hero h1 { white-space: normal; }
-        }
             .cs3491-page .related-grid div + div { padding: 0.5rem 0 0; border: 0; border-top: 1px solid var(--subject-line); }
             .cs3491-page .pyq-paper { flex-direction: row; align-items: center; }
             .cs3491-page .pyq-actions { width: auto; }
