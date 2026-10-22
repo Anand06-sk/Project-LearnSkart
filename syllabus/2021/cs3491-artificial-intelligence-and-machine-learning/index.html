@@ -4,13 +4,10 @@
     <script src="/assets/js/analytics.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      CS3491 Syllabus | Artificial Intelligence and Machine Learning | Anna
-      University
-    </title>
+    <title>Anna University CS3491 AIML Syllabus | Artificial Intelligence and Machine Learning</title>
     <meta
       name="description"
-      content="CS3491 Artificial Intelligence and Machine Learning syllabus for Anna University CSE, ECEand IT branches. Semester 4 and 6, Regulation 2021. View and download the syllabus PDF."
+      content="Anna University CS3491 AIML (Artificial Intelligence and Machine Learning) syllabus for Regulation 2021. View course units, objectives, outcomes, and syllabus PDFs."
     />
     <meta
       name="keywords"
@@ -37,6 +34,191 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .cs3491-page {
+        --page-line: #dfe7f1;
+        --page-muted: #5f6f85;
+        color: var(--foreground);
+      }
+
+      .cs3491-page > [role="navigation"] {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.35rem;
+        margin: 1rem 0;
+        color: var(--page-muted);
+        font-size: 0.85rem;
+      }
+
+      .cs3491-page > [role="navigation"] a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .cs3491-page .content-header {
+        margin-bottom: 1rem;
+      }
+
+      .cs3491-page .content-header h1 {
+        max-width: 850px;
+        font-size: 2rem;
+        line-height: 1.25;
+      }
+
+      .cs3491-page .content-header p {
+        color: var(--page-muted);
+      }
+
+      .cs3491-page .page-meta {
+        margin-top: 0.45rem;
+        color: var(--page-muted);
+        font-size: 0.9rem;
+      }
+
+      .cs3491-page .syllabus-grid {
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .cs3491-page .shortcut-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.8rem;
+        margin: 1rem 0 1.4rem;
+      }
+
+      .cs3491-page .shortcut {
+        display: flex;
+        min-height: 58px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border: 1px solid var(--page-line);
+        border-radius: 8px;
+        background: #f8f9ff;
+        color: var(--foreground);
+        font-size: 0.88rem;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .cs3491-page .shortcut:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      .cs3491-page .syllabus-details {
+        display: block;
+        padding: 0;
+      }
+
+      .cs3491-page .syllabus-details > summary {
+        padding: 1rem 1.1rem;
+        color: var(--foreground);
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      .cs3491-page .syllabus-details > summary h3 {
+        display: inline;
+        margin: 0;
+        font: inherit;
+      }
+
+      .cs3491-page .syllabus-details[open] > summary {
+        border-bottom: 1px solid var(--page-line);
+      }
+
+      .cs3491-page .syllabus-details-content {
+        padding: 1.1rem;
+      }
+
+      .cs3491-page .related-links {
+        margin: 1.25rem 0;
+        padding: 1.2rem;
+        border: 1px solid var(--page-line);
+        border-radius: 8px;
+        background: #f8f9ff;
+      }
+
+      .cs3491-page .related-links h2 {
+        margin: 0 0 0.3rem;
+        font-size: 1.15rem;
+      }
+
+      .cs3491-page .related-links > p {
+        margin: 0 0 0.9rem;
+        color: var(--page-muted);
+        font-size: 0.86rem;
+        line-height: 1.6;
+      }
+
+      .cs3491-page .related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .cs3491-page .related-grid > div + div {
+        padding-left: 1rem;
+        border-left: 1px solid var(--page-line);
+      }
+
+      .cs3491-page .related-grid h3 {
+        margin: 0 0 0.45rem;
+        font-size: 0.95rem;
+      }
+
+      .cs3491-page .related-grid a {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0.45rem 0;
+        color: #5545e8;
+        font-size: 0.85rem;
+        text-decoration: none;
+      }
+
+      .cs3491-page .related-grid a::after {
+        content: " ->";
+      }
+
+      .cs3491-page .related-grid a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 760px) {
+        .cs3491-page .shortcut-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .cs3491-page .related-grid {
+          grid-template-columns: 1fr;
+          gap: 0.3rem;
+        }
+
+        .cs3491-page .related-grid > div + div {
+          padding: 0.75rem 0 0;
+          border: 0;
+          border-top: 1px solid var(--page-line);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .cs3491-page .content-header h1 {
+          font-size: 1.55rem;
+        }
+
+        .cs3491-page .shortcut {
+          min-height: 52px;
+          padding: 0.65rem;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -125,20 +307,32 @@
       </div>
     </nav>
 
-    <main class="main container">
-      <div role="navigation" aria-label="Breadcrumb">
-        <a href="../../../index.html">Home</a> &gt;
-        <a href="../../../syllabus/">Syllabus</a> &gt;
-        <span>Artificial Intelligence and Machine Learning</span>
+    <main class="main container cs3491-page">
+      <div class="subject-breadcrumb" role="navigation" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <a href="/anna-university-notes/cse/index.html">Computer Science and Engineering</a>
+        <span aria-hidden="true">/</span>
+        <a href="/anna-university-notes/ece/index.html">Electronics and Communication Engineering</a>
+        <span aria-hidden="true">/</span>
+        <a href="/anna-university-notes/it/index.html">Information Technology</a>
+        <span aria-hidden="true">&gt;</span>
+        <span aria-current="page">Artificial Intelligence and Machine Learning</span>
       </div>
 
       <header class="content-header" style="align-items: flex-start">
         <div>
-          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
+          <h1>
             CS3491 Artificial Intelligence and Machine Learning Syllabus - Anna
             University
           </h1>
-          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">Explore the Anna University CS3491 Artificial Intelligence and Machine Learning syllabus under Regulation 2021.</p>
+          <p>
+            Access the Anna University CS3491 Artificial Intelligence and Machine
+            Learning syllabus, previous-year question papers, and exam resources
+            for Regulation 2021. Review the course units and use the linked
+            materials to prepare for your examinations.Best of Luck.
+          </p>
+          <p class="page-meta">Semester 4 and 6 <span aria-hidden="true">&bull;</span> CSE, ECE and IT</p>
         </div>
       </header>
 
@@ -191,7 +385,20 @@
         </article>
       </section>
 
-      <section class="syllabus-card">
+      <section class="shortcut-grid" aria-label="LearnSkart main pages">
+        <a class="shortcut" href="/">Notes</a>
+        <a class="shortcut" href="/syllabus/">Syllabus</a>
+        <a class="shortcut" href="/previous-year-questions/">PYQs</a>
+        <a class="shortcut" href="/pyq/CS3491-artificial-intelligence-and-machine-learning/#important-questions">Important Questions</a>
+        <a class="shortcut" href="/anna-university-notes/cse/">CSE Resources</a>
+        <a class="shortcut" href="/cgpa-calculator/">CGPA Calculator</a>
+        <a class="shortcut" href="/gate-syllabus/">GATE Resources</a>
+        <a class="shortcut" href="/anna-university-results/">Result Portal</a>
+      </section>
+
+      <details class="syllabus-card syllabus-details">
+        <summary><h3>Anna University CS3491 AIML Syllabus</h3></summary>
+        <div class="syllabus-details-content">
         <h2 style="margin-bottom: 0.75rem">
           CS3491 ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
         </h2>
@@ -351,6 +558,32 @@
             Press, 2016
           </li>
         </ol>
+        </div>
+      </details>
+
+      <section class="related-links" aria-labelledby="related-links-title">
+        <h2 id="related-links-title">Related Links</h2>
+        <p>Quick access to related subjects and useful study resources.</p>
+        <div class="related-grid">
+          <div>
+            <a href="/anna-university-notes/cse/cs3491-artificial-intelligence-and-machine-learning/">CS3491 Notes</a>
+            <a href="/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/">CS3491 Syllabus</a>
+            <a href="/pyq/CS3491-artificial-intelligence-and-machine-learning/#important-questions">CS3491 Important Questions</a>
+            <a href="/previous-year-questions/">All Anna University PYQs</a>
+          </div>
+          <div>
+            <a href="/pyq/CS3492-database-management-systems/">CS3492 Database Management Systems PYQs</a>
+            <a href="/pyq/CS3551-distributed-computing/">CS3551 Distributed Computing PYQs</a>
+            <a href="/pyq/CS3391-object-oriented-programming/">CS3391 Object-Oriented Programming PYQs</a>
+            <a href="/anna-university-notes/cse/">CSE Notes (All Subjects)</a>
+          </div>
+          <div>
+            <a href="/gate-pyqs/">GATE PYQs (CSE)</a>
+            <a href="/anna-university-results/">Anna University Result Portal</a>
+            <a href="/cgpa-calculator/">CGPA to Percentage Calculator</a>
+            <a href="/">LearnSkart Home</a>
+          </div>
+        </div>
       </section>
     </main>
 
