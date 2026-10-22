@@ -1448,13 +1448,38 @@
       "source": "/syllabus/eee/ee3303-electrical-machines/",
       "destination": "/syllabus/eee/ee3303-electrical-machines-1/",
       "permanent": true
-    }
-            
-      
-     
+    },
+    {
+      "source": "/syllabus/cse/cs3491-artificial-intelligence-and-machine-learning/:path*",
+      "destination": "/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/:path*",
+      "permanent": true
+    },
     
-    
-    
+    {
+      "source": "/syllabus/cse/cs3491-artificial-intelligence-and-machine-learning/",
+      "destination": "/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/cs3491-artificial-intelligence-and-machine-learning/:path*",
+      "destination": "/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/it/be3251-basic-electrical-and-electronics-engineering/",
+      "destination": "/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/ece/cs3491-artificial-intelligence-and-machine-learning/:path*",
+      "destination": "/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/syllabus/ece/cs3491-artificial-intelligence-and-machine-learning/",
+      "destination": "/syllabus/2021/cs3491-artificial-intelligence-and-machine-learning/",
+      "permanent": true
+    }   
   ],
   "trailingSlash" : true
 }
