@@ -6,14 +6,14 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CS3501 Question Papers | Anna University</title>
+    <title>CS3501 Compiler Design Previous Year Question Papers | Anna University</title>
     <meta
       name="description"
-      content="CS3501 Compiler Design previous year question papers for Anna University. Department: Computer Science and Engineering. Regulation: 2021. Download PDF papers and prepare with year-wise university questions."
+      content="Download CS3501 Compiler Design previous year question papers for Anna University Regulation 2021, Semester 5. Find year-wise exam PDFs, compiler design notes, syllabus and related CSE resources."
     />
     <meta
       name="keywords"
-      content="Compiler Design, CS3501, Anna University, previous year question papers, Anna University question papers, Computer Science and Engineering"
+      content="CS3501 Compiler Design question papers, CS3501 previous year question papers PDF, Anna University Semester 5 PYQ, Regulation 2021, compiler design exam papers, compiler design notes, CS3501 syllabus, lexical analysis, syntax analysis, code generation, code optimization, CSE question papers"
     />
     <meta name="robots" content="index, follow" />
     <link
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../../assets/css/nav.css" />
     <style>
       .cs3501-page { --subject-ink: #1e2d52; --subject-muted: #657493; --subject-line: #e5eaf7; color: var(--subject-ink); }
-      body:has(.cs3501-page) > nav:not(.nav-mobile) { --nav-height: 68px; border-bottom: 1px solid #e7eaf4; background: rgba(255, 255, 255, 0.97); box-shadow: 0 4px 18px rgba(30, 45, 82, 0.06); }
+      body:has(.cs3501-page) > nav:not(.nav-mobile) { --nav-height: 68px; border-bottom: 1px solid #e7eaf4; background: #fff; }
       body:has(.cs3501-page) > nav:not(.nav-mobile) .nav-content { max-width: 1240px; gap: 2rem; padding: 0 1.5rem; }
       body:has(.cs3501-page) > nav:not(.nav-mobile) .nav-logo { gap: 0.65rem; color: #29375e; font-size: 1.2rem; }
       body:has(.cs3501-page) > nav:not(.nav-mobile) .nav-logo small { display: block; margin-top: 0.22rem; color: #73809c; font-size: 0.62rem; font-weight: 500; }
@@ -34,41 +34,46 @@
       body:has(.cs3501-page) > nav:not(.nav-mobile) .nav-links > a.is-active { color: #5944e8; font-weight: 700; }
       .cs3501-page > div[role="navigation"] { margin: 1rem 0 !important; color: #7c879f !important; font-size: 0.75rem !important; line-height: 1.6; }
       .cs3501-page > div[role="navigation"] a { padding: 0; border: 0; background: transparent; color: #53617f; }
-      .cs3501-page .page-hero { margin: 0 calc((100vw - min(100vw, 1200px)) / -2) 1.4rem; padding: 2.25rem max(1.5rem, calc((100vw - 1200px) / 2)); background: linear-gradient(110deg, #f0f2ff, #f8f9ff 55%, #e8edff); }
-      .cs3501-page .hero-copy { max-width: none; }
-      .cs3501-page .hero-kicker { display: inline-flex; margin-bottom: 0.8rem; padding: 0.35rem 0.65rem; border-radius: 5px; background: #e2ddff; color: #513bd4; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; }
-      .cs3501-page .page-hero h1 { margin: 0 0 0.7rem; color: var(--subject-ink); font-size: 1.8rem; line-height: 1.16; white-space: nowrap; }
-      .cs3501-page .page-hero p { max-width: 620px; margin: 0; color: var(--subject-muted); line-height: 1.7; }
-      .cs3501-page .shortcut-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; margin: 1.4rem 0; }
-      .cs3501-page .shortcut { display: flex; min-height: 68px; align-items: center; justify-content: center; padding: 0.9rem; border: 1px solid var(--subject-line); border-radius: 9px; background: #f8f9ff; color: var(--subject-ink); text-align: center; text-decoration: none; transition: transform 160ms ease, border-color 160ms ease; }
-      .cs3501-page .shortcut:hover { transform: translateY(-2px); border-color: #c3baff; }
-      .cs3501-page .shortcut strong { font-size: 0.88rem; }
-      .cs3501-page .papers-heading { margin: 1.8rem 0 0.8rem; font-size: 1.35rem; }
-      .cs3501-page .pyq-list { gap: 0.8rem; }
-      .cs3501-page .pyq-year { padding: 1rem 1.2rem; border-radius: 10px; }
-      .cs3501-page .pyq-year h2 { color: var(--subject-ink); }
+      .cs3501-page .page-hero { margin: 0 calc((100vw - min(100vw, 1200px)) / -2) 1.25rem; padding: 2rem max(1.5rem, calc((100vw - 1200px) / 2)); background: linear-gradient(110deg, #f0f2ff, #f8f9ff 55%, #e8edff); }
+      .cs3501-page .hero-copy { max-width: 720px; }
+      .cs3501-page .hero-kicker { display: inline-flex; margin-bottom: 0.7rem; padding: 0.3rem 0.6rem; border-radius: 5px; background: #e2ddff; color: #513bd4; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; }
+      .cs3501-page .page-hero h1 { margin: 0 0 0.6rem; color: var(--subject-ink); font-size: clamp(1.55rem, 3vw, 1.9rem); line-height: 1.2; }
+      .cs3501-page .page-hero p { max-width: 620px; margin: 0; color: var(--subject-muted); line-height: 1.65; }
+      .cs3501-page .shortcut-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+      .cs3501-page .shortcut { display: flex; min-height: 68px; align-items: center; padding: 0.8rem 0.9rem; border: 1px solid var(--subject-line); border-radius: 9px; background: #f8f9ff; color: var(--subject-ink); text-decoration: none; }
+      .cs3501-page .shortcut:hover { border-color: #c3baff; }
+      .cs3501-page .shortcut strong { font-size: 0.86rem; }
+      .cs3501-page .shortcut:nth-child(4n + 1) { background: #f5f2ff; }
+      .cs3501-page .shortcut:nth-child(4n + 2) { background: #f0f6ff; }
+      .cs3501-page .shortcut:nth-child(4n + 3) { background: #f0faf5; }
+      .cs3501-page .shortcut:nth-child(4n) { background: #fff4f5; }
+      .cs3501-page .papers-card { margin: 1.4rem 0; padding: 1rem 1.2rem; border: 1px solid var(--subject-line); border-radius: 10px; background: #fff; }
+      .cs3501-page .papers-header { margin-bottom: 0.7rem; }
+      .cs3501-page .papers-header h2 { margin: 0; color: var(--subject-ink); font-size: 1.18rem; }
+      .cs3501-page .pyq-year { padding: 0; border: 0; border-radius: 0; background: transparent; }
       .cs3501-page .pyq-year ul { gap: 0; }
-      .cs3501-page .pyq-year li { padding: 0.8rem 0; border: 0; border-top: 1px solid var(--subject-line); border-radius: 0; background: transparent; }
-      .cs3501-page .pyq-paper-title { font-size: 0.86rem; }
-      .cs3501-page .important-questions { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid var(--subject-line); border-radius: 10px; background: #fff; }
-      .cs3501-page .important-questions > summary { color: var(--subject-ink); font-size: 1.1rem; font-weight: 700; cursor: pointer; }
+      .cs3501-page .pyq-year li { padding: 0.7rem 0; border: 0; border-top: 1px solid var(--subject-line); border-radius: 0; background: transparent; }
+      .cs3501-page .pyq-paper-title { color: var(--subject-ink); font-size: 0.85rem; }
+      .cs3501-page .paper-meta { margin-top: 0.2rem; color: var(--subject-muted); font-size: 0.72rem; }
+      .cs3501-page .important-questions { margin: 1.5rem 0; padding: 1.1rem; border: 1px solid var(--subject-line); border-radius: 10px; background: #fff; }
+      .cs3501-page .important-questions > summary { color: var(--subject-ink); font-size: 1.05rem; font-weight: 700; cursor: pointer; }
       .cs3501-page .important-questions[open] > summary { margin-bottom: 1rem; }
-      .cs3501-page .related-links { margin: 1.25rem 0; padding: 1.2rem; border: 1px solid var(--subject-line); border-radius: 10px; background: linear-gradient(120deg, #f5f6ff, #fbfcff); }
-      .cs3501-page .related-links h2 { margin: 0 0 0.3rem; font-size: 1.15rem; }
-      .cs3501-page .related-links > p { margin: 0 0 0.9rem; color: var(--subject-muted); font-size: 0.86rem; line-height: 1.6; }
-      .cs3501-page .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+      .cs3501-page .related-links { margin: 1.25rem 0; padding: 1.1rem; border: 1px solid var(--subject-line); border-radius: 10px; background: linear-gradient(120deg, #f5f6ff, #fbfcff); }
+      .cs3501-page .related-links h2 { margin: 0 0 0.3rem; font-size: 1.1rem; }
+      .cs3501-page .related-links > p { margin: 0 0 0.8rem; color: var(--subject-muted); font-size: 0.82rem; line-height: 1.5; }
+      .cs3501-page .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
       .cs3501-page .related-grid div + div { padding-left: 1rem; border-left: 1px solid var(--subject-line); }
-      .cs3501-page .related-grid a { display: block; width: fit-content; margin: 0.45rem 0; color: #5545e8; font-size: 0.82rem; text-decoration: none; }
+      .cs3501-page .related-grid a { display: block; width: fit-content; margin: 0.45rem 0; color: #5545e8; font-size: 0.8rem; text-decoration: none; }
       .cs3501-page .related-grid a::after { content: " →"; }
       .cs3501-page .related-grid a:hover { text-decoration: underline; }
       .cs3501-page .dropdown-toggle::after { content: "⌄"; }
       body.dark-mode .cs3501-page { --subject-ink: #e7eaff; --subject-muted: #aab4d2; --subject-line: #303954; }
-      body.dark-mode .cs3501-page .page-hero, body.dark-mode .cs3501-page .related-links { background: linear-gradient(110deg, #171d35, #202744); }
-      body.dark-mode .cs3501-page .shortcut, body.dark-mode .cs3501-page .important-questions { background: #141a2d; }
-      @media (max-width: 1099px) { .cs3501-page .page-hero h1 { white-space: normal; } }
+      body.dark-mode .cs3501-page .page-hero, body.dark-mode .cs3501-page .related-links { background: #171d35; }
+      body.dark-mode .cs3501-page .shortcut, body.dark-mode .cs3501-page .papers-card, body.dark-mode .cs3501-page .important-questions { background: #141a2d; }
+      body.dark-mode .cs3501-page .shortcut:nth-child(n) { border-color: var(--subject-line); }
       @media (max-width: 960px) { body:has(.cs3501-page) > nav:not(.nav-mobile) .nav-content { gap: 1rem; } }
       @media (max-width: 760px) {
-        .cs3501-page .page-hero { padding: 1.6rem 1.25rem; }
+        .cs3501-page .page-hero { padding: 1.5rem 1.25rem; }
         .cs3501-page .shortcut-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .cs3501-page .related-grid { grid-template-columns: 1fr; gap: 0.3rem; }
         .cs3501-page .related-grid div + div { padding: 0.5rem 0 0; border: 0; border-top: 1px solid var(--subject-line); }
@@ -80,6 +85,7 @@
         .cs3501-page .shortcut strong { font-size: 0.78rem; }
         .cs3501-page .pyq-paper { align-items: flex-start; flex-direction: column; }
         .cs3501-page .pyq-actions { width: 100%; }
+        .cs3501-page .papers-card { padding: 0.85rem; }
       }
     </style>
     <link
@@ -200,31 +206,51 @@
 
       <header class="page-hero">
         <div class="hero-copy">
-          <span class="hero-kicker">Anna University &nbsp;·&nbsp; Regulation 2021</span>
-          <h1>CS3501 - Compiler Design - Anna University Previous Year Question Paper</h1>
-          <p>Get previous year question papers, study materials and other useful resources to prepare for your Anna University exams.</p>
+          <span class="hero-kicker">Anna University &nbsp;·&nbsp; Regulation 2021 &nbsp;·&nbsp; Semester 5</span>
+          <h1>CS3501 – Compiler Design</h1>
+          <p>Download Anna University CS3501 Compiler Design previous year question papers and find the syllabus, notes, and exam resources for Semester 5.</p>
         </div>
       </header>
 
       <section class="shortcut-grid" aria-label="Subject resources">
-        <a class="shortcut" href="/anna-university-notes/cse/cs3501-compiler-design/"><strong>Notes</strong></a>
-        <a class="shortcut" href="/syllabus/cse/cs3501-compiler-design/"><strong>Syllabus</strong></a>
-        <a class="shortcut" href="#important-questions"><strong>Important Questions</strong></a>
-        <a class="shortcut" href="/pyq/CS3591-computer-networks/"><strong>Related Subject PYQs</strong></a>
-        <a class="shortcut" href="/anna-university-notes/cse/"><strong>CSE Resources</strong></a>
-        <a class="shortcut" href="/gate-pyqs/"><strong>GATE PYQs</strong></a>
-        <a class="shortcut" href="/cgpa-calculator/"><strong>CGPA Calculator</strong></a>
-        <a class="shortcut" href="/anna-university-results/"><strong>Anna University Results</strong></a>
+        <a class="shortcut" href="/anna-university-notes/cse/cs3501-compiler-design/">
+          <strong>CS3501 Notes</strong>
+        </a>
+        <a class="shortcut" href="/syllabus/cse/cs3501-compiler-design/">
+          <strong>CS3501 Syllabus</strong>
+        </a>
+        <a class="shortcut" href="#important-questions">
+          <strong>Important Questions</strong>
+        </a>
+        <a class="shortcut" href="/pyq/CS3551-distributed-computing/">
+          <strong>Related Subject PYQs</strong>
+        </a>
+        <a class="shortcut" href="/anna-university-notes/cse/">
+          <strong>CSE Notes</strong>
+        </a>
+        <a class="shortcut" href="/gate-pyqs/">
+          <strong>GATE PYQs</strong>
+        </a>
+        <a class="shortcut" href="/cgpa-calculator/">
+          <strong>CGPA Calculator</strong>
+        </a>
+        <a class="shortcut" href="/anna-university-results/">
+          <strong>Anna University Results</strong>
+        </a>
       </section>
 
-      <h2 class="papers-heading">Previous Year Question Papers</h2>
-      <section class="pyq-list">
+      <section class="papers-card" aria-labelledby="papers-title">
+        <header class="papers-header">
+          <div>
+            <h2 id="papers-title">CS3501 Previous Year Question Papers</h2>
+          </div>
+        </header>
         <section class="pyq-year">
-          <h2>2024</h2>
           <ul>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">cs3501-compiler-design-pyq-2024</div>
+                <div class="pyq-paper-title">April / May 2024</div>
+                <div class="paper-meta">Anna University Examination &nbsp;·&nbsp; PDF</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -246,7 +272,8 @@
             </li>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">cs3501-compiler-design-pyq-2024</div>
+                <div class="pyq-paper-title">November / December 2024</div>
+                <div class="paper-meta">Anna University Examination &nbsp;·&nbsp; PDF</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -266,14 +293,10 @@
                 >
               </div>
             </li>
-          </ul>
-        </section>
-        <section class="pyq-year">
-          <h2>2023</h2>
-          <ul>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
-                <div class="pyq-paper-title">cs3501-compiler-design-pyq-2023</div>
+                <div class="pyq-paper-title">November / December 2023</div>
+                <div class="paper-meta">Anna University Examination &nbsp;·&nbsp; PDF</div>
               </div>
               <div class="pyq-actions">
                 <a
@@ -611,7 +634,7 @@
       </details>
       <section class="related-links" aria-labelledby="related-links-title">
         <h2 id="related-links-title">Related Links</h2>
-        <p>Quick access to other useful pages on LearnSkart.</p>
+        <p>Continue your Anna University Semester 5 exam preparation.</p>
         <div class="related-grid">
           <div>
             <a href="/anna-university-notes/cse/cs3501-compiler-design/">CS3501 Notes</a>
@@ -620,15 +643,16 @@
             <a href="/previous-year-questions/">All Anna University PYQs</a>
           </div>
           <div>
-            <a href="/pyq/CS3591-computer-networks/">CS3591 Computer Networks PYQs</a>
-            <a href="/pyq/CB3491-cryptography-and-cyber-security/">CB3491 Cryptography and Cyber Security PYQs</a>
             <a href="/pyq/CS3551-distributed-computing/">CS3551 Distributed Computing PYQs</a>
+            <a href="/pyq/CS3591-computer-networks/">CS3591 Computer Networks PYQs</a>
+            <a href="/syllabus/cse/cs3551-distributed-computing/">CS3551 Syllabus</a>
+            <a href="/anna-university-notes/cse/cs3591-computer-networks/">CS3591 Notes</a>
           </div>
           <div>
             <a href="/anna-university-notes/cse/">CSE Notes (All Subjects)</a>
             <a href="/gate-pyqs/">GATE PYQs (CSE)</a>
             <a href="/anna-university-results/">Anna University Result Portal</a>
-            <a href="/cgpa-calculator/">CGPA to Percentage Calculator</a>
+            <a href="/cgpa-calculator/">CGPA Calculator</a>
             <a href="/">LearnSkart Home</a>
           </div>
         </div>
