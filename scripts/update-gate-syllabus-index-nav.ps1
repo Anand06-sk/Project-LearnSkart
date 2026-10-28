@@ -18,7 +18,7 @@ $navMarkup = @"
           <a href="/">Home</a>
           <a href="/gate-pyqs/">GATE Previous Year Question Papers</a>
           <a href="/gate-syllabus/" aria-current="page">GATE Syllabus</a>
-          <a href="/daily-puzzle/">Daily Puzzle</a>
+          
           <a href="/contact/">Contact</a>
         </div>
       </div>
@@ -30,7 +30,7 @@ $navMarkup = @"
           <a href="/">Home</a>
           <a href="/gate-pyqs/">GATE Previous Year Question Papers</a>
           <a href="/gate-syllabus/" aria-current="page">GATE Syllabus</a>
-          <a href="/daily-puzzle/">Daily Puzzle</a>
+          
         </div>
         <div class="nav-group">
           <div class="nav-group-title">Support</div>

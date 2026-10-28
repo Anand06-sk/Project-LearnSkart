@@ -23,7 +23,7 @@ foreach ($file in $files) {
           <a href="/">Home</a>
           <a href="/gate-pyqs/" aria-current="page">GATE Previous Year Question Papers</a>
           <a href="$gateSyllabusLink">GATE Syllabus</a>
-          <a href="/daily-puzzle/">Daily Puzzle</a>
+          
           <a href="/contact/">Contact</a>
         </div>
       </div>
@@ -35,7 +35,7 @@ foreach ($file in $files) {
           <a href="/">Home</a>
           <a href="/gate-pyqs/">GATE Previous Year Question Papers</a>
           <a href="$gateSyllabusLink">GATE Syllabus</a>
-          <a href="/daily-puzzle/">Daily Puzzle</a>
+          
         </div>
         <div class="nav-group">
           <div class="nav-group-title">Support</div>

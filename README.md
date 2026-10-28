@@ -22,7 +22,6 @@ The site is built as a pure static project (HTML/CSS/JavaScript) and is designed
 - GATE previous-year question paper pages under `gate-pyqs/`
 - GATE syllabus pages under `gate-syllabus/`
 - Anna University results hub page under `anna-university-results/`
-- Daily Puzzle page under `daily-puzzle/`
 - Regulation-based syllabus pages under `syllabus/2021/` and `syllabus/2025/`
 - CGPA calculator
 - Dark mode support
@@ -96,7 +95,6 @@ Project-OpenNotes/
 ├── gate/
 ├── gate-syllabus/
 ├── gate-pyqs/
-├── daily-puzzle/
 ├── previous-year-questions/
 ├── privacy/
 ├── terms-and-conditions/
