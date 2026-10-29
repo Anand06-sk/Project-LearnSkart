@@ -6,14 +6,14 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CS3691 Question Papers | Anna University</title>
+    <title>CS3691 Embedded Systems and IoT Question Papers | LearnSkart</title>
     <meta
       name="description"
-      content="CS3691 Embedded Systems and IoT previous year question papers for Anna University. Department: Computer Science and Engineering, Information Technology. Regulation: 2021. Download PDF papers and prepare with year-wise university questions."
+      content="Download Anna University CS3691 Embedded Systems and IoT previous year question papers (Regulation 2021). Find 2024 question paper PDFs, unit-wise important questions, syllabus and study notes for Semester 6 CSE."
     />
     <meta
       name="keywords"
-      content="Embedded Systems and IoT, CS3691, Anna University, previous year question papers, Anna University question papers, Computer Science and Engineering, Information Technology"
+      content="CS3691 question paper PDF, CS3691 previous year question papers, Embedded Systems and IoT Anna University, Embedded Systems and IoT question bank, Semester 6 CSE PYQ, 8051 microcontroller, Embedded C, Arduino, IoT, Raspberry Pi, Anna University Regulation 2021"
     />
     <meta name="robots" content="index, follow" />
     <link
@@ -28,6 +28,262 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      html:has(body.cs3691-page) {
+        --nav-height: 64px;
+      }
+      .cs3691-page {
+        --cs3691-accent: #5b4bff;
+        --cs3691-ink: #1d2b50;
+        --cs3691-muted: #64748b;
+        --cs3691-border: #e4e9f4;
+      }
+      .cs3691-page .main > .breadcrumb {
+        position: static;
+        inset: auto;
+        z-index: auto;
+        width: auto;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+      }
+      .cs3691-page .breadcrumb {
+        margin: 1.1rem 0;
+        color: var(--cs3691-muted);
+        font-size: 0.82rem;
+      }
+      .cs3691-page .breadcrumb a {
+        color: var(--cs3691-accent);
+        text-decoration: none;
+      }
+      .cs3691-page > nav {
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom-color: #e8ebf3;
+        box-shadow: 0 2px 10px rgba(29, 43, 80, 0.05);
+      }
+      .cs3691-page .nav-content {
+        height: 64px;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+      }
+      .cs3691-page .nav-logo {
+        flex-shrink: 0;
+        color: #4d43dc;
+        font-family: system-ui, sans-serif;
+        font-size: 1.18rem;
+      }
+      .cs3691-page .nav-logo .logo-img {
+        width: 36px;
+        height: 36px;
+      }
+      .cs3691-page footer .logo-img {
+        width: 36px;
+        height: 36px;
+      }
+      .cs3691-page .nav-links {
+        gap: 1.05rem;
+        font-size: 0.84rem;
+      }
+      .cs3691-page .nav-links a {
+        padding: 0.45rem 0.2rem;
+        color: #526078;
+      }
+      .cs3691-page .nav-links a[aria-current="page"] {
+        color: #4d43dc;
+        font-weight: 700;
+      }
+      .cs3691-page .dropdown-toggle {
+        padding: 0.45rem 0.2rem;
+        color: #526078;
+      }
+      .cs3691-page .nav-toggle {
+        width: 40px;
+        height: 40px;
+        margin-left: 0.5rem;
+        border-radius: 8px;
+        border-color: #e2e7f0;
+        background: #fff;
+        color: #4d43dc;
+      }
+      .cs3691-page .nav-mobile-inner {
+        gap: 0.65rem;
+        padding: 0.75rem 1rem 1rem;
+      }
+      .cs3691-page .nav-group {
+        gap: 0.3rem;
+        padding: 0.65rem;
+        border-radius: 8px;
+        background: #f7f8fc;
+        border-color: #e8ebf3;
+      }
+      .cs3691-page .nav-group-title {
+        letter-spacing: 0;
+      }
+      .subject-hero {
+        margin: 0 0 1.25rem;
+        padding: 1.5rem;
+        border: 1px solid #e8eaff;
+        border-radius: 10px;
+        background: linear-gradient(110deg, #f1f2ff, #f8f9ff 72%, #eef8ff);
+      }
+      .subject-kicker {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        padding: 0.22rem 0.55rem;
+        border-radius: 4px;
+        background: #e4e2ff;
+        color: #4b3ce2;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+      .subject-hero h1 {
+        max-width: 760px;
+        margin: 0 0 0.45rem;
+        color: var(--cs3691-ink);
+        font-size: 1.85rem;
+        line-height: 1.22;
+      }
+      .subject-hero p {
+        max-width: 760px;
+        margin: 0;
+        color: var(--cs3691-muted);
+        line-height: 1.6;
+      }
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin: 1.2rem 0;
+      }
+      .resource-link {
+        display: flex;
+        min-height: 60px;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.75rem 0.9rem;
+        border: 1px solid var(--cs3691-border);
+        border-radius: 8px;
+        background: #fff;
+        color: var(--cs3691-ink);
+        text-decoration: none;
+      }
+      .resource-link:hover,
+      .resource-link:focus-visible {
+        border-color: #b8b2ff;
+        background: #f7f6ff;
+      }
+      .resource-link strong {
+        font-size: 0.85rem;
+        line-height: 1.25;
+      }
+      .paper-section,
+      .related-section {
+        margin: 1rem 0;
+        padding: 1rem;
+        border: 1px solid var(--cs3691-border);
+        border-radius: 10px;
+        background: #fff;
+      }
+      .section-heading {
+        margin: 0 0 0.2rem;
+        color: var(--cs3691-ink);
+        font-size: 1.15rem;
+      }
+      .section-caption {
+        margin: 0 0 0.8rem;
+        color: var(--cs3691-muted);
+        font-size: 0.82rem;
+      }
+      .paper-section .pyq-list { gap: 0; }
+      .paper-section .pyq-year { padding: 0; border: 0; }
+      .paper-section .pyq-year h2 { display: none; }
+      .paper-section .pyq-year ul { gap: 0; }
+      .paper-section .pyq-year li {
+        padding: 0.72rem 0.15rem;
+        border: 0;
+        border-top: 1px solid #edf0f6;
+        border-radius: 0;
+        background: transparent;
+      }
+      .paper-section .pyq-paper-title { font-size: 0.88rem; }
+      .paper-section .pyq-btn { min-height: 36px; }
+      .important-panel {
+        margin: 1rem 0;
+        border: 1px solid var(--cs3691-border);
+        border-radius: 10px;
+        background: #fff;
+      }
+      .important-panel > summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem;
+        color: var(--cs3691-ink);
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+      }
+      .important-panel > summary::-webkit-details-marker { display: none; }
+      .important-panel > summary::after {
+        content: "+";
+        color: var(--cs3691-accent);
+        font-size: 1.25rem;
+      }
+      .important-panel[open] > summary::after { content: "−"; }
+      .important-panel > summary span:last-child {
+        color: var(--cs3691-muted);
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+      .important-content {
+        padding: 0 1rem 1rem;
+        border-top: 1px solid #edf0f6;
+      }
+      .important-content h3 { color: var(--cs3691-ink); }
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      .related-group + .related-group {
+        padding-left: 1rem;
+        border-left: 1px solid #edf0f6;
+      }
+      .related-group h3 {
+        margin: 0 0 0.55rem;
+        color: var(--cs3691-ink);
+        font-size: 0.84rem;
+      }
+      .related-group a {
+        display: block;
+        margin: 0.45rem 0;
+        color: var(--cs3691-accent);
+        font-size: 0.8rem;
+        text-decoration: none;
+      }
+      .related-group a:hover { text-decoration: underline; }
+      @media (max-width: 700px) {
+        .cs3691-page .nav-content { padding: 0 1rem; }
+        .subject-hero h1 { font-size: 1.55rem; }
+        .subject-hero { padding: 1.15rem; }
+        .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .related-grid { grid-template-columns: 1fr; }
+        .related-group + .related-group {
+          padding: 0.8rem 0 0;
+          border-top: 1px solid #edf0f6;
+          border-left: 0;
+        }
+        .paper-section .pyq-paper { flex-direction: row; align-items: center; }
+        .paper-section .pyq-actions { width: auto; }
+      }
+      @media (max-width: 430px) {
+        .paper-section .pyq-paper { align-items: flex-start; flex-direction: column; }
+        .paper-section .pyq-actions { width: 100%; }
+        .paper-section .pyq-actions .pyq-btn { flex: 1; }
+      }
+    </style>
 
     <script
       async
@@ -35,7 +291,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="cs3691-page">
     <nav>
       <div class="nav-content">
         <a href="/" class="nav-logo">
@@ -65,15 +321,15 @@
         <div class="nav-right" id="navMenu">
           <div class="nav-links">
             <a href="/index.html">Home</a>
-            <a href="/">Notes</a>
-            <a href="/syllabus/">Syllabus</a>
+            <a href="/anna-university-notes/cse/">Notes</a>
+            <a href="/syllabus/cse/">Syllabus</a>
             <a
               href="/previous-year-questions/"
               class="is-active"
               aria-current="page"
-              >Previous Year Question Papers</a
+              >PYQs</a
             >
-            <a href="/anna-university-results/">Result Portal</a>
+            <a href="/anna-university-results/">Results</a>
             <div class="nav-dropdown">
               <button
                 class="dropdown-toggle"
@@ -81,15 +337,16 @@
                 aria-expanded="false"
                 aria-haspopup="true"
               >
-                GATE
+                More
                 <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </button>
-              <div class="dropdown-menu" aria-label="GATE submenu">
+              <div class="dropdown-menu" aria-label="More links">
+                <a href="/cgpa-calculator/">CGPA Calculator</a>
                 <a href="/gate-syllabus/">GATE Syllabus</a>
-                <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+                <a href="/gate-pyqs/">GATE PYQs</a>
+                <a href="/contact/">Contact</a>
               </div>
             </div>
-            <a href="/contact/">Contact</a>
           </div>
         </div>
       </div>
@@ -98,20 +355,21 @@
           <div class="nav-group">
             <div class="nav-group-title">Main</div>
             <a href="/index.html">Home</a>
-            <a href="/">Notes</a>
-            <a href="/syllabus/">Syllabus</a>
+            <a href="/anna-university-notes/cse/">CSE Notes</a>
+            <a href="/syllabus/cse/">CSE Syllabus</a>
             <a
               href="/previous-year-questions/"
               class="is-active"
               aria-current="page"
-              >Previous Year Question Papers</a
+              >Anna University PYQs</a
             >
-            <a href="/anna-university-results/">Result Portal</a>
+            <a href="/anna-university-results/">Results Portal</a>
+            <a href="/cgpa-calculator/">CGPA Calculator</a>
           </div>
           <div class="nav-group">
-            <div class="nav-group-title">GATE</div>
+            <div class="nav-group-title">GATE Resources</div>
             <a href="/gate-syllabus/">GATE Syllabus</a>
-            <a href="/gate-pyqs/">GATE Previous Year Questions</a>
+            <a href="/gate-pyqs/">GATE PYQs</a>
           </div>
           <div class="nav-group">
             <div class="nav-group-title">Support</div>
@@ -129,41 +387,40 @@
     </nav>
 
     <main class="main container">
-      <div
-        role="navigation"
-        aria-label="Breadcrumb"
-        style="margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted)"
-      >
-        <a href="../../index.html">Home</a> &gt;
-        <a href="../../anna-university-notes/cse/index.html"
-          >Computer Science and Engineering</a
-        >
-        /
-        <a href="../../anna-university-notes/it/index.html"
-          >Information Technology</a
-        >
-        &gt; <span>Embedded Systems and IoT</span>
-      </div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &gt;
+        <a href="/previous-year-questions/">Anna University PYQs</a> &gt;
+        <span>CS3691 Embedded Systems and IoT</span>
+      </nav>
 
-      <header class="content-header" style="align-items: flex-start">
-        <div>
-          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem">
-            CS3691 Embedded Systems and IoT Previous Year Question Papers - Anna
-            University
-          </h1>
-          <p style="color: var(--muted); max-width: 900px; line-height: 1.6">Explore the Previous Year Anna University Question Papers of CS3691 Embedded Systems and IoT.</p>
-        </div>
+      <header class="subject-hero">
+        <span class="subject-kicker">ANNA UNIVERSITY &nbsp;·&nbsp; REGULATION 2021 &nbsp;·&nbsp; SEMESTER 6</span>
+        <h1>CS3691 - Embedded Systems and IoT</h1>
+        <p>Previous year question papers and exam resources for CSE Semester 6.</p>
       </header>
 
-      <section class="pyq-list">
+      <section class="resource-grid" aria-label="CS3691 study resources">
+        <a class="resource-link" href="/anna-university-notes/cse/cs3691-embedded-systems-and-iot/"><strong>CS3691 Notes</strong></a>
+        <a class="resource-link" href="/syllabus/cse/cs3691-embedded-systems-and-iot/"><strong>CS3691 Syllabus</strong></a>
+        <a class="resource-link" href="#important-questions"><strong>Important Questions</strong></a>
+        <a class="resource-link" href="/pyq/CCS356-object-oriented-software-engineering/"><strong>Other Semester PYQs</strong></a>
+        <a class="resource-link" href="/anna-university-notes/cse/ccs356-object-oriented-software-engineering/"><strong>Other Semester Notes</strong></a>
+        <a class="resource-link" href="/cgpa-calculator/"><strong>CGPA Calculator</strong></a>
+        <a class="resource-link" href="/anna-university-results/"><strong>Result Portal</strong></a>
+        <a class="resource-link" href="/previous-year-questions/"><strong>All Anna University PYQs</strong></a>
+      </section>
+
+      <section class="paper-section" aria-labelledby="papers-heading">
+        <h2 class="section-heading" id="papers-heading">Previous Year Question Papers</h2>
+        <p class="section-caption">CS3691 Embedded Systems and IoT - Anna University question paper PDFs</p>
+        <section class="pyq-list">
         <section class="pyq-year">
           <h2>2024</h2>
           <ul>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
                 <div class="pyq-paper-title">
-                  2024 - CSE-AM-2024-CS 3691-Embedded Systems and
-                  IoT-170340446-50909.pdf
+                  April / May 2024 Examination - CS3691 Embedded Systems and IoT
                 </div>
               </div>
               <div class="pyq-actions">
@@ -172,7 +429,7 @@
                   href="https://drive.google.com/file/d/1kAmDzZ-sqyu6zwlJKrdA5IHKGoLr1Ad0/preview"
                   target="_blank"
                   rel="noopener"
-                  >View</a
+                  >View PDF</a
                 >
                 <a
                   class="pyq-btn primary"
@@ -180,15 +437,14 @@
                   target="_blank"
                   rel="noopener"
                   download
-                  >Download</a
+                  >Download PDF</a
                 >
               </div>
             </li>
             <li class="pyq-paper">
               <div class="pyq-paper-info">
                 <div class="pyq-paper-title">
-                  2024 - CSE-ND-2024-CS 3691-Embedded Systems and
-                  IoT-205807490-20250604161745 (25).pdf
+                  November / December 2024 Examination - CS3691 Embedded Systems and IoT
                 </div>
               </div>
               <div class="pyq-actions">
@@ -197,7 +453,7 @@
                   href="https://drive.google.com/file/d/1w3ls702seqRkmkA4h1dEYt-ZdAbVOi2r/preview"
                   target="_blank"
                   rel="noopener"
-                  >View</a
+                  >View PDF</a
                 >
                 <a
                   class="pyq-btn primary"
@@ -205,24 +461,20 @@
                   target="_blank"
                   rel="noopener"
                   download
-                  >Download</a
+                  >Download PDF</a
                 >
               </div>
             </li>
           </ul>
         </section>
+        </section>
       </section>
-      <section
-        style="
-          margin: 2.5rem 0;
-          padding: 1.5rem;
-          background: var(--bg-secondary);
-          border-radius: 8px;
-        "
-      >
-        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem">
-          Important Questions - CS3691 Embedded Systems and IoT
-        </h2>
+      <details class="important-panel" id="important-questions">
+        <summary>
+          <span>Important Questions - CS3691 Embedded Systems and IoT</span>
+          <span>Unit-wise 2-mark and long-answer questions</span>
+        </summary>
+        <div class="important-content">
 
         <div style="margin-bottom: 1.5rem">
           <h3
@@ -534,67 +786,32 @@
             and healthcare IoT applications.
           </p>
         </div>
-      </section>
-      <section
-        style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap"
-      >
-        <h2 style="width: 100%; margin-bottom: 1rem">Additional Resources</h2>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-          <a
-            class="pyq-btn"
-            href="/syllabus/index.html"
-            target="_blank"
-            rel="noopener"
-            >View Syllabus</a
-          >
-          <a
-            class="pyq-btn primary"
-            href="/index.html"
-            target="_blank"
-            rel="noopener"
-            >View Notes</a
-          >
+      </div>
+      </details>
+
+      <section class="related-section" aria-labelledby="related-heading">
+        <h2 class="section-heading" id="related-heading">Related Links</h2>
+        <p class="section-caption">More Anna University resources for CSE students</p>
+        <div class="related-grid">
+          <div class="related-group">
+            <h3>CS3691 Course Material</h3>
+            <a href="/anna-university-notes/cse/cs3691-embedded-systems-and-iot/">CS3691 Embedded Systems and IoT Notes</a>
+            <a href="/syllabus/cse/cs3691-embedded-systems-and-iot/">CS3691 Syllabus - Regulation 2021</a>
+            <a href="#important-questions">CS3691 Unit-wise Important Questions</a>
+          </div>
+          <div class="related-group">
+            <h3>Semester 6 CSE</h3>
+            <a href="/pyq/CCS356-object-oriented-software-engineering/">CCS356 Object Oriented Software Engineering PYQs</a>
+            <a href="/anna-university-notes/cse/ccs356-object-oriented-software-engineering/">CCS356 Object Oriented Software Engineering Notes</a>
+            <a href="/anna-university-notes/cse/">All CSE Subject Notes</a>
+          </div>
+          <div class="related-group">
+            <h3>Student Tools</h3>
+            <a href="/cgpa-calculator/">Anna University CGPA Calculator</a>
+            <a href="/anna-university-results/">Anna University Results Portal</a>
+            <a href="/previous-year-questions/">Browse All Anna University PYQs</a>
+          </div>
         </div>
-      </section>
-      <section
-        style="
-          margin: 2rem 0;
-          padding: 1.5rem;
-          background: var(--bg-secondary);
-          border-radius: 8px;
-        "
-      >
-        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem">
-          How to Use These Question Papers
-        </h2>
-        <ul style="color: var(--muted); line-height: 1.8; font-size: 0.95rem">
-          <li>
-            <strong>Unit-Wise Progression:</strong> Master Unit I (8051
-            processor architecture) as foundation. Dedicate 40% of time to Units
-            II-III (embedded C programming and IoT infrastructure - most
-            frequently tested).
-          </li>
-          <li>
-            <strong>Architecture & Interfacing:</strong> Draw block diagrams for
-            8051 and IoT systems. Practice keyboard/LCD interfacing circuits.
-            These diagram-based questions appear with 13-16 marks regularly.
-          </li>
-          <li>
-            <strong>Protocol Comparison:</strong> Compare Bluetooth, Wi-Fi,
-            ZigBee, and GSM protocols in terms of range, power consumption, and
-            application scenarios. Understand trade-offs between each.
-          </li>
-          <li>
-            <strong>Case Study Analysis:</strong> Study smart city, agriculture,
-            and healthcare case studies. Understand how IoT components integrate
-            in real-world applications.
-          </li>
-          <li>
-            <strong>Time Management:</strong> Allocate 60-90 minutes per design
-            or architecture problem; practice circuit diagrams and protocol
-            comparisons under timed conditions.
-          </li>
-        </ul>
       </section>
 
     </main>
@@ -632,7 +849,7 @@
               </li>
               <li>
                 <a
-                  href="../../syllabus\cse\cs3691-embedded-systems-and-iot\index.html"
+                  href="/syllabus/cse/cs3691-embedded-systems-and-iot/"
                   >Syllabus</a
                 >
               </li>
