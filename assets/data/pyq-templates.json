@@ -818,7 +818,7 @@
     "dept_code": "CSE",
     "dept_slug": "cse",
     "semester": "5",
-    "subject_name": "Complier Design",
+    "subject_name": "Compiler Design",
     "subject_code": "CS3501",
     "syllabus_pdf": "https://drive.google.com/uc?id=10bg-B67ALZaDwdT0FooZgxBcUUV570Lg",
     "papers": [
@@ -2487,7 +2487,7 @@
     "dept_slug": "ece",
     "semester": "4",
     "subject_name": "Networks and Security",
-    "subject_code": "CS3451",
+    "subject_code": "EC3401",
     "syllabus_pdf": "https://drive.google.com/uc?id=1tYbOaOrcJ3bga5KrjvNia70X_kik_Fq6",
     "papers": [
       {

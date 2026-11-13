@@ -78,13 +78,22 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   const PYQ_FOLDER_OVERRIDES = {
     HS3152: "HS3152-professional-english-1",
     HS3252: "HS3252-professional-english-ii",
-    CS3501: "CS3501-complier-design",
+    CS3501: "CS3501-compiler-design",
   };
 
   function detectDeptFromQuery(queryText) {
-    const q = normalize(queryText);
+    const q = ` ${normalize(queryText).replace(/[^a-z0-9]+/g, " ").trim()} `;
     for (const [dept, keys] of Object.entries(DEPT_KEYWORDS)) {
-      if (keys.some((k) => q.includes(k))) return dept;
+      if (
+        keys.some((keyword) => {
+          const normalizedKeyword = normalize(keyword)
+            .replace(/[^a-z0-9]+/g, " ")
+            .trim();
+          return q.includes(` ${normalizedKeyword} `);
+        })
+      ) {
+        return dept;
+      }
     }
     return "";
   }
@@ -144,7 +153,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         ],
         5: [
           "Computer Networks",
-          "Complier Design",
+          "Compiler Design",
           "Cryptography and Cyber Security",
           "Distributed Computing",
         ],
@@ -461,21 +470,24 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
   function buildNotesUrl(dept, regYear, semNum, subjectName, subjectCode) {
     const slug = deptSlug(dept);
-    if (!slug) return "./";
     const folder = buildFolderName(
       subjectCode,
       subjectName,
       NOTES_FOLDER_OVERRIDES,
       false,
     );
-    if (folder) return `anna-university-notes/${slug}/${folder}/`;
+    if (folder) {
+      return slug
+        ? `anna-university-notes/${slug}/${folder}/`
+        : `anna-university-notes/${folder}/`;
+    }
     const params = new URLSearchParams({
       regulation: String(regYear || "2021"),
       semester: String(semNum || ""),
       subject: String(subjectName || ""),
       dept: String(dept || ""),
     });
-    return `anna-university-notes/${slug}/?${params.toString()}`;
+    return `anna-university-notes/${slug || "cse"}/?${params.toString()}`;
   }
 
   function buildSyllabusUrl(dept, regYear, semNum, subjectName, subjectCode) {
@@ -754,7 +766,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     },
     {
       code: "CS3501",
-      subject: "Complier Design",
+      subject: "Compiler Design",
       reg: "2021",
       sem: "5",
       depts: ["CSE"],
@@ -1633,11 +1645,19 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   }
 
   function scoreAssistantItem(item, tokens, queryText, intent, targetDept) {
-    let score = scoreItem(item, tokens);
+    const intentTokens = new Set(intent ? INTENT_KEYWORDS[intent] : []);
+    const contentTokens = tokens.filter((token) => !intentTokens.has(token));
+    let score = scoreItem(item, contentTokens);
     const label = normalize(item.label);
 
+    if (intent && !typeMatchesIntent(item.type, intent)) return 0;
+    if (contentTokens.length && score === 0) return 0;
+    if (!contentTokens.length && intent) {
+      score = typeMatchesIntent(item.type, intent) ? 1 : 0;
+    }
+
     if (intent) {
-      score += typeMatchesIntent(item.type, intent) ? 180 : -60;
+      score += 180;
     } else if (item.type === "Notes") {
       score += 25;
     }
@@ -1745,10 +1765,70 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   }
 
-  function navigateTo(item) {
-    if (item && item.url) {
-      window.location.href = item.url;
+  const routeChecks = new Map();
+
+  function getRouteCandidates(item) {
+    const original = new URL(item.url, `${window.location.origin}/`);
+    const candidates = [original];
+    const match = original.pathname.match(
+      /^\/(anna-university-notes|syllabus)\/([^/]+)\/([^/]+)\/?$/,
+    );
+
+    if (match) {
+      const [, section, , folder] = match;
+      if (section === "anna-university-notes") {
+        candidates.push(
+          new URL(`/anna-university-notes/${folder}/`, window.location.origin),
+        );
+      } else {
+        candidates.push(
+          new URL(`/syllabus/2021/${folder}/`, window.location.origin),
+          new URL(`/syllabus/${folder}/`, window.location.origin),
+        );
+      }
     }
+
+    const fallbackByType = {
+      Notes: item.dept
+        ? `/anna-university-notes/${deptSlug(item.dept)}/`
+        : "/anna-university-notes/cse/",
+      Syllabus: item.dept
+        ? `/syllabus/${deptSlug(item.dept)}/`
+        : "/syllabus/",
+      "Question Paper": "/previous-year-questions/",
+      GATE: "/gate-pyqs/",
+    };
+    const fallback = fallbackByType[item.type];
+    if (fallback) candidates.push(new URL(fallback, window.location.origin));
+
+    return [...new Map(candidates.map((url) => [url.href, url])).values()];
+  }
+
+  async function routeExists(url) {
+    if (!routeChecks.has(url.href)) {
+      routeChecks.set(
+        url.href,
+        fetch(url.href, { method: "HEAD" })
+          .then((response) => response.ok)
+          .catch(() => false),
+      );
+    }
+    return routeChecks.get(url.href);
+  }
+
+  async function navigateTo(item) {
+    if (!item || !item.url) return;
+
+    const candidates = getRouteCandidates(item);
+    for (const candidate of candidates) {
+      if (await routeExists(candidate)) {
+        window.location.href = candidate.href;
+        return;
+      }
+    }
+
+    const finalCandidate = candidates[candidates.length - 1];
+    window.location.href = finalCandidate.href;
   }
 
   function onInput(e) {
