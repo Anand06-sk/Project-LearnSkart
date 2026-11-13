@@ -61,11 +61,12 @@ function buildMetaDescription(entry) {
   return `${code} ${name} previous year question papers for Anna University. Department: ${dept}. ${reg}Download PDF papers and prepare with year-wise university questions.`.replace(/\s+/g, ' ').trim();
 }
 
-function ensureTag(html, regex, replacement, insertBefore = '   
-   
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"
-     crossorigin="anonymous"></script>
-</head>') {
+function ensureTag(
+  html,
+  regex,
+  replacement,
+  insertBefore = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3471007472368064"',
+) {
   if (regex.test(html)) {
     return html.replace(regex, replacement);
   }
@@ -159,6 +160,18 @@ function ensureThemeScript(html) {
   return html.slice(0, bodyCloseIdx) + '    <script src="../assets/js/academic-links.js" defer></script>\n' + html.slice(bodyCloseIdx);
 }
 
+function normalizeInternalHrefSeparators(html) {
+  return html.replace(
+    /(\bhref\s*=\s*["'])([^"']*)(["'])/gi,
+    (_match, prefix, href, suffix) => {
+      if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(href)) {
+        return `${prefix}${href}${suffix}`;
+      }
+      return `${prefix}${href.replace(/\\/g, '/')}${suffix}`;
+    },
+  );
+}
+
 function mergeEntry(target, incoming) {
   if (!target.subject_name && incoming.subject_name) target.subject_name = incoming.subject_name;
   if (!target.department && incoming.department) target.department = incoming.department;
@@ -219,6 +232,7 @@ merged.forEach(entry => {
   html = ensureH1(html, `${code} ${entry.subject_name || 'Subject'} Previous Year Question Papers`);
   html = enhancePdfList(html);
   html = ensureThemeScript(html);
+  html = normalizeInternalHrefSeparators(html);
 
   const outputDir = path.join(OUTPUT_ROOT, folderSlug);
   fs.mkdirSync(outputDir, { recursive: true });

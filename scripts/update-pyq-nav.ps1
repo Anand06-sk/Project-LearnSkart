@@ -16,7 +16,7 @@ $navBlock = @'
             <div class="nav-right" id="navMenu">
                 <div class="nav-links">
                     <a href="/index.html">Home</a>
-                    <a href="/">Department</a>
+                    <a href="/anna-university-notes/">Notes</a>
                     <a href="/syllabus/">Syllabus</a>
                     <a href="/previous-year-questions/" class="is-active" aria-current="page">Previous Year Question Papers</a>
                     <a href="/anna-university-results/">Result Portal</a>
@@ -39,7 +39,7 @@ $navBlock = @'
                 <div class="nav-group">
                     <div class="nav-group-title">Main</div>
                     <a href="/index.html">Home</a>
-                    <a href="/">Department</a>
+                    <a href="/anna-university-notes/">Notes</a>
                     <a href="/syllabus/">Syllabus</a>
                     <a href="/previous-year-questions/" class="is-active" aria-current="page">Previous Year Question Papers</a>
                     <a href="/anna-university-results/">Result Portal</a>
